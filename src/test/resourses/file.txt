@@ -1,0 +1,408 @@
+The secret code is: 112358
+djfgh dh
+dkfj gdf
+
+dfg df
+#EXTM3U
+#EXTINF:0,NTN
+http://192.168.0.1:5000/udp/224.5.1.235:1234
+#EXTINF:0,Grad
+http://192.168.0.1:5000/udp/224.5.1.102:1234
+#EXTINF:0,Inter
+http://192.168.0.1:5000/udp/224.5.1.179:1234
+#EXTINF:0,Pervyj natsional'nyj
+http://192.168.0.1:5000/udp/224.5.1.180:1234
+#EXTINF:0,ICTV
+http://192.168.0.1:5000/udp/224.5.1.173:1234
+#EXTINF:0,STB
+http://192.168.0.1:5000/udp/224.5.1.115:1234
+#EXTINF:0,Reporter
+http://192.168.0.1:5000/udp/224.5.1.233:1234
+#EXTINF:0,Novyj kanal
+http://192.168.0.1:5000/udp/224.5.1.121:1234
+#EXTINF:0,38/Novaya Odessa
+http://192.168.0.1:5000/udp/224.5.1.11:1234
+#EXTINF:0,M1
+http://192.168.0.1:5000/udp/224.5.1.116:1234
+#EXTINF:0,ATV
+http://192.168.0.1:5000/udp/224.5.1.205:1234
+#EXTINF:0,TET
+http://192.168.0.1:5000/udp/224.5.1.124:1234
+#EXTINF:0,1+1
+http://192.168.0.1:5000/udp/224.5.1.112:1234
+#EXTINF:0,K1
+http://192.168.0.1:5000/udp/224.5.1.114:1234
+#EXTINF:0,TV AKADEMIYa
+http://192.168.0.1:5000/udp/224.5.1.203:1234
+#EXTINF:0,5 Kanal
+http://192.168.0.1:5000/udp/224.5.1.126:1234
+#EXTINF:0,NLO TV
+http://192.168.0.1:5000/udp/224.5.1.1:1234
+#EXTINF:0,Real Estate TV
+http://192.168.0.1:5000/udp/224.5.1.247:1234
+#EXTINF:0,StarTV
+http://192.168.0.1:5000/udp/224.5.1.15:1234
+#EXTINF:0,Pogoda TV
+http://192.168.0.1:5000/udp/224.5.1.94:1234
+#EXTINF:0,Tonis
+http://192.168.0.1:5000/udp/224.5.1.71:1234
+#EXTINF:0,Bank TV
+http://192.168.0.1:5000/udp/224.5.1.191:1234
+#EXTINF:0,X SPORT
+http://192.168.0.1:5000/udp/224.5.1.143:1234
+#EXTINF:0,Enter-fil'm
+http://192.168.0.1:5000/udp/224.5.1.132:1234
+#EXTINF:0,Piksel' TV
+http://192.168.0.1:5000/udp/224.5.1.134:1234
+#EXTINF:0,Mega
+http://192.168.0.1:5000/udp/224.5.1.104:1234
+#EXTINF:0,K2
+http://192.168.0.1:5000/udp/224.5.1.113:1234
+#EXTINF:0,Zoom
+http://192.168.0.1:5000/udp/224.5.1.120:1234
+#EXTINF:0,Rada
+http://192.168.0.1:5000/udp/224.5.1.171:1234
+#EXTINF:0,Ukraina
+http://192.168.0.1:5000/udp/224.5.1.182:1234
+#EXTINF:0,GLAS
+http://192.168.0.1:5000/udp/224.5.1.237:1234
+#EXTINF:0,Odessa-plyus
+http://192.168.0.1:5000/udp/224.5.1.238:1234
+#EXTINF:0,GKK ODESSA
+http://192.168.0.1:5000/udp/224.5.1.65:1234
+#EXTINF:0,TA Odessa
+http://192.168.0.1:5000/udp/224.5.1.133:1234
+#EXTINF:0,ART 24
+http://192.168.0.1:5000/udp/224.5.1.105:1234
+#EXTINF:0,Krug
+http://192.168.0.1:5000/udp/224.5.1.67:1234
+#EXTINF:0,MENYu-TV
+http://192.168.0.1:5000/udp/224.5.1.108:1234
+#EXTINF:0,100 %
+http://192.168.0.1:5000/udp/224.5.1.227:1234
+#EXTINF:0,Plyus Plyus
+http://192.168.0.1:5000/udp/224.5.1.95:1234
+#EXTINF:0,Unian
+http://192.168.0.1:5000/udp/224.5.1.78:1234
+#EXTINF:0,2+2
+http://192.168.0.1:5000/udp/224.5.2.115:1234
+#EXTINF:0,Pravo TV
+http://192.168.0.1:5000/udp/224.5.2.80:1234
+#EXTINF:0,Kul'tura (Ukraina)
+http://192.168.0.1:5000/udp/224.5.2.101:1234
+#EXTINF:0,NEWS 24
+http://192.168.0.1:5000/udp/224.5.2.69:1234
+#EXTINF:0,OTV
+http://192.168.0.1:5000/udp/224.5.2.111:1234
+#EXTINF:0,QTV
+http://192.168.0.1:5000/udp/224.5.2.29:1234
+#EXTINF:0,Telecafe test
+http://192.168.0.1:5000/udp/224.5.2.70:1234
+#EXTINF:0,Pervyj (ORT Ukraina) Test
+http://192.168.0.1:5000/udp/224.5.2.16:1234
+#EXTINF:0,TVi
+http://192.168.0.1:5000/udp/224.5.2.117:1234
+#EXTINF:0,Park Razvlecheniy test
+http://192.168.0.1:5000/udp/224.5.2.209:1234
+#EXTINF:0,UBR test
+http://192.168.0.1:5000/udp/224.5.2.118:1234
+#EXTINF:0,Maxxi-TV
+http://192.168.0.1:5000/udp/224.5.2.175:1234
+#EXTINF:0,Karusel' test
+http://192.168.0.1:5000/udp/224.5.2.147:1234
+#EXTINF:0,Moya Odessa 31
+http://192.168.0.1:5000/udp/224.5.2.234:1234
+#EXTINF:0,24 DOK
+http://192.168.0.1:5000/udp/224.5.2.201:1234
+#EXTINF:0,TiJi
+http://192.168.0.1:5000/udp/224.5.2.229:1234
+#EXTINF:0,NTA
+http://192.168.0.1:5000/udp/224.5.2.112:1234
+#EXTINF:0,A-one
+http://192.168.0.1:5000/udp/224.5.2.225:1234
+#EXTINF:0,RBK
+http://192.168.0.1:5000/udp/224.5.2.148:1234
+#EXTINF:0,Pervyj delovoy
+http://192.168.0.1:5000/udp/224.5.2.99:1234
+#EXTINF:0,Eko-TV
+http://192.168.0.1:5000/udp/224.5.2.167:1234
+#EXTINF:0,Sarafan test
+http://192.168.0.1:5000/udp/224.5.2.172:1234
+#EXTINF:0,Euronews
+http://192.168.0.1:5000/udp/224.5.2.19:1234
+#EXTINF:0,Eurosport
+http://192.168.0.1:5000/udp/224.5.2.156:1234
+#EXTINF:0,Eurosport 2
+http://192.168.0.1:5000/udp/224.5.2.43:1234
+#EXTINF:0,Fashion TV test
+http://192.168.0.1:5000/udp/224.5.2.12:1234
+#EXTINF:0,RTVi test
+http://192.168.0.1:5000/udp/224.5.2.48:1234
+#EXTINF:0,Retro test
+http://192.168.0.1:5000/udp/224.5.2.220:1234
+#EXTINF:0,TVCi
+http://192.168.0.1:5000/udp/224.5.2.145:1234
+#EXTINF:0,TV-100 Business
+http://192.168.0.1:5000/udp/224.5.2.90:1234
+#EXTINF:0,ZooPark
+http://192.168.0.1:5000/udp/224.5.2.208:1234
+#EXTINF:0,Avto Plyus
+http://192.168.0.1:5000/udp/224.5.2.40:1234
+#EXTINF:0,Vremya test
+http://192.168.0.1:5000/udp/224.5.2.72:1234
+#EXTINF:0,Detskiy mir / Teleklub test
+http://192.168.0.1:5000/udp/224.5.2.231:1234
+#EXTINF:0,CNL Ukraina
+http://192.168.0.1:5000/udp/224.5.2.151:1234
+#EXTINF:0,Zdorovoe TV test
+http://192.168.0.1:5000/udp/224.5.2.223:1234
+#EXTINF:0,Mat' i ditya test
+http://192.168.0.1:5000/udp/224.5.2.25:1234
+#EXTINF:0,Jewish news one
+http://192.168.0.1:5000/udp/224.5.2.44:1234
+#EXTINF:0,Moya ditina
+http://192.168.0.1:5000/udp/224.5.2.2:1234
+#EXTINF:0,ONT
+http://192.168.0.1:5000/udp/224.5.2.228:1234
+#EXTINF:0,Nickelodeon test
+http://192.168.0.1:5000/udp/224.5.2.46:1234
+#EXTINF:0,Soyuz
+http://192.168.0.1:5000/udp/224.5.2.150:1234
+#EXTINF:0,TDK
+http://192.168.0.1:5000/udp/224.5.2.160:1234
+#EXTINF:0,Shanson test
+http://192.168.0.1:5000/udp/224.5.2.11:1234
+#EXTINF:0,Strana test
+http://192.168.0.1:5000/udp/224.5.2.15:1234
+#EXTINF:0,KRT
+http://192.168.0.1:5000/udp/224.5.2.123:1234
+#EXTINF:0,Psihologiya21 test
+http://192.168.0.1:5000/udp/224.5.2.214:1234
+#EXTINF:0,M2
+http://192.168.0.1:5000/udp/224.5.2.119:1234
+#EXTINF:0,Ru Music
+http://192.168.0.1:5000/udp/224.5.2.106:1234
+#EXTINF:0,GUMOR / BABAY TB
+http://192.168.0.1:5000/udp/224.5.2.246:1234
+#EXTINF:0,Ohota i rybalka test
+http://192.168.0.1:5000/udp/224.5.2.222:1234
+#EXTINF:0,MusicBox UA
+http://192.168.0.1:5000/udp/224.5.2.245:1234
+#EXTINF:0,STS test
+http://192.168.0.1:5000/udp/224.5.2.6:1234
+#EXTINF:0,RTR-Planeta test
+http://192.168.0.1:5000/udp/224.5.2.41:1234
+#EXTINF:0,Usad'ba test
+http://192.168.0.1:5000/udp/224.5.2.224:1234
+#EXTINF:0,24Tehno test
+http://192.168.0.1:5000/udp/224.5.2.85:1234
+#EXTINF:0,Detskiy
+http://192.168.0.1:5000/udp/224.5.2.82:1234
+#EXTINF:0,Gulli
+http://192.168.0.1:5000/udp/224.5.2.230:1234
+#EXTINF:0,NewsOne
+http://192.168.0.1:5000/udp/224.5.2.101:1234
+#EXTINF:0,Lya-minor
+http://192.168.0.1:5000/udp/224.5.2.35:1234
+#EXTINF:0,EUROPA Plus TV
+http://192.168.0.1:5000/udp/224.5.3.159:1234
+#EXTINF:0,France 24
+http://192.168.0.1:5000/udp/224.5.3.127:1234
+#EXTINF:0,REN-TV test
+http://192.168.0.1:5000/udp/224.5.3.17:1234
+#EXTINF:0,Voprosy i Otvety test
+http://192.168.0.1:5000/udp/224.5.3.107:1234
+#EXTINF:0,Da Vinci Learning
+http://192.168.0.1:5000/udp/224.5.3.1:1234
+#EXTINF:0,Domashnie zhivotnye test
+http://192.168.0.1:5000/udp/224.5.3.213:1234
+#EXTINF:0,Zhivi test
+http://192.168.0.1:5000/udp/224.5.3.98:1234
+#EXTINF:0,Indiya TV
+http://192.168.0.1:5000/udp/224.5.3.34:1234
+#EXTINF:0,Interesnoe TV
+http://192.168.0.1:5000/udp/224.5.3.37:1234
+#EXTINF:0,Kto est' kto test
+http://192.168.0.1:5000/udp/224.5.3.18:1234
+#EXTINF:0,Kuhnya TV
+http://192.168.0.1:5000/udp/224.5.3.38:1234
+#EXTINF:0,MGM Int
+http://192.168.0.1:5000/udp/224.5.3.21:1234
+#EXTINF:0,Muzyka Pervogo test
+http://192.168.0.1:5000/udp/224.5.10.150:1234
+#EXTINF:0,Russkiy ekstrim
+http://192.168.0.1:5000/udp/224.5.3.55:1234
+#EXTINF:0,English Club TV
+http://192.168.0.1:5000/udp/224.5.3.90:1234
+#EXTINF:0,KINO SOYuZ
+http://192.168.0.1:5000/udp/224.5.3.45:1234
+#EXTINF:0,Uspeh
+http://192.168.0.1:5000/udp/224.5.3.102:1234
+#EXTINF:0,Zagorodnaya zhizn'
+http://192.168.0.1:5000/udp/224.5.3.101:1234
+#EXTINF:0,Muzhskoy
+http://192.168.0.1:5000/udp/224.5.3.100:1234
+#EXTINF:0,Istoriya test
+http://192.168.0.1:5000/udp/224.5.3.63:1234
+#EXTINF:0,NTV Tennis
+http://192.168.0.1:5000/udp/224.5.3.52:1234
+#EXTINF:0,Love Radio test
+http://192.168.0.1:5000/udp/224.5.3.11:1234
+#EXTINF:0,Drayv test
+http://192.168.0.1:5000/udp/224.5.3.221:1234
+#EXTINF:0,NTV MIR
+http://192.168.0.1:5000/udp/224.5.3.103:1234
+#EXTINF:0,Evrokino test
+http://192.168.0.1:5000/udp/224.5.3.85:1234
+#EXTINF:0,Travel channel test
+http://192.168.0.1:5000/udp/224.5.3.137:1234
+#EXTINF:0,2h2 test
+http://192.168.0.1:5000/udp/224.5.3.99:1234
+#EXTINF:0,Kino Plyus
+http://192.168.0.1:5000/udp/224.5.3.226:1234
+#EXTINF:0,Nauka 2.0 test
+http://192.168.0.1:5000/udp/224.5.3.27:1234
+#EXTINF:0,365 dney TV
+http://192.168.0.1:5000/udp/224.5.3.31:1234
+#EXTINF:0,TNT
+http://192.168.0.1:5000/udp/224.5.3.2:1234
+#EXTINF:0,Telekanal 100 (TEST)
+http://192.168.0.1:5000/udp/224.5.3.170:1234
+#EXTINF:0,Futbol+
+http://192.168.0.1:5000/udp/224.5.3.129:1234
+#EXTINF:0,Nostal'giya
+http://192.168.0.1:5000/udp/224.5.3.60:1234
+#EXTINF:0,Mezzo
+http://192.168.0.1:5000/udp/224.5.3.158:1234
+#EXTINF:0,CCTV NEWS (test)
+http://192.168.0.1:5000/udp/224.5.3.74:1234
+#EXTINF:0,Nashe lyubimoe kino test
+http://192.168.0.1:5000/udp/224.5.3.212:1234
+#EXTINF:0,NSTV (Strashnoe) test
+http://192.168.0.1:5000/udp/224.5.3.84:1234
+#EXTINF:0,Nautical Channel
+http://192.168.0.1:5000/udp/224.5.3.185:1234
+#EXTINF:0,Rossiya 24 test
+http://192.168.0.1:5000/udp/224.5.3.7:1234
+#EXTINF:0,Dobro TV
+http://192.168.0.1:5000/udp/224.5.3.62:1234
+#EXTINF:0,Komediya TV
+http://192.168.0.1:5000/udp/224.5.3.33:1234
+#EXTINF:0,Mnogoseriynoe TV
+http://192.168.0.1:5000/udp/224.5.3.36:1234
+#EXTINF:0,Mir seriala test
+http://192.168.0.1:5000/udp/224.5.3.168:1234
+#EXTINF:0,TV5 Monde Europe (test)
+http://192.168.0.1:5000/udp/224.5.3.42:1234
+#EXTINF:0,Nash futbol
+http://192.168.0.1:5000/udp/224.5.3.54:1234
+#EXTINF:0,Boets
+http://192.168.0.1:5000/udp/224.5.3.39:1234
+#EXTINF:0,TRK Futbol
+http://192.168.0.1:5000/udp/224.5.3.128:1234
+#EXTINF:0,Al Jazeera (test)
+http://192.168.0.1:5000/udp/224.5.3.14:1234
+#EXTINF:0,Nickelodeon junior test
+http://192.168.0.1:5000/udp/224.5.3.146:1234
+#EXTINF:0,DIVA Universal (test)
+http://192.168.0.1:5000/udp/224.5.4.110:1234
+#EXTINF:0,Russkiy illyuzion
+http://192.168.0.1:5000/udp/224.5.4.81:1234
+#EXTINF:0,VH1 Classic test
+http://192.168.0.1:5000/udp/224.5.4.20:1234
+#EXTINF:0,Feniks+Kino test
+http://192.168.0.1:5000/udp/224.5.4.89:1234
+#EXTINF:0,Perets (test)
+http://192.168.0.1:5000/udp/224.5.4.198:1234
+#EXTINF:0,Gamma (test)
+http://192.168.0.1:5000/udp/224.5.4.201:1234
+#EXTINF:0,Dom kino test
+http://192.168.0.1:5000/udp/224.5.4.195:1234
+#EXTINF:0,BTB (test)
+http://192.168.0.1:5000/udp/224.5.4.130:1234
+#EXTINF:0,Moya planeta test
+http://192.168.0.1:5000/udp/224.5.4.200:1234
+#EXTINF:0,VH1 Europe test
+http://192.168.0.1:5000/udp/224.5.4.141:1234
+#EXTINF:0,MTV ROCKS test
+http://192.168.0.1:5000/udp/224.5.4.79:1234
+#EXTINF:0,Sovershenno Sekretno test
+http://192.168.0.1:5000/udp/224.5.4.124:1234
+#EXTINF:0,MTV hits test
+http://192.168.0.1:5000/udp/224.5.4.185:1234
+#EXTINF:0,National Geo
+http://192.168.0.1:5000/udp/224.5.4.162:1234
+#EXTINF:0,Travel channel HD
+http://192.168.0.1:5000/udp/224.5.4.184:1234
+#EXTINF:0,Kul'tura Rossiya (test)
+http://192.168.0.1:5000/udp/224.5.4.5:1234
+#EXTINF:0,HD Life test
+http://192.168.0.1:5000/udp/224.5.4.255:1234
+#EXTINF:0,Nickelodeon HD test
+http://192.168.0.1:5000/udp/224.5.4.183:1234
+#EXTINF:0,MTV Live HD test
+http://192.168.0.1:5000/udp/224.5.4.181:1234
+#EXTINF:0,Armeniya TV (test)
+http://192.168.0.1:5000/udp/224.5.4.160:1234
+#EXTINF:0,RTG TV
+http://192.168.0.1:5000/udp/224.5.4.100:1234
+#EXTINF:0,Eurosport HD test
+http://192.168.0.1:5000/udp/224.5.4.254:1234
+#EXTINF:0,Universal (test)
+http://192.168.0.1:5000/udp/224.5.4.111:1234
+#EXTINF:0,English club HD
+http://192.168.0.1:5000/udp/224.5.4.90:1234
+#EXTINF:0,FTV HD(TEST)
+http://192.168.0.1:5000/udp/224.5.4.175:1234
+#EXTINF:0,SET
+http://192.168.0.1:5000/udp/224.5.4.88:1234
+#EXTINF:0,Sport 2
+http://192.168.0.1:5000/udp/224.5.4.92:1234
+#EXTINF:0,Rossiya 2(TEST)
+http://192.168.0.1:5000/udp/224.5.4.57:1234
+#EXTINF:0,Kinolyuks
+http://192.168.0.1:5000/udp/224.5.4.214:1234
+#EXTINF:0,Tonis HD
+http://192.168.0.1:5000/udp/224.5.4.182:1234
+#EXTINF:0,Pyatnitsa (test)
+http://192.168.0.1:5000/udp/224.5.4.30:1234
+#EXTINF:0,MTV Dance test
+http://192.168.0.1:5000/udp/224.5.4.28:1234
+#EXTINF:0,Sony Sci Fi
+http://192.168.0.1:5000/udp/224.5.4.190:1234
+#EXTINF:0,Sport 1
+http://192.168.0.1:5000/udp/224.5.4.199:1234
+#EXTINF:0,Inter AZ (test)
+http://192.168.0.1:5000/udp/224.5.4.216:1234
+#EXTINF:0,Nashe novoe kino
+http://192.168.0.1:5000/udp/224.5.4.47:1234
+#EXTINF:0,TV3 (test)
+http://192.168.0.1:5000/udp/224.5.4.76:1234
+#EXTINF:0,Kinohit
+http://192.168.0.1:5000/udp/224.5.4.211:1234
+#EXTINF:0,Prem'era
+http://192.168.0.1:5000/udp/224.5.4.212:1234
+#EXTINF:0,Kinoklub
+http://192.168.0.1:5000/udp/224.5.4.213:1234
+#EXTINF:0,Pervyj kanal (test)
+http://192.168.0.1:5000/udp/224.5.4.16:1234
+#EXTINF:0,CNN International (test)
+http://192.168.0.1:5000/udp/224.5.4.21:1234
+#EXTINF:0,Russia Today (test)
+http://192.168.0.1:5000/udp/224.5.4.49:1234
+#EXTINF:0,Shant (test)
+http://192.168.0.1:5000/udp/224.5.4.218:1234
+#EXTINF:0,Yu TV (test)
+http://192.168.0.1:5000/udp/224.5.4.56:1234
+#EXTINF:0,CCTV Russkiy (test)
+http://192.168.0.1:5000/udp/224.5.4.73:1234
+#EXTINF:0,Mir (test)
+http://192.168.0.1:5000/udp/224.5.4.142:1234
+#EXTINF:0,AZtv (test)
+http://192.168.0.1:5000/udp/224.5.4.3:1234
+#EXTINF:0,Rossiya 1 (test)
+http://192.168.0.1:5000/udp/224.5.4.4:1234
+#EXTINF:0,CCTV 4 (test)
+http://192.168.0.1:5000/udp/224.5.4.75:1234
+#EXTINF:0,STV test
+http://192.168.0.1:5000/udp/224.5.4.132:1234
