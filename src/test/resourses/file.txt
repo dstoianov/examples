@@ -242,8 +242,6 @@ http://192.168.0.1:5000/udp/224.5.3.102:1234
 http://192.168.0.1:5000/udp/224.5.3.101:1234
 #EXTINF:0,Muzhskoy
 http://192.168.0.1:5000/udp/224.5.3.100:1234
-#EXTINF:0,Istoriya test
-http://192.168.0.1:5000/udp/224.5.3.63:1234
 #EXTINF:0,NTV Tennis
 http://192.168.0.1:5000/udp/224.5.3.52:1234
 #EXTINF:0,Love Radio test

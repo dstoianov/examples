@@ -56,7 +56,6 @@ public class SpeedTest {
 
         assertThat(signOut.isDisplayed(), is(true));
         signOut.click();
-
         assertThat(findElement(By.name("signin")).isDisplayed(), is(true));
     }
 
