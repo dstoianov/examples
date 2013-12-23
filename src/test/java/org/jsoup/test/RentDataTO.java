@@ -1,5 +1,9 @@
 package org.jsoup.test;
 
+import java.lang.reflect.Field;
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by User on 12/20/13.
  */
@@ -25,6 +29,21 @@ public class RentDataTO {
         this.url = url;
         this.other = other;
     }
+
+    public List<String> getFields() {
+        ArrayList<String> values = new ArrayList<String>();
+        try {
+            for (Field field : this.getClass().getDeclaredFields()) {
+                field.setAccessible(true);
+                values.add((String) field.get(this));
+            }
+        } catch (IllegalAccessException e) {
+            throw new Error("An error occurred!!!");
+        }
+        return values;
+    }
+
+
 
     @Override
     public String toString() {

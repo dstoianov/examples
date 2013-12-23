@@ -11,14 +11,9 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Test;
+import org.junit.*;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,7 +21,7 @@ import java.util.List;
  * Example program to list links from a URL.
  */
 public class RentApartmentGrabber {
-
+    public static final String FILE_NAME = "src/test/resources/rent_list.xlsx";
     public static List<RentDataTO> list = new ArrayList<RentDataTO>();
 
     @Test
@@ -120,14 +115,111 @@ public class RentApartmentGrabber {
     }
 
 
+    @Test
+    public void ForumOdUaTest() {
+        String url = "http://forum.od.ua/forumdisplay.php?f=172";
+
+        int before = list.size();
+        print("Fetching %s...", url);
+        Document doc;
+        try {
+            doc = Jsoup.connect(url).get();
+            Elements adAll = doc.select("#highlight-text");
+
+            for (Element adOne : adAll) {
+                if (adOne.select(".price").toString().equals("")) {
+                    continue;
+                }
+                String adText = adOne.text();
+                String adPrice = adOne.select(".price").text().substring(21);
+                String adDate = adOne.select("div > span").text();
+                String adAddress = adOne.select("a > span").text();
+                String adMessage = adText.substring(adText.indexOf(adAddress) + adAddress.length());
+                String adURL = adOne.select("a").attr("href").toString();
+
+                RentDataTO rentData = new RentDataTO();
+                rentData.setSource("forum.od.ua");
+                rentData.setAddress(adAddress);
+                rentData.setText(adMessage);
+                rentData.setPrice(adPrice);
+                rentData.setDate(adDate);
+                rentData.setUrl(adURL);
+                rentData.setOther("test field other");
+                list.add(rentData);
+
+//                System.out.println("----------------------------------------------------------------------------");
+//                print( "1) Address: %s " +
+//                     "\n2) Text:  %s " +
+//                     "\n3) Price: %s " +
+//                     "\n4) Date: %s " +
+//                     "\n5) URL: %s", adAddress, adMessage, adPrice, adDate, adURL);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        print("Were added to the base %s ads from Forum.od.ua", list.size() - before);
+    }
+
+
+    @Test
+    public void testTTT() throws Exception {
+        ArrayList<RentDataTO> rentDataTOs = new ArrayList<RentDataTO>();
+
+        for (int i = 0; i < 12; i++) {
+            RentDataTO to = new RentDataTO();
+            to.setAddress("adress" + i);
+            to.setDate("date" + i);
+            to.setOther("other" + i);
+            to.setPrice("price" + i);
+            to.setSource("source" + i);
+            to.setUrl("url" + i);
+            to.setText("text" + i);
+            rentDataTOs.add(to);
+        }
+        putRentDataTOs(rentDataTOs, FILE_NAME);
+    }
+
+    private void putRentDataTOs(ArrayList<RentDataTO> rentDataTOs, String fileName)  {
+        FileInputStream file = null;
+        try {
+            file = new FileInputStream(new File(fileName));
+
+            XSSFWorkbook workbook = new XSSFWorkbook(file);
+            XSSFSheet sheet = workbook.getSheetAt(1);
+
+            for (int j = 0; j < rentDataTOs.size(); j++) {
+                Row row = sheet.createRow(j);
+                List<String> fields = rentDataTOs.get(j).getFields();
+                for (int i = 0; i < fields.size(); i++) {
+                    row.createCell(i).setCellValue(fields.get(i));
+                }
+            }
+            file.close();
+            FileOutputStream out = new FileOutputStream(new File(fileName));
+            workbook.write(out);
+            out.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @BeforeClass
+    public void initProxy (){
+        //System.setProperty("http.proxyHost", "192.168.0.1");
+       // System.setProperty("http.proxyPort", "8080");
+    }
+
+
     @AfterClass
     public static void WriteXlsx() {
         try {
-            FileInputStream file = new FileInputStream(new File("src/test/resources/rent_list.xlsx"));
+            FileInputStream file = new FileInputStream(new File(FILE_NAME));
             XSSFWorkbook workbook = new XSSFWorkbook(file);
 
             XSSFSheet sheet = workbook.getSheetAt(0);
-            int lastrow = sheet.getLastRowNum();
+            int lastrow = sheet.getLastRowNum() + 1;
             //Create a blank sheet
             //XSSFSheet sheet = workbook.createSheet("Rent Data");
 
@@ -158,7 +250,7 @@ public class RentApartmentGrabber {
 
             file.close();
             //Write the workbook in file system
-            FileOutputStream out = new FileOutputStream(new File("src/test/resources/rent_list.xlsx"));
+            FileOutputStream out = new FileOutputStream(new File(FILE_NAME));
             workbook.write(out);
             out.close();
             System.out.println("rent_list.xlsx written successfully on disk.");
