@@ -186,9 +186,10 @@ public class RentApartmentGrabber {
 
             XSSFWorkbook workbook = new XSSFWorkbook(file);
             XSSFSheet sheet = workbook.getSheetAt(1);
+            int lastrow = sheet.getLastRowNum() + 2;
 
             for (int j = 0; j < rentDataTOs.size(); j++) {
-                Row row = sheet.createRow(j);
+                Row row = sheet.createRow(j + lastrow);
                 List<String> fields = rentDataTOs.get(j).getFields();
                 for (int i = 0; i < fields.size(); i++) {
                     row.createCell(i).setCellValue(fields.get(i));
@@ -206,7 +207,7 @@ public class RentApartmentGrabber {
     }
 
     @BeforeClass
-    public void initProxy (){
+    public static void initProxy (){
         //System.setProperty("http.proxyHost", "192.168.0.1");
        // System.setProperty("http.proxyPort", "8080");
     }
