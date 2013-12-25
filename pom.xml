@@ -59,6 +59,13 @@
             <scope>system</scope>
             <systemPath>${project.basedir}/lib/jacob.jar</systemPath>
         </dependency>
+<!--        <dependency>
+            <groupId>autoitx4java</groupId>
+            <artifactId>autoitx4java</artifactId>
+            <version>0.0.1</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/AutoItX4Java.jar</systemPath>
+        </dependency>-->
 
 
     </dependencies>
