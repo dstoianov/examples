@@ -1,4 +1,6 @@
-examples
+Java Examples
 ========
 
-Repository for my tests
+Repository for my java tests and experiences
+
+

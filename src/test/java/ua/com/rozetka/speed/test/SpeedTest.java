@@ -1,6 +1,5 @@
 package ua.com.rozetka.speed.test;
 
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -13,8 +12,6 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import static org.hamcrest.Matchers.is;
-
-
 
 /**
  * Created with IntelliJ IDEA.
