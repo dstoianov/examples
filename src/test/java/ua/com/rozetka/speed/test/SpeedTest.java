@@ -1,17 +1,19 @@
 package ua.com.rozetka.speed.test;
 
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
 
 import static org.hamcrest.Matchers.is;
-import static org.junit.Assert.assertThat;
+
 
 
 /**
@@ -24,16 +26,15 @@ import static org.junit.Assert.assertThat;
 public class SpeedTest {
 
     Long start = null;
-    WebDriver driver = null;
+    WebDriver driver;
     Long stop = null;
 
 
-    @Before
+    @BeforeClass
     public void setUp() {
         start = System.currentTimeMillis();
         driver = new FirefoxDriver();
     }
-
 
     @Test
     public void firstTest() {
@@ -54,16 +55,17 @@ public class SpeedTest {
 //                    }
 //                });
 
-        assertThat(signOut.isDisplayed(), is(true));
+        Assert.assertEquals(signOut.isDisplayed(), is(true));
         signOut.click();
-        assertThat(findElement(By.name("signin")).isDisplayed(), is(true));
+        Assert.assertEquals(findElement(By.name("signin")).isDisplayed(), is(true));
     }
 
 
-    @After
+    @AfterClass
     public void tearDown() {
         driver.quit();
         stop = System.currentTimeMillis();
+        print("That took %s seconds", (double) ((stop - start) / 1000) );
         System.out.println("That took " + (double) ((stop - start) / 1000) + " seconds");
     }
 
@@ -73,5 +75,10 @@ public class SpeedTest {
                     public WebElement apply(WebDriver d) {return d.findElement(by);
                     }
                 });
+    }
+
+
+    private static void print(String msg, Object... args) {
+        System.out.println(String.format(msg, args));
     }
 }
