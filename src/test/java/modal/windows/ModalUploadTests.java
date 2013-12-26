@@ -26,15 +26,15 @@ public class ModalUploadTests extends Base {
         driver.get("http://www.httpwatch.com/httpgallery/methods/");
         driver.findElement(By.name("F1")).click();
 
-        File file = new File("lib", "jacob-1.17-x64.dll"); //path to the jacob dll
+        File file = new File("lib", "jacob-1.17-x86.dll"); //path to the jacob dll
         System.setProperty(LibraryLoader.JACOB_DLL_PATH, file.getAbsolutePath());
 
         AutoItX x = new AutoItX();
         String uploadClassWindow = "[REGEXPTITLE:(File Upload|Choose File to Upload|Open);CLASS:#32770]";
-        x.winWaitActive(uploadClassWindow, "", 2);
+        x.winWaitActive(uploadClassWindow, "", 5);
         if (x.winExists(uploadClassWindow)) {
             //x.sleep(200);
-            x.ControlSetText(uploadClassWindow, "", "Edit1", "C:\\Dev\\Lib\\LICENSE.TXT");
+            x.ControlSetText(uploadClassWindow, "", "Edit1", file.getAbsolutePath());
             x.sleep(200);
             //x.controlClick(uploadClassWindow, "", "[CLASS:Button; TEXT:&Open; INSTANCE:1]");
            x.controlClick(uploadClassWindow, "", "Button1");
@@ -51,7 +51,7 @@ public class ModalUploadTests extends Base {
            driver.findElement(By.xpath("//input[@id='displayImage']")).click();
 
 
-        File file = new File("lib", "jacob-1.17-x64.dll"); //path to the jacob dll
+        File file = new File("lib", "jacob-1.17-x86.dll"); //path to the jacob dll
         System.setProperty(LibraryLoader.JACOB_DLL_PATH, file.getAbsolutePath());
 
         AutoItX x = new AutoItX();
@@ -64,8 +64,7 @@ public class ModalUploadTests extends Base {
             x.send("{TAB}", false);
             x.send("dhjhfj");
             x.send("{ENTER}", false);
-
-        }
+         }
         Thread.sleep(5000);
     }
 
@@ -74,13 +73,16 @@ public class ModalUploadTests extends Base {
         driver.get("http://www.httpwatch.com/httpgallery/methods/");
         driver.findElement(By.name("F1")).click();
 
+        String fileToUpload = (new File("lib", "jacob-1.17-x64.dll")).getAbsolutePath();
 
         String modalWindow = "[REGEXPTITLE:(File Upload|Choose File to Upload|Open);CLASS:#32770]";
 
         AutoItHelper ait = new AutoItHelper(modalWindow);
         ait.winWaitAndActivate(modalWindow, "", 3);
 
-        ait.setText("Edit1", "C:\\Dev\\Lib\\test_file.sss");
+
+        //ait.setText("Edit1", fileToUpload);
+        ait.send(fileToUpload, false);
         ait.send("{ENTER}", false);
         //ait.click("[TEXT:&Open]");
        // up.click("Button1");

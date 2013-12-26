@@ -9,7 +9,12 @@ import com.jacob.com.LibraryLoader;
 public class AutoItHelper {
 
     static {
-        File jacob = new File("lib", "jacob-1.17-x64.dll");
+        File jacob;
+        if (System.getProperty("os.arch").equals("x86")) {
+            jacob = new File("lib", "jacob-1.17-x86.dll");
+        } else {
+            jacob = new File("lib", "jacob-1.17-x64.dll");
+        }
         System.setProperty(LibraryLoader.JACOB_DLL_PATH, jacob.getAbsolutePath());
     }
 
@@ -34,6 +39,7 @@ public class AutoItHelper {
     }
     
     public AutoItHelper setText(String controlID, String text) {
+        //aux.ControlSetText(uploadClassWindow, "", "Edit1", file.getAbsolutePath());
         aux.ControlSetText(winTitle, winText, controlID, text);
         //aux.send("{ENTER}", false); // if you need press enter after typed text
         return this;
