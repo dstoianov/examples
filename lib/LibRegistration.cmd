@@ -10,9 +10,9 @@ goto :x86
 )
 
 :x86
-::%systemroot%\System32\regsvr32.exe AutoItX3.dll
+%systemroot%\System32\regsvr32.exe AutoItX3.dll
 goto :eof
 
 :x64
-::%systemroot%\SysWoW64\regsvr32.exe AutoItX3_x64.dll
+%systemroot%\SysWoW64\regsvr32.exe AutoItX3_x64.dll
 goto :eof

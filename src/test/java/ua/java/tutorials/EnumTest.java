@@ -1,10 +1,9 @@
 package ua.java.tutorials;
 
-import org.junit.Test;
+//import org.junit.Test;
 
-/**
- * Created by User on 12/12/13.
- */
+import org.testng.annotations.Test;
+
 public class EnumTest {
 
     @Test
