@@ -1,0 +1,24 @@
+{
+  "capabilities": [
+    {
+      "platform": "WINDOWS",
+      "seleniumProtocol": "WebDriver",
+      "browserName": "chrome",
+      "maxInstances": 2,
+      "version": "31"
+    }
+  ],
+  "configuration": {
+    "proxy": "com.groupon.seleniumgridextras.grid.proxies.SetupTeardownProxy",
+    "maxSession": 1,
+    "port": 5555,
+    "register": true,
+    "nodePolling": 2000,
+    "registerCycle": 2000,
+    "cleanupCycle": 4000,
+    "unregisterIfStillDownAfter": 4000,
+    "hubPort": 4444,
+    "nodeTimeout": 120,
+    "hubHost": "127.0.0.1"
+  }
+}

@@ -1,0 +1,1 @@
+java -Dwebdriver.ie.driver=\webdriver\iedriver\iedriver_2.35.3_Win32bit.exe -Dwebdriver.chrome.driver=\webdriver\chromedriver\chromedriver_2.6_32bit.exe -cp D:\Testing\idea\Selenium-Grid-Extras\cmd\SeleniumGridExtras-1.2.3-SNAPSHOT-jar-with-dependencies.jar;\webdriver\2.37.0.jar org.openqa.grid.selenium.GridLauncher -role node -nodeConfig node_5556.json -log log\node_5556.log
