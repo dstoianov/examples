@@ -43,7 +43,7 @@ public class ModalUploadTests extends Base {
         }
 
         driver.findElement(By.xpath("//input[@name='B4']")).click();
-        Thread.sleep(8000);
+        Thread.sleep(4000);
     }
     @Test
     public void HTTPAuthenticationTest() throws InterruptedException {
@@ -73,7 +73,7 @@ public class ModalUploadTests extends Base {
         driver.get("http://www.httpwatch.com/httpgallery/methods/");
         driver.findElement(By.name("F1")).click();
 
-        String fileToUpload = (new File("lib", "jacob-1.17-x64.dll")).getAbsolutePath();
+        String fileToUpload = (new File("lib", "jacob-1.17-x84.dll")).getAbsolutePath();
 
         String modalWindow = "[REGEXPTITLE:(File Upload|Choose File to Upload|Open);CLASS:#32770]";
 
