@@ -3,7 +3,7 @@
       [
        {
           "browserName": "firefox",
-          "maxInstances": 2,
+          "maxInstances": 1,
           "seleniumProtocol": "WebDriver"
         },
         {
@@ -13,7 +13,7 @@
         },
         {
           "browserName": "internet explorer",
-          "maxInstances": 2,
+          "maxInstances": 1,
           "seleniumProtocol": "WebDriver"
         }
       ],
