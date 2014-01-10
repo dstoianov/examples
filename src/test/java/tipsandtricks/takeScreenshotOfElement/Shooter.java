@@ -1,6 +1,5 @@
-package tipsandtricks;
+package tipsandtricks.takeScreenshotOfElement;
 
-//import org.apache.commons.io.FileUtils;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
@@ -15,19 +14,17 @@ import java.io.File;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
-public class Shooter{
+public class Shooter {
 
     private WebDriver driver;
 
     @Test
-    public void getScreenOfElement () throws IOException {
-       driver.get("https://www.google.co.uk/");
+    public void getScreenOfElement() throws IOException {
+        driver.get("https://www.google.co.uk/");
         WebElement el = driver.findElement(By.xpath(".//*[@id='gb_70']"));
 
         shootWebElement(el);
-
     }
-
 
 
     public void shootWebElement(WebElement element) throws IOException {
@@ -39,14 +36,13 @@ public class Shooter{
         int height = element.getSize().getHeight();
 
         BufferedImage img = ImageIO.read(screen);
-        BufferedImage dest = img.getSubimage(p.getX(), p.getY(), width,  height);
+        BufferedImage dest = img.getSubimage(p.getX(), p.getY(), width, height);
 
         ImageIO.write(dest, "png", screen);
         String name = element.getText();
-        File f = new File("src/test/java/tipsandtricks/" + name + "+.png");
+        File f = new File("src/test/java/tipsandtricks/takeScreenshotOfElement" + name + "+.png");
         FileUtils.copyFile(screen, f);
     }
-
 
 
     @BeforeTest

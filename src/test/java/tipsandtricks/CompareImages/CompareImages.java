@@ -1,4 +1,4 @@
-package tipsandtricks;
+package tipsandtricks.CompareImages;
 
 import org.testng.annotations.Test;
 
@@ -12,8 +12,8 @@ public class CompareImages {
 
     @Test
     public void checkImages() throws IOException {
-        String i1 = "src/test/java/tipsandtricks/Sign in+.png";
-        String i2 = "src/test/java/tipsandtricks/Увійти+.png";
+        String i1 = "src/test/java/tipsandtricks/CompareImages/Sign in+.png";
+        String i2 = "src/test/java/tipsandtricks/CompareImages/Увійти+.png";
         String s = compareImage(i1, i2);
         System.out.println(s);
     }
