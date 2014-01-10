@@ -1,7 +1,6 @@
 package ua.java.tutorials;
 
-//import org.junit.Test;
-
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class EnumTest {
@@ -30,9 +29,17 @@ public class EnumTest {
             System.out.println(p.getRadius());
         }
         // for (Plane p : Planet)
-
         //   System.out.printf("Your weight on %s is %f%n", p, p.surfaceWeight(getMass));
     }
 
 
+    @Test(enabled = true)
+    public void test2() {
+        Assert.assertEquals(true, false);
+    }
+
+    @Test(dependsOnMethods = {"test2"})
+    public void shouldBeSkippedTest3() {
+        Assert.assertEquals(true, true);
+    }
 }
