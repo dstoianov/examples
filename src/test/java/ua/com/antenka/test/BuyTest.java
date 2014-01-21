@@ -19,14 +19,14 @@ import java.util.concurrent.TimeUnit;
 /**
  * Created by User on 1/20/14.
  */
-public class BuyTest {
+public class BuyTest {   //buy attack
 
     Long start = null;
     WebDriver driver;
     Long stop = null;
 
     @Test
-    public void firstTest() {
+    public void buyAttackTest() {
         do {
             driver.get("http://antenka.com.ua/");
             List<WebElement> goods = driver.findElements(By.xpath(".//div[@class='topItems']"));
