@@ -1,14 +1,17 @@
 package ua.com.antenka.test.helpers;
 
+import org.testng.annotations.DataProvider;
+
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Scanner;
 
 /**
  * Created by User on 1/21/14, 11:11 PM.
  */
-public class DataProvider {
+public class DataProviders {
 
     public static void main(String[] args) throws IOException {
         //List<String> myList = scannerReader();
@@ -57,6 +60,27 @@ public class DataProvider {
         return  myList;
     }
 
+
+    @DataProvider
+    public static Iterator<Object[]> getUser() {
+        List<Object[]> list = new ArrayList<Object[]>();
+        File file = new File("./src/test/java/ua/com/antenka/test/helpers/data_Kharkiv_edited.csv.txt");
+        try {
+            BufferedReader br = new BufferedReader(new FileReader(file));
+            br.readLine(); // don't read the HEADER, skipped read header
+            String s = br.readLine();
+            while (s != null) {
+                String[] parts = s.split(",");
+                User user = new User(parts[0], parts[1], parts[2]);
+                list.add(new Object[]{user});
+                s = br.readLine();
+            }
+            br.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return list.iterator();
+    }
 
 
 }

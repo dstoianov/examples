@@ -8,9 +8,12 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+import ua.com.antenka.test.helpers.DataProviders;
+import ua.com.antenka.test.helpers.User;
 
 import java.util.List;
 import java.util.Random;
@@ -25,52 +28,47 @@ public class BuyTest {   //buy attack
     WebDriver driver;
     Long stop = null;
 
-    @Test
-    public void buyAttackTest() {
+    @Test (dataProvider = "getUser", dataProviderClass = DataProviders.class)
+    public void buyAttackTest(User user) {
         do {
             driver.get("http://antenka.com.ua/");
-            List<WebElement> goods = driver.findElements(By.xpath(".//div[@class='topItems']"));
-            goods.get(getRnd(goods.size())).click();
+            List<WebElement> menu = driver.findElements(By.xpath("//div[@class='boxIndent']//li/a/span"));
+            menu.get(getRnd(menu.size())).click();
+          } while (!isElementExist(".//*[@id='vmMainPage']//input[@class='addtocart_button']"));
 
-            //driver.findElement(By.xpath(".//input[@class='addtocart_button'][1]")).click();
-
-        } while (!isElementExist("//input[12]"));
-
-        driver.findElement(By.xpath("//input[12]")).click();
+        List<WebElement> goods = driver.findElements(By.xpath(".//*[@id='vmMainPage']//input[@class='addtocart_button']"));
+        goods.get(getRnd(goods.size())).click();
 
         driver.findElement(By.xpath(".//*[@id='enterCart']")).click();
         driver.findElement(By.xpath(".//*[@id='applyCart']")).click();
-        ////*[@id='enterCart']
 
-        driver.findElement(By.id("last_nameClient")).sendKeys("wwrwr");
-        driver.findElement(By.id("nameClient")).sendKeys("wwrwr");
+        // fill in the form
+        driver.findElement(By.id("last_nameClient")).sendKeys(user.getName());
+        driver.findElement(By.id("nameClient")).sendKeys(user.getFamilyName());
         driver.findElement(By.id("patronymic")).sendKeys("wwrwr");
 
         WebElement phone = driver.findElement(By.id("telClient"));
         phone.clear();
-        phone.sendKeys("+38(303)734-63-74");
 
-
+        String phone_ =  user.getPhone().substring(3);
+        phone.sendKeys(phone_);
 
         Select mailService = new Select(driver.findElement(By.id("courier")));
         List<WebElement> options = mailService.getOptions();
         mailService.selectByIndex(getRnd(options.size()));
 
         Select paymentMethods = new Select(driver.findElement(By.id("money")));
-        //List<WebElement> options = mailService.getOptions();
         paymentMethods.selectByIndex(getRnd(2));
-
-
 
         Select city = new Select(driver.findElement(By.id("sity")));
         List<WebElement> cityCount = city.getOptions();
         city.selectByIndex(getRnd(cityCount.size()));
 
-
-        //print("All count of options is %s ", options.size());
-
-
-
+        //Submit
+        driver.findElement(By.id("btnSendForm")).click();
+        boolean isOrdered = driver.findElement(By.xpath("//div[@class='module-featured']/h3")).getText().contains("Ваш заказ принят");
+        Assert.assertTrue(isOrdered, "Item is not ordered, failed");
+        driver.manage().deleteAllCookies();
     }
 
     private boolean isElementExist(String xpath) {
