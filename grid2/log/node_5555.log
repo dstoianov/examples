@@ -1,0 +1,472 @@
+Log file for Node 5555 
+12:03:51.300 INFO [10] org.openqa.grid.selenium.GridLauncher - Launching a selenium grid node
+12:03:52.022 INFO [10] org.openqa.selenium.server.SeleniumServer - Writing debug logs to log\node_5555.log
+12:03:52.022 INFO [10] org.openqa.selenium.server.SeleniumServer - Java: Sun Microsystems Inc. 20.45-b01
+12:03:52.023 INFO [10] org.openqa.selenium.server.SeleniumServer - OS: Windows 7 6.1 amd64
+12:03:52.031 INFO [10] org.openqa.selenium.server.SeleniumServer - v2.41.0, with Core v2.41.0. Built from revision 3192d8a
+12:03:52.151 INFO [10] org.openqa.selenium.server.SeleniumServer - RemoteWebDriver instances should connect to: http://127.0.0.1:5555/wd/hub
+12:03:52.152 INFO [10] org.openqa.jetty.http.HttpServer - Version Jetty/5.1.x
+12:03:52.153 INFO [10] org.openqa.jetty.util.Container - Started HttpContext[/selenium-server/driver,/selenium-server/driver]
+12:03:52.154 INFO [10] org.openqa.jetty.util.Container - Started HttpContext[/selenium-server,/selenium-server]
+12:03:52.154 INFO [10] org.openqa.jetty.util.Container - Started HttpContext[/,/]
+12:03:52.156 INFO [10] org.openqa.jetty.util.Container - Started org.openqa.jetty.jetty.servlet.ServletHandler@7c65216
+12:03:52.156 INFO [10] org.openqa.jetty.util.Container - Started HttpContext[/wd,/wd]
+12:03:52.162 INFO [10] org.openqa.jetty.http.SocketListener - Started SocketListener on 0.0.0.0:5555
+12:03:52.162 INFO [10] org.openqa.jetty.util.Container - Started org.openqa.jetty.jetty.Server@97494c8
+12:03:52.182 INFO [10] org.openqa.grid.internal.utils.SelfRegisteringRemote - using the json request : {"class":"org.openqa.grid.common.RegistrationRequest","capabilities":[{"platform":"VISTA","seleniumProtocol":"WebDriver","browserName":"firefox","maxInstances":2},{"platform":"VISTA","seleniumProtocol":"WebDriver","browserName":"chrome","maxInstances":2},{"platform":"VISTA","seleniumProtocol":"WebDriver","browserName":"internet explorer","maxInstances":1}],"configuration":{"port":5555,"nodeConfig":"node_5555.json","host":"14.67.204.101","hubHost":"127.0.0.1","registerCycle":5000,"log":"log\\node_5555.log","url":"http://14.67.204.101:5555","remoteHost":"http://14.67.204.101:5555","register":true,"proxy":"org.openqa.grid.selenium.proxy.DefaultRemoteProxy","maxSession":5,"role":"node","Dwebdriver.chrome.driver=chromedriver.exe":"","Dwebdriver.ie.driver=IEDriverServer.exe":"","hubPort":4444}}
+12:03:52.183 INFO [11] org.openqa.grid.internal.utils.SelfRegisteringRemote - Starting auto register thread. Will try to register every 5000 ms.
+12:03:52.183 INFO [11] org.openqa.grid.internal.utils.SelfRegisteringRemote - Registering the node to hub :http://127.0.0.1:4444/grid/register
+12:08:20.927 INFO [12] org.openqa.selenium.remote.server.DriverServlet - Executing: [new session: Capabilities [{browserName=chrome}]] at URL: /session)
+12:08:20.941 INFO [13] org.openqa.selenium.remote.server.DriverServlet - Executing: [new session: Capabilities [{browserName=firefox}]] at URL: /session)
+12:08:20.945 INFO [14] org.openqa.selenium.remote.server.DriverServlet - Executing: [new session: Capabilities [{browserName=internet explorer}]] at URL: /session)
+12:08:20.986 INFO [15] org.openqa.selenium.remote.server.DefaultDriverFactory - Creating a new session for Capabilities [{browserName=chrome}]
+12:08:20.996 INFO [16] org.openqa.selenium.remote.server.DefaultDriverFactory - Creating a new session for Capabilities [{browserName=firefox}]
+12:08:21.002 INFO [17] org.openqa.selenium.remote.server.DefaultDriverFactory - Creating a new session for Capabilities [{browserName=internet explorer}]
+12:08:28.281 INFO [12] org.openqa.selenium.remote.server.DriverServlet - Done: /session
+12:08:28.767 INFO [12] org.openqa.selenium.remote.server.DriverServlet - Executing: [get: http://www.google.com] at URL: /session/4823dac2-026e-472e-b219-d4ec0b4731d4/url)
+12:08:34.380 INFO [12] org.openqa.selenium.remote.server.DriverServlet - Done: /session/4823dac2-026e-472e-b219-d4ec0b4731d4/url
+12:08:34.415 INFO [12] org.openqa.selenium.remote.server.DriverServlet - Executing: [get title] at URL: /session/4823dac2-026e-472e-b219-d4ec0b4731d4/title)
+12:08:34.421 INFO [17] org.apache.http.impl.client.DefaultHttpClient - I/O exception (java.net.SocketException) caught when processing request: Software caused connection abort: recv failed
+12:08:34.421 INFO [17] org.apache.http.impl.client.DefaultHttpClient - Retrying request
+12:08:34.454 INFO [14] org.openqa.selenium.remote.server.DriverServlet - Done: /session
+12:08:34.473 INFO [12] org.openqa.selenium.remote.server.DriverServlet - Done: /session/4823dac2-026e-472e-b219-d4ec0b4731d4/title
+12:08:34.479 INFO [14] org.openqa.selenium.remote.server.DriverServlet - Executing: [get: http://www.google.com] at URL: /session/c5c5cca0-03b7-4db4-8d06-7f13d6cad3e1/url)
+12:08:34.486 INFO [12] org.openqa.selenium.remote.server.DriverServlet - Executing: [get title] at URL: /session/4823dac2-026e-472e-b219-d4ec0b4731d4/title)
+12:08:34.503 INFO [12] org.openqa.selenium.remote.server.DriverServlet - Done: /session/4823dac2-026e-472e-b219-d4ec0b4731d4/title
+12:08:34.536 INFO [12] org.openqa.selenium.remote.server.DriverServlet - Executing: [find element: By.name: q] at URL: /session/4823dac2-026e-472e-b219-d4ec0b4731d4/element)
+12:08:34.585 INFO [12] org.openqa.selenium.remote.server.DriverServlet - Done: /session/4823dac2-026e-472e-b219-d4ec0b4731d4/element
+12:08:34.630 INFO [12] org.openqa.selenium.remote.server.DriverServlet - Executing: [send keys: 0 [[ChromeDriver: chrome on XP (0ba08ad820c8479b914ad86d22e3f6c0)] -> name: q], [Browser Stack]] at URL: /session/4823dac2-026e-472e-b219-d4ec0b4731d4/element/0/value)
+12:08:36.696 INFO [12] org.openqa.selenium.remote.server.DriverServlet - Done: /session/4823dac2-026e-472e-b219-d4ec0b4731d4/element/0/value
+12:08:36.705 INFO [12] org.openqa.selenium.remote.server.DriverServlet - Executing: [submit: 0 [[ChromeDriver: chrome on XP (0ba08ad820c8479b914ad86d22e3f6c0)] -> name: q]] at URL: /session/4823dac2-026e-472e-b219-d4ec0b4731d4/element/0/submit)
+12:08:36.745 INFO [12] org.openqa.selenium.remote.server.DriverServlet - Done: /session/4823dac2-026e-472e-b219-d4ec0b4731d4/element/0/submit
+12:08:37.797 INFO [12] org.openqa.selenium.remote.server.DriverServlet - Executing: [take screenshot] at URL: /session/4823dac2-026e-472e-b219-d4ec0b4731d4/screenshot)
+12:08:38.394 INFO [12] org.openqa.selenium.remote.server.DriverServlet - Done: /session/4823dac2-026e-472e-b219-d4ec0b4731d4/screenshot
+12:08:38.788 INFO [12] org.openqa.selenium.remote.server.DriverServlet - Executing: [delete session: 4823dac2-026e-472e-b219-d4ec0b4731d4] at URL: /session/4823dac2-026e-472e-b219-d4ec0b4731d4)
+12:08:40.314 INFO [12] org.openqa.selenium.remote.server.DriverServlet - Done: /session/4823dac2-026e-472e-b219-d4ec0b4731d4
+12:08:42.468 INFO [13] org.openqa.selenium.remote.server.DriverServlet - Done: /session
+12:08:42.498 INFO [13] org.openqa.selenium.remote.server.DriverServlet - Executing: [get: http://www.google.com] at URL: /session/12b691c5-9fc4-4046-91ef-3dd9ca33f41b/url)
+12:08:46.582 INFO [13] org.openqa.selenium.remote.server.DriverServlet - Done: /session/12b691c5-9fc4-4046-91ef-3dd9ca33f41b/url
+12:08:46.600 INFO [13] org.openqa.selenium.remote.server.DriverServlet - Executing: [get title] at URL: /session/12b691c5-9fc4-4046-91ef-3dd9ca33f41b/title)
+12:08:46.622 INFO [13] org.openqa.selenium.remote.server.DriverServlet - Done: /session/12b691c5-9fc4-4046-91ef-3dd9ca33f41b/title
+12:08:46.638 INFO [13] org.openqa.selenium.remote.server.DriverServlet - Executing: [get title] at URL: /session/12b691c5-9fc4-4046-91ef-3dd9ca33f41b/title)
+12:08:46.679 INFO [13] org.openqa.selenium.remote.server.DriverServlet - Done: /session/12b691c5-9fc4-4046-91ef-3dd9ca33f41b/title
+12:08:46.698 INFO [13] org.openqa.selenium.remote.server.DriverServlet - Executing: [find element: By.name: q] at URL: /session/12b691c5-9fc4-4046-91ef-3dd9ca33f41b/element)
+12:08:46.784 INFO [13] org.openqa.selenium.remote.server.DriverServlet - Done: /session/12b691c5-9fc4-4046-91ef-3dd9ca33f41b/element
+12:08:46.795 INFO [13] org.openqa.selenium.remote.server.DriverServlet - Executing: [send keys: 0 [[FirefoxDriver: firefox on XP (de9f81e9-ad9b-4084-aea9-a72dd0b97540)] -> name: q], [Browser Stack]] at URL: /session/12b691c5-9fc4-4046-91ef-3dd9ca33f41b/element/0/value)
+12:08:47.353 INFO [13] org.openqa.selenium.remote.server.DriverServlet - Done: /session/12b691c5-9fc4-4046-91ef-3dd9ca33f41b/element/0/value
+12:08:47.372 INFO [13] org.openqa.selenium.remote.server.DriverServlet - Executing: [submit: 0 [[FirefoxDriver: firefox on XP (de9f81e9-ad9b-4084-aea9-a72dd0b97540)] -> name: q]] at URL: /session/12b691c5-9fc4-4046-91ef-3dd9ca33f41b/element/0/submit)
+12:08:47.434 INFO [13] org.openqa.selenium.remote.server.DriverServlet - Done: /session/12b691c5-9fc4-4046-91ef-3dd9ca33f41b/element/0/submit
+12:08:47.550 INFO [13] org.openqa.selenium.remote.server.DriverServlet - Executing: [take screenshot] at URL: /session/12b691c5-9fc4-4046-91ef-3dd9ca33f41b/screenshot)
+12:08:48.504 INFO [13] org.openqa.selenium.remote.server.DriverServlet - Done: /session/12b691c5-9fc4-4046-91ef-3dd9ca33f41b/screenshot
+12:08:48.565 INFO [13] org.openqa.selenium.remote.server.DriverServlet - Executing: [delete session: 12b691c5-9fc4-4046-91ef-3dd9ca33f41b] at URL: /session/12b691c5-9fc4-4046-91ef-3dd9ca33f41b)
+12:08:48.995 INFO [13] org.openqa.selenium.remote.server.DriverServlet - Done: /session/12b691c5-9fc4-4046-91ef-3dd9ca33f41b
+12:08:49.410 INFO [14] org.openqa.selenium.remote.server.DriverServlet - Done: /session/c5c5cca0-03b7-4db4-8d06-7f13d6cad3e1/url
+12:08:49.418 INFO [14] org.openqa.selenium.remote.server.DriverServlet - Executing: [get title] at URL: /session/c5c5cca0-03b7-4db4-8d06-7f13d6cad3e1/title)
+12:08:49.448 INFO [14] org.openqa.selenium.remote.server.DriverServlet - Done: /session/c5c5cca0-03b7-4db4-8d06-7f13d6cad3e1/title
+12:08:49.458 INFO [14] org.openqa.selenium.remote.server.DriverServlet - Executing: [get title] at URL: /session/c5c5cca0-03b7-4db4-8d06-7f13d6cad3e1/title)
+12:08:49.523 INFO [14] org.openqa.selenium.remote.server.DriverServlet - Done: /session/c5c5cca0-03b7-4db4-8d06-7f13d6cad3e1/title
+12:08:49.532 INFO [14] org.openqa.selenium.remote.server.DriverServlet - Executing: [find element: By.name: q] at URL: /session/c5c5cca0-03b7-4db4-8d06-7f13d6cad3e1/element)
+12:08:49.830 INFO [14] org.openqa.selenium.remote.server.DriverServlet - Done: /session/c5c5cca0-03b7-4db4-8d06-7f13d6cad3e1/element
+12:08:49.880 INFO [14] org.openqa.selenium.remote.server.DriverServlet - Executing: [send keys: 0 [[InternetExplorerDriver: internet explorer on WINDOWS (7ab633a4-57e1-4c91-9d1f-43dc0a9617b2)] -> name: q], [Browser Stack]] at URL: /session/c5c5cca0-03b7-4db4-8d06-7f13d6cad3e1/element/0/value)
+12:08:51.375 INFO [14] org.openqa.selenium.remote.server.DriverServlet - Done: /session/c5c5cca0-03b7-4db4-8d06-7f13d6cad3e1/element/0/value
+12:08:51.384 INFO [14] org.openqa.selenium.remote.server.DriverServlet - Executing: [submit: 0 [[InternetExplorerDriver: internet explorer on WINDOWS (7ab633a4-57e1-4c91-9d1f-43dc0a9617b2)] -> name: q]] at URL: /session/c5c5cca0-03b7-4db4-8d06-7f13d6cad3e1/element/0/submit)
+12:08:55.875 INFO [14] org.openqa.selenium.remote.server.DriverServlet - Done: /session/c5c5cca0-03b7-4db4-8d06-7f13d6cad3e1/element/0/submit
+12:08:55.942 INFO [14] org.openqa.selenium.remote.server.DriverServlet - Executing: [take screenshot] at URL: /session/c5c5cca0-03b7-4db4-8d06-7f13d6cad3e1/screenshot)
+12:08:56.536 INFO [14] org.openqa.selenium.remote.server.DriverServlet - Done: /session/c5c5cca0-03b7-4db4-8d06-7f13d6cad3e1/screenshot
+12:08:56.586 INFO [14] org.openqa.selenium.remote.server.DriverServlet - Executing: [delete session: c5c5cca0-03b7-4db4-8d06-7f13d6cad3e1] at URL: /session/c5c5cca0-03b7-4db4-8d06-7f13d6cad3e1)
+12:08:57.812 INFO [14] org.openqa.selenium.remote.server.DriverServlet - Done: /session/c5c5cca0-03b7-4db4-8d06-7f13d6cad3e1
+12:10:03.692 INFO [14] org.openqa.selenium.remote.server.DriverServlet - Executing: [new session: Capabilities [{browserName=firefox}]] at URL: /session)
+12:10:03.700 INFO [12] org.openqa.selenium.remote.server.DriverServlet - Executing: [new session: Capabilities [{browserName=internet explorer}]] at URL: /session)
+12:10:03.702 INFO [18] org.openqa.selenium.remote.server.DefaultDriverFactory - Creating a new session for Capabilities [{browserName=firefox}]
+12:10:03.756 INFO [19] org.openqa.selenium.remote.server.DefaultDriverFactory - Creating a new session for Capabilities [{browserName=internet explorer}]
+12:10:03.765 INFO [20] org.openqa.selenium.remote.server.DriverServlet - Executing: [new session: Capabilities [{browserName=chrome}]] at URL: /session)
+12:10:03.845 INFO [21] org.openqa.selenium.remote.server.DefaultDriverFactory - Creating a new session for Capabilities [{browserName=chrome}]
+12:10:08.348 INFO [20] org.openqa.selenium.remote.server.DriverServlet - Done: /session
+12:10:08.956 INFO [20] org.openqa.selenium.remote.server.DriverServlet - Executing: [get: http://www.google.com] at URL: /session/f575b8ad-d2db-45fd-a1db-76599166c161/url)
+12:10:11.106 INFO [19] org.apache.http.impl.client.DefaultHttpClient - I/O exception (java.net.SocketException) caught when processing request: Software caused connection abort: recv failed
+12:10:11.106 INFO [19] org.apache.http.impl.client.DefaultHttpClient - Retrying request
+12:10:11.134 INFO [12] org.openqa.selenium.remote.server.DriverServlet - Done: /session
+12:10:11.149 INFO [12] org.openqa.selenium.remote.server.DriverServlet - Executing: [get: http://www.google.com] at URL: /session/73d9f2fa-f6c1-44a1-a31c-d1efc525fa36/url)
+12:10:13.664 INFO [12] org.openqa.selenium.remote.server.DriverServlet - Done: /session/73d9f2fa-f6c1-44a1-a31c-d1efc525fa36/url
+12:10:13.686 INFO [12] org.openqa.selenium.remote.server.DriverServlet - Executing: [get title] at URL: /session/73d9f2fa-f6c1-44a1-a31c-d1efc525fa36/title)
+12:10:13.871 INFO [12] org.openqa.selenium.remote.server.DriverServlet - Done: /session/73d9f2fa-f6c1-44a1-a31c-d1efc525fa36/title
+12:10:13.907 INFO [12] org.openqa.selenium.remote.server.DriverServlet - Executing: [get title] at URL: /session/73d9f2fa-f6c1-44a1-a31c-d1efc525fa36/title)
+12:10:14.055 INFO [12] org.openqa.selenium.remote.server.DriverServlet - Done: /session/73d9f2fa-f6c1-44a1-a31c-d1efc525fa36/title
+12:10:14.111 INFO [12] org.openqa.selenium.remote.server.DriverServlet - Executing: [find element: By.name: q] at URL: /session/73d9f2fa-f6c1-44a1-a31c-d1efc525fa36/element)
+12:10:15.000 INFO [12] org.openqa.selenium.remote.server.DriverServlet - Done: /session/73d9f2fa-f6c1-44a1-a31c-d1efc525fa36/element
+12:10:15.018 INFO [12] org.openqa.selenium.remote.server.DriverServlet - Executing: [send keys: 0 [[InternetExplorerDriver: internet explorer on WINDOWS (879a0680-84a8-4d0b-a7be-05307a0acd34)] -> name: q], [Browser Stack]] at URL: /session/73d9f2fa-f6c1-44a1-a31c-d1efc525fa36/element/0/value)
+12:10:17.782 INFO [12] org.openqa.selenium.remote.server.DriverServlet - Done: /session/73d9f2fa-f6c1-44a1-a31c-d1efc525fa36/element/0/value
+12:10:17.792 INFO [12] org.openqa.selenium.remote.server.DriverServlet - Executing: [submit: 0 [[InternetExplorerDriver: internet explorer on WINDOWS (879a0680-84a8-4d0b-a7be-05307a0acd34)] -> name: q]] at URL: /session/73d9f2fa-f6c1-44a1-a31c-d1efc525fa36/element/0/submit)
+12:10:19.420 INFO [14] org.openqa.selenium.remote.server.DriverServlet - Done: /session
+12:10:19.462 INFO [14] org.openqa.selenium.remote.server.DriverServlet - Executing: [get: http://www.google.com] at URL: /session/b52770f3-fa86-4913-a7fd-6b5422a18aa2/url)
+12:10:23.707 INFO [14] org.openqa.selenium.remote.server.DriverServlet - Done: /session/b52770f3-fa86-4913-a7fd-6b5422a18aa2/url
+12:10:23.741 INFO [14] org.openqa.selenium.remote.server.DriverServlet - Executing: [get title] at URL: /session/b52770f3-fa86-4913-a7fd-6b5422a18aa2/title)
+12:10:23.937 INFO [14] org.openqa.selenium.remote.server.DriverServlet - Done: /session/b52770f3-fa86-4913-a7fd-6b5422a18aa2/title
+12:10:23.961 INFO [14] org.openqa.selenium.remote.server.DriverServlet - Executing: [get title] at URL: /session/b52770f3-fa86-4913-a7fd-6b5422a18aa2/title)
+12:10:23.979 INFO [14] org.openqa.selenium.remote.server.DriverServlet - Done: /session/b52770f3-fa86-4913-a7fd-6b5422a18aa2/title
+12:10:23.999 INFO [14] org.openqa.selenium.remote.server.DriverServlet - Executing: [find element: By.name: q] at URL: /session/b52770f3-fa86-4913-a7fd-6b5422a18aa2/element)
+12:10:24.069 INFO [14] org.openqa.selenium.remote.server.DriverServlet - Done: /session/b52770f3-fa86-4913-a7fd-6b5422a18aa2/element
+12:10:24.086 INFO [14] org.openqa.selenium.remote.server.DriverServlet - Executing: [send keys: 0 [[FirefoxDriver: firefox on XP (7faf4fd1-713d-49b1-9c2a-9982ca8072ef)] -> name: q], [Browser Stack]] at URL: /session/b52770f3-fa86-4913-a7fd-6b5422a18aa2/element/0/value)
+12:10:24.750 INFO [12] org.openqa.selenium.remote.server.DriverServlet - Done: /session/73d9f2fa-f6c1-44a1-a31c-d1efc525fa36/element/0/submit
+12:10:25.541 INFO [12] org.openqa.selenium.remote.server.DriverServlet - Executing: [take screenshot] at URL: /session/73d9f2fa-f6c1-44a1-a31c-d1efc525fa36/screenshot)
+12:10:26.373 INFO [12] org.openqa.selenium.remote.server.DriverServlet - Done: /session/73d9f2fa-f6c1-44a1-a31c-d1efc525fa36/screenshot
+12:10:26.654 INFO [12] org.openqa.selenium.remote.server.DriverServlet - Executing: [delete session: 73d9f2fa-f6c1-44a1-a31c-d1efc525fa36] at URL: /session/73d9f2fa-f6c1-44a1-a31c-d1efc525fa36)
+12:10:27.332 INFO [14] org.openqa.selenium.remote.server.DriverServlet - Done: /session/b52770f3-fa86-4913-a7fd-6b5422a18aa2/element/0/value
+12:10:27.346 INFO [14] org.openqa.selenium.remote.server.DriverServlet - Executing: [submit: 0 [[FirefoxDriver: firefox on XP (7faf4fd1-713d-49b1-9c2a-9982ca8072ef)] -> name: q]] at URL: /session/b52770f3-fa86-4913-a7fd-6b5422a18aa2/element/0/submit)
+12:10:27.588 INFO [14] org.openqa.selenium.remote.server.DriverServlet - Done: /session/b52770f3-fa86-4913-a7fd-6b5422a18aa2/element/0/submit
+12:10:27.744 INFO [14] org.openqa.selenium.remote.server.DriverServlet - Executing: [take screenshot] at URL: /session/b52770f3-fa86-4913-a7fd-6b5422a18aa2/screenshot)
+12:10:27.748 INFO [12] org.openqa.selenium.remote.server.DriverServlet - Done: /session/73d9f2fa-f6c1-44a1-a31c-d1efc525fa36
+12:10:28.947 INFO [14] org.openqa.selenium.remote.server.DriverServlet - Done: /session/b52770f3-fa86-4913-a7fd-6b5422a18aa2/screenshot
+12:10:29.368 INFO [14] org.openqa.selenium.remote.server.DriverServlet - Executing: [delete session: b52770f3-fa86-4913-a7fd-6b5422a18aa2] at URL: /session/b52770f3-fa86-4913-a7fd-6b5422a18aa2)
+12:10:30.145 INFO [20] org.openqa.selenium.remote.server.DriverServlet - Done: /session/f575b8ad-d2db-45fd-a1db-76599166c161/url
+12:10:30.155 INFO [20] org.openqa.selenium.remote.server.DriverServlet - Executing: [get title] at URL: /session/f575b8ad-d2db-45fd-a1db-76599166c161/title)
+12:10:30.163 INFO [20] org.openqa.selenium.remote.server.DriverServlet - Done: /session/f575b8ad-d2db-45fd-a1db-76599166c161/title
+12:10:30.175 INFO [20] org.openqa.selenium.remote.server.DriverServlet - Executing: [get title] at URL: /session/f575b8ad-d2db-45fd-a1db-76599166c161/title)
+12:10:30.190 INFO [20] org.openqa.selenium.remote.server.DriverServlet - Done: /session/f575b8ad-d2db-45fd-a1db-76599166c161/title
+12:10:30.204 INFO [20] org.openqa.selenium.remote.server.DriverServlet - Executing: [find element: By.name: q] at URL: /session/f575b8ad-d2db-45fd-a1db-76599166c161/element)
+12:10:30.248 INFO [20] org.openqa.selenium.remote.server.DriverServlet - Done: /session/f575b8ad-d2db-45fd-a1db-76599166c161/element
+12:10:30.279 INFO [20] org.openqa.selenium.remote.server.DriverServlet - Executing: [send keys: 0 [[ChromeDriver: chrome on XP (7d87615fad7fe6830f7d56d7e8aa6459)] -> name: q], [Browser Stack]] at URL: /session/f575b8ad-d2db-45fd-a1db-76599166c161/element/0/value)
+12:10:30.988 INFO [20] org.openqa.selenium.remote.server.DriverServlet - Done: /session/f575b8ad-d2db-45fd-a1db-76599166c161/element/0/value
+12:10:30.997 INFO [20] org.openqa.selenium.remote.server.DriverServlet - Executing: [submit: 0 [[ChromeDriver: chrome on XP (7d87615fad7fe6830f7d56d7e8aa6459)] -> name: q]] at URL: /session/f575b8ad-d2db-45fd-a1db-76599166c161/element/0/submit)
+12:10:31.024 INFO [20] org.openqa.selenium.remote.server.DriverServlet - Done: /session/f575b8ad-d2db-45fd-a1db-76599166c161/element/0/submit
+12:10:31.086 INFO [20] org.openqa.selenium.remote.server.DriverServlet - Executing: [take screenshot] at URL: /session/f575b8ad-d2db-45fd-a1db-76599166c161/screenshot)
+12:10:31.312 INFO [20] org.openqa.selenium.remote.server.DriverServlet - Done: /session/f575b8ad-d2db-45fd-a1db-76599166c161/screenshot
+12:10:31.334 INFO [20] org.openqa.selenium.remote.server.DriverServlet - Executing: [delete session: f575b8ad-d2db-45fd-a1db-76599166c161] at URL: /session/f575b8ad-d2db-45fd-a1db-76599166c161)
+12:10:31.448 INFO [18] org.openqa.selenium.os.UnixProcess - Command failed to close cleanly. Destroying forcefully (v2). org.openqa.selenium.os.UnixProcess$SeleniumWatchDog@6e7616ad
+12:10:33.097 INFO [14] org.openqa.selenium.remote.server.DriverServlet - Done: /session/b52770f3-fa86-4913-a7fd-6b5422a18aa2
+12:10:33.375 INFO [20] org.openqa.selenium.remote.server.DriverServlet - Done: /session/f575b8ad-d2db-45fd-a1db-76599166c161
+13:09:44.807 INFO [20] org.openqa.selenium.remote.server.DriverServlet - Executing: [new session: Capabilities [{browserName=chrome}]] at URL: /session)
+13:09:44.812 INFO [22] org.openqa.selenium.remote.server.DriverServlet - Executing: [new session: Capabilities [{browserName=chrome}]] at URL: /session)
+13:09:44.813 INFO [23] org.openqa.selenium.remote.server.DefaultDriverFactory - Creating a new session for Capabilities [{browserName=chrome}]
+13:09:44.823 INFO [24] org.openqa.selenium.remote.server.DefaultDriverFactory - Creating a new session for Capabilities [{browserName=chrome}]
+13:09:49.699 INFO [20] org.openqa.selenium.remote.server.DriverServlet - Done: /session
+13:09:49.805 INFO [20] org.openqa.selenium.remote.server.DriverServlet - Executing: [get: http://www.google.com] at URL: /session/f2d69d22-442e-45c0-945e-64656f5aa40f/url)
+13:09:51.171 INFO [22] org.openqa.selenium.remote.server.DriverServlet - Done: /session
+13:09:51.389 INFO [22] org.openqa.selenium.remote.server.DriverServlet - Executing: [get: http://www.google.com] at URL: /session/5ebc4596-c917-450d-b581-f59bdc8d8040/url)
+13:09:54.562 INFO [20] org.openqa.selenium.remote.server.DriverServlet - Done: /session/f2d69d22-442e-45c0-945e-64656f5aa40f/url
+13:09:54.573 INFO [20] org.openqa.selenium.remote.server.DriverServlet - Executing: [get title] at URL: /session/f2d69d22-442e-45c0-945e-64656f5aa40f/title)
+13:09:54.886 INFO [20] org.openqa.selenium.remote.server.DriverServlet - Done: /session/f2d69d22-442e-45c0-945e-64656f5aa40f/title
+13:09:54.897 INFO [20] org.openqa.selenium.remote.server.DriverServlet - Executing: [get title] at URL: /session/f2d69d22-442e-45c0-945e-64656f5aa40f/title)
+13:09:55.180 INFO [20] org.openqa.selenium.remote.server.DriverServlet - Done: /session/f2d69d22-442e-45c0-945e-64656f5aa40f/title
+13:09:55.201 INFO [20] org.openqa.selenium.remote.server.DriverServlet - Executing: [find element: By.name: q] at URL: /session/f2d69d22-442e-45c0-945e-64656f5aa40f/element)
+13:09:55.244 INFO [20] org.openqa.selenium.remote.server.DriverServlet - Done: /session/f2d69d22-442e-45c0-945e-64656f5aa40f/element
+13:09:55.263 INFO [20] org.openqa.selenium.remote.server.DriverServlet - Executing: [send keys: 0 [[ChromeDriver: chrome on XP (6c0b79599fcf701e02c0ed6456aa5208)] -> name: q], [Browser Stack]] at URL: /session/f2d69d22-442e-45c0-945e-64656f5aa40f/element/0/value)
+13:09:55.710 INFO [22] org.openqa.selenium.remote.server.DriverServlet - Done: /session/5ebc4596-c917-450d-b581-f59bdc8d8040/url
+13:09:55.724 INFO [22] org.openqa.selenium.remote.server.DriverServlet - Executing: [get title] at URL: /session/5ebc4596-c917-450d-b581-f59bdc8d8040/title)
+13:09:55.774 INFO [22] org.openqa.selenium.remote.server.DriverServlet - Done: /session/5ebc4596-c917-450d-b581-f59bdc8d8040/title
+13:09:55.783 INFO [22] org.openqa.selenium.remote.server.DriverServlet - Executing: [get title] at URL: /session/5ebc4596-c917-450d-b581-f59bdc8d8040/title)
+13:09:55.887 INFO [22] org.openqa.selenium.remote.server.DriverServlet - Done: /session/5ebc4596-c917-450d-b581-f59bdc8d8040/title
+13:09:55.896 INFO [22] org.openqa.selenium.remote.server.DriverServlet - Executing: [find element: By.name: q] at URL: /session/5ebc4596-c917-450d-b581-f59bdc8d8040/element)
+13:09:56.002 INFO [22] org.openqa.selenium.remote.server.DriverServlet - Done: /session/5ebc4596-c917-450d-b581-f59bdc8d8040/element
+13:09:56.012 INFO [22] org.openqa.selenium.remote.server.DriverServlet - Executing: [send keys: 0 [[ChromeDriver: chrome on XP (21b2a5c6dae96b45cc8b529a14c04ad6)] -> name: q], [Browser Stack]] at URL: /session/5ebc4596-c917-450d-b581-f59bdc8d8040/element/0/value)
+13:09:56.060 INFO [20] org.openqa.selenium.remote.server.DriverServlet - Done: /session/f2d69d22-442e-45c0-945e-64656f5aa40f/element/0/value
+13:09:56.070 INFO [20] org.openqa.selenium.remote.server.DriverServlet - Executing: [submit: 0 [[ChromeDriver: chrome on XP (6c0b79599fcf701e02c0ed6456aa5208)] -> name: q]] at URL: /session/f2d69d22-442e-45c0-945e-64656f5aa40f/element/0/submit)
+13:09:56.167 INFO [20] org.openqa.selenium.remote.server.DriverServlet - Done: /session/f2d69d22-442e-45c0-945e-64656f5aa40f/element/0/submit
+13:09:56.853 INFO [20] org.openqa.selenium.remote.server.DriverServlet - Executing: [take screenshot] at URL: /session/f2d69d22-442e-45c0-945e-64656f5aa40f/screenshot)
+13:09:57.442 INFO [20] org.openqa.selenium.remote.server.DriverServlet - Done: /session/f2d69d22-442e-45c0-945e-64656f5aa40f/screenshot
+13:09:57.629 INFO [20] org.openqa.selenium.remote.server.DriverServlet - Executing: [delete session: f2d69d22-442e-45c0-945e-64656f5aa40f] at URL: /session/f2d69d22-442e-45c0-945e-64656f5aa40f)
+13:09:58.470 INFO [22] org.openqa.selenium.remote.server.DriverServlet - Done: /session/5ebc4596-c917-450d-b581-f59bdc8d8040/element/0/value
+13:09:58.478 INFO [22] org.openqa.selenium.remote.server.DriverServlet - Executing: [submit: 0 [[ChromeDriver: chrome on XP (21b2a5c6dae96b45cc8b529a14c04ad6)] -> name: q]] at URL: /session/5ebc4596-c917-450d-b581-f59bdc8d8040/element/0/submit)
+13:09:58.663 INFO [22] org.openqa.selenium.remote.server.DriverServlet - Done: /session/5ebc4596-c917-450d-b581-f59bdc8d8040/element/0/submit
+13:09:58.673 INFO [22] org.openqa.selenium.remote.server.DriverServlet - Executing: [take screenshot] at URL: /session/5ebc4596-c917-450d-b581-f59bdc8d8040/screenshot)
+13:09:59.211 INFO [22] org.openqa.selenium.remote.server.DriverServlet - Done: /session/5ebc4596-c917-450d-b581-f59bdc8d8040/screenshot
+13:09:59.271 INFO [22] org.openqa.selenium.remote.server.DriverServlet - Executing: [delete session: 5ebc4596-c917-450d-b581-f59bdc8d8040] at URL: /session/5ebc4596-c917-450d-b581-f59bdc8d8040)
+13:09:59.357 INFO [20] org.openqa.selenium.remote.server.DriverServlet - Done: /session/f2d69d22-442e-45c0-945e-64656f5aa40f
+13:09:59.647 INFO [25] org.openqa.selenium.remote.server.DriverServlet - Executing: [new session: Capabilities [{browserName=chrome}]] at URL: /session)
+13:09:59.683 INFO [26] org.openqa.selenium.remote.server.DefaultDriverFactory - Creating a new session for Capabilities [{browserName=chrome}]
+13:10:00.967 INFO [22] org.openqa.selenium.remote.server.DriverServlet - Done: /session/5ebc4596-c917-450d-b581-f59bdc8d8040
+13:10:02.628 INFO [25] org.openqa.selenium.remote.server.DriverServlet - Done: /session
+13:10:03.027 INFO [25] org.openqa.selenium.remote.server.DriverServlet - Executing: [get: http://www.google.com] at URL: /session/e1290fb1-98e7-463d-a895-f72f47b9555d/url)
+13:10:05.972 INFO [25] org.openqa.selenium.remote.server.DriverServlet - Done: /session/e1290fb1-98e7-463d-a895-f72f47b9555d/url
+13:10:05.984 INFO [25] org.openqa.selenium.remote.server.DriverServlet - Executing: [get title] at URL: /session/e1290fb1-98e7-463d-a895-f72f47b9555d/title)
+13:10:05.997 INFO [25] org.openqa.selenium.remote.server.DriverServlet - Done: /session/e1290fb1-98e7-463d-a895-f72f47b9555d/title
+13:10:06.006 INFO [25] org.openqa.selenium.remote.server.DriverServlet - Executing: [get title] at URL: /session/e1290fb1-98e7-463d-a895-f72f47b9555d/title)
+13:10:06.012 INFO [25] org.openqa.selenium.remote.server.DriverServlet - Done: /session/e1290fb1-98e7-463d-a895-f72f47b9555d/title
+13:10:06.023 INFO [25] org.openqa.selenium.remote.server.DriverServlet - Executing: [find element: By.name: q] at URL: /session/e1290fb1-98e7-463d-a895-f72f47b9555d/element)
+13:10:06.051 INFO [25] org.openqa.selenium.remote.server.DriverServlet - Done: /session/e1290fb1-98e7-463d-a895-f72f47b9555d/element
+13:10:06.101 INFO [25] org.openqa.selenium.remote.server.DriverServlet - Executing: [send keys: 0 [[ChromeDriver: chrome on XP (b50b0f3dcc020f0b09f4f2883d726d4c)] -> name: q], [Browser Stack]] at URL: /session/e1290fb1-98e7-463d-a895-f72f47b9555d/element/0/value)
+13:10:06.626 INFO [25] org.openqa.selenium.remote.server.DriverServlet - Done: /session/e1290fb1-98e7-463d-a895-f72f47b9555d/element/0/value
+13:10:06.636 INFO [25] org.openqa.selenium.remote.server.DriverServlet - Executing: [submit: 0 [[ChromeDriver: chrome on XP (b50b0f3dcc020f0b09f4f2883d726d4c)] -> name: q]] at URL: /session/e1290fb1-98e7-463d-a895-f72f47b9555d/element/0/submit)
+13:10:06.686 INFO [25] org.openqa.selenium.remote.server.DriverServlet - Done: /session/e1290fb1-98e7-463d-a895-f72f47b9555d/element/0/submit
+13:10:06.695 INFO [25] org.openqa.selenium.remote.server.DriverServlet - Executing: [take screenshot] at URL: /session/e1290fb1-98e7-463d-a895-f72f47b9555d/screenshot)
+13:10:07.296 INFO [25] org.openqa.selenium.remote.server.DriverServlet - Done: /session/e1290fb1-98e7-463d-a895-f72f47b9555d/screenshot
+13:10:07.321 INFO [25] org.openqa.selenium.remote.server.DriverServlet - Executing: [delete session: e1290fb1-98e7-463d-a895-f72f47b9555d] at URL: /session/e1290fb1-98e7-463d-a895-f72f47b9555d)
+13:10:08.957 INFO [25] org.openqa.selenium.remote.server.DriverServlet - Done: /session/e1290fb1-98e7-463d-a895-f72f47b9555d
+13:10:50.411 INFO [25] org.openqa.selenium.remote.server.DriverServlet - Executing: [new session: Capabilities [{browserName=firefox}]] at URL: /session)
+13:10:50.423 INFO [22] org.openqa.selenium.remote.server.DriverServlet - Executing: [new session: Capabilities [{browserName=internet explorer}]] at URL: /session)
+13:10:50.425 INFO [27] org.openqa.selenium.remote.server.DefaultDriverFactory - Creating a new session for Capabilities [{browserName=firefox}]
+13:10:50.441 INFO [20] org.openqa.selenium.remote.server.DriverServlet - Executing: [new session: Capabilities [{browserName=chrome}]] at URL: /session)
+13:10:50.441 INFO [28] org.openqa.selenium.remote.server.DefaultDriverFactory - Creating a new session for Capabilities [{browserName=internet explorer}]
+13:10:50.496 INFO [29] org.openqa.selenium.remote.server.DefaultDriverFactory - Creating a new session for Capabilities [{browserName=chrome}]
+13:10:55.465 INFO [20] org.openqa.selenium.remote.server.DriverServlet - Done: /session
+13:10:55.571 INFO [20] org.openqa.selenium.remote.server.DriverServlet - Executing: [get: http://www.google.com] at URL: /session/fbae1a2c-e0ef-42e3-b389-60db12e77727/url)
+13:10:58.088 INFO [28] org.apache.http.impl.client.DefaultHttpClient - I/O exception (java.net.SocketException) caught when processing request: Software caused connection abort: recv failed
+13:10:58.088 INFO [28] org.apache.http.impl.client.DefaultHttpClient - Retrying request
+13:10:58.104 INFO [22] org.openqa.selenium.remote.server.DriverServlet - Done: /session
+13:10:58.126 INFO [22] org.openqa.selenium.remote.server.DriverServlet - Executing: [get: http://www.google.com] at URL: /session/6bc90383-6bc9-4947-9e8a-64fd25060bb0/url)
+13:11:04.342 INFO [25] org.openqa.selenium.remote.server.DriverServlet - Done: /session
+13:11:04.362 INFO [25] org.openqa.selenium.remote.server.DriverServlet - Executing: [get: http://www.google.com] at URL: /session/668893fa-1d0c-47db-8c57-ed7e8f5fd078/url)
+13:11:08.391 INFO [25] org.openqa.selenium.remote.server.DriverServlet - Done: /session/668893fa-1d0c-47db-8c57-ed7e8f5fd078/url
+13:11:08.406 INFO [25] org.openqa.selenium.remote.server.DriverServlet - Executing: [get title] at URL: /session/668893fa-1d0c-47db-8c57-ed7e8f5fd078/title)
+13:11:08.578 INFO [25] org.openqa.selenium.remote.server.DriverServlet - Done: /session/668893fa-1d0c-47db-8c57-ed7e8f5fd078/title
+13:11:08.592 INFO [25] org.openqa.selenium.remote.server.DriverServlet - Executing: [get title] at URL: /session/668893fa-1d0c-47db-8c57-ed7e8f5fd078/title)
+13:11:08.614 INFO [25] org.openqa.selenium.remote.server.DriverServlet - Done: /session/668893fa-1d0c-47db-8c57-ed7e8f5fd078/title
+13:11:08.635 INFO [25] org.openqa.selenium.remote.server.DriverServlet - Executing: [find element: By.name: q] at URL: /session/668893fa-1d0c-47db-8c57-ed7e8f5fd078/element)
+13:11:08.862 INFO [25] org.openqa.selenium.remote.server.DriverServlet - Done: /session/668893fa-1d0c-47db-8c57-ed7e8f5fd078/element
+13:11:08.880 INFO [25] org.openqa.selenium.remote.server.DriverServlet - Executing: [send keys: 0 [[FirefoxDriver: firefox on XP (85b0730c-678e-4a2d-925a-add31732975c)] -> name: q], [Browser Stack]] at URL: /session/668893fa-1d0c-47db-8c57-ed7e8f5fd078/element/0/value)
+13:11:09.986 INFO [25] org.openqa.selenium.remote.server.DriverServlet - Done: /session/668893fa-1d0c-47db-8c57-ed7e8f5fd078/element/0/value
+13:11:10.014 INFO [25] org.openqa.selenium.remote.server.DriverServlet - Executing: [submit: 0 [[FirefoxDriver: firefox on XP (85b0730c-678e-4a2d-925a-add31732975c)] -> name: q]] at URL: /session/668893fa-1d0c-47db-8c57-ed7e8f5fd078/element/0/submit)
+13:11:10.069 INFO [25] org.openqa.selenium.remote.server.DriverServlet - Done: /session/668893fa-1d0c-47db-8c57-ed7e8f5fd078/element/0/submit
+13:11:10.873 INFO [25] org.openqa.selenium.remote.server.DriverServlet - Executing: [take screenshot] at URL: /session/668893fa-1d0c-47db-8c57-ed7e8f5fd078/screenshot)
+13:11:11.656 INFO [25] org.openqa.selenium.remote.server.DriverServlet - Done: /session/668893fa-1d0c-47db-8c57-ed7e8f5fd078/screenshot
+13:11:11.910 INFO [25] org.openqa.selenium.remote.server.DriverServlet - Executing: [delete session: 668893fa-1d0c-47db-8c57-ed7e8f5fd078] at URL: /session/668893fa-1d0c-47db-8c57-ed7e8f5fd078)
+13:11:12.345 INFO [25] org.openqa.selenium.remote.server.DriverServlet - Done: /session/668893fa-1d0c-47db-8c57-ed7e8f5fd078
+13:11:12.860 INFO [22] org.openqa.selenium.remote.server.DriverServlet - Done: /session/6bc90383-6bc9-4947-9e8a-64fd25060bb0/url
+13:11:12.870 INFO [22] org.openqa.selenium.remote.server.DriverServlet - Executing: [get title] at URL: /session/6bc90383-6bc9-4947-9e8a-64fd25060bb0/title)
+13:11:12.949 INFO [22] org.openqa.selenium.remote.server.DriverServlet - Done: /session/6bc90383-6bc9-4947-9e8a-64fd25060bb0/title
+13:11:12.960 INFO [22] org.openqa.selenium.remote.server.DriverServlet - Executing: [get title] at URL: /session/6bc90383-6bc9-4947-9e8a-64fd25060bb0/title)
+13:11:13.093 INFO [22] org.openqa.selenium.remote.server.DriverServlet - Done: /session/6bc90383-6bc9-4947-9e8a-64fd25060bb0/title
+13:11:13.108 INFO [22] org.openqa.selenium.remote.server.DriverServlet - Executing: [find element: By.name: q] at URL: /session/6bc90383-6bc9-4947-9e8a-64fd25060bb0/element)
+13:11:14.044 INFO [22] org.openqa.selenium.remote.server.DriverServlet - Done: /session/6bc90383-6bc9-4947-9e8a-64fd25060bb0/element
+13:11:14.056 INFO [22] org.openqa.selenium.remote.server.DriverServlet - Executing: [send keys: 0 [[InternetExplorerDriver: internet explorer on WINDOWS (4242fbe4-2cb3-4896-acf9-71d54bee29bf)] -> name: q], [Browser Stack]] at URL: /session/6bc90383-6bc9-4947-9e8a-64fd25060bb0/element/0/value)
+13:11:16.566 INFO [20] org.openqa.selenium.remote.server.DriverServlet - Done: /session/fbae1a2c-e0ef-42e3-b389-60db12e77727/url
+13:11:16.588 INFO [20] org.openqa.selenium.remote.server.DriverServlet - Executing: [get title] at URL: /session/fbae1a2c-e0ef-42e3-b389-60db12e77727/title)
+13:11:16.683 INFO [20] org.openqa.selenium.remote.server.DriverServlet - Done: /session/fbae1a2c-e0ef-42e3-b389-60db12e77727/title
+13:11:16.692 INFO [20] org.openqa.selenium.remote.server.DriverServlet - Executing: [get title] at URL: /session/fbae1a2c-e0ef-42e3-b389-60db12e77727/title)
+13:11:16.708 INFO [20] org.openqa.selenium.remote.server.DriverServlet - Done: /session/fbae1a2c-e0ef-42e3-b389-60db12e77727/title
+13:11:16.717 INFO [20] org.openqa.selenium.remote.server.DriverServlet - Executing: [find element: By.name: q] at URL: /session/fbae1a2c-e0ef-42e3-b389-60db12e77727/element)
+13:11:16.780 INFO [20] org.openqa.selenium.remote.server.DriverServlet - Done: /session/fbae1a2c-e0ef-42e3-b389-60db12e77727/element
+13:11:16.790 INFO [20] org.openqa.selenium.remote.server.DriverServlet - Executing: [send keys: 0 [[ChromeDriver: chrome on XP (8205dbb7b60e7db0b2592ad1b4585fb5)] -> name: q], [Browser Stack]] at URL: /session/fbae1a2c-e0ef-42e3-b389-60db12e77727/element/0/value)
+13:11:17.753 INFO [22] org.openqa.selenium.remote.server.DriverServlet - Done: /session/6bc90383-6bc9-4947-9e8a-64fd25060bb0/element/0/value
+13:11:17.762 INFO [22] org.openqa.selenium.remote.server.DriverServlet - Executing: [submit: 0 [[InternetExplorerDriver: internet explorer on WINDOWS (4242fbe4-2cb3-4896-acf9-71d54bee29bf)] -> name: q]] at URL: /session/6bc90383-6bc9-4947-9e8a-64fd25060bb0/element/0/submit)
+13:11:17.890 INFO [20] org.openqa.selenium.remote.server.DriverServlet - Done: /session/fbae1a2c-e0ef-42e3-b389-60db12e77727/element/0/value
+13:11:17.910 INFO [20] org.openqa.selenium.remote.server.DriverServlet - Executing: [submit: 0 [[ChromeDriver: chrome on XP (8205dbb7b60e7db0b2592ad1b4585fb5)] -> name: q]] at URL: /session/fbae1a2c-e0ef-42e3-b389-60db12e77727/element/0/submit)
+13:11:18.236 INFO [20] org.openqa.selenium.remote.server.DriverServlet - Done: /session/fbae1a2c-e0ef-42e3-b389-60db12e77727/element/0/submit
+13:11:18.352 INFO [20] org.openqa.selenium.remote.server.DriverServlet - Executing: [take screenshot] at URL: /session/fbae1a2c-e0ef-42e3-b389-60db12e77727/screenshot)
+13:11:19.868 INFO [20] org.openqa.selenium.remote.server.DriverServlet - Done: /session/fbae1a2c-e0ef-42e3-b389-60db12e77727/screenshot
+13:11:20.014 INFO [20] org.openqa.selenium.remote.server.DriverServlet - Executing: [delete session: fbae1a2c-e0ef-42e3-b389-60db12e77727] at URL: /session/fbae1a2c-e0ef-42e3-b389-60db12e77727)
+13:11:23.039 INFO [20] org.openqa.selenium.remote.server.DriverServlet - Done: /session/fbae1a2c-e0ef-42e3-b389-60db12e77727
+13:11:24.668 INFO [22] org.openqa.selenium.remote.server.DriverServlet - Done: /session/6bc90383-6bc9-4947-9e8a-64fd25060bb0/element/0/submit
+13:11:24.725 INFO [22] org.openqa.selenium.remote.server.DriverServlet - Executing: [take screenshot] at URL: /session/6bc90383-6bc9-4947-9e8a-64fd25060bb0/screenshot)
+13:11:25.622 INFO [22] org.openqa.selenium.remote.server.DriverServlet - Done: /session/6bc90383-6bc9-4947-9e8a-64fd25060bb0/screenshot
+13:11:25.671 INFO [22] org.openqa.selenium.remote.server.DriverServlet - Executing: [delete session: 6bc90383-6bc9-4947-9e8a-64fd25060bb0] at URL: /session/6bc90383-6bc9-4947-9e8a-64fd25060bb0)
+13:11:26.776 INFO [22] org.openqa.selenium.remote.server.DriverServlet - Done: /session/6bc90383-6bc9-4947-9e8a-64fd25060bb0
+13:16:33.415 INFO [22] org.openqa.selenium.remote.server.DriverServlet - Executing: [new session: Capabilities [{browserName=internet explorer}]] at URL: /session)
+13:16:33.426 INFO [30] org.openqa.selenium.remote.server.DriverServlet - Executing: [new session: Capabilities [{browserName=chrome}]] at URL: /session)
+13:16:33.433 INFO [31] org.openqa.selenium.remote.server.DriverServlet - Executing: [new session: Capabilities [{browserName=firefox}]] at URL: /session)
+13:16:33.436 INFO [32] org.openqa.selenium.remote.server.DefaultDriverFactory - Creating a new session for Capabilities [{browserName=chrome}]
+13:16:33.444 INFO [33] org.openqa.selenium.remote.server.DefaultDriverFactory - Creating a new session for Capabilities [{browserName=internet explorer}]
+13:16:33.445 INFO [34] org.openqa.selenium.remote.server.DefaultDriverFactory - Creating a new session for Capabilities [{browserName=firefox}]
+13:16:37.253 INFO [30] org.openqa.selenium.remote.server.DriverServlet - Done: /session
+13:16:37.326 INFO [30] org.openqa.selenium.remote.server.DriverServlet - Executing: [get: http://www.google.com] at URL: /session/1502b192-5f64-4388-9854-d44ba1832b22/url)
+13:16:41.738 INFO [33] org.apache.http.impl.client.DefaultHttpClient - I/O exception (java.net.SocketException) caught when processing request: Software caused connection abort: recv failed
+13:16:41.738 INFO [33] org.apache.http.impl.client.DefaultHttpClient - Retrying request
+13:16:41.758 INFO [22] org.openqa.selenium.remote.server.DriverServlet - Done: /session
+13:16:41.772 INFO [22] org.openqa.selenium.remote.server.DriverServlet - Executing: [get: http://www.google.com] at URL: /session/4ee868de-0406-491c-aaa5-fa991acf2c88/url)
+13:16:44.265 INFO [22] org.openqa.selenium.remote.server.DriverServlet - Done: /session/4ee868de-0406-491c-aaa5-fa991acf2c88/url
+13:16:44.275 INFO [22] org.openqa.selenium.remote.server.DriverServlet - Executing: [get title] at URL: /session/4ee868de-0406-491c-aaa5-fa991acf2c88/title)
+13:16:44.308 INFO [22] org.openqa.selenium.remote.server.DriverServlet - Done: /session/4ee868de-0406-491c-aaa5-fa991acf2c88/title
+13:16:44.317 INFO [22] org.openqa.selenium.remote.server.DriverServlet - Executing: [get title] at URL: /session/4ee868de-0406-491c-aaa5-fa991acf2c88/title)
+13:16:44.357 INFO [22] org.openqa.selenium.remote.server.DriverServlet - Done: /session/4ee868de-0406-491c-aaa5-fa991acf2c88/title
+13:16:44.378 INFO [22] org.openqa.selenium.remote.server.DriverServlet - Executing: [find element: By.name: q] at URL: /session/4ee868de-0406-491c-aaa5-fa991acf2c88/element)
+13:16:45.747 INFO [22] org.openqa.selenium.remote.server.DriverServlet - Done: /session/4ee868de-0406-491c-aaa5-fa991acf2c88/element
+13:16:45.772 INFO [22] org.openqa.selenium.remote.server.DriverServlet - Executing: [send keys: 0 [[InternetExplorerDriver: internet explorer on WINDOWS (637dc096-9687-4078-9f02-d5a5ab3cd2d0)] -> name: q], [Browser Stack]] at URL: /session/4ee868de-0406-491c-aaa5-fa991acf2c88/element/0/value)
+13:16:46.682 INFO [30] org.openqa.selenium.remote.server.DriverServlet - Done: /session/1502b192-5f64-4388-9854-d44ba1832b22/url
+13:16:46.711 INFO [30] org.openqa.selenium.remote.server.DriverServlet - Executing: [get title] at URL: /session/1502b192-5f64-4388-9854-d44ba1832b22/title)
+13:16:46.730 INFO [30] org.openqa.selenium.remote.server.DriverServlet - Done: /session/1502b192-5f64-4388-9854-d44ba1832b22/title
+13:16:46.737 INFO [30] org.openqa.selenium.remote.server.DriverServlet - Executing: [get title] at URL: /session/1502b192-5f64-4388-9854-d44ba1832b22/title)
+13:16:46.819 INFO [30] org.openqa.selenium.remote.server.DriverServlet - Done: /session/1502b192-5f64-4388-9854-d44ba1832b22/title
+13:16:46.835 INFO [30] org.openqa.selenium.remote.server.DriverServlet - Executing: [find element: By.name: q] at URL: /session/1502b192-5f64-4388-9854-d44ba1832b22/element)
+13:16:46.913 INFO [30] org.openqa.selenium.remote.server.DriverServlet - Done: /session/1502b192-5f64-4388-9854-d44ba1832b22/element
+13:16:46.927 INFO [30] org.openqa.selenium.remote.server.DriverServlet - Executing: [send keys: 0 [[ChromeDriver: chrome on XP (04b02b6c6c42ef856d3dc455b73785e1)] -> name: q], [Browser Stack]] at URL: /session/1502b192-5f64-4388-9854-d44ba1832b22/element/0/value)
+13:16:47.727 INFO [22] org.openqa.selenium.remote.server.DriverServlet - Done: /session/4ee868de-0406-491c-aaa5-fa991acf2c88/element/0/value
+13:16:47.750 INFO [22] org.openqa.selenium.remote.server.DriverServlet - Executing: [submit: 0 [[InternetExplorerDriver: internet explorer on WINDOWS (637dc096-9687-4078-9f02-d5a5ab3cd2d0)] -> name: q]] at URL: /session/4ee868de-0406-491c-aaa5-fa991acf2c88/element/0/submit)
+13:16:48.142 INFO [30] org.openqa.selenium.remote.server.DriverServlet - Done: /session/1502b192-5f64-4388-9854-d44ba1832b22/element/0/value
+13:16:48.155 INFO [30] org.openqa.selenium.remote.server.DriverServlet - Executing: [submit: 0 [[ChromeDriver: chrome on XP (04b02b6c6c42ef856d3dc455b73785e1)] -> name: q]] at URL: /session/1502b192-5f64-4388-9854-d44ba1832b22/element/0/submit)
+13:16:48.382 INFO [30] org.openqa.selenium.remote.server.DriverServlet - Done: /session/1502b192-5f64-4388-9854-d44ba1832b22/element/0/submit
+13:16:48.802 INFO [30] org.openqa.selenium.remote.server.DriverServlet - Executing: [take screenshot] at URL: /session/1502b192-5f64-4388-9854-d44ba1832b22/screenshot)
+13:16:49.864 INFO [30] org.openqa.selenium.remote.server.DriverServlet - Done: /session/1502b192-5f64-4388-9854-d44ba1832b22/screenshot
+13:16:50.024 INFO [30] org.openqa.selenium.remote.server.DriverServlet - Executing: [delete session: 1502b192-5f64-4388-9854-d44ba1832b22] at URL: /session/1502b192-5f64-4388-9854-d44ba1832b22)
+13:16:51.466 INFO [30] org.openqa.selenium.remote.server.DriverServlet - Done: /session/1502b192-5f64-4388-9854-d44ba1832b22
+13:16:52.395 INFO [31] org.openqa.selenium.remote.server.DriverServlet - Done: /session
+13:16:52.425 INFO [31] org.openqa.selenium.remote.server.DriverServlet - Executing: [get: http://www.google.com] at URL: /session/76fbacc7-6299-4480-b212-a55548037108/url)
+13:16:55.526 INFO [31] org.openqa.selenium.remote.server.DriverServlet - Done: /session/76fbacc7-6299-4480-b212-a55548037108/url
+13:16:55.544 INFO [31] org.openqa.selenium.remote.server.DriverServlet - Executing: [get title] at URL: /session/76fbacc7-6299-4480-b212-a55548037108/title)
+13:16:55.570 INFO [31] org.openqa.selenium.remote.server.DriverServlet - Done: /session/76fbacc7-6299-4480-b212-a55548037108/title
+13:16:55.580 INFO [31] org.openqa.selenium.remote.server.DriverServlet - Executing: [get title] at URL: /session/76fbacc7-6299-4480-b212-a55548037108/title)
+13:16:55.640 INFO [31] org.openqa.selenium.remote.server.DriverServlet - Done: /session/76fbacc7-6299-4480-b212-a55548037108/title
+13:16:55.650 INFO [31] org.openqa.selenium.remote.server.DriverServlet - Executing: [find element: By.name: q] at URL: /session/76fbacc7-6299-4480-b212-a55548037108/element)
+13:16:55.849 INFO [31] org.openqa.selenium.remote.server.DriverServlet - Done: /session/76fbacc7-6299-4480-b212-a55548037108/element
+13:16:55.861 INFO [31] org.openqa.selenium.remote.server.DriverServlet - Executing: [send keys: 0 [[FirefoxDriver: firefox on XP (32ad1261-bd5b-4e7f-8f1e-89b0c6b47cb7)] -> name: q], [Browser Stack]] at URL: /session/76fbacc7-6299-4480-b212-a55548037108/element/0/value)
+13:16:56.393 INFO [22] org.openqa.selenium.remote.server.DriverServlet - Done: /session/4ee868de-0406-491c-aaa5-fa991acf2c88/element/0/submit
+13:16:56.482 INFO [22] org.openqa.selenium.remote.server.DriverServlet - Executing: [take screenshot] at URL: /session/4ee868de-0406-491c-aaa5-fa991acf2c88/screenshot)
+13:16:57.375 INFO [22] org.openqa.selenium.remote.server.DriverServlet - Done: /session/4ee868de-0406-491c-aaa5-fa991acf2c88/screenshot
+13:16:57.462 INFO [22] org.openqa.selenium.remote.server.DriverServlet - Executing: [delete session: 4ee868de-0406-491c-aaa5-fa991acf2c88] at URL: /session/4ee868de-0406-491c-aaa5-fa991acf2c88)
+13:16:58.266 INFO [31] org.openqa.selenium.remote.server.DriverServlet - Done: /session/76fbacc7-6299-4480-b212-a55548037108/element/0/value
+13:16:58.275 INFO [31] org.openqa.selenium.remote.server.DriverServlet - Executing: [submit: 0 [[FirefoxDriver: firefox on XP (32ad1261-bd5b-4e7f-8f1e-89b0c6b47cb7)] -> name: q]] at URL: /session/76fbacc7-6299-4480-b212-a55548037108/element/0/submit)
+13:16:58.515 INFO [31] org.openqa.selenium.remote.server.DriverServlet - Done: /session/76fbacc7-6299-4480-b212-a55548037108/element/0/submit
+13:16:58.581 INFO [31] org.openqa.selenium.remote.server.DriverServlet - Executing: [take screenshot] at URL: /session/76fbacc7-6299-4480-b212-a55548037108/screenshot)
+13:16:58.727 INFO [22] org.openqa.selenium.remote.server.DriverServlet - Done: /session/4ee868de-0406-491c-aaa5-fa991acf2c88
+13:16:59.421 INFO [31] org.openqa.selenium.remote.server.DriverServlet - Done: /session/76fbacc7-6299-4480-b212-a55548037108/screenshot
+13:16:59.475 INFO [31] org.openqa.selenium.remote.server.DriverServlet - Executing: [delete session: 76fbacc7-6299-4480-b212-a55548037108] at URL: /session/76fbacc7-6299-4480-b212-a55548037108)
+13:17:00.097 INFO [31] org.openqa.selenium.remote.server.DriverServlet - Done: /session/76fbacc7-6299-4480-b212-a55548037108
+13:20:04.090 INFO [31] org.openqa.selenium.remote.server.DriverServlet - Executing: [new session: Capabilities [{browserName=internet explorer}]] at URL: /session)
+13:20:04.099 INFO [35] org.openqa.selenium.remote.server.DefaultDriverFactory - Creating a new session for Capabilities [{browserName=internet explorer}]
+13:20:04.112 INFO [36] org.openqa.selenium.remote.server.DriverServlet - Executing: [new session: Capabilities [{browserName=chrome}]] at URL: /session)
+13:20:04.129 INFO [37] org.openqa.selenium.remote.server.DriverServlet - Executing: [new session: Capabilities [{browserName=firefox}]] at URL: /session)
+13:20:04.131 INFO [38] org.openqa.selenium.remote.server.DefaultDriverFactory - Creating a new session for Capabilities [{browserName=chrome}]
+13:20:04.213 INFO [39] org.openqa.selenium.remote.server.DefaultDriverFactory - Creating a new session for Capabilities [{browserName=firefox}]
+13:20:08.776 INFO [36] org.openqa.selenium.remote.server.DriverServlet - Done: /session
+13:20:09.157 INFO [36] org.openqa.selenium.remote.server.DriverServlet - Executing: [get: http://www.google.com] at URL: /session/ed95106c-0cf3-487d-be1e-75372bed9d26/url)
+13:20:12.655 INFO [35] org.apache.http.impl.client.DefaultHttpClient - I/O exception (java.net.SocketException) caught when processing request: Software caused connection abort: recv failed
+13:20:12.656 INFO [35] org.apache.http.impl.client.DefaultHttpClient - Retrying request
+13:20:12.673 INFO [31] org.openqa.selenium.remote.server.DriverServlet - Done: /session
+13:20:12.693 INFO [31] org.openqa.selenium.remote.server.DriverServlet - Executing: [get: http://www.google.com] at URL: /session/70587394-7581-4965-a186-2ba9ed271a4c/url)
+13:20:15.532 INFO [31] org.openqa.selenium.remote.server.DriverServlet - Done: /session/70587394-7581-4965-a186-2ba9ed271a4c/url
+13:20:15.549 INFO [31] org.openqa.selenium.remote.server.DriverServlet - Executing: [get current url] at URL: /session/70587394-7581-4965-a186-2ba9ed271a4c/url)
+13:20:15.676 INFO [31] org.openqa.selenium.remote.server.DriverServlet - Done: /session/70587394-7581-4965-a186-2ba9ed271a4c/url
+13:20:15.685 INFO [31] org.openqa.selenium.remote.server.DriverServlet - Executing: [get title] at URL: /session/70587394-7581-4965-a186-2ba9ed271a4c/title)
+13:20:15.737 INFO [31] org.openqa.selenium.remote.server.DriverServlet - Done: /session/70587394-7581-4965-a186-2ba9ed271a4c/title
+13:20:15.751 INFO [31] org.openqa.selenium.remote.server.DriverServlet - Executing: [get title] at URL: /session/70587394-7581-4965-a186-2ba9ed271a4c/title)
+13:20:15.834 INFO [31] org.openqa.selenium.remote.server.DriverServlet - Done: /session/70587394-7581-4965-a186-2ba9ed271a4c/title
+13:20:15.864 INFO [31] org.openqa.selenium.remote.server.DriverServlet - Executing: [find element: By.name: q] at URL: /session/70587394-7581-4965-a186-2ba9ed271a4c/element)
+13:20:16.141 INFO [31] org.openqa.selenium.remote.server.DriverServlet - Done: /session/70587394-7581-4965-a186-2ba9ed271a4c/element
+13:20:16.156 INFO [31] org.openqa.selenium.remote.server.DriverServlet - Executing: [send keys: 0 [[InternetExplorerDriver: internet explorer on WINDOWS (146c54aa-3aeb-4552-827e-90046c692447)] -> name: q], [Browser Stack]] at URL: /session/70587394-7581-4965-a186-2ba9ed271a4c/element/0/value)
+13:20:17.752 INFO [31] org.openqa.selenium.remote.server.DriverServlet - Done: /session/70587394-7581-4965-a186-2ba9ed271a4c/element/0/value
+13:20:17.761 INFO [31] org.openqa.selenium.remote.server.DriverServlet - Executing: [submit: 0 [[InternetExplorerDriver: internet explorer on WINDOWS (146c54aa-3aeb-4552-827e-90046c692447)] -> name: q]] at URL: /session/70587394-7581-4965-a186-2ba9ed271a4c/element/0/submit)
+13:20:20.457 INFO [36] org.openqa.selenium.remote.server.DriverServlet - Done: /session/ed95106c-0cf3-487d-be1e-75372bed9d26/url
+13:20:20.472 INFO [36] org.openqa.selenium.remote.server.DriverServlet - Executing: [get current url] at URL: /session/ed95106c-0cf3-487d-be1e-75372bed9d26/url)
+13:20:20.569 INFO [36] org.openqa.selenium.remote.server.DriverServlet - Done: /session/ed95106c-0cf3-487d-be1e-75372bed9d26/url
+13:20:20.593 INFO [36] org.openqa.selenium.remote.server.DriverServlet - Executing: [get title] at URL: /session/ed95106c-0cf3-487d-be1e-75372bed9d26/title)
+13:20:21.099 INFO [36] org.openqa.selenium.remote.server.DriverServlet - Done: /session/ed95106c-0cf3-487d-be1e-75372bed9d26/title
+13:20:21.123 INFO [36] org.openqa.selenium.remote.server.DriverServlet - Executing: [get title] at URL: /session/ed95106c-0cf3-487d-be1e-75372bed9d26/title)
+13:20:21.421 INFO [31] org.openqa.selenium.remote.server.DriverServlet - Done: /session/70587394-7581-4965-a186-2ba9ed271a4c/element/0/submit
+13:20:22.022 INFO [31] org.openqa.selenium.remote.server.DriverServlet - Executing: [take screenshot] at URL: /session/70587394-7581-4965-a186-2ba9ed271a4c/screenshot)
+13:20:22.241 INFO [36] org.openqa.selenium.remote.server.DriverServlet - Done: /session/ed95106c-0cf3-487d-be1e-75372bed9d26/title
+13:20:22.253 INFO [36] org.openqa.selenium.remote.server.DriverServlet - Executing: [find element: By.name: q] at URL: /session/ed95106c-0cf3-487d-be1e-75372bed9d26/element)
+13:20:23.167 INFO [36] org.openqa.selenium.remote.server.DriverServlet - Done: /session/ed95106c-0cf3-487d-be1e-75372bed9d26/element
+13:20:23.235 INFO [36] org.openqa.selenium.remote.server.DriverServlet - Executing: [send keys: 0 [[ChromeDriver: chrome on XP (af1a554b8ecb24d88fa003d1be13a0a1)] -> name: q], [Browser Stack]] at URL: /session/ed95106c-0cf3-487d-be1e-75372bed9d26/element/0/value)
+13:20:23.339 INFO [31] org.openqa.selenium.remote.server.DriverServlet - Done: /session/70587394-7581-4965-a186-2ba9ed271a4c/screenshot
+13:20:23.650 INFO [31] org.openqa.selenium.remote.server.DriverServlet - Executing: [delete session: 70587394-7581-4965-a186-2ba9ed271a4c] at URL: /session/70587394-7581-4965-a186-2ba9ed271a4c)
+13:20:24.878 INFO [31] org.openqa.selenium.remote.server.DriverServlet - Done: /session/70587394-7581-4965-a186-2ba9ed271a4c
+13:20:25.083 INFO [36] org.openqa.selenium.remote.server.DriverServlet - Done: /session/ed95106c-0cf3-487d-be1e-75372bed9d26/element/0/value
+13:20:25.094 INFO [36] org.openqa.selenium.remote.server.DriverServlet - Executing: [submit: 0 [[ChromeDriver: chrome on XP (af1a554b8ecb24d88fa003d1be13a0a1)] -> name: q]] at URL: /session/ed95106c-0cf3-487d-be1e-75372bed9d26/element/0/submit)
+13:20:25.473 INFO [37] org.openqa.selenium.remote.server.DriverServlet - Done: /session
+13:20:25.509 INFO [37] org.openqa.selenium.remote.server.DriverServlet - Executing: [get: http://www.google.com] at URL: /session/e612c97f-52a3-443f-86d3-5182dac717f0/url)
+13:20:25.667 INFO [36] org.openqa.selenium.remote.server.DriverServlet - Done: /session/ed95106c-0cf3-487d-be1e-75372bed9d26/element/0/submit
+13:20:25.807 INFO [36] org.openqa.selenium.remote.server.DriverServlet - Executing: [take screenshot] at URL: /session/ed95106c-0cf3-487d-be1e-75372bed9d26/screenshot)
+13:20:27.388 INFO [36] org.openqa.selenium.remote.server.DriverServlet - Done: /session/ed95106c-0cf3-487d-be1e-75372bed9d26/screenshot
+13:20:27.479 INFO [36] org.openqa.selenium.remote.server.DriverServlet - Executing: [delete session: ed95106c-0cf3-487d-be1e-75372bed9d26] at URL: /session/ed95106c-0cf3-487d-be1e-75372bed9d26)
+13:20:29.539 INFO [37] org.openqa.selenium.remote.server.DriverServlet - Done: /session/e612c97f-52a3-443f-86d3-5182dac717f0/url
+13:20:29.566 INFO [37] org.openqa.selenium.remote.server.DriverServlet - Executing: [get current url] at URL: /session/e612c97f-52a3-443f-86d3-5182dac717f0/url)
+13:20:29.596 INFO [37] org.openqa.selenium.remote.server.DriverServlet - Done: /session/e612c97f-52a3-443f-86d3-5182dac717f0/url
+13:20:29.605 INFO [37] org.openqa.selenium.remote.server.DriverServlet - Executing: [get title] at URL: /session/e612c97f-52a3-443f-86d3-5182dac717f0/title)
+13:20:29.622 INFO [37] org.openqa.selenium.remote.server.DriverServlet - Done: /session/e612c97f-52a3-443f-86d3-5182dac717f0/title
+13:20:29.653 INFO [37] org.openqa.selenium.remote.server.DriverServlet - Executing: [get title] at URL: /session/e612c97f-52a3-443f-86d3-5182dac717f0/title)
+13:20:29.672 INFO [37] org.openqa.selenium.remote.server.DriverServlet - Done: /session/e612c97f-52a3-443f-86d3-5182dac717f0/title
+13:20:29.683 INFO [37] org.openqa.selenium.remote.server.DriverServlet - Executing: [find element: By.name: q] at URL: /session/e612c97f-52a3-443f-86d3-5182dac717f0/element)
+13:20:29.747 INFO [37] org.openqa.selenium.remote.server.DriverServlet - Done: /session/e612c97f-52a3-443f-86d3-5182dac717f0/element
+13:20:29.756 INFO [37] org.openqa.selenium.remote.server.DriverServlet - Executing: [send keys: 0 [[FirefoxDriver: firefox on XP (b7a2ed9e-58df-42eb-a4eb-e3221a4f645b)] -> name: q], [Browser Stack]] at URL: /session/e612c97f-52a3-443f-86d3-5182dac717f0/element/0/value)
+13:20:29.954 INFO [36] org.openqa.selenium.remote.server.DriverServlet - Done: /session/ed95106c-0cf3-487d-be1e-75372bed9d26
+13:20:30.254 INFO [37] org.openqa.selenium.remote.server.DriverServlet - Done: /session/e612c97f-52a3-443f-86d3-5182dac717f0/element/0/value
+13:20:30.281 INFO [37] org.openqa.selenium.remote.server.DriverServlet - Executing: [submit: 0 [[FirefoxDriver: firefox on XP (b7a2ed9e-58df-42eb-a4eb-e3221a4f645b)] -> name: q]] at URL: /session/e612c97f-52a3-443f-86d3-5182dac717f0/element/0/submit)
+13:20:30.342 INFO [37] org.openqa.selenium.remote.server.DriverServlet - Done: /session/e612c97f-52a3-443f-86d3-5182dac717f0/element/0/submit
+13:20:30.412 INFO [37] org.openqa.selenium.remote.server.DriverServlet - Executing: [take screenshot] at URL: /session/e612c97f-52a3-443f-86d3-5182dac717f0/screenshot)
+13:20:30.632 INFO [37] org.openqa.selenium.remote.server.DriverServlet - Done: /session/e612c97f-52a3-443f-86d3-5182dac717f0/screenshot
+13:20:30.652 INFO [37] org.openqa.selenium.remote.server.DriverServlet - Executing: [delete session: e612c97f-52a3-443f-86d3-5182dac717f0] at URL: /session/e612c97f-52a3-443f-86d3-5182dac717f0)
+13:20:31.939 INFO [37] org.openqa.selenium.remote.server.DriverServlet - Done: /session/e612c97f-52a3-443f-86d3-5182dac717f0
+17:54:48.675 INFO [37] org.openqa.selenium.remote.server.DriverServlet - Executing: [new session: Capabilities [{browserName=firefox}]] at URL: /session)
+17:54:48.678 INFO [40] org.openqa.selenium.remote.server.DefaultDriverFactory - Creating a new session for Capabilities [{browserName=firefox}]
+17:55:01.694 INFO [37] org.openqa.selenium.remote.server.DriverServlet - Done: /session
+17:55:01.762 INFO [37] org.openqa.selenium.remote.server.DriverServlet - Executing: [get: http://www.google.com] at URL: /session/b032b423-af49-4e26-874a-4e75d7b22ba2/url)
+17:55:05.247 INFO [37] org.openqa.selenium.remote.server.DriverServlet - Done: /session/b032b423-af49-4e26-874a-4e75d7b22ba2/url
+17:55:05.265 INFO [37] org.openqa.selenium.remote.server.DriverServlet - Executing: [get current url] at URL: /session/b032b423-af49-4e26-874a-4e75d7b22ba2/url)
+17:55:05.291 INFO [37] org.openqa.selenium.remote.server.DriverServlet - Done: /session/b032b423-af49-4e26-874a-4e75d7b22ba2/url
+17:55:05.300 INFO [37] org.openqa.selenium.remote.server.DriverServlet - Executing: [get title] at URL: /session/b032b423-af49-4e26-874a-4e75d7b22ba2/title)
+17:55:05.332 INFO [37] org.openqa.selenium.remote.server.DriverServlet - Done: /session/b032b423-af49-4e26-874a-4e75d7b22ba2/title
+17:55:05.340 INFO [37] org.openqa.selenium.remote.server.DriverServlet - Executing: [get title] at URL: /session/b032b423-af49-4e26-874a-4e75d7b22ba2/title)
+17:55:05.352 INFO [37] org.openqa.selenium.remote.server.DriverServlet - Done: /session/b032b423-af49-4e26-874a-4e75d7b22ba2/title
+17:55:05.374 INFO [37] org.openqa.selenium.remote.server.DriverServlet - Executing: [find element: By.name: q] at URL: /session/b032b423-af49-4e26-874a-4e75d7b22ba2/element)
+17:55:05.461 INFO [37] org.openqa.selenium.remote.server.DriverServlet - Done: /session/b032b423-af49-4e26-874a-4e75d7b22ba2/element
+17:55:05.477 INFO [37] org.openqa.selenium.remote.server.DriverServlet - Executing: [send keys: 0 [[FirefoxDriver: firefox on XP (47fa9db3-4a39-49c3-af14-5920dccd855f)] -> name: q], [Browser Stack]] at URL: /session/b032b423-af49-4e26-874a-4e75d7b22ba2/element/0/value)
+17:55:05.914 INFO [37] org.openqa.selenium.remote.server.DriverServlet - Done: /session/b032b423-af49-4e26-874a-4e75d7b22ba2/element/0/value
+17:55:05.925 INFO [37] org.openqa.selenium.remote.server.DriverServlet - Executing: [submit: 0 [[FirefoxDriver: firefox on XP (47fa9db3-4a39-49c3-af14-5920dccd855f)] -> name: q]] at URL: /session/b032b423-af49-4e26-874a-4e75d7b22ba2/element/0/submit)
+17:55:05.985 INFO [37] org.openqa.selenium.remote.server.DriverServlet - Done: /session/b032b423-af49-4e26-874a-4e75d7b22ba2/element/0/submit
+17:55:06.622 INFO [37] org.openqa.selenium.remote.server.DriverServlet - Executing: [take screenshot] at URL: /session/b032b423-af49-4e26-874a-4e75d7b22ba2/screenshot)
+17:55:07.537 INFO [37] org.openqa.selenium.remote.server.DriverServlet - Done: /session/b032b423-af49-4e26-874a-4e75d7b22ba2/screenshot
+17:55:07.900 INFO [37] org.openqa.selenium.remote.server.DriverServlet - Executing: [find element: By.className: title] at URL: /session/b032b423-af49-4e26-874a-4e75d7b22ba2/element)
+17:55:12.664 WARN [37] org.openqa.selenium.remote.server.DriverServlet - Exception thrown
+org.openqa.selenium.NoSuchElementException: Unable to locate element: {"method":"class name","selector":"title"}
+Command duration or timeout: 14 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.41.0', revision: '3192d8a', time: '2014-03-27 17:17:32'
+System info: host: 'W01B5WL1', ip: '14.67.204.101', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.6.0_45'
+Session ID: 47fa9db3-4a39-49c3-af14-5920dccd855f
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{platform=XP, acceptSslCerts=true, javascriptEnabled=true, browserName=firefox, rotatable=false, locationContextEnabled=true, version=28.0, cssSelectorsEnabled=true, databaseEnabled=true, handlesAlerts=true, browserConnectionEnabled=true, nativeEvents=true, webStorageEnabled=true, applicationCacheEnabled=true, takesScreenshot=true}]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:193)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:145)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:595)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:348)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByClassName(RemoteWebDriver.java:429)
+	at org.openqa.selenium.By$ByClassName.findElement(By.java:387)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:340)
+	at sun.reflect.GeneratedMethodAccessor31.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.openqa.selenium.support.events.EventFiringWebDriver$2.invoke(EventFiringWebDriver.java:101)
+	at com.sun.proxy.$Proxy5.findElement(Unknown Source)
+	at org.openqa.selenium.support.events.EventFiringWebDriver.findElement(EventFiringWebDriver.java:184)
+	at org.openqa.selenium.remote.server.handler.FindElement.call(FindElement.java:47)
+	at org.openqa.selenium.remote.server.handler.FindElement.call(FindElement.java:1)
+	at java.util.concurrent.FutureTask$Sync.innerRun(Unknown Source)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at org.openqa.selenium.remote.server.DefaultSession$1.run(DefaultSession.java:170)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: org.openqa.selenium.remote.ErrorHandler$UnknownServerException: Unable to locate element: {"method":"class name","selector":"title"}
+Build info: version: '2.41.0', revision: '3192d8a', time: '2014-03-27 17:17:32'
+System info: host: 'W01B5WL1', ip: '14.67.204.101', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.6.0_45'
+Driver info: driver.version: unknown
+	at <anonymous class>.FirefoxDriver.prototype.findElementInternal_(file:///C:/Users/stoianod/AppData/Local/Temp/anonymous8398977830852614101webdriver-profile/extensions/fxdriver@googlecode.com/components/driver_component.js:8905)
+	at <anonymous class>.FirefoxDriver.prototype.findElement(file:///C:/Users/stoianod/AppData/Local/Temp/anonymous8398977830852614101webdriver-profile/extensions/fxdriver@googlecode.com/components/driver_component.js:8914)
+	at <anonymous class>.DelayedCommand.prototype.executeInternal_/h(file:///C:/Users/stoianod/AppData/Local/Temp/anonymous8398977830852614101webdriver-profile/extensions/fxdriver@googlecode.com/components/command_processor.js:10884)
+	at <anonymous class>.DelayedCommand.prototype.executeInternal_(file:///C:/Users/stoianod/AppData/Local/Temp/anonymous8398977830852614101webdriver-profile/extensions/fxdriver@googlecode.com/components/command_processor.js:10889)
+	at <anonymous class>.DelayedCommand.prototype.execute/<(file:///C:/Users/stoianod/AppData/Local/Temp/anonymous8398977830852614101webdriver-profile/extensions/fxdriver@googlecode.com/components/command_processor.js:10831)
+17:55:12.709 WARN [37] org.openqa.selenium.remote.server.DriverServlet - Exception: Unable to locate element: {"method":"class name","selector":"title"}
+Command duration or timeout: 14 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.41.0', revision: '3192d8a', time: '2014-03-27 17:17:32'
+System info: host: 'W01B5WL1', ip: '14.67.204.101', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.6.0_45'
+Session ID: 47fa9db3-4a39-49c3-af14-5920dccd855f
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{platform=XP, acceptSslCerts=true, javascriptEnabled=true, browserName=firefox, rotatable=false, locationContextEnabled=true, version=28.0, cssSelectorsEnabled=true, databaseEnabled=true, handlesAlerts=true, browserConnectionEnabled=true, nativeEvents=true, webStorageEnabled=true, applicationCacheEnabled=true, takesScreenshot=true}]
+17:55:13.248 INFO [37] org.openqa.selenium.remote.server.DriverServlet - Executing: [delete session: b032b423-af49-4e26-874a-4e75d7b22ba2] at URL: /session/b032b423-af49-4e26-874a-4e75d7b22ba2)
+17:55:13.628 INFO [37] org.openqa.selenium.remote.server.DriverServlet - Done: /session/b032b423-af49-4e26-874a-4e75d7b22ba2
+17:56:22.752 INFO [37] org.openqa.selenium.remote.server.DriverServlet - Executing: [new session: Capabilities [{browserName=firefox}]] at URL: /session)
+17:56:22.755 INFO [41] org.openqa.selenium.remote.server.DefaultDriverFactory - Creating a new session for Capabilities [{browserName=firefox}]
+17:56:34.948 INFO [37] org.openqa.selenium.remote.server.DriverServlet - Done: /session
+17:56:35.009 INFO [37] org.openqa.selenium.remote.server.DriverServlet - Executing: [get: http://www.yandex.ru] at URL: /session/9efdeaff-e64d-4af6-8673-e7dd820f52ae/url)
+17:56:37.989 INFO [37] org.openqa.selenium.remote.server.DriverServlet - Done: /session/9efdeaff-e64d-4af6-8673-e7dd820f52ae/url
+17:56:37.999 INFO [37] org.openqa.selenium.remote.server.DriverServlet - Executing: [get current url] at URL: /session/9efdeaff-e64d-4af6-8673-e7dd820f52ae/url)
+17:56:38.013 INFO [37] org.openqa.selenium.remote.server.DriverServlet - Done: /session/9efdeaff-e64d-4af6-8673-e7dd820f52ae/url
+17:56:38.023 INFO [37] org.openqa.selenium.remote.server.DriverServlet - Executing: [get title] at URL: /session/9efdeaff-e64d-4af6-8673-e7dd820f52ae/title)
+17:56:38.038 INFO [37] org.openqa.selenium.remote.server.DriverServlet - Done: /session/9efdeaff-e64d-4af6-8673-e7dd820f52ae/title
+17:56:38.047 INFO [37] org.openqa.selenium.remote.server.DriverServlet - Executing: [get title] at URL: /session/9efdeaff-e64d-4af6-8673-e7dd820f52ae/title)
+17:56:38.057 INFO [37] org.openqa.selenium.remote.server.DriverServlet - Done: /session/9efdeaff-e64d-4af6-8673-e7dd820f52ae/title
+17:56:38.088 INFO [37] org.openqa.selenium.remote.server.DriverServlet - Executing: [delete session: 9efdeaff-e64d-4af6-8673-e7dd820f52ae] at URL: /session/9efdeaff-e64d-4af6-8673-e7dd820f52ae)
+17:56:38.350 INFO [37] org.openqa.selenium.remote.server.DriverServlet - Done: /session/9efdeaff-e64d-4af6-8673-e7dd820f52ae
+17:00:10.855 INFO [37] org.openqa.selenium.remote.server.DriverServlet - Executing: [new session: Capabilities [{platform=ANY, browserName=chrome, version=}]] at URL: /session)
+17:00:10.896 INFO [42] org.openqa.selenium.remote.server.DefaultDriverFactory - Creating a new session for Capabilities [{platform=ANY, browserName=chrome, version=}]
+17:00:15.624 INFO [37] org.openqa.selenium.remote.server.DriverServlet - Done: /session
+17:00:16.289 INFO [37] org.openqa.selenium.remote.server.DriverServlet - Executing: [get: http://www.google.com] at URL: /session/c9d56f3a-8781-45af-bbd1-79c36999a6f9/url)
+17:00:20.174 INFO [37] org.openqa.selenium.remote.server.DriverServlet - Done: /session/c9d56f3a-8781-45af-bbd1-79c36999a6f9/url
+17:00:20.830 INFO [37] org.openqa.selenium.remote.server.DriverServlet - Executing: [take screenshot] at URL: /session/c9d56f3a-8781-45af-bbd1-79c36999a6f9/screenshot)
+17:00:21.048 INFO [37] org.openqa.selenium.remote.server.DriverServlet - Done: /session/c9d56f3a-8781-45af-bbd1-79c36999a6f9/screenshot
+17:00:21.237 INFO [37] org.openqa.selenium.remote.server.DriverServlet - Executing: [delete session: c9d56f3a-8781-45af-bbd1-79c36999a6f9] at URL: /session/c9d56f3a-8781-45af-bbd1-79c36999a6f9)
+17:00:22.933 INFO [37] org.openqa.selenium.remote.server.DriverServlet - Done: /session/c9d56f3a-8781-45af-bbd1-79c36999a6f9
