@@ -15,7 +15,7 @@
         <!--<sysproperty key="org.uncommons.reportng.title" value="My Test Report 1234"/>-->
         <classes>
             <class name="parametrized.suite.s2.Init" />
-            <class name="parametrized.suitdto.Test1" />
+            <class name="parametrized.suitdto.TestWithTO" />
         </classes>
     </test>
 </suite>
