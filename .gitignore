@@ -5,7 +5,9 @@
 *.ear
 *.iml
 
+
 /target
+/test-output
 
 /.idea
 /.git

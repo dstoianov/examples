@@ -18,7 +18,7 @@
     </test> <!-- Test -->
     <test name="SecondTest FireFox">
         <parameter name="browser" value="ie"/>
-        <parameter name="version" value="8"/>
+        <parameter name="version" value="7"/>
         <!--<parameter name="platform" value="WINDOWS"/>-->
         <parameter name="url" value="http://ya.ru"/>
         <classes>
@@ -27,7 +27,7 @@
     </test> <!-- Test -->
     <test name="ThirdTest Chrome">
         <parameter name="browser" value="ie"/>
-        <parameter name="version" value="9"/>
+        <parameter name="version" value="7"/>
         <!--<parameter name="platform" value="MAC"/>-->
         <parameter name="url" value="http://yahoo.com"/>
         <classes>
