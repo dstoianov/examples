@@ -29,6 +29,12 @@
         </dependency>
 
         <dependency>
+            <groupId>ru.yandex.qatools.htmlelements</groupId>
+            <artifactId>htmlelements-java</artifactId>
+            <version>1.11</version>
+        </dependency>
+
+        <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>4.10</version>
@@ -50,7 +56,7 @@
             <version>3.9</version>
         </dependency>
 
-       <dependency>
+        <dependency>
             <groupId>xml-apis</groupId>
             <artifactId>xml-apis</artifactId>
             <version>1.4.01</version>
@@ -73,13 +79,13 @@
             <scope>system</scope>
             <systemPath>${project.basedir}/lib/jacob.jar</systemPath>
         </dependency>
-<!--        <dependency>
-            <groupId>autoitx4java</groupId>
-            <artifactId>autoitx4java</artifactId>
-            <version>0.0.1</version>
-            <scope>system</scope>
-            <systemPath>${project.basedir}/lib/AutoItX4Java.jar</systemPath>
-        </dependency>-->
+        <!--        <dependency>
+                    <groupId>autoitx4java</groupId>
+                    <artifactId>autoitx4java</artifactId>
+                    <version>0.0.1</version>
+                    <scope>system</scope>
+                    <systemPath>${project.basedir}/lib/AutoItX4Java.jar</systemPath>
+                </dependency>-->
 
         <dependency>
             <groupId>org.uncommons</groupId>
