@@ -1,5 +1,6 @@
 package rvmd.auto.pages;
 
+import org.databene.benerator.script.BeneratorParser;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -38,4 +39,18 @@ public class DriverPage extends Page {
     private WebElement btnContinue;
 
 
+    public DriverPage fillInAllFields(String zipCode) {
+        clearAndType(txtZipCode, zipCode);
+        selectByValue(ddInsuranceCompany, "AAA");
+        selectByValue(ddInsuredSince, "4");
+        selectByValue(ddResidenceType, "Other");
+        selectByValue(ddMaritalStatus, "Married");
+        selectByValue(ddCreditRating, "Good");
+        return this;
+    }
+
+    public VehiclePage clickOnContinue() {
+        btnContinue.click();
+        return new VehiclePage(driver);
+    }
 }

@@ -61,4 +61,13 @@ public class CompareAndSavePage extends Page {
     private WebElement btnContinue;
 
 
+    public CompareAndSavePage fillInAllFields() {
+
+
+        return this;
+    }
+
+    public void submitForm() {
+        btnGetMyQuotes.click();
+    }
 }

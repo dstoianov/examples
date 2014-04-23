@@ -1,4 +1,4 @@
-package parametrized.runsuite;
+package rvmd.webBrowser;
 
 import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.WebDriver;
@@ -8,7 +8,7 @@ import org.testng.annotations.*;
 /**
  * Created by Funker on 12.04.14.
  */
-public class BaseTest {
+public class BaseTest extends TestHelper {
     protected WebDriver driver;
     private String url;
 

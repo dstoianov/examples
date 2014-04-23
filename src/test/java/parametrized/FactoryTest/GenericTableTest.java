@@ -1,4 +1,4 @@
-package rvmd.FactoryTest;
+package parametrized.FactoryTest;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;

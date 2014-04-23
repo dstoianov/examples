@@ -16,8 +16,8 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 public class WebDriverFactory {
 
     private WebDriver driver;
-    private String driverLocation = "remote";
-    // private String driverLocation = "local";
+    //private String driverLocation = "remote";
+    private String driverLocation = "local";
 
 /*    public WebDriver getDriver(String browserName, String version) throws Exception {
         if (driver == null) {

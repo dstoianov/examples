@@ -1,4 +1,4 @@
-package rvmd.FactoryTest;
+package parametrized.FactoryTest;
 
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Factory;

@@ -27,4 +27,16 @@ public class VehiclePage extends Page {
     @FindBy(xpath = "//button") //button class="bq-control bq-type-simple">
     private WebElement btnContinue;
 
+    public VehiclePage fillInAllFields() {
+        selectByValue(ddVehicleBuildYear, "2005");
+        selectByValue(ddVehicleMake, "FORD");
+        selectByValue(ddVehicleModel, "GT");
+        return this;
+    }
+
+
+    public CompareAndSavePage clickOnContinue() {
+        btnContinue.click();
+        return new CompareAndSavePage(driver);
+    }
 }
