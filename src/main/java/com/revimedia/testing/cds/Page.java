@@ -1,6 +1,7 @@
 package com.revimedia.testing.cds;
 
 import com.revimedia.testing.configuration.utils.JsUtils;
+import org.apache.log4j.Logger;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedCondition;
@@ -16,6 +17,7 @@ import static com.revimedia.testing.cds.PageConstants.*;
  * Date: 4/9/14
  */
 public class Page {
+    protected static final Logger log = Logger.getLogger(Page.class);
     public WebDriver driver;
     private static final int DEFAULT_TIMEOUT = 60;
     private JavascriptExecutor js;
@@ -47,24 +49,25 @@ public class Page {
     }
 
     public void waitForAjaxComplete() {
-        //log.verbose("waiting for ajax completion");
+        log.info("waiting for ajax completion");
         final JsUtils js = new JsUtils(driver);
         wait.until(new ExpectedCondition<Boolean>() {
-
             public Boolean apply(WebDriver driver) {
                 return js.isAjaxComplete();
             }
         });
-        // log.verbose("All ajax calls are complete");
+        log.info("All ajax calls are complete");
     }
 
     public void waitForSelectFill(WebDriver driver, WebElement selectElement) {
+        log.info("waiting for select fill in some data");
         final Select select = new Select(selectElement);
         wait.until(new ExpectedCondition<Boolean>() {
             public Boolean apply(WebDriver driver) {
                 return select.getOptions().size() > 1;
             }
         });
+        log.info("select is filled in");
     }
 
 
