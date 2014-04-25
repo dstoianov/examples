@@ -8,7 +8,7 @@ import org.testng.annotations.*;
 /**
  * Created by Funker on 12.04.14.
  */
-public class BaseTest extends TestHelper {
+public class BaseTest {
     protected WebDriver driver;
     private String url;
 

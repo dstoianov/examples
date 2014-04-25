@@ -53,4 +53,9 @@ public class DriverPage extends Page {
         btnContinue.click();
         return new VehiclePage(driver);
     }
+
+    public DriverPage fillInZipCode(String text) {
+        clearAndType(txtZipCode, text);
+        return this;
+    }
 }

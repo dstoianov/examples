@@ -34,23 +34,19 @@ public class AutoTest extends BaseTest {
     @Test
     public void testCheckRequiredFields() throws Exception {
         DriverPage driverPage = new DriverPage(driver);
+
         driverPage.clickOnContinue();
-        Assert.assertTrue(isTextPresent("Please enter zip code."));
-        Assert.assertTrue(isTextPresent("Please correct the errors above."));
-        assertThat(driver.findElement(By.xpath(".//*[@id='bq-form-here']/div")).getText(), containsString("Please correct the errors above."));
-        assertThat(driver.findElement(By.xpath(".//*[@id='bq-form-here']/div")).getText(), containsString("Please enter zip code."));
+
+        assertThat(driverPage.getPageText(), containsString("Please enter zip code."));
+        assertThat(driverPage.getAllErrors().size(), is(7));
+
+        driverPage.fillInZipCode("20002").clickOnContinue();
+        assertThat(driverPage.getAllErrors().size(), is(6));
+
+
+        assertThat(driverPage.getPageText(), containsString("Please correct the errors above."));
         //assertThat();
     }
 
 
-    public boolean isTextPresent(String text) {
-        try {
-
-            // return driver.getPageSource().contains(text);
-            String text1 = driver.findElement(By.xpath(".//*[@id='bq-form-here']/div")).getText();
-            return text1.contains(text);
-        } catch (Exception e) {
-            return false;
-        }
-    }
 }

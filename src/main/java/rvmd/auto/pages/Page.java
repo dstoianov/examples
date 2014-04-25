@@ -1,9 +1,14 @@
 package rvmd.auto.pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
+
+import java.util.List;
+
+import static rvmd.auto.pages.PageConstants.*;
 
 /**
  * User: stoianod
@@ -23,7 +28,15 @@ public class Page {
     }
 
     public void selectByValue(WebElement webElement, String text) {
-
         new Select(webElement).selectByVisibleText(text);
+    }
+
+    public String getPageText() {
+        return driver.findElement(By.xpath(PAGE_CONTENT)).getText();
+    }
+
+    public List<WebElement> getAllErrors() {
+        List<WebElement> list = driver.findElements(By.xpath(PAGE_ERRORS));
+        return list;
     }
 }
