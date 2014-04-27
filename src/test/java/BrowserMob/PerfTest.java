@@ -100,13 +100,18 @@ public class PerfTest {
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
         // create a new HAR with the label "apple.com"
-        server.newHar("apple.com/");
+        server.newHar("apple.com");
         //server.whitelistRequests();
 
         driver.get("http://rvmd-denis.stagingrevi.com/auto/mfs/");
+
+        server.getHar().getLog().getEntries().clear();
+
+        //server.cleanup();
+        //server.clearDNSCache();
         driver.findElement(By.xpath("//button")).click();
 
-        Thread.sleep(5000);
+        Thread.sleep(3000);
 
         Har har = server.getHar();
         FileOutputStream fos = new FileOutputStream(strFilePath2);
