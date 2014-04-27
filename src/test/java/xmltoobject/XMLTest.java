@@ -14,14 +14,25 @@ import java.io.File;
 public class XMLTest {
 
     @DataProvider
-    public static Object[][] userData() {
+    public static Object[][] userUSAData() {
         return unMarshal("./src/test/resources/data/data_usa_1000.xml", Rowdata.class);
+    }
+
+    @DataProvider
+    public static Object[][] userData() {
+        return unMarshal("./src/test/resources/data/users_data_new.xml", Users.class);
+    }
+
+
+    @Test(dataProvider = "userUSAData")
+    public void testName1(Row r) throws Exception {
+        System.out.println(r.toString());
     }
 
 
     @Test(dataProvider = "userData")
-    public void testName(Row r) throws Exception {
-        System.out.println(r.toString());
+    public void testName2(User u) throws Exception {
+        System.out.println(u.toString());
     }
 
 

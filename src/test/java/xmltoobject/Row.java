@@ -28,6 +28,18 @@ public class Row {
     @XmlElement(name = "CITY_NAME")
     private String city;
 
+    @XmlElement(name = "POSTCODE")
+    private String zipCode;
+
+    @XmlElement(name = "LINE1")
+    private String address;
+
+    @XmlElement(name = "LINE2")
+    private String address2;
+
+    @XmlElement(name = "WEB_URL_ADDRESS")
+    private String email;
+
     public String getPartyName() {
         return partyName;
     }
@@ -100,17 +112,7 @@ public class Row {
         this.email = email;
     }
 
-    @XmlElement(name = "POSTCODE")
-    private String zipCode;
 
-    @XmlElement(name = "LINE1")
-    private String address;
-
-    @XmlElement(name = "LINE2")
-    private String address2;
-
-    @XmlElement(name = "WEB_URL_ADDRESS")
-    private String email;
 
 
     @Override
