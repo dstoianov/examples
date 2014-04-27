@@ -35,7 +35,8 @@ public class Page {
     }
 
     public void selectByValue(WebElement webElement, String text) {
-        waitForSelectFill(driver, webElement);
+//        waitForSelectFill(driver, webElement);
+        waitForAjaxComplete();
         new Select(webElement).selectByVisibleText(text);
     }
 
