@@ -1,14 +1,15 @@
 package datafactory;
 
-import org.databene.feed4testng.FeedTest;
+// import org.databene.feed4testng.FeedTest;
+
 import org.testng.annotations.Test;
 
-import javax.validation.constraints.Pattern;
+// import javax.validation.constraints.Pattern;
 
 /**
  * Created by Funker on 18.04.14.
  */
-public class LoginTest extends FeedTest {
+public class LoginTest {//extends FeedTest {
 
     @Test(dataProvider = "feeder")
     public void testLogin(String name, String password) {

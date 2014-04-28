@@ -106,11 +106,11 @@
             <scope>test</scope>
         </dependency>
 
-        <dependency>
-            <groupId>org.databene</groupId>
-            <artifactId>feed4testng</artifactId>
-            <version>1.0</version>
-        </dependency>
+        <!--        <dependency>
+                    <groupId>org.databene</groupId>
+                    <artifactId>feed4testng</artifactId>
+                    <version>1.0</version>
+                </dependency>-->
 
         <dependency>
             <groupId>org.fluttercode.datafactory</groupId>
