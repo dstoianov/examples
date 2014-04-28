@@ -21,10 +21,16 @@ public class AutoTests extends BaseTest {
     public void testPositiveSubmit(Contact contact) throws Exception {
 
         DriverPage driverPage = new DriverPage(driver);
-        VehiclePage vehiclePage = driverPage.fillInAllFields(contact).clickOnContinue();
+        driverPage.fillInAllFields(contact);
+        assertThat(driverPage.getPageText(), containsString(contact.getCity()));
+
+        VehiclePage vehiclePage = driverPage.clickOnContinue();
+
         CompareAndSavePage compareAndSavePage = vehiclePage.fillInAllFields().clickOnContinue();
-        compareAndSavePage.fillInAllFields();
-        //compareAndSavePage.clickOnGetMyQuotes();
+        compareAndSavePage.fillInAllFields(contact);
+
+        assertThat(compareAndSavePage.getZipStateAndCity(), containsString(contact.getCity() + ", " + contact.getState()));
+
         compareAndSavePage.submitForm();
 
         //compareAndSavePage.

@@ -7,6 +7,7 @@ public class PageConstants {
 
     //xPath
     public static final String PAGE_ERRORS = "//div[contains(@class, 'bq-error')]";
+    //public static final String PAGE_CONTENT = "//div[contains(@class, 'bq-campaign')]"; //alternative
     public static final String PAGE_CONTENT = "//*[@id='bq-form-here']/div";
 
 

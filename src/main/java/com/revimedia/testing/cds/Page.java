@@ -2,7 +2,10 @@ package com.revimedia.testing.cds;
 
 import com.revimedia.testing.configuration.utils.JsUtils;
 import org.apache.log4j.Logger;
-import org.openqa.selenium.*;
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.Select;
@@ -11,7 +14,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.util.List;
 import java.util.Random;
 
-import static com.revimedia.testing.cds.PageConstants.*;
+import static com.revimedia.testing.cds.PageConstants.PAGE_CONTENT;
+import static com.revimedia.testing.cds.PageConstants.PAGE_ERRORS;
 
 /**
  * User: stoianod
@@ -91,4 +95,22 @@ public class Page {
         int randomNum = rand.nextInt((max - min) + 1) + min;
         return randomNum;
     }
+
+
+    public void selectDate(WebElement ddMonth, WebElement ddDay, WebElement ddYear, String birthDate) {
+
+        //Mar 12, 1987
+        int blank = birthDate.indexOf(" ");
+        int comma = birthDate.indexOf(",");
+        String month = birthDate.substring(0, 3);
+        String day = birthDate.substring(birthDate.indexOf(" ") + 1, comma);
+        String year = birthDate.substring(comma + 2);
+
+        selectByValue(ddMonth, month);
+        selectByValue(ddDay, day);
+        selectByValue(ddYear, year);
+
+    }
+
+
 }

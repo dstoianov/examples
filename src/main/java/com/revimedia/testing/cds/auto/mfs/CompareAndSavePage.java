@@ -1,6 +1,7 @@
 package com.revimedia.testing.cds.auto.mfs;
 
 import com.revimedia.testing.cds.Page;
+import com.revimedia.testing.configuration.dto.Contact;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -61,13 +62,30 @@ public class CompareAndSavePage extends Page {
     private WebElement btnContinue;
 
 
-    public CompareAndSavePage fillInAllFields() {
+    public CompareAndSavePage fillInAllFields(Contact contact) {
+        clearAndType(txtFirstName, contact.getFirstName());
+        clearAndType(txtLastName, contact.getLastName());
+        selectRandomByIndex(ddEducation);
+        if (contact.getGender().equalsIgnoreCase("Male")) {
+            rbtnMale.click();
+        } else rbtnFemale.click();
 
+        selectDate(ddMonth, ddDay, ddYear, contact.getBirthDate());
 
+        clearAndType(txtStreetAddress, contact.getAddress());
+        clearAndType(txtPhoneNumber, contact.getPhoneNumber());
+        clearAndType(txtEmail, contact.getEmailAddress());
         return this;
     }
 
+
+    public String getZipStateAndCity() {
+        //txtZipCode.findElement()
+        return null;
+    }
+
     public void submitForm() {
+        waitForAjaxComplete();
         btnGetMyQuotes.click();
     }
 }
