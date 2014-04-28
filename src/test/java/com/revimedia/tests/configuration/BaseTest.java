@@ -20,7 +20,7 @@ public class BaseTest {
     public void setUp(@Optional("firefox") String browser,
                       @Optional("9") String version,
 //                      @Optional("WIN") String platform,
-                      @Optional("http://rvmd-denis.stagingrevi.com/auto/mfs/") String url) throws Exception {
+                      @Optional("http://development.stagingrevi.com/auto/mfs/") String url) throws Exception {
 
         this.url = url;
         log.info("some info");

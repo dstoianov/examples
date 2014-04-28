@@ -1,6 +1,7 @@
 package com.revimedia.testing.cds.auto.mfs;
 
 import com.revimedia.testing.cds.Page;
+import com.revimedia.testing.configuration.dto.Contact;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -38,13 +39,13 @@ public class DriverPage extends Page {
     private WebElement btnContinue;
 
 
-    public DriverPage fillInAllFields(String zipCode) {
-        clearAndType(txtZipCode, zipCode);
-        selectByValue(ddInsuranceCompany, "AAA");
-        selectByValue(ddInsuredSince, "4");
-        selectByValue(ddResidenceType, "Other");
-        selectByValue(ddMaritalStatus, "Married");
-        selectByValue(ddCreditRating, "Good");
+    public DriverPage fillInAllFields(Contact contact) {
+        clearAndType(txtZipCode, contact.getZipCode());
+        selectRandomByIndexFromSecond(ddInsuranceCompany);
+        selectRandomByIndex(ddInsuredSince);
+        selectRandomByIndex(ddResidenceType);
+        selectRandomByIndex(ddMaritalStatus);
+        selectRandomByIndex(ddCreditRating);
         return this;
     }
 

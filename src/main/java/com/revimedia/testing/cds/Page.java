@@ -9,6 +9,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.List;
+import java.util.Random;
 
 import static com.revimedia.testing.cds.PageConstants.*;
 
@@ -38,6 +39,20 @@ public class Page {
 //        waitForSelectFill(driver, webElement);
         waitForAjaxComplete();
         new Select(webElement).selectByVisibleText(text);
+    }
+
+    public void selectRandomByIndex(WebElement webElement) {
+        waitForAjaxComplete();
+        Select select = new Select(webElement);
+        List<WebElement> elements = select.getOptions();
+        select.selectByIndex(randInt(1, elements.size() - 1));
+    }
+
+    public void selectRandomByIndexFromSecond(WebElement webElement) {
+        waitForAjaxComplete();
+        Select select = new Select(webElement);
+        List<WebElement> elements = select.getOptions();
+        select.selectByIndex(randInt(2, elements.size() - 1));
     }
 
     public String getPageText() {
@@ -71,5 +86,9 @@ public class Page {
         log.info("select is filled in");
     }
 
-
+    public static int randInt(int min, int max) {
+        Random rand = new Random();
+        int randomNum = rand.nextInt((max - min) + 1) + min;
+        return randomNum;
+    }
 }

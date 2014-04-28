@@ -28,9 +28,13 @@ public class VehiclePage extends Page {
     private WebElement btnContinue;
 
     public VehiclePage fillInAllFields() {
-        selectByValue(ddVehicleBuildYear, "2005");
-        selectByValue(ddVehicleMake, "FORD");
-        selectByValue(ddVehicleModel, "GT");
+        selectRandomByIndex(ddVehicleBuildYear);
+        selectRandomByIndex(ddVehicleMake);
+        selectRandomByIndex(ddVehicleModel);
+
+        //selectByValue(ddVehicleBuildYear, "2005");
+        //selectByValue(ddVehicleMake, "FORD");
+        //selectByValue(ddVehicleModel, "GT");
         return this;
     }
 

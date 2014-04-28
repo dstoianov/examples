@@ -1,26 +1,27 @@
 package com.revimedia.tests.cds.auto.mfs;
 
-import org.testng.annotations.Test;
 import com.revimedia.testing.cds.auto.mfs.CompareAndSavePage;
 import com.revimedia.testing.cds.auto.mfs.DriverPage;
 import com.revimedia.testing.cds.auto.mfs.VehiclePage;
+import com.revimedia.testing.configuration.dataproviders.AutoDataProvider;
+import com.revimedia.testing.configuration.dto.Contact;
 import com.revimedia.tests.configuration.BaseTest;
+import org.testng.annotations.Test;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.containsString;
 import static org.hamcrest.Matchers.is;
-import static org.hamcrest.Matchers.not;
 
 /**
  * Created by Funker on 23.04.14.
  */
-public class AutoTest extends BaseTest {
+public class AutoTests extends BaseTest {
 
-    @Test
-    public void testPositiveSubmit() throws Exception {
+    @Test(dataProvider = "contactData", dataProviderClass = AutoDataProvider.class)
+    public void testPositiveSubmit(Contact contact) throws Exception {
 
         DriverPage driverPage = new DriverPage(driver);
-        VehiclePage vehiclePage = driverPage.fillInAllFields("20002").clickOnContinue();
+        VehiclePage vehiclePage = driverPage.fillInAllFields(contact).clickOnContinue();
         CompareAndSavePage compareAndSavePage = vehiclePage.fillInAllFields().clickOnContinue();
         compareAndSavePage.fillInAllFields();
         //compareAndSavePage.clickOnGetMyQuotes();
