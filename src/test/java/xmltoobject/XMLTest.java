@@ -83,7 +83,7 @@ public class XMLTest {
         //jaxbMarshaller.marshal(contacts, System.out);
 
         //Marshal the employees list in file
-        jaxbMarshaller.marshal(contacts, new File("./src/test/resources/data/leads_data_1000.xml"));
+        jaxbMarshaller.marshal(contacts, new File("./src/test/resources/data/leads_data_1000_V2.xml"));
 
 
     }

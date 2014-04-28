@@ -3,8 +3,8 @@
 <suite thread-count="3" name="Company Name AUTO" parallel="tests">
 
     <listeners>
-        <listener class-name="org.uncommons.reportng.HTMLReporter" />
-        <listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
+        <listener class-name="org.uncommons.reportng.HTMLReporter"/>
+        <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
     </listeners>
 
     <test name="FirstTest IE">
@@ -15,7 +15,8 @@
         <classes>
             <class name="parametrized.runsuite.TestCase"/>
         </classes>
-    </test> <!-- Test -->
+    </test>
+    <!-- Test -->
     <test name="SecondTest FireFox">
         <parameter name="browser" value="ie"/>
         <parameter name="version" value="7"/>
@@ -24,7 +25,8 @@
         <classes>
             <class name="parametrized.runsuite.TestCase"/>
         </classes>
-    </test> <!-- Test -->
+    </test>
+    <!-- Test -->
     <test name="ThirdTest Chrome">
         <parameter name="browser" value="ie"/>
         <parameter name="version" value="7"/>
@@ -33,5 +35,6 @@
         <classes>
             <class name="parametrized.runsuite.TestCase"/>
         </classes>
-    </test> <!-- Test -->
+    </test>
+    <!-- Test -->
 </suite> <!-- Suite -->
