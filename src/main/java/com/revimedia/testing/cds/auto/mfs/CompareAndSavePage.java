@@ -2,6 +2,7 @@ package com.revimedia.testing.cds.auto.mfs;
 
 import com.revimedia.testing.cds.Page;
 import com.revimedia.testing.configuration.dto.Contact;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -81,7 +82,7 @@ public class CompareAndSavePage extends Page {
 
     public String getZipStateAndCity() {
         //txtZipCode.findElement()
-        return null;
+        return driver.findElement(By.xpath("//div[contains(@class, 'ZipCode')]")).getText();
     }
 
     public void submitForm() {

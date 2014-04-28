@@ -63,7 +63,7 @@ public class XMLTest {
             contact.setPhoneNumber(usersList.getUsers().get(i).getPhone());
             contact.setAddress(rowdata.getRows().get(i).getAddress());
             contact.setEmailAddress(usersList.getUsers().get(i).getEmail());
-            if (rowdata.getRows().get(i).getZipCode().length() > 7) {
+            if (rowdata.getRows().get(i).getZipCode().length() > 5) {
                 continue;
             }
             contact.setZipCode(rowdata.getRows().get(i).getZipCode());
