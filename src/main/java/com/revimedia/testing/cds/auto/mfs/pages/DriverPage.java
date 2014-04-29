@@ -1,4 +1,4 @@
-package com.revimedia.testing.cds.auto.mfs;
+package com.revimedia.testing.cds.auto.mfs.pages;
 
 import com.revimedia.testing.cds.Page;
 import com.revimedia.testing.configuration.dto.Contact;
