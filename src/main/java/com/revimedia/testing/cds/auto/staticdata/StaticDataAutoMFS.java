@@ -7,16 +7,25 @@ import java.util.Random;
  */
 public class StaticDataAutoMFS {
 
+    private String insuranceCompany;
+    private String insuredSince;
+    private String residenceType;
+    private String maritalStatus;
+    private String creditRating;
+    private String education;
+    private String year;
+    private String make;
+    private String model;
 
-    private String[] insuranceCompany = {"21st century", "AAA", "AARP", "AFLAC", "Allstate",
+    private String[] insuranceCompanyList = {"21st century", "AAA", "AARP", "AFLAC", "Allstate",
             "American Family", "Amica", "Auto Club Insurance Company", "Country Insurance and Financial Services",
             "Esurance", "Farmers", "GEICO", "The Hartford", "Liberty Mutual", "Nationwide",
             "Progressive", "State Farm", "Travelers", "USAA", "Company not listed"};
-    private String[] insuredSince = {"1", "2", "3", "4", "5", "5+"};
-    private String[] residenceType = {"Dorm / Student housing", "I am renting", "My own house", "Other", "With my parents"};
-    private String[] maritalStatus = {"Divorced", "Married", "Separated", "Single", "Widowed"};
-    private String[] creditRating = {"Excellent", "Good", "Some Problems", "Major Problems"};
-    private String[] education = {"Associate Degree", "Bachelors Degree", "Doctorate Degree", "High school diploma", "Masters Degree", "None", "Other", "Some College"};
+    private String[] insuredSinceList = {"1", "2", "3", "4", "5", "5+"};
+    private String[] residenceTypeList = {"Dorm / Student housing", "I am renting", "My own house", "Other", "With my parents"};
+    private String[] maritalStatusList = {"Divorced", "Married", "Separated", "Single", "Widowed"};
+    private String[] creditRatingList = {"Excellent", "Good", "Some Problems", "Major Problems"};
+    private String[] educationList = {"Associate Degree", "Bachelors Degree", "Doctorate Degree", "High school diploma", "Masters Degree", "None", "Other", "Some College"};
 
 
     private String getRandomFromList(String[] list) {
