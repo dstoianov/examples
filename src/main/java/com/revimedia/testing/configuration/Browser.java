@@ -1,6 +1,11 @@
 package com.revimedia.testing.configuration;
 
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.safari.SafariDriver;
 
 /**
  * User: stoianod
@@ -9,28 +14,28 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 public enum Browser {
     CHROME("chrome") {
         @Override
-        public DesiredCapabilities getDesiredCapabilities() {
-            return DesiredCapabilities.chrome();
+        public WebDriver getDriverWithCapabilities(DesiredCapabilities capabilities) {
+            return new ChromeDriver(capabilities);
         }
     },
     FIREFOX("firefox") {
         @Override
-        public DesiredCapabilities getDesiredCapabilities() {
-            return DesiredCapabilities.firefox();
+        public WebDriver getDriverWithCapabilities(DesiredCapabilities capabilities) {
+            return new FirefoxDriver(capabilities);
         }
     },
     IE("ie") {
         @Override
-        public DesiredCapabilities getDesiredCapabilities() {
-            return DesiredCapabilities.internetExplorer();
+        public WebDriver getDriverWithCapabilities(DesiredCapabilities capabilities) {
+            return new InternetExplorerDriver(capabilities);
         }
     },
 
 
     SAFARI("safari") {
         @Override
-        public DesiredCapabilities getDesiredCapabilities() {
-            return DesiredCapabilities.safari();
+        public WebDriver getDriverWithCapabilities(DesiredCapabilities capabilities) {
+            return new SafariDriver(capabilities);
         }
     },;
 
@@ -52,5 +57,5 @@ public enum Browser {
     }
 
 
-    public abstract DesiredCapabilities getDesiredCapabilities();
+    public abstract WebDriver getDriverWithCapabilities(DesiredCapabilities capabilities);
 }

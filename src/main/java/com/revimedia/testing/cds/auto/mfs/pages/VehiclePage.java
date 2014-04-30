@@ -1,6 +1,7 @@
 package com.revimedia.testing.cds.auto.mfs.pages;
 
 import com.revimedia.testing.cds.Page;
+import com.revimedia.testing.cds.auto.staticdata.StaticDataAutoMFS;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -27,14 +28,10 @@ public class VehiclePage extends Page {
     @FindBy(xpath = "//button") //button class="bq-control bq-type-simple">
     private WebElement btnContinue;
 
-    public VehiclePage fillInAllFields() {
-        selectRandomByIndex(ddVehicleBuildYear);
-        selectRandomByIndex(ddVehicleMake);
-        selectRandomByIndex(ddVehicleModel);
-
-        //selectByValue(ddVehicleBuildYear, "2005");
-        //selectByValue(ddVehicleMake, "FORD");
-        //selectByValue(ddVehicleModel, "GT");
+    public VehiclePage fillInAllFields(StaticDataAutoMFS staticData) {
+        selectByValue(ddVehicleBuildYear, staticData.getYear());
+        selectByValue(ddVehicleMake, staticData.getMake());
+        selectByValue(ddVehicleModel, staticData.getModel());
         return this;
     }
 

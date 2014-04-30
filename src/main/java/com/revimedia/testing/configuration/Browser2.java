@@ -58,11 +58,6 @@ public enum Browser2 {
     IE10("ie", "10"),
     IE11("ie", "11"),;
 
-    private static WebDriver setConfigDriver(WebDriver driver) {
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        return driver;
-    }
 
     Browser2(String name, String version) {
         this.name = name;
@@ -109,6 +104,12 @@ public enum Browser2 {
         return setConfigDriver(new InternetExplorerDriver());
     }
 
+    private static WebDriver setConfigDriver(WebDriver driver) {
+        //driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        return driver;
+    }
+
     public WebDriver getRemoteDriver() throws Exception {
         DesiredCapabilities capabilities = DesiredCapabilities.internetExplorer();
         //capabilities.setCapability("browserVersion", version);
@@ -116,7 +117,7 @@ public enum Browser2 {
         capabilities.setPlatform(Platform.ANY);
         WebDriver driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), capabilities);
 
-        driver.manage().window().maximize();
+        //driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         return driver;
     }

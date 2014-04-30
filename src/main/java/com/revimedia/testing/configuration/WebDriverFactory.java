@@ -1,11 +1,10 @@
 package com.revimedia.testing.configuration;
 
+import org.openqa.selenium.Proxy;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.remote.RemoteWebDriver;
 
-
-import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -13,7 +12,6 @@ import java.util.concurrent.TimeUnit;
  * Date: 4/11/14
  */
 public class WebDriverFactory {
-
     private WebDriver driver;
     //private String driverLocation = "remote";
     private String driverLocation = "local";
@@ -33,18 +31,40 @@ public class WebDriverFactory {
     }
 
 
-    private WebDriver createDriver(String browserName, String version) throws Exception {
+    public WebDriver createDriver(String browserName, String version) throws Exception {
+        // Browser bob
+        // start the proxy
+/*
+        int port = 8071;
+        ProxyServer server = new ProxyServer(port);
+        server.start();
+
+        // get the Selenium proxy object
+        Proxy proxy = server.seleniumProxy();
+        proxy.setHttpProxy("localhost:" + port);
+ */
 
         DesiredCapabilities capability = new DesiredCapabilities();
-        Browser browser = Browser.getByName(browserName);
-        capability.setCapability("browserName", browser.getName());
+        //Browser browser = Browser.getByName(browserName);
+        //capability.setCapability("browserName", browser.getName());
+
+
+        Proxy proxy = BrowserMobProxy.startBrowserMob();
+
+        capability.setCapability(CapabilityType.PROXY, proxy);
+        //driver =  Browser.getByName(browserName, capability);
+
+        driver = Browser.getByName(browserName).getDriverWithCapabilities(capability);
+
+        //driver =  Browser.getDriverWithCapabilities(browserName, capability);
+
 
 //        if (browser.equals(Browser.IE)) {
 //            capability.setCapability("browserVersion", version);
 //        }
 
-        driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), capability);
-        driver.manage().window().maximize();
+        //driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), capability);
+        //driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         return driver;
     }

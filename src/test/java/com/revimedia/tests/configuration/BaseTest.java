@@ -1,5 +1,6 @@
 package com.revimedia.tests.configuration;
 
+import com.revimedia.testing.configuration.BrowserMobProxy;
 import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -15,9 +16,12 @@ public class BaseTest {
     private String url;
     protected static final Logger log = Logger.getLogger(BaseTest.class);
 
+    WebDriverFactory instanceDriver;
+
+
     @BeforeClass
     @Parameters(value = {"browser", "version", "url"})
-    public void setUp(@Optional("firefox") String browser,
+    public void setUp(@Optional("chrome") String browser,
                       @Optional("9") String version,
 //                      @Optional("WIN") String platform,
                       @Optional("http://development.stagingrevi.com/auto/mfs/") String url) throws Exception {
@@ -26,7 +30,9 @@ public class BaseTest {
         log.info("some info");
         WebDriverFactory instanceDriver = new WebDriverFactory();
 
-        driver = instanceDriver.getDriver(browser, version);
+        //driver = instanceDriver.getDriver(browser, version);
+        //with browserMob
+        driver = instanceDriver.createDriver(browser, version);
 
         //driver = instanceDriver.getDriver(browser, version);
         //driver = instanceDriver.getLocalDriver(browser, version);
@@ -45,7 +51,8 @@ public class BaseTest {
     }
 
     @AfterClass
-    public void tearDown() {
+    public void tearDown() throws Exception {
+        BrowserMobProxy.stopBrowserMob();
         driver.quit();
     }
 

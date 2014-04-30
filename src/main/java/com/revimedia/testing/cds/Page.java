@@ -41,8 +41,8 @@ public class Page {
 
     public void selectByValue(WebElement webElement, String text) {
 //        waitForSelectFill(driver, webElement);
-        waitForAjaxComplete();
         new Select(webElement).selectByVisibleText(text);
+        waitForAjaxComplete();
     }
 
     public void selectRandomByIndex(WebElement webElement) {
@@ -52,7 +52,7 @@ public class Page {
         select.selectByIndex(randInt(1, elements.size() - 1));
     }
 
-    public void selectRandomByIndexFromSecond(WebElement webElement) {
+    public void selectRandomByIndexFromSecondOptions(WebElement webElement) {
         waitForAjaxComplete();
         Select select = new Select(webElement);
         List<WebElement> elements = select.getOptions();

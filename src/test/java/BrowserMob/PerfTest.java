@@ -4,11 +4,6 @@ package BrowserMob;
  * Created by Funker on 26.04.14.
  */
 
-import java.io.File;
-import java.io.FileOutputStream;
-import java.util.concurrent.TimeUnit;
-
-
 import net.lightbody.bmp.core.har.Har;
 import net.lightbody.bmp.core.har.HarEntry;
 import net.lightbody.bmp.core.har.HarRequest;
@@ -17,13 +12,15 @@ import net.lightbody.bmp.proxy.ProxyServer;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Proxy;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.Test;
 
-import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.assertThat;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.util.concurrent.TimeUnit;
 
 public class PerfTest {
 
@@ -161,18 +158,21 @@ public class PerfTest {
         Proxy proxy = server.seleniumProxy();
         proxy.setHttpProxy("localhost:8073");
         proxy.setSslProxy("localhost:8073");
-        proxy.setSocksProxy("localhost:8073");
+        //proxy.setSocksProxy("localhost:8073");
+
+        server.newHar("my_super_test");
 
         // configure it as a desired capability
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability(CapabilityType.PROXY, proxy);
 
         // start the browser
-        WebDriver driver = new FirefoxDriver(capabilities);
+        //WebDriver driver = new FirefoxDriver(capabilities);
+        WebDriver driver = new ChromeDriver(capabilities);
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
         // create a new HAR with the label "agame.com"
-        server.newHar("my_super_test");
+        //server.newHar("my_super_test");
 
         //String[] whiteList = "http://www.yandex.com,http://*.google.com/.*".split(",");
         //String[] whiteList = "http://*.yandex.com/".split(",");
@@ -183,12 +183,12 @@ public class PerfTest {
         //server.whitelistRequests(whiteList, 200);
 
         driver.get("http://www.yandex.ru/");
-        Thread.sleep(2000);
+        Thread.sleep(1000);
         driver.get("http://google.com.ua/");
-        Thread.sleep(2000);
+        Thread.sleep(1000);
 
         driver.get("http://www.stubhub.co.uk/");
-        Thread.sleep(2000);
+        Thread.sleep(1000);
         //server.waitForNetworkTrafficToStop(20000, 45000);
 
         // get the HAR data

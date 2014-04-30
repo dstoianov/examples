@@ -1,6 +1,7 @@
 package com.revimedia.testing.cds.auto.mfs.pages;
 
 import com.revimedia.testing.cds.Page;
+import com.revimedia.testing.cds.auto.staticdata.StaticDataAutoMFS;
 import com.revimedia.testing.configuration.dto.Contact;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -39,13 +40,13 @@ public class DriverPage extends Page {
     private WebElement btnContinue;
 
 
-    public DriverPage fillInAllFields(Contact contact) {
+    public DriverPage fillInAllFields(Contact contact, StaticDataAutoMFS staticData) {
         clearAndType(txtZipCode, contact.getZipCode());
-        selectRandomByIndexFromSecond(ddInsuranceCompany);
-        selectRandomByIndex(ddInsuredSince);
-        selectRandomByIndex(ddResidenceType);
-        selectRandomByIndex(ddMaritalStatus);
-        selectRandomByIndex(ddCreditRating);
+        selectByValue(ddInsuranceCompany, staticData.getInsuranceCompany());
+        selectByValue(ddInsuredSince, staticData.getInsuredSince());
+        selectByValue(ddResidenceType, staticData.getResidenceType());
+        selectByValue(ddMaritalStatus, staticData.getMaritalStatus());
+        selectByValue(ddCreditRating, staticData.getCreditRating());
         return this;
     }
 
