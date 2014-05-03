@@ -1,5 +1,6 @@
 package com.revimedia.testing.configuration;
 
+import com.revimedia.testing.configuration.proxy.BrowserMobProxy;
 import org.openqa.selenium.Proxy;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.CapabilityType;

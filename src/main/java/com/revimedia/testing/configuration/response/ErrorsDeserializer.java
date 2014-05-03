@@ -1,4 +1,4 @@
-package jsonTests.gsonResponse;
+package com.revimedia.testing.configuration.response;
 
 import com.google.gson.*;
 

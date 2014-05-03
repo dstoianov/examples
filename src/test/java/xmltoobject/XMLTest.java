@@ -89,8 +89,9 @@ public class XMLTest {
     }
 
     @Test(dataProvider = "contactData")// ,  dataProvider = AutoDataProvider.class)
-    public void testName4(Contact contact) throws Exception {
-        System.out.println(contact.toString());
+    public void testName4(Contact contact1, Contact contact2) throws Exception {
+        System.out.println(contact1.toString());
+        System.out.println(contact2.toString());
     }
 
 
@@ -124,4 +125,22 @@ public class XMLTest {
         }
         return null;
     }
+
+    @DataProvider
+    public static Object[][] contactData2() {
+        Users usersList = (Users) unMarshalToObject("./src/test/resources/data/users_data_new.xml", Users.class);
+        Rowdata rowdata = (Rowdata) unMarshalToObject("./src/test/resources/data/data_usa_1000.xml", Rowdata.class);
+
+        return new Object[][]{
+                {usersList.getRandom()},
+                {usersList.getRandom()}
+        };
+    }
+
+    @Test(dataProvider = "contactData2")
+    public void testName5(User u) throws Exception {
+        System.out.println(u.toString());
+
+    }
+
 }

@@ -1,4 +1,4 @@
-package jsonTests.gsonResponse;
+package com.revimedia.testing.configuration.response;
 
 /**
  * Created by Funker on 03.05.14.

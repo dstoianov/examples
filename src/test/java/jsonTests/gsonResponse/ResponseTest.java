@@ -2,10 +2,10 @@ package jsonTests.gsonResponse;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.revimedia.testing.configuration.proxy.CDSErrors;
-import com.revimedia.testing.configuration.proxy.CDSErrorsDeserializer;
-import com.revimedia.testing.configuration.proxy.CDSResponse;
-import com.revimedia.testing.configuration.proxy.CDSResponseDeserializer;
+import com.revimedia.testing.configuration.response.Errors;
+import com.revimedia.testing.configuration.response.ErrorsDeserializer;
+import com.revimedia.testing.configuration.response.Response;
+import com.revimedia.testing.configuration.response.ResponseDeserializer;
 import org.testng.annotations.Test;
 
 /**
@@ -26,7 +26,7 @@ public class ResponseTest {
         gsonBuilder.registerTypeAdapter(Errors.class, new ErrorsDeserializer());
         final Gson gson = gsonBuilder.create();
 
-        String w = unSuccess;
+        String w = perError;
         final Response response = gson.fromJson(w, Response.class);
         System.out.println(w);
         System.out.println(response);
