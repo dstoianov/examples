@@ -13,31 +13,15 @@ public class ResponseDeserializer implements JsonDeserializer<Response> {
     @Override
     public Response deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext context) throws JsonParseException {
         final JsonObject jsonObject = json.getAsJsonObject();
-
         final Response response = new Response();
-
-        final String _success = jsonObject.get("_success").getAsString();
-        final Boolean Success = jsonObject.get("Success").getAsBoolean();
-        final Boolean IsWarning = jsonObject.get("IsWarning").getAsBoolean();
-
-        JsonElement id = jsonObject.get("TransactionId");
-
-        if (jsonObject.get("TransactionId") != null & !jsonObject.get("TransactionId").equals("null")) {
-            final String transactionId = jsonObject.get("TransactionId").getAsString();
-            response.setTransactionId(transactionId);
+        response.set_success(jsonObject.get("_success").getAsString());
+        if (!jsonObject.get("TransactionId").isJsonNull()) { // if (!jsonObject.get("TransactionId").toString().equals("null")) {
+            response.setTransactionId(jsonObject.get("TransactionId").getAsString());
         }
-
-
-        JsonElement errorsJson = jsonObject.get("Errors");
-
-        Errors[] errors = context.deserialize(errorsJson, Errors[].class);
-
-
-        response.set_success(_success);
-        response.setSuccess(Success);
-        response.setWarning(IsWarning);
+        Errors[] errors = context.deserialize(jsonObject.get("Errors"), Errors[].class);
         response.setERRORS(errors);
-
+        response.setSuccess(jsonObject.get("Success").getAsBoolean());
+        response.setWarning(jsonObject.get("IsWarning").getAsBoolean());
         return response;
     }
 }

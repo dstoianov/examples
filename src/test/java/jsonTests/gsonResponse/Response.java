@@ -33,6 +33,27 @@ public class Response {
         IsWarning = isWarning;
     }
 
+    public String get_success() {
+        return _success;
+    }
+
+    public String getTransactionId() {
+        return TransactionId;
+    }
+
+    public Errors[] getERRORS() {
+        return ERRORS;
+    }
+
+    public boolean isSuccess() {
+        return Success;
+    }
+
+    public boolean isWarning() {
+        return IsWarning;
+    }
+
+
     @Override
     public String toString() {
         return "Response{" +

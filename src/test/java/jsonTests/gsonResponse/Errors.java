@@ -4,7 +4,6 @@ package jsonTests.gsonResponse;
  * Created by Funker on 03.05.14.
  */
 public class Errors {
-
     private String Reason;
     private String Param;
     private String ExtraInfo;
@@ -20,6 +19,19 @@ public class Errors {
     public void setExtraInfo(String extraInfo) {
         ExtraInfo = extraInfo;
     }
+
+    public String getReason() {
+        return Reason;
+    }
+
+    public String getParam() {
+        return Param;
+    }
+
+    public String getExtraInfo() {
+        return ExtraInfo;
+    }
+
 
     @Override
     public String toString() {
