@@ -90,5 +90,10 @@ public class CompareAndSavePage extends Page {
     public void submitForm() {
         waitForAjaxComplete();
         btnGetMyQuotes.click();
+        if (btnGetMyQuotes.isDisplayed()) {
+            // TODO: workaround for eBureau Verification
+            // TODO: need to redo this, think about more elegant solution for eBureau Verification
+            btnGetMyQuotes.click();
+        }
     }
 }
