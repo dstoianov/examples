@@ -88,28 +88,6 @@ public class StaticDataAutoMFS {
         this.model = strings[2];
     }
 
-    public static Object[][] getStaticDataAutoMFSObject() {
-        StaticDataAutoMFS staticDataAutoMFS = new StaticDataAutoMFS();
-        return new Object[][]{{staticDataAutoMFS}};
-    }
-
-//        try {
-//            List<AutoUser> autoUsers = parsXML(xmoFileName);
-//
-//            Object[][] result = new Object[autoUsers.size()][];
-//            int i = 0;
-//            for (Object bean : autoUsers) {
-//                result[i] = new Object[]{bean};
-//                ++i;
-//            }
-//
-//            return result;
-//        } catch (Exception e) {
-//            throw new Error("Can't convert List to object: " + e);
-//        }
-//    }
-
-
     private String getRandomValueFromList(String[] list) {
         Random r = new Random();
         return list[r.nextInt(list.length)];

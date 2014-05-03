@@ -25,4 +25,20 @@ public class DataProviderHelper {
         }
         return null;
     }
+
+    static <T extends RandomObject> Object unMarshalToObject(String xml_file_name, Class<T> clazz) {
+        try {
+            JAXBContext jaxbContext = JAXBContext.newInstance(clazz);
+            Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
+            T data = (T) jaxbUnmarshaller.unmarshal(new File(xml_file_name));
+
+            return data.getRandom();
+
+        } catch (JAXBException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+
 }

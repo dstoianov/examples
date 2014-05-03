@@ -10,20 +10,18 @@ import org.testng.annotations.DataProvider;
 public class AutoDataProvider extends DataProviderHelper {
 
     @DataProvider
-    public static Object[][] contactDataOthers() {
-        Object[][] contact = unMarshal("./src/test/resources/data/leads_data_1000.xml", Contacts.class);
-
-        StaticDataAutoMFS staticDataAutoMFS = new StaticDataAutoMFS();
-        Object[][] mfsObject = staticDataAutoMFS.getStaticDataAutoMFSObject();
-
+    public static Object[][] contactAndStaticData() {
+        Object contact = unMarshalToObject("./src/test/resources/data/leads_data_1000.xml", Contacts.class);
         Object[][] result = {
-                {contact, new StaticDataAutoMFS()}
+                {contact, new StaticDataAutoMFS()},
         };
         return result;
     }
 
     @DataProvider
     public static Object[][] contactData() {
-        return unMarshal("./src/test/resources/data/leads_data_1000.xml", Contacts.class);
+        return new Object[][]{
+                {unMarshalToObject("./src/test/resources/data/leads_data_1000.xml", Contacts.class)},
+        };
     }
 }
