@@ -6,6 +6,7 @@ import org.openqa.selenium.Proxy;
 
 /**
  * Created by dstoianov on 4/30/2014, 7:46 PM.
+ * http://rdekleijn.nl/functional-test-automation-over-a-proxy/
  */
 public class BrowserMobProxy {
     private static ProxyServer server;
