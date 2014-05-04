@@ -180,7 +180,7 @@
             <groupId>net.lightbody.bmp</groupId>
             <artifactId>browsermob-proxy</artifactId>
             <version>2.0-beta-9</version>
-            <scope>test</scope>
+            <!--<scope>test</scope>-->
             <exclusions>
                 <exclusion>
                     <groupId>org.seleniumhq.selenium</groupId>
@@ -192,12 +192,6 @@
             <groupId>com.google.code.gson</groupId>
             <artifactId>gson</artifactId>
             <version>2.2.4</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.json</groupId>
-            <artifactId>json</artifactId>
-            <version>20140107</version>
         </dependency>
 
     </dependencies>

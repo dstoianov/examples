@@ -4,41 +4,41 @@ package com.revimedia.testing.configuration.response;
  * Created by Funker on 03.05.14.
  */
 public class Errors {
-    private String Reason;
-    private String Param;
-    private String ExtraInfo;
+    private String reason;
+    private String param;
+    private String extraInfo;
 
     public void setReason(String reason) {
-        Reason = reason;
+        this.reason = reason;
     }
 
     public void setParam(String param) {
-        Param = param;
+        this.param = param;
     }
 
     public void setExtraInfo(String extraInfo) {
-        ExtraInfo = extraInfo;
+        this.extraInfo = extraInfo;
     }
 
     public String getReason() {
-        return Reason;
+        return reason;
     }
 
     public String getParam() {
-        return Param;
+        return param;
     }
 
     public String getExtraInfo() {
-        return ExtraInfo;
+        return extraInfo;
     }
 
 
     @Override
     public String toString() {
         return "Errors{" +
-                "Reason='" + Reason + '\'' +
-                ", Param='" + Param + '\'' +
-                ", ExtraInfo='" + ExtraInfo + '\'' +
+                "reason='" + reason + '\'' +
+                ", param='" + param + '\'' +
+                ", extraInfo='" + extraInfo + '\'' +
                 '}';
     }
 

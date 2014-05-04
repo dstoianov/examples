@@ -1,6 +1,6 @@
 package com.revimedia.testing.configuration;
 
-import com.revimedia.testing.configuration.proxy.BrowserMobProxy;
+import com.revimedia.testing.configuration.proxy.*;
 import org.openqa.selenium.Proxy;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.CapabilityType;
@@ -14,6 +14,7 @@ import java.util.concurrent.TimeUnit;
  */
 public class WebDriverFactory {
     private WebDriver driver;
+    //private BrowserMobProxy proxy;
     //private String driverLocation = "remote";
     private String driverLocation = "local";
 
@@ -50,6 +51,7 @@ public class WebDriverFactory {
         //capability.setCapability("browserName", browser.getName());
 
 
+        // BrowserMobProxy proxy = new BrowserMobProxy();
         Proxy proxy = BrowserMobProxy.startBrowserMob();
 
         capability.setCapability(CapabilityType.PROXY, proxy);

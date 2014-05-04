@@ -7,10 +7,10 @@ package com.revimedia.testing.configuration.response;
 public class Response {
 
     private String _success;
-    private String TransactionId;
+    private String transactionId;
     private Errors[] ERRORS;
-    private boolean Success;
-    private boolean IsWarning;
+    private boolean success;
+    private boolean isWarning;
 
 
     public void set_success(String _success) {
@@ -18,7 +18,7 @@ public class Response {
     }
 
     public void setTransactionId(String transactionId) {
-        TransactionId = transactionId;
+        this.transactionId = transactionId;
     }
 
     public void setERRORS(Errors[] ERRORS) {
@@ -26,11 +26,11 @@ public class Response {
     }
 
     public void setSuccess(boolean success) {
-        Success = success;
+        this.success = success;
     }
 
     public void setWarning(boolean isWarning) {
-        IsWarning = isWarning;
+        this.isWarning = isWarning;
     }
 
     public String get_success() {
@@ -38,19 +38,19 @@ public class Response {
     }
 
     public String getTransactionId() {
-        return TransactionId;
+        return transactionId;
     }
 
-    public Errors[] getERRORS() {
+    public Errors[] getErrors() {
         return ERRORS;
     }
 
-    public boolean isSuccess() {
-        return Success;
+    public boolean getSuccess() {
+        return success;
     }
 
-    public boolean isWarning() {
-        return IsWarning;
+    public boolean getIsWarning() {
+        return isWarning;
     }
 
 
@@ -58,10 +58,10 @@ public class Response {
     public String toString() {
         return "Response{" +
                 "_success='" + _success + '\'' +
-                ", TransactionId='" + TransactionId + '\'' +
+                ", TransactionId='" + transactionId + '\'' +
                 ", ERRORS=" + ERRORS +
-                ", Success=" + Success +
-                ", IsWarning=" + IsWarning +
+                ", Success=" + success +
+                ", IsWarning=" + isWarning +
                 '}';
     }
 }
