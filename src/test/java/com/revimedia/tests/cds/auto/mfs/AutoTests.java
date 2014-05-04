@@ -72,7 +72,7 @@ public class AutoTests extends BaseTest {
 
     @Test(dataProvider = "contactData", dataProviderClass = AutoDataProvider.class)
     public void testPrePop(Contact contact) throws Exception {
-
+        DriverPage driverPage = new DriverPage(driver);
 
     }
 }
