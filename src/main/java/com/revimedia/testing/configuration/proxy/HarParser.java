@@ -13,7 +13,7 @@ import net.lightbody.bmp.core.har.*;
  */
 public class HarParser {
 
-    public static Response getResponse() {
+    public static Submit getSubmit() {
         Har har = BrowserMobProxy.getHar();
         for (HarEntry entry : har.getLog().getEntries()) {
             HarRequest request = entry.getRequest();
@@ -23,6 +23,8 @@ public class HarParser {
 
             if (request.getUrl().contains("submit")) {
                 System.out.println("Has submit");
+                Submit submit = new Submit();
+
 
                 System.out.println("------------------request----------response----------------");
                 System.out.println(request.getUrl());
@@ -30,14 +32,11 @@ public class HarParser {
                 for (HarPostDataParam list : request.getPostData().getParams()) {
                     System.out.println(list.getName());
                     System.out.println(list.getValue());
+                    submit.setRequest(list.getValue());
                 }
                 System.out.println("----------");
                 System.out.println(resRAW);
                 System.out.println("------------------request----------response----------------");
-
-//                Gson gson = new Gson();
-//                String br = response.getContent().getText();
-//                Response response1 = gson.fromJson(br, Response.class);
 
                 final GsonBuilder gsonBuilder = new GsonBuilder();
                 gsonBuilder.registerTypeAdapter(Response.class, new ResponseDeserializer());
@@ -45,7 +44,9 @@ public class HarParser {
                 final Gson gson = gsonBuilder.create();
 
                 Response responseObj = gson.fromJson(resRAW, Response.class);
-                return responseObj;
+                submit.setResponse(responseObj);
+
+                return submit;
             }
         }
         return null;

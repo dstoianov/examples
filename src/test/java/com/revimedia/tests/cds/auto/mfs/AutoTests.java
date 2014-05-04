@@ -6,7 +6,7 @@ import com.revimedia.testing.cds.auto.mfs.pages.VehiclePage;
 import com.revimedia.testing.cds.auto.staticdata.StaticDataAutoMFS;
 import com.revimedia.testing.configuration.dto.Contact;
 import com.revimedia.testing.configuration.proxy.HarParser;
-import com.revimedia.testing.configuration.response.Response;
+import com.revimedia.testing.configuration.proxy.Submit;
 import com.revimedia.tests.configuration.BaseTest;
 import com.revimedia.tests.configuration.dataproviders.AutoDataProvider;
 
@@ -26,7 +26,6 @@ public class AutoTests extends BaseTest {
 
     @Test(dataProvider = "contactAndStaticData", dataProviderClass = AutoDataProvider.class)
     public void testPositiveSubmit(Contact contact, StaticDataAutoMFS staticData) throws Exception {
-        //StaticDataAutoMFS staticData = new StaticDataAutoMFS();
 
         DriverPage driverPage = new DriverPage(driver);
         driverPage.fillInAllFields(contact, staticData);
@@ -41,17 +40,15 @@ public class AutoTests extends BaseTest {
 
         compareAndSavePage.submitForm();
 
-        // HarParser harParser = new HarParser();
+        Submit submit = HarParser.getSubmit();
 
-        Response response = HarParser.getResponse();
-
-        assertThat(response, allOf(
+        assertThat(submit.getResponse().getTransactionId().length(), is(36));
+        assertThat(submit.getResponse(), allOf(
                 hasProperty("_success", equalTo("BaeOK")),
                 hasProperty("success", is(true)),
                 hasProperty("isWarning", is(false))
         ));
 
-        assertThat(response.getTransactionId().length(), is(36));
         //assertThat(xml, hasXPath("//something[@id='b']/cheese", equalTo("Cheddar")));
     }
 
