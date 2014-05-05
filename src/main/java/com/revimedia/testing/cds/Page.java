@@ -2,10 +2,7 @@ package com.revimedia.testing.cds;
 
 import com.revimedia.testing.configuration.utils.JsUtils;
 import org.apache.log4j.Logger;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.Select;
@@ -16,6 +13,11 @@ import java.util.Random;
 
 import static com.revimedia.testing.cds.PageConstants.PAGE_CONTENT;
 import static com.revimedia.testing.cds.PageConstants.PAGE_ERRORS;
+import static com.revimedia.testing.cds.constants.Disclaimers.*;
+import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.equalToIgnoringCase;
+import static org.hamcrest.Matchers.equalToIgnoringWhiteSpace;
 
 /**
  * User: stoianod
@@ -96,21 +98,62 @@ public class Page {
         return randomNum;
     }
 
-
     public void selectDate(WebElement ddMonth, WebElement ddDay, WebElement ddYear, String birthDate) {
-
+        log.info("Filling in date: " + birthDate);
         //Mar 12, 1987
         int blank = birthDate.indexOf(" ");
         int comma = birthDate.indexOf(",");
         String month = birthDate.substring(0, 3);
         String day = birthDate.substring(birthDate.indexOf(" ") + 1, comma);
         String year = birthDate.substring(comma + 2);
-
         selectByValue(ddMonth, month);
         selectByValue(ddDay, day);
         selectByValue(ddYear, year);
+    }
+
+    public void verifyPrivacyPolicyAndTermsOfUseLinks() {
+        log.info("Verifying Privacy Policy And Terms Of Use(or Conditions) Links...");
+        assertThat(isElementPresent(By.linkText("Privacy Policy")), is(true));
+        assertThat(isElementPresent(By.linkText("Terms of Use")), is(true));
+        JsUtils jsUtils = new JsUtils(driver);
+        assertThat(jsUtils.getPPAndTC(), equalToIgnoringWhiteSpace(PP_TC));
+        log.info("Links are presets and text is matched as expected");
+        log.info("-------------------------------------------------");
+    }
+
+    public void verifyTCPADisclaimerAndLinksLinks() {
+        log.info("Verifying TCPA Disclaimer And Links...");
+        assertThat(isElementPresent(By.linkText("insurance companies, their agents and partner companies")), is(true));
+        JsUtils jsUtils = new JsUtils(driver);
+        assertThat(jsUtils.getTCPADisclaimer(), equalToIgnoringCase(TCPA_DISCLAIMER));
+        log.info("Link is preset and text is matched as expected");
+        log.info("----------------------------------------------");
 
     }
 
+    public void verifyDisclaimerAndLinksLinks() {
+        log.info("Verifying Disclaimer And Links...");
+        assertThat(isElementPresent(By.linkText("Privacy Policy")), is(true));
+        assertThat(isElementPresent(By.linkText("Terms and Conditions")), is(true));
+        JsUtils jsUtils = new JsUtils(driver);
+        assertThat(jsUtils.getDisclaimer(), equalToIgnoringCase(DISCLAIMER));
+        log.info("Links are presets and text is matched as expected");
+        log.info("-------------------------------------------------");
+    }
+
+
+    private static Object executeJavascript(WebDriver driver, String script) {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        return js.executeScript(script);
+    }
+
+    private boolean isElementPresent(By by) {
+        try {
+            driver.findElement(by);
+            return true;
+        } catch (NoSuchElementException e) {
+            return false;
+        }
+    }
 
 }

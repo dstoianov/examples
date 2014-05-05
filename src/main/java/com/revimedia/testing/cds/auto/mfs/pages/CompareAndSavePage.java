@@ -78,6 +78,7 @@ public class CompareAndSavePage extends Page {
         clearAndType(txtStreetAddress, contact.getAddress());
         clearAndType(txtPhoneNumber, contact.getPhoneNumber());
         clearAndType(txtEmail, contact.getEmailAddress());
+        waitForAjaxComplete();
         return this;
     }
 

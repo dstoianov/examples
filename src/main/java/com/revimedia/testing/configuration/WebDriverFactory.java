@@ -52,7 +52,7 @@ public class WebDriverFactory {
 
 
         // BrowserMobProxy proxy = new BrowserMobProxy();
-        Proxy proxy = BrowserMobProxy.startBrowserMob();
+        Proxy proxy = BrowserMobProxyLocal.startBrowserMob();
 
         capability.setCapability(CapabilityType.PROXY, proxy);
         //driver =  Browser.getByName(browserName, capability);

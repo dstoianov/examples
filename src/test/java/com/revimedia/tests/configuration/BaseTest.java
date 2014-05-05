@@ -1,6 +1,6 @@
 package com.revimedia.tests.configuration;
 
-import com.revimedia.testing.configuration.proxy.BrowserMobProxy;
+import com.revimedia.testing.configuration.proxy.BrowserMobProxyLocal;
 import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -52,7 +52,7 @@ public class BaseTest {
 
     @AfterClass(alwaysRun = true)
     public void tearDown() throws Exception {
-        BrowserMobProxy.stopBrowserMob();
+        BrowserMobProxyLocal.stopBrowserMob();
         driver.quit();
     }
 

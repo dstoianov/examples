@@ -14,7 +14,7 @@ import net.lightbody.bmp.core.har.*;
 public class HarParser {
 
     public static Submit getSubmit() {
-        Har har = BrowserMobProxy.getHar();
+        Har har = BrowserMobProxyLocal.getHar();
         for (HarEntry entry : har.getLog().getEntries()) {
             HarRequest request = entry.getRequest();
             HarResponse response = entry.getResponse();

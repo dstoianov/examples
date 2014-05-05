@@ -9,7 +9,7 @@ import org.openqa.selenium.Proxy;
  * http://rdekleijn.nl/functional-test-automation-over-a-proxy/
  * https://groups.google.com/forum/#!topic/browsermob-proxy/ORX5GZyCEt0
  */
-public class BrowserMobProxy {
+public class BrowserMobProxyLocal {
     private static ProxyServer server;
 
     public static Proxy startBrowserMob() throws Exception {
