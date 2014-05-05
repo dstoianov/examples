@@ -113,8 +113,8 @@ public class Page {
 
     public void verifyPrivacyPolicyAndTermsOfUseLinks() {
         log.info("Verifying Privacy Policy And Terms Of Use(or Conditions) Links...");
-        assertThat(isElementPresent(By.linkText("Privacy Policy")), is(true));
-        assertThat(isElementPresent(By.linkText("Terms of Use")), is(true));
+        assertThat(isElementPresent(By.linkText(PRIVACY_POLICY)), is(true));
+        assertThat(isElementPresent(By.linkText(TERM_OF_USE)), is(true));
         JsUtils jsUtils = new JsUtils(driver);
         assertThat(jsUtils.getPPAndTC(), equalToIgnoringWhiteSpace(PP_TC));
         log.info("Links are presets and text is matched as expected");
@@ -123,7 +123,7 @@ public class Page {
 
     public void verifyTCPADisclaimerAndLinksLinks() {
         log.info("Verifying TCPA Disclaimer And Links...");
-        assertThat(isElementPresent(By.linkText("insurance companies, their agents and partner companies")), is(true));
+        assertThat(isElementPresent(By.linkText(INSURANCE_COMPANIES)), is(true));
         JsUtils jsUtils = new JsUtils(driver);
         assertThat(jsUtils.getTCPADisclaimer(), equalToIgnoringCase(TCPA_DISCLAIMER));
         log.info("Link is preset and text is matched as expected");
@@ -133,8 +133,8 @@ public class Page {
 
     public void verifyDisclaimerAndLinksLinks() {
         log.info("Verifying Disclaimer And Links...");
-        assertThat(isElementPresent(By.linkText("Privacy Policy")), is(true));
-        assertThat(isElementPresent(By.linkText("Terms and Conditions")), is(true));
+        assertThat(isElementPresent(By.linkText(PRIVACY_POLICY)), is(true));
+        assertThat(isElementPresent(By.linkText(TERM_AND_CONDITIONS)), is(true));
         JsUtils jsUtils = new JsUtils(driver);
         assertThat(jsUtils.getDisclaimer(), equalToIgnoringCase(DISCLAIMER));
         log.info("Links are presets and text is matched as expected");
