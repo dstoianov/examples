@@ -10,6 +10,8 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.Test;
 
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Funker on 02.05.14.
@@ -77,6 +79,17 @@ public class DummyTest {
 
 
         WebDriver driver = new RemoteWebDriver(new URL("http://<grid_hub_hostname>:8080/wd/hub"), capabilities);
+
+    }
+
+
+    @Test
+    public void testListToURL() throws Exception {
+
+        List<String> autoMfs = new ArrayList<String>();
+        autoMfs.add("firstname");
+        autoMfs.add("lastname");
+
 
     }
 }
