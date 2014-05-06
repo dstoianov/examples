@@ -1,6 +1,9 @@
 package com.revimedia.testing.configuration.proxy;
 
 import net.lightbody.bmp.core.har.Har;
+import net.lightbody.bmp.core.har.HarEntry;
+import net.lightbody.bmp.core.har.HarRequest;
+import net.lightbody.bmp.core.har.HarResponse;
 import net.lightbody.bmp.proxy.ProxyServer;
 import org.openqa.selenium.Proxy;
 
@@ -28,7 +31,7 @@ public class BrowserMobProxyLocal {
         //proxy.setSslProxy("localhost:8073");
         //proxy.setSocksProxy("localhost:8073");
 
-        server.newHar("ReviMedia_har");
+        server.newHar("ReviMedia testing");
         return proxy;
     }
 
@@ -44,4 +47,15 @@ public class BrowserMobProxyLocal {
         server.cleanup();
     }
 
+    public HarEntry catchRequestByTextInURL(String url) {
+        Har har = getHar();
+        for (HarEntry entry : har.getLog().getEntries()) {
+            HarRequest request = entry.getRequest();
+            if (request.getUrl().contains(url)) {
+                System.out.println("Has catched string in url " + url);
+                return entry;
+            }
+        }
+        return null;
+    }
 }
