@@ -47,7 +47,7 @@ public class BrowserMobProxyLocal {
         server.cleanup();
     }
 
-    public HarEntry catchRequestByTextInURL(String url) {
+    public HarEntry catchHarEntryByTextInURL(String url) {
         Har har = getHar();
         for (HarEntry entry : har.getLog().getEntries()) {
             HarRequest request = entry.getRequest();
