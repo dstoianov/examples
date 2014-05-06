@@ -1,12 +1,9 @@
 package com.revimedia.tests.cds.auto.mfs;
 
 
-import com.revimedia.testing.cds.prepop.PrePopExitTruePage;
 import net.lightbody.bmp.proxy.ProxyServer;
-import org.openqa.selenium.By;
 import org.openqa.selenium.Proxy;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -18,10 +15,6 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
-
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.is;
-import static org.hamcrest.Matchers.not;
 
 
 /**
@@ -106,7 +99,6 @@ public class DummyTest {
         autoMfs.add("firstname");
         autoMfs.add("lastname");
 
-
     }
 
     @Test
@@ -121,24 +113,6 @@ public class DummyTest {
         //driver.manage().window().maximize();
         driver.get("http://development.stagingrevi.com/auto/short");
 
-        //WebElement element = driver.findElement(By.xpath("//button"));
-        WebElement element = driver.findElement(By.cssSelector(".bq-pager.ce.bq-continue"));
-        element.click();
-
-        PrePopExitTruePage exitTruePage = new PrePopExitTruePage(driver);
-        exitTruePage.reloadPageWithPrePopTrue();
-        exitTruePage.prePopShowUp();
-
-        assertThat(exitTruePage.getHeader(), is("Wait, don't leave! We are here to help you!"));
-        assertThat(exitTruePage.getPhoneTextLink(), is("(888) 759-1914"));
-
-        exitTruePage.closePopUp();
-
-        assertThat(exitTruePage.getHeader(), not(is("Wait, don't leave! We are here to help you!")));
-        assertThat(exitTruePage.getPhoneTextLink(), not(is("(888) 759-1914")));
-
-
-        driver.findElement(By.xpath(".//*[@id='reviZipCode']")).sendKeys("10101");
 
     }
 

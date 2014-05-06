@@ -17,7 +17,7 @@ import static org.hamcrest.Matchers.*;
 /**
  * Created by Funker on 23.04.14.
  */
-public class AutoTests extends BaseTest {
+public class SubmitTests extends BaseTest {
     public DriverPage driverPage;
     public VehiclePage vehiclePage;
     public CompareAndSavePage compareAndSavePage;
