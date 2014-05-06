@@ -87,4 +87,6 @@ public class AutoTests extends BaseTest {
         compareAndSavePage.verifyTCPADisclaimerAndLinksLinks();
         compareAndSavePage.verifyDisclaimerAndLinksLinks();
     }
+
+
 }
