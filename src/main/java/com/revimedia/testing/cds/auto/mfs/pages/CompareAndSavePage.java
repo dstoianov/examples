@@ -3,6 +3,7 @@ package com.revimedia.testing.cds.auto.mfs.pages;
 import com.revimedia.testing.cds.Page;
 import com.revimedia.testing.cds.auto.staticdata.StaticDataAutoMFS;
 import com.revimedia.testing.configuration.dto.Contact;
+import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -13,6 +14,7 @@ import org.openqa.selenium.support.FindBy;
  * Date: 4/9/14
  */
 public class CompareAndSavePage extends Page {
+    protected final Logger log = Logger.getLogger(this.getClass());
 
     public CompareAndSavePage(WebDriver driver) {
         super(driver);
@@ -72,9 +74,7 @@ public class CompareAndSavePage extends Page {
         if (contact.getGender().equalsIgnoreCase("Male")) {
             rbtnMale.click();
         } else rbtnFemale.click();
-
         selectDate(ddMonth, ddDay, ddYear, contact.getBirthDate());
-
         clearAndType(txtStreetAddress, contact.getAddress());
         clearAndType(txtPhoneNumber, contact.getPhoneNumber());
         clearAndType(txtEmail, contact.getEmailAddress());
@@ -84,7 +84,6 @@ public class CompareAndSavePage extends Page {
 
 
     public String getZipStateAndCity() {
-        //txtZipCode.findElement()
         return driver.findElement(By.xpath("//div[contains(@class, 'ZipCode')]")).getText();
     }
 

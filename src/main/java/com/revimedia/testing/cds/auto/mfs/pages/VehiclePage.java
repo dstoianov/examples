@@ -2,6 +2,7 @@ package com.revimedia.testing.cds.auto.mfs.pages;
 
 import com.revimedia.testing.cds.Page;
 import com.revimedia.testing.cds.auto.staticdata.StaticDataAutoMFS;
+import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -11,6 +12,7 @@ import org.openqa.selenium.support.FindBy;
  * Date: 4/9/14
  */
 public class VehiclePage extends Page {
+    protected final Logger log = Logger.getLogger(this.getClass());
 
     public VehiclePage(WebDriver driver) {
         super(driver);

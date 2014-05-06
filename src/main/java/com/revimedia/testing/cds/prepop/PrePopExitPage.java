@@ -11,10 +11,10 @@ import java.awt.*;
 /**
  * Created by dstoianov on 5/6/2014, 6:47 PM.
  */
-public class PrePopExitTruePage extends Page {
-    protected static final Logger log = Logger.getLogger(PrePopExitTruePage.class);
+public class PrePopExitPage extends Page {
+    protected final Logger log = Logger.getLogger(this.getClass());
 
-    public PrePopExitTruePage(WebDriver driver) {
+    public PrePopExitPage(WebDriver driver) {
         super(driver);
     }
 

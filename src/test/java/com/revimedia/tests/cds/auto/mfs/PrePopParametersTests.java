@@ -1,6 +1,6 @@
 package com.revimedia.tests.cds.auto.mfs;
 
-import com.revimedia.testing.cds.prepop.PrePopExitTruePage;
+import com.revimedia.testing.cds.prepop.PrePopExitPage;
 import com.revimedia.tests.configuration.BaseTest;
 import org.testng.annotations.Test;
 
@@ -15,7 +15,7 @@ public class PrePopParametersTests extends BaseTest {
 
     @Test
     public void testExitTrue() throws Exception {
-        PrePopExitTruePage exitTruePage = new PrePopExitTruePage(driver);
+        PrePopExitPage exitTruePage = new PrePopExitPage(driver);
         exitTruePage.reloadPageWithPrePopTrue();
         exitTruePage.prePopShowUp();
 
