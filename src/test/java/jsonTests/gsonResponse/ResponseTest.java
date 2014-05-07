@@ -6,10 +6,13 @@ import com.revimedia.testing.configuration.response.Errors;
 import com.revimedia.testing.configuration.response.ErrorsDeserializer;
 import com.revimedia.testing.configuration.response.Response;
 import com.revimedia.testing.configuration.response.ResponseDeserializer;
+import org.codehaus.jackson.map.ObjectMapper;
 import org.testng.annotations.Test;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.*;
 
 /**
@@ -47,8 +50,28 @@ public class ResponseTest {
         ));
 
         assertThat(response.getTransactionId().length(), is(36));
+        Map<String, String> result = new ObjectMapper().readValue(success, HashMap.class);
+
+//        assertThat(result, allOf(
+//                        hasEntry("isWarning", "false"),
+//                        hasEntry("_success", "BaeOK")
+//
+//        ));
+
+        assertThat(result, hasEntry(equalTo("TransactionId"), equalTo("99EAF189-5D2D-4D1F-A2CD-7A993EA8A0F7")));
+
+        assertThat(result, hasEntry("TransactionId", "99EAF189-5D2D-4D1F-A2CD-7A993EA8A0F7"));
+
+        assertThat(result, hasKey("IsWarning"));
+        assertThat(result, hasEntry("Errors", "[]"));
+
+        assertThat(result, hasKey("_success"));
+
+        assertThat(result, hasValue("BaeOK"));
+        //assertThat(result, hasItems((new Object("BaeOK", "ddd")));
 
 
     }
+
 
 }

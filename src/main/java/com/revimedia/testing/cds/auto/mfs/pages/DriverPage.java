@@ -45,10 +45,7 @@ public class DriverPage extends Page {
     public DriverPage fillInAllFields(Contact contact, StaticDataAutoMFS staticData) {
         clearAndType(txtZipCode, contact.getZipCode());
         selectByValue(ddInsuranceCompany, staticData.getInsuranceCompany());
-        selectByValue(ddInsuredSince, staticData.getInsuredSince());
-        selectByValue(ddResidenceType, staticData.getResidenceType());
-        selectByValue(ddMaritalStatus, staticData.getMaritalStatus());
-        selectByValue(ddCreditRating, staticData.getCreditRating());
+        fillInTheRestFields(staticData);
         return this;
     }
 
@@ -59,6 +56,22 @@ public class DriverPage extends Page {
 
     public DriverPage fillInZipCode(String text) {
         clearAndType(txtZipCode, text);
+        return this;
+    }
+
+    public String getInsuranceCompanyValue() {
+        return getSelectedValueFromDropDown(ddInsuranceCompany);
+    }
+
+    public boolean isZipCodeFieldDisplayed() {
+        return txtZipCode.isDisplayed();
+    }
+
+    public DriverPage fillInTheRestFields(StaticDataAutoMFS staticData) {
+        selectByValue(ddInsuredSince, staticData.getInsuredSince());
+        selectByValue(ddResidenceType, staticData.getResidenceType());
+        selectByValue(ddMaritalStatus, staticData.getMaritalStatus());
+        selectByValue(ddCreditRating, staticData.getCreditRating());
         return this;
     }
 }

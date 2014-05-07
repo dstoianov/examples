@@ -38,8 +38,6 @@ public class PrePopExitPage extends Page {
         waitForAjaxComplete();
     }
 
-    ;
-
     public void prePopShowUp() {
         log.info("Pre Pop Showing up...");
         try {
@@ -58,7 +56,6 @@ public class PrePopExitPage extends Page {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        log.info("Exit Pop Up is present!");
     }
 
     public String getHeader() {

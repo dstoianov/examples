@@ -147,7 +147,7 @@ public class Page {
         return js.executeScript(script);
     }
 
-    private boolean isElementPresent(By by) {
+    public boolean isElementPresent(By by) {
         try {
             driver.findElement(by);
             return true;
@@ -156,4 +156,7 @@ public class Page {
         }
     }
 
+    public String getSelectedValueFromDropDown(WebElement element) {
+        return (new Select(element)).getFirstSelectedOption().getText();
+    }
 }

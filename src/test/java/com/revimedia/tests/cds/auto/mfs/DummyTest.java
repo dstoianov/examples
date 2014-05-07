@@ -1,16 +1,23 @@
 package com.revimedia.tests.cds.auto.mfs;
 
 
+import com.revimedia.testing.cds.auto.staticdata.StaticDataAutoMFS;
+import com.revimedia.testing.cds.prepop.PrePop;
+import com.revimedia.testing.cds.prepop.PrePopParameters;
+import com.revimedia.testing.configuration.dto.Contact;
+import com.revimedia.tests.configuration.dataproviders.AutoDataProvider;
 import net.lightbody.bmp.proxy.ProxyServer;
 import org.openqa.selenium.Proxy;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import java.lang.reflect.Field;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
@@ -22,6 +29,15 @@ import java.util.concurrent.TimeUnit;
  */
 public class DummyTest {
     public WebDriver driver;
+
+    @BeforeMethod
+    public void startBrowser() {
+        driver = new ChromeDriver();
+//        driver = new FirefoxDriver();
+        // driver = new InternetExplorerDriver();
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        //driver.manage().window().maximize();
+    }
 
     @AfterMethod(alwaysRun = true)
     public void tearDown() {
@@ -99,20 +115,26 @@ public class DummyTest {
         autoMfs.add("firstname");
         autoMfs.add("lastname");
 
+
     }
 
-    @Test
-    public void testExitTrue() throws Exception {
+    @Test(dataProvider = "contactAndStaticData", dataProviderClass = AutoDataProvider.class)
+    public void testExitTrue(Contact contact, StaticDataAutoMFS staticData) throws Exception {
 
-//        driver = new ChromeDriver();
 
-        driver = new FirefoxDriver();
-        // driver = new InternetExplorerDriver();
+        //PrePop prePop = new PrePop(contact);
+        //Class aClass = classLoader.loadClass("reflection.PrePop");
+        Class aClass = PrePop.class;
 
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        //driver.manage().window().maximize();
-        driver.get("http://development.stagingrevi.com/auto/short");
+        Field[] methods = aClass.getFields();
 
+        Class<?> firstname = aClass.getDeclaredField("firstname").getType();
+
+        driver.get("http://development.stagingrevi.com/auto/mfs");
+
+        String url2 = PrePopParameters.getAutoMFS(driver.getCurrentUrl(), contact, staticData);
+
+        driver.get(url2);
 
     }
 
