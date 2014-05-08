@@ -7,14 +7,13 @@ import com.revimedia.testing.cds.auto.staticdata.StaticDataAutoMFS;
 import com.revimedia.testing.cds.prepop.PrePopExitPage;
 import com.revimedia.testing.cds.prepop.PrePopParameters;
 import com.revimedia.testing.configuration.dto.Contact;
+import com.revimedia.testing.configuration.helpers.DataTransformerHelper;
 import com.revimedia.tests.configuration.BaseTest;
 import com.revimedia.tests.configuration.dataproviders.AutoDataProvider;
 import org.testng.annotations.Test;
 
 import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.containsString;
-import static org.hamcrest.Matchers.is;
-import static org.hamcrest.Matchers.not;
+import static org.hamcrest.Matchers.*;
 
 /**
  * Created by dstoianov on 5/6/2014, 7:48 PM.
@@ -45,7 +44,6 @@ public class PrePopParametersTests extends BaseTest {
     public void testPrePopAllRestParameters(Contact contact, StaticDataAutoMFS staticData) throws Exception {
         // reload page with all pre pop parameters
         driver.get(PrePopParameters.getAutoMFS(driver.getCurrentUrl(), contact, staticData));
-
         driverPage = new DriverPage(driver);
         // verify city is correct
         assertThat(driverPage.getPageText(), containsString(contact.getCity()));
@@ -58,8 +56,17 @@ public class PrePopParametersTests extends BaseTest {
         vehiclePage = driverPage.fillInTheRestFields(staticData).clickOnContinue();
         compareAndSavePage = vehiclePage.fillInAllFields(staticData).clickOnContinue();
 
-        //compareAndSavePage.get
-
-
+        // Assertions
+        assertThat(compareAndSavePage.getFirstNameValue(), equalTo(contact.getFirstName()));
+        assertThat(compareAndSavePage.getLastNameValue(), equalTo(contact.getLastName()));
+        assertThat(compareAndSavePage.getGenderValue(), equalTo(contact.getGender()));
+        assertThat(compareAndSavePage.getDateOfBirthValue(), equalTo(contact.getBirthDate()));
+        assertThat(compareAndSavePage.getStreetAddressValue(), equalTo(contact.getAddress()));
+        assertThat(compareAndSavePage.getZipCodeValue(), equalTo(contact.getZipCode()));
+        assertThat(DataTransformerHelper.phoneTransformation(compareAndSavePage.getPhoneNumberValue()),
+                equalTo(DataTransformerHelper.phoneTransformation(contact.getPhoneNumber())));
+        assertThat(compareAndSavePage.getEmailValue(), equalToIgnoringCase(contact.getEmailAddress()));
     }
+
+
 }

@@ -115,6 +115,12 @@ public class DummyTest {
         autoMfs.add("firstname");
         autoMfs.add("lastname");
 
+        String s1 = "560-405-8013";
+        String s2 = "(560) 405-8013";
+
+        String s11 = s1.replaceAll("[^\\d]", "");
+        String s22 = s2.replaceAll("[^\\d]", "");
+
 
     }
 

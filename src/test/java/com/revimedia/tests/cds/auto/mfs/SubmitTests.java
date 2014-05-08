@@ -51,23 +51,6 @@ public class SubmitTests extends BaseTest {
     }
 
 
-    @Test
-    public void testCheckRequiredFields() throws Exception {
-        DriverPage driverPage = new DriverPage(driver);
-
-        driverPage.clickOnContinue();
-
-        assertThat(driverPage.getPageText(), containsString("Please enter zip code."));
-        assertThat(driverPage.getAllErrors().size(), is(7));
-
-        driverPage.fillInZipCode("20002").clickOnContinue();
-        assertThat(driverPage.getAllErrors().size(), is(6));
-
-
-        assertThat(driverPage.getPageText(), containsString("Please correct the errors above."));
-        //assertThat();
-    }
-
     @Test(dataProvider = "contactAndStaticData", dataProviderClass = AutoDataProvider.class)
     public void testDisclaimerPrivacyPolicyAndTermsOfUseLinks(Contact contact, StaticDataAutoMFS staticData) throws Exception {
         //ACT

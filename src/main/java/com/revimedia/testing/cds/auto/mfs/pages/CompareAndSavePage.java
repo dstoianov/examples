@@ -97,4 +97,41 @@ public class CompareAndSavePage extends Page {
             btnGetMyQuotes.click();
         }
     }
+
+    public String getFirstNameValue() {
+        return txtFirstName.getAttribute("value");
+    }
+
+    public String getLastNameValue() {
+        return txtLastName.getAttribute("value");
+    }
+
+    public String getGenderValue() {
+        return (Boolean.parseBoolean(rbtnMale.getAttribute("checked")) ? "Male" : "Female");
+    }
+
+    public String getStreetAddressValue() {
+        return txtStreetAddress.getAttribute("value");
+    }
+
+    public String getZipCodeValue() {
+        return txtZipCode.getAttribute("value");
+    }
+
+    public String getPhoneNumberValue() {
+        return txtPhoneNumber.getAttribute("value");
+    }
+
+    public String getEmailValue() {
+        return txtEmail.getAttribute("value");
+    }
+
+    public String getDateOfBirthValue() {
+        // Apr 21, 1984
+        String m = getSelectedValueFromDropDown(ddMonth);
+        String d = getSelectedValueFromDropDown(ddDay);
+        String y = getSelectedValueFromDropDown(ddYear);
+
+        return m + " " + d + ", " + y;
+    }
 }
