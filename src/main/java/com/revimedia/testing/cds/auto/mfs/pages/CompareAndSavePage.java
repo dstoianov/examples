@@ -30,7 +30,6 @@ public class CompareAndSavePage extends Page {
     @FindBy(xpath = "//div[contains(@class, 'Education')]//select")
     private WebElement ddEducation;
 
-
     @FindBy(xpath = ".//input[@value='Male']")
     private WebElement rbtnMale;
 
@@ -59,13 +58,11 @@ public class CompareAndSavePage extends Page {
     @FindBy(xpath = "//div[contains(@class, 'EmailAddress')]//input")
     private WebElement txtEmail;
 
-
     @FindBy(xpath = "//button")
     private WebElement btnGetMyQuotes; //bq-control bq-type-simple
 
     @FindBy(xpath = "//button") //button class="bq-control bq-type-simple">
     private WebElement btnContinue;
-
 
     public CompareAndSavePage fillInAllFields(Contact contact, StaticDataAutoMFS staticData) {
         clearAndType(txtFirstName, contact.getFirstName());
@@ -82,9 +79,13 @@ public class CompareAndSavePage extends Page {
         return this;
     }
 
-
     public String getZipStateAndCity() {
         return driver.findElement(By.xpath("//div[contains(@class, 'ZipCode')]")).getText();
+    }
+
+    public void clickSubmit() {
+        btnGetMyQuotes.click();
+        waitForAjaxComplete();
     }
 
     public void submitForm() {
@@ -131,7 +132,13 @@ public class CompareAndSavePage extends Page {
         String m = getSelectedValueFromDropDown(ddMonth);
         String d = getSelectedValueFromDropDown(ddDay);
         String y = getSelectedValueFromDropDown(ddYear);
-
         return m + " " + d + ", " + y;
     }
+
+    public CompareAndSavePage fillInInvalidStreetAddressField(String s) {
+        clearAndType(txtStreetAddress, s);
+        return this;
+    }
+
+
 }
