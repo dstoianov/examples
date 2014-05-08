@@ -7,8 +7,10 @@ import com.revimedia.testing.cds.auto.staticdata.StaticDataAutoMFS;
 import com.revimedia.testing.configuration.dto.Contact;
 import com.revimedia.testing.configuration.proxy.HarParser;
 import com.revimedia.testing.configuration.proxy.Submit;
+import com.revimedia.testing.configuration.response.Response;
 import com.revimedia.tests.configuration.BaseTest;
 import com.revimedia.tests.configuration.dataproviders.AutoDataProvider;
+import com.revimedia.tests.configuration.helpers.SubmitVerifier;
 import org.testng.annotations.Test;
 
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -22,7 +24,7 @@ public class SubmitTests extends BaseTest {
     public VehiclePage vehiclePage;
     public CompareAndSavePage compareAndSavePage;
 
-    @Test(dataProvider = "contactAndStaticData", dataProviderClass = AutoDataProvider.class)
+    @Test(groups = {"submit"}, dataProvider = "contactAndStaticData", dataProviderClass = AutoDataProvider.class)
     public void testPositiveSubmit(Contact contact, StaticDataAutoMFS staticData) throws Exception {
 
         driverPage = new DriverPage(driver);
@@ -38,38 +40,10 @@ public class SubmitTests extends BaseTest {
 
         compareAndSavePage.submitForm();
 
-        Submit submit = HarParser.getSubmit();
-
-        assertThat(submit.getResponse(), allOf(
-                hasProperty("_success", equalTo("BaeOK")),
-                hasProperty("success", is(true)),
-                hasProperty("isWarning", is(false))
-        ));
-        assertThat(submit.getResponse().getTransactionId().length(), is(36));
-
-        //assertThat(xml, hasXPath("//something[@id='b']/cheese", equalTo("Cheddar")));
+        SubmitVerifier.verifyResponse(HarParser.getSubmit().getResponse());
+        //SubmitVerifier.verifyRequest(HarParser.getSubmit().getRequest());
     }
 
-
-    @Test(dataProvider = "contactAndStaticData", dataProviderClass = AutoDataProvider.class)
-    public void testDisclaimerPrivacyPolicyAndTermsOfUseLinks(Contact contact, StaticDataAutoMFS staticData) throws Exception {
-        //ACT
-        driverPage = new DriverPage(driver);
-        // Assert
-        driverPage.verifyPrivacyPolicyAndTermsOfUseLinks();
-
-        // ACT
-        vehiclePage = driverPage.fillInAllFields(contact, staticData).clickOnContinue();
-        // ASSERT
-        vehiclePage.verifyPrivacyPolicyAndTermsOfUseLinks();
-
-        // ACT
-        compareAndSavePage = vehiclePage.fillInAllFields(staticData).clickOnContinue();
-        // Assert
-        compareAndSavePage.verifyPrivacyPolicyAndTermsOfUseLinks();
-        compareAndSavePage.verifyTCPADisclaimerAndLinksLinks();
-        compareAndSavePage.verifyDisclaimerAndLinksLinks();
-    }
 
 
 }
