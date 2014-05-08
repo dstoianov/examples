@@ -3,9 +3,10 @@ package com.revimedia.testing.configuration.proxy;
 import net.lightbody.bmp.core.har.Har;
 import net.lightbody.bmp.core.har.HarEntry;
 import net.lightbody.bmp.core.har.HarRequest;
-import net.lightbody.bmp.core.har.HarResponse;
 import net.lightbody.bmp.proxy.ProxyServer;
 import org.openqa.selenium.Proxy;
+
+import java.util.Collections;
 
 /**
  * Created by dstoianov on 4/30/2014, 7:46 PM.
@@ -49,6 +50,7 @@ public class BrowserMobProxyLocal {
 
     public static HarEntry catchHarEntryByTextInURL(String url) {
         Har har = getHar();
+        Collections.reverse(har.getLog().getEntries());
         for (HarEntry entry : har.getLog().getEntries()) {
             HarRequest request = entry.getRequest();
             if (request.getUrl().contains(url)) {
