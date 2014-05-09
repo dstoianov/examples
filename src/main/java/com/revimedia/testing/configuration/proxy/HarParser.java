@@ -2,6 +2,7 @@ package com.revimedia.testing.configuration.proxy;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.revimedia.testing.configuration.helpers.Formatter;
 import com.revimedia.testing.configuration.response.Errors;
 import com.revimedia.testing.configuration.response.ErrorsDeserializer;
 import com.revimedia.testing.configuration.response.Response;
@@ -72,11 +73,11 @@ public class HarParser {
 
         for (HarPostDataParam list : request.getPostData().getParams()) {
             System.out.println("\n------------------REQUEST---XML-------------------------------");
-            System.out.println(list.getValue());
+            System.out.println(Formatter.prettyXMLFormat(list.getValue()));
             submit.setRequest(list.getValue());
         }
         System.out.println("\n------------------RESPONSE---JSON--------------------------");
-        System.out.println(resRAW);
+        System.out.println(Formatter.prettyJSONFormat(resRAW));
         System.out.println("-----------------------------------------------------------\n");
 
         final GsonBuilder gsonBuilder = new GsonBuilder();
