@@ -7,32 +7,28 @@
         <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
     </listeners>
 
-    <test name="FirstTest Chrome, Latest Version">
+    <test name="run on Chrome Browser, Latest Version">
         <parameter name="browser" value="chrome"/>
         <parameter name="version" value="7"/>
         <!--<parameter name="platform" value="MAC"/>-->
         <parameter name="url" value="http://development.stagingrevi.com/auto/mfs/"/>
         <classes>
-            <class name="com.revimedia.tests.cds.auto.mfs.AutoTests"/>
+            <class name="com.revimedia.tests.cds.auto.mfs.SubmitTests"/>
+            <class name="com.revimedia.tests.cds.auto.mfs.DisclaimersTests"/>
+            <class name="com.revimedia.tests.cds.auto.mfs.PrePopParametersAndeBureauVerificationTests"/>
         </classes>
     </test>
-    <!-- Test -->
-    <!--    <test name="SecondTest FireFox">
-            <parameter name="browser" value="ie"/>
-            <parameter name="version" value="7"/>
-            &lt;!&ndash;<parameter name="platform" value="WINDOWS"/>&ndash;&gt;
-            <parameter name="url" value="http://development.stagingrevi.com/auto/mfs/"/>
-            <classes>
-                <class name="parametrized.runsuite.TestCase"/>
-            </classes>
-        </test> &lt;!&ndash; Test &ndash;&gt;
-        <test name="ThirdTest Chrome">
-            <parameter name="browser" value="ie"/>
-            <parameter name="version" value="7"/>
-            &lt;!&ndash;<parameter name="platform" value="MAC"/>&ndash;&gt;
-            <parameter name="url" value="http://development.stagingrevi.com/auto/mfs/"/>
-            <classes>
-                <class name="parametrized.runsuite.TestCase"/>
-            </classes>
-        </test> &lt;!&ndash; Test &ndash;&gt;-->
+
+    <test name="run on FireFox Browser, Latest Version">
+        <parameter name="browser" value="firefox"/>
+        <parameter name="version" value="7"/>
+        <!--<parameter name="platform" value="MAC"/>-->
+        <parameter name="url" value="http://development.stagingrevi.com/auto/mfs/"/>
+        <classes>
+            <class name="com.revimedia.tests.cds.auto.mfs.SubmitTests"/>
+            <class name="com.revimedia.tests.cds.auto.mfs.DisclaimersTests"/>
+            <class name="com.revimedia.tests.cds.auto.mfs.PrePopParametersAndeBureauVerificationTests"/>
+        </classes>
+    </test>
+
 </suite> <!-- Suite -->
