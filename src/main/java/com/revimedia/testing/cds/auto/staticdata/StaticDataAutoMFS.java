@@ -93,4 +93,19 @@ public class StaticDataAutoMFS {
         return list[r.nextInt(list.length)];
     }
 
+    @Override
+    public String toString() {
+        return "\n\n--------------- Static Data Auto MFS ----------------- " +
+                "\ninsuranceCompany='" + insuranceCompany + '\'' +
+                ",\ninsuredSince='" + insuredSince + '\'' +
+                ",\nresidenceType='" + residenceType + '\'' +
+                ",\nmaritalStatus='" + maritalStatus + '\'' +
+                ",\ncreditRating='" + creditRating + '\'' +
+                ",\neducation='" + education + '\'' +
+                ",\nyear='" + year + '\'' +
+                ",\nmake='" + make + '\'' +
+                "\nmodel='" + model;
+    }
+
+
 }

@@ -11,7 +11,10 @@ import com.revimedia.testing.configuration.response.Response;
 import com.revimedia.tests.configuration.BaseTest;
 import com.revimedia.tests.configuration.dataproviders.AutoDataProvider;
 import com.revimedia.tests.configuration.helpers.SubmitVerifier;
+import net.lightbody.bmp.core.har.HarEntry;
 import org.testng.annotations.Test;
+
+import java.util.List;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
@@ -40,10 +43,19 @@ public class SubmitTests extends BaseTest {
 
         compareAndSavePage.submitForm();
 
-        SubmitVerifier.verifyResponse(HarParser.getSubmit().getResponse());
+        SubmitVerifier.verifyResponse(HarParser.getSubmit2().getResponse());
         //SubmitVerifier.verifyRequest(HarParser.getSubmit().getRequest());
     }
 
+    @Test(groups = {"submit", "polk"}, dataProvider = "contactAndStaticData", dataProviderClass = AutoDataProvider.class)
+    public void testPolk(Contact contact, StaticDataAutoMFS staticData) throws Exception {
+        driverPage = new DriverPage(driver);
+        vehiclePage = driverPage.fillInAllFields(contact, staticData).clickOnContinue();
+        vehiclePage.fillInAllFields(staticData);
+        List<HarEntry> polkData = HarParser.getPolkData();
 
+        assertThat(polkData.get(0).getRequest().getUrl(), containsString("polk?year=" + staticData.getYear()));
+        assertThat(polkData.get(1).getRequest().getUrl(), containsString("polk?year=" + staticData.getYear() + "&make=" + staticData.getMake()));
+    }
 
 }

@@ -1,6 +1,7 @@
 package com.revimedia.tests.configuration;
 
 import com.revimedia.testing.configuration.proxy.BrowserMobProxyLocal;
+import com.revimedia.testing.configuration.proxy.BrowserMobProxyLocal2;
 import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -47,12 +48,14 @@ public class BaseTest {
 
     @BeforeMethod
     public void openMainPage() {
+        BrowserMobProxyLocal2.cleanProxyHar();
         driver.get(url);
     }
 
     @AfterClass(alwaysRun = true)
     public void tearDown() throws Exception {
-        BrowserMobProxyLocal.stopBrowserMob();
+        //BrowserMobProxyLocal.stopBrowserMob();
+        BrowserMobProxyLocal2.stopProxy();
         driver.quit();
     }
 

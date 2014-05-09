@@ -12,8 +12,12 @@ public class AutoDataProvider extends DataProviderHelper {
     @DataProvider
     public static Object[][] contactAndStaticData() {
         Object contact = unMarshalToObject("./src/test/resources/data/leads_data_1000.xml", Contacts.class);
+        StaticDataAutoMFS staticData = new StaticDataAutoMFS();
+        System.out.println(contact.toString());
+        System.out.println(staticData.toString());
+
         Object[][] result = {
-                {contact, new StaticDataAutoMFS()},
+                {contact, staticData},
         };
         return result;
     }

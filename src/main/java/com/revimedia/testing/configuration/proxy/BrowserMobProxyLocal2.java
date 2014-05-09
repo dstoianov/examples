@@ -7,17 +7,20 @@ import net.lightbody.bmp.proxy.ProxyServer;
 import org.openqa.selenium.Proxy;
 
 import java.net.UnknownHostException;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 /**
  * Created by dstoianov on 5/7/2014, 2:43 PM.
  */
-public class BrowserMobProxyLocal2 implements IBrowserMobProxy {
-    private ProxyServer server;
-    private int port = 8073;
-    private Proxy proxy;
+public class BrowserMobProxyLocal2 {//implements IBrowserMobProxy {
+    private static ProxyServer server;
+    private static int port = 8073;
+    private static Proxy proxy;
 
-    @Override
-    public void startProxy() throws Exception {
+
+    public static void startProxy() throws Exception {
         server = new ProxyServer(port);
         server.start();
         server.setCaptureHeaders(true);
@@ -25,18 +28,18 @@ public class BrowserMobProxyLocal2 implements IBrowserMobProxy {
         server.newHar("Revi Media testing");
     }
 
-    @Override
-    public void stopProxy() throws Exception {
+
+    public static void stopProxy() throws Exception {
         server.stop();
     }
 
-    @Override
-    public void cleanProxyHar() {
+
+    public static void cleanProxyHar() {
         server.cleanup();
     }
 
-    @Override
-    public Proxy getProxy() throws UnknownHostException {
+
+    public static Proxy getProxy() throws UnknownHostException {
         proxy = server.seleniumProxy();
         proxy.setHttpProxy("localhost:8073");
         //proxy.setSslProxy("localhost:8073");
@@ -45,20 +48,23 @@ public class BrowserMobProxyLocal2 implements IBrowserMobProxy {
         return proxy;
     }
 
-    @Override
-    public Har getHar() {
+
+    public static Har getHar() {
         return server.getHar();
     }
 
-    public HarEntry getSubmitHarEntry() {
+    public static HarEntry getSubmitHarEntry() {
         HarEntry entry = catchHarEntryByTextInURL("submit");
-
         return entry;
     }
 
-    @Override
-    public HarEntry catchHarEntryByTextInURL(String url) {
+    public static List<HarEntry> getPolkData() {
+        return collectHarEntryByTextInURL("polk?");
+    }
+
+    public static HarEntry catchHarEntryByTextInURL(String url) {
         Har har = getHar();
+        Collections.reverse(har.getLog().getEntries());
         for (HarEntry entry : har.getLog().getEntries()) {
             HarRequest request = entry.getRequest();
             if (request.getUrl().contains(url)) {
@@ -66,7 +72,20 @@ public class BrowserMobProxyLocal2 implements IBrowserMobProxy {
                 return entry;
             }
         }
-        return null;
+        System.out.println("Error, has no any " + url + " in log!!!");
+        throw new Error("There is no any submits in logs!!!");
     }
 
+    public static List<HarEntry> collectHarEntryByTextInURL(String url) {
+        List<HarEntry> entryList = new ArrayList<HarEntry>();
+        for (HarEntry entry : getHar().getLog().getEntries()) {
+            HarRequest request = entry.getRequest();
+            if (request.getUrl().contains(url)) {
+                System.out.println("Has catched string in url " + url);
+                System.out.println("URL:  " + request.getUrl());
+                entryList.add(entry);
+            }
+        }
+        return entryList;
+    }
 }
