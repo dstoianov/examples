@@ -23,45 +23,6 @@ public class HarParser {
     public static HarEntry entry;
 
     public static Submit getSubmit() {
-
-        entry = BrowserMobProxyLocal.catchHarEntryByTextInURL("submit");
-
-        HarRequest request = entry.getRequest();
-        HarResponse response = entry.getResponse();
-
-        String resRAW = response.getContent().getText();
-
-        if (request.getUrl().contains("submit")) {
-            System.out.println("Has submit");
-            Submit submit = new Submit();
-
-
-            System.out.println("------------------request----------response----------------");
-            System.out.println(request.getUrl());
-
-            for (HarPostDataParam list : request.getPostData().getParams()) {
-                System.out.println(list.getName());
-                System.out.println(list.getValue());
-                submit.setRequest(list.getValue());
-            }
-            System.out.println("----------");
-            System.out.println(resRAW);
-            System.out.println("------------------request----------response----------------");
-
-            final GsonBuilder gsonBuilder = new GsonBuilder();
-            gsonBuilder.registerTypeAdapter(Response.class, new ResponseDeserializer());
-            gsonBuilder.registerTypeAdapter(Errors.class, new ErrorsDeserializer());
-            final Gson gson = gsonBuilder.create();
-
-            Response responseObj = gson.fromJson(resRAW, Response.class);
-            submit.setResponse(responseObj);
-
-            return submit;
-        }
-        return null;
-    }
-
-    public static Submit getSubmit2() {
         entry = BrowserMobProxyLocal2.getSubmitHarEntry();
         HarRequest request = entry.getRequest();
         HarResponse response = entry.getResponse();

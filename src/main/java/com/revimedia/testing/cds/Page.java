@@ -168,6 +168,7 @@ public class Page {
             result.add(option.getText());
         }
         result.remove(0);// remove <option value="null"> --select-- </option>
+        log.info("\n----------------Displayed values in Drop Down -----------------\n" + result.toString() + "\n");
         return result;
     }
 }

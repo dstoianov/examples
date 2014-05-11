@@ -4,6 +4,7 @@ package com.revimedia.tests.cds.DraftTests;
 import com.revimedia.testing.cds.auto.staticdata.StaticDataAutoMFS;
 import com.revimedia.testing.cds.prepop.PrePop;
 import com.revimedia.testing.cds.prepop.PrePopParameters;
+import com.revimedia.testing.configuration.Config;
 import com.revimedia.testing.configuration.dto.Contact;
 import com.revimedia.tests.configuration.dataproviders.AutoDataProvider;
 import net.lightbody.bmp.proxy.ProxyServer;
@@ -131,29 +132,6 @@ public class DummyTest {
         }
     }
 
-    @Test
-    public void testName() throws Exception {
-        ProxyServer server = new ProxyServer(4675);
-        server.start();
-
-
-// Get the Selenium proxy object
-        Proxy proxy = server.seleniumProxy();
-
-
-        proxy.setHttpProxy("<grid_hub_hostname>:4675");
-
-        proxy.setSslProxy("<grid_hub_hostname");
-
-
-        DesiredCapabilities capabilities = DesiredCapabilities.firefox();
-
-        capabilities.setCapability(CapabilityType.PROXY, proxy);
-
-
-        WebDriver driver = new RemoteWebDriver(new URL("http://<grid_hub_hostname>:8080/wd/hub"), capabilities);
-
-    }
 
 
     @Test
@@ -168,7 +146,7 @@ public class DummyTest {
 
         String s11 = s1.replaceAll("[^\\d]", "");
         String s22 = s2.replaceAll("[^\\d]", "");
-
+        String val1 = Config.VAL1;
 
     }
 

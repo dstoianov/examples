@@ -16,7 +16,7 @@ import java.util.List;
  */
 public class BrowserMobProxyLocal2 {//implements IBrowserMobProxy {
     private static ProxyServer server;
-    private static int port = 8073;
+    private static int port = 8074;
     private static Proxy proxy;
 
 
@@ -25,7 +25,7 @@ public class BrowserMobProxyLocal2 {//implements IBrowserMobProxy {
         server.start();
         server.setCaptureHeaders(true);
         server.setCaptureContent(true);
-        server.newHar("Revi Media testing");
+        server.newHar("Revi Media Testing");
     }
 
 
@@ -41,7 +41,7 @@ public class BrowserMobProxyLocal2 {//implements IBrowserMobProxy {
 
     public static Proxy getProxy() throws UnknownHostException {
         proxy = server.seleniumProxy();
-        proxy.setHttpProxy("localhost:8073");
+        proxy.setHttpProxy("localhost:" + port);
         //proxy.setSslProxy("localhost:8073");
         //proxy.setSocksProxy("localhost:8073");
         //server.newHar("ReviMedia testing");
@@ -50,6 +50,7 @@ public class BrowserMobProxyLocal2 {//implements IBrowserMobProxy {
 
 
     public static Har getHar() {
+        server.waitForNetworkTrafficToStop(2000, 10000);
         return server.getHar();
     }
 

@@ -37,6 +37,8 @@ public class Base {
     public void setUp() throws MalformedURLException {
 
         DesiredCapabilities capability = DesiredCapabilities.chrome();
+        //DesiredCapabilities capability = DesiredCapabilities.safari();
+        //DesiredCapabilities capability = DesiredCapabilities.internetExplorer();
         driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), capability);
 
         //driver = (driver == null) ? new FirefoxDriver() : driver;

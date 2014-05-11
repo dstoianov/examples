@@ -1,6 +1,5 @@
 package com.revimedia.tests.cds.auto.mfs;
 
-import com.google.gson.JsonObject;
 import com.revimedia.testing.cds.auto.mfs.pages.CompareAndSavePage;
 import com.revimedia.testing.cds.auto.mfs.pages.DriverPage;
 import com.revimedia.testing.cds.auto.mfs.pages.VehiclePage;
@@ -8,16 +7,12 @@ import com.revimedia.testing.cds.auto.staticdata.StaticDataAutoMFS;
 import com.revimedia.testing.configuration.dto.Contact;
 import com.revimedia.testing.configuration.helpers.Formatter;
 import com.revimedia.testing.configuration.proxy.HarParser;
-import com.revimedia.testing.configuration.proxy.Submit;
-import com.revimedia.testing.configuration.response.Response;
 import com.revimedia.tests.configuration.BaseTest;
 import com.revimedia.tests.configuration.dataproviders.AutoDataProvider;
 import com.revimedia.tests.configuration.helpers.SubmitVerifier;
 import net.lightbody.bmp.core.har.HarEntry;
 import org.testng.annotations.Test;
 
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -47,7 +42,7 @@ public class SubmitTests extends BaseTest {
 
         compareAndSavePage.submitForm();
 
-        SubmitVerifier.verifyResponse(HarParser.getSubmit2().getResponse());
+        SubmitVerifier.verifyResponse(HarParser.getSubmit().getResponse());
         //SubmitVerifier.verifyRequest(HarParser.getSubmit().getRequest());
     }
 
