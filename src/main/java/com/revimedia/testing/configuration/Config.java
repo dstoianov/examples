@@ -20,21 +20,16 @@ public class Config {
     public static final String DEFAULT_PROPERTIES = "localhost.properties";
     public static final String PATH_TO_SCREENS = "target/screens/";
 
-
-    public static final Properties props = null;
-
+    public static Properties props = null;
 
     static {
 
-
-        // props = loadProperties(readPropertiesName());
-
         try {
-            props.load(loadProperties(readPropertiesName()));
+            props = new Properties();
+            props.load(readPropertiesName());
         } catch (IOException e) {
             e.printStackTrace();
         }
-
 
         VAL1 = props.getProperty("environment.name");
         VAL2 = props.getProperty("autosysprops");
@@ -43,17 +38,16 @@ public class Config {
 
     }
 
-    private static InputStream loadProperties(String config) {
-        InputStream input = null;
-        input = Config.class.getClassLoader().getResourceAsStream(config);
-        return input;
-    }
 
-    private static String readPropertiesName() {
-        URL config = ClassLoader.getSystemResource(DEFAULT_PROPERTIES);
-        //String config = System.getProperty(DEFAULT_PROPERTIES);
-        if (config.equals("")) {
-            throw new RuntimeException("Couldn't read properties: config name is empty");
+    private static InputStream readPropertiesName() {
+        try {
+            URL config = ClassLoader.getSystemResource(DEFAULT_PROPERTIES);
+            if (config.equals("")) {
+                throw new RuntimeException("Couldn't read properties: config name is empty");
+            }
+            return config.openStream();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
         return null;
     }

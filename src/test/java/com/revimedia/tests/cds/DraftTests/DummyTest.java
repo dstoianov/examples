@@ -29,6 +29,8 @@ import org.testng.annotations.Test;
 import java.io.File;
 import java.lang.reflect.Field;
 import java.net.URL;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -43,7 +45,7 @@ import java.util.logging.Level;
 public class DummyTest {
     public WebDriver driver;
 
-    @BeforeMethod
+    //@BeforeMethod
     public void startBrowser() {
 
         //URL resource = DummyTest.class.getResource("/searchresults.xml");
@@ -84,7 +86,7 @@ public class DummyTest {
         //driver.manage().window().maximize();
     }
 
-    @AfterMethod(alwaysRun = true)
+    //@AfterMethod(alwaysRun = true)
     public void tearDown() {
         driver.quit();
     }
@@ -171,4 +173,15 @@ public class DummyTest {
     }
 
 
+    @Test
+    public void testDateFile() throws Exception {
+
+        Date date = new Date();
+        DateFormat dateFormat = new SimpleDateFormat("yyyyMMdd_hh-mm-ss");
+        String strDate = dateFormat.format(date);
+
+        System.out.println("Date converted to String: " + strDate);
+
+
+    }
 }
