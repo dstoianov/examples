@@ -8,6 +8,7 @@ import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
@@ -158,5 +159,15 @@ public class Page {
 
     public String getSelectedValueFromDropDown(WebElement element) {
         return (new Select(element)).getFirstSelectedOption().getText();
+    }
+
+    public List<String> getAllValuesFromDropDown(WebElement element) {
+        List<String> result = new ArrayList<String>();
+        List<WebElement> options = new Select(element).getOptions();
+        for (WebElement option : options) {
+            result.add(option.getText());
+        }
+        result.remove(0);// remove <option value="null"> --select-- </option>
+        return result;
     }
 }

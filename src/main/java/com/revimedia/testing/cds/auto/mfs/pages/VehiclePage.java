@@ -6,6 +6,10 @@ import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.Select;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * User: stoianod
@@ -41,5 +45,13 @@ public class VehiclePage extends Page {
     public CompareAndSavePage clickOnContinue() {
         btnContinue.click();
         return new CompareAndSavePage(driver);
+    }
+
+    public List<String> getAllMakedCarsList() {
+        return getAllValuesFromDropDown(ddVehicleMake);
+    }
+
+    public List<String> getAllModelsList() {
+        return getAllValuesFromDropDown(ddVehicleModel);
     }
 }

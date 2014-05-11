@@ -12,6 +12,10 @@ import javax.xml.transform.stream.StreamSource;
 import java.io.IOException;
 import java.io.StringReader;
 import java.io.StringWriter;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 
 /**
@@ -50,5 +54,16 @@ public class Formatter {
         }
         return input;
     }
+
+    public static List<String> itemsJSONToList(String jsonTxt) throws IOException {
+        Map<String, Object> map = new ObjectMapper().readValue(jsonTxt, HashMap.class);
+        List<Map<String, String>> items = (List<Map<String, String>>) map.get("Items");
+        List<String> result = new ArrayList<String>();
+        for (Map<String, String> item : items) {
+            result.add(item.get("Value"));
+        }
+        return result;
+    }
+
 
 }
