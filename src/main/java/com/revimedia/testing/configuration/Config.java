@@ -9,6 +9,7 @@ import java.util.Properties;
 
 /**
  * Created by Funker on 10.05.14.
+ * https://github.com/roydekleijn/HowToUsePropertiesFile/blob/master/src/test/java/properties/Locators.java
  */
 public class Config {
 
