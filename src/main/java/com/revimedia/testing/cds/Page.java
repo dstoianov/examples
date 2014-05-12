@@ -171,4 +171,9 @@ public class Page {
         log.info("\n----------------Displayed values in Drop Down -----------------\n" + result.toString() + "\n");
         return result;
     }
+
+    public String getSurveyPathValue() {
+        JsUtils jsUtils = new JsUtils(driver);
+        return jsUtils.getSurveyPath();
+    }
 }

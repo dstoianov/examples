@@ -54,5 +54,8 @@ public class JsUtils {
         return (T) jsExecutor.executeScript(js, arguments);
     }
 
-
+    public String getSurveyPath() {
+        String script = "return _bqOptions.surveyPath;"; //Bq.App.settings.get('updateSurvey')
+        return (String) exec(script);
+    }
 }
