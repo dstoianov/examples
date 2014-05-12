@@ -1,13 +1,12 @@
 package com.revimedia.tests.configuration;
 
-import com.revimedia.testing.configuration.proxy.BrowserMobProxyLocal;
+import com.revimedia.testing.configuration.WebDriverFactory;
 import com.revimedia.testing.configuration.proxy.BrowserMobProxyLocal2;
+import org.apache.log4j.Logger;
 import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;
-import org.apache.log4j.Logger;
 import org.testng.annotations.*;
-import com.revimedia.testing.configuration.WebDriverFactory;
 
 /**
  * Created by Funker on 12.04.14.
@@ -28,7 +27,7 @@ public class BaseTest {
                       @Optional("http://development.stagingrevi.com/auto/mfs/") String url) throws Exception {
 
         this.url = url;
-        log.info("some info");
+        log.info("Setting up parameters...");
         WebDriverFactory instanceDriver = new WebDriverFactory();
 
         //driver = instanceDriver.getDriver(browser, version);
@@ -40,9 +39,7 @@ public class BaseTest {
 //        driver = Browser2.getBrowser(browser, version).getDriver();
 
         //driver = WebDriverFactory.getDriver(browser, version, platform);
-        //driver = WebDriverFactory.getDriver(browser, version, platform);
-
-
+        printBrowserParameters();
     }
 
 
@@ -59,12 +56,13 @@ public class BaseTest {
         driver.quit();
     }
 
-    public void getBrowserName() {
+    private void printBrowserParameters() {
         Capabilities cap = ((RemoteWebDriver) driver).getCapabilities();
-        String browsername = cap.getBrowserName();
-        String browserversion = cap.getVersion();
-        String url = driver.getCurrentUrl();
-        System.out.println("Name: " + browsername + ", ver: " + browserversion + ", URL: " + url);
+        log.info("-----------Test-Parameters--------------------");
+        log.info("Tested URL:        " + this.url);
+        log.info("Browser Name:      " + cap.getBrowserName());
+        log.info("Browser version:   " + cap.getVersion());
+        log.info("Platform:          " + cap.getPlatform());
     }
 
 }

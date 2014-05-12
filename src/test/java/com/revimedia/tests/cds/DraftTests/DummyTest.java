@@ -7,9 +7,7 @@ import com.revimedia.testing.cds.prepop.PrePopParameters;
 import com.revimedia.testing.configuration.Config;
 import com.revimedia.testing.configuration.dto.Contact;
 import com.revimedia.tests.configuration.dataproviders.AutoDataProvider;
-import net.lightbody.bmp.proxy.ProxyServer;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Proxy;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -19,24 +17,19 @@ import org.openqa.selenium.logging.LogType;
 import org.openqa.selenium.logging.LoggingPreferences;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.remote.RemoteWebDriver;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-
-//import net.jsourcerer.webdriver.jserrorcollector.JavaScriptError;
 
 import java.io.File;
 import java.lang.reflect.Field;
-import java.net.URL;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import java.util.Set;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
+
+//import net.jsourcerer.webdriver.jserrorcollector.JavaScriptError;
 
 
 /**
@@ -135,7 +128,6 @@ public class DummyTest {
     }
 
 
-
     @Test
     public void testListToURL() throws Exception {
 
@@ -148,7 +140,7 @@ public class DummyTest {
 
         String s11 = s1.replaceAll("[^\\d]", "");
         String s22 = s2.replaceAll("[^\\d]", "");
-        String val1 = Config.VAL1;
+        String val1 = Config.BROWSER;
 
     }
 
