@@ -7,7 +7,7 @@
         <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
     </listeners>
 
-    <test name="Run this tests">
+    <test name="Console dummy tests">
         <!--<test name="Run this tests" parallel="tests" thread-count="1">-->
         <classes>
             <class name="com.revimedia.tests.cds.dummy.console.tests.ExampleWithAssertThat"/>
