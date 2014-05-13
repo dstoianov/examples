@@ -69,8 +69,10 @@ public class WebDriverFactory {
 //        }
 
         //driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), capability);
-        //driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        if (Config.WINDOW_MAXIMIZE) {
+            driver.manage().window().maximize();
+        }
+        driver.manage().timeouts().implicitlyWait(Config.IMPLICITLY_WAIT, TimeUnit.SECONDS);
         return driver;
     }
 

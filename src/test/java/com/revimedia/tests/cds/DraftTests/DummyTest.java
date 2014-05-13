@@ -4,7 +4,6 @@ package com.revimedia.tests.cds.DraftTests;
 import com.revimedia.testing.cds.auto.staticdata.StaticDataAutoMFS;
 import com.revimedia.testing.cds.prepop.PrePop;
 import com.revimedia.testing.cds.prepop.PrePopParameters;
-import com.revimedia.testing.configuration.Config;
 import com.revimedia.testing.configuration.dto.Contact;
 import com.revimedia.tests.configuration.dataproviders.AutoDataProvider;
 import org.openqa.selenium.By;
@@ -140,7 +139,6 @@ public class DummyTest {
 
         String s11 = s1.replaceAll("[^\\d]", "");
         String s22 = s2.replaceAll("[^\\d]", "");
-        String val1 = Config.BROWSER;
 
     }
 
