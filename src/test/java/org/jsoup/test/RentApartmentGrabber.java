@@ -85,7 +85,7 @@ public class RentApartmentGrabber {
                     continue;
                 }
                 String adAddress1 = adOne.select("p.color-9").text();
-                String adAddress = adAddress1.substring(adAddress1.indexOf("Одесса") + "Одесса".length());
+                String adAddress = adAddress1.substring(adAddress1.indexOf("Odessa") + "Odessa".length());
                 String adMessage = adOne.select("span.fbold").text();
                 String adPrice = adOne.select("strong.c000").text();
                 String adDate = adOne.select("p.margintop10").first().text();

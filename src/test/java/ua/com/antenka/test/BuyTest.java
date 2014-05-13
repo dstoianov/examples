@@ -66,7 +66,7 @@ public class BuyTest {   //buy attack
 
         //Submit
         driver.findElement(By.id("btnSendForm")).click();
-        boolean isOrdered = driver.findElement(By.xpath("//div[@class='module-featured']/h3")).getText().contains("Ваш заказ принят");
+        boolean isOrdered = driver.findElement(By.xpath("//div[@class='module-featured']/h3")).getText().contains("vash zakaz prinyt");
         Assert.assertTrue(isOrdered, "Item is not ordered, failed");
         driver.manage().deleteAllCookies();
     }
