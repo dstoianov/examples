@@ -209,6 +209,12 @@
                 <testng.suite>${basedir}/src/test/resources/testsuites/auto_mfs.xml</testng.suite>
             </properties>
         </profile>
+        <profile>
+            <id>console</id>
+            <properties>
+                <testng.suite>${basedir}/src/test/resources/testsuites/default_console_suite.xml</testng.suite>
+            </properties>
+        </profile>
 
     </profiles>
 
