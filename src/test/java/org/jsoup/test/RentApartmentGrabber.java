@@ -101,6 +101,7 @@ public class RentApartmentGrabber {
                 rentData.setOther("test field other");
                 list.add(rentData);
 
+
 //                System.out.println("----------------------------------------------------------------------------");
 //                print( "1) Address: %s " +
 //                        "\n2) Text:  %s " +
