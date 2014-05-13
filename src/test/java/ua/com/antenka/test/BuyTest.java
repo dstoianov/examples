@@ -28,13 +28,13 @@ public class BuyTest {   //buy attack
     WebDriver driver;
     Long stop = null;
 
-    @Test (dataProvider = "getUser", dataProviderClass = DataProviders.class)
+    @Test(dataProvider = "getUser", dataProviderClass = DataProviders.class)
     public void buyAttackTest(User user) {
         do {
             driver.get("http://antenka.com.ua/");
             List<WebElement> menu = driver.findElements(By.xpath("//div[@class='boxIndent']//li/a/span"));
             menu.get(getRnd(menu.size())).click();
-          } while (!isElementExist(".//*[@id='vmMainPage']//input[@class='addtocart_button']"));
+        } while (!isElementExist(".//*[@id='vmMainPage']//input[@class='addtocart_button']"));
 
         List<WebElement> goods = driver.findElements(By.xpath(".//*[@id='vmMainPage']//input[@class='addtocart_button']"));
         goods.get(getRnd(goods.size())).click();
@@ -50,7 +50,7 @@ public class BuyTest {   //buy attack
         WebElement phone = driver.findElement(By.id("telClient"));
         phone.clear();
 
-        String phone_ =  user.getPhone().substring(3);
+        String phone_ = user.getPhone().substring(3);
         phone.sendKeys(phone_);
 
         Select mailService = new Select(driver.findElement(By.id("courier")));

@@ -179,7 +179,7 @@ public class RentApartmentGrabber {
         putRentDataTOs(rentDataTOs, FILE_NAME);
     }
 
-    private void putRentDataTOs(ArrayList<RentDataTO> rentDataTOs, String fileName)  {
+    private void putRentDataTOs(ArrayList<RentDataTO> rentDataTOs, String fileName) {
         FileInputStream file = null;
         try {
             file = new FileInputStream(new File(fileName));
@@ -207,9 +207,9 @@ public class RentApartmentGrabber {
     }
 
     @BeforeClass
-    public static void initProxy (){
+    public static void initProxy() {
         //System.setProperty("http.proxyHost", "192.168.0.1");
-       // System.setProperty("http.proxyPort", "8080");
+        // System.setProperty("http.proxyPort", "8080");
     }
 
 
