@@ -1,6 +1,5 @@
 package ua.com.rozetka.speed.test;
 
-import com.sun.servicetag.SystemEnvironment;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -66,7 +65,7 @@ public class SpeedTest {
         assertThat("yy", is(not("xx")));
         assertThat("i like cheese", containsString("cheese"));
 
-        print("os is %s ", System.getProperty("os.arch"));
+/*        print("os is %s ", System.getProperty("os.arch"));
 
         // Will say "x86" even on a 64-bit machine
         // using a 32-bit Java runtime
@@ -78,7 +77,7 @@ public class SpeedTest {
         final String propArch = System.getProperty("os.arch");
 
         System.out.println( "getOsArchitecture() says => " + envArch );
-        System.out.println( "getProperty() says => " + propArch );
+        System.out.println( "getProperty() says => " + propArch );*/
 
 
     }
