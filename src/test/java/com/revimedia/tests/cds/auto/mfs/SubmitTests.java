@@ -81,7 +81,7 @@ public class SubmitTests extends BaseTest {
         compareAndSavePage.fillInAllFields(contact, staticData).submitForm();
 
         Submit submit = HarParser.getSubmit();
-        String xml = submit.getRequest();
+        String xml2 = submit.getRequest();
 
         //assertThat(xml, hasXPath("//something[@id='b']/cheese", equalTo(surveyPathValue)));
         //assertThat(hasXPath("//honky"), xml);
