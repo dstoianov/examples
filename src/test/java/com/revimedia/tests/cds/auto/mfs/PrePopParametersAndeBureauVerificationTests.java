@@ -25,7 +25,7 @@ public class PrePopParametersAndeBureauVerificationTests extends BaseTest {
     public VehiclePage vehiclePage;
     public CompareAndSavePage compareAndSavePage;
 
-    @Test(groups = {"prepop", "not ready yet"}, enabled = false, description = "Is not ready yet")
+    @Test(groups = {"prepop", "not ready yet"}, enabled = false, description = "Is not implemented yet on CDS 2.0")
     public void testExitTrue() throws Exception {
         PrePopExitPage exitTruePage = new PrePopExitPage(driver);
         exitTruePage.reloadPageWithPrePopTrue();
