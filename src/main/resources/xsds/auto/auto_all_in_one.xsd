@@ -96,6 +96,8 @@
             <xs:element type="xs:string" name="Year"/>
             <xs:element type="xs:string" name="Make"/>
             <xs:element type="xs:string" name="Model"/>
+            <xs:element type="xs:string" name="Leased" minOccurs="0"/>
+            <xs:element type="xs:string" name="DailyMileage" minOccurs="0"/>
         </xs:sequence>
     </xs:complexType>
     <xs:complexType name="DriverType">

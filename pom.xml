@@ -42,6 +42,64 @@
                      <workingDirectory>target/</workingDirectory>-->
                 </configuration>
             </plugin>
+
+
+            <plugin>
+                <groupId>org.jvnet.jaxb2.maven2</groupId>
+                <artifactId>maven-jaxb2-plugin</artifactId>
+                <version>0.8.3</version>
+                <executions>
+                    <execution>
+                        <id>schema1-generate-auto</id>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                        <configuration>
+                            <schemaDirectory>${basedir}/src/main/resources/xsds/auto</schemaDirectory>
+                            <generatePackage>com.revimedia.testing.beans.auto</generatePackage>
+                        </configuration>
+                    </execution>
+
+                    <execution>
+                        <id>schema2-generate-health</id>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                        <configuration>
+                            <schemaDirectory>${basedir}/src/main/resources/xsds/health</schemaDirectory>
+                            <generatePackage>com.revimedia.testing.beans.health</generatePackage>
+                        </configuration>
+                    </execution>
+
+                    <execution>
+                        <id>schema3-generate-homesecurity</id>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                        <configuration>
+                            <schemaDirectory>${basedir}/src/main/resources/xsds/homesecurity</schemaDirectory>
+                            <generatePackage>com.revimedia.testing.beans.homesecurity</generatePackage>
+                        </configuration>
+                    </execution>
+                </executions>
+                <configuration>
+                    <forceRegenerate>true</forceRegenerate>
+                    <verbose>true</verbose>
+                    <!--<extension>true</extension>-->
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <inherited>true</inherited>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.6</source>
+                    <target>1.6</target>
+                </configuration>
+            </plugin>
+
+
         </plugins>
     </build>
 
@@ -223,7 +281,7 @@
             </properties>
         </profile>
         <profile>
-        <id>console</id>
+            <id>console</id>
             <properties>
                 <testng.suite>${basedir}/src/test/resources/testsuites/default_console_suite.xml</testng.suite>
             </properties>

@@ -8,6 +8,11 @@
             <xs:element type="RequestedPolicyType" name="RequestedPolicy"/>
         </xs:sequence>
     </xs:complexType>
+    <xs:complexType name="PersonsType">
+        <xs:sequence>
+            <xs:element type="PersonType" name="Person"/>
+        </xs:sequence>
+    </xs:complexType>
     <xs:complexType name="CurrentPolicyType">
         <xs:sequence>
             <xs:element type="xs:string" name="ExpirationDate"/>
@@ -30,24 +35,36 @@
             </xs:extension>
         </xs:simpleContent>
     </xs:complexType>
+    <xs:complexType name="PersonType">
+        <xs:sequence>
+            <xs:element type="xs:string" name="Gender"/>
+            <xs:element type="xs:string" name="BirthDate"/>
+            <xs:element type="xs:string" name="Id"/>
+            <xs:element type="xs:string" name="CreditRating"/>
+            <xs:element type="xs:string" name="Occupation"/>
+            <xs:element type="xs:string" name="DeniedInsurance"/>
+            <xs:element type="xs:string" name="Conditions"/>
+            <xs:element type="xs:string" name="Education"/>
+            <xs:element type="xs:string" name="MaritalStatus"/>
+            <xs:element type="xs:string" name="RelationshipToApplicant"/>
+            <xs:element type="xs:string" name="USResidence"/>
+            <xs:element type="xs:string" name="Height_FT"/>
+            <xs:element type="xs:string" name="Height_Inch"/>
+            <xs:element type="xs:string" name="Weight"/>
+            <xs:element type="xs:string" name="Student"/>
+            <xs:element type="MedicalHistoryType" name="MedicalHistory"/>
+        </xs:sequence>
+    </xs:complexType>
     <xs:complexType name="QuoteRequestType">
         <xs:sequence>
-            <xs:element type="DriversType" name="Drivers"/>
-            <xs:element type="VehiclesType" name="Vehicles"/>
+            <xs:element type="PersonsType" name="Persons"/>
             <xs:element type="InsuranceType" name="Insurance"/>
         </xs:sequence>
         <xs:attribute type="xs:string" name="QuoteType"/>
     </xs:complexType>
-    <xs:complexType name="DriversType">
-        <xs:sequence>
-            <xs:element type="DriverType" name="Driver"/>
-        </xs:sequence>
-    </xs:complexType>
     <xs:complexType name="RequestedPolicyType">
         <xs:sequence>
-            <xs:element type="xs:string" name="PropertyDamage"/>
             <xs:element type="xs:string" name="CoverageType"/>
-            <xs:element type="xs:string" name="BodilyInjury"/>
         </xs:sequence>
     </xs:complexType>
     <xs:complexType name="LeadDataType">
@@ -61,11 +78,6 @@
         <xs:attribute type="xs:string" name="TimeZone"/>
         <xs:attribute type="xs:string" name="UserAgent"/>
         <xs:attribute type="xs:string" name="SessionLength"/>
-    </xs:complexType>
-    <xs:complexType name="VehiclesType">
-        <xs:sequence>
-            <xs:element type="VehicleType" name="Vehicle"/>
-        </xs:sequence>
     </xs:complexType>
     <xs:complexType name="ContactDataType">
         <xs:sequence>
@@ -83,38 +95,12 @@
             <xs:element type="xs:string" name="ResidenceType"/>
         </xs:sequence>
     </xs:complexType>
-    <xs:complexType name="VehicleType">
+    <xs:complexType name="MedicalHistoryType">
         <xs:sequence>
-            <xs:element type="xs:string" name="AnnualMiles"/>
-            <xs:element type="xs:string" name="CollisionDeductible"/>
-            <xs:element type="xs:string" name="ComphrensiveDeductible"/>
-            <xs:element type="xs:string" name="Garage"/>
-            <xs:element type="xs:string" name="OneWayDistance"/>
-            <xs:element type="xs:string" name="PrimaryUse"/>
-            <xs:element type="xs:string" name="Ownership"/>
-            <xs:element type="xs:string" name="WeeklyCommuteDays"/>
-            <xs:element type="xs:string" name="Year"/>
-            <xs:element type="xs:string" name="Make"/>
-            <xs:element type="xs:string" name="Model"/>
-        </xs:sequence>
-    </xs:complexType>
-    <xs:complexType name="DriverType">
-        <xs:sequence>
-            <xs:element type="xs:string" name="FirstName"/>
-            <xs:element type="xs:string" name="LastName"/>
-            <xs:element type="xs:string" name="Gender"/>
-            <xs:element type="xs:string" name="BirthDate"/>
-            <xs:element type="xs:string" name="LicenseState"/>
-            <xs:element type="xs:string" name="AgeLicensed"/>
-            <xs:element type="xs:string" name="YearsAtEmployer"/>
-            <xs:element type="xs:string" name="RequiresSR22Filing"/>
-            <xs:element type="xs:string" name="LicenseEverSuspendedRevoked"/>
-            <xs:element type="xs:string" name="CreditRating"/>
-            <xs:element type="xs:string" name="Occupation"/>
-            <xs:element type="xs:string" name="LicenseStatus"/>
-            <xs:element type="xs:string" name="Education"/>
-            <xs:element type="xs:string" name="MaritalStatus"/>
-            <xs:element type="xs:string" name="RelationshipToApplicant"/>
+            <xs:element type="xs:string" name="Alcoholabstain"/>
+            <xs:element type="xs:string" name="Pregnant"/>
+            <xs:element type="xs:string" name="Hospitalized"/>
+            <xs:element type="xs:string" name="Smoker"/>
         </xs:sequence>
     </xs:complexType>
 </xs:schema>
