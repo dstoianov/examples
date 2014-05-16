@@ -6,9 +6,7 @@ import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.Select;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -31,6 +29,9 @@ public class VehiclePage extends Page {
     @FindBy(xpath = "//div[contains(@class, 'Model')]//select")
     private WebElement ddVehicleModel;
 
+    @FindBy(xpath = "//input[@type='radio']")
+    private List<WebElement> rbtnExtraCar;
+
     @FindBy(xpath = "//button") //button class="bq-control bq-type-simple">
     private WebElement btnContinue;
 
@@ -38,6 +39,7 @@ public class VehiclePage extends Page {
         selectByValue(ddVehicleBuildYear, staticData.getYear());
         selectByValue(ddVehicleMake, staticData.getMake());
         selectByValue(ddVehicleModel, staticData.getModel());
+        rbtnExtraCar.get(1).click();
         return this;
     }
 

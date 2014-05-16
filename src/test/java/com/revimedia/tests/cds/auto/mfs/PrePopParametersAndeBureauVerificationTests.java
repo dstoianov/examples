@@ -75,7 +75,9 @@ public class PrePopParametersAndeBureauVerificationTests extends BaseTest {
         vehiclePage = driverPage.fillInAllFields(contact, staticData).clickOnContinue();
         compareAndSavePage = vehiclePage.fillInAllFields(staticData).clickOnContinue();
         compareAndSavePage.fillInAllFields(contact, staticData);
-        compareAndSavePage.fillInInvalidStreetAddressField(DataHelper.generateInvalidAddress()).clickSubmit();
+        compareAndSavePage.fillInInvalidStreetAddressField(DataHelper.generateInvalidAddress());
+
+        compareAndSavePage.clickSubmit();
 
         //Assert
         assertThat(compareAndSavePage.getPageText(), containsString(Messages.EBUREAU_VERIFICATION));

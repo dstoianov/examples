@@ -21,11 +21,12 @@ public class BaseTest {
 
     @BeforeClass
     @Parameters(value = {"browser", "version", "url"})
-    public void setUp(@Optional("firefox") String browser,
+    public void setUp(@Optional("chrome") String browser,
                       @Optional("9") String version,
 //                      @Optional("WIN") String platform,
                       @Optional("http://development.stagingrevi.com/auto/mfs/") String url) throws Exception {
 
+        log.info("Start the browser...");
         this.url = url;
         log.info("Setting up parameters...");
         WebDriverFactory instanceDriver = new WebDriverFactory();
@@ -40,6 +41,7 @@ public class BaseTest {
 
         //driver = WebDriverFactory.getDriver(browser, version, platform);
         printBrowserParameters();
+        log.info("Browser is started!");
     }
 
 
@@ -51,9 +53,9 @@ public class BaseTest {
 
     @AfterClass(alwaysRun = true)
     public void tearDown() throws Exception {
-        //BrowserMobProxyLocal.stopBrowserMob();
         BrowserMobProxyLocal2.stopProxy();
         driver.quit();
+        log.info("Tear Down the Browser.....");
     }
 
     private void printBrowserParameters() {

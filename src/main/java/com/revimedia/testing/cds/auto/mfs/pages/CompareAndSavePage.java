@@ -137,6 +137,8 @@ public class CompareAndSavePage extends Page {
 
     public CompareAndSavePage fillInInvalidStreetAddressField(String s) {
         clearAndType(txtStreetAddress, s);
+        txtFirstName.click(); // move focus to first name field
+        waitForAjaxComplete();
         return this;
     }
 

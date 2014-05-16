@@ -78,7 +78,7 @@ public class StaticDataAutoMFS {
         car.put(0, new String[]{"2003", "FORD", "Focus LX"});
         car.put(1, new String[]{"1993", "SATURN", "S-Series SW1"});
         car.put(2, new String[]{"1983", "VOLVO", "240 GLT Turbo"});
-        car.put(3, new String[]{"2012", "AUDI", "TT RS 2-5 quattro"});
+        car.put(3, new String[]{"2012", "AUDI", "TT RS 2.5 quattro"});
         car.put(4, new String[]{"2009", "BMW", "M3"});
         car.put(5, new String[]{"2002", "BUICK", "Regal LS"});
 
