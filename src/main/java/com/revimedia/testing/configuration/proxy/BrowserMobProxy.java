@@ -9,7 +9,7 @@ import java.net.UnknownHostException;
 /**
  * Created by Funker on 07.05.14.
  */
-public interface IBrowserMobProxy {
+public interface BrowserMobProxy {
     public void startProxy() throws Exception;
 
     public void stopProxy() throws Exception;

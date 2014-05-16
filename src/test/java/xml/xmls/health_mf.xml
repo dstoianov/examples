@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LeadData Target="Lead.CDSInsert" RequestTime="2014-05-15 13:05:15" TimeZone=" 0300"
+          UserAgent="Mozilla/5.0 (Windows NT 6.1; WOW64; rv:29.0) Gecko/20100101 Firefox/29.0" SessionLength="38251">
+    <AffiliateData Id="1" OfferId="" SubId="" Sub2Id="" Source="" SurveyPath="HealthZipCodeV2" TransactionId=""
+                   LeadId="EE0117DB-96FB-447D-3BE3-6360CDFD7266" VerifyAddress="true"/>
+    <QuoteRequest QuoteType="Health">
+        <Persons>
+            <Person>
+                <Gender>Male</Gender>
+                <BirthDate>1984-01-01</BirthDate>
+                <Id>1</Id>
+                <CreditRating>Good</CreditRating>
+                <Occupation>Employeed</Occupation>
+                <DeniedInsurance>Yes</DeniedInsurance>
+                <Conditions>Alzheimer</Conditions>
+                <Education>Bachelors Degree</Education>
+                <MaritalStatus>Married</MaritalStatus>
+                <RelationshipToApplicant>self</RelationshipToApplicant>
+                <USResidence>True</USResidence>
+                <Height_FT>4</Height_FT>
+                <Height_Inch>1</Height_Inch>
+                <Weight>110</Weight>
+                <Student>false</Student>
+                <MedicalHistory>
+                    <Alcoholabstain>Yes</Alcoholabstain>
+                    <Pregnant>Yes</Pregnant>
+                    <Hospitalized>Yes</Hospitalized>
+                    <Smoker>Yes</Smoker>
+                </MedicalHistory>
+            </Person>
+        </Persons>
+        <Insurance>
+            <CurrentPolicy>
+                <ExpirationDate>2015-03-01</ExpirationDate>
+                <InsuredSince>2011-02-15</InsuredSince>
+                <InsuranceCompany>AFLAC</InsuranceCompany>
+            </CurrentPolicy>
+            <RequestedPolicy>
+                <CoverageType>Dental Only</CoverageType>
+            </RequestedPolicy>
+        </Insurance>
+    </QuoteRequest>
+    <ContactData>
+        <FirstName>Sasdsd</FirstName>
+        <LastName>Sdfsd</LastName>
+        <PhoneNumber>6656656565</PhoneNumber>
+        <Address>dsdfds 22</Address>
+        <EmailAddress>ddfgb@dfdf.ru</EmailAddress>
+        <ZipCode>10101</ZipCode>
+        <City>NEW YORK</City>
+        <IPAddress>192.168.0.1</IPAddress>
+        <State>NY</State>
+        <YearsAtResidence>1</YearsAtResidence>
+        <MonthsAtResidence>0</MonthsAtResidence>
+        <ResidenceType>My own house</ResidenceType>
+    </ContactData>
+</LeadData>

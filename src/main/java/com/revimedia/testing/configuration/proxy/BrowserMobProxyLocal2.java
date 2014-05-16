@@ -1,5 +1,6 @@
 package com.revimedia.testing.configuration.proxy;
 
+import com.revimedia.testing.configuration.Config;
 import net.lightbody.bmp.core.har.Har;
 import net.lightbody.bmp.core.har.HarEntry;
 import net.lightbody.bmp.core.har.HarRequest;
@@ -16,7 +17,8 @@ import java.util.List;
  */
 public class BrowserMobProxyLocal2 {//implements IBrowserMobProxy {
     private static ProxyServer server;
-    private static int port = 8074;
+    private static int port = Config.SELENIUM_PROXY_PORT;
+    private static String proxyIp = Config.SELENIUM_PROXY_IP;
     private static Proxy proxy;
 
 
@@ -41,7 +43,7 @@ public class BrowserMobProxyLocal2 {//implements IBrowserMobProxy {
 
     public static Proxy getProxy() throws UnknownHostException {
         proxy = server.seleniumProxy();
-        proxy.setHttpProxy("localhost:" + port);
+        proxy.setHttpProxy(proxyIp + ":" + port);
         //proxy.setSslProxy("localhost:8073");
         //proxy.setSocksProxy("localhost:8073");
         //server.newHar("ReviMedia testing");

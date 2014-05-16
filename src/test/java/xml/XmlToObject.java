@@ -1,10 +1,12 @@
 package xml;
 
+import org.apache.commons.io.IOUtils;
 import org.testng.annotations.Test;
 import xml.dto.generated.LeadDataType;
 import xml.dto.generated.ObjectFactory;
 
 import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBElement;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Unmarshaller;
 import javax.xml.transform.stream.StreamSource;
@@ -71,9 +73,15 @@ public class XmlToObject {
         Unmarshaller u = jc.createUnmarshaller();
         StringBuffer xmlStr = new StringBuffer(xml);
         StreamSource streamSource = new StreamSource(new StringReader(xmlStr.toString()));
-        // U can use IOUtils.toInputStream(xml) if add to deps commons-io and parse String
-        // Also, it can be Node, String, etc
         return u.unmarshal(streamSource, clazz).getValue();
+    }
+
+
+    public static <T> T unmarshalFromString(Class<T> clazz, String xml) throws JAXBException {
+        JAXBContext jc = JAXBContext.newInstance(clazz);
+        Unmarshaller u = jc.createUnmarshaller();
+        JAXBElement<T> root = u.unmarshal(new StreamSource(IOUtils.toInputStream(xml)), clazz);
+        return root.getValue();
     }
 
 }

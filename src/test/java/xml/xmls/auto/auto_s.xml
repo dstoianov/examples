@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LeadData Target="Lead.CDSInsert" RequestTime="2014-05-15 13:02:57" TimeZone=" 0300"
+          UserAgent="Mozilla/5.0 (Windows NT 6.1; WOW64; rv:29.0) Gecko/20100101 Firefox/29.0" SessionLength="57561">
+    <AffiliateData Id="1" OfferId="" SubId="" Sub2Id="" Source="" SurveyPath="AutoFrameSteps" TransactionId=""
+                   LeadId="EE0117DB-96FB-447D-3BE3-6360CDFD7266" VerifyAddress="true"/>
+    <QuoteRequest QuoteType="Auto">
+        <Drivers>
+            <Driver>
+                <FirstName>Qqq</FirstName>
+                <LastName>Qqq</LastName>
+                <Gender>Male</Gender>
+                <BirthDate>1965-03-02</BirthDate>
+                <LicenseState>NY</LicenseState>
+                <AgeLicensed>16</AgeLicensed>
+                <YearsAtEmployer>5</YearsAtEmployer>
+                <RequiresSR22Filing>No</RequiresSR22Filing>
+                <LicenseEverSuspendedRevoked>No</LicenseEverSuspendedRevoked>
+                <CreditRating>Excellent</CreditRating>
+                <Occupation>Employeed</Occupation>
+                <LicenseStatus>Current</LicenseStatus>
+                <Education>Doctorate Degree</Education>
+                <MaritalStatus>Separated</MaritalStatus>
+                <RelationshipToApplicant>self</RelationshipToApplicant>
+            </Driver>
+        </Drivers>
+        <Vehicles>
+            <Vehicle>
+                <AnnualMiles>12500</AnnualMiles>
+                <CollisionDeductible>500</CollisionDeductible>
+                <ComphrensiveDeductible>500</ComphrensiveDeductible>
+                <Garage>No Cover</Garage>
+                <OneWayDistance>10-19</OneWayDistance>
+                <PrimaryUse>Commute To/From Work</PrimaryUse>
+                <Ownership>Yes</Ownership>
+                <WeeklyCommuteDays>5</WeeklyCommuteDays>
+                <Year>2012</Year>
+                <Make>BUICK</Make>
+                <Model>Enclave Leather</Model>
+            </Vehicle>
+        </Vehicles>
+        <Insurance>
+            <CurrentPolicy>
+                <ExpirationDate>2014-06-15</ExpirationDate>
+                <InsuredSince>2013-05-15</InsuredSince>
+                <InsuranceCompany>AAA</InsuranceCompany>
+            </CurrentPolicy>
+            <RequestedPolicy>
+                <PropertyDamage/>
+                <CoverageType>Standard Protection</CoverageType>
+                <BodilyInjury/>
+            </RequestedPolicy>
+        </Insurance>
+    </QuoteRequest>
+    <ContactData>
+        <FirstName>Qqq</FirstName>
+        <LastName>Qqq</LastName>
+        <PhoneNumber>5656565655</PhoneNumber>
+        <Address>dfsdfs 22</Address>
+        <EmailAddress>sdsdf@dfdf.ru</EmailAddress>
+        <ZipCode>10101</ZipCode>
+        <City>NEW YORK</City>
+        <IPAddress>192.168.0.1</IPAddress>
+        <State>NY</State>
+        <YearsAtResidence>1</YearsAtResidence>
+        <MonthsAtResidence>0</MonthsAtResidence>
+        <ResidenceType>I am renting</ResidenceType>
+    </ContactData>
+</LeadData>

@@ -15,17 +15,13 @@ public class Config {
 
     private static final Logger log = Logger.getLogger(Config.class);
 
-    //public static final String BROWSER;
-    //public static final String VERSION;
-    //public static final String PLATFORM;
-    //public static final String APP_URL;
     public static final int IMPLICITLY_WAIT;
     public static final Boolean WINDOW_MAXIMIZE;
 
     public static final Boolean IS_GRID_USE;
     public static final String GRID_HUB_IP;
     public static final String SELENIUM_PROXY_IP;
-    public static final String SELENIUM_PROXY_PORT;
+    public static final int SELENIUM_PROXY_PORT;
     public static final String DEFAULT_PROPERTIES = "localhost.properties";
     public static final String PATH_TO_SCREENS = "target/screens/";
 
@@ -40,25 +36,16 @@ public class Config {
             e.printStackTrace();
         }
 
-        // BROWSER = props.getProperty("browser");
-        //VERSION = props.getProperty("version");
-        //PLATFORM = props.getProperty("platform");
-        //APP_URL = props.getProperty("app.url");
-
         IMPLICITLY_WAIT = Integer.valueOf(props.getProperty("implicitly.wait"));
         WINDOW_MAXIMIZE = Boolean.valueOf(props.getProperty("window.maximize"));
 
         IS_GRID_USE = Boolean.valueOf(props.getProperty("is.grid.use"));
         GRID_HUB_IP = props.getProperty("grid.hub.ip");
         SELENIUM_PROXY_IP = props.getProperty("selenium.proxy.ip");
-        SELENIUM_PROXY_PORT = props.getProperty("selenium.proxy.port");
+        SELENIUM_PROXY_PORT = Integer.valueOf(props.getProperty("selenium.proxy.port"));
 
 
         log.info("-------------------Settings--------------------");
-        //log.info("Browser:              " + BROWSER);
-        //log.info("Browser version:      " + VERSION);
-        //log.info("Platform:             " + PLATFORM);
-        //log.info("Application URL:      " + APP_URL);
         log.info("Implicitly Wait:      " + IMPLICITLY_WAIT);
         log.info("Window Maximize:      " + WINDOW_MAXIMIZE);
         log.info("GRID hub IP:          " + GRID_HUB_IP);
