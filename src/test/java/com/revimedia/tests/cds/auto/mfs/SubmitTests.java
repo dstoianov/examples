@@ -30,7 +30,7 @@ public class SubmitTests extends BaseTest {
     public VehiclePage vehiclePage;
     public CompareAndSavePage compareAndSavePage;
 
-    @Test(groups = {"submit"}, dataProvider = "contactAndStaticData", dataProviderClass = AutoDataProvider.class)
+    @Test(groups = {"submit"}, dataProvider = "contactAndStaticDataAutoMFS", dataProviderClass = AutoDataProvider.class)
     public void testPositiveSubmit(Contact contact, StaticDataAutoMFS staticData) throws Exception {
 
         driverPage = new DriverPage(driver);
@@ -50,7 +50,7 @@ public class SubmitTests extends BaseTest {
         //SubmitVerifier.verifyRequest(HarParser.getSubmit().getRequest());
     }
 
-    @Test(groups = {"submit", "polk"}, dataProvider = "contactAndStaticData", dataProviderClass = AutoDataProvider.class)
+    @Test(groups = {"submit", "polk"}, dataProvider = "contactAndStaticDataAutoMFS", dataProviderClass = AutoDataProvider.class)
     public void testPolk(Contact contact, StaticDataAutoMFS staticData) throws Exception {
         driverPage = new DriverPage(driver);
         vehiclePage = driverPage.fillInAllFields(contact, staticData).clickOnContinue();
@@ -70,7 +70,7 @@ public class SubmitTests extends BaseTest {
     }
 
 
-    @Test(groups = {"submit", "survey path"}, dataProvider = "contactAndStaticData", dataProviderClass = AutoDataProvider.class)
+    @Test(groups = {"submit", "survey path"}, dataProvider = "contactAndStaticDataAutoMFS", dataProviderClass = AutoDataProvider.class)
     public void testSurveyPath(Contact contact, StaticDataAutoMFS staticData) throws Exception {
 
         driverPage = new DriverPage(driver);

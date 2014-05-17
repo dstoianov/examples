@@ -26,14 +26,14 @@ public class BrowserMobTest {
         ProxyServer server = new ProxyServer(9978);
         server.start();
 
-        server.addResponseInterceptor(new HttpResponseInterceptor() {
-
-            @Override
-            public void process(HttpResponse response, HttpContext context)
-                    throws HttpException, IOException {
-                System.out.println(response.getStatusLine());
-            }
-        });
+//        server.addResponseInterceptor(new HttpResponseInterceptor() {
+//
+//            @Override
+//            public void process(HttpResponse response, HttpContext context)
+//                    throws HttpException, IOException {
+//                System.out.println(response.getStatusLine());
+//            }
+//        });
 
         // Get selenium proxy
         Proxy proxy = server.seleniumProxy();

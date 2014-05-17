@@ -142,7 +142,7 @@ public class DummyTest {
 
     }
 
-    @Test(dataProvider = "contactAndStaticData", dataProviderClass = AutoDataProvider.class)
+    @Test(dataProvider = "contactAndStaticDataAutoMFS", dataProviderClass = AutoDataProvider.class)
     public void testExitTrue(Contact contact, StaticDataAutoMFS staticData) throws Exception {
 
 

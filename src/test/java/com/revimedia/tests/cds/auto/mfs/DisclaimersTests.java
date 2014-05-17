@@ -17,7 +17,7 @@ public class DisclaimersTests extends BaseTest {
     public VehiclePage vehiclePage;
     public CompareAndSavePage compareAndSavePage;
 
-    @Test(groups = {"disclaimer"}, dataProvider = "contactAndStaticData", dataProviderClass = AutoDataProvider.class)
+    @Test(groups = {"disclaimer"}, dataProvider = "contactAndStaticDataAutoMFS", dataProviderClass = AutoDataProvider.class)
     public void testDisclaimerPrivacyPolicyAndTermsOfUseLinks(Contact contact, StaticDataAutoMFS staticData) throws Exception {
         //ACT
         driverPage = new DriverPage(driver);

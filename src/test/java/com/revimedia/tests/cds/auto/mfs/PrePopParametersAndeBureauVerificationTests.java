@@ -40,7 +40,7 @@ public class PrePopParametersAndeBureauVerificationTests extends BaseTest {
         assertThat(exitTruePage.getPhoneTextLink(), not(is("(888) 759-1914")));
     }
 
-    @Test(groups = {"prepop"}, dataProvider = "contactAndStaticData", dataProviderClass = AutoDataProvider.class)
+    @Test(groups = {"prepop"}, dataProvider = "contactAndStaticDataAutoMFS", dataProviderClass = AutoDataProvider.class)
     public void testPrePopAllRestParameters(Contact contact, StaticDataAutoMFS staticData) throws Exception {
         // reload page with all pre pop parameters
         driver.get(PrePopParameters.getAutoMFS(driver.getCurrentUrl(), contact, staticData));
@@ -68,7 +68,7 @@ public class PrePopParametersAndeBureauVerificationTests extends BaseTest {
         assertThat(compareAndSavePage.getEmailValue(), equalToIgnoringCase(contact.getEmailAddress()));
     }
 
-    @Test(groups = {"eBureau Verification"}, dataProvider = "contactAndStaticData", dataProviderClass = AutoDataProvider.class)
+    @Test(groups = {"eBureau Verification"}, dataProvider = "contactAndStaticDataAutoMFS", dataProviderClass = AutoDataProvider.class)
     public void testeBureauVerification(Contact contact, StaticDataAutoMFS staticData) throws Exception {
         //ACT
         driverPage = new DriverPage(driver);

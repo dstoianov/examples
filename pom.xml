@@ -27,6 +27,7 @@
                     <suiteXmlFiles>
                         <suiteXmlFile>${testng.suite}</suiteXmlFile>
                     </suiteXmlFiles>
+                    <junitArtifactName>none:none</junitArtifactName>
                     <!-- <properties>
                          <property>
                              <name>usedefaultlisteners</name>

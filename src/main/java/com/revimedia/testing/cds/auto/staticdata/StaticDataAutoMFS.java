@@ -95,16 +95,16 @@ public class StaticDataAutoMFS {
 
     @Override
     public String toString() {
-        return "\n\n--------------- Static Data Auto MFS ----------------- " +
+        return //"\n\n--------------- Static Data Auto MFS ----------------- " +
                 "\ninsuranceCompany='" + insuranceCompany + '\'' +
-                ",\ninsuredSince='" + insuredSince + '\'' +
-                ",\nresidenceType='" + residenceType + '\'' +
-                ",\nmaritalStatus='" + maritalStatus + '\'' +
-                ",\ncreditRating='" + creditRating + '\'' +
-                ",\neducation='" + education + '\'' +
-                ",\nyear='" + year + '\'' +
-                ",\nmake='" + make + '\'' +
-                "\nmodel='" + model;
+                        ",\ninsuredSince='" + insuredSince + '\'' +
+                        ",\nresidenceType='" + residenceType + '\'' +
+                        ",\nmaritalStatus='" + maritalStatus + '\'' +
+                        ",\ncreditRating='" + creditRating + '\'' +
+                        ",\neducation='" + education + '\'' +
+                        ",\nyear='" + year + '\'' +
+                        ",\nmake='" + make + '\'' +
+                        "\nmodel='" + model;
     }
 
 

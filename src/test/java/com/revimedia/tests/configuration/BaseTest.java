@@ -6,7 +6,12 @@ import org.apache.log4j.Logger;
 import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.testng.ITestContext;
+import org.testng.ITestResult;
+import org.testng.Reporter;
 import org.testng.annotations.*;
+
+import java.lang.reflect.Method;
 
 /**
  * Created by Funker on 12.04.14.
@@ -45,11 +50,37 @@ public class BaseTest {
     }
 
 
-    @BeforeMethod
-    public void openMainPage() {
+    @BeforeMethod(alwaysRun = true)
+    public void openMainPage(Method method, Object[] parameters) {
+        log.info("----------------------------------------------------------------------------");
+        log.info(getMethodFullName(method) + " Test Started.");
+        log.info("----------------------------------------------------------------------------");
+
         BrowserMobProxyLocal2.cleanProxyHar();
         driver.get(url);
+
+        log.info("************************ TEST DATA BEGIN ***************************************************");
+        for (Object parameter : parameters) {
+            System.out.println(parameter.toString());
+        }
+        log.info("************************ TEST DATA END *****************************************************\n");
     }
+
+
+    @AfterMethod(alwaysRun = true)
+    public void finalizeTestMethod(Method method, ITestResult result) {
+
+        log.warn("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
+        log.warn(getMethodFullName(method) + " - Test Finished.");
+        log.warn("Test result: " + getTestResult(result));
+        log.warn("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
+
+        // if (!result.isSuccess()) {
+
+        // }
+
+    }
+
 
     @AfterClass(alwaysRun = true)
     public void tearDown() throws Exception {
@@ -60,11 +91,34 @@ public class BaseTest {
 
     private void printBrowserParameters() {
         Capabilities cap = ((RemoteWebDriver) driver).getCapabilities();
-        log.info("-----------Test-Parameters--------------------");
+        log.info("-----------Browser-Parameters--------------------");
         log.info("Tested URL:        " + this.url);
         log.info("Browser Name:      " + cap.getBrowserName());
         log.info("Browser version:   " + cap.getVersion());
         log.info("Platform:          " + cap.getPlatform());
+        log.info("-----------Browser-Parameters--------------------");
     }
 
+    protected String getMethodFullName(Method method) {
+        return method.getDeclaringClass().getCanonicalName() + " " + method.getName();
+    }
+
+    private String getTestResult(ITestResult result) {
+        int status = result.getStatus();
+        String resultString;
+        switch (status) {
+            case 1:
+                resultString = "Success";
+                break;
+            case 2:
+                resultString = "Failure";
+                break;
+            case 3:
+                resultString = "Skip";
+                break;
+            default:
+                resultString = "Unknown";
+        }
+        return resultString;
+    }
 }

@@ -110,16 +110,16 @@ public class Contact {
 
     @Override
     public String toString() {
-        return "\n\n-----------Contact ----- DATA --------------- " +
+        return //"\n\n-----------Contact ----- DATA --------------- " +
                 "\nfirstName='" + firstName + '\'' +
-                ",\nlastName='" + lastName + '\'' +
-                ",\ngender='" + gender + '\'' +
-                ",\nbirthDate='" + birthDate + '\'' +
-                ",\nphoneNumber='" + phoneNumber + '\'' +
-                ",\naddress='" + address + '\'' +
-                ",\nemailAddress='" + emailAddress + '\'' +
-                ",\nzipCode='" + zipCode + '\'' +
-                ",\ncity='" + city + '\'' +
-                ",\nstate='" + state;
+                        ",\nlastName='" + lastName + '\'' +
+                        ",\ngender='" + gender + '\'' +
+                        ",\nbirthDate='" + birthDate + '\'' +
+                        ",\nphoneNumber='" + phoneNumber + '\'' +
+                        ",\naddress='" + address + '\'' +
+                        ",\nemailAddress='" + emailAddress + '\'' +
+                        ",\nzipCode='" + zipCode + '\'' +
+                        ",\ncity='" + city + '\'' +
+                        ",\nstate='" + state;
     }
 }
