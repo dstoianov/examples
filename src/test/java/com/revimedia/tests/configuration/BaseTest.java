@@ -2,6 +2,8 @@ package com.revimedia.tests.configuration;
 
 import com.revimedia.testing.configuration.Config;
 import com.revimedia.testing.configuration.WebDriverFactory;
+import com.revimedia.testing.configuration.WebDriverScreenshotListener;
+import com.revimedia.testing.configuration.helpers.DataHelper;
 import com.revimedia.testing.configuration.proxy.BrowserMobProxyLocal2;
 import com.revimedia.testing.configuration.utils.WebDriverHelper;
 import org.apache.log4j.Logger;
@@ -18,6 +20,8 @@ import java.lang.reflect.Method;
 /**
  * Created by Funker on 12.04.14.
  */
+
+@Listeners({WebDriverScreenshotListener.class})
 public class BaseTest {
     protected WebDriver driver;
     private String url;
@@ -78,7 +82,7 @@ public class BaseTest {
         log.warn("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
 
         if (!result.isSuccess()) {
-            takeScreenShot(getMethodFullName(method) + "_teardown");
+            takeScreenShot(getMethodFullName(method) + "_teardown_" + DataHelper.getDate());
         }
 
     }
@@ -128,6 +132,7 @@ public class BaseTest {
     public void takeScreenShot(String name) {
         String path = WebDriverHelper.takeScreenShot(driver, Config.PATH_TO_SCREENS + name + ".png");
         log.info("Screen shot taken: " + path);
+        Reporter.log("Screen shot taken: " + path);
     }
 
 
