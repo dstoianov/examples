@@ -1,7 +1,9 @@
 package com.revimedia.tests.configuration;
 
+import com.revimedia.testing.configuration.Config;
 import com.revimedia.testing.configuration.WebDriverFactory;
 import com.revimedia.testing.configuration.proxy.BrowserMobProxyLocal2;
+import com.revimedia.testing.configuration.utils.WebDriverHelper;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.WebDriver;
@@ -52,18 +54,18 @@ public class BaseTest {
 
     @BeforeMethod(alwaysRun = true)
     public void openMainPage(Method method, Object[] parameters) {
-        log.info("----------------------------------------------------------------------------");
+        log.info("------------------------------------------------------------------------------------------------------");
         log.info(getMethodFullName(method) + " Test Started.");
-        log.info("----------------------------------------------------------------------------");
+        log.info("------------------------------------------------------------------------------------------------------");
 
         BrowserMobProxyLocal2.cleanProxyHar();
         driver.get(url);
 
-        log.info("************************ TEST DATA BEGIN ***************************************************");
+        log.info("************************ TEST DATA BEGIN ***********************************");
         for (Object parameter : parameters) {
             System.out.println(parameter.toString());
         }
-        log.info("************************ TEST DATA END *****************************************************\n");
+        log.info("************************ TEST DATA END *************************************\n");
     }
 
 
@@ -75,9 +77,9 @@ public class BaseTest {
         log.warn("Test result: " + getTestResult(result));
         log.warn("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
 
-        // if (!result.isSuccess()) {
-
-        // }
+        if (!result.isSuccess()) {
+            takeScreenShot(getMethodFullName(method) + "_teardown");
+        }
 
     }
 
@@ -91,16 +93,16 @@ public class BaseTest {
 
     private void printBrowserParameters() {
         Capabilities cap = ((RemoteWebDriver) driver).getCapabilities();
-        log.info("-----------Browser-Parameters--------------------");
+        log.info("----------- Browser Parameters -----------------------------------------------");
         log.info("Tested URL:        " + this.url);
         log.info("Browser Name:      " + cap.getBrowserName());
         log.info("Browser version:   " + cap.getVersion());
         log.info("Platform:          " + cap.getPlatform());
-        log.info("-----------Browser-Parameters--------------------");
+        log.info("----------- Browser Parameters ------------------------------------------------");
     }
 
     protected String getMethodFullName(Method method) {
-        return method.getDeclaringClass().getCanonicalName() + " " + method.getName();
+        return method.getDeclaringClass().getCanonicalName() + "_" + method.getName();
     }
 
     private String getTestResult(ITestResult result) {
@@ -121,4 +123,12 @@ public class BaseTest {
         }
         return resultString;
     }
+
+
+    public void takeScreenShot(String name) {
+        String path = WebDriverHelper.takeScreenShot(driver, Config.PATH_TO_SCREENS + name + ".png");
+        log.info("Screen shot taken: " + path);
+    }
+
+
 }

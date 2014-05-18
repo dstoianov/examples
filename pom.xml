@@ -85,7 +85,7 @@
                 </executions>
                 <configuration>
                     <forceRegenerate>true</forceRegenerate>
-                    <verbose>true</verbose>
+                    <!--<verbose>true</verbose>-->
                     <!--<extension>true</extension>-->
                 </configuration>
             </plugin>
@@ -116,7 +116,7 @@
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
             <version>6.8.5</version>
-            <scope>test</scope>
+            <!--<scope>test</scope>-->
         </dependency>
 
         <dependency>
