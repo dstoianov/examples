@@ -1,13 +1,15 @@
 package com.revimedia.tests.cds.auto.mfs;
 
+import com.revimedia.testing.beans.auto.LeadDataType;
 import com.revimedia.testing.cds.auto.mfs.pages.CompareAndSavePage;
 import com.revimedia.testing.cds.auto.mfs.pages.DriverPage;
 import com.revimedia.testing.cds.auto.mfs.pages.VehiclePage;
 import com.revimedia.testing.cds.auto.staticdata.StaticDataAutoMFS;
+import com.revimedia.testing.cds.auto.staticdata.SurveyPath;
 import com.revimedia.testing.configuration.dto.Contact;
 import com.revimedia.testing.configuration.helpers.Formatter;
 import com.revimedia.testing.configuration.proxy.HarParser;
-import com.revimedia.testing.configuration.proxy.Submit;
+import com.revimedia.testing.configuration.utils.XmlToObject;
 import com.revimedia.tests.configuration.BaseTest;
 import com.revimedia.tests.configuration.dataproviders.AutoDataProvider;
 import com.revimedia.tests.configuration.helpers.SubmitVerifier;
@@ -16,10 +18,9 @@ import org.testng.annotations.Test;
 
 import java.util.List;
 
+import static org.hamcrest.Matchers.*;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.containsInAnyOrder;
-import static org.hamcrest.core.IsEqual.equalTo;
-import static org.hamcrest.core.StringContains.containsString;
 
 
 /**
@@ -74,21 +75,14 @@ public class SubmitTests extends BaseTest {
     public void testSurveyPath(Contact contact, StaticDataAutoMFS staticData) throws Exception {
 
         driverPage = new DriverPage(driver);
-        String surveyPathValue = driverPage.getSurveyPathValue();
-
         vehiclePage = driverPage.fillInAllFields(contact, staticData).clickOnContinue();
         compareAndSavePage = vehiclePage.fillInAllFields(staticData).clickOnContinue();
         compareAndSavePage.fillInAllFields(contact, staticData).submitForm();
 
-        Submit submit = HarParser.getSubmit();
-        String xml2 = submit.getRequest();
+        LeadDataType leadDataType = XmlToObject.unMarshal(LeadDataType.class, HarParser.getSubmit().getRequest());
+        String surveyPath = leadDataType.getAffiliateData().getSurveyPath();
 
-        //assertThat(xml, hasXPath("//something[@id='b']/cheese", equalTo(surveyPathValue)));
-        //assertThat(hasXPath("//honky"), xml);
-        // assertThat(xml, Matchers.hasXPath("dddd", equalToIgnoringCase("ddd")));
-
-        //  assertThat(xml, hasXPath("/mountains/mountain"));
-
+        assertThat(SurveyPath.AUTO_MFS, is(surveyPath));
     }
 
 

@@ -14,8 +14,6 @@ import net.lightbody.bmp.core.har.HarResponse;
 
 import java.util.List;
 
-import static com.revimedia.testing.configuration.proxy.BrowserMobProxyLocal2.*;
-
 /**
  * Created by Funker on 02.05.14.
  */
@@ -33,9 +31,11 @@ public class HarParser {
         System.out.println("URL: " + request.getUrl());
 
         for (HarPostDataParam list : request.getPostData().getParams()) {
-            System.out.println("\n------------------REQUEST---XML-------------------------------");
-            System.out.println(Formatter.prettyXMLFormat(list.getValue()));
-            submit.setRequest(list.getValue());
+            if (list.getName().equalsIgnoreCase("XMLBody")) {
+                System.out.println("\n------------------REQUEST---XML-------------------------------");
+                System.out.println(Formatter.prettyXMLFormat(list.getValue()));
+                submit.setRequest(list.getValue());
+            }
         }
         System.out.println("\n------------------RESPONSE---JSON--------------------------");
         System.out.println(Formatter.prettyJSONFormat(resRAW));

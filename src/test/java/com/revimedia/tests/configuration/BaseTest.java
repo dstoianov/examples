@@ -2,7 +2,7 @@ package com.revimedia.tests.configuration;
 
 import com.revimedia.testing.configuration.Config;
 import com.revimedia.testing.configuration.WebDriverFactory;
-import com.revimedia.testing.configuration.WebDriverScreenshotListener;
+import com.revimedia.testing.configuration.utils.WebDriverScreenshotListener;
 import com.revimedia.testing.configuration.helpers.DataHelper;
 import com.revimedia.testing.configuration.proxy.BrowserMobProxyLocal2;
 import com.revimedia.testing.configuration.utils.WebDriverHelper;

@@ -1,4 +1,4 @@
-package com.revimedia.testing.configuration;
+package com.revimedia.testing.configuration.utils;
 
 import com.revimedia.testing.configuration.helpers.DataHelper;
 import org.testng.ITestContext;
