@@ -19,7 +19,7 @@ import static org.hamcrest.Matchers.*;
 /**
  * Created by dstoianov on 5/6/2014, 7:48 PM.
  */
-public class PrePopParametersAndeBureauVerificationTests extends BaseTest {
+public class PrePopAndeBureauTests extends BaseTest {
 
     public DriverPage driverPage;
     public VehiclePage vehiclePage;

@@ -38,6 +38,7 @@ public class BrowserMobProxyLocal2 {//implements IBrowserMobProxy {
 
     public static void cleanProxyHar() {
         server.cleanup();
+        server.newHar("Revi Media Testing");
     }
 
 

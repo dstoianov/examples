@@ -32,7 +32,7 @@ public class SubmitTests extends BaseTest {
     public VehiclePage vehiclePage;
     public CompareAndSavePage compareAndSavePage;
 
-    @Test(groups = {"submit"}, dataProvider = "contactAndStaticDataAutoMFS", dataProviderClass = AutoDataProvider.class)
+    @Test(groups = {"submit"}, enabled = true, dataProvider = "contactAndStaticDataAutoMFS", dataProviderClass = AutoDataProvider.class)
     public void testPositiveSubmit(Contact contact, StaticDataAutoMFS staticData) throws Exception {
 
         driverPage = new DriverPage(driver);
@@ -63,7 +63,7 @@ public class SubmitTests extends BaseTest {
 
     }
 
-    @Test(groups = {"submit", "polk"}, dataProvider = "contactAndStaticDataAutoMFS", dataProviderClass = AutoDataProvider.class)
+    @Test(groups = {"submit", "polk"}, enabled = true, dataProvider = "contactAndStaticDataAutoMFS", dataProviderClass = AutoDataProvider.class)
     public void testPolk(Contact contact, StaticDataAutoMFS staticData) throws Exception {
         driverPage = new DriverPage(driver);
         vehiclePage = driverPage.fillInAllFields(contact, staticData).clickOnContinue();
@@ -99,7 +99,7 @@ public class SubmitTests extends BaseTest {
         assertThat(SurveyPath.AUTO_MFS, is(surveyPath));
 
         // Assert all  Default Alias Answers for this campaign
-        assertThat("12500", is(annualMiles));
+        assertThat(annualMiles, is("12500"));
     }
 
     @Test(groups = {"submit", "vwo"}, dataProvider = "contactAndStaticDataAutoMFS", dataProviderClass = AutoDataProvider.class)
@@ -112,7 +112,7 @@ public class SubmitTests extends BaseTest {
 
         List<String> vwoData = HarParser.getVWOData();
 
-        assertThat(VWOData.AUTO_MFS_VWO.size(), is(vwoData.size()));
-        assertThat(VWOData.AUTO_MFS_VWO, is(vwoData));
+        assertThat(vwoData.size(), is(VWOData.AUTO_MFS_VWO.size()));
+        assertThat(vwoData, is(VWOData.AUTO_MFS_VWO));
     }
 }
