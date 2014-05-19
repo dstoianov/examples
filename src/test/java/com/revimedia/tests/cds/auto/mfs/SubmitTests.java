@@ -10,6 +10,7 @@ import com.revimedia.testing.cds.auto.staticdata.VWOData;
 import com.revimedia.testing.configuration.dto.Contact;
 import com.revimedia.testing.configuration.helpers.Formatter;
 import com.revimedia.testing.configuration.proxy.HarParser;
+import com.revimedia.testing.configuration.proxy.Submit;
 import com.revimedia.testing.configuration.utils.XmlToObject;
 import com.revimedia.tests.configuration.BaseTest;
 import com.revimedia.tests.configuration.dataproviders.AutoDataProvider;
@@ -47,8 +48,19 @@ public class SubmitTests extends BaseTest {
 
         compareAndSavePage.submitForm();
 
-        SubmitVerifier.verifyResponse(HarParser.getSubmit().getResponse());
-        //SubmitVerifier.verifyRequest(HarParser.getSubmit().getRequest());
+        Submit submit = HarParser.getSubmit();
+        // Assert response, step 1
+        SubmitVerifier.verifyResponse(submit.getResponse());
+
+        LeadDataType leadDataType = XmlToObject.unMarshal(LeadDataType.class, submit.getRequest());
+        String leadId = leadDataType.getAffiliateData().getLeadId();
+
+        // Assert request, step 2
+        assertThat(leadId, is(notNullValue()));
+        assertThat(leadId.length(), is(36));
+
+        // TODO: need add "XML check for submit" and "Radio Buttons" checking
+
     }
 
     @Test(groups = {"submit", "polk"}, dataProvider = "contactAndStaticDataAutoMFS", dataProviderClass = AutoDataProvider.class)
@@ -83,8 +95,10 @@ public class SubmitTests extends BaseTest {
         String surveyPath = leadDataType.getAffiliateData().getSurveyPath();
         String annualMiles = leadDataType.getQuoteRequest().getVehicles().getVehicle().getAnnualMiles();
 
+        // Assert survey Path
         assertThat(SurveyPath.AUTO_MFS, is(surveyPath));
 
+        // Assert all  Default Alias Answers for this campaign
         assertThat("12500", is(annualMiles));
     }
 

@@ -1,95 +1,44 @@
 Log file for Node 5555 
-12:09:58.178 INFO [10] org.openqa.grid.selenium.GridLauncher - Launching a selenium grid node
-12:09:58.748 INFO [10] org.openqa.selenium.server.SeleniumServer - Writing debug logs to log\node_5555.log
-12:09:58.749 INFO [10] org.openqa.selenium.server.SeleniumServer - Java: Sun Microsystems Inc. 20.45-b01
-12:09:58.749 INFO [10] org.openqa.selenium.server.SeleniumServer - OS: Windows 7 6.1 amd64
-12:09:58.755 INFO [10] org.openqa.selenium.server.SeleniumServer - v2.41.0, with Core v2.41.0. Built from revision 3192d8a
-12:09:58.879 INFO [10] org.openqa.selenium.server.SeleniumServer - RemoteWebDriver instances should connect to: http://127.0.0.1:5555/wd/hub
-12:09:58.880 INFO [10] org.openqa.jetty.http.HttpServer - Version Jetty/5.1.x
-12:09:58.881 INFO [10] org.openqa.jetty.util.Container - Started HttpContext[/selenium-server/driver,/selenium-server/driver]
-12:09:58.882 INFO [10] org.openqa.jetty.util.Container - Started HttpContext[/selenium-server,/selenium-server]
-12:09:58.882 INFO [10] org.openqa.jetty.util.Container - Started HttpContext[/,/]
-12:09:58.883 INFO [10] org.openqa.jetty.util.Container - Started org.openqa.jetty.jetty.servlet.ServletHandler@4b0ea9ba
-12:09:58.883 INFO [10] org.openqa.jetty.util.Container - Started HttpContext[/wd,/wd]
-12:09:58.885 INFO [10] org.openqa.jetty.http.SocketListener - Started SocketListener on 0.0.0.0:5555
-12:09:58.885 INFO [10] org.openqa.jetty.util.Container - Started org.openqa.jetty.jetty.Server@3d3e58d4
-12:09:58.886 INFO [10] org.openqa.grid.internal.utils.SelfRegisteringRemote - using the json request : {"class":"org.openqa.grid.common.RegistrationRequest","capabilities":[{"platform":"VISTA","seleniumProtocol":"WebDriver","browserName":"firefox","maxInstances":2},{"platform":"VISTA","seleniumProtocol":"WebDriver","browserName":"chrome","maxInstances":2},{"platform":"VISTA","seleniumProtocol":"WebDriver","browserName":"internet explorer","maxInstances":1,"version":"11"}],"configuration":{"port":5555,"nodeConfig":"node_5555.json","host":"172.31.29.21","hubHost":"127.0.0.1","registerCycle":5000,"log":"log\\node_5555.log","url":"http://172.31.29.21:5555","remoteHost":"http://172.31.29.21:5555","register":true,"proxy":"org.openqa.grid.selenium.proxy.DefaultRemoteProxy","maxSession":5,"role":"node","Dwebdriver.chrome.driver=chromedriver.exe":"","Dwebdriver.ie.driver=IEDriverServer.exe":"","hubPort":4444}}
-12:09:58.887 INFO [11] org.openqa.grid.internal.utils.SelfRegisteringRemote - Starting auto register thread. Will try to register every 5000 ms.
-12:09:58.887 INFO [11] org.openqa.grid.internal.utils.SelfRegisteringRemote - Registering the node to hub :http://127.0.0.1:4444/grid/register
-12:56:42.360 INFO [12] org.openqa.selenium.remote.server.DriverServlet - Executing: [new session: Capabilities [{platform=ANY, browserName=chrome, proxy={socksUsername=null, noProxy=null, httpProxy=172.31.29.21:8085, socksPassword=null, ftpProxy=null, sslProxy=172.31.29.21:8085, proxyAutoconfigUrl=null, proxyType=MANUAL, class=org.openqa.selenium.Proxy, autodetect=false, hCode=1529206120, socksProxy=null}, version=}]] at URL: /session)
-12:56:42.432 INFO [13] org.openqa.selenium.remote.server.DefaultDriverFactory - Creating a new session for Capabilities [{platform=ANY, browserName=chrome, proxy={socksUsername=null, noProxy=null, httpProxy=172.31.29.21:8085, socksPassword=null, ftpProxy=null, sslProxy=172.31.29.21:8085, proxyAutoconfigUrl=null, proxyType=MANUAL, class=org.openqa.selenium.Proxy, autodetect=false, hCode=1529206120, socksProxy=null}, version=}]
-12:56:42.480 WARN [12] org.openqa.selenium.remote.server.DriverServlet - Exception thrown
-java.util.concurrent.ExecutionException: org.openqa.selenium.WebDriverException: java.lang.reflect.InvocationTargetException
-Build info: version: '2.41.0', revision: '3192d8a', time: '2014-03-27 17:17:32'
-System info: host: 'NB-STDE', ip: '172.31.29.21', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.6.0_45'
-Driver info: driver.version: unknown
-	at java.util.concurrent.FutureTask$Sync.innerGet(Unknown Source)
-	at java.util.concurrent.FutureTask.get(Unknown Source)
-	at org.openqa.selenium.remote.server.DefaultSession.execute(DefaultSession.java:177)
-	at org.openqa.selenium.remote.server.DefaultSession.<init>(DefaultSession.java:113)
-	at org.openqa.selenium.remote.server.DefaultSession.createSession(DefaultSession.java:90)
-	at org.openqa.selenium.remote.server.DefaultDriverSessions.newSession(DefaultDriverSessions.java:96)
-	at org.openqa.selenium.remote.server.handler.NewSession.handle(NewSession.java:63)
-	at org.openqa.selenium.remote.server.rest.ResultConfig.handle(ResultConfig.java:202)
-	at org.openqa.selenium.remote.server.JsonHttpRemoteConfig.handleRequest(JsonHttpRemoteConfig.java:193)
-	at org.openqa.selenium.remote.server.DriverServlet.handleRequest(DriverServlet.java:174)
-	at org.openqa.selenium.remote.server.DriverServlet.doPost(DriverServlet.java:140)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:727)
-	at org.openqa.selenium.remote.server.DriverServlet.service(DriverServlet.java:112)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:820)
-	at org.openqa.jetty.jetty.servlet.ServletHolder.handle(ServletHolder.java:428)
-	at org.openqa.jetty.jetty.servlet.ServletHandler.dispatch(ServletHandler.java:680)
-	at org.openqa.jetty.jetty.servlet.ServletHandler.handle(ServletHandler.java:571)
-	at org.openqa.jetty.http.HttpContext.handle(HttpContext.java:1526)
-	at org.openqa.jetty.http.HttpContext.handle(HttpContext.java:1479)
-	at org.openqa.jetty.http.HttpServer.service(HttpServer.java:920)
-	at org.openqa.jetty.http.HttpConnection.service(HttpConnection.java:820)
-	at org.openqa.jetty.http.HttpConnection.handleNext(HttpConnection.java:986)
-	at org.openqa.jetty.http.HttpConnection.handle(HttpConnection.java:837)
-	at org.openqa.jetty.http.SocketListener.handleConnection(SocketListener.java:243)
-	at org.openqa.jetty.util.ThreadedServer.handle(ThreadedServer.java:358)
-	at org.openqa.jetty.util.ThreadPool$PoolThread.run(ThreadPool.java:537)
-Caused by: org.openqa.selenium.WebDriverException: java.lang.reflect.InvocationTargetException
-Build info: version: '2.41.0', revision: '3192d8a', time: '2014-03-27 17:17:32'
-System info: host: 'NB-STDE', ip: '172.31.29.21', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.6.0_45'
-Driver info: driver.version: unknown
-	at org.openqa.selenium.remote.server.DefaultDriverFactory.callConstructor(DefaultDriverFactory.java:72)
-	at org.openqa.selenium.remote.server.DefaultDriverFactory.newInstance(DefaultDriverFactory.java:56)
-	at org.openqa.selenium.remote.server.DefaultSession$BrowserCreator.call(DefaultSession.java:216)
-	at org.openqa.selenium.remote.server.DefaultSession$BrowserCreator.call(DefaultSession.java:1)
-	at java.util.concurrent.FutureTask$Sync.innerRun(Unknown Source)
-	at java.util.concurrent.FutureTask.run(Unknown Source)
-	at org.openqa.selenium.remote.server.DefaultSession$1.run(DefaultSession.java:170)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
-	at java.lang.Thread.run(Unknown Source)
-Caused by: java.lang.reflect.InvocationTargetException
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
-	at java.lang.reflect.Constructor.newInstance(Unknown Source)
-	at org.openqa.selenium.remote.server.DefaultDriverFactory.callConstructor(DefaultDriverFactory.java:62)
-	... 9 more
-Caused by: java.lang.IllegalStateException: The driver executable does not exist: D:\work\automation\github\examples\grid2\chromedriver.exe
-	at com.google.common.base.Preconditions.checkState(Preconditions.java:177)
-	at org.openqa.selenium.remote.service.DriverService.checkExecutable(DriverService.java:117)
-	at org.openqa.selenium.remote.service.DriverService.findExecutable(DriverService.java:112)
-	at org.openqa.selenium.chrome.ChromeDriverService.createDefaultService(ChromeDriverService.java:89)
-	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:128)
-	... 14 more
-12:56:42.487 WARN [12] org.openqa.selenium.remote.server.DriverServlet - Exception: The driver executable does not exist: D:\work\automation\github\examples\grid2\chromedriver.exe
-12:57:32.212 INFO [12] org.openqa.selenium.remote.server.DriverServlet - Executing: [new session: Capabilities [{platform=ANY, browserName=firefox, proxy={socksUsername=null, noProxy=null, httpProxy=172.31.29.21:8085, socksPassword=null, ftpProxy=null, sslProxy=172.31.29.21:8085, proxyAutoconfigUrl=null, proxyType=MANUAL, class=org.openqa.selenium.Proxy, autodetect=false, hCode=282971544, socksProxy=null}, version=}]] at URL: /session)
-12:57:32.213 INFO [14] org.openqa.selenium.remote.server.DefaultDriverFactory - Creating a new session for Capabilities [{platform=ANY, browserName=firefox, proxy={socksUsername=null, noProxy=null, httpProxy=172.31.29.21:8085, socksPassword=null, ftpProxy=null, sslProxy=172.31.29.21:8085, proxyAutoconfigUrl=null, proxyType=MANUAL, class=org.openqa.selenium.Proxy, autodetect=false, hCode=282971544, socksProxy=null}, version=}]
-12:57:41.103 INFO [12] org.openqa.selenium.remote.server.DriverServlet - Done: /session
-12:57:41.154 INFO [12] org.openqa.selenium.remote.server.DriverServlet - Executing: [implicitly wait: 10000] at URL: /session/de1e8d1f-62bf-429f-849e-0ed3c85df8d3/timeouts/implicit_wait)
-12:57:41.185 INFO [12] org.openqa.selenium.remote.server.DriverServlet - Done: /session/de1e8d1f-62bf-429f-849e-0ed3c85df8d3/timeouts/implicit_wait
-12:57:41.198 INFO [12] org.openqa.selenium.remote.server.DriverServlet - Executing: [maximise window] at URL: /session/de1e8d1f-62bf-429f-849e-0ed3c85df8d3/window/current/maximize)
-12:57:41.311 INFO [12] org.openqa.selenium.remote.server.DriverServlet - Done: /session/de1e8d1f-62bf-429f-849e-0ed3c85df8d3/window/current/maximize
-12:57:41.327 INFO [12] org.openqa.selenium.remote.server.DriverServlet - Executing: [get: http://development.stagingrevi.com/auto/mfs] at URL: /session/de1e8d1f-62bf-429f-849e-0ed3c85df8d3/url)
-12:57:49.052 INFO [12] org.openqa.selenium.remote.server.DriverServlet - Done: /session/de1e8d1f-62bf-429f-849e-0ed3c85df8d3/url
-12:57:49.107 INFO [12] org.openqa.selenium.remote.server.DriverServlet - Executing: [find element: By.xpath: .//*[@id='bq-form-here']/div/div[2]/div/div/div[1]/label/input] at URL: /session/de1e8d1f-62bf-429f-849e-0ed3c85df8d3/element)
-12:57:52.687 INFO [12] org.openqa.selenium.remote.server.DriverServlet - Done: /session/de1e8d1f-62bf-429f-849e-0ed3c85df8d3/element
-12:57:52.710 INFO [12] org.openqa.selenium.remote.server.DriverServlet - Executing: [send keys: 0 [[FirefoxDriver: firefox on XP (923425fa-c0ba-4822-9c90-c93e4c29595f)] -> xpath: .//*[@id='bq-form-here']/div/div[2]/div/div/div[1]/label/input], [99999]] at URL: /session/de1e8d1f-62bf-429f-849e-0ed3c85df8d3/element/0/value)
-12:57:56.750 INFO [12] org.openqa.selenium.remote.server.DriverServlet - Done: /session/de1e8d1f-62bf-429f-849e-0ed3c85df8d3/element/0/value
-12:58:03.192 INFO [15] org.openqa.selenium.remote.server.DriverServlet - Executing: [delete session: de1e8d1f-62bf-429f-849e-0ed3c85df8d3] at URL: /session/de1e8d1f-62bf-429f-849e-0ed3c85df8d3)
-12:58:03.683 INFO [15] org.openqa.selenium.remote.server.DriverServlet - Done: /session/de1e8d1f-62bf-429f-849e-0ed3c85df8d3
+18:23:53.617 INFO [1] org.openqa.grid.selenium.GridLauncher - Launching a selenium grid node
+18:23:54.876 INFO [1] org.openqa.selenium.server.SeleniumServer - Writing debug logs to log\node_5555.log
+18:23:54.876 INFO [1] org.openqa.selenium.server.SeleniumServer - Java: Oracle Corporation 24.55-b03
+18:23:54.876 INFO [1] org.openqa.selenium.server.SeleniumServer - OS: Windows 7 6.1 amd64
+18:23:54.898 INFO [1] org.openqa.selenium.server.SeleniumServer - v2.41.0, with Core v2.41.0. Built from revision 3192d8a
+18:23:55.147 INFO [1] org.openqa.selenium.server.SeleniumServer - RemoteWebDriver instances should connect to: http://127.0.0.1:5555/wd/hub
+18:23:55.148 INFO [1] org.openqa.jetty.http.HttpServer - Version Jetty/5.1.x
+18:23:55.148 INFO [1] org.openqa.jetty.util.Container - Started HttpContext[/selenium-server/driver,/selenium-server/driver]
+18:23:55.149 INFO [1] org.openqa.jetty.util.Container - Started HttpContext[/selenium-server,/selenium-server]
+18:23:55.149 INFO [1] org.openqa.jetty.util.Container - Started HttpContext[/,/]
+18:23:55.151 INFO [1] org.openqa.jetty.util.Container - Started org.openqa.jetty.jetty.servlet.ServletHandler@2627430a
+18:23:55.151 INFO [1] org.openqa.jetty.util.Container - Started HttpContext[/wd,/wd]
+18:23:55.154 INFO [1] org.openqa.jetty.http.SocketListener - Started SocketListener on 0.0.0.0:5555
+18:23:55.155 INFO [1] org.openqa.jetty.util.Container - Started org.openqa.jetty.jetty.Server@21ec08c7
+18:23:55.156 INFO [1] org.openqa.grid.internal.utils.SelfRegisteringRemote - using the json request : {"class":"org.openqa.grid.common.RegistrationRequest","capabilities":[{"platform":"VISTA","seleniumProtocol":"WebDriver","browserName":"firefox","maxInstances":2},{"platform":"VISTA","seleniumProtocol":"WebDriver","browserName":"chrome","maxInstances":2},{"platform":"VISTA","seleniumProtocol":"WebDriver","browserName":"internet explorer","maxInstances":1,"version":"11"}],"configuration":{"port":5555,"nodeConfig":"node_5555.json","host":"172.31.29.21","hubHost":"127.0.0.1","registerCycle":5000,"log":"log\\node_5555.log","url":"http://172.31.29.21:5555","remoteHost":"http://172.31.29.21:5555","register":true,"proxy":"org.openqa.grid.selenium.proxy.DefaultRemoteProxy","maxSession":5,"role":"node","Dwebdriver.chrome.driver=chromedriver.exe":"","Dwebdriver.ie.driver=IEDriverServer.exe":"","hubPort":4444}}
+18:23:55.157 INFO [17] org.openqa.grid.internal.utils.SelfRegisteringRemote - Starting auto register thread. Will try to register every 5000 ms.
+18:23:55.157 INFO [17] org.openqa.grid.internal.utils.SelfRegisteringRemote - Registering the node to hub :http://127.0.0.1:4444/grid/register
+18:24:31.945 INFO [15] org.openqa.selenium.remote.server.DriverServlet - Executing: [new session: Capabilities [{platform=ANY, browserName=firefox, version=}]] at URL: /session)
+18:24:31.969 INFO [22] org.openqa.selenium.remote.server.DefaultDriverFactory - Creating a new session for Capabilities [{platform=ANY, browserName=firefox, version=}]
+18:24:41.831 INFO [15] org.openqa.selenium.remote.server.DriverServlet - Done: /session
+18:24:42.310 INFO [29] org.openqa.selenium.remote.server.DriverServlet - Executing: [get: http://www.yandex.ru/] at URL: /session/4e2d8e32-036f-4447-aa70-39ca35eb4cb5/url)
+18:24:48.070 INFO [29] org.openqa.selenium.remote.server.DriverServlet - Done: /session/4e2d8e32-036f-4447-aa70-39ca35eb4cb5/url
+18:24:48.624 INFO [29] org.openqa.selenium.remote.server.DriverServlet - Executing: [take screenshot] at URL: /session/4e2d8e32-036f-4447-aa70-39ca35eb4cb5/screenshot)
+18:24:49.019 INFO [29] org.openqa.selenium.remote.server.DriverServlet - Done: /session/4e2d8e32-036f-4447-aa70-39ca35eb4cb5/screenshot
+18:24:49.358 INFO [29] org.openqa.selenium.remote.server.DriverServlet - Executing: [get: http://www.yandex.ru/] at URL: /session/4e2d8e32-036f-4447-aa70-39ca35eb4cb5/url)
+18:24:51.111 INFO [29] org.openqa.selenium.remote.server.DriverServlet - Done: /session/4e2d8e32-036f-4447-aa70-39ca35eb4cb5/url
+18:24:51.130 INFO [29] org.openqa.selenium.remote.server.DriverServlet - Executing: [take screenshot] at URL: /session/4e2d8e32-036f-4447-aa70-39ca35eb4cb5/screenshot)
+18:24:51.499 INFO [29] org.openqa.selenium.remote.server.DriverServlet - Done: /session/4e2d8e32-036f-4447-aa70-39ca35eb4cb5/screenshot
+18:24:53.015 INFO [29] org.openqa.selenium.remote.server.DriverServlet - Executing: [delete session: 4e2d8e32-036f-4447-aa70-39ca35eb4cb5] at URL: /session/4e2d8e32-036f-4447-aa70-39ca35eb4cb5)
+18:24:53.272 INFO [29] org.openqa.selenium.remote.server.DriverServlet - Done: /session/4e2d8e32-036f-4447-aa70-39ca35eb4cb5
+18:24:53.496 INFO [29] org.openqa.selenium.remote.server.DriverServlet - Executing: [new session: Capabilities [{platform=ANY, browserName=firefox, version=}]] at URL: /session)
+18:24:53.498 INFO [31] org.openqa.selenium.remote.server.DefaultDriverFactory - Creating a new session for Capabilities [{platform=ANY, browserName=firefox, version=}]
+18:24:59.923 INFO [29] org.openqa.selenium.remote.server.DriverServlet - Done: /session
+18:24:59.950 INFO [29] org.openqa.selenium.remote.server.DriverServlet - Executing: [get: http://market.yandex.ru/] at URL: /session/c81a90df-9d81-4338-87a0-1842d13deb02/url)
+18:25:03.978 INFO [29] org.openqa.selenium.remote.server.DriverServlet - Done: /session/c81a90df-9d81-4338-87a0-1842d13deb02/url
+18:25:03.992 INFO [29] org.openqa.selenium.remote.server.DriverServlet - Executing: [take screenshot] at URL: /session/c81a90df-9d81-4338-87a0-1842d13deb02/screenshot)
+18:25:04.641 INFO [29] org.openqa.selenium.remote.server.DriverServlet - Done: /session/c81a90df-9d81-4338-87a0-1842d13deb02/screenshot
+18:25:04.773 INFO [29] org.openqa.selenium.remote.server.DriverServlet - Executing: [get: http://market.yandex.ru/] at URL: /session/c81a90df-9d81-4338-87a0-1842d13deb02/url)
+18:25:06.987 INFO [29] org.openqa.selenium.remote.server.DriverServlet - Done: /session/c81a90df-9d81-4338-87a0-1842d13deb02/url
+18:25:06.997 INFO [29] org.openqa.selenium.remote.server.DriverServlet - Executing: [take screenshot] at URL: /session/c81a90df-9d81-4338-87a0-1842d13deb02/screenshot)
+18:25:07.583 INFO [29] org.openqa.selenium.remote.server.DriverServlet - Done: /session/c81a90df-9d81-4338-87a0-1842d13deb02/screenshot
+18:25:09.468 INFO [29] org.openqa.selenium.remote.server.DriverServlet - Executing: [delete session: c81a90df-9d81-4338-87a0-1842d13deb02] at URL: /session/c81a90df-9d81-4338-87a0-1842d13deb02)
+18:25:09.739 INFO [29] org.openqa.selenium.remote.server.DriverServlet - Done: /session/c81a90df-9d81-4338-87a0-1842d13deb02
