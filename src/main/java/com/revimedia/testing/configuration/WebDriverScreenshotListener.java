@@ -34,6 +34,7 @@ public class WebDriverScreenshotListener implements ITestListener {
             File outFile = new File(outputDirectory, DataHelper.getDate() + "-" + result.getName() + ".png");
             captureScreenshot(outFile);
             Reporter.log("<a href='" + outFile.getName() + "'>screenshot</a>");
+            System.out.println("Screen shot taken: " + outFile.getAbsolutePath());
         } catch (Exception e) {
             Reporter.log("Couldn't create screenshot");
             Reporter.log(e.getMessage());

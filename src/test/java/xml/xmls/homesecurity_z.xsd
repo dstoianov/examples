@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="LeadData" type="LeadDataType"/>
+    <xs:complexType name="HomesType">
+        <xs:sequence>
+            <xs:element type="HomeType" name="Home"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="AffiliateDataType">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute type="xs:string" name="Id"/>
+                <xs:attribute type="xs:string" name="OfferId"/>
+                <xs:attribute type="xs:string" name="SubId"/>
+                <xs:attribute type="xs:string" name="Sub2Id"/>
+                <xs:attribute type="xs:string" name="Source"/>
+                <xs:attribute type="xs:string" name="SurveyPath"/>
+                <xs:attribute type="xs:string" name="TransactionId"/>
+                <xs:attribute type="xs:string" name="LeadId"/>
+                <xs:attribute type="xs:string" name="VerifyAddress"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+    <xs:complexType name="PersonType">
+        <xs:sequence>
+            <xs:element type="xs:string" name="BirthDate"/>
+            <xs:element type="xs:string" name="Gender"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="QuoteRequestType">
+        <xs:sequence>
+            <xs:element type="PersonType" name="Person"/>
+            <xs:element type="HomesType" name="Homes"/>
+        </xs:sequence>
+        <xs:attribute type="xs:string" name="QuoteType"/>
+    </xs:complexType>
+    <xs:complexType name="HomeType">
+        <xs:sequence>
+            <xs:element type="xs:string" name="EntrancesExits"/>
+            <xs:element type="xs:string" name="HasSystem"/>
+            <xs:element type="xs:string" name="OwnRented"/>
+            <xs:element type="xs:string" name="SqFootage"/>
+            <xs:element type="SecuritySystemType" name="SecuritySystem"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="SecuritySystemType">
+        <xs:sequence>
+            <xs:element type="xs:string" name="SecurityType"/>
+            <xs:element type="xs:string" name="InstallationTimeFrame"/>
+            <xs:element type="xs:string" name="AdditionalRequirements"/>
+            <xs:element type="xs:string" name="SecurityUsage"/>
+            <xs:element type="xs:string" name="ProInstall"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="LeadDataType">
+        <xs:sequence>
+            <xs:element type="AffiliateDataType" name="AffiliateData"/>
+            <xs:element type="QuoteRequestType" name="QuoteRequest"/>
+            <xs:element type="ContactDataType" name="ContactData"/>
+        </xs:sequence>
+        <xs:attribute type="xs:string" name="Target"/>
+        <xs:attribute type="xs:string" name="RequestTime"/>
+        <xs:attribute type="xs:string" name="TimeZone"/>
+        <xs:attribute type="xs:string" name="UserAgent"/>
+        <xs:attribute type="xs:string" name="SessionLength"/>
+    </xs:complexType>
+    <xs:complexType name="ContactDataType">
+        <xs:sequence>
+            <xs:element type="xs:string" name="FirstName"/>
+            <xs:element type="xs:string" name="LastName"/>
+            <xs:element type="xs:string" name="PhoneNumber"/>
+            <xs:element type="xs:string" name="Address"/>
+            <xs:element type="xs:string" name="EmailAddress"/>
+            <xs:element type="xs:string" name="ZipCode"/>
+            <xs:element type="xs:string" name="City"/>
+            <xs:element type="xs:string" name="IPAddress"/>
+            <xs:element type="xs:string" name="State"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>
