@@ -15,7 +15,7 @@
         <classes>
             <!--<class name="com.revimedia.tests.cds.auto.mfs.SubmitTests"/>-->
             <!--<class name="com.revimedia.tests.cds.auto.mfs.DisclaimersTests"/>-->
-            <class name="com.revimedia.tests.cds.auto.mfs.PrePopParametersAndeBureauVerificationTests"/>
+            <class name="com.revimedia.tests.cds.auto.mfs.PrePopAndeBureauTests"/>
         </classes>
 
     </test>
