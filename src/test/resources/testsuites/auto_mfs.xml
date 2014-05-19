@@ -9,7 +9,7 @@
 
     <test name="run on Chrome Browser, Latest Version">
         <parameter name="browser" value="chrome"/>
-        <parameter name="version" value="7"/>
+        <parameter name="version" value="any"/>
         <!--<parameter name="platform" value="MAC"/>-->
         <parameter name="url" value="http://development.stagingrevi.com/auto/mfs/"/>
         <classes>
@@ -21,7 +21,7 @@
 
     <test name="run on FireFox Browser, Latest Version">
         <parameter name="browser" value="firefox"/>
-        <parameter name="version" value="7"/>
+        <parameter name="version" value="any"/>
         <!--<parameter name="platform" value="MAC"/>-->
         <parameter name="url" value="http://development.stagingrevi.com/auto/mfs/"/>
         <classes>
