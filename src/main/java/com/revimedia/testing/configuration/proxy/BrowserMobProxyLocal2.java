@@ -52,7 +52,7 @@ public class BrowserMobProxyLocal2 {//implements IBrowserMobProxy {
 
 
     public static Har getHar() {
-        server.waitForNetworkTrafficToStop(5000, 20000);
+        server.waitForNetworkTrafficToStop(5000, 30000);
         return server.getHar();
     }
 

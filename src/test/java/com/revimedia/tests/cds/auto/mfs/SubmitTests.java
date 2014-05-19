@@ -6,6 +6,7 @@ import com.revimedia.testing.cds.auto.mfs.pages.DriverPage;
 import com.revimedia.testing.cds.auto.mfs.pages.VehiclePage;
 import com.revimedia.testing.cds.auto.staticdata.StaticDataAutoMFS;
 import com.revimedia.testing.cds.auto.staticdata.SurveyPath;
+import com.revimedia.testing.cds.auto.staticdata.VWOData;
 import com.revimedia.testing.configuration.dto.Contact;
 import com.revimedia.testing.configuration.helpers.Formatter;
 import com.revimedia.testing.configuration.proxy.HarParser;
@@ -18,9 +19,8 @@ import org.testng.annotations.Test;
 
 import java.util.List;
 
-import static org.hamcrest.Matchers.*;
 import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.containsInAnyOrder;
+import static org.hamcrest.Matchers.*;
 
 
 /**
@@ -71,8 +71,8 @@ public class SubmitTests extends BaseTest {
     }
 
 
-    @Test(groups = {"submit", "survey path"}, dataProvider = "contactAndStaticDataAutoMFS", dataProviderClass = AutoDataProvider.class)
-    public void testSurveyPath(Contact contact, StaticDataAutoMFS staticData) throws Exception {
+    @Test(groups = {"submit", "survey path", "default alias answer"}, dataProvider = "contactAndStaticDataAutoMFS", dataProviderClass = AutoDataProvider.class)
+    public void testSurveyPathAndDefaultAliasAnswer(Contact contact, StaticDataAutoMFS staticData) throws Exception {
 
         driverPage = new DriverPage(driver);
         vehiclePage = driverPage.fillInAllFields(contact, staticData).clickOnContinue();
@@ -81,10 +81,24 @@ public class SubmitTests extends BaseTest {
 
         LeadDataType leadDataType = XmlToObject.unMarshal(LeadDataType.class, HarParser.getSubmit().getRequest());
         String surveyPath = leadDataType.getAffiliateData().getSurveyPath();
+        String annualMiles = leadDataType.getQuoteRequest().getVehicles().getVehicle().getAnnualMiles();
 
         assertThat(SurveyPath.AUTO_MFS, is(surveyPath));
+
+        assertThat("12500", is(annualMiles));
     }
 
+    @Test(groups = {"submit", "vwo"}, dataProvider = "contactAndStaticDataAutoMFS", dataProviderClass = AutoDataProvider.class)
+    public void testVWO(Contact contact, StaticDataAutoMFS staticData) throws Exception {
 
+        driverPage = new DriverPage(driver);
+        vehiclePage = driverPage.fillInAllFields(contact, staticData).clickOnContinue();
+        compareAndSavePage = vehiclePage.fillInAllFields(staticData).clickOnContinue();
+        compareAndSavePage.fillInAllFields(contact, staticData).submitForm();
 
+        List<String> vwoData = HarParser.getVWOData();
+
+        assertThat(VWOData.AUTO_MFS_VWO.size(), is(vwoData.size()));
+        assertThat(VWOData.AUTO_MFS_VWO, is(vwoData));
+    }
 }

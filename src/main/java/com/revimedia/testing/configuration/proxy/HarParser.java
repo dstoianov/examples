@@ -12,6 +12,7 @@ import net.lightbody.bmp.core.har.HarPostDataParam;
 import net.lightbody.bmp.core.har.HarRequest;
 import net.lightbody.bmp.core.har.HarResponse;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -54,5 +55,16 @@ public class HarParser {
 
     public static List<HarEntry> getPolkData() {
         return BrowserMobProxyLocal2.getPolkData();
+    }
+
+    public static List<String> getVWOData() {
+        List<HarEntry> harEntries = BrowserMobProxyLocal2.collectHarEntryByTextInURL("dev.visualwebsiteoptimizer.com");
+        List<String> urls = new ArrayList<String>();
+        for (HarEntry entry : harEntries) {
+            String value = entry.getRequest().getQueryString().get(0).getValue();
+            String substring = value.substring(value.lastIndexOf("/") + 1);
+            urls.add(substring);
+        }
+        return urls;
     }
 }
