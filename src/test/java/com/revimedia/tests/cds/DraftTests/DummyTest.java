@@ -134,11 +134,13 @@ public class DummyTest {
         autoMfs.add("firstname");
         autoMfs.add("lastname");
 
-        String s1 = "560-405-8013";
-        String s2 = "(560) 405-8013";
+        String s1 = "D:\\git_tutorial\\github.com\\examples\\target\\surefire-reports\\screenshots\\2014-05-21_12-44-13-testPositiveSubmit.png";
+        // String s2 = "(560) 405-8013";
 
-        String s11 = s1.replaceAll("[^\\d]", "");
-        String s22 = s2.replaceAll("[^\\d]", "");
+        String s11 = s1.replaceAll("\\/", "/");
+        //String s22 = s2.replaceAll("[^\\d]", "");
+        System.out.println(s1);
+        System.out.println(s11);
 
     }
 

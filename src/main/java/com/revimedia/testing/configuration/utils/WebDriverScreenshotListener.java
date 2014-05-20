@@ -29,16 +29,21 @@ public class WebDriverScreenshotListener implements ITestListener {
     public void onTestFailure(ITestResult result) {
         Reporter.setEscapeHtml(false);
         Reporter.setCurrentTestResult(result);
-        File outputDirectory = new File(System.getProperty("user.dir"), "target/surefire-reports");
+        File outputDirectory = new File(System.getProperty("user.dir"), "target/surefire-reports/screenshots");
         try {
             outputDirectory.mkdirs();
             File outFile = new File(outputDirectory, DataHelper.getDate() + "-" + result.getName() + ".png");
             captureScreenshot(outFile);
-            String html = "<p><a href=\"" + outFile.getAbsolutePath() + "\" >Screenshot on failed page</a>";
+            String html = "<br><a href=\"file:///" + (outFile.getAbsolutePath()).replaceAll("\\/", "/") + "\" >Screenshot on failed page</a>";
             Reporter.log(html);
 
+            // String s = outFile.getAbsolutePath();
+            //String s1 = s.replace("\\/", "/");
             //Reporter.setEscapeHtml(false);
-            //Reporter.log("Saved <a href=../screenshots/" + outFile + ">Screenshot</a>");
+            // Reporter.log("<br>V3-1 Saved <a href=\"file:///" + s + "\">Screenshot</a>");
+            //Reporter.log("<br>V3-2 Saved <a href=\"../screenshots/" + outFile.getName() + "\">Screenshot</a>");
+            //Reporter.log("<br>V4 Saved <a href=\"screenshots/" + outFile.getName() + "\">Screenshot</a>");
+            //Reporter.log("<br>V5 Saved <a href=\"~/screenshots/" + outFile.getName() + "\">Screenshot</a>");
 
 
             System.out.println("Screen shot taken: " + outFile.getAbsolutePath() + "\n");

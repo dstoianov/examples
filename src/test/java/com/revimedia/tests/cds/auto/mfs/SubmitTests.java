@@ -37,7 +37,7 @@ public class SubmitTests extends BaseTest {
 
         driverPage = new DriverPage(driver);
         driverPage.fillInAllFields(contact, staticData);
-        assertThat(driverPage.getPageText(), containsString(contact.getCity()));
+        assertThat(driverPage.getPageText(), containsString(contact.getCity() + "fgfgfg"));
 
         vehiclePage = driverPage.clickOnContinue();
 

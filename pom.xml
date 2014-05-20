@@ -34,11 +34,12 @@
                         <!--<org.uncommons.reportng.show-expected-exceptions>false</org.uncommons.reportng.show-expected-exceptions>-->
                         <org.uncommons.reportng.escape-output>turn off</org.uncommons.reportng.escape-output>
                         <!--<org.uncommons.reportng.velocity-log>true</org.uncommons.reportng.velocity-log>-->
-                        <webdriver.chrome.driver>${basedir}/src/test/resources/drivers/chromedriver.exe
-                        </webdriver.chrome.driver>
-                        <webdriver.ie.driver>${basedir}/src/test/resources/drivers/IEDriverServer.exe
-                        </webdriver.ie.driver>
+                        <!--<webdriver.chrome.driver>${basedir}/src/test/resources/drivers/chromedriver.exe</webdriver.chrome.driver>-->
+                        <!--<webdriver.ie.driver>${basedir}/src/test/resources/drivers/IEDriverServer.exe</webdriver.ie.driver>-->
                     </systemPropertyVariables>
+                    <additionalClasspathElements>
+                        <additionalClasspathElement>${basedir}/src/test/resources/drivers</additionalClasspathElement>
+                    </additionalClasspathElements>
                 </configuration>
             </plugin>
 
