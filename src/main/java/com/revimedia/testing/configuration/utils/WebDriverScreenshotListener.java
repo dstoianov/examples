@@ -33,7 +33,7 @@ public class WebDriverScreenshotListener implements ITestListener {
             outputDirectory.mkdirs();
             File outFile = new File(outputDirectory, DataHelper.getDate() + "-" + result.getName() + ".png");
             captureScreenshot(outFile);
-            Reporter.setEscapeHtml(true);
+            Reporter.setEscapeHtml(false);
             String html = "<a href=\"" + outFile.getAbsolutePath() + "\" >Page screenshot</a>";
             Reporter.log(html);
             System.out.println("Screen shot taken: " + outFile.getAbsolutePath());
