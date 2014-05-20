@@ -35,6 +35,8 @@
                         </org.uncommons.reportng.show-expected-exceptions>
                         <org.uncommons.reportng.escape-output>turn off</org.uncommons.reportng.escape-output>
                         <org.uncommons.reportng.velocity-log>true</org.uncommons.reportng.velocity-log>
+                        <webdriver.chrome.driver>${basedir}/src/test/resources/drivers</webdriver.chrome.driver>
+                        <webdriver.ie.driver>${basedir}/src/test/resources/drivers</webdriver.ie.driver>
                     </systemPropertyVariables>
                 </configuration>
             </plugin>
