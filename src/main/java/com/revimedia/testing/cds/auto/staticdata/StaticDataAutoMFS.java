@@ -104,7 +104,7 @@ public class StaticDataAutoMFS {
                         ",\neducation='" + education + '\'' +
                         ",\nyear='" + year + '\'' +
                         ",\nmake='" + make + '\'' +
-                        "\nmodel='" + model;
+                        "\nmodel='" + model + '\'';
     }
 
 

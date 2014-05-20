@@ -27,16 +27,21 @@ public class WebDriverScreenshotListener implements ITestListener {
 
     @Override
     public void onTestFailure(ITestResult result) {
+        Reporter.setEscapeHtml(false);
         Reporter.setCurrentTestResult(result);
         File outputDirectory = new File(System.getProperty("user.dir"), "target/surefire-reports");
         try {
             outputDirectory.mkdirs();
             File outFile = new File(outputDirectory, DataHelper.getDate() + "-" + result.getName() + ".png");
             captureScreenshot(outFile);
-            Reporter.setEscapeHtml(false);
-            String html = "<a href=\"" + outFile.getAbsolutePath() + "\" >Page screenshot</a>";
+            String html = "<p><a href=\"" + outFile.getAbsolutePath() + "\" >Screenshot on failed page</a>";
             Reporter.log(html);
-            System.out.println("Screen shot taken: " + outFile.getAbsolutePath());
+
+            //Reporter.setEscapeHtml(false);
+            //Reporter.log("Saved <a href=../screenshots/" + outFile + ">Screenshot</a>");
+
+
+            System.out.println("Screen shot taken: " + outFile.getAbsolutePath() + "\n");
         } catch (Exception e) {
             Reporter.log("Couldn't create screenshot");
             Reporter.log(e.getMessage());

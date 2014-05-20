@@ -120,6 +120,6 @@ public class Contact {
                         ",\nemailAddress='" + emailAddress + '\'' +
                         ",\nzipCode='" + zipCode + '\'' +
                         ",\ncity='" + city + '\'' +
-                        ",\nstate='" + state;
+                        ",\nstate='" + state + '\'';
     }
 }

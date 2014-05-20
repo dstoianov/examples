@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite thread-count="1" name="Auto MFS" parallel="tests">
+<suite thread-count="1" name="Auto MFS Campaign" parallel="tests">
 
     <listeners>
         <listener class-name="org.uncommons.reportng.HTMLReporter"/>
         <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
     </listeners>
 
-    <test name="run on Chrome Browser, Latest Version">
+    <test name="Chrome Browser, Latest Version">
         <parameter name="browser" value="chrome"/>
         <parameter name="version" value="any"/>
         <!--<parameter name="platform" value="MAC"/>-->
@@ -19,7 +19,7 @@
         </classes>
     </test>
 
-    <test name="run on FireFox Browser, Latest Version">
+    <test name="FireFox Browser, Latest Version">
         <parameter name="browser" value="firefox"/>
         <parameter name="version" value="any"/>
         <!--<parameter name="platform" value="MAC"/>-->

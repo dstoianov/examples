@@ -28,19 +28,14 @@
                         <suiteXmlFile>${testng.suite}</suiteXmlFile>
                     </suiteXmlFiles>
                     <junitArtifactName>none:none</junitArtifactName>
-                    <!-- <properties>
-                         <property>
-                             <name>usedefaultlisteners</name>
-                             <value>false</value>
-                         </property>
-                         <property>
-                             <name>listener</name>
-                             &lt;!&ndash; <value>org.uncommons.reportng.HTMLReporter</value> &ndash;&gt;
-                             &lt;!&ndash; <value>org.uncommons.reportng.JUnitXMLReporter</value> &ndash;&gt;
-                             <value>org.uncommons.reportng.HTMLReporter</value>
-                         </property>
-                     </properties>
-                     <workingDirectory>target/</workingDirectory>-->
+                    <systemPropertyVariables>
+                        <org.uncommons.reportng.title>ReviMedia CDS 2.0 Automation Project
+                        </org.uncommons.reportng.title>
+                        <org.uncommons.reportng.show-expected-exceptions>false
+                        </org.uncommons.reportng.show-expected-exceptions>
+                        <org.uncommons.reportng.escape-output>turn off</org.uncommons.reportng.escape-output>
+                        <org.uncommons.reportng.velocity-log>true</org.uncommons.reportng.velocity-log>
+                    </systemPropertyVariables>
                 </configuration>
             </plugin>
 
@@ -95,8 +90,8 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
-                    <source>1.6</source>
-                    <target>1.6</target>
+                    <source>${maven.compiler.source}</source>
+                    <target>${maven.compiler.target}</target>
                 </configuration>
             </plugin>
 

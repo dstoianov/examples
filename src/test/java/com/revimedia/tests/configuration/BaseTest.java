@@ -130,8 +130,11 @@ public class BaseTest {
 
     public void takeScreenShot(String name) {
         String path = WebDriverHelper.takeScreenShot(driver, Config.PATH_TO_SCREENS + name + ".png");
-        log.info("Screen shot taken: " + path);
-        Reporter.log("Screen shot taken: " + path);
+        log.info("\nScreen shot taken: " + path);
+        Reporter.setEscapeHtml(false);
+
+        String html = "<p><b> V2 </b><a href=\"" + path + "\" > Failed test screen shot <img align=\"center\" height=\"120\" width=\"120\" src=" + path + "></a>";
+        Reporter.log(html);
     }
 
 
