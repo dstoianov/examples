@@ -2,10 +2,10 @@ package com.revimedia.tests.configuration;
 
 import com.revimedia.testing.configuration.Config;
 import com.revimedia.testing.configuration.WebDriverFactory;
-import com.revimedia.testing.configuration.utils.WebDriverScreenshotListener;
 import com.revimedia.testing.configuration.helpers.DataHelper;
 import com.revimedia.testing.configuration.proxy.BrowserMobProxyLocal2;
 import com.revimedia.testing.configuration.utils.WebDriverHelper;
+import com.revimedia.testing.configuration.utils.WebDriverScreenshotListener;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.WebDriver;
@@ -134,7 +134,7 @@ public class BaseTest {
         log.info("\nScreen shot taken: " + path);
         Reporter.setEscapeHtml(false);
         String fileName = path.substring(path.lastIndexOf("\\") + 1);
-        String html = "<p><b> V2 </b><a href=\"../screenshots/" + fileName + "\" > Failed test screen shot <img align=\"center\" height=\"120\" width=\"120\" src=\"../screenshots/" + fileName + "\"></a>";
+        String html = "<p><b> V2 </b><a href=\"../screens/" + fileName + "\" > Failed test screen shot <img align=\"center\" height=\"120\" width=\"120\" src=\"../screens/" + fileName + "\"></a>";
         Reporter.log(html);
     }
 

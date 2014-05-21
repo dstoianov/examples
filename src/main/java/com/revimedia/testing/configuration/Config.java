@@ -23,7 +23,7 @@ public class Config {
     public static final String SELENIUM_PROXY_IP;
     public static final int SELENIUM_PROXY_PORT;
     public static final String DEFAULT_PROPERTIES = "localhost.properties";
-    public static final String PATH_TO_SCREENS = "target/screens/";
+    public static final String PATH_TO_SCREENS = "target/surefire-reports/screens/";
 
     public static Properties props = null;
 
