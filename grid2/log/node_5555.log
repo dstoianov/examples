@@ -42,3 +42,8 @@ Log file for Node 5555
 18:25:07.583 INFO [29] org.openqa.selenium.remote.server.DriverServlet - Done: /session/c81a90df-9d81-4338-87a0-1842d13deb02/screenshot
 18:25:09.468 INFO [29] org.openqa.selenium.remote.server.DriverServlet - Executing: [delete session: c81a90df-9d81-4338-87a0-1842d13deb02] at URL: /session/c81a90df-9d81-4338-87a0-1842d13deb02)
 18:25:09.739 INFO [29] org.openqa.selenium.remote.server.DriverServlet - Done: /session/c81a90df-9d81-4338-87a0-1842d13deb02
+10:37:20.521 INFO [17] org.apache.http.impl.client.DefaultHttpClient - I/O exception (org.apache.http.NoHttpResponseException) caught when processing request: The target server failed to respond
+10:37:20.521 INFO [17] org.apache.http.impl.client.DefaultHttpClient - Retrying request
+10:35:51.019 INFO [17] org.apache.http.impl.client.DefaultHttpClient - I/O exception (java.net.SocketException) caught when processing request: Connection reset
+10:35:52.492 INFO [17] org.apache.http.impl.client.DefaultHttpClient - Retrying request
+10:38:37.026 INFO [17] org.openqa.grid.internal.utils.SelfRegisteringRemote - Registering the node to hub :http://127.0.0.1:4444/grid/register
