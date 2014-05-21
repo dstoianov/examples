@@ -34,7 +34,8 @@ public class BaseTest {
     public void setUp(@Optional("chrome") String browser,
                       @Optional("9") String version,
 //                      @Optional("WIN") String platform,
-                      @Optional("http://development.stagingrevi.com/auto/mfs/") String url) throws Exception {
+                      //@Optional("http://development.stagingrevi.com/auto/mfs/") String url) throws Exception {
+                      @Optional("http://development.stagingrevi.com/auto/s/") String url) throws Exception {
 
         log.info("Start the browser...");
         this.url = url;
@@ -132,7 +133,8 @@ public class BaseTest {
         String path = WebDriverHelper.takeScreenShot(driver, Config.PATH_TO_SCREENS + name + ".png");
         log.info("\nScreen shot taken: " + path);
         Reporter.setEscapeHtml(false);
-        String html = "<p><b> V2 </b><a href=\"file:///" + path + "\" > Failed test screen shot <img align=\"center\" height=\"120\" width=\"120\" src=\"file:///" + path + "\"></a>";
+        String fileName = path.substring(path.lastIndexOf("\\"));
+        String html = "<p><b> V2 </b><a href=\"../screenshots/" + fileName + "\" > Failed test screen shot <img align=\"center\" height=\"120\" width=\"120\" src=\"../screenshots/" + fileName + "\"></a>";
         Reporter.log(html);
     }
 

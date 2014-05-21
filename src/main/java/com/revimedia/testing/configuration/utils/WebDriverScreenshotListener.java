@@ -34,17 +34,17 @@ public class WebDriverScreenshotListener implements ITestListener {
             outputDirectory.mkdirs();
             File outFile = new File(outputDirectory, DataHelper.getDate() + "-" + result.getName() + ".png");
             captureScreenshot(outFile);
-            String html = "<br><a href=\"file:///" + (outFile.getAbsolutePath()).replaceAll("\\/", "/") + "\" >Screenshot on failed page</a>";
-            Reporter.log(html);
+            //String html = "<br><a href=\"file:///" + (outFile.getAbsolutePath()).replaceAll("\\/", "/") + "\" >Screenshot on failed page</a>";
+            //Reporter.log(html);
 
             // String s = outFile.getAbsolutePath();
             //String s1 = s.replace("\\/", "/");
             //Reporter.setEscapeHtml(false);
 
             // Reporter.log("<br>V3-1 Saved <a href=\"file:///" + s + "\">Screenshot</a>");
-            //Reporter.log("<br>V3-2 Saved <a href=\"../screenshots/" + outFile.getName() + "\">Screenshot</a>");
-            Reporter.log("<br>V4 Saved <a href=\"screenshots/" + outFile.getName() + "\">Screenshot</a>");
-            Reporter.log("<br>V5 Saved <a href=\"~/screenshots/" + outFile.getName() + "\">Screenshot</a>");
+            Reporter.log("<br>Open from ReportNG report:  <a href=\"../screenshots/" + outFile.getName() + "\">Screenshot</a>");
+            Reporter.log("<br>Open from TestNG report: <a href=\"screenshots/" + outFile.getName() + "\">Screenshot</a>");
+            //Reporter.log("<br>V5 Saved <a href=\"~/screenshots/" + outFile.getName() + "\">Screenshot</a>");
 
 
             System.out.println("Screen shot taken: " + outFile.getAbsolutePath() + "\n");
