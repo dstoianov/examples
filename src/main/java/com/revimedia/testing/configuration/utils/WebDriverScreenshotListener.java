@@ -43,7 +43,7 @@ public class WebDriverScreenshotListener implements ITestListener {
             // Reporter.log("<br>V3-1 Saved <a href=\"file:///" + s + "\">Screenshot</a>");
             //Reporter.log("<br>V3-2 Saved <a href=\"../screenshots/" + outFile.getName() + "\">Screenshot</a>");
             //Reporter.log("<br>V4 Saved <a href=\"screenshots/" + outFile.getName() + "\">Screenshot</a>");
-            //Reporter.log("<br>V5 Saved <a href=\"~/screenshots/" + outFile.getName() + "\">Screenshot</a>");
+            Reporter.log("<br>V5 Saved <a href=\"~/screenshots/" + outFile.getName() + "\">Screenshot</a>");
 
 
             System.out.println("Screen shot taken: " + outFile.getAbsolutePath() + "\n");
