@@ -32,6 +32,9 @@ public class WebDriverFactory {
         return driver;
     }
 
+    public WebDriver getDriver() {
+        return this.driver;
+    }
 
     public WebDriver createDriver(String browserName, String version) throws Exception {
         // Browser bob

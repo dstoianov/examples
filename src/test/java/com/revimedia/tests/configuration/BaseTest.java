@@ -5,7 +5,6 @@ import com.revimedia.testing.configuration.WebDriverFactory;
 import com.revimedia.testing.configuration.helpers.DataHelper;
 import com.revimedia.testing.configuration.proxy.BrowserMobProxyLocal2;
 import com.revimedia.testing.configuration.utils.WebDriverHelper;
-import com.revimedia.testing.configuration.utils.WebDriverScreenshotListener;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.WebDriver;
@@ -20,13 +19,13 @@ import java.lang.reflect.Method;
  * Created by Funker on 12.04.14.
  */
 
-@Listeners({WebDriverScreenshotListener.class})
+//@Listeners({WebDriverScreenshotListener.class})
 public class BaseTest {
     protected WebDriver driver;
     private String url;
     protected static final Logger log = Logger.getLogger(BaseTest.class);
 
-    WebDriverFactory instanceDriver;
+    public static WebDriverFactory instanceDriver;
 
 
     @BeforeClass
@@ -44,7 +43,8 @@ public class BaseTest {
 
         //driver = instanceDriver.getDriver(browser, version);
         //with browserMob
-        driver = instanceDriver.createDriver(browser, version);
+        new WebDriverFactory().createDriver(browser, version);
+        //driver = instanceDriver.createDriver(browser, version);
 
         //driver = instanceDriver.getDriver(browser, version);
         //driver = instanceDriver.getLocalDriver(browser, version);
@@ -82,7 +82,9 @@ public class BaseTest {
         log.warn("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
 
         if (!result.isSuccess()) {
+            Reporter.setCurrentTestResult(result);
             takeScreenShot(getMethodFullName(method) + "_teardown_" + DataHelper.getDate());
+            Reporter.setCurrentTestResult(null);
         }
 
     }
@@ -129,13 +131,19 @@ public class BaseTest {
     }
 
 
+    public WebDriver getDriver() {
+        return this.driver;
+    }
+
     public void takeScreenShot(String name) {
         String path = WebDriverHelper.takeScreenShot(driver, Config.PATH_TO_SCREENS + name + ".png");
         log.info("\nScreen shot taken: " + path);
         Reporter.setEscapeHtml(false);
         String fileName = path.substring(path.lastIndexOf("\\") + 1);
-        String html = "<p><b> V2 </b><a href=\"../screens/" + fileName + "\" > Failed test screen shot <img align=\"center\" height=\"120\" width=\"120\" src=\"../screens/" + fileName + "\"></a>";
+        String html = "<br><b>TestNG:</b><a href=\"screens/" + fileName + "\" > failed screenshot<img align=\"center\" height=\"120\" width=\"120\" src=\"screens/" + fileName + "\"></a>";
+        String html2 = "<br><b>ReportNG:</b><a href=\"../screens/" + fileName + "\" > failed screenshot<img align=\"center\" height=\"120\" width=\"120\" src=\"../screens/" + fileName + "\"></a>";
         Reporter.log(html);
+        Reporter.log(html2);
     }
 
 
