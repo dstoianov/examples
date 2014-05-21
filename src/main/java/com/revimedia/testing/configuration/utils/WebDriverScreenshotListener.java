@@ -40,6 +40,7 @@ public class WebDriverScreenshotListener implements ITestListener {
             // String s = outFile.getAbsolutePath();
             //String s1 = s.replace("\\/", "/");
             //Reporter.setEscapeHtml(false);
+
             // Reporter.log("<br>V3-1 Saved <a href=\"file:///" + s + "\">Screenshot</a>");
             //Reporter.log("<br>V3-2 Saved <a href=\"../screenshots/" + outFile.getName() + "\">Screenshot</a>");
             Reporter.log("<br>V4 Saved <a href=\"screenshots/" + outFile.getName() + "\">Screenshot</a>");
