@@ -141,9 +141,9 @@ public class BaseTest {
         Reporter.setEscapeHtml(false);
         String fileName = path.substring(path.lastIndexOf("\\") + 1);
         String html = "<br><b>TestNG:</b><a href=\"screens/" + fileName + "\" > failed screenshot<img align=\"center\" height=\"120\" width=\"120\" src=\"screens/" + fileName + "\"></a>";
-        String html2 = "<br><b>ReportNG:</b><a href=\"../screens/" + fileName + "\" > failed screenshot<img align=\"center\" height=\"120\" width=\"120\" src=\"../screens/" + fileName + "\"></a>";
+        //String html2 = "<br><b>ReportNG:</b><a href=\"../screens/" + fileName + "\" > failed screenshot<img align=\"center\" height=\"120\" width=\"120\" src=\"../screens/" + fileName + "\"></a>";
         Reporter.log(html);
-        Reporter.log(html2);
+        //Reporter.log(html2);
     }
 
 
