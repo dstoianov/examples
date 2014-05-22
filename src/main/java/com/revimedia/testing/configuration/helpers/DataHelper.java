@@ -23,4 +23,10 @@ public class DataHelper {
         DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd_hh-mm-ss");
         return dateFormat.format(date);
     }
+
+    public static int randInt(int min, int max) {
+        Random rand = new Random();
+        int randomNum = rand.nextInt((max - min) + 1) + min;
+        return randomNum;
+    }
 }

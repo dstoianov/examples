@@ -23,6 +23,20 @@ public class OfferParameters {
 
 */
 
+    private Integer offer_id;
+    private Integer aff_id;
+    private String aff_sub;
+    private String aff_sub2;
+    private String source;
+    private String transaction_id;
+
+    public OfferParameters() {
+        this.offer_id = DataHelper.randInt(10, 999);
+        //this.aff_id = DataHelper.randInt(1, 9999);
+        //this.aff_id = RandomStringUtils.random(4,true, true);
+
+    }
+
     public String getParameters() {
 
         return null;
