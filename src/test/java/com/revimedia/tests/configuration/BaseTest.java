@@ -5,6 +5,7 @@ import com.revimedia.testing.configuration.WebDriverFactory;
 import com.revimedia.testing.configuration.helpers.DataHelper;
 import com.revimedia.testing.configuration.proxy.BrowserMobProxyLocal2;
 import com.revimedia.testing.configuration.utils.WebDriverHelper;
+import com.revimedia.testing.configuration.utils.WebDriverScreenshotListener;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.WebDriver;
@@ -19,7 +20,7 @@ import java.lang.reflect.Method;
  * Created by Funker on 12.04.14.
  */
 
-//@Listeners({WebDriverScreenshotListener.class})
+@Listeners({WebDriverScreenshotListener.class})
 public class BaseTest {
     protected WebDriver driver;
     private String url;
