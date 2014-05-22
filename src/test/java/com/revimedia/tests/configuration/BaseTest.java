@@ -43,8 +43,8 @@ public class BaseTest {
 
         //driver = instanceDriver.getDriver(browser, version);
         //with browserMob
-        new WebDriverFactory().createDriver(browser, version);
-        //driver = instanceDriver.createDriver(browser, version);
+        //new WebDriverFactory().createDriver(browser, version);
+        driver = instanceDriver.createDriver(browser, version);
 
         //driver = instanceDriver.getDriver(browser, version);
         //driver = instanceDriver.getLocalDriver(browser, version);
