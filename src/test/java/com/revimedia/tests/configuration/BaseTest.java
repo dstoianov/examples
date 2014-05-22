@@ -74,7 +74,7 @@ public class BaseTest {
 
 
     @AfterMethod(alwaysRun = true)
-    public void finalizeTestMethod(Method method, ITestResult result) {
+    public void afterTestMethod(Method method, ITestResult result) {
 
         log.warn("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
         log.warn(getMethodFullName(method) + " - Test Finished.");
@@ -83,6 +83,7 @@ public class BaseTest {
 
         if (!result.isSuccess()) {
             Reporter.setCurrentTestResult(result);
+            Reporter.log("Failed test name: " + method.getName());
             takeScreenShot(getMethodFullName(method) + "_teardown_" + DataHelper.getDate());
             Reporter.setCurrentTestResult(null);
         }
@@ -142,7 +143,7 @@ public class BaseTest {
         String fileName = path.substring(path.lastIndexOf("\\") + 1);
         String html = "<br><b>TestNG:</b><a href=\"screens/" + fileName + "\" > failed screenshot<img align=\"center\" height=\"120\" width=\"120\" src=\"screens/" + fileName + "\"></a>";
         //String html2 = "<br><b>ReportNG:</b><a href=\"../screens/" + fileName + "\" > failed screenshot<img align=\"center\" height=\"120\" width=\"120\" src=\"../screens/" + fileName + "\"></a>";
-        Reporter.log(html);
+        Reporter.log(html, true);
         //Reporter.log(html2);
     }
 

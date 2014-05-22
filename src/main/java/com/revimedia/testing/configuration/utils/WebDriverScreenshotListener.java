@@ -1,17 +1,15 @@
 package com.revimedia.testing.configuration.utils;
 
 import com.revimedia.testing.configuration.helpers.DataHelper;
-import org.testng.ITestContext;
-import org.testng.ITestListener;
-import org.testng.ITestResult;
-import org.testng.Reporter;
+import org.testng.*;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
+import java.lang.reflect.Method;
 
-public class WebDriverScreenshotListener implements ITestListener {
+public class WebDriverScreenshotListener implements ITestListener, IInvokedMethodListener {
 
     @Override
     public void onTestStart(ITestResult result) {
@@ -74,4 +72,47 @@ public class WebDriverScreenshotListener implements ITestListener {
 
     }
 
+
+    private String getTestResult(ITestResult result) {
+        int status = result.getStatus();
+        String resultString;
+        switch (status) {
+            case 1:
+                resultString = "Success";
+                break;
+            case 2:
+                resultString = "Failure";
+                break;
+            case 3:
+                resultString = "Skip";
+                break;
+            default:
+                resultString = "Unknown";
+        }
+        return resultString;
+    }
+
+    protected String getMethodFullName(Method method) {
+        return method.getDeclaringClass().getCanonicalName() + "_" + method.getName();
+    }
+
+    @Override
+    public void beforeInvocation(IInvokedMethod method, ITestResult result) {
+        Reporter.log("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
+        Reporter.log(method.getTestMethod().getDescription() + " - Test Finished.");
+        Reporter.log(method.getTestMethod().getMethodName() + " - Test Finished.");
+        //Reporter.log(getMethodFullName(method) + " - Test Finished.");
+        Reporter.log("Test result: " + getTestResult(result));
+        Reporter.log("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
+
+    }
+
+    @Override
+    public void afterInvocation(IInvokedMethod method, ITestResult result) {
+        Reporter.log("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
+        Reporter.log(method.getTestMethod().getMethodName() + " - Test Finished.");
+        Reporter.log("Test result: " + getTestResult(result));
+        Reporter.log("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
+
+    }
 }
