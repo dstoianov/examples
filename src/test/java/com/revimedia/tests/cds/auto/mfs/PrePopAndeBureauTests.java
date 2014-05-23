@@ -69,7 +69,7 @@ public class PrePopAndeBureauTests extends BaseTest {
     }
 
     @Test(groups = {"eBureau Verification"}, dataProvider = "contactAndStaticDataAutoMFS", dataProviderClass = AutoDataProvider.class)
-    public void testeBureauVerification(Contact contact, StaticDataAutoMFS staticData) throws Exception {
+    public void testShouldBeShowneBureauVerificationMessage(Contact contact, StaticDataAutoMFS staticData) throws Exception {
         //ACT
         driverPage = new DriverPage(driver);
         vehiclePage = driverPage.fillInAllFields(contact, staticData).clickOnContinue();

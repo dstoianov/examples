@@ -15,7 +15,7 @@ public class DataHelper {
     }
 
     public static String generateInvalidAddress() {
-        return "Invalid Street Address " + (new Random()).nextInt(9999);
+        return "Invalid Street Address " + (new Random()).nextInt(999999999);
     }
 
     public static String getDate() {
