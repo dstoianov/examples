@@ -4,17 +4,22 @@ import com.revimedia.testing.cds.auto.mfs.pages.CompareAndSavePage;
 import com.revimedia.testing.cds.auto.mfs.pages.DriverPage;
 import com.revimedia.testing.cds.auto.mfs.pages.VehiclePage;
 import com.revimedia.testing.cds.auto.staticdata.StaticDataAutoMFS;
+import com.revimedia.testing.cds.auto.staticdata.VWOData;
 import com.revimedia.testing.cds.constants.Messages;
 import com.revimedia.testing.cds.prepop.PrePopExitPage;
 import com.revimedia.testing.cds.prepop.PrePopParameters;
 import com.revimedia.testing.configuration.dto.Contact;
 import com.revimedia.testing.configuration.helpers.DataHelper;
+import com.revimedia.testing.configuration.proxy.HarParser;
 import com.revimedia.tests.configuration.BaseTest;
 import com.revimedia.tests.configuration.dataproviders.AutoDataProvider;
 import org.testng.annotations.Test;
 
+import java.util.List;
+
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
+import static org.hamcrest.Matchers.is;
 
 /**
  * Created by dstoianov on 5/6/2014, 7:48 PM.
@@ -68,19 +73,19 @@ public class PrePopAndeBureauTests extends BaseTest {
         assertThat(compareAndSavePage.getEmailValue(), equalToIgnoringCase(contact.getEmailAddress()));
     }
 
-    @Test(groups = {"eBureau Verification"}, dataProvider = "contactAndStaticDataAutoMFS", dataProviderClass = AutoDataProvider.class)
-    public void testShouldBeShowneBureauVerificationMessage(Contact contact, StaticDataAutoMFS staticData) throws Exception {
-        //ACT
+
+    @Test(groups = {"submit", "vwo"}, dataProvider = "contactAndStaticDataAutoMFS", dataProviderClass = AutoDataProvider.class)
+    public void testShouldPresentInURLVWOData(Contact contact, StaticDataAutoMFS staticData) throws Exception {
+
         driverPage = new DriverPage(driver);
         vehiclePage = driverPage.fillInAllFields(contact, staticData).clickOnContinue();
         compareAndSavePage = vehiclePage.fillInAllFields(staticData).clickOnContinue();
-        compareAndSavePage.fillInAllFields(contact, staticData);
-        compareAndSavePage.fillInInvalidStreetAddressField(DataHelper.generateInvalidAddress());
+        compareAndSavePage.fillInAllFields(contact, staticData).submitForm();
 
-        compareAndSavePage.clickSubmit();
+        List<String> vwoData = HarParser.getVWOData();
 
-        //Assert
-        assertThat(compareAndSavePage.getPageText(), containsString(Messages.EBUREAU_VERIFICATION));
-        assertThat(compareAndSavePage.getAllErrors().get(0).getText(), equalTo(Messages.EBUREAU_VERIFICATION));
+        assertThat(vwoData.size(), is(VWOData.AUTO_MFS_VWO.size()));
+        assertThat(vwoData, is(VWOData.AUTO_MFS_VWO));
     }
+
 }
