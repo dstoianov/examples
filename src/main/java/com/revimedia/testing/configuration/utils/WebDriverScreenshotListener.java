@@ -32,8 +32,8 @@ public class WebDriverScreenshotListener implements ITestListener, IInvokedMetho
         try {
             outputDirectory.mkdirs();
             File outFile = new File(outputDirectory, DataHelper.getDate() + "-" + result.getName() + ".png");
-            captureScreenshot2(outFile);
-            Reporter.log("<br>Open from ReportNG report:  <a href=\"../screenshots/" + outFile.getName() + "\">Screenshot</a>");
+            captureScreenshot(outFile);
+            //Reporter.log("<br>Open from ReportNG report:  <a href=\"../screenshots/" + outFile.getName() + "\">Screenshot</a>");
             Reporter.log("<br>Open from TestNG report: <a href=\"screenshots/" + outFile.getName() + "\">Screenshot</a>");
             System.out.println("Screen shot taken: " + outFile.getAbsolutePath() + "\n");
 
