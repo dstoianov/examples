@@ -7,6 +7,7 @@ import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
+import java.io.IOException;
 import java.lang.reflect.Method;
 
 public class WebDriverScreenshotListener implements ITestListener, IInvokedMethodListener {
@@ -31,7 +32,7 @@ public class WebDriverScreenshotListener implements ITestListener, IInvokedMetho
         try {
             outputDirectory.mkdirs();
             File outFile = new File(outputDirectory, DataHelper.getDate() + "-" + result.getName() + ".png");
-            captureScreenshot(outFile);
+            captureScreenshot2(outFile);
             Reporter.log("<br>Open from ReportNG report:  <a href=\"../screenshots/" + outFile.getName() + "\">Screenshot</a>");
             Reporter.log("<br>Open from TestNG report: <a href=\"screenshots/" + outFile.getName() + "\">Screenshot</a>");
             System.out.println("Screen shot taken: " + outFile.getAbsolutePath() + "\n");
@@ -47,6 +48,14 @@ public class WebDriverScreenshotListener implements ITestListener, IInvokedMetho
         BufferedImage image = new Robot().createScreenCapture(new Rectangle(Toolkit.getDefaultToolkit().getScreenSize()));
         ImageIO.write(image, "png", outFile);
     }
+
+    private static void captureScreenshot2(File outFile) throws AWTException, IOException {
+        // capture the whole screen
+        BufferedImage screencapture = new Robot().createScreenCapture(new Rectangle(Toolkit.getDefaultToolkit().getScreenSize()));
+        // Save as PNG
+        ImageIO.write(screencapture, "png", outFile);
+    }
+
 
     @Override
     public void onTestSkipped(ITestResult result) {

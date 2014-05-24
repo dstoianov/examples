@@ -41,4 +41,20 @@ public class JustTest {
 
 
     }
+
+
+    public boolean equals(Object that, String[] fields) {
+
+        try {
+            for (String fieldName : fields) {
+                if (!this.getClass().getField(fieldName).equals(that.getClass().getField(fieldName)))
+                    return false;
+            }
+        } catch (NoSuchFieldException e) {
+            e.printStackTrace();
+        }
+
+        return true;
+    }
+
 }
