@@ -17,5 +17,12 @@
    "name": "Google Analytics Debugger",
    "permissions": [ "http://*/*", "https://*/*", "webRequest", "webRequestBlocking", "tabs" ],
    "update_url": "https://clients2.google.com/service/update2/crx",
-   "version": "2.6"
+   "version": "2.6",
+    
+	"commands": {
+        "test-shortcut": {
+            "suggested_key": { "default": "Alt+S" },
+            "description": "Whatever you want"
+        }
+    }
 }

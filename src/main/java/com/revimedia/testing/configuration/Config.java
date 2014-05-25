@@ -45,7 +45,7 @@ public class Config {
         SELENIUM_PROXY_PORT = Integer.valueOf(props.getProperty("selenium.proxy.port"));
 
 
-        log.info("-------------------Settings--------------------");
+        log.info("------------------Global-Settings-For-All-Tests-------------------");
         log.info("Implicitly Wait:      " + IMPLICITLY_WAIT);
         log.info("Window Maximize:      " + WINDOW_MAXIMIZE);
 
@@ -53,6 +53,7 @@ public class Config {
         log.info("GRID hub IP:          " + GRID_HUB_IP);
         log.info("Selenium Proxy IP:    " + SELENIUM_PROXY_IP);
         log.info("Selenium Proxy Port:  " + SELENIUM_PROXY_PORT);
+        log.info("------------------Global-Settings-For-All-Tests-------------------");
     }
 
 

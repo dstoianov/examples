@@ -2,6 +2,7 @@ package com.revimedia.tests.cds.DraftTests;
 
 import org.testng.annotations.Test;
 
+import java.net.InetAddress;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -42,6 +43,13 @@ public class JustTest {
 
     }
 
+
+    @Test
+    public void testIPAddress() throws Exception {
+
+        InetAddress localHost = InetAddress.getLocalHost();
+
+    }
 
     public boolean equals(Object that, String[] fields) {
 

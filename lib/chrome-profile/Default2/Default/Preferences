@@ -4,12 +4,14 @@
    },
    "browser": {
       "check_default_browser": false,
+      "clear_lso_data_enabled": true,
+      "pepper_flash_settings_enabled": true,
       "window_placement": {
-         "bottom": 738,
-         "left": 30,
-         "maximized": false,
-         "right": 1080,
-         "top": 30,
+         "bottom": 728,
+         "left": 106,
+         "maximized": true,
+         "right": 1310,
+         "top": 0,
          "work_area_bottom": 728,
          "work_area_left": 0,
          "work_area_right": 1366,
@@ -46,13 +48,20 @@
       },
       "autoupdate": {
          "last_check": "13044063742956430",
-         "next_check": "13044124324630757"
+         "next_check": "13045529754882115"
       },
       "chrome_url_overrides": {
          "bookmarks": [ "chrome-extension://eemcgdkfndhakfknompkggombfjjjeno/main.html" ]
       },
+      "commands": {
+         "windows:Alt+S": {
+            "command_name": "_execute_browser_action",
+            "extension": "jnkmfdileelhofjcijamephohjechhna",
+            "global": false
+         }
+      },
       "known_disabled": [  ],
-      "last_chrome_version": "34.0.1847.131",
+      "last_chrome_version": "34.0.1847.137",
       "settings": {
          "aapnijgdinlhnhlmodcfapnahmbfebeb": {
             "active_permissions": {
@@ -75,10 +84,21 @@
 
             },
             "initial_keybindings_set": true,
-            "install_time": "13044111730712768",
+            "install_time": "13045528876965124",
             "location": 8,
+            "manifest": {
+               "background": {
+                  "scripts": [ "background.js" ]
+               },
+               "description": "Exposes extension APIs for automating Chrome",
+               "key": "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDr+Q7QFcTr4Wmn9sSICKWbxnYLhIM0ERbcapZCDmpAkiBUhOPt+KkYnTdUFl4Kx2xv02MwIowh36Fho9Dhqh7cPWGIPsLHUaJosO6t6oaHxQsMQS/K4MlnP5pNJykExo82DcajSXGV+mIQH3RslxL+XhtmIh2BQLwbizVG0bA+mwIDAQAB",
+               "manifest_version": 2,
+               "name": "Chrome Automation Extension",
+               "permissions": [ "tabs", "management", "\u003Call_urls>" ],
+               "version": "1"
+            },
             "newAllowFileAccess": true,
-            "path": "C:\\Users\\Funker\\AppData\\Local\\Temp\\scoped_dir11544_12848\\internal",
+            "path": "C:\\Users\\Funker\\AppData\\Local\\Temp\\scoped_dir9236_3039\\internal",
             "preferences": {
 
             },
@@ -285,22 +305,23 @@
                "manifest_permissions": [  ]
             },
             "content_settings": [  ],
-            "creation_flags": 9,
+            "creation_flags": 38,
             "events": [  ],
             "from_bookmark": false,
-            "from_webstore": true,
+            "from_webstore": false,
             "granted_permissions": {
                "api": [ "tabs", "webRequest", "webRequestBlocking", "webRequestInternal" ],
                "explicit_host": [ "http://*/*", "https://*/*" ],
                "manifest_permissions": [  ]
             },
+            "incognito": false,
             "incognito_content_settings": [  ],
             "incognito_preferences": {
 
             },
             "initial_keybindings_set": true,
-            "install_time": "13044061570980428",
-            "location": 1,
+            "install_time": "13045528876957124",
+            "location": 8,
             "manifest": {
                "background": {
                   "scripts": [ "background.js" ]
@@ -322,7 +343,8 @@
                "update_url": "https://clients2.google.com/service/update2/crx",
                "version": "2.6"
             },
-            "path": "jnkmfdileelhofjcijamephohjechhna\\2.6_0",
+            "newAllowFileAccess": true,
+            "path": "D:\\git_tutorial\\github.com\\examples\\lib\\ga-debug-chrome\\2.6_0",
             "preferences": {
 
             },
@@ -712,6 +734,7 @@
    "ntp": {
       "app_page_names": [ "Приложения" ]
    },
+   "pinned_tabs": [  ],
    "plugins": {
       "migrated_to_pepper_flash": true,
       "plugins_list": [  ],
@@ -733,6 +756,7 @@
       "name": "Первый пользователь"
    },
    "session": {
+      "restore_on_startup": 1,
       "restore_on_startup_migrated": true,
       "startup_urls_migration_time": "13044061531323416"
    },

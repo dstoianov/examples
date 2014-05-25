@@ -1,23 +1,23 @@
 {
    "app_list": {
       "app_launch_count": 0,
-      "last_app_launch_ping": "13044067200000000",
-      "last_launch_ping": "13044067200000000",
+      "last_app_launch_ping": "13045449600000000",
+      "last_launch_ping": "13045449600000000",
       "launch_count": 0
    },
    "hardware_acceleration_mode_previous": true,
-   "http_original_content_length": "7812348",
-   "http_received_content_length": "7812348",
+   "http_original_content_length": "42555095",
+   "http_received_content_length": "42555095",
    "local_state": {
       "multiple_profile_prefs_version": 7
    },
    "policy": {
-      "last_statistics_update": "13044061531298416"
+      "last_statistics_update": "13045528876832115"
    },
    "profile": {
       "info_cache": {
          "Default": {
-            "active_time": 1399638130.693757,
+            "active_time": 1401055293.881124,
             "avatar_icon": "chrome://theme/IDR_PROFILE_AVATAR_0",
             "background_apps": false,
             "is_ephemeral": false,
@@ -42,13 +42,13 @@
             "extensions": {
                "known_disabled": "D4F63877F931B95BF855275D38204CB0D2BC3C604C6D75DE18F90B7C8B045329",
                "settings": {
-                  "aapnijgdinlhnhlmodcfapnahmbfebeb": "F03BBCD1C73EAEF607745B9739AC86AF754DD262D13468AD69504A6E3111D841",
+                  "aapnijgdinlhnhlmodcfapnahmbfebeb": "2F9CF5719C9BB690F63C58BA3FDD68757C013A63C7C7082079D60386D45373D5",
                   "ahfgeienlihckogmohjhadlkjgocpleb": "41F0583ABBCEB69BB68019F9E8C6083DBB6D73790B312D295A5234FD4FF732D2",
                   "bepbmhgboaologfdajaanbcjmnhjmhfn": "87AE62DA2A30B7B8040E377E4ADE0AB3CFED11D6AC32D1A9420C3BE91F638339",
                   "eemcgdkfndhakfknompkggombfjjjeno": "32E422D38AF5B7229C4F526F0D082733772E516321DAB3B7CDEC72D326763773",
                   "ennkphjdgehloodpbhlhldgbnhmacadg": "EBAC26F820BFE8AF185C1F84140C76EBAD33DEE94042CF2FC8007F65096680C0",
                   "gfdkimpbcpahaombhbimeihdjnejgicl": "1B15C36BE7633BEC0336138CCCD200979E8C3E67C54BF3D14AF87CF4873ABE8F",
-                  "jnkmfdileelhofjcijamephohjechhna": "4231FBF5900301F75F000A308038F624F35B32253CD3847B51C75610E7554777",
+                  "jnkmfdileelhofjcijamephohjechhna": "8C42C232B5CA716C6BDF2B21704F3E0C12A6EB734F7AE690CC8E2D1152503943",
                   "mfehgcgbbipciphmccgaenjidiccnmng": "68DE396709593124318073992BE272A7FC6476EDFBE455A473AD09FD3A413225",
                   "mgndgikekgjfcpckkfioiadnlibdjbkf": "6A20AE545DC9EFC2AE89F779662972EA1CFD0685442406CB9E122DD37D4868E3",
                   "neajdppkdcdipfabeoofebfddakdcjhd": "E53608EAE98446EAB4EED25A9F64567406D1BEFA23FBDA24D01DE6233CCE097C",
@@ -62,18 +62,18 @@
             },
             "homepage": "3F94FCC368E76A34357B6B5B473574652A152C456E8C73D34D41B947F4866DF5",
             "homepage_is_newtabpage": "63AEC3D4574693A5AEEB6C01571B588DF7D2A6DC9F67236A4DD8AA3C09406B10",
-            "pinned_tabs": "D88E048FE0B969FA4A89905A277729B77B6E8AB3D846A68773E27835D5BCB80B",
+            "pinned_tabs": "2ABC183D304A2340163E9E3C8177389A415C4C8BDDDEFB00522BEB1216A09F86",
             "profile": {
                "reset_prompt_memento": "C03C48256D43D450872A652EEDDCD336C46E02A10CD291161B03F59B4E239DF7"
             },
             "search_provider_overrides": "589D0ADB87B948CF473F5D07B7A0C838182BB99FB92ECB7CBC7E357FC94BB88C",
             "session": {
-               "restore_on_startup": "6F46424D4B874C47F28BEF1C9796BA44F2D5A3E1D4F23B67A8C59E7FFC8B516C",
+               "restore_on_startup": "C4B0491EAF4D9BB6BE2F4529C9CEC24092D24B09BBE5568C90C73E8D93B483B0",
                "startup_urls": "D2C71625E339B1C951D439F6BD7D5F614CC42D7486C69D731ABC19898B973DB9"
             }
          },
          "hash_of_hashes": {
-            "D:\\git_tutorial\\github.com\\examples\\lib\\chrome-profile\\Default2\\Default": "327E81B0E4A588DF8F35B3093176EE629106FB09BE5066362061E83DA60562DB"
+            "D:\\git_tutorial\\github.com\\examples\\lib\\chrome-profile\\Default2\\Default": "C884494471733FE5EC5F49B8805A964A91C11F6B23C27E0437EA196752F57E01"
          },
          "store_versions": {
             "D:\\git_tutorial\\github.com\\examples\\lib\\chrome-profile\\Default2\\Default": 2
@@ -87,39 +87,39 @@
    },
    "uninstall_metrics": {
       "installation_date2": "1399587931",
-      "launch_count": "13",
-      "page_load_count": "79"
+      "launch_count": "54",
+      "page_load_count": "500"
    },
    "user_experience_metrics": {
       "client_id": "BAE14D2E-21C0-4294-93BA-88DA6005D351",
       "client_id_timestamp": "1399587931",
       "low_entropy_source": 5168,
-      "session_id": 12,
+      "session_id": 53,
       "stability": {
          "breakpad_registration_fail": 0,
          "breakpad_registration_ok": 0,
-         "crash_count": 12,
-         "debugger_not_present": 13,
+         "crash_count": 38,
+         "debugger_not_present": 40,
          "debugger_present": 0,
          "execution_phase": 500,
          "exited_cleanly": false,
          "incomplete_session_end_count": 0,
-         "last_timestamp_sec": "1399590134",
-         "launch_count": 13,
-         "launch_time_sec": "1399638130",
-         "page_load_count": 79,
+         "last_timestamp_sec": "1401047855",
+         "launch_count": 41,
+         "launch_time_sec": "1401055276",
+         "page_load_count": 421,
          "plugin_stats2": [ {
             "crashes": 0,
             "instances": 0,
-            "launches": 1,
+            "launches": 2,
             "loading_errors": 0,
             "name": "Shockwave Flash"
          } ],
          "renderer_crash_count": 0,
          "renderer_hang_count": 0,
          "session_end_completed": true,
-         "stats_buildtime": "1398256199",
-         "stats_version": "34.0.1847.131"
+         "stats_buildtime": "1399472750",
+         "stats_version": "34.0.1847.137"
       }
    },
    "was": {

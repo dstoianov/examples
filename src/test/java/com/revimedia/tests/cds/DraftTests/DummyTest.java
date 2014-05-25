@@ -7,24 +7,34 @@ import com.revimedia.testing.cds.prepop.PrePopParameters;
 import com.revimedia.testing.configuration.dto.Contact;
 import com.revimedia.tests.configuration.dataproviders.AutoDataProvider;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.logging.LogEntries;
 import org.openqa.selenium.logging.LogEntry;
 import org.openqa.selenium.logging.LogType;
 import org.openqa.selenium.logging.LoggingPreferences;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import java.awt.*;
+import java.awt.event.KeyEvent;
 import java.io.File;
+import java.io.IOException;
 import java.lang.reflect.Field;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Set;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 
@@ -37,37 +47,46 @@ import java.util.logging.Level;
 public class DummyTest {
     public WebDriver driver;
 
-    //@BeforeMethod
-    public void startBrowser() {
+    @BeforeMethod
+    public void startBrowser() throws IOException {
 
-        //URL resource = DummyTest.class.getResource("/searchresults.xml");
-        File ext = new File("lib/ga-debug-chrome/2.6_0");
-        File prof = new File("lib/chrome-profile/Default2");
-        System.out.println(ext.getAbsolutePath());
+        File ga_debug = new File("lib/ga-debug-chrome/2.6_0");
+        File chromeProfile = new File("lib/chrome-profile/Default2");
 
         //http://peter.sh/experiments/chromium-command-line-switches/
         ChromeOptions options = new ChromeOptions();
+        options.addArguments("--enable-logging");
+        //options.addArguments("--v=2");
 
-        options.addArguments("--console");
         options.addArguments("--start-maximized");
         options.addArguments("--disable-translate");
+        options.addArguments("--enable-extensions");
         options.addArguments("--disable-extensions-file-access-check");
-        options.addArguments("--log-level=3");
-        options.addArguments("user-data-dir=" + prof.getAbsolutePath());
+        //options.addArguments("--log-level=3");
+        options.addArguments("user-data-dir=" + chromeProfile.getAbsolutePath());
         //options.addArguments("load-extension=./lib/ga-debug-chrome/2.6_0");
-        //options.addArguments("load-extension=" + ext.getAbsolutePath());
+        options.addArguments("load-extension=" + ga_debug.getAbsolutePath());
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability(ChromeOptions.CAPABILITY, options);
 
-        LoggingPreferences logPrefs = new LoggingPreferences();
+/*        LoggingPreferences logPrefs = new LoggingPreferences();
         logPrefs.enable(LogType.BROWSER, Level.ALL);
         logPrefs.enable(LogType.PERFORMANCE, Level.ALL);
-        // logPrefs.enable(LogType.CLIENT, Level.ALL);
-        // logPrefs.enable(LogType.DRIVER, Level.ALL);
-        //logPrefs.enable(LogType.PROFILER, Level.ALL);
-        //logPrefs.enable(LogType.SERVER, Level.ALL);
-
+         //logPrefs.enable(LogType.CLIENT, Level.ALL);
+         logPrefs.enable(LogType.DRIVER, Level.ALL);
+       // logPrefs.enable(LogType.PROFILER, Level.ALL);
+       // logPrefs.enable(LogType.SERVER, Level.ALL);
         capabilities.setCapability(CapabilityType.LOGGING_PREFS, logPrefs);
+
+ */
+
+        //--------------------
+        File file = new File("lib/gadebugger-1.0.2b.xpi");
+        FirefoxProfile firefoxProfile = new FirefoxProfile();
+        firefoxProfile.addExtension(file);
+        //firefoxProfile.setPreference("extensions.firebug.currentVersion", "1.8.1"); // Avoid startup screen
+        //driver = new FirefoxDriver(firefoxProfile);
+        //--------------------
 
         driver = new ChromeDriver(capabilities);
 
@@ -78,7 +97,7 @@ public class DummyTest {
         //driver.manage().window().maximize();
     }
 
-    //@AfterMethod(alwaysRun = true)
+    @AfterMethod(alwaysRun = true)
     public void tearDown() {
         driver.quit();
     }
@@ -91,15 +110,44 @@ public class DummyTest {
         //driver.navigate().refresh();
         driver.findElement(By.xpath(".//*[@id='bq-form-here']/div/div[2]/div/div/div[1]/label/input")).sendKeys("99999");
 
+        Robot robot = new Robot();
+        tryingTornOn();
+        robot.keyPress(KeyEvent.VK_F12);
+        Thread.sleep(2000);
+        robot.keyPress(KeyEvent.VK_F5);
+        //driver.navigate().refresh();
+        Thread.sleep(2000);
+        tryingTornOn();
+        Thread.sleep(2000);
+        tryingTornOn();
+        Thread.sleep(2000);
+        robot.keyPress(KeyEvent.VK_F5);
+
+        // Set<String> availableLogTypes = driver.manage().logs().getAvailableLogTypes();
+
+        //  List<LogEntry> browserLogs = driver.manage().logs().get("browser").getAll();
+
         //printLog(LogType.BROWSER);
         //printLog(LogType.CLIENT);
         //printLog(LogType.DRIVER);
-        printLog(LogType.PERFORMANCE);
+        //printLog(LogType.PERFORMANCE);
         //printLog(LogType.PROFILER);
 //        printLog(LogType.SERVER);
+        driver.findElement(By.xpath(".//*[@id='bq-form-here']/div/div[2]/div/div/div[1]/label/input")).sendKeys("99999xxxx");
 
-
+        Capabilities cap = ((RemoteWebDriver) driver).getCapabilities();
+        Object capability = cap.getCapability("userDataDir");
     }
+
+    public void tryingTornOn() throws AWTException {
+        Robot robot = new Robot();
+
+        robot.keyPress(KeyEvent.VK_ALT);
+        robot.keyPress(KeyEvent.VK_S);
+        robot.keyRelease(KeyEvent.VK_S);
+        robot.keyRelease(KeyEvent.VK_ALT);
+    }
+
 
     void printLog(String type) {
         List<LogEntry> entries = driver.manage().logs().get(type).getAll();
@@ -165,17 +213,6 @@ public class DummyTest {
     }
 
 
-    @Test
-    public void testDateFile() throws Exception {
-
-        Date date = new Date();
-        DateFormat dateFormat = new SimpleDateFormat("yyyyMMdd_hh-mm-ss");
-        String strDate = dateFormat.format(date);
-
-        System.out.println("Date converted to String: " + strDate);
-
-
-    }
 
 
 }
