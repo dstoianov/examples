@@ -23,7 +23,7 @@ public class EBureauVerificationTests extends BaseTest {
     public CompareAndSavePage compareAndSavePage;
 
     @Test(groups = {"eBureau Verification"}, dataProvider = "contactAndStaticDataAutoMFSForeBureauChecking", dataProviderClass = AutoDataProvider.class)
-    public void testShouldBeShowneBureauVerificationMessage(Contact contact, StaticDataAutoMFS staticData) throws Exception {
+    public void DRAFT_testShouldBeShowneBureauVerificationMessage(Contact contact, StaticDataAutoMFS staticData) throws Exception {
         //ACT
         driverPage = new DriverPage(driver);
         vehiclePage = driverPage.fillInAllFields(contact, staticData).clickOnContinue();

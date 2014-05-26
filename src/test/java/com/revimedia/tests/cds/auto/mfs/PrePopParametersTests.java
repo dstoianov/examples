@@ -81,7 +81,7 @@ public class PrePopParametersTests extends BaseTest {
 
 
     @Test(groups = {"submit", "vwo"}, dataProvider = "contactAndStaticDataAutoMFS", dataProviderClass = AutoDataProvider.class)
-    public void testShouldPresentInURLVWOData(Contact contact, StaticDataAutoMFS staticData) throws Exception {
+    public void testShouldPresentInURLVisualWebsiteOptimizerData(Contact contact, StaticDataAutoMFS staticData) throws Exception {
 
         driverPage = new DriverPage(driver);
         vehiclePage = driverPage.fillInAllFields(contact, staticData).clickOnContinue();
@@ -95,7 +95,7 @@ public class PrePopParametersTests extends BaseTest {
     }
 
     @Test(groups = {"submit", "Offer Parameters"}, dataProvider = "contactAndStaticAndOfferParametersDataAutoMFS", dataProviderClass = AutoDataProvider.class)
-    public void testShouldPresentOfferParametersInXMLAndDynamicPixelDataInURL(Contact contact, StaticDataAutoMFS staticData, OfferParameters offerParameters) throws Exception {
+    public void DRAFT_testShouldPresentOfferParametersInXMLAndDynamicPixelDataInURL(Contact contact, StaticDataAutoMFS staticData, OfferParameters offerParameters) throws Exception {
         //reload page with necessarily offer parameters in URL
         driver.get(this.url + offerParameters.toURLString());
         driverPage = new DriverPage(driver);
