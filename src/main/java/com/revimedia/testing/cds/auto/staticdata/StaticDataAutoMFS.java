@@ -5,7 +5,8 @@ import java.util.*;
 /**
  * Created by dstoianov on 4/29/2014, 7:31 PM.
  */
-public class StaticDataAutoMFS {
+public class StaticDataAutoMFS implements Cloneable {
+
 
     public StaticDataAutoMFS() {
         this.insuranceCompany = getRandomValueFromList(insuranceCompanyList);
@@ -15,6 +16,22 @@ public class StaticDataAutoMFS {
         this.creditRating = getRandomValueFromList(creditRatingList);
         this.education = getRandomValueFromList(educationList);
         setRandomCar();
+    }
+
+    public StaticDataAutoMFS(String insuranceCompany, String insuredSince, String residenceType, String maritalStatus, String creditRating, String education, String year, String make, String model) {
+        this.insuranceCompany = insuranceCompany;
+        this.insuredSince = insuredSince;
+        this.residenceType = residenceType;
+        this.maritalStatus = maritalStatus;
+        this.creditRating = creditRating;
+        this.education = education;
+        this.year = year;
+        this.make = make;
+        this.model = model;
+    }
+
+    public StaticDataAutoMFS clone() throws CloneNotSupportedException {
+        return (StaticDataAutoMFS) super.clone();
     }
 
     public String getInsuranceCompany() {
@@ -51,6 +68,42 @@ public class StaticDataAutoMFS {
 
     public String getModel() {
         return model;
+    }
+
+    public void setInsuranceCompany(String insuranceCompany) {
+        this.insuranceCompany = insuranceCompany;
+    }
+
+    public void setInsuredSince(String insuredSince) {
+        this.insuredSince = insuredSince;
+    }
+
+    public void setResidenceType(String residenceType) {
+        this.residenceType = residenceType;
+    }
+
+    public void setMaritalStatus(String maritalStatus) {
+        this.maritalStatus = maritalStatus;
+    }
+
+    public void setCreditRating(String creditRating) {
+        this.creditRating = creditRating;
+    }
+
+    public void setEducation(String education) {
+        this.education = education;
+    }
+
+    public void setYear(String year) {
+        this.year = year;
+    }
+
+    public void setMake(String make) {
+        this.make = make;
+    }
+
+    public void setModel(String model) {
+        this.model = model;
     }
 
     private String insuranceCompany;
