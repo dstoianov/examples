@@ -37,7 +37,7 @@ public class PrePopParametersTests extends BaseTest {
     public CompareAndSavePage compareAndSavePage;
 
     @Test(groups = {"prepop", "not ready yet"}, enabled = false, description = "Is not implemented yet on CDS 2.0")
-    public void testShouldBeShownExitPopUpWindow() throws Exception {
+    public void shouldBeShownExitPopUpWindow() throws Exception {
         PrePopExitPage exitTruePage = new PrePopExitPage(driver);
         exitTruePage.reloadPageWithPrePopTrue();
         exitTruePage.prePopShowUp();
@@ -52,7 +52,7 @@ public class PrePopParametersTests extends BaseTest {
     }
 
     @Test(groups = {"prepop"}, dataProvider = "contactAndStaticDataAutoMFS", dataProviderClass = AutoDataProvider.class)
-    public void testShouldBePrefilledAndShownOnUIContactAndOtherParameters(Contact contact, StaticDataAutoMFS staticData) throws Exception {
+    public void shouldBePrefilledAndShownOnUIContactAndOtherParameters(Contact contact, StaticDataAutoMFS staticData) throws Exception {
         // reload page with all pre pop parameters
         driver.get(PrePopParameters.generateURLForAutoMFSWithContactAndStatic(driver.getCurrentUrl(), contact, staticData));
         driverPage = new DriverPage(driver);
@@ -81,7 +81,7 @@ public class PrePopParametersTests extends BaseTest {
 
 
     @Test(groups = {"submit", "vwo"}, dataProvider = "contactAndStaticDataAutoMFS", dataProviderClass = AutoDataProvider.class)
-    public void testShouldPresentInURLVisualWebsiteOptimizerData(Contact contact, StaticDataAutoMFS staticData) throws Exception {
+    public void shouldPresentInURLVisualWebsiteOptimizerData(Contact contact, StaticDataAutoMFS staticData) throws Exception {
 
         driverPage = new DriverPage(driver);
         vehiclePage = driverPage.fillInAllFields(contact, staticData).clickOnContinue();
@@ -95,7 +95,7 @@ public class PrePopParametersTests extends BaseTest {
     }
 
     @Test(groups = {"submit", "Offer Parameters"}, dataProvider = "contactAndStaticAndOfferParametersDataAutoMFS", dataProviderClass = AutoDataProvider.class)
-    public void DRAFT_testShouldPresentOfferParametersInXMLAndDynamicPixelDataInURL(Contact contact, StaticDataAutoMFS staticData, OfferParameters offerParameters) throws Exception {
+    public void DRAFT_shouldPresentOfferParametersInXMLAndDynamicPixelDataInURL(Contact contact, StaticDataAutoMFS staticData, OfferParameters offerParameters) throws Exception {
         //reload page with necessarily offer parameters in URL
         driver.get(this.url + offerParameters.toURLString());
         driverPage = new DriverPage(driver);
