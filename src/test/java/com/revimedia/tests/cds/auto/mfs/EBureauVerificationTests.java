@@ -6,7 +6,6 @@ import com.revimedia.testing.cds.auto.mfs.pages.VehiclePage;
 import com.revimedia.testing.cds.auto.staticdata.StaticDataAutoMFS;
 import com.revimedia.testing.cds.constants.Messages;
 import com.revimedia.testing.configuration.dto.Contact;
-import com.revimedia.testing.configuration.helpers.DataHelper;
 import com.revimedia.tests.configuration.BaseTest;
 import com.revimedia.tests.configuration.dataproviders.AutoDataProvider;
 import org.testng.annotations.Test;
@@ -23,15 +22,13 @@ public class EBureauVerificationTests extends BaseTest {
     public VehiclePage vehiclePage;
     public CompareAndSavePage compareAndSavePage;
 
-    @Test(groups = {"eBureau Verification"}, dataProvider = "contactAndStaticDataAutoMFS", dataProviderClass = AutoDataProvider.class)
+    @Test(groups = {"eBureau Verification"}, dataProvider = "contactAndStaticDataAutoMFSForeBureauChecking", dataProviderClass = AutoDataProvider.class)
     public void testShouldBeShowneBureauVerificationMessage(Contact contact, StaticDataAutoMFS staticData) throws Exception {
         //ACT
         driverPage = new DriverPage(driver);
         vehiclePage = driverPage.fillInAllFields(contact, staticData).clickOnContinue();
         compareAndSavePage = vehiclePage.fillInAllFields(staticData).clickOnContinue();
         compareAndSavePage.fillInAllFields(contact, staticData);
-        compareAndSavePage.fillInInvalidStreetAddressField(DataHelper.generateInvalidAddress());
-
         compareAndSavePage.clickSubmit();
 
         //Assert

@@ -1,25 +1,23 @@
 package com.revimedia.tests.cds.DraftTests;
 
 
+import com.revimedia.testing.cds.auto.mfs.pages.CompareAndSavePage;
+import com.revimedia.testing.cds.auto.mfs.pages.DriverPage;
+import com.revimedia.testing.cds.auto.mfs.pages.VehiclePage;
 import com.revimedia.testing.cds.auto.staticdata.StaticDataAutoMFS;
 import com.revimedia.testing.cds.prepop.PrePop;
 import com.revimedia.testing.cds.prepop.PrePopParameters;
 import com.revimedia.testing.configuration.dto.Contact;
 import com.revimedia.tests.configuration.dataproviders.AutoDataProvider;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.logging.LogEntries;
 import org.openqa.selenium.logging.LogEntry;
 import org.openqa.selenium.logging.LogType;
-import org.openqa.selenium.logging.LoggingPreferences;
-import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -29,14 +27,10 @@ import java.awt.event.KeyEvent;
 import java.io.File;
 import java.io.IOException;
 import java.lang.reflect.Field;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import java.util.Set;
 import java.util.concurrent.TimeUnit;
-import java.util.logging.Level;
 
 //import net.jsourcerer.webdriver.jserrorcollector.JavaScriptError;
 
@@ -102,20 +96,15 @@ public class DummyTest {
         driver.quit();
     }
 
-    @Test
-    public void basicTest() throws Exception {
+    @Test(dataProvider = "contactAndStaticDataAutoMFS", dataProviderClass = AutoDataProvider.class)
+    public void basicTest(Contact contact, StaticDataAutoMFS staticData) throws Exception {
         driver.get("http://development.stagingrevi.com/auto/mfs");
-        //analyzeLog();
-        //driver.navigate().refresh();
-        //driver.navigate().refresh();
-        driver.findElement(By.xpath(".//*[@id='bq-form-here']/div/div[2]/div/div/div[1]/label/input")).sendKeys("99999");
 
         Robot robot = new Robot();
         tryingTornOn();
         robot.keyPress(KeyEvent.VK_F12);
         Thread.sleep(2000);
         robot.keyPress(KeyEvent.VK_F5);
-        //driver.navigate().refresh();
         Thread.sleep(2000);
         tryingTornOn();
         Thread.sleep(2000);
@@ -123,20 +112,16 @@ public class DummyTest {
         Thread.sleep(2000);
         robot.keyPress(KeyEvent.VK_F5);
 
-        // Set<String> availableLogTypes = driver.manage().logs().getAvailableLogTypes();
 
-        //  List<LogEntry> browserLogs = driver.manage().logs().get("browser").getAll();
+        driver.findElement(By.xpath(".//*[@id='bq-form-here']/div/div[2]/div/div/div[1]/label/input")).sendKeys("99999");
 
-        //printLog(LogType.BROWSER);
-        //printLog(LogType.CLIENT);
-        //printLog(LogType.DRIVER);
-        //printLog(LogType.PERFORMANCE);
-        //printLog(LogType.PROFILER);
-//        printLog(LogType.SERVER);
-        driver.findElement(By.xpath(".//*[@id='bq-form-here']/div/div[2]/div/div/div[1]/label/input")).sendKeys("99999xxxx");
 
-        Capabilities cap = ((RemoteWebDriver) driver).getCapabilities();
-        Object capability = cap.getCapability("userDataDir");
+        DriverPage driverPage = new DriverPage(driver);
+        VehiclePage vehiclePage = driverPage.fillInAllFields(contact, staticData).clickOnContinue();
+        CompareAndSavePage compareAndSavePage = vehiclePage.fillInAllFields(staticData).clickOnContinue();
+        compareAndSavePage.fillInAllFields(contact, staticData);
+
+
     }
 
     public void tryingTornOn() throws AWTException {
@@ -206,13 +191,11 @@ public class DummyTest {
 
         driver.get("http://development.stagingrevi.com/auto/mfs");
 
-        String url2 = PrePopParameters.getAutoMFS(driver.getCurrentUrl(), contact, staticData);
+        String url2 = PrePopParameters.generateURLForAutoMFSWithContactAndStatic(driver.getCurrentUrl(), contact, staticData);
 
         driver.get(url2);
 
     }
-
-
 
 
 }

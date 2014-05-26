@@ -30,7 +30,7 @@ public class PrePopParametersTests extends BaseTest {
     public CompareAndSavePage compareAndSavePage;
 
     @Test(groups = {"prepop", "not ready yet"}, enabled = false, description = "Is not implemented yet on CDS 2.0")
-    public void testExitTrue() throws Exception {
+    public void testShouldBeShownExitPopUpWindow() throws Exception {
         PrePopExitPage exitTruePage = new PrePopExitPage(driver);
         exitTruePage.reloadPageWithPrePopTrue();
         exitTruePage.prePopShowUp();
@@ -45,9 +45,9 @@ public class PrePopParametersTests extends BaseTest {
     }
 
     @Test(groups = {"prepop"}, dataProvider = "contactAndStaticDataAutoMFS", dataProviderClass = AutoDataProvider.class)
-    public void testPrePopAllRestParameters(Contact contact, StaticDataAutoMFS staticData) throws Exception {
+    public void testShouldBePrefilledAndShownOnUIContactAndOtherParameters(Contact contact, StaticDataAutoMFS staticData) throws Exception {
         // reload page with all pre pop parameters
-        driver.get(PrePopParameters.getAutoMFS(driver.getCurrentUrl(), contact, staticData));
+        driver.get(PrePopParameters.generateURLForAutoMFSWithContactAndStatic(driver.getCurrentUrl(), contact, staticData));
         driverPage = new DriverPage(driver);
         // verify city is correct
         assertThat(driverPage.getPageText(), containsString(contact.getCity()));

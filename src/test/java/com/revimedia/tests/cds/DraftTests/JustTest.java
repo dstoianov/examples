@@ -1,5 +1,6 @@
 package com.revimedia.tests.cds.DraftTests;
 
+import com.revimedia.testing.configuration.helpers.OfferParameters;
 import org.testng.annotations.Test;
 
 import java.net.InetAddress;
@@ -65,4 +66,11 @@ public class JustTest {
         return true;
     }
 
+
+    @Test
+    public void testRandom() throws Exception {
+
+        OfferParameters offerParameters = new OfferParameters();
+        System.out.println(offerParameters.toURLString());
+    }
 }

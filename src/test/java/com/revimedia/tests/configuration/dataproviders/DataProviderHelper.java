@@ -1,5 +1,6 @@
 package com.revimedia.tests.configuration.dataproviders;
 
+import com.revimedia.testing.configuration.dto.Contact;
 import com.revimedia.testing.configuration.dto.RandomObject;
 
 import javax.xml.bind.JAXBContext;
@@ -33,6 +34,20 @@ public class DataProviderHelper {
             T data = (T) jaxbUnmarshaller.unmarshal(new File(xml_file_name));
 
             return data.getRandom();
+
+        } catch (JAXBException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    static <T extends RandomObject> Contact unMarshalToContact(String xml_file_name, Class<T> clazz) {
+        try {
+            JAXBContext jaxbContext = JAXBContext.newInstance(clazz);
+            Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
+            T data = (T) jaxbUnmarshaller.unmarshal(new File(xml_file_name));
+
+            return (Contact) data.getRandom();
 
         } catch (JAXBException e) {
             e.printStackTrace();
