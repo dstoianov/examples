@@ -2,6 +2,7 @@ package com.revimedia.testing.configuration.proxy;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.google.gson.reflect.TypeToken;
 import com.revimedia.testing.configuration.helpers.Formatter;
 import com.revimedia.testing.configuration.response.Errors;
 import com.revimedia.testing.configuration.response.ErrorsDeserializer;
@@ -12,8 +13,11 @@ import net.lightbody.bmp.core.har.HarPostDataParam;
 import net.lightbody.bmp.core.har.HarRequest;
 import net.lightbody.bmp.core.har.HarResponse;
 
+import java.io.IOException;
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by Funker on 02.05.14.
@@ -54,7 +58,7 @@ public class HarParser {
 
 
     public static List<HarEntry> getPolkData() {
-        return BrowserMobProxyLocal2.getPolkData();
+        return BrowserMobProxyLocal2.collectHarEntryByTextInURL("polk?"); //getPolkData();
     }
 
     public static List<String> getVWOData() {
@@ -66,5 +70,21 @@ public class HarParser {
             urls.add(substring);
         }
         return urls;
+    }
+
+    public static Map<String, String> getDynamicPixel() throws IOException {
+        HarEntry pixelcheck = BrowserMobProxyLocal2.catchHarEntryByTextInURL("pixelcheck");
+        String xmlResponse = pixelcheck.getResponse().getContent().getText();
+        String xmlValid = xmlResponse.substring(xmlResponse.indexOf("(") + 1, xmlResponse.lastIndexOf(")"));
+        Gson gson = new Gson();
+        Type type = new TypeToken<Map<String, Object>>() {
+        }.getType();
+        Map<String, String> jsonMap = gson.fromJson(xmlValid, type);
+        return jsonMap;
+    }
+
+
+    public static HarEntry getTrackingData(String id) {
+        return BrowserMobProxyLocal2.catchHarEntryByTextInURL("/aff_l?offer_id=" + id);
     }
 }

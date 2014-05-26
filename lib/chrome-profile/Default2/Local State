@@ -1,13 +1,13 @@
 {
    "app_list": {
       "app_launch_count": 0,
-      "last_app_launch_ping": "13045449600000000",
-      "last_launch_ping": "13045449600000000",
+      "last_app_launch_ping": "13045536000000000",
+      "last_launch_ping": "13045536000000000",
       "launch_count": 0
    },
    "hardware_acceleration_mode_previous": true,
-   "http_original_content_length": "42555095",
-   "http_received_content_length": "42555095",
+   "http_original_content_length": "43970462",
+   "http_received_content_length": "43970462",
    "local_state": {
       "multiple_profile_prefs_version": 7
    },
@@ -17,11 +17,12 @@
    "profile": {
       "info_cache": {
          "Default": {
-            "active_time": 1401055293.881124,
+            "active_time": 1401096377.915482,
             "avatar_icon": "chrome://theme/IDR_PROFILE_AVATAR_0",
             "background_apps": false,
             "is_ephemeral": false,
             "is_omitted_from_profile_list": false,
+            "is_using_default_name": false,
             "managed_user_id": "",
             "name": "Первый пользователь",
             "user_name": ""
@@ -72,11 +73,55 @@
                "startup_urls": "D2C71625E339B1C951D439F6BD7D5F614CC42D7486C69D731ABC19898B973DB9"
             }
          },
+         "D:\\work\\automation\\github\\examples\\lib\\chrome-profile\\Default2\\Default": {
+            "browser": {
+               "show_home_button": "7D541500C4687FC93FA2E4000EAB5B340014C517B02F9D39253C624AEFCB50B6"
+            },
+            "default_search_provider": {
+               "keyword": "172498E2C99EE377E1D3C1BCDEF2764CB71236B9FF5A28DCB20BE958BF025874",
+               "name": "A67A5DEACB5D8AD6DB6F52922C1607C98313C313B1F2C56DC94DB3BD6FE18BAE",
+               "search_url": "761BEDAF021AB70F340773247534241BAB05FCEDAA35ADFFD8614EB18D6F066E"
+            },
+            "extensions": {
+               "known_disabled": "44522FDFACECAE21259102251BA712010BE1B31395170BC0AFBC4706492364D6",
+               "settings": {
+                  "aapnijgdinlhnhlmodcfapnahmbfebeb": "B0A7D7617CA8483DAFEDFADD426CA5112FDD35FB23EEAEDC851BD1ACF60DE801",
+                  "ahfgeienlihckogmohjhadlkjgocpleb": "2264DCFCB49A80EA6CCF591640A7CCE3836F86918F59C27A8AA88239D6F20498",
+                  "bepbmhgboaologfdajaanbcjmnhjmhfn": "91B343AD1C61FC73138D035AC0A82A287090D75AA56EA81E9C63A9EE5C6634D0",
+                  "eemcgdkfndhakfknompkggombfjjjeno": "759D166746A9EE8F1F16BAF35453406BF0F51BBDB3951C044814BC9AA3B9E29D",
+                  "ennkphjdgehloodpbhlhldgbnhmacadg": "98718C5DAFB47EEC3E7B70C35ACE07F7A3E6FC8C43E2581D348CCED69938BA44",
+                  "gfdkimpbcpahaombhbimeihdjnejgicl": "B5F3329B906654D25B392595C1F8810CC7E9181C2A056BBAA4690ECB80507A7C",
+                  "jnkmfdileelhofjcijamephohjechhna": "D28230F50DC675F192ED149AB2D9CD7E1BDC201C2C9BEEE1044F542F1CE33A7A",
+                  "mfehgcgbbipciphmccgaenjidiccnmng": "B1969D164B39FC0EA9DD70011D6C7DA2BFC1B608D67962F9D1F2DF7503768CFA",
+                  "mgndgikekgjfcpckkfioiadnlibdjbkf": "A29974F57B4582F01BE7AA7171D2E134B46EEDA970819D9846BFD27D2F8C64C2",
+                  "neajdppkdcdipfabeoofebfddakdcjhd": "840077C1519961A4825155A52B673E047CC7F4F2B0EEBF5EF6206729A9781794",
+                  "nkeimhogjdpnpccoofpliimaahmaaome": "58973C0FDB755C03088E90478F6C979C78F5F3C12289B749CEFC72F8D6ED8941"
+               }
+            },
+            "google": {
+               "services": {
+                  "last_username": "FC77AEFF17FC432E228E33D2FF26AED72BA49C4BF71F3D76187DAC805CCF2190"
+               }
+            },
+            "homepage": "6D0522BE84DCDFBCCE582D422789734FEDCD259BE9922CC87FAF2F2A75CDA559",
+            "homepage_is_newtabpage": "CBC76A6EC7547FD64BC3C1E8E02843042CD19BD5CD51DA57C796DDDA44F91BB6",
+            "pinned_tabs": "651A1243CA1E9755043D5A699E00B500830311C1CBB4940D8E0ACB3D30068F6A",
+            "profile": {
+               "reset_prompt_memento": "372DA156F8A56459AD16C8CFC4F3C868F38BFCF592EE74B9DA21C245B28138CC"
+            },
+            "search_provider_overrides": "C7F4D01404A7AF92BDDD1AEF2F4766EBE5CBFD8CE24AED58DD2D64A75D3A566B",
+            "session": {
+               "restore_on_startup": "043B2EB3AACD5212A196C49259AE4D82A61C0210AF26FAC67D600B93820F42B4",
+               "startup_urls": "0641E6E4A58A54E9018B5E66BD0F6E9AB00F85C89822B6EDCFF9B59FD5E10A95"
+            }
+         },
          "hash_of_hashes": {
-            "D:\\git_tutorial\\github.com\\examples\\lib\\chrome-profile\\Default2\\Default": "C884494471733FE5EC5F49B8805A964A91C11F6B23C27E0437EA196752F57E01"
+            "D:\\git_tutorial\\github.com\\examples\\lib\\chrome-profile\\Default2\\Default": "C884494471733FE5EC5F49B8805A964A91C11F6B23C27E0437EA196752F57E01",
+            "D:\\work\\automation\\github\\examples\\lib\\chrome-profile\\Default2\\Default": "010EE9D31F8A2597DC53B1EBB0F65D4BA76D83EF380E91AEB0039D3F720E582C"
          },
          "store_versions": {
-            "D:\\git_tutorial\\github.com\\examples\\lib\\chrome-profile\\Default2\\Default": 2
+            "D:\\git_tutorial\\github.com\\examples\\lib\\chrome-profile\\Default2\\Default": 2,
+            "D:\\work\\automation\\github\\examples\\lib\\chrome-profile\\Default2\\Default": 2
          }
       }
    },
@@ -87,39 +132,32 @@
    },
    "uninstall_metrics": {
       "installation_date2": "1399587931",
-      "launch_count": "54",
-      "page_load_count": "500"
+      "launch_count": "56",
+      "page_load_count": "524"
    },
    "user_experience_metrics": {
-      "client_id": "BAE14D2E-21C0-4294-93BA-88DA6005D351",
+      "client_id2": "20EA54B2-80B2-4216-BB89-5018C97DB0E7",
       "client_id_timestamp": "1399587931",
-      "low_entropy_source": 5168,
-      "session_id": 53,
+      "low_entropy_source2": 1530,
+      "session_id": 55,
       "stability": {
          "breakpad_registration_fail": 0,
          "breakpad_registration_ok": 0,
-         "crash_count": 38,
-         "debugger_not_present": 40,
+         "crash_count": 1,
+         "debugger_not_present": 2,
          "debugger_present": 0,
          "execution_phase": 500,
          "exited_cleanly": false,
          "incomplete_session_end_count": 0,
-         "last_timestamp_sec": "1401047855",
-         "launch_count": 41,
-         "launch_time_sec": "1401055276",
-         "page_load_count": 421,
-         "plugin_stats2": [ {
-            "crashes": 0,
-            "instances": 0,
-            "launches": 2,
-            "loading_errors": 0,
-            "name": "Shockwave Flash"
-         } ],
+         "last_timestamp_sec": "0",
+         "launch_count": 2,
+         "launch_time_sec": "1401096377",
+         "page_load_count": 24,
          "renderer_crash_count": 0,
          "renderer_hang_count": 0,
          "session_end_completed": true,
-         "stats_buildtime": "1399472750",
-         "stats_version": "34.0.1847.137"
+         "stats_buildtime": "1399976835",
+         "stats_version": "35.0.1916.114"
       }
    },
    "was": {

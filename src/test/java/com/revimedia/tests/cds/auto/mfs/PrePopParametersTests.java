@@ -1,5 +1,7 @@
 package com.revimedia.tests.cds.auto.mfs;
 
+import com.revimedia.testing.beans.auto.AffiliateDataType;
+import com.revimedia.testing.beans.auto.LeadDataType;
 import com.revimedia.testing.cds.auto.mfs.pages.CompareAndSavePage;
 import com.revimedia.testing.cds.auto.mfs.pages.DriverPage;
 import com.revimedia.testing.cds.auto.mfs.pages.VehiclePage;
@@ -9,12 +11,17 @@ import com.revimedia.testing.cds.prepop.PrePopExitPage;
 import com.revimedia.testing.cds.prepop.PrePopParameters;
 import com.revimedia.testing.configuration.dto.Contact;
 import com.revimedia.testing.configuration.helpers.DataHelper;
+import com.revimedia.testing.configuration.helpers.OfferParameters;
 import com.revimedia.testing.configuration.proxy.HarParser;
+import com.revimedia.testing.configuration.proxy.Submit;
+import com.revimedia.testing.configuration.utils.XmlToObject;
 import com.revimedia.tests.configuration.BaseTest;
 import com.revimedia.tests.configuration.dataproviders.AutoDataProvider;
+import net.lightbody.bmp.core.har.HarEntry;
 import org.testng.annotations.Test;
 
 import java.util.List;
+import java.util.Map;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
@@ -87,4 +94,35 @@ public class PrePopParametersTests extends BaseTest {
         assertThat(vwoData, is(VWOData.AUTO_MFS_VWO));
     }
 
+    @Test(groups = {"submit", "Offer Parameters"}, dataProvider = "contactAndStaticAndOfferParametersDataAutoMFS", dataProviderClass = AutoDataProvider.class)
+    public void testShouldPresentOfferParametersInXMLAndDynamicPixelDataInURL(Contact contact, StaticDataAutoMFS staticData, OfferParameters offerParameters) throws Exception {
+        //reload page with necessarily offer parameters in URL
+        driver.get(this.url + offerParameters.toURLString());
+        driverPage = new DriverPage(driver);
+        vehiclePage = driverPage.fillInAllFields(contact, staticData).clickOnContinue();
+        compareAndSavePage = vehiclePage.fillInAllFields(staticData).clickOnContinue();
+        compareAndSavePage.fillInAllFields(contact, staticData).submitForm();
+
+        Submit submit = HarParser.getSubmit();
+        LeadDataType leadDataType = XmlToObject.unMarshal(LeadDataType.class, submit.getRequest());
+        AffiliateDataType affiliateData = leadDataType.getAffiliateData();
+
+        Map<String, String> dynamicPixelResponse = HarParser.getDynamicPixel();
+        HarEntry trackingData = HarParser.getTrackingData(offerParameters.getOffer_id());
+
+        // Asserts
+        assertThat(affiliateData.getId(), is(offerParameters.getAff_id()));
+        assertThat(affiliateData.getOfferId(), is(offerParameters.getOffer_id()));
+        assertThat(affiliateData.getSubId(), is(offerParameters.getAff_sub()));
+        assertThat(affiliateData.getSub2Id(), is(offerParameters.getAff_sub2()));
+        assertThat(affiliateData.getSource(), is(offerParameters.getSource()));
+        assertThat(affiliateData.getTransactionId(), is(offerParameters.getTransaction_id()));
+
+        assertThat(dynamicPixelResponse.get("_success"), is("BaeOK"));
+
+        //TODO: ???
+        assertThat(trackingData, is(notNullValue()));
+        assertThat(trackingData.getResponse().getStatus(), is(302));
+
+    }
 }

@@ -2,44 +2,19 @@ package jsonTests.gsonResponse;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.google.gson.JsonObject;
 import com.google.gson.reflect.TypeToken;
 import com.revimedia.testing.configuration.response.Errors;
 import com.revimedia.testing.configuration.response.ErrorsDeserializer;
 import com.revimedia.testing.configuration.response.Response;
 import com.revimedia.testing.configuration.response.ResponseDeserializer;
-import org.bouncycastle.jcajce.provider.asymmetric.dsa.DSASigner;
 import org.codehaus.jackson.map.ObjectMapper;
-import org.json.JSONArray;
 import org.testng.annotations.Test;
-import org.w3c.dom.Document;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.StringWriter;
-import java.io.Writer;
-
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.transform.OutputKeys;
-import javax.xml.transform.Transformer;
-import javax.xml.transform.TransformerFactory;
-import javax.xml.transform.dom.DOMSource;
-import javax.xml.transform.stream.StreamResult;
-
-
-import javax.xml.transform.OutputKeys;
-import javax.xml.transform.Source;
-import javax.xml.transform.Transformer;
-import javax.xml.transform.TransformerFactory;
-import javax.xml.transform.dom.DOMSource;
-import javax.xml.transform.stream.StreamResult;
-import javax.xml.transform.stream.StreamSource;
-import java.io.StringReader;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.lang.reflect.Type;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;

@@ -4,6 +4,7 @@ import com.revimedia.testing.cds.auto.staticdata.StaticDataAutoMFS;
 import com.revimedia.testing.configuration.dto.Contact;
 import com.revimedia.testing.configuration.dto.Contacts;
 import com.revimedia.testing.configuration.helpers.DataHelper;
+import com.revimedia.testing.configuration.helpers.OfferParameters;
 import org.testng.annotations.DataProvider;
 
 /**
@@ -29,6 +30,17 @@ public class AutoDataProvider extends DataProviderHelper {
         contact.setAddress(DataHelper.generateInvalidAddress());
         Object[][] result = {
                 {contact, new StaticDataAutoMFS()},
+        };
+        return result;
+    }
+
+
+    @DataProvider
+    public static Object[][] contactAndStaticAndOfferParametersDataAutoMFS() {
+        Object contact = unMarshalToObject(xmlContactData, Contacts.class);
+
+        Object[][] result = {
+                {contact, new StaticDataAutoMFS(), new OfferParameters()},
         };
         return result;
     }

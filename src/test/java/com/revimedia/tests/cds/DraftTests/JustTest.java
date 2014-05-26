@@ -1,15 +1,16 @@
 package com.revimedia.tests.cds.DraftTests;
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import com.revimedia.testing.configuration.helpers.OfferParameters;
+import org.codehaus.jackson.map.ObjectMapper;
 import org.testng.annotations.Test;
 
+import java.lang.reflect.Type;
 import java.net.InetAddress;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Created by dstoianov on 5/23/2014, 4:24 PM.
@@ -66,6 +67,30 @@ public class JustTest {
         return true;
     }
 
+
+    @Test
+    public void testGson() throws Exception {
+
+        String xml = "jQuery18204237265042029321_1401116273271({\"_success\":\"BaeOK\",\"Mode\":\"Dynamic\",\"Errors\":[],\"Success\":true})";
+        String xml2 = "{\"_success\":\"BaeOK\",\"Mode\":\"Dynamic\",\"Errors\":[],\"Success\":true}";
+        //Type listType = new TypeToken<HashMap<String, String>>() {}.getType();
+        //final GsonBuilder gsonBuilder = new GsonBuilder();
+        //final Gson gson = gsonBuilder.create();
+        //final Gson gson = new Gson();
+
+        String xmlValid = xml.substring(xml.indexOf("(") + 1, xml.lastIndexOf(")"));
+        Map<String, String> result = new ObjectMapper().readValue(xmlValid, HashMap.class);
+        String success = result.get("_success");
+
+
+        Gson gson = new Gson();
+        Type type = new TypeToken<Map<String, Object>>() {
+        }.getType();
+        Map<String, String> jsonMap = gson.fromJson(xmlValid, type);
+        String success1 = jsonMap.get("_success");
+
+
+    }
 
     @Test
     public void testRandom() throws Exception {

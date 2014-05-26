@@ -23,7 +23,7 @@ import java.lang.reflect.Method;
 @Listeners({WebDriverScreenshotListener.class})
 public class BaseTest {
     protected WebDriver driver;
-    private String url;
+    protected String url;
     protected static final Logger log = Logger.getLogger(BaseTest.class);
 
     public static WebDriverFactory instanceDriver;

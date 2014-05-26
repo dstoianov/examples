@@ -6,39 +6,37 @@ import org.apache.commons.lang3.RandomStringUtils;
  * Created by dstoianov on 5/21/2014, 7:54 PM.
  */
 public class OfferParameters {
-/*
-    offer_id >> only digits can be 2-3 digits
-    aff_id >> only digits, can be 1-4 digits
-    aff_sub >> can be both digits/letters, no limit
-    source >> can be both digits/letters, no limit
-    aff_sub2 >> can be both digits/letters, no limit
-    transaction_id >>  can be both digits/letters, either 30 characters like (102b68ed13a5d2031c14d3e2a6ad19)
-    or the 30 characters with "-up1"s after it (102b68ed13a5d2031c14d3e2a6ad19-up1 or like 102b68ed13a5d2031c14d3e2a6ad19-up1-up1)
-    or a combination of letters/digits in this format 8-4-4-4-12 (ex: 19766D43-07A3-427B-A5AE-9140A437B7DE)
-
-*/
-
-    private Integer aff_id;
-    private Integer offer_id;
+    /*
+        offer_id >> only digits can be 2-3 digits
+        aff_id >> only digits, can be 1-4 digits
+        aff_sub >> can be both digits/letters, no limit
+        source >> can be both digits/letters, no limit
+        aff_sub2 >> can be both digits/letters, no limit
+        transaction_id >>  can be both digits/letters, either 30 characters like (102b68ed13a5d2031c14d3e2a6ad19)
+        or the 30 characters with "-up1"s after it (102b68ed13a5d2031c14d3e2a6ad19-up1 or like 102b68ed13a5d2031c14d3e2a6ad19-up1-up1)
+        or a combination of letters/digits in this format 8-4-4-4-12 (ex: 19766D43-07A3-427B-A5AE-9140A437B7DE)
+    */
+    private String aff_id;
+    private String offer_id;
     private String aff_sub;
     private String aff_sub2;
     private String source;
-    private String update_survey; //SurveyPath can update only on
+    private String update_survey; //SurveyPath can update only after upsell
     private String transaction_id;
 
-    public Integer getAff_id() {
+    public String getAff_id() {
         return aff_id;
     }
 
-    public void setAff_id(Integer aff_id) {
+    public void setAff_id(String aff_id) {
         this.aff_id = aff_id;
     }
 
-    public Integer getOffer_id() {
+    public String getOffer_id() {
         return offer_id;
     }
 
-    public void setOffer_id(Integer offer_id) {
+    public void setOffer_id(String offer_id) {
         this.offer_id = offer_id;
     }
 
@@ -83,12 +81,14 @@ public class OfferParameters {
     }
 
     public OfferParameters() {
-        this.offer_id = DataHelper.randInt(10, 999);
-        this.aff_id = DataHelper.randInt(1, 9999);
+        //this.offer_id = DataHelper.randInt(10, 999);
+        //this.aff_id = DataHelper.randInt(1, 9999);
+        this.offer_id = "653";
+        this.aff_id = "5";
         this.aff_sub = "test.Aff_Sub-" + RandomStringUtils.random(10, true, true);
         this.aff_sub2 = "test.Aff_sub2-" + RandomStringUtils.random(13, true, true);
         this.source = "test.Source-" + RandomStringUtils.random(15, true, true);
-        this.transaction_id = "test.TransID-" + RandomStringUtils.random(30, true, true);
+        this.transaction_id = "test.TransID-" + RandomStringUtils.random(17, true, true);
         this.update_survey = "test.SurveyPath-" + RandomStringUtils.random(15, true, true);
     }
 
@@ -103,5 +103,16 @@ public class OfferParameters {
                 "&transaction_id=" + transaction_id;
     }
 
-
+    @Override
+    public String toString() {
+        return "OfferParameters{" +
+                "\naff_id=" + aff_id +
+                ",\n offer_id=" + offer_id +
+                ",\n aff_sub='" + aff_sub + '\'' +
+                ",\n aff_sub2='" + aff_sub2 + '\'' +
+                ",\n source='" + source + '\'' +
+                ",\n update_survey='" + update_survey + '\'' +
+                ",\n transaction_id='" + transaction_id + '\'' +
+                '}';
+    }
 }
