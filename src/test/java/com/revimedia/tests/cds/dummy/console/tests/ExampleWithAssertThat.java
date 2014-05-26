@@ -42,7 +42,7 @@ public class ExampleWithAssertThat {
         StaticDataAutoMFS staticDataAutoMFS = new StaticDataAutoMFS();
         StaticDataAutoMFS copy = staticDataAutoMFS.clone();
         copy.setMake("qqqqq");
-        assertThat(staticDataAutoMFS, equalTo(copy));
+        assertThat(staticDataAutoMFS, is(equalTo(copy)));
     }
 
     @Test
