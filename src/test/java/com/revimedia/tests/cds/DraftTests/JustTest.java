@@ -7,10 +7,7 @@ import org.testng.annotations.Test;
 import java.net.InetAddress;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Created by dstoianov on 5/23/2014, 4:24 PM.
@@ -80,14 +77,30 @@ public class JustTest {
 
     }
 
-
     @Test
-    public void testAAAName() throws Exception {
-        String s = "jhdfsgh.dsfsd.df d  dsfd . dfdf";
+    public void testCheckPort() throws Exception {
 
-        String s2 = s.replace(".", "-");
+        List<Integer> portsList = Collections.synchronizedList(new ArrayList<Integer>());
+        synchronized (portsList) {
+            portsList.add(getPort());
+            portsList.add(getPort());
+            portsList.add(getPort());
+        }
 
-        System.out.println(s);
-        System.out.println(s2);
+        int newPort = getPort();
+
+        if (portsList.indexOf(newPort) == -1) {
+            synchronized (portsList) {
+                portsList.add(newPort);
+            }
+        }
+    }
+
+    private synchronized int getPort() {
+        Random rand = new Random();
+        int min = 8085;
+        int max = 8090;
+        int randomNum = rand.nextInt((max - min) + 1) + min;
+        return randomNum;
     }
 }

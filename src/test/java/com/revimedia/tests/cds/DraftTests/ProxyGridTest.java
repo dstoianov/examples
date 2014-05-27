@@ -14,6 +14,7 @@ import org.testng.annotations.Test;
 
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
@@ -41,8 +42,8 @@ public class ProxyGridTest {
         server.setCaptureContent(true);
         server.newHar("Revi Media Testing");
 
-        String proxyAddress = "172.31.29.21";
-        String hubAddress = "172.31.29.21";
+        String proxyAddress = "localhost";
+        String hubAddress = "localhost";
 
         Proxy proxy = server.seleniumProxy();
         proxy.setHttpProxy(proxyAddress + ":" + port);
@@ -70,21 +71,23 @@ public class ProxyGridTest {
     @Test
     public void testCheckPort() throws Exception {
 
-        List<Integer> portsList = new ArrayList<Integer>();
-        portsList.add(getPort());
-        portsList.add(getPort());
-        portsList.add(getPort());
+        List<Integer> portsList = Collections.synchronizedList(new ArrayList<Integer>());
+        synchronized (portsList) {
+            portsList.add(getPort());
+            portsList.add(getPort());
+            portsList.add(getPort());
+        }
 
         int newPort = getPort();
 
         if (portsList.indexOf(newPort) == -1) {
-            portsList.add(newPort);
+            synchronized (portsList) {
+                portsList.add(newPort);
+            }
         }
-
-
     }
 
-    private int getPort() {
+    private synchronized int getPort() {
         Random rand = new Random();
         int max = 8085;
         int min = 8090;
