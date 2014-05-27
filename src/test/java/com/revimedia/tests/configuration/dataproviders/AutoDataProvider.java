@@ -43,7 +43,6 @@ public class AutoDataProvider extends DataProviderHelper {
     @DataProvider
     public static Object[][] contactAndStaticAndOfferParametersDataAutoMFS() {
         Object contact = unMarshalToObject(xmlContactData, Contacts.class);
-
         Object[][] result = {
                 {contact, new StaticDataAutoMFS(), new OfferParameters()},
         };
@@ -67,4 +66,19 @@ public class AutoDataProvider extends DataProviderHelper {
                 {unMarshalToObject(xmlContactData, Contacts.class)},
         };
     }
+
+    @DataProvider
+    public static Object[][] contactAndStaticDataAutoMFSBoundaryTesting() {
+        // firstName, lastName, gender,  birthDate,  phoneNumber,  address, emailAddress, zipCode, city, state
+        Contact contact1 = new Contact("Bond", "Dammy", "Male", "Jan 23, 1980", "6467171752", "Avenue I and East 14th Street", "bas@test.com", "11231", "BROOKLYN", "NY");
+        Contact contact2 = new Contact("James", "Dammy", "Female", "Mar 30, 1990", "2144993212", "2424 East 38th Street", "nitroquotes@gmail.com", "75201", "DALLAS", "TX");
+
+        Object[][] result = {
+                //{contact1, new StaticDataAutoMFS()},
+                {contact2, new StaticDataAutoMFS()},
+        };
+        return result;
+    }
+
+
 }

@@ -79,6 +79,20 @@ public class PrePopParametersTests extends BaseTest {
         assertThat(compareAndSavePage.getEmailValue(), equalToIgnoringCase(contact.getEmailAddress()));
     }
 
+/*    @Test(groups = {"prepop"}, dataProvider = "contactAndStaticDataAutoMFSBoundaryTesting", dataProviderClass = AutoDataProvider.class)
+    public void DRAFT_testNamePositive(Contact contact, StaticDataAutoMFS staticData) throws Exception {
+        // reload page with all pre pop parameters
+        driver.get(PrePopParameters.generateURLForAutoMFSWithContactAndStatic(driver.getCurrentUrl(), contact, staticData));
+        driverPage = new DriverPage(driver);
+        // verify city is correct
+        assertThat(driverPage.getPageText(), containsString(contact.getCity()));
+        // verify InsuranceCompany is correct
+        assertThat(driverPage.getInsuranceCompanyValue(), is(staticData.getInsuranceCompany()));
+
+        // verify InsuranceCompany is Displayed
+        assertThat(driverPage.isZipCodeFieldDisplayed(), is(false));
+
+    }*/
 
     @Test(groups = {"submit", "vwo"}, dataProvider = "contactAndStaticDataAutoMFS", dataProviderClass = AutoDataProvider.class)
     public void shouldPresentInURLVisualWebsiteOptimizerData(Contact contact, StaticDataAutoMFS staticData) throws Exception {
@@ -136,5 +150,6 @@ public class PrePopParametersTests extends BaseTest {
 
         driverPage = new DriverPage(driver);
         assertThat(driverPage.getPageText(), containsString(city));
+        assertThat(driverPage.isZipCodeFieldDisplayed(), is(false));
     }
 }
