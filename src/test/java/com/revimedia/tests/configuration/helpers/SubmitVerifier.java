@@ -49,12 +49,15 @@ public class SubmitVerifier {
         assertThat(staticData.getEducation(), is(driver.getEducation()));
 
         assertThat(staticData.getInsuranceCompany(), is(currentPolicy.getInsuranceCompany()));
-        assertThat(DataHelper.dateTransformInsuredSince(staticData.getInsuredSince()), is(currentPolicy.getInsuredSince()));
-
+        if (!staticData.getInsuranceCompany().equalsIgnoreCase("Currently not insured")) {
+            assertThat(DataHelper.dateTransformInsuredSince(staticData.getInsuredSince()), is(currentPolicy.getInsuredSince()));
+        }
         assertThat(staticData.getResidenceType(), is(contactData.getResidenceType()));
 
         assertThat(staticData.getYear(), is(vehicleType.getYear()));
         assertThat(staticData.getMake(), is(vehicleType.getMake()));
-        assertThat((staticData.getModel()).replaceAll(".", "-"), is(vehicleType.getModel()));
+
+        String model = (staticData.getModel()).replace(".", "-");
+        assertThat(model, is(vehicleType.getModel()));
     }
 }

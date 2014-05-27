@@ -80,4 +80,14 @@ public class JustTest {
 
     }
 
+
+    @Test
+    public void testAAAName() throws Exception {
+        String s = "jhdfsgh.dsfsd.df d  dsfd . dfdf";
+
+        String s2 = s.replace(".", "-");
+
+        System.out.println(s);
+        System.out.println(s2);
+    }
 }

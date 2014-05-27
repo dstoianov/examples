@@ -70,12 +70,15 @@ public class AutoDataProvider extends DataProviderHelper {
     @DataProvider
     public static Object[][] contactAndStaticDataAutoMFSBoundaryTesting() {
         // firstName, lastName, gender,  birthDate,  phoneNumber,  address, emailAddress, zipCode, city, state
-        Contact contact1 = new Contact("Bond", "Dammy", "Male", "Jan 23, 1980", "6467171752", "Avenue I and East 14th Street", "bas@test.com", "11231", "BROOKLYN", "NY");
-        Contact contact2 = new Contact("James", "Dammy", "Female", "Mar 30, 1990", "2144993212", "2424 East 38th Street", "nitroquotes@gmail.com", "75201", "DALLAS", "TX");
+        Contact contact1 = new Contact("Kung Fu", "Panda", "Male", "Oct 31, 2000", "7180483889", "6221 Monterey Rd 101", "miley.cyrus@hotmail.com", "90005", "LOS ANGELES", "CA");
+        Contact contact2 = new Contact("Kung Fu", "Panda", "Female", "Feb 29, 1989", "3238550093", "123Fake", "blah.blahblah@gmail.con", "75201", "DALLAS", "TX");
+
+        StaticDataAutoMFS staticData = (new StaticDataAutoMFS());
+        staticData.setInsuranceCompany("Currently not insured");
 
         Object[][] result = {
-                //{contact1, new StaticDataAutoMFS()},
-                {contact2, new StaticDataAutoMFS()},
+                {contact1, staticData},
+                {contact2, staticData},
         };
         return result;
     }
