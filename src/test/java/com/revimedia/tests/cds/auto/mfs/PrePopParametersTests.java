@@ -127,9 +127,14 @@ public class PrePopParametersTests extends BaseTest {
     }
 
 
-    @Test(groups = {"prepop", "prepop IP"}, dataProvider = "prePopIPParametersData", dataProviderClass = AutoDataProvider.class)
-    public void testName() throws Exception {
-        driver.get(driver.getCurrentUrl() + "?prepopip=true");
+    @Test(groups = {"prepop", "prepop IP"}, enabled = false, description = "Is not implemented yet on CDS 2.0", dataProvider = "prePopIPParametersData", dataProviderClass = AutoDataProvider.class)
+    public void DRAFT_shouldBeShownCityNameAndHidedZipCodeFieldOnPage(String prepop, Map<String, String> response) throws Exception {
+        driver.get(this.url + prepop);
+        String city = response.get("City");
+        String state = response.get("State");
+        String zipCode = response.get("Zipcode");
 
+        driverPage = new DriverPage(driver);
+        assertThat(driverPage.getPageText(), containsString(city));
     }
 }

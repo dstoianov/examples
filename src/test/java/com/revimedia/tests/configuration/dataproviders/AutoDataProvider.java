@@ -3,10 +3,13 @@ package com.revimedia.tests.configuration.dataproviders;
 import com.revimedia.testing.cds.auto.staticdata.StaticDataAutoMFS;
 import com.revimedia.testing.configuration.dto.Contact;
 import com.revimedia.testing.configuration.dto.Contacts;
-import com.revimedia.testing.configuration.helpers.DataHelper;
 import com.revimedia.testing.configuration.dto.OfferParameters;
+import com.revimedia.testing.configuration.helpers.DataHelper;
+import com.revimedia.testing.configuration.utils.PrePopIPHelper;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.testng.annotations.DataProvider;
+
+import java.util.Map;
 
 /**
  * Created by stde on 4/28/2014.
@@ -49,11 +52,10 @@ public class AutoDataProvider extends DataProviderHelper {
 
 
     @DataProvider
-    public static Object[][] prePopIPParametersData() {
-
-
+    public static Object[][] prePopIPParametersData() throws Exception {
+        Map<String, String> response = PrePopIPHelper.getResponse();
         Object[][] result = {
-                {"?prepopip=true"},
+                {"?prepopip=true", response},
         };
         return result;
     }
