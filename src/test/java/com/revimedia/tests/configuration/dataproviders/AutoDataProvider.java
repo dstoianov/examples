@@ -4,7 +4,8 @@ import com.revimedia.testing.cds.auto.staticdata.StaticDataAutoMFS;
 import com.revimedia.testing.configuration.dto.Contact;
 import com.revimedia.testing.configuration.dto.Contacts;
 import com.revimedia.testing.configuration.helpers.DataHelper;
-import com.revimedia.testing.configuration.helpers.OfferParameters;
+import com.revimedia.testing.configuration.dto.OfferParameters;
+import org.apache.commons.lang3.RandomStringUtils;
 import org.testng.annotations.DataProvider;
 
 /**
@@ -28,6 +29,7 @@ public class AutoDataProvider extends DataProviderHelper {
     public static Object[][] contactAndStaticDataAutoMFSForeBureauChecking() {
         Contact contact = unMarshalToContact(xmlContactData, Contacts.class);
         contact.setAddress(DataHelper.generateInvalidAddress());
+        contact.setEmailAddress(RandomStringUtils.random(10, true, true) + "_" + contact.getEmailAddress());
         Object[][] result = {
                 {contact, new StaticDataAutoMFS()},
         };
@@ -41,6 +43,17 @@ public class AutoDataProvider extends DataProviderHelper {
 
         Object[][] result = {
                 {contact, new StaticDataAutoMFS(), new OfferParameters()},
+        };
+        return result;
+    }
+
+
+    @DataProvider
+    public static Object[][] prePopIPParametersData() {
+
+
+        Object[][] result = {
+                {"?prepopip=true"},
         };
         return result;
     }

@@ -11,7 +11,7 @@ import com.revimedia.testing.cds.prepop.PrePopExitPage;
 import com.revimedia.testing.cds.prepop.PrePopParameters;
 import com.revimedia.testing.configuration.dto.Contact;
 import com.revimedia.testing.configuration.helpers.DataHelper;
-import com.revimedia.testing.configuration.helpers.OfferParameters;
+import com.revimedia.testing.configuration.dto.OfferParameters;
 import com.revimedia.testing.configuration.proxy.HarParser;
 import com.revimedia.testing.configuration.proxy.Submit;
 import com.revimedia.testing.configuration.utils.XmlToObject;
@@ -123,6 +123,13 @@ public class PrePopParametersTests extends BaseTest {
         //TODO: ???
         assertThat(trackingData, is(notNullValue()));
         assertThat(trackingData.getResponse().getStatus(), is(302));
+
+    }
+
+
+    @Test(groups = {"prepop", "prepop IP"}, dataProvider = "prePopIPParametersData", dataProviderClass = AutoDataProvider.class)
+    public void testName() throws Exception {
+        driver.get(driver.getCurrentUrl() + "?prepopip=true");
 
     }
 }

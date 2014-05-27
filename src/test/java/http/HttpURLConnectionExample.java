@@ -4,6 +4,8 @@ package http;
  * Created by dstoianov on 5/26/2014, 6:38 PM.
  */
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import org.jsoup.Connection;
 import org.jsoup.Jsoup;
 import org.testng.annotations.Test;
@@ -12,8 +14,10 @@ import javax.net.ssl.HttpsURLConnection;
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
 import java.io.InputStreamReader;
+import java.lang.reflect.Type;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.Map;
 
 public class HttpURLConnectionExample {
 
@@ -109,6 +113,11 @@ public class HttpURLConnectionExample {
     public void testName() throws Exception {
         String url = "http://development.stagingrevi.com/ajax/location/ip";
         String body = Jsoup.connect(url).method(Connection.Method.GET).execute().body();
+
+        Gson gson = new Gson();
+        Type type = new TypeToken<Map<String, Object>>() {
+        }.getType();
+        Map<String, String> jsonMap = gson.fromJson(body, type);
 
     }
 }

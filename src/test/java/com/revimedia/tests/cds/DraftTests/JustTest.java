@@ -1,24 +1,16 @@
 package com.revimedia.tests.cds.DraftTests;
 
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
 import com.revimedia.testing.cds.auto.staticdata.StaticDataAutoMFS;
-import com.revimedia.testing.configuration.helpers.OfferParameters;
-import org.codehaus.jackson.map.ObjectMapper;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import java.lang.reflect.Type;
 import java.net.InetAddress;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.util.*;
-
-import static org.hamcrest.CoreMatchers.either;
-import static org.hamcrest.CoreMatchers.is;
-import static org.hamcrest.CoreMatchers.sameInstance;
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.core.IsEqual.equalTo;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by dstoianov on 5/23/2014, 4:24 PM.
@@ -88,10 +80,4 @@ public class JustTest {
 
     }
 
-    @Test
-    public void testRandom() throws Exception {
-
-        OfferParameters offerParameters = new OfferParameters();
-        System.out.println(offerParameters.toURLString());
-    }
 }

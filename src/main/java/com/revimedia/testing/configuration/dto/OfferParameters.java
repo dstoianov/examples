@@ -1,4 +1,4 @@
-package com.revimedia.testing.configuration.helpers;
+package com.revimedia.testing.configuration.dto;
 
 import org.apache.commons.lang3.RandomStringUtils;
 
