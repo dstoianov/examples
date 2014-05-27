@@ -116,7 +116,7 @@ public class StaticDataAutoMFS implements Cloneable {
     private String make;
     private String model;
 
-    private String[] insuranceCompanyList = {"21st century", "AAA", "AARP", "AFLAC", "Allstate",
+    private String[] insuranceCompanyList = {"Currently not insured", "21st century", "AAA", "AARP", "AFLAC", "Allstate",
             "American Family", "Amica", "Auto Club Insurance Company", "Country Insurance and Financial Services",
             "Esurance", "Farmers", "GEICO", "The Hartford", "Liberty Mutual", "Nationwide",
             "Progressive", "State Farm", "Travelers", "USAA", "Company not listed"};

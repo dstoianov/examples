@@ -68,7 +68,9 @@ public class DriverPage extends Page {
     }
 
     public DriverPage fillInTheRestFields(StaticDataAutoMFS staticData) {
-        selectByValue(ddInsuredSince, staticData.getInsuredSince());
+        if (!staticData.getInsuranceCompany().equalsIgnoreCase("Currently not insured")) {
+            selectByValue(ddInsuredSince, staticData.getInsuredSince());
+        }
         selectByValue(ddResidenceType, staticData.getResidenceType());
         selectByValue(ddMaritalStatus, staticData.getMaritalStatus());
         selectByValue(ddCreditRating, staticData.getCreditRating());

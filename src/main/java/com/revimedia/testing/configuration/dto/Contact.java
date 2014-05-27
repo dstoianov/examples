@@ -28,6 +28,9 @@ public class Contact {
     private String city; //WASHINGTON
     private String state; //DC
 
+    public Contact() {
+    }
+
     public Contact(String firstName, String lastName, String gender, String birthDate, String phoneNumber, String address, String emailAddress, String zipCode, String city, String state) {
         this.firstName = firstName;
         this.lastName = lastName;

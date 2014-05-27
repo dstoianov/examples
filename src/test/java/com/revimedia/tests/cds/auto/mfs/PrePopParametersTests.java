@@ -79,7 +79,7 @@ public class PrePopParametersTests extends BaseTest {
         assertThat(compareAndSavePage.getEmailValue(), equalToIgnoringCase(contact.getEmailAddress()));
     }
 
-/*    @Test(groups = {"prepop"}, dataProvider = "contactAndStaticDataAutoMFSBoundaryTesting", dataProviderClass = AutoDataProvider.class)
+    @Test(groups = {"prepop"}, dataProvider = "contactAndStaticDataAutoMFSBoundaryTesting", dataProviderClass = AutoDataProvider.class)
     public void DRAFT_testNamePositive(Contact contact, StaticDataAutoMFS staticData) throws Exception {
         // reload page with all pre pop parameters
         driver.get(PrePopParameters.generateURLForAutoMFSWithContactAndStatic(driver.getCurrentUrl(), contact, staticData));
@@ -92,7 +92,7 @@ public class PrePopParametersTests extends BaseTest {
         // verify InsuranceCompany is Displayed
         assertThat(driverPage.isZipCodeFieldDisplayed(), is(false));
 
-    }*/
+    }
 
     @Test(groups = {"submit", "vwo"}, dataProvider = "contactAndStaticDataAutoMFS", dataProviderClass = AutoDataProvider.class)
     public void shouldPresentInURLVisualWebsiteOptimizerData(Contact contact, StaticDataAutoMFS staticData) throws Exception {
