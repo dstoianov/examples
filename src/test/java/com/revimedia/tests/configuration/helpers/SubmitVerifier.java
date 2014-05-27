@@ -55,6 +55,6 @@ public class SubmitVerifier {
 
         assertThat(staticData.getYear(), is(vehicleType.getYear()));
         assertThat(staticData.getMake(), is(vehicleType.getMake()));
-        assertThat(staticData.getModel(), is(vehicleType.getModel()));
+        assertThat((staticData.getModel()).replaceAll(".", "-"), is(vehicleType.getModel()));
     }
 }
