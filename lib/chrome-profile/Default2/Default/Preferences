@@ -12,9 +12,9 @@
          "maximized": true,
          "right": 1310,
          "top": 0,
-         "work_area_bottom": 728,
+         "work_area_bottom": 1160,
          "work_area_left": 0,
-         "work_area_right": 1366,
+         "work_area_right": 1920,
          "work_area_top": 0
       }
    },
@@ -48,7 +48,7 @@
       },
       "autoupdate": {
          "last_check": "13044063742956430",
-         "next_check": "13045529754882115"
+         "next_check": "13045570979569482"
       },
       "chrome_url_overrides": {
          "bookmarks": [ "chrome-extension://eemcgdkfndhakfknompkggombfjjjeno/main.html" ]
@@ -61,7 +61,7 @@
          }
       },
       "known_disabled": [  ],
-      "last_chrome_version": "34.0.1847.137",
+      "last_chrome_version": "35.0.1916.114",
       "settings": {
          "aapnijgdinlhnhlmodcfapnahmbfebeb": {
             "active_permissions": {
@@ -84,7 +84,7 @@
 
             },
             "initial_keybindings_set": true,
-            "install_time": "13045528876965124",
+            "install_time": "13045569977942655",
             "location": 8,
             "manifest": {
                "background": {
@@ -98,7 +98,7 @@
                "version": "1"
             },
             "newAllowFileAccess": true,
-            "path": "C:\\Users\\Funker\\AppData\\Local\\Temp\\scoped_dir9236_3039\\internal",
+            "path": "C:\\Users\\stde\\AppData\\Local\\Temp\\scoped_dir8000_4516\\internal",
             "preferences": {
 
             },
@@ -106,7 +106,8 @@
 
             },
             "state": 1,
-            "was_installed_by_default": false
+            "was_installed_by_default": false,
+            "was_installed_by_oem": false
          },
          "ahfgeienlihckogmohjhadlkjgocpleb": {
             "active_bit": true,
@@ -320,7 +321,7 @@
 
             },
             "initial_keybindings_set": true,
-            "install_time": "13045528876957124",
+            "install_time": "13045569977935655",
             "location": 8,
             "manifest": {
                "background": {
@@ -344,7 +345,7 @@
                "version": "2.6"
             },
             "newAllowFileAccess": true,
-            "path": "D:\\git_tutorial\\github.com\\examples\\lib\\ga-debug-chrome\\2.6_0",
+            "path": "D:\\work\\automation\\github\\examples\\lib\\ga-debug-chrome\\2.6_0",
             "preferences": {
 
             },
@@ -352,7 +353,8 @@
 
             },
             "state": 1,
-            "was_installed_by_default": false
+            "was_installed_by_default": false,
+            "was_installed_by_oem": false
          },
          "mfehgcgbbipciphmccgaenjidiccnmng": {
             "active_permissions": {
@@ -753,7 +755,10 @@
       "exit_type": "Crashed",
       "exited_cleanly": true,
       "managed_user_id": "",
-      "name": "Первый пользователь"
+      "name": "Первый пользователь",
+      "per_host_zoom_levels": {
+
+      }
    },
    "session": {
       "restore_on_startup": 1,
