@@ -1,27 +1,27 @@
 package com.revimedia.testing.configuration.utils;
 
 import com.revimedia.testing.configuration.helpers.DataHelper;
-import org.testng.*;
+import org.testng.ITestContext;
+import org.testng.ITestListener;
+import org.testng.ITestResult;
+import org.testng.Reporter;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
-import java.io.IOException;
 import java.lang.reflect.Method;
 
-public class WebDriverScreenshotListener implements ITestListener, IInvokedMethodListener {
+public class WebDriverScreenshotListener implements ITestListener {//, IInvokedMethodListener {
 
     @Override
     public void onTestStart(ITestResult result) {
         // TODO Auto-generated method stub
-
     }
 
     @Override
     public void onTestSuccess(ITestResult result) {
         // TODO Auto-generated method stub
-
     }
 
     @Override
@@ -49,36 +49,24 @@ public class WebDriverScreenshotListener implements ITestListener, IInvokedMetho
         ImageIO.write(image, "png", outFile);
     }
 
-    private static void captureScreenshot2(File outFile) throws AWTException, IOException {
-        // capture the whole screen
-        BufferedImage screencapture = new Robot().createScreenCapture(new Rectangle(Toolkit.getDefaultToolkit().getScreenSize()));
-        // Save as PNG
-        ImageIO.write(screencapture, "png", outFile);
-    }
-
-
     @Override
     public void onTestSkipped(ITestResult result) {
         // TODO Auto-generated method stub
-
     }
 
     @Override
     public void onTestFailedButWithinSuccessPercentage(ITestResult result) {
         // TODO Auto-generated method stub
-
     }
 
     @Override
     public void onStart(ITestContext context) {
         // TODO Auto-generated method stub
-
     }
 
     @Override
     public void onFinish(ITestContext arg0) {
         // TODO Auto-generated method stub
-
     }
 
 
@@ -105,23 +93,23 @@ public class WebDriverScreenshotListener implements ITestListener, IInvokedMetho
         return method.getDeclaringClass().getCanonicalName() + "_" + method.getName();
     }
 
-    @Override
-    public void beforeInvocation(IInvokedMethod method, ITestResult result) {
-        Reporter.log("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
-        Reporter.log(method.getTestMethod().getDescription() + " - Test Finished.");
-        Reporter.log(method.getTestMethod().getMethodName() + " - Test Finished.");
-        //Reporter.log(getMethodFullName(method) + " - Test Finished.");
-        Reporter.log("Test result: " + getTestResult(result));
-        Reporter.log("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
-
-    }
-
-    @Override
-    public void afterInvocation(IInvokedMethod method, ITestResult result) {
-        Reporter.log("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
-        Reporter.log(method.getTestMethod().getMethodName() + " - Test Finished.");
-        Reporter.log("Test result: " + getTestResult(result));
-        Reporter.log("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
-
-    }
+//    @Override
+//    public void beforeInvocation(IInvokedMethod method, ITestResult result) {
+//        Reporter.log("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
+//        Reporter.log(method.getTestMethod().getDescription() + " - Test Finished.");
+//        Reporter.log(method.getTestMethod().getMethodName() + " - Test Finished.");
+//        //Reporter.log(getMethodFullName(method) + " - Test Finished.");
+//        Reporter.log("Test result: " + getTestResult(result));
+//        Reporter.log("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
+//
+//    }
+//
+//    @Override
+//    public void afterInvocation(IInvokedMethod method, ITestResult result) {
+//        Reporter.log("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
+//        Reporter.log(method.getTestMethod().getMethodName() + " - Test Finished.");
+//        Reporter.log("Test result: " + getTestResult(result));
+//        Reporter.log("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
+//
+//    }
 }

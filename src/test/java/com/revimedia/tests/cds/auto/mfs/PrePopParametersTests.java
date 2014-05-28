@@ -85,7 +85,6 @@ public class PrePopParametersTests extends BaseTest {
         driver.get(PrePopParameters.generateURLForAutoMFSWithContactAndStatic(this.url, contact, staticData));
         driverPage = new DriverPage(driver);
 
-
         assertThat(driverPage.getPageText(), containsString(contact.getCity()));
         assertThat(driverPage.getInsuranceCompanyValue(), is(staticData.getInsuranceCompany()));
         assertThat(driverPage.isZipCodeFieldDisplayed(), is(false));
