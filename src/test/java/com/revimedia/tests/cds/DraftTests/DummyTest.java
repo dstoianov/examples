@@ -12,6 +12,7 @@ import com.revimedia.tests.configuration.dataproviders.AutoDataProvider;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeDriverService;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.logging.LogEntries;
@@ -46,6 +47,12 @@ public class DummyTest {
 
         File ga_debug = new File("lib/ga-debug-chrome/2.6_0");
         File chromeProfile = new File("lib/chrome-profile/Default2");
+
+        ChromeDriverService service = new ChromeDriverService.Builder()
+                .usingDriverExecutable(new File("src/test/resources/drivers/chromedriver.exe"))
+                .usingAnyFreePort()
+                .withLogFile(new File("lib/chrome-profile/logs/log.log"))
+                .build();
 
         //http://peter.sh/experiments/chromium-command-line-switches/
         ChromeOptions options = new ChromeOptions();
@@ -82,7 +89,8 @@ public class DummyTest {
         //driver = new FirefoxDriver(firefoxProfile);
         //--------------------
 
-        driver = new ChromeDriver(capabilities);
+        driver = new ChromeDriver(service, capabilities);
+        //driver = new ChromeDriver();
 
         //driver = new ChromeDriver();
 //        driver = new FirefoxDriver();
@@ -112,16 +120,12 @@ public class DummyTest {
         Thread.sleep(2000);
         robot.keyPress(KeyEvent.VK_F5);
 
-
         driver.findElement(By.xpath(".//*[@id='bq-form-here']/div/div[2]/div/div/div[1]/label/input")).sendKeys("99999");
-
 
         DriverPage driverPage = new DriverPage(driver);
         VehiclePage vehiclePage = driverPage.fillInAllFields(contact, staticData).clickOnContinue();
         CompareAndSavePage compareAndSavePage = vehiclePage.fillInAllFields(staticData).clickOnContinue();
         compareAndSavePage.fillInAllFields(contact, staticData);
-
-
     }
 
     public void tryingTornOn() throws AWTException {
