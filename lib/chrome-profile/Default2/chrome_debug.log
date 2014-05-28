@@ -1,53 +1,44 @@
-[7856:6344:0526/122617:ERROR:component_loader.cc(138)] Failed to parse extension manifest.
-[7856:312:0526/122617:WARNING:leveldb_value_store.cc(55)] IO error: .../MANIFEST-000051: No such file or directory (ChromeMethodErrno: 7::NewSequentialFile::2)
-[7856:312:0526/122620:WARNING:leveldb_value_store.cc(55)] IO error: .../MANIFEST-000067: No such file or directory (ChromeMethodErrno: 7::NewSequentialFile::2)
-[7856:312:0526/122620:WARNING:value_store_frontend.cc(46)] Reading eemcgdkfndhakfknompkggombfjjjeno.alarms from D:\work\automation\github\examples\lib\chrome-profile\Default2\Default\Extension State failed: IO error: .../MANIFEST-000067: No such file or directory (ChromeMethodErrno: 7::NewSequentialFile::2)
-[7856:312:0526/122620:WARNING:value_store_frontend.cc(46)] Reading mfehgcgbbipciphmccgaenjidiccnmng.alarms from D:\work\automation\github\examples\lib\chrome-profile\Default2\Default\Extension State failed: IO error: .../MANIFEST-000067: No such file or directory (ChromeMethodErrno: 7::NewSequentialFile::2)
-[7856:312:0526/122620:WARNING:value_store_frontend.cc(46)] Reading ahfgeienlihckogmohjhadlkjgocpleb.alarms from D:\work\automation\github\examples\lib\chrome-profile\Default2\Default\Extension State failed: IO error: .../MANIFEST-000067: No such file or directory (ChromeMethodErrno: 7::NewSequentialFile::2)
-[7856:312:0526/122620:WARNING:value_store_frontend.cc(46)] Reading mgndgikekgjfcpckkfioiadnlibdjbkf.alarms from D:\work\automation\github\examples\lib\chrome-profile\Default2\Default\Extension State failed: IO error: .../MANIFEST-000067: No such file or directory (ChromeMethodErrno: 7::NewSequentialFile::2)
-[7856:312:0526/122620:WARNING:value_store_frontend.cc(46)] Reading nkeimhogjdpnpccoofpliimaahmaaome.alarms from D:\work\automation\github\examples\lib\chrome-profile\Default2\Default\Extension State failed: IO error: .../MANIFEST-000067: No such file or directory (ChromeMethodErrno: 7::NewSequentialFile::2)
-[7856:312:0526/122620:WARNING:value_store_frontend.cc(46)] Reading nkeimhogjdpnpccoofpliimaahmaaome.context_menus from D:\work\automation\github\examples\lib\chrome-profile\Default2\Default\Extension State failed: IO error: .../MANIFEST-000067: No such file or directory (ChromeMethodErrno: 7::NewSequentialFile::2)
-[7856:312:0526/122620:WARNING:value_store_frontend.cc(46)] Reading ennkphjdgehloodpbhlhldgbnhmacadg.alarms from D:\work\automation\github\examples\lib\chrome-profile\Default2\Default\Extension State failed: IO error: .../MANIFEST-000067: No such file or directory (ChromeMethodErrno: 7::NewSequentialFile::2)
-[7856:312:0526/122620:WARNING:value_store_frontend.cc(46)] Reading ennkphjdgehloodpbhlhldgbnhmacadg.context_menus from D:\work\automation\github\examples\lib\chrome-profile\Default2\Default\Extension State failed: IO error: .../MANIFEST-000067: No such file or directory (ChromeMethodErrno: 7::NewSequentialFile::2)
-[7856:312:0526/122620:WARNING:value_store_frontend.cc(46)] Reading gfdkimpbcpahaombhbimeihdjnejgicl.alarms from D:\work\automation\github\examples\lib\chrome-profile\Default2\Default\Extension State failed: IO error: .../MANIFEST-000067: No such file or directory (ChromeMethodErrno: 7::NewSequentialFile::2)
-[7856:312:0526/122620:WARNING:value_store_frontend.cc(46)] Reading gfdkimpbcpahaombhbimeihdjnejgicl.context_menus from D:\work\automation\github\examples\lib\chrome-profile\Default2\Default\Extension State failed: IO error: .../MANIFEST-000067: No such file or directory (ChromeMethodErrno: 7::NewSequentialFile::2)
-[7856:312:0526/122620:WARNING:value_store_frontend.cc(46)] Reading neajdppkdcdipfabeoofebfddakdcjhd.alarms from D:\work\automation\github\examples\lib\chrome-profile\Default2\Default\Extension State failed: IO error: .../MANIFEST-000067: No such file or directory (ChromeMethodErrno: 7::NewSequentialFile::2)
-[7856:312:0526/122620:WARNING:value_store_frontend.cc(46)] Reading neajdppkdcdipfabeoofebfddakdcjhd.context_menus from D:\work\automation\github\examples\lib\chrome-profile\Default2\Default\Extension State failed: IO error: .../MANIFEST-000067: No such file or directory (ChromeMethodErrno: 7::NewSequentialFile::2)
-[7856:312:0526/122620:WARNING:value_store_frontend.cc(46)] Reading jnkmfdileelhofjcijamephohjechhna.alarms from D:\work\automation\github\examples\lib\chrome-profile\Default2\Default\Extension State failed: IO error: .../MANIFEST-000067: No such file or directory (ChromeMethodErrno: 7::NewSequentialFile::2)
-[7856:312:0526/122620:WARNING:value_store_frontend.cc(46)] Reading jnkmfdileelhofjcijamephohjechhna.browser_action from D:\work\automation\github\examples\lib\chrome-profile\Default2\Default\Extension State failed: IO error: .../MANIFEST-000067: No such file or directory (ChromeMethodErrno: 7::NewSequentialFile::2)
-[7856:312:0526/122620:WARNING:value_store_frontend.cc(46)] Reading aapnijgdinlhnhlmodcfapnahmbfebeb.alarms from D:\work\automation\github\examples\lib\chrome-profile\Default2\Default\Extension State failed: IO error: .../MANIFEST-000067: No such file or directory (ChromeMethodErrno: 7::NewSequentialFile::2)
-[7856:3252:0526/122620:WARNING:backend_impl.cc(1783)] Destroying invalid entry.
-[7856:3252:0526/122620:WARNING:backend_impl.cc(1783)] Destroying invalid entry.
-[7856:6344:0526/122622:ERROR:navigation_entry_screenshot_manager.cc(167)] Invalid entry with unique id: 4
-[7856:6344:0526/122626:ERROR:navigation_entry_screenshot_manager.cc(167)] Invalid entry with unique id: 7
-[7856:3252:0526/122628:ERROR:backend_impl.cc(962)] Critical error found -8
-[7856:3252:0526/122628:WARNING:storage_block-inl.h(128)] Failed data load.
-[7856:3252:0526/122628:WARNING:storage_block-inl.h(128)] Failed data load.
-[7856:3252:0526/122628:ERROR:entry_impl.cc(1021)] No file for a101002e
-[7856:3252:0526/122628:WARNING:storage_block-inl.h(128)] Failed data load.
-[7856:3252:0526/122628:ERROR:entry_impl.cc(946)] Failed to save user data
-[7856:3252:0526/122628:ERROR:entry_impl.cc(946)] Failed to save user data
-[7856:3252:0526/122628:WARNING:storage_block-inl.h(128)] Failed data load.
-[7856:3252:0526/122628:WARNING:storage_block-inl.h(128)] Failed data load.
-[7856:3252:0526/122628:WARNING:storage_block-inl.h(128)] Failed data load.
-[7856:3252:0526/122628:WARNING:storage_block-inl.h(128)] Failed data load.
-[7856:3252:0526/122628:WARNING:storage_block-inl.h(128)] Failed data load.
-[7856:3252:0526/122628:WARNING:storage_block-inl.h(128)] Failed data load.
-[7856:6344:0526/122629:ERROR:navigation_entry_screenshot_manager.cc(167)] Invalid entry with unique id: 9
-[7856:6344:0526/122630:INFO:CONSOLE(24)] "_gaq.push processing "_setDomainName" for args: "[bestquotes.com]": ", source: http://www.google-analytics.com/u/ga_debug.js (24)
-[7856:6344:0526/122630:INFO:CONSOLE(24)] "_gaq.push processing "_setAllowLinker" for args: "[true]": ", source: http://www.google-analytics.com/u/ga_debug.js (24)
-[7856:6344:0526/122630:INFO:CONSOLE(24)] "_gaq.push processing "_setAccount" for args: "[UA-9139348-18]": ", source: http://www.google-analytics.com/u/ga_debug.js (24)
-[7856:6344:0526/122630:INFO:CONSOLE(24)] "_gaq.push processing "_trackPageview" for args: "[cds-auto-mfs]": ", source: http://www.google-analytics.com/u/ga_debug.js (24)
-[7856:6344:0526/122630:INFO:CONSOLE(24)] "Track Pageview", source: http://www.google-analytics.com/u/ga_debug.js (24)
-[7856:6344:0526/122630:INFO:CONSOLE(24)] "_gaq.push processing "_setCampSourceKey" for args: "[1]": ", source: http://www.google-analytics.com/u/ga_debug.js (24)
-[7856:6344:0526/122630:INFO:CONSOLE(24)] "_gaq.push processing "_setCampTermKey" for args: "[1]": ", source: http://www.google-analytics.com/u/ga_debug.js (24)
-[7856:6344:0526/122630:INFO:CONSOLE(24)] "_gaq.push processing "_setCampMediumKey" for args: "[1]": ", source: http://www.google-analytics.com/u/ga_debug.js (24)
-[7856:6344:0526/122632:INFO:CONSOLE(24)] "_gaq.push processing "_setDomainName" for args: "[bestquotes.com]": ", source: http://www.google-analytics.com/u/ga_debug.js (24)
-[7856:6344:0526/122632:INFO:CONSOLE(24)] "_gaq.push processing "_setAllowLinker" for args: "[true]": ", source: http://www.google-analytics.com/u/ga_debug.js (24)
-[7856:6344:0526/122632:INFO:CONSOLE(24)] "_gaq.push processing "_setAccount" for args: "[UA-9139348-18]": ", source: http://www.google-analytics.com/u/ga_debug.js (24)
-[7856:6344:0526/122632:INFO:CONSOLE(24)] "_gaq.push processing "_trackPageview" for args: "[cds-auto-mfs]": ", source: http://www.google-analytics.com/u/ga_debug.js (24)
-[7856:6344:0526/122632:INFO:CONSOLE(24)] "Track Pageview", source: http://www.google-analytics.com/u/ga_debug.js (24)
-[7856:6344:0526/122632:INFO:CONSOLE(24)] "_gaq.push processing "_setCampSourceKey" for args: "[1]": ", source: http://www.google-analytics.com/u/ga_debug.js (24)
-[7856:6344:0526/122632:INFO:CONSOLE(24)] "_gaq.push processing "_setCampTermKey" for args: "[1]": ", source: http://www.google-analytics.com/u/ga_debug.js (24)
-[7856:6344:0526/122632:INFO:CONSOLE(24)] "_gaq.push processing "_setCampMediumKey" for args: "[1]": ", source: http://www.google-analytics.com/u/ga_debug.js (24)
-[7856:4232:0526/122721:WARNING:session_storage_database.cc(343)] Failed to open leveldb in D:\work\automation\github\examples\lib\chrome-profile\Default2\Default\Session Storage, error: IO error: D:\work\automation\github\examples\lib\chrome-profile\Default2\Default\Session Storage/MANIFEST-000039: Invalid argument (ChromeMethodErrno: 7::NewSequentialFile::22)
+[3860:7824:0528/002220:WARNING:leveldb_value_store.cc(55)] IO error: .../MANIFEST-000051: Invalid argument (ChromeMethodErrno: 7::NewSequentialFile::22)
+[3860:4272:0528/002220:ERROR:component_loader.cc(138)] Failed to parse extension manifest.
+[3860:7824:0528/002221:WARNING:leveldb_value_store.cc(55)] IO error: .../MANIFEST-000067: Invalid argument (ChromeMethodErrno: 7::NewSequentialFile::22)
+[3860:7824:0528/002221:WARNING:value_store_frontend.cc(46)] Reading eemcgdkfndhakfknompkggombfjjjeno.alarms from D:\git_tutorial\github.com\examples\lib\chrome-profile\Default2\Default\Extension State failed: IO error: .../MANIFEST-000067: Invalid argument (ChromeMethodErrno: 7::NewSequentialFile::22)
+[3860:7824:0528/002221:WARNING:value_store_frontend.cc(46)] Reading mfehgcgbbipciphmccgaenjidiccnmng.alarms from D:\git_tutorial\github.com\examples\lib\chrome-profile\Default2\Default\Extension State failed: IO error: .../MANIFEST-000067: Invalid argument (ChromeMethodErrno: 7::NewSequentialFile::22)
+[3860:7824:0528/002221:WARNING:value_store_frontend.cc(46)] Reading ahfgeienlihckogmohjhadlkjgocpleb.alarms from D:\git_tutorial\github.com\examples\lib\chrome-profile\Default2\Default\Extension State failed: IO error: .../MANIFEST-000067: Invalid argument (ChromeMethodErrno: 7::NewSequentialFile::22)
+[3860:7824:0528/002221:WARNING:value_store_frontend.cc(46)] Reading mgndgikekgjfcpckkfioiadnlibdjbkf.alarms from D:\git_tutorial\github.com\examples\lib\chrome-profile\Default2\Default\Extension State failed: IO error: .../MANIFEST-000067: Invalid argument (ChromeMethodErrno: 7::NewSequentialFile::22)
+[3860:7824:0528/002221:WARNING:value_store_frontend.cc(46)] Reading nkeimhogjdpnpccoofpliimaahmaaome.alarms from D:\git_tutorial\github.com\examples\lib\chrome-profile\Default2\Default\Extension State failed: IO error: .../MANIFEST-000067: Invalid argument (ChromeMethodErrno: 7::NewSequentialFile::22)
+[3860:7824:0528/002221:WARNING:value_store_frontend.cc(46)] Reading nkeimhogjdpnpccoofpliimaahmaaome.context_menus from D:\git_tutorial\github.com\examples\lib\chrome-profile\Default2\Default\Extension State failed: IO error: .../MANIFEST-000067: Invalid argument (ChromeMethodErrno: 7::NewSequentialFile::22)
+[3860:7824:0528/002221:WARNING:value_store_frontend.cc(46)] Reading ennkphjdgehloodpbhlhldgbnhmacadg.alarms from D:\git_tutorial\github.com\examples\lib\chrome-profile\Default2\Default\Extension State failed: IO error: .../MANIFEST-000067: Invalid argument (ChromeMethodErrno: 7::NewSequentialFile::22)
+[3860:7824:0528/002221:WARNING:value_store_frontend.cc(46)] Reading ennkphjdgehloodpbhlhldgbnhmacadg.context_menus from D:\git_tutorial\github.com\examples\lib\chrome-profile\Default2\Default\Extension State failed: IO error: .../MANIFEST-000067: Invalid argument (ChromeMethodErrno: 7::NewSequentialFile::22)
+[3860:7824:0528/002221:WARNING:value_store_frontend.cc(46)] Reading gfdkimpbcpahaombhbimeihdjnejgicl.alarms from D:\git_tutorial\github.com\examples\lib\chrome-profile\Default2\Default\Extension State failed: IO error: .../MANIFEST-000067: Invalid argument (ChromeMethodErrno: 7::NewSequentialFile::22)
+[3860:7824:0528/002221:WARNING:value_store_frontend.cc(46)] Reading gfdkimpbcpahaombhbimeihdjnejgicl.context_menus from D:\git_tutorial\github.com\examples\lib\chrome-profile\Default2\Default\Extension State failed: IO error: .../MANIFEST-000067: Invalid argument (ChromeMethodErrno: 7::NewSequentialFile::22)
+[3860:7824:0528/002221:WARNING:value_store_frontend.cc(46)] Reading neajdppkdcdipfabeoofebfddakdcjhd.alarms from D:\git_tutorial\github.com\examples\lib\chrome-profile\Default2\Default\Extension State failed: IO error: .../MANIFEST-000067: Invalid argument (ChromeMethodErrno: 7::NewSequentialFile::22)
+[3860:7824:0528/002221:WARNING:value_store_frontend.cc(46)] Reading neajdppkdcdipfabeoofebfddakdcjhd.context_menus from D:\git_tutorial\github.com\examples\lib\chrome-profile\Default2\Default\Extension State failed: IO error: .../MANIFEST-000067: Invalid argument (ChromeMethodErrno: 7::NewSequentialFile::22)
+[3860:7824:0528/002221:WARNING:value_store_frontend.cc(46)] Reading jnkmfdileelhofjcijamephohjechhna.alarms from D:\git_tutorial\github.com\examples\lib\chrome-profile\Default2\Default\Extension State failed: IO error: .../MANIFEST-000067: Invalid argument (ChromeMethodErrno: 7::NewSequentialFile::22)
+[3860:7824:0528/002221:WARNING:value_store_frontend.cc(46)] Reading jnkmfdileelhofjcijamephohjechhna.browser_action from D:\git_tutorial\github.com\examples\lib\chrome-profile\Default2\Default\Extension State failed: IO error: .../MANIFEST-000067: Invalid argument (ChromeMethodErrno: 7::NewSequentialFile::22)
+[3860:7824:0528/002221:WARNING:value_store_frontend.cc(46)] Reading aapnijgdinlhnhlmodcfapnahmbfebeb.alarms from D:\git_tutorial\github.com\examples\lib\chrome-profile\Default2\Default\Extension State failed: IO error: .../MANIFEST-000067: Invalid argument (ChromeMethodErrno: 7::NewSequentialFile::22)
+[3860:4272:0528/002223:ERROR:navigation_entry_screenshot_manager.cc(167)] Invalid entry with unique id: 4
+[3860:4272:0528/002227:INFO:CONSOLE(24)] "_gaq.push processing "_setDomainName" for args: "[bestquotes.com]": ", source: http://www.google-analytics.com/u/ga_debug.js (24)
+[3860:4272:0528/002227:INFO:CONSOLE(24)] "_gaq.push processing "_setAllowLinker" for args: "[true]": ", source: http://www.google-analytics.com/u/ga_debug.js (24)
+[3860:4272:0528/002227:INFO:CONSOLE(24)] "_gaq.push processing "_setAccount" for args: "[UA-9139348-18]": ", source: http://www.google-analytics.com/u/ga_debug.js (24)
+[3860:4272:0528/002227:INFO:CONSOLE(24)] "_gaq.push processing "_trackPageview" for args: "[cds-auto-mfs]": ", source: http://www.google-analytics.com/u/ga_debug.js (24)
+[3860:4272:0528/002227:INFO:CONSOLE(24)] "Track Pageview", source: http://www.google-analytics.com/u/ga_debug.js (24)
+[3860:4272:0528/002227:INFO:CONSOLE(24)] "_gaq.push processing "_setCampSourceKey" for args: "[1]": ", source: http://www.google-analytics.com/u/ga_debug.js (24)
+[3860:4272:0528/002227:INFO:CONSOLE(24)] "_gaq.push processing "_setCampTermKey" for args: "[1]": ", source: http://www.google-analytics.com/u/ga_debug.js (24)
+[3860:4272:0528/002227:INFO:CONSOLE(24)] "_gaq.push processing "_setCampMediumKey" for args: "[1]": ", source: http://www.google-analytics.com/u/ga_debug.js (24)
+[3860:4272:0528/002229:ERROR:navigation_entry_screenshot_manager.cc(167)] Invalid entry with unique id: 9
+[3860:4272:0528/002230:INFO:CONSOLE(24)] "_gaq.push processing "_setDomainName" for args: "[bestquotes.com]": ", source: http://www.google-analytics.com/u/ga_debug.js (24)
+[3860:4272:0528/002230:INFO:CONSOLE(24)] "_gaq.push processing "_setAllowLinker" for args: "[true]": ", source: http://www.google-analytics.com/u/ga_debug.js (24)
+[3860:4272:0528/002230:INFO:CONSOLE(24)] "_gaq.push processing "_setAccount" for args: "[UA-9139348-18]": ", source: http://www.google-analytics.com/u/ga_debug.js (24)
+[3860:4272:0528/002230:INFO:CONSOLE(24)] "_gaq.push processing "_trackPageview" for args: "[cds-auto-mfs]": ", source: http://www.google-analytics.com/u/ga_debug.js (24)
+[3860:4272:0528/002230:INFO:CONSOLE(24)] "Track Pageview", source: http://www.google-analytics.com/u/ga_debug.js (24)
+[3860:4272:0528/002230:INFO:CONSOLE(24)] "_gaq.push processing "_setCampSourceKey" for args: "[1]": ", source: http://www.google-analytics.com/u/ga_debug.js (24)
+[3860:4272:0528/002230:INFO:CONSOLE(24)] "_gaq.push processing "_setCampTermKey" for args: "[1]": ", source: http://www.google-analytics.com/u/ga_debug.js (24)
+[3860:4272:0528/002230:INFO:CONSOLE(24)] "_gaq.push processing "_setCampMediumKey" for args: "[1]": ", source: http://www.google-analytics.com/u/ga_debug.js (24)
+[3860:4272:0528/002233:INFO:CONSOLE(24)] "_gaq.push processing "_setDomainName" for args: "[bestquotes.com]": ", source: http://www.google-analytics.com/u/ga_debug.js (24)
+[3860:4272:0528/002233:INFO:CONSOLE(24)] "_gaq.push processing "_setAllowLinker" for args: "[true]": ", source: http://www.google-analytics.com/u/ga_debug.js (24)
+[3860:4272:0528/002233:INFO:CONSOLE(24)] "_gaq.push processing "_setAccount" for args: "[UA-9139348-18]": ", source: http://www.google-analytics.com/u/ga_debug.js (24)
+[3860:4272:0528/002233:INFO:CONSOLE(24)] "_gaq.push processing "_trackPageview" for args: "[cds-auto-mfs]": ", source: http://www.google-analytics.com/u/ga_debug.js (24)
+[3860:4272:0528/002233:INFO:CONSOLE(24)] "Track Pageview", source: http://www.google-analytics.com/u/ga_debug.js (24)
+[3860:4272:0528/002233:INFO:CONSOLE(24)] "_gaq.push processing "_setCampSourceKey" for args: "[1]": ", source: http://www.google-analytics.com/u/ga_debug.js (24)
+[3860:4272:0528/002233:INFO:CONSOLE(24)] "_gaq.push processing "_setCampTermKey" for args: "[1]": ", source: http://www.google-analytics.com/u/ga_debug.js (24)
+[3860:4272:0528/002233:INFO:CONSOLE(24)] "_gaq.push processing "_setCampMediumKey" for args: "[1]": ", source: http://www.google-analytics.com/u/ga_debug.js (24)

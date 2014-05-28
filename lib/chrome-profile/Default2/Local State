@@ -1,28 +1,28 @@
 {
    "app_list": {
       "app_launch_count": 0,
-      "last_app_launch_ping": "13045536000000000",
-      "last_launch_ping": "13045536000000000",
+      "last_app_launch_ping": "13045622400000000",
+      "last_launch_ping": "13045622400000000",
       "launch_count": 0
    },
    "hardware_acceleration_mode_previous": true,
-   "http_original_content_length": "43970462",
-   "http_received_content_length": "43970462",
+   "http_original_content_length": "44682349",
+   "http_received_content_length": "44682349",
    "local_state": {
       "multiple_profile_prefs_version": 7
    },
    "policy": {
-      "last_statistics_update": "13045528876832115"
+      "last_statistics_update": "13045690200396752"
    },
    "profile": {
       "info_cache": {
          "Default": {
-            "active_time": 1401096377.915482,
+            "active_time": 1401225740.317024,
             "avatar_icon": "chrome://theme/IDR_PROFILE_AVATAR_0",
             "background_apps": false,
             "is_ephemeral": false,
             "is_omitted_from_profile_list": false,
-            "is_using_default_name": false,
+            "is_using_default_name": true,
             "managed_user_id": "",
             "name": "Первый пользователь",
             "user_name": ""
@@ -43,13 +43,13 @@
             "extensions": {
                "known_disabled": "D4F63877F931B95BF855275D38204CB0D2BC3C604C6D75DE18F90B7C8B045329",
                "settings": {
-                  "aapnijgdinlhnhlmodcfapnahmbfebeb": "2F9CF5719C9BB690F63C58BA3FDD68757C013A63C7C7082079D60386D45373D5",
+                  "aapnijgdinlhnhlmodcfapnahmbfebeb": "5A5AE7772D8EF068D36E858F6A9852525DBFED3CC1A9FC213E0B474B79C0FDD8",
                   "ahfgeienlihckogmohjhadlkjgocpleb": "41F0583ABBCEB69BB68019F9E8C6083DBB6D73790B312D295A5234FD4FF732D2",
                   "bepbmhgboaologfdajaanbcjmnhjmhfn": "87AE62DA2A30B7B8040E377E4ADE0AB3CFED11D6AC32D1A9420C3BE91F638339",
                   "eemcgdkfndhakfknompkggombfjjjeno": "32E422D38AF5B7229C4F526F0D082733772E516321DAB3B7CDEC72D326763773",
                   "ennkphjdgehloodpbhlhldgbnhmacadg": "EBAC26F820BFE8AF185C1F84140C76EBAD33DEE94042CF2FC8007F65096680C0",
                   "gfdkimpbcpahaombhbimeihdjnejgicl": "1B15C36BE7633BEC0336138CCCD200979E8C3E67C54BF3D14AF87CF4873ABE8F",
-                  "jnkmfdileelhofjcijamephohjechhna": "8C42C232B5CA716C6BDF2B21704F3E0C12A6EB734F7AE690CC8E2D1152503943",
+                  "jnkmfdileelhofjcijamephohjechhna": "EFA132128BCEEFC13EBDDABA8273326521173903CEA7876154DF283B5B4AB839",
                   "mfehgcgbbipciphmccgaenjidiccnmng": "68DE396709593124318073992BE272A7FC6476EDFBE455A473AD09FD3A413225",
                   "mgndgikekgjfcpckkfioiadnlibdjbkf": "6A20AE545DC9EFC2AE89F779662972EA1CFD0685442406CB9E122DD37D4868E3",
                   "neajdppkdcdipfabeoofebfddakdcjhd": "E53608EAE98446EAB4EED25A9F64567406D1BEFA23FBDA24D01DE6233CCE097C",
@@ -116,7 +116,7 @@
             }
          },
          "hash_of_hashes": {
-            "D:\\git_tutorial\\github.com\\examples\\lib\\chrome-profile\\Default2\\Default": "C884494471733FE5EC5F49B8805A964A91C11F6B23C27E0437EA196752F57E01",
+            "D:\\git_tutorial\\github.com\\examples\\lib\\chrome-profile\\Default2\\Default": "C2CDDA344182C87B1AB90A75493C18CA846D4149EAC2C63308F35CAB46D413F2",
             "D:\\work\\automation\\github\\examples\\lib\\chrome-profile\\Default2\\Default": "010EE9D31F8A2597DC53B1EBB0F65D4BA76D83EF380E91AEB0039D3F720E582C"
          },
          "store_versions": {
@@ -132,27 +132,28 @@
    },
    "uninstall_metrics": {
       "installation_date2": "1399587931",
-      "launch_count": "56",
-      "page_load_count": "524"
+      "launch_count": "58",
+      "page_load_count": "541"
    },
    "user_experience_metrics": {
       "client_id2": "20EA54B2-80B2-4216-BB89-5018C97DB0E7",
       "client_id_timestamp": "1399587931",
       "low_entropy_source2": 1530,
-      "session_id": 55,
+      "session_id": 57,
       "stability": {
          "breakpad_registration_fail": 0,
          "breakpad_registration_ok": 0,
-         "crash_count": 1,
-         "debugger_not_present": 2,
+         "crash_count": 3,
+         "debugger_not_present": 4,
          "debugger_present": 0,
          "execution_phase": 500,
          "exited_cleanly": false,
          "incomplete_session_end_count": 0,
-         "last_timestamp_sec": "0",
-         "launch_count": 2,
-         "launch_time_sec": "1401096377",
-         "page_load_count": 24,
+         "last_timestamp_sec": "1401216900",
+         "launch_count": 4,
+         "launch_time_sec": "1401225740",
+         "page_load_count": 41,
+         "plugin_stats2": [  ],
          "renderer_crash_count": 0,
          "renderer_hang_count": 0,
          "session_end_completed": true,
