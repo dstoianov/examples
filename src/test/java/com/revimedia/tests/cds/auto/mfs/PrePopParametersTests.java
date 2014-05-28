@@ -54,7 +54,7 @@ public class PrePopParametersTests extends BaseTest {
     @Test(groups = {"prepop"}, dataProvider = "contactAndStaticDataAutoMFS", dataProviderClass = AutoDataProvider.class)
     public void shouldBePrefilledAndShownOnUIContactAndOtherParameters(Contact contact, StaticDataAutoMFS staticData) throws Exception {
         // reload page with all pre pop parameters
-        driver.get(PrePopParameters.generateURLForAutoMFSWithContactAndStatic(driver.getCurrentUrl(), contact, staticData));
+        driver.get(PrePopParameters.generateURLForAutoMFSWithContactAndStatic(this.url, contact, staticData));
         driverPage = new DriverPage(driver);
         // verify city is correct
         assertThat(driverPage.getPageText(), containsString(contact.getCity()));
