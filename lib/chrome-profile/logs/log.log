@@ -1,0 +1,52 @@
+[0.271][INFO]: COMMAND InitSession {
+   "desiredCapabilities": {
+      "chromeOptions": {
+         "args": [ "--enable-logging", "--start-maximized", "--disable-translate", "--enable-extensions", "--disable-extensions-file-access-check", "user-data-dir=D:\\git_tutorial\\github.com\\examples\\lib\\chrome-profile\\Default2", "load-extension=D:\\git_tutorial\\github.com\\examples\\lib\\ga-debug-chrome\\2.6_0" ],
+         "extensions": [  ]
+      }
+   }
+}
+[0.285][INFO]: Launching chrome: "C:\Program Files (x86)\Google\Chrome\Application\chrome.exe" --disable-background-networking --disable-client-side-phishing-detection --disable-component-update --disable-default-apps --disable-extensions-file-access-check --disable-hang-monitor --disable-prompt-on-repost --disable-sync --disable-translate --disable-web-resources --enable-extensions --enable-logging --ignore-certificate-errors --load-extension="D:\git_tutorial\github.com\examples\lib\ga-debug-chrome\2.6_0,C:\Users\Funker\AppData\Local\Temp\scoped_dir8284_22165\internal" --logging-level=1 --metrics-recording-only --no-first-run --password-store=basic --remote-debugging-port=12154 --safebrowsing-disable-auto-update --safebrowsing-disable-download-protection --start-maximized --use-mock-keychain --user-data-dir="D:\git_tutorial\github.com\examples\lib\chrome-profile\Default2"
+[0.927][INFO]: RESPONSE InitSession {
+   "acceptSslCerts": true,
+   "applicationCacheEnabled": false,
+   "browserConnectionEnabled": false,
+   "browserName": "chrome",
+   "chrome": {
+      "userDataDir": "D:\\git_tutorial\\github.com\\examples\\lib\\chrome-profile\\Default2"
+   },
+   "cssSelectorsEnabled": true,
+   "databaseEnabled": false,
+   "handlesAlerts": true,
+   "javascriptEnabled": true,
+   "locationContextEnabled": true,
+   "nativeEvents": true,
+   "platform": "Windows NT",
+   "rotatable": false,
+   "takesHeapSnapshot": true,
+   "takesScreenshot": true,
+   "version": "35.0.1916.114",
+   "webStorageEnabled": true
+}
+[1.000][INFO]: COMMAND SetImplicitWait {
+   "ms": 10000
+}
+[1.000][INFO]: RESPONSE SetImplicitWait
+[1.032][INFO]: COMMAND Navigate {
+   "url": "http://development.stagingrevi.com/auto/mfs"
+}
+[1.236][INFO]: Waiting for pending navigations...
+[1.236][INFO]: Done waiting for pending navigations
+[1.550][INFO]: Waiting for pending navigations...
+[3.404][INFO]: Done waiting for pending navigations
+[3.404][INFO]: RESPONSE Navigate
+[17.742][INFO]: COMMAND FindElement {
+   "using": "xpath",
+   "value": ".//*[@id='bq-form-here']/div/div[2]/div/div/div[1]/label/input"
+}
+[17.754][INFO]: RESPONSE FindElement unknown error: Runtime.evaluate threw exception: TypeError: Cannot read property 'click' of null
+  (Session info: chrome=35.0.1916.114)
+[17.843][INFO]: COMMAND Quit {
+
+}
+[17.861][INFO]: RESPONSE Quit

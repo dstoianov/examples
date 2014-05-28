@@ -1,0 +1,3 @@
+[8352:5680:0525/231041:INFO:CONSOLE(0)] "event.returnValue is deprecated. Please use the standard event.preventDefault() instead.", source:  (0)
+[8352:8148:0525/231042:ERROR:video_capture_device_win.cc(287)] NOT IMPLEMENTED
+[8352:8148:0525/231042:ERROR:video_capture_device_win.cc(287)] NOT IMPLEMENTED
