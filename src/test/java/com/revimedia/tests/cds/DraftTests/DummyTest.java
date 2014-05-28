@@ -11,6 +11,7 @@ import com.revimedia.testing.configuration.dto.Contact;
 import com.revimedia.tests.configuration.dataproviders.AutoDataProvider;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeDriverService;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -19,6 +20,9 @@ import org.openqa.selenium.logging.LogEntries;
 import org.openqa.selenium.logging.LogEntry;
 import org.openqa.selenium.logging.LogType;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.FindBys;
+import org.openqa.selenium.support.pagefactory.ByChained;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -163,21 +167,20 @@ public class DummyTest {
         }
     }
 
+    @FindBys({@FindBy(tagName = "a"), @FindBy(tagName = "img")})
+    List<WebElement> images;
 
     @Test
     public void testListToURL() throws Exception {
 
-        List<String> autoMfs = new ArrayList<String>();
-        autoMfs.add("firstname");
-        autoMfs.add("lastname");
+        ByChained byChained = new ByChained(
+                By.cssSelector("djfhdj"),
+                By.tagName("div"),
+                By.xpath("dfdh")
+        );
 
-        String s1 = "D:\\git_tutorial\\github.com\\examples\\target\\surefire-reports\\screenshots\\2014-05-21_12-44-13-testPositiveSubmit.png";
-        // String s2 = "(560) 405-8013";
+        driver.findElement(byChained);
 
-        String s11 = s1.replaceAll("\\/", "/");
-        //String s22 = s2.replaceAll("[^\\d]", "");
-        System.out.println(s1);
-        System.out.println(s11);
 
     }
 

@@ -1,4 +1,4 @@
-package com.revimedia.testing.cds.auto.staticdata;
+package com.revimedia.testing.cds.staticdata;
 
 import java.util.ArrayList;
 import java.util.Arrays;

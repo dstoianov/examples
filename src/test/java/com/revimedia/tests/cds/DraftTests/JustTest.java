@@ -48,6 +48,15 @@ public class JustTest {
 
         InetAddress localHost = InetAddress.getLocalHost();
 
+
+        //560-384-7995 is(123-456-7890)
+
+        String s = "1234567890";
+        String s1 = s.substring(0, 3);
+        String s2 = s.substring(3, 6);
+        String s3 = s.substring(6);
+
+
     }
 
     public boolean equals(Object that, String[] fields) {

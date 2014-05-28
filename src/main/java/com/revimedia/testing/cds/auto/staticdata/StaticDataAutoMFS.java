@@ -7,7 +7,6 @@ import java.util.*;
  */
 public class StaticDataAutoMFS implements Cloneable {
 
-
     public StaticDataAutoMFS() {
         this.insuranceCompany = getRandomValueFromList(insuranceCompanyList);
         this.insuredSince = getRandomValueFromList(insuredSinceList);
@@ -127,13 +126,16 @@ public class StaticDataAutoMFS implements Cloneable {
     private String[] educationList = {"Associate Degree", "Bachelors Degree", "Doctorate Degree", "High school diploma", "Masters Degree", "None", "Other", "Some College"};
 
     private void setRandomCar() {
-        Map<Integer, String[]> car = new HashMap<Integer, String[]>();
+        Map<Integer, String[]> car = new HashMap<>();
         car.put(0, new String[]{"2003", "FORD", "Focus LX"});
         car.put(1, new String[]{"1993", "SATURN", "S-Series SW1"});
         car.put(2, new String[]{"1983", "VOLVO", "240 GLT Turbo"});
         car.put(3, new String[]{"2012", "AUDI", "TT RS 2.5 quattro"});
         car.put(4, new String[]{"2009", "BMW", "M3"});
         car.put(5, new String[]{"2002", "BUICK", "Regal LS"});
+        car.put(6, new String[]{"2012", "MERCEDES-BENZ", "CLS-Class CLS550"});
+        car.put(7, new String[]{"2012", "HONDA", "Accord EX-L w/Navi"});
+        car.put(8, new String[]{"2012", "KIA", "Soul Soul+"});
 
         String[] strings = car.get((new Random()).nextInt(car.size()));
         this.year = strings[0];

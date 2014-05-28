@@ -6,7 +6,7 @@ import com.revimedia.testing.cds.auto.mfs.pages.CompareAndSavePage;
 import com.revimedia.testing.cds.auto.mfs.pages.DriverPage;
 import com.revimedia.testing.cds.auto.mfs.pages.VehiclePage;
 import com.revimedia.testing.cds.auto.staticdata.StaticDataAutoMFS;
-import com.revimedia.testing.cds.auto.staticdata.VWOData;
+import com.revimedia.testing.cds.staticdata.VWOData;
 import com.revimedia.testing.cds.prepop.PrePopExitPage;
 import com.revimedia.testing.cds.prepop.PrePopParameters;
 import com.revimedia.testing.configuration.dto.Contact;
