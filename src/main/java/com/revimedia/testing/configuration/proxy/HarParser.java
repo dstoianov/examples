@@ -58,12 +58,12 @@ public class HarParser {
 
 
     public static List<HarEntry> getPolkData() {
-        return BrowserMobProxyLocal2.collectHarEntryByTextInURL("polk?"); //getPolkData();
+        return BrowserMobProxyLocal2.collectHarEntryByTextInURL("polk?");
     }
 
     public static List<String> getVWOData() {
         List<HarEntry> harEntries = BrowserMobProxyLocal2.collectHarEntryByTextInURL("dev.visualwebsiteoptimizer.com");
-        List<String> urls = new ArrayList<String>();
+        List<String> urls = new ArrayList<>();
         for (HarEntry entry : harEntries) {
             String value = entry.getRequest().getQueryString().get(0).getValue();
             String substring = value.substring(value.lastIndexOf("/") + 1);
@@ -73,8 +73,8 @@ public class HarParser {
     }
 
     public static Map<String, String> getDynamicPixel() throws IOException {
-        HarEntry pixelcheck = BrowserMobProxyLocal2.catchHarEntryByTextInURL("pixelcheck");
-        String xmlResponse = pixelcheck.getResponse().getContent().getText();
+        HarEntry pixelCheck = BrowserMobProxyLocal2.catchHarEntryByTextInURL("pixelcheck");
+        String xmlResponse = pixelCheck.getResponse().getContent().getText();
         String xmlValid = xmlResponse.substring(xmlResponse.indexOf("(") + 1, xmlResponse.lastIndexOf(")"));
         Gson gson = new Gson();
         Type type = new TypeToken<Map<String, Object>>() {

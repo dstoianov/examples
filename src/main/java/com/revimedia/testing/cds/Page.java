@@ -14,6 +14,7 @@ import java.util.Random;
 
 import static com.revimedia.testing.cds.PageConstants.PAGE_CONTENT;
 import static com.revimedia.testing.cds.PageConstants.PAGE_ERRORS;
+import static com.revimedia.testing.cds.PageConstants.PAGE_ERRORS_BOTTOM_CONTAINER;
 import static com.revimedia.testing.cds.constants.Disclaimers.*;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -68,6 +69,11 @@ public class Page {
 
     public List<WebElement> getAllErrors() {
         List<WebElement> list = driver.findElements(By.xpath(PAGE_ERRORS));
+        return list;
+    }
+
+    public List<WebElement> getErrorsOnBottomPage() {
+        List<WebElement> list = driver.findElements(By.xpath(PAGE_ERRORS_BOTTOM_CONTAINER));
         return list;
     }
 

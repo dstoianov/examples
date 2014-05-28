@@ -18,6 +18,7 @@ import com.revimedia.testing.configuration.utils.XmlToObject;
 import com.revimedia.tests.configuration.BaseTest;
 import com.revimedia.tests.configuration.dataproviders.AutoDataProvider;
 import net.lightbody.bmp.core.har.HarEntry;
+import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 
 import java.util.List;
@@ -79,8 +80,8 @@ public class PrePopParametersTests extends BaseTest {
         assertThat(compareAndSavePage.getEmailValue(), equalToIgnoringCase(contact.getEmailAddress()));
     }
 
-    //@Test(groups = {"prepop"}, dataProvider = "contactAndStaticDataAutoMFSBoundaryTesting", dataProviderClass = AutoDataProvider.class)
-    public void DRAFT_testNamePositive(Contact contact, StaticDataAutoMFS staticData) throws Exception {
+    @Test(groups = {"prepop"}, dataProvider = "contactAndStaticDataAutoMFSBoundaryTesting", dataProviderClass = AutoDataProvider.class)
+    public void ShouldBeExpectedErrorsOnPageWhenEnterNonValidData(Contact contact, StaticDataAutoMFS staticData, List<String> expectedErrorsOnPage) throws Exception {
         // reload page with all pre pop parameters
         driver.get(PrePopParameters.generateURLForAutoMFSWithContactAndStatic(this.url, contact, staticData));
         driverPage = new DriverPage(driver);
@@ -93,12 +94,16 @@ public class PrePopParametersTests extends BaseTest {
         compareAndSavePage = vehiclePage.fillInAllFields(staticData).clickOnContinue();
         compareAndSavePage.clickSubmit();
 
+        List<WebElement> gotErrorsOnPage = compareAndSavePage.getErrorsOnBottomPage();
 
+        for (int i = 0; i < expectedErrorsOnPage.size(); i++) {
+            assertThat(expectedErrorsOnPage.get(i), is(gotErrorsOnPage.get(i).getText()));
+        }
+        assertThat(gotErrorsOnPage.size(), is(expectedErrorsOnPage.size()));
     }
 
     @Test(groups = {"submit", "vwo"}, dataProvider = "contactAndStaticDataAutoMFS", dataProviderClass = AutoDataProvider.class)
     public void shouldPresentInURLVisualWebsiteOptimizerData(Contact contact, StaticDataAutoMFS staticData) throws Exception {
-
         driverPage = new DriverPage(driver);
         vehiclePage = driverPage.fillInAllFields(contact, staticData).clickOnContinue();
         compareAndSavePage = vehiclePage.fillInAllFields(staticData).clickOnContinue();
@@ -106,8 +111,8 @@ public class PrePopParametersTests extends BaseTest {
 
         List<String> vwoData = HarParser.getVWOData();
 
-        assertThat(vwoData.size(), is(VWOData.AUTO_MFS_VWO.size()));
         assertThat(vwoData, is(VWOData.AUTO_MFS_VWO));
+        assertThat(vwoData.size(), is(VWOData.AUTO_MFS_VWO.size()));
     }
 
     @Test(groups = {"submit", "Offer Parameters"}, dataProvider = "contactAndStaticAndOfferParametersDataAutoMFS", dataProviderClass = AutoDataProvider.class)

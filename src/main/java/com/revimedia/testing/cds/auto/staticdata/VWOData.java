@@ -9,6 +9,6 @@ import java.util.List;
  */
 public class VWOData {
 
-    public static List<String> AUTO_MFS_VWO = new ArrayList<String>(Arrays.asList("cds-auto-mfs", "cds-auto-mfs-step2", "cds-auto-mfs-step3", "cds-auto-mfs-step4"));
+    public static List<String> AUTO_MFS_VWO = new ArrayList<>(Arrays.asList("cds-auto-mfs", "cds-auto-mfs-step2", "cds-auto-mfs-step3", "cds-auto-mfs-step4"));
 
 }
