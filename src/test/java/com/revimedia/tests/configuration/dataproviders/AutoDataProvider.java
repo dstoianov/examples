@@ -84,7 +84,7 @@ public class AutoDataProvider extends DataProviderHelper {
 
         Object[][] result = {
                 {contact1, staticData, expectedErrors1},
-                //{contact2, staticData, expectedErrors2},
+                {contact2, staticData, expectedErrors2},
         };
         return result;
     }
