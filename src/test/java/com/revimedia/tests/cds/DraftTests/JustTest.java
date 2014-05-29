@@ -19,7 +19,7 @@ public class JustTest {
     public void testName() throws Exception {
         //Expected: is "2013-05-23"
         //but: was "1"
-        Map<String, Integer> map = new HashMap<String, Integer>();
+        Map<String, Integer> map = new HashMap<>();
         map.put("0", 0);
         map.put("1", 1);
         map.put("2", 2);
@@ -81,8 +81,10 @@ public class JustTest {
 
         StaticDataAutoMFS copy = staticDataAutoMFS.clone();
         copy.setMake("qqqqq");
-        //assertThat(staticDataAutoMFS, equalTo(copy));
-        Assert.assertEquals(staticDataAutoMFS, copy);
+        //assertThat(staticDataAutoMFS, is(equalTo(copy)));
+        //assertThat((Object) staticDataAutoMFS, equalTo((Object) copy));
+        Assert.assertTrue(staticDataAutoMFS.equals(copy), "not Same");
+
 
     }
 
@@ -111,5 +113,20 @@ public class JustTest {
         int max = 8090;
         int randomNum = rand.nextInt((max - min) + 1) + min;
         return randomNum;
+    }
+
+
+    @Test
+    public void testDateTest() throws Exception {
+
+        String nonFormattedDate = "1977-11-15"; // to Nov 15, 1977
+
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+        Date date = format.parse(nonFormattedDate);
+        DateFormat dateFormat = new SimpleDateFormat("MMM dd, yyyy");
+        String format1 = dateFormat.format(date);
+
+
+        System.out.print(format1);
     }
 }

@@ -35,7 +35,7 @@ public class SubmitVerifier {
 
         DriverType driver = leadDataType.getQuoteRequest().getDrivers().getDriver();
         assertThat(contact.getGender(), is(driver.getGender()));
-        assertThat(DataHelper.dateTransformation(contact.getBirthDate()), is(driver.getBirthDate()));
+        assertThat(DataHelper.dateTransformationAsXMLData(contact.getBirthDate()), is(driver.getBirthDate()));
     }
 
     public static void verifyRequest(StaticDataAutoMFS staticData, LeadDataType leadDataType) {

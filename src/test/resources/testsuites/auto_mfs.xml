@@ -20,17 +20,17 @@
         </classes>
     </test>
 
-    <test name="Firefox Browser, Latest Version">
-        <parameter name="browser" value="firefox"/>
-        <parameter name="version" value="any"/>
-        <!--<parameter name="platform" value="MAC"/>-->
-        <parameter name="url" value="http://development.stagingrevi.com/auto/mfs/"/>
-        <classes>
-            <class name="com.revimedia.tests.cds.auto.mfs.SubmitTests"/>
-            <class name="com.revimedia.tests.cds.auto.mfs.DisclaimersTests"/>
-            <class name="com.revimedia.tests.cds.auto.mfs.EBureauVerificationTests"/>
-            <class name="com.revimedia.tests.cds.auto.mfs.PrePopParametersTests"/>
-        </classes>
-    </test>
+    <!--    <test name="Firefox Browser, Latest Version">
+            <parameter name="browser" value="firefox"/>
+            <parameter name="version" value="any"/>
+            &lt;!&ndash;<parameter name="platform" value="MAC"/>&ndash;&gt;
+            <parameter name="url" value="http://development.stagingrevi.com/auto/mfs/"/>
+            <classes>
+                <class name="com.revimedia.tests.cds.auto.mfs.SubmitTests"/>
+                <class name="com.revimedia.tests.cds.auto.mfs.DisclaimersTests"/>
+                <class name="com.revimedia.tests.cds.auto.mfs.EBureauVerificationTests"/>
+                <class name="com.revimedia.tests.cds.auto.mfs.PrePopParametersTests"/>
+            </classes>
+        </test>-->
 
 </suite> <!-- Suite -->

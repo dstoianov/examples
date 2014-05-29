@@ -14,6 +14,12 @@ public class DataHelper {
         return phone.replaceAll("[^\\d]", "");
     }
 
+    public static String phoneTransformationAddHyphens(String phone) {
+        String s1 = phone.substring(0, 3);
+        String s2 = phone.substring(3, 6);
+        String s3 = phone.substring(6);
+        return s1 + "-" + s2 + "-" + s3;
+    }
     public static String generateInvalidAddress() {
         return "Invalid Street Address " + (new Random()).nextInt(999999999);
     }
@@ -30,7 +36,7 @@ public class DataHelper {
         return randomNum;
     }
 
-    public static String dateTransformation(String nonFormattedDate) {
+    public static String dateTransformationAsXMLData(String nonFormattedDate) {
         // Jul 3, 1980  to 1980-07-03
         try {
             DateFormat format = DateFormat.getDateInstance();
@@ -44,6 +50,19 @@ public class DataHelper {
         return nonFormattedDate;
     }
 
+    public static String dateTransformationAsContactData(String nonFormattedDate) {
+        // 1980-07-03  to Jul 3, 1980
+        try {
+            SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+            Date date = format.parse(nonFormattedDate);
+            format = new SimpleDateFormat("MMM d, yyyy");
+            return format.format(date);
+        } catch (ParseException e) {
+            System.out.println("Can't transform '" + nonFormattedDate + "' date to valid for compare!!!");
+            e.printStackTrace();
+        }
+        return nonFormattedDate;
+    }
 
     public static String dateTransformInsuredSince(String key) {
         //Expected: is "2013-05-23"
