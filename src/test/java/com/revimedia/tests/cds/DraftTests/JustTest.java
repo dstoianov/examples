@@ -4,7 +4,6 @@ import com.revimedia.testing.cds.auto.staticdata.StaticDataAutoMFS;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import java.net.InetAddress;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.*;
@@ -43,22 +42,6 @@ public class JustTest {
     }
 
 
-    @Test
-    public void testIPAddress() throws Exception {
-
-        InetAddress localHost = InetAddress.getLocalHost();
-
-
-        //560-384-7995 is(123-456-7890)
-
-        String s = "1234567890";
-        String s1 = s.substring(0, 3);
-        String s2 = s.substring(3, 6);
-        String s3 = s.substring(6);
-
-
-    }
-
     public boolean equals(Object that, String[] fields) {
 
         try {
@@ -95,7 +78,7 @@ public class JustTest {
         synchronized (portsList) {
             portsList.add(getPort());
             portsList.add(getPort());
-            portsList.add(getPort());
+            portsList.add(5245);
         }
 
         int newPort = getPort();
@@ -105,9 +88,13 @@ public class JustTest {
                 portsList.add(newPort);
             }
         }
+        int i = portsList.indexOf(5245);
+        portsList.remove(i);
+
+
     }
 
-    private synchronized int getPort() {
+    private int getPort() {
         Random rand = new Random();
         int min = 8085;
         int max = 8090;
@@ -116,17 +103,5 @@ public class JustTest {
     }
 
 
-    @Test
-    public void testDateTest() throws Exception {
 
-        String nonFormattedDate = "1977-11-15"; // to Nov 15, 1977
-
-        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
-        Date date = format.parse(nonFormattedDate);
-        DateFormat dateFormat = new SimpleDateFormat("MMM dd, yyyy");
-        String format1 = dateFormat.format(date);
-
-
-        System.out.print(format1);
-    }
 }

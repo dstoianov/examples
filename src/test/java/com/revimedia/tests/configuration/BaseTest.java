@@ -83,7 +83,8 @@ public class BaseTest {
 
         if (!result.isSuccess()) {
             Reporter.setCurrentTestResult(result);
-            Reporter.log("Failed test name: " + method.getName());
+            Reporter.setEscapeHtml(false);
+            Reporter.log("<p>Failed test name: " + method.getName());
             takeScreenShot(getMethodFullName(method) + "_teardown_" + DataHelper.getDate());
             Reporter.setCurrentTestResult(null);
         }
