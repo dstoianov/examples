@@ -4,11 +4,14 @@ import com.revimedia.testing.configuration.Config;
 import com.revimedia.testing.configuration.WebDriverFactory;
 import com.revimedia.testing.configuration.helpers.DataHelper;
 import com.revimedia.testing.configuration.proxy.BrowserMobProxyLocal2;
+import com.revimedia.testing.configuration.utils.JsUtils;
 import com.revimedia.testing.configuration.utils.WebDriverHelper;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.ITestResult;
 import org.testng.Reporter;
 import org.testng.annotations.*;
@@ -146,5 +149,14 @@ public class BaseTest {
         Reporter.log(html, true);
     }
 
+    public void openPage(String url) {
+        driver.get(url);
+        final JsUtils js = new JsUtils(driver);
+        new WebDriverWait(driver, 60).until(new ExpectedCondition<Boolean>() {
+            public Boolean apply(WebDriver driver) {
+                return js.isAjaxComplete();
+            }
+        });
+    }
 
 }
