@@ -81,7 +81,7 @@ public class PrePopParametersTests extends BaseTest {
     }
 
     @Test(groups = {"prepop"}, dataProvider = "contactAndStaticDataAutoMFSBoundaryTesting", dataProviderClass = AutoDataProvider.class)
-    public void ShouldBeExpectedErrorsOnPageWhenEnterNonValidData(Contact contact, StaticDataAutoMFS staticData, List<String> expectedErrorsOnPage) throws Exception {
+    public void shouldBeExpectedErrorsOnPageWhenEnterNonValidData(Contact contact, StaticDataAutoMFS staticData, List<String> expectedErrorsOnPage) throws Exception {
         // reload page with all pre pop parameters
         driver.get(PrePopParameters.generateURLForAutoMFSWithContactAndStatic(this.url, contact, staticData));
         driverPage = new DriverPage(driver);
