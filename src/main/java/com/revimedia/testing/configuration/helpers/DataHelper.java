@@ -39,7 +39,8 @@ public class DataHelper {
     public static String dateTransformationAsXMLData(String nonFormattedDate) {
         // Jul 3, 1980  to 1980-07-03
         try {
-            DateFormat format = DateFormat.getDateInstance();
+            SimpleDateFormat format = new SimpleDateFormat("MMM d, yyyy", Locale.ENGLISH);
+            //DateFormat format = DateFormat.getDateInstance();
             Date date = format.parse(nonFormattedDate);
             DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
             return dateFormat.format(date);
@@ -53,7 +54,7 @@ public class DataHelper {
     public static String dateTransformationAsContactData(String nonFormattedDate) {
         // 1980-07-03  to Jul 3, 1980
         try {
-            SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+            SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd", Locale.ENGLISH);
             Date date = format.parse(nonFormattedDate);
             format = new SimpleDateFormat("MMM d, yyyy");
             return format.format(date);

@@ -16,28 +16,15 @@ public class JustTest {
 
     @Test
     public void testName() throws Exception {
-        //Expected: is "2013-05-23"
-        //but: was "1"
-        Map<String, Integer> map = new HashMap<>();
-        map.put("0", 0);
-        map.put("1", 1);
-        map.put("2", 2);
-        map.put("3", 3);
-        map.put("4", 4);
-        map.put("5", 5);
-        map.put("5+", 10);
-
-        String key = "1";
-
-        Date date = new Date();
-        DateFormat dateFormat = new SimpleDateFormat("-MM-dd");
-        String end = dateFormat.format(date);
-        Calendar now = Calendar.getInstance();
-        int year = now.get(Calendar.YEAR);
-        int begin = year - map.get(key);
-
-        String result = Integer.toString(begin) + end;
-
+        /// Jul 3, 1980  to 1980-07-03
+        String nonFormattedDate = "Jan 12, 1980";
+        //SimpleDateFormat format = new SimpleDateFormat("MMM d, yyyy");
+        //DateFormat format = DateFormat.getDateInstance();
+        DateFormat format = new SimpleDateFormat("MMM d, yyyy", Locale.ENGLISH);
+        Date date = format.parse(nonFormattedDate);
+        format = new SimpleDateFormat("yyyy-MM-dd");
+        String format1 = format.format(date);
+        System.out.println(format1);
 
     }
 
