@@ -4,7 +4,6 @@ import com.revimedia.testing.configuration.Config;
 import net.lightbody.bmp.core.har.Har;
 import net.lightbody.bmp.proxy.ProxyServer;
 import org.openqa.selenium.Proxy;
-import org.openqa.selenium.net.PortProber;
 
 import java.net.UnknownHostException;
 
@@ -22,8 +21,9 @@ public class BrowserMobProxyLocal implements BrowserMobProxy {
 
     @Override
     public synchronized ProxyServer startProxy() throws Exception {
-        int port = PortProber.findFreePort();
-        //int port = ProxyPorts.getProxyPort();
+        //int port = PortProber.findFreePort();
+        int port = ProxyPorts.getProxyPort();
+        System.out.println("\nLOGGER port for new browserMob is: " + port + " \n");
         server = new ProxyServer(port);
         server.start();
         server.setCaptureHeaders(true);
@@ -57,7 +57,7 @@ public class BrowserMobProxyLocal implements BrowserMobProxy {
 
     @Override
     public Har getHar() {
-        server.waitForNetworkTrafficToStop(5000, 30000);
+        server.waitForNetworkTrafficToStop(5000, 45000);
         return server.getHar();
     }
 

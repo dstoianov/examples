@@ -6,14 +6,14 @@ import com.revimedia.testing.cds.auto.mfs.pages.CompareAndSavePage;
 import com.revimedia.testing.cds.auto.mfs.pages.DriverPage;
 import com.revimedia.testing.cds.auto.mfs.pages.VehiclePage;
 import com.revimedia.testing.cds.auto.staticdata.StaticDataAutoMFS;
-import com.revimedia.testing.cds.staticdata.VWOData;
 import com.revimedia.testing.cds.prepop.PrePopExitPage;
 import com.revimedia.testing.cds.prepop.PrePopParameters;
+import com.revimedia.testing.cds.staticdata.VWOData;
 import com.revimedia.testing.configuration.dto.Contact;
-import com.revimedia.testing.configuration.helpers.DataHelper;
 import com.revimedia.testing.configuration.dto.OfferParameters;
-import com.revimedia.testing.configuration.proxy.HarParser;
 import com.revimedia.testing.configuration.dto.Submit;
+import com.revimedia.testing.configuration.helpers.DataHelper;
+import com.revimedia.testing.configuration.proxy.HarParser;
 import com.revimedia.testing.configuration.utils.XmlToObject;
 import com.revimedia.tests.configuration.BaseTest;
 import com.revimedia.tests.configuration.dataproviders.AutoDataProvider;
@@ -26,7 +26,6 @@ import java.util.Map;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
-import static org.hamcrest.Matchers.is;
 
 /**
  * Created by dstoianov on 5/6/2014, 7:48 PM.
@@ -109,7 +108,7 @@ public class PrePopParametersTests extends BaseTest {
         compareAndSavePage = vehiclePage.fillInAllFields(staticData).clickOnContinue();
         compareAndSavePage.fillInAllFields(contact, staticData).submitForm();
 
-        List<String> vwoData = HarParser.getVisualWebsiteOptimizerData();
+        List<String> vwoData = HarParser.getVisualWebsiteOptimizerData(proxy.getHar());
 
         assertThat(vwoData, is(VWOData.AUTO_MFS_VWO));
         assertThat(vwoData.size(), is(VWOData.AUTO_MFS_VWO.size()));
@@ -124,12 +123,12 @@ public class PrePopParametersTests extends BaseTest {
         compareAndSavePage = vehiclePage.fillInAllFields(staticData).clickOnContinue();
         compareAndSavePage.fillInAllFields(contact, staticData).submitForm();
 
-        Submit submit = HarParser.getSubmit();
+        Submit submit = HarParser.getSubmit(proxy.getHar());
         LeadDataType leadDataType = XmlToObject.unMarshal(LeadDataType.class, submit.getRequest());
         AffiliateDataType affiliateData = leadDataType.getAffiliateData();
 
-        Map<String, String> dynamicPixelResponse = HarParser.getDynamicPixel();
-        HarEntry trackingData = HarParser.getTrackingData(offerParameters.getOffer_id());
+        Map<String, String> dynamicPixelResponse = HarParser.getDynamicPixel(proxy.getHar());
+        HarEntry trackingData = HarParser.getTrackingData(proxy.getHar(), offerParameters.getOffer_id());
 
         // Asserts
         assertThat(affiliateData.getId(), is(offerParameters.getAff_id()));

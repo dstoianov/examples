@@ -36,6 +36,17 @@ public class WebDriverFactory {
         return this.driver;
     }
 
+    public WebDriver createDriver(String browserName, String version, Proxy seleniumProxy) throws Exception {
+        DesiredCapabilities capability = new DesiredCapabilities();
+        capability.setCapability(CapabilityType.PROXY, seleniumProxy);
+        driver = Browser.getByName(browserName).getDriverWithCapabilities(capability);
+        if (Config.WINDOW_MAXIMIZE) {
+            driver.manage().window().maximize();
+        }
+        driver.manage().timeouts().implicitlyWait(Config.IMPLICITLY_WAIT, TimeUnit.SECONDS);
+        return driver;
+    }
+
     public WebDriver createDriver(String browserName, String version) throws Exception {
         // Browser bob
         // start the proxy

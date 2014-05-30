@@ -7,7 +7,7 @@ import org.openqa.selenium.Proxy;
 import java.net.UnknownHostException;
 
 /**
- * Created by Funker on 07.05.14.
+ * Created by dstoianov on 07.05.14.
  */
 public interface BrowserMobProxy {
     public ProxyServer startProxy() throws Exception;
@@ -19,9 +19,4 @@ public interface BrowserMobProxy {
     public Proxy getProxy() throws UnknownHostException;
 
     public Har getHar();
-
-    // public HarEntry catchHarEntryByTextInURL(String url);
-
-    //public List<HarEntry> collectHarEntryByTextInURL(String url);
-
 }

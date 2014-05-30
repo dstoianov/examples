@@ -67,15 +67,15 @@ public class CompareAndSavePage extends Page {
     public CompareAndSavePage fillInAllFields(Contact contact, StaticDataAutoMFS staticData) {
         clearAndType(txtFirstName, contact.getFirstName());
         clearAndType(txtLastName, contact.getLastName());
+        clearAndType(txtPhoneNumber, contact.getPhoneNumber());
         selectByValue(ddEducation, staticData.getEducation());
         if (contact.getGender().equalsIgnoreCase("Male")) {
             rbtnMale.click();
         } else rbtnFemale.click();
         selectDate(ddMonth, ddDay, ddYear, contact.getBirthDate());
         clearAndType(txtStreetAddress, contact.getAddress());
-        clearAndType(txtPhoneNumber, contact.getPhoneNumber());
         clearAndType(txtEmail, contact.getEmailAddress());
-        waitForAjaxComplete();
+        //waitForAjaxComplete();
         return this;
     }
 
@@ -97,6 +97,7 @@ public class CompareAndSavePage extends Page {
         if (getPageText().contains(Messages.EBUREAU_VERIFICATION)) {
             btnGetMyQuotes.click();
         }
+        waitForAjaxComplete();
     }
 
     public String getFirstNameValue() {

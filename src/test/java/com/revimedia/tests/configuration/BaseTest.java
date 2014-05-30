@@ -4,10 +4,10 @@ import com.revimedia.testing.configuration.Config;
 import com.revimedia.testing.configuration.WebDriverFactory;
 import com.revimedia.testing.configuration.helpers.DataHelper;
 import com.revimedia.testing.configuration.proxy.BrowserMobProxyLocal;
-import com.revimedia.testing.configuration.proxy.BrowserMobProxyLocal2;
 import com.revimedia.testing.configuration.utils.WebDriverHelper;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.Capabilities;
+import org.openqa.selenium.Proxy;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.ITestResult;
@@ -17,7 +17,7 @@ import org.testng.annotations.*;
 import java.lang.reflect.Method;
 
 /**
- * Created by Funker on 12.04.14.
+ * Created by dstoianov on 12.04.14.
  */
 
 //@Listeners({WebDriverScreenshotListener.class})
@@ -43,12 +43,13 @@ public class BaseTest {
         log.info("Setting up parameters...");
         WebDriverFactory instanceDriver = new WebDriverFactory();
 
-        //this.proxy = new BrowserMobProxyLocal();
-        //proxy.startProxy();
-        //Proxy seleniumProxy = proxy.getProxy();
+        this.proxy = new BrowserMobProxyLocal();
+        proxy.startProxy();
+        Proxy seleniumProxy = proxy.getProxy();
 
         //new WebDriverFactory().createDriver(browser, version);
-        this.driver = instanceDriver.createDriver(browser, version);
+        //this.driver = instanceDriver.createDriver(browser, version);
+        this.driver = instanceDriver.createDriver(browser, version, seleniumProxy);
 
         //driver = instanceDriver.getDriver(browser, version);
         //driver = instanceDriver.getLocalDriver(browser, version);
@@ -66,8 +67,8 @@ public class BaseTest {
         log.info(getMethodFullName(method) + " Test Started.");
         log.info("------------------------------------------------------------------------------------------------------");
 
-        BrowserMobProxyLocal2.cleanProxyHar();
-        //proxy.cleanProxyHar();
+        //BrowserMobProxyLocal2.cleanProxyHar();
+        proxy.cleanProxyHar();
         driver.get(url);
 
         log.info("************************ TEST DATA BEGIN ***********************************");
@@ -99,8 +100,8 @@ public class BaseTest {
 
     @AfterClass(alwaysRun = true)
     public void tearDown() throws Exception {
-        BrowserMobProxyLocal2.stopProxy();
-        //proxy.stopProxy();
+        //BrowserMobProxyLocal2.stopProxy();
+        proxy.stopProxy();
         driver.quit();
         log.info("Tear Down the Browser.....");
     }
