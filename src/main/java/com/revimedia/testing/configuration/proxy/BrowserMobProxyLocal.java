@@ -1,54 +1,71 @@
 package com.revimedia.testing.configuration.proxy;
 
+import com.revimedia.testing.configuration.Config;
 import net.lightbody.bmp.core.har.Har;
 import net.lightbody.bmp.core.har.HarEntry;
 import net.lightbody.bmp.core.har.HarRequest;
 import net.lightbody.bmp.proxy.ProxyServer;
 import org.openqa.selenium.Proxy;
 
+import java.net.UnknownHostException;
+import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 
 /**
  * Created by dstoianov on 4/30/2014, 7:46 PM.
  * http://rdekleijn.nl/functional-test-automation-over-a-proxy/
  * https://groups.google.com/forum/#!topic/browsermob-proxy/ORX5GZyCEt0
  */
-public class BrowserMobProxyLocal {
-    private static ProxyServer server;
+public class BrowserMobProxyLocal implements BrowserMobProxy {
 
-    public static Proxy startBrowserMob() throws Exception {
-        // start the proxy
-        int port = 8073;
+    private ProxyServer server;
+    //private  int port = Config.SELENIUM_PROXY_PORT;
+    private String proxyIp = Config.SELENIUM_PROXY_IP;
+    private Proxy proxy;
+
+    @Override
+    public void startProxy() throws Exception {
+        int port = ProxyPorts.getProxyPort();
         server = new ProxyServer(port);
         server.start();
         server.setCaptureHeaders(true);
         server.setCaptureContent(true);
-        // get the Selenium proxy object
-//        Proxy proxy = server.seleniumProxy();
-//        proxy.setHttpProxy("localhost:" + port);
-
-        Proxy proxy = server.seleniumProxy();
-        proxy.setHttpProxy("localhost:8073");
-        //proxy.setSslProxy("localhost:8073");
-        //proxy.setSocksProxy("localhost:8073");
-
-        server.newHar("ReviMedia testing");
-        return proxy;
+        server.newHar("Revi Media Testing");
     }
 
-    public static void stopBrowserMob() throws Exception {
+    @Override
+    public void stopProxy() throws Exception {
+        int port = server.getPort();
+        ProxyPorts.dismissPort(port);
         server.stop();
     }
 
-    public static Har getHar() {
+    @Override
+    public void cleanProxyHar() {
+        server.cleanup();
+        server.newHar("Revi Media Testing");
+    }
+
+    @Override
+    public Proxy getProxy() throws UnknownHostException {
+        proxy = server.seleniumProxy();
+        proxy.setHttpProxy(proxyIp + ":" + server.getPort());
+        //proxy.setSslProxy(proxyIp+ ":" + server.getPort());
+        //proxy.setSocksProxy("localhost:8073");
+        // server.newHar("Revi Media Testing");
+        return proxy;
+
+    }
+
+    @Override
+    public Har getHar() {
+        server.waitForNetworkTrafficToStop(5000, 30000);
         return server.getHar();
     }
 
-    public void cleanServerHar() {
-        server.cleanup();
-    }
-
-    public static HarEntry catchHarEntryByTextInURL(String url) {
+    @Override
+    public HarEntry catchHarEntryByTextInURL(String url) {
         Har har = getHar();
         Collections.reverse(har.getLog().getEntries());
         for (HarEntry entry : har.getLog().getEntries()) {
@@ -58,6 +75,34 @@ public class BrowserMobProxyLocal {
                 return entry;
             }
         }
-        return null;
+        System.out.println("Error, has no any " + url + " in log!!!");
+        throw new Error("There is no any submits in logs!!!");
+    }
+
+    @Override
+    public List<HarEntry> collectHarEntryByTextInURL(String url) {
+        List<HarEntry> entryList = new ArrayList<HarEntry>();
+        for (HarEntry entry : getHar().getLog().getEntries()) {
+            HarRequest request = entry.getRequest();
+            if (request.getUrl().contains(url)) {
+                System.out.println("Has catched string in url " + url);
+                System.out.println("URL:  " + request.getUrl());
+                entryList.add(entry);
+            }
+        }
+        return entryList;
+    }
+
+
+    //---------------Extra methods---------------------------------
+
+
+    public HarEntry getSubmitHarEntry() {
+        HarEntry entry = catchHarEntryByTextInURL("submit");
+        return entry;
+    }
+
+    public List<HarEntry> getPolkData() {
+        return collectHarEntryByTextInURL("polk?");
     }
 }

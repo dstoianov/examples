@@ -13,7 +13,7 @@ import com.revimedia.testing.configuration.dto.Contact;
 import com.revimedia.testing.configuration.helpers.DataHelper;
 import com.revimedia.testing.configuration.dto.OfferParameters;
 import com.revimedia.testing.configuration.proxy.HarParser;
-import com.revimedia.testing.configuration.proxy.Submit;
+import com.revimedia.testing.configuration.dto.Submit;
 import com.revimedia.testing.configuration.utils.XmlToObject;
 import com.revimedia.tests.configuration.BaseTest;
 import com.revimedia.tests.configuration.dataproviders.AutoDataProvider;

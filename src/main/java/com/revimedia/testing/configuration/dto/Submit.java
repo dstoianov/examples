@@ -1,4 +1,4 @@
-package com.revimedia.testing.configuration.proxy;
+package com.revimedia.testing.configuration.dto;
 
 import com.revimedia.testing.configuration.response.Response;
 

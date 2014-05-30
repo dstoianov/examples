@@ -3,6 +3,7 @@ package com.revimedia.testing.configuration.proxy;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
+import com.revimedia.testing.configuration.dto.Submit;
 import com.revimedia.testing.configuration.helpers.Formatter;
 import com.revimedia.testing.configuration.response.Errors;
 import com.revimedia.testing.configuration.response.ErrorsDeserializer;
@@ -23,6 +24,7 @@ import java.util.Map;
  * Created by Funker on 02.05.14.
  */
 public class HarParser {
+
     public static HarEntry entry;
 
     public static Submit getSubmit() {
