@@ -3,15 +3,13 @@ package com.revimedia.tests.configuration;
 import com.revimedia.testing.configuration.Config;
 import com.revimedia.testing.configuration.WebDriverFactory;
 import com.revimedia.testing.configuration.helpers.DataHelper;
+import com.revimedia.testing.configuration.proxy.BrowserMobProxyLocal;
 import com.revimedia.testing.configuration.proxy.BrowserMobProxyLocal2;
-import com.revimedia.testing.configuration.utils.JsUtils;
 import com.revimedia.testing.configuration.utils.WebDriverHelper;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;
-import org.openqa.selenium.support.ui.ExpectedCondition;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.ITestResult;
 import org.testng.Reporter;
 import org.testng.annotations.*;
@@ -26,6 +24,7 @@ import java.lang.reflect.Method;
 public class BaseTest {
     protected WebDriver driver;
     protected String url;
+    protected BrowserMobProxyLocal proxy;
     protected static final Logger log = Logger.getLogger(BaseTest.class);
 
     public static WebDriverFactory instanceDriver;
@@ -44,10 +43,12 @@ public class BaseTest {
         log.info("Setting up parameters...");
         WebDriverFactory instanceDriver = new WebDriverFactory();
 
-        //driver = instanceDriver.getDriver(browser, version);
-        //with browserMob
+        //this.proxy = new BrowserMobProxyLocal();
+        //proxy.startProxy();
+        //Proxy seleniumProxy = proxy.getProxy();
+
         //new WebDriverFactory().createDriver(browser, version);
-        driver = instanceDriver.createDriver(browser, version);
+        this.driver = instanceDriver.createDriver(browser, version);
 
         //driver = instanceDriver.getDriver(browser, version);
         //driver = instanceDriver.getLocalDriver(browser, version);
@@ -66,6 +67,7 @@ public class BaseTest {
         log.info("------------------------------------------------------------------------------------------------------");
 
         BrowserMobProxyLocal2.cleanProxyHar();
+        //proxy.cleanProxyHar();
         driver.get(url);
 
         log.info("************************ TEST DATA BEGIN ***********************************");
@@ -98,9 +100,13 @@ public class BaseTest {
     @AfterClass(alwaysRun = true)
     public void tearDown() throws Exception {
         BrowserMobProxyLocal2.stopProxy();
+        //proxy.stopProxy();
         driver.quit();
         log.info("Tear Down the Browser.....");
     }
+
+
+    //------------------Helper methods--------------------//
 
     private void printBrowserParameters() {
         Capabilities cap = ((RemoteWebDriver) driver).getCapabilities();
@@ -135,11 +141,6 @@ public class BaseTest {
         return resultString;
     }
 
-
-    public WebDriver getDriver() {
-        return this.driver;
-    }
-
     public void takeScreenShot(String name) {
         String path = WebDriverHelper.takeScreenShot(driver, Config.PATH_TO_SCREENS + name + ".png");
         log.info("\nScreen shot taken: " + path);
@@ -147,16 +148,6 @@ public class BaseTest {
         String fileName = path.substring(path.lastIndexOf("\\") + 1);
         String html = "<br><b>TestNG:</b><a href=\"screens/" + fileName + "\" > failed screenshot<img align=\"center\" height=\"120\" width=\"120\" src=\"screens/" + fileName + "\"></a>";
         Reporter.log(html, true);
-    }
-
-    public void openPage(String url) {
-        driver.get(url);
-        final JsUtils js = new JsUtils(driver);
-        new WebDriverWait(driver, 60).until(new ExpectedCondition<Boolean>() {
-            public Boolean apply(WebDriver driver) {
-                return js.isAjaxComplete();
-            }
-        });
     }
 
 }

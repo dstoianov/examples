@@ -109,7 +109,7 @@ public class PrePopParametersTests extends BaseTest {
         compareAndSavePage = vehiclePage.fillInAllFields(staticData).clickOnContinue();
         compareAndSavePage.fillInAllFields(contact, staticData).submitForm();
 
-        List<String> vwoData = HarParser.getVWOData();
+        List<String> vwoData = HarParser.getVisualWebsiteOptimizerData();
 
         assertThat(vwoData, is(VWOData.AUTO_MFS_VWO));
         assertThat(vwoData.size(), is(VWOData.AUTO_MFS_VWO.size()));

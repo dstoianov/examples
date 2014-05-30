@@ -2,15 +2,11 @@ package com.revimedia.testing.configuration.proxy;
 
 import com.revimedia.testing.configuration.Config;
 import net.lightbody.bmp.core.har.Har;
-import net.lightbody.bmp.core.har.HarEntry;
-import net.lightbody.bmp.core.har.HarRequest;
 import net.lightbody.bmp.proxy.ProxyServer;
 import org.openqa.selenium.Proxy;
+import org.openqa.selenium.net.PortProber;
 
 import java.net.UnknownHostException;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
 
 /**
  * Created by dstoianov on 4/30/2014, 7:46 PM.
@@ -25,17 +21,19 @@ public class BrowserMobProxyLocal implements BrowserMobProxy {
     private Proxy proxy;
 
     @Override
-    public void startProxy() throws Exception {
-        int port = ProxyPorts.getProxyPort();
+    public synchronized ProxyServer startProxy() throws Exception {
+        int port = PortProber.findFreePort();
+        //int port = ProxyPorts.getProxyPort();
         server = new ProxyServer(port);
         server.start();
         server.setCaptureHeaders(true);
         server.setCaptureContent(true);
         server.newHar("Revi Media Testing");
+        return server;
     }
 
     @Override
-    public void stopProxy() throws Exception {
+    public synchronized void stopProxy() throws Exception {
         int port = server.getPort();
         ProxyPorts.dismissPort(port);
         server.stop();
@@ -55,7 +53,6 @@ public class BrowserMobProxyLocal implements BrowserMobProxy {
         //proxy.setSocksProxy("localhost:8073");
         // server.newHar("Revi Media Testing");
         return proxy;
-
     }
 
     @Override
@@ -64,45 +61,4 @@ public class BrowserMobProxyLocal implements BrowserMobProxy {
         return server.getHar();
     }
 
-    @Override
-    public HarEntry catchHarEntryByTextInURL(String url) {
-        Har har = getHar();
-        Collections.reverse(har.getLog().getEntries());
-        for (HarEntry entry : har.getLog().getEntries()) {
-            HarRequest request = entry.getRequest();
-            if (request.getUrl().contains(url)) {
-                System.out.println("Has catched string in url " + url);
-                return entry;
-            }
-        }
-        System.out.println("Error, has no any " + url + " in log!!!");
-        throw new Error("There is no any submits in logs!!!");
-    }
-
-    @Override
-    public List<HarEntry> collectHarEntryByTextInURL(String url) {
-        List<HarEntry> entryList = new ArrayList<HarEntry>();
-        for (HarEntry entry : getHar().getLog().getEntries()) {
-            HarRequest request = entry.getRequest();
-            if (request.getUrl().contains(url)) {
-                System.out.println("Has catched string in url " + url);
-                System.out.println("URL:  " + request.getUrl());
-                entryList.add(entry);
-            }
-        }
-        return entryList;
-    }
-
-
-    //---------------Extra methods---------------------------------
-
-
-    public HarEntry getSubmitHarEntry() {
-        HarEntry entry = catchHarEntryByTextInURL("submit");
-        return entry;
-    }
-
-    public List<HarEntry> getPolkData() {
-        return collectHarEntryByTextInURL("polk?");
-    }
 }
