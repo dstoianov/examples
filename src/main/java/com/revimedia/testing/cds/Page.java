@@ -182,4 +182,9 @@ public class Page {
         JsUtils jsUtils = new JsUtils(driver);
         return jsUtils.getSurveyPath();
     }
+
+    public void open(String url) {
+        driver.get(url);
+        waitForAjaxComplete();
+    }
 }

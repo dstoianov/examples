@@ -56,6 +56,7 @@ public class PrePopParametersTests extends BaseTest {
     public void shouldBePrefilledAndShownOnUIContactAndOtherParameters(Contact contact, StaticDataAutoMFS staticData) throws Exception {
         // reload page with all pre pop parameters
         driverPage = new DriverPage(driver);
+        driverPage.open(PrePopParameters.generateURLForAutoMFSWithContactAndStatic(this.url, contact, staticData));
         // verify city is correct
         assertThat(driverPage.getPageText(), containsString(contact.getCity()));
         // verify InsuranceCompany is correct
@@ -82,8 +83,8 @@ public class PrePopParametersTests extends BaseTest {
     @Test(groups = {"prepop"}, dataProvider = "contactAndStaticDataAutoMFSBoundaryTesting", dataProviderClass = AutoDataProvider.class)
     public void shouldBeExpectedErrorsOnPageWhenEnterNonValidData(Contact contact, StaticDataAutoMFS staticData, List<String> expectedErrorsOnPage) throws Exception {
         // reload page with all pre pop parameters
-        driver.get(PrePopParameters.generateURLForAutoMFSWithContactAndStatic(this.url, contact, staticData));
         driverPage = new DriverPage(driver);
+        driverPage.open(PrePopParameters.generateURLForAutoMFSWithContactAndStatic(this.url, contact, staticData));
 
         assertThat(driverPage.getPageText(), containsString(contact.getCity()));
         assertThat(driverPage.getInsuranceCompanyValue(), is(staticData.getInsuranceCompany()));
@@ -117,8 +118,8 @@ public class PrePopParametersTests extends BaseTest {
     @Test(groups = {"submit", "Offer Parameters"}, dataProvider = "contactAndStaticAndOfferParametersDataAutoMFS", dataProviderClass = AutoDataProvider.class)
     public void DRAFT_shouldPresentOfferParametersInXMLAndDynamicPixelDataInURL(Contact contact, StaticDataAutoMFS staticData, OfferParameters offerParameters) throws Exception {
         //reload page with necessarily offer parameters in URL
-        driver.get(this.url + offerParameters.toURLString());
         driverPage = new DriverPage(driver);
+        driverPage.open(this.url + offerParameters.toURLString());
         vehiclePage = driverPage.fillInAllFields(contact, staticData).clickOnContinue();
         compareAndSavePage = vehiclePage.fillInAllFields(staticData).clickOnContinue();
         compareAndSavePage.fillInAllFields(contact, staticData).submitForm();
