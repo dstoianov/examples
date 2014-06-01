@@ -1,6 +1,6 @@
 package com.revimedia.testing.configuration.proxy;
 
-import com.revimedia.testing.configuration.Config;
+import com.revimedia.testing.configuration.config.Config;
 import net.lightbody.bmp.core.har.Har;
 import net.lightbody.bmp.core.har.HarEntry;
 import net.lightbody.bmp.core.har.HarRequest;

@@ -20,6 +20,7 @@ public class DriverPage extends Page {
 
     public DriverPage(WebDriver driver) {
         super(driver);
+        log.info("Driver Page is Loaded, STEP #1");
     }
 
     // .//input[ancestor::div]

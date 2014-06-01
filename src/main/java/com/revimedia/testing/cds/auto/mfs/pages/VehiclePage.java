@@ -18,6 +18,7 @@ public class VehiclePage extends Page {
 
     public VehiclePage(WebDriver driver) {
         super(driver);
+        log.info("Vehicle Details Page is Loaded, STEP #2");
     }
 
     @FindBy(xpath = "//div[contains(@class, 'Year')]//select")
@@ -37,7 +38,9 @@ public class VehiclePage extends Page {
 
     public VehiclePage fillInAllFields(StaticDataAutoMFS staticData) {
         selectByValue(ddVehicleBuildYear, staticData.getYear());
+        waitForSelectFill(ddVehicleMake);
         selectByValue(ddVehicleMake, staticData.getMake());
+        waitForSelectFill(ddVehicleModel);
         selectByValue(ddVehicleModel, staticData.getModel());
         rbtnExtraCar.get(1).click();
         return this;

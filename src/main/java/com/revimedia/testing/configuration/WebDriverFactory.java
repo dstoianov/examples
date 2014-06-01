@@ -1,10 +1,13 @@
 package com.revimedia.testing.configuration;
 
+import com.revimedia.testing.configuration.config.Config;
+import com.revimedia.testing.configuration.listeners.LoggingWebDriverEventListener;
 import com.revimedia.testing.configuration.proxy.*;
 import org.openqa.selenium.Proxy;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.support.events.EventFiringWebDriver;
 
 import java.util.concurrent.TimeUnit;
 
@@ -44,7 +47,10 @@ public class WebDriverFactory {
             driver.manage().window().maximize();
         }
         driver.manage().timeouts().implicitlyWait(Config.IMPLICITLY_WAIT, TimeUnit.SECONDS);
-        return driver;
+
+        LoggingWebDriverEventListener listener = new LoggingWebDriverEventListener();
+        return new EventFiringWebDriver(driver).register(listener);
+        //return driver;
     }
 
     public WebDriver createDriver(String browserName, String version) throws Exception {

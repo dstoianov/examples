@@ -1,4 +1,4 @@
-package com.revimedia.testing.configuration;
+package com.revimedia.testing.configuration.config;
 
 import org.apache.log4j.Logger;
 
@@ -24,6 +24,7 @@ public class Config {
     public static final int SELENIUM_PROXY_PORT;
     public static final String DEFAULT_PROPERTIES = "localhost.properties";
     public static final String PATH_TO_SCREENS = "target/surefire-reports/screens/";
+    public static final boolean VERBOSE = true;
 
     public static Properties props = null;
 

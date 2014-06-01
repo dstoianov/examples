@@ -1,4 +1,4 @@
-package com.revimedia.testing.configuration;
+package com.revimedia.testing.configuration.listeners;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -10,7 +10,7 @@ import org.openqa.selenium.support.events.WebDriverEventListener;
  * http://internetka.in.ua/webdrivereventlistener/
  * https://github.com/dstoianov/WebdriverPlatform/blob/master/src/main/java/org/freespace/testingplatform/webdriver/listneres/LoggingWebDriverEventListener.java
  */
-public class WebDriverLogger implements WebDriverEventListener {
+public class WebDriverLogger2 implements WebDriverEventListener {
 
     @Override
     public void beforeNavigateTo(String s, WebDriver driver) {

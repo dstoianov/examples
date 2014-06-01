@@ -41,12 +41,13 @@ public class Page {
     public void clearAndType(WebElement webElement, String text) {
         webElement.clear();
         webElement.sendKeys(text);
+        //webElement.sendKeys(Keys.TAB);
     }
 
     public void selectByValue(WebElement webElement, String text) {
 //        waitForSelectFill(driver, webElement);
         new Select(webElement).selectByVisibleText(text);
-        waitForAjaxComplete();
+        //waitForAjaxComplete();
     }
 
     public void selectRandomByIndex(WebElement webElement) {
@@ -88,7 +89,7 @@ public class Page {
         log.info("All ajax calls are complete");
     }
 
-    public void waitForSelectFill(WebDriver driver, WebElement selectElement) {
+    public void waitForSelectFill(WebElement selectElement) {
         log.info("waiting for select fill in some data");
         final Select select = new Select(selectElement);
         wait.until(new ExpectedCondition<Boolean>() {
@@ -168,7 +169,7 @@ public class Page {
     }
 
     public List<String> getAllValuesFromDropDown(WebElement element) {
-        List<String> result = new ArrayList<String>();
+        List<String> result = new ArrayList<>();
         List<WebElement> options = new Select(element).getOptions();
         for (WebElement option : options) {
             result.add(option.getText());

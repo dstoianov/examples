@@ -19,6 +19,7 @@ public class CompareAndSavePage extends Page {
 
     public CompareAndSavePage(WebDriver driver) {
         super(driver);
+        log.info("Compare & SAVE Page is Loaded, STEP #3");
     }
 
     @FindBy(xpath = "//div[contains(@class, 'FirstName')]//input")
@@ -68,12 +69,12 @@ public class CompareAndSavePage extends Page {
         clearAndType(txtFirstName, contact.getFirstName());
         clearAndType(txtLastName, contact.getLastName());
         clearAndType(txtPhoneNumber, contact.getPhoneNumber());
+        clearAndType(txtStreetAddress, contact.getAddress());
         selectByValue(ddEducation, staticData.getEducation());
         if (contact.getGender().equalsIgnoreCase("Male")) {
             rbtnMale.click();
         } else rbtnFemale.click();
         selectDate(ddMonth, ddDay, ddYear, contact.getBirthDate());
-        clearAndType(txtStreetAddress, contact.getAddress());
         clearAndType(txtEmail, contact.getEmailAddress());
         //waitForAjaxComplete();
         return this;
@@ -91,10 +92,10 @@ public class CompareAndSavePage extends Page {
     public void submitForm() {
         waitForAjaxComplete();
         btnGetMyQuotes.click();
-        //if (btnGetMyQuotes.isDisplayed()) {
-        // TODO: workaround for eBureau Verification
-        waitForAjaxComplete();
-        if (getPageText().contains(Messages.EBUREAU_VERIFICATION)) {
+        if (btnGetMyQuotes.isDisplayed()) {
+            // TODO: workaround for eBureau Verification
+            // waitForAjaxComplete();
+            //if (getPageText().contains(Messages.EBUREAU_VERIFICATION)) {
             btnGetMyQuotes.click();
         }
         waitForAjaxComplete();

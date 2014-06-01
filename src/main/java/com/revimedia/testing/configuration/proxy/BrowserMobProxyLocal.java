@@ -1,9 +1,11 @@
 package com.revimedia.testing.configuration.proxy;
 
-import com.revimedia.testing.configuration.Config;
+import com.revimedia.testing.configuration.config.Config;
 import net.lightbody.bmp.core.har.Har;
 import net.lightbody.bmp.proxy.ProxyServer;
+import org.apache.log4j.Logger;
 import org.openqa.selenium.Proxy;
+import org.openqa.selenium.net.PortProber;
 
 import java.net.UnknownHostException;
 
@@ -14,29 +16,33 @@ import java.net.UnknownHostException;
  */
 public class BrowserMobProxyLocal implements BrowserMobProxy {
 
+    protected final Logger log = Logger.getLogger(this.getClass());
+
     private ProxyServer server;
     //private  int port = Config.SELENIUM_PROXY_PORT;
     private String proxyIp = Config.SELENIUM_PROXY_IP;
     private Proxy proxy;
 
     @Override
-    public synchronized ProxyServer startProxy() throws Exception {
-        //int port = PortProber.findFreePort();
-        int port = ProxyPorts.getProxyPort();
-        System.out.println("\nLOGGER port for new browserMob is: " + port + " \n");
+    public ProxyServer startProxy() throws Exception {
+        log.info("Starting Proxy Server....");
+        int port = PortProber.findFreePort();
+        //int port = ProxyPorts.getProxyPort();
         server = new ProxyServer(port);
         server.start();
         server.setCaptureHeaders(true);
         server.setCaptureContent(true);
         server.newHar("Revi Media Testing");
+        log.info("Proxy Server was started on port: '" + port + "'");
         return server;
     }
 
     @Override
-    public synchronized void stopProxy() throws Exception {
+    public void stopProxy() throws Exception {
         int port = server.getPort();
         ProxyPorts.dismissPort(port);
         server.stop();
+        log.info("Proxy Server is shut down");
     }
 
     @Override

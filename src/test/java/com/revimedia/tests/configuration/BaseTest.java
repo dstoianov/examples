@@ -1,6 +1,6 @@
 package com.revimedia.tests.configuration;
 
-import com.revimedia.testing.configuration.Config;
+import com.revimedia.testing.configuration.config.Config;
 import com.revimedia.testing.configuration.WebDriverFactory;
 import com.revimedia.testing.configuration.helpers.DataHelper;
 import com.revimedia.testing.configuration.proxy.BrowserMobProxyLocal;
@@ -32,7 +32,7 @@ public class BaseTest {
 
     @BeforeClass
     @Parameters(value = {"browser", "version", "url"})
-    public void setUp(@Optional("chrome") String browser,
+    public void setUp(@Optional("firefox") String browser,
                       @Optional("9") String version,
 //                      @Optional("WIN") String platform,
                       @Optional("http://development.stagingrevi.com/auto/mfs/") String url) throws Exception {
@@ -56,7 +56,7 @@ public class BaseTest {
 //        driver = Browser2.getBrowser(browser, version).getDriver();
 
         //driver = WebDriverFactory.getDriver(browser, version, platform);
-        printBrowserParameters();
+        // printBrowserParameters();
         log.info("Browser is started!");
     }
 
