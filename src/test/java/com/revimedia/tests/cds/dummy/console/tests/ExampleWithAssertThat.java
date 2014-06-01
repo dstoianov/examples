@@ -36,21 +36,4 @@ public class ExampleWithAssertThat {
         assertThat("yy", is(not("xx")));
         assertThat("i like che_ese", containsString("cheese"));
     }
-
-    @Test
-    public void testHamcrestAssert() throws Exception {
-        StaticDataAutoMFS staticDataAutoMFS = new StaticDataAutoMFS();
-        StaticDataAutoMFS copy = staticDataAutoMFS.clone();
-        copy.setMake("qqqqq");
-        assertThat(staticDataAutoMFS, is(equalTo(copy)));
-    }
-
-    @Test
-    public void testTestNGAssert() throws Exception {
-        StaticDataAutoMFS staticDataAutoMFS = new StaticDataAutoMFS();
-        StaticDataAutoMFS copy = staticDataAutoMFS.clone();
-        copy.setMake("qqqqq");
-        Assert.assertEquals(staticDataAutoMFS, copy);
-    }
-
 }
