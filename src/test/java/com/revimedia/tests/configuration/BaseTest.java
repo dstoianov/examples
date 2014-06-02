@@ -32,11 +32,11 @@ public class BaseTest {
 
     @BeforeClass
     @Parameters(value = {"browser", "version", "url"})
-    public void setUp(@Optional("chrome") String browser,
+    public void setUp(@Optional("ie") String browser,
                       @Optional("9") String version,
 //                      @Optional("WIN") String platform,
-                      @Optional("http://development.stagingrevi.com/auto/mfs/") String url) throws Exception {
-        //@Optional("http://development.stagingrevi.com/auto/s/") String url) throws Exception {
+//                      @Optional("http://development.stagingrevi.com/auto/mfs/") String url) throws Exception {
+                      @Optional("http://development.stagingrevi.com/auto/s/") String url) throws Exception {
 
         log.info("Start the browser...");
         this.url = url;
@@ -67,7 +67,6 @@ public class BaseTest {
         log.info(getMethodFullName(method) + " Test Started.");
         log.info("------------------------------------------------------------------------------------------------------");
 
-        //BrowserMobProxyLocal2.cleanProxyHar();
         proxy.cleanProxyHar();
         driver.get(url);
 
@@ -81,7 +80,6 @@ public class BaseTest {
 
     @AfterMethod(alwaysRun = true)
     public void afterTestMethod(Method method, ITestResult result) {
-
         log.warn("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
         log.warn(getMethodFullName(method) + " - Test Finished.");
         log.warn("Test result: " + getTestResult(result));
@@ -94,13 +92,11 @@ public class BaseTest {
             takeScreenShot(getMethodFullName(method) + "_teardown_" + DataHelper.getDate());
             Reporter.setCurrentTestResult(null);
         }
-
     }
 
 
     @AfterClass(alwaysRun = true)
     public void tearDown() throws Exception {
-        //BrowserMobProxyLocal2.stopProxy();
         proxy.stopProxy();
         driver.quit();
         log.info("Tear Down the Browser.....");

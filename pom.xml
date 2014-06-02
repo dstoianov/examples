@@ -335,9 +335,9 @@
             </properties>
         </profile>
         <profile>
-            <id>auto-p</id>
+            <id>auto-s</id>
             <properties>
-                <testng.suite>${basedir}/src/test/resources/testsuites/auto_p.xml</testng.suite>
+                <testng.suite>${basedir}/src/test/resources/testsuites/auto_s.xml</testng.suite>
             </properties>
         </profile>
         <profile>
@@ -346,7 +346,12 @@
                 <testng.suite>${basedir}/src/test/resources/testsuites/default_console_suite.xml</testng.suite>
             </properties>
         </profile>
-
+        <profile>
+            <id>all-campaigns</id>
+            <properties>
+                <testng.suite>${basedir}/src/test/resources/testsuites/all_suites.xml</testng.suite>
+            </properties>
+        </profile>
     </profiles>
 
     <reporting>

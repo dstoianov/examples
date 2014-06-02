@@ -10,7 +10,7 @@ import com.revimedia.tests.configuration.dataproviders.AutoDataProvider;
 import org.testng.annotations.Test;
 
 /**
- * Created by Funker on 08.05.14.
+ * Created by dstoianov on 08.05.14.
  */
 public class DisclaimersTests extends BaseTest {
     public DriverPage driverPage;

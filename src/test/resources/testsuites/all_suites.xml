@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Global Suite for All Campaigns">
+
+    <listeners>
+        <listener class-name="org.uncommons.reportng.HTMLReporter"/>
+        <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
+    </listeners>
+
+    <suite-files>
+        <suite-file path="auto_mfs.xml"/>
+        <suite-file path="auto_s.xml"/>
+        <suite-file path="default_console_suite.xml"/>
+    </suite-files>
+
+
+</suite>

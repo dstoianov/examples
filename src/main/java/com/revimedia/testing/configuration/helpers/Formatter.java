@@ -19,7 +19,7 @@ import java.util.Map;
 
 
 /**
- * Created by Funker on 10.05.14.
+ * Created by dstoianov on 10.05.14.
  */
 public class Formatter {
 

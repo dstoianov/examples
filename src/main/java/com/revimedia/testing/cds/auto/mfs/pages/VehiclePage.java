@@ -42,7 +42,11 @@ public class VehiclePage extends Page {
         selectByValue(ddVehicleMake, staticData.getMake());
         waitForSelectFill(ddVehicleModel);
         selectByValue(ddVehicleModel, staticData.getModel());
-        rbtnExtraCar.get(1).click();
+
+        // TODO: workaround until 'cloning vehicle' will be implemented for auto/p campaign
+        if (!driver.getCurrentUrl().contains("/auto/s/")) {
+            rbtnExtraCar.get(1).click();
+        }
         return this;
     }
 

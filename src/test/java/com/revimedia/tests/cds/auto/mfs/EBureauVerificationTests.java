@@ -15,7 +15,7 @@ import static org.hamcrest.Matchers.containsString;
 import static org.hamcrest.Matchers.equalTo;
 
 /**
- * Created by Funker on 23.05.14.
+ * Created by dstoianov on 23.05.14.
  */
 public class EBureauVerificationTests extends BaseTest {
     public DriverPage driverPage;

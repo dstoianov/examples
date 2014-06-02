@@ -1,7 +1,6 @@
 package com.revimedia.testing.configuration;
 
 import com.revimedia.testing.configuration.config.Config;
-import com.revimedia.testing.configuration.proxy.BrowserMobProxyLocal2;
 import org.openqa.selenium.Proxy;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.CapabilityType;
@@ -70,11 +69,11 @@ public class WebDriverFactory {
 
 
         // BrowserMobProxy proxy = new BrowserMobProxy();
-        BrowserMobProxyLocal2.startProxy();
-        Proxy proxy = BrowserMobProxyLocal2.getProxy();
+        //BrowserMobProxyLocal2.startProxy();
+        //Proxy proxy = BrowserMobProxyLocal2.getProxy();
         //Proxy proxy = BrowserMobProxyLocal.startBrowserMob();
 
-        capability.setCapability(CapabilityType.PROXY, proxy);
+        //capability.setCapability(CapabilityType.PROXY, proxy);
         //driver =  Browser.getByName(browserName, capability);
 
         driver = Browser.getByName(browserName).getDriverWithCapabilities(capability);

@@ -8,7 +8,7 @@ import java.net.URL;
 import java.util.Properties;
 
 /**
- * Created by Funker on 10.05.14.
+ * Created by dstoianov on 10.05.14.
  * https://github.com/roydekleijn/HowToUsePropertiesFile/blob/master/src/test/java/properties/Locators.java
  */
 public class Config {
@@ -53,7 +53,7 @@ public class Config {
         log.info("Is GRID use?:         " + IS_GRID_USE);
         log.info("GRID hub IP:          " + GRID_HUB_IP);
         log.info("Selenium Proxy IP:    " + SELENIUM_PROXY_IP);
-        log.info("Selenium Proxy Port:  " + SELENIUM_PROXY_PORT);
+        // log.info("Selenium Proxy Port:  " + SELENIUM_PROXY_PORT);
         log.info("------------------Global-Settings-For-All-Tests-------------------");
     }
 

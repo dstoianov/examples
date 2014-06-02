@@ -27,37 +27,6 @@ public class HarParser {
         return catchHarEntryByTextInURL(har, "submit");
     }
 
-    public static Submit getSubmit() {
-        HarEntry entry = BrowserMobProxyLocal2.getSubmitHarEntry();
-        HarRequest request = entry.getRequest();
-        HarResponse response = entry.getResponse();
-        String resRAW = response.getContent().getText();
-
-        Submit submit = new Submit();
-        System.out.println("------------------REQUEST---URL-------------------------------");
-        System.out.println("URL: " + request.getUrl());
-
-        for (HarPostDataParam list : request.getPostData().getParams()) {
-            if (list.getName().equalsIgnoreCase("XMLBody")) {
-                System.out.println("\n------------------REQUEST---XML-------------------------------");
-                System.out.println(Formatter.prettyXMLFormat(list.getValue()));
-                submit.setRequest(list.getValue());
-            }
-        }
-        System.out.println("\n------------------RESPONSE---JSON--------------------------");
-        System.out.println(Formatter.prettyJSONFormat(resRAW));
-        System.out.println("-----------------------------------------------------------\n");
-
-        final GsonBuilder gsonBuilder = new GsonBuilder();
-        gsonBuilder.registerTypeAdapter(Response.class, new ResponseDeserializer());
-        gsonBuilder.registerTypeAdapter(Errors.class, new ErrorsDeserializer());
-        final Gson gson = gsonBuilder.create();
-
-        Response responseObj = gson.fromJson(resRAW, Response.class);
-        submit.setResponse(responseObj);
-        return submit;
-    }
-
     public static Submit getSubmit(Har har) {
         HarEntry entryLocal = getSubmitHarEntry(har);
         HarRequest request = entryLocal.getRequest();
@@ -90,7 +59,6 @@ public class HarParser {
     }
 
     public static HarEntry catchHarEntryByTextInURL(Har har, String url) {
-        // Har har = getHar();
         Collections.reverse(har.getLog().getEntries());
         for (HarEntry entry : har.getLog().getEntries()) {
             HarRequest request = entry.getRequest();
@@ -116,18 +84,6 @@ public class HarParser {
         return entryList;
     }
 
-
-    public static List<String> getVisualWebsiteOptimizerData() {
-        List<HarEntry> harEntries = BrowserMobProxyLocal2.collectHarEntryByTextInURL("dev.visualwebsiteoptimizer.com");
-        List<String> urls = new ArrayList<>();
-        for (HarEntry entry : harEntries) {
-            String value = entry.getRequest().getQueryString().get(0).getValue();
-            String substring = value.substring(value.lastIndexOf("/") + 1);
-            urls.add(substring);
-        }
-        return urls;
-    }
-
     public static List<String> getVisualWebsiteOptimizerData(Har har) {
         List<HarEntry> harEntries = collectHarEntryByTextInURL(har, "dev.visualwebsiteoptimizer.com");
         List<String> urls = new ArrayList<>();
@@ -139,31 +95,12 @@ public class HarParser {
         return urls;
     }
 
-    public static List<HarEntry> getPolkData() {
-        return BrowserMobProxyLocal2.collectHarEntryByTextInURL("polk?");
-    }
-
     public static List<HarEntry> getPolkData(Har har) {
         return collectHarEntryByTextInURL(har, "polk?");
     }
 
-    public static HarEntry getTrackingData(String id) {
-        return BrowserMobProxyLocal2.catchHarEntryByTextInURL("/aff_l?offer_id=" + id);
-    }
-
     public static HarEntry getTrackingData(Har har, String id) {
         return catchHarEntryByTextInURL(har, "/aff_l?offer_id=" + id);
-    }
-
-    public static Map<String, String> getDynamicPixel() throws IOException {
-        HarEntry pixelCheck = BrowserMobProxyLocal2.catchHarEntryByTextInURL("pixelcheck");
-        String xmlResponse = pixelCheck.getResponse().getContent().getText();
-        String xmlValid = xmlResponse.substring(xmlResponse.indexOf("(") + 1, xmlResponse.lastIndexOf(")"));
-        Gson gson = new Gson();
-        Type type = new TypeToken<Map<String, Object>>() {
-        }.getType();
-        Map<String, String> jsonMap = gson.fromJson(xmlValid, type);
-        return jsonMap;
     }
 
     public static Map<String, String> getDynamicPixel(Har har) throws IOException {

@@ -12,6 +12,7 @@ import com.revimedia.testing.cds.staticdata.VWOData;
 import com.revimedia.testing.configuration.dto.Contact;
 import com.revimedia.testing.configuration.dto.OfferParameters;
 import com.revimedia.testing.configuration.dto.Submit;
+import com.revimedia.testing.configuration.helpers.CampaignsHelper;
 import com.revimedia.testing.configuration.helpers.DataHelper;
 import com.revimedia.testing.configuration.proxy.HarParser;
 import com.revimedia.testing.configuration.utils.XmlToObject;
@@ -109,15 +110,16 @@ public class PrePopParametersTests extends BaseTest {
         compareAndSavePage.fillInAllFields(contact, staticData).submitForm();
 
         List<String> vwoData = HarParser.getVisualWebsiteOptimizerData(proxy.getHar());
+        List<String> visualWebsiteOptimizerList = VWOData.map.get(CampaignsHelper.getCampaignName(this.url));
 
-        assertThat(vwoData, is(VWOData.AUTO_MFS_VWO));
-        assertThat(vwoData.size(), is(VWOData.AUTO_MFS_VWO.size()));
+        assertThat(vwoData, is(visualWebsiteOptimizerList));
+        assertThat(vwoData.size(), is(visualWebsiteOptimizerList.size()));
     }
 
     @Test(groups = {"submit", "Offer Parameters"}, dataProvider = "contactAndStaticAndOfferParametersDataAutoMFS", dataProviderClass = AutoDataProvider.class)
     public void DRAFT_shouldPresentOfferParametersInXMLAndDynamicPixelDataInURL(Contact contact, StaticDataAutoMFS staticData, OfferParameters offerParameters) throws Exception {
-        //reload page with necessarily offer parameters in URL
         driverPage = new DriverPage(driver);
+        //reload page with necessarily offer parameters in URL
         driverPage.open(this.url + offerParameters.toURLString());
         vehiclePage = driverPage.fillInAllFields(contact, staticData).clickOnContinue();
         compareAndSavePage = vehiclePage.fillInAllFields(staticData).clickOnContinue();
