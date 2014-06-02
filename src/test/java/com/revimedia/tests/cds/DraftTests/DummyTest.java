@@ -19,6 +19,7 @@ import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.logging.LogEntries;
 import org.openqa.selenium.logging.LogEntry;
 import org.openqa.selenium.logging.LogType;
+import org.openqa.selenium.phantomjs.PhantomJSDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.FindBys;
@@ -96,6 +97,7 @@ public class DummyTest {
         driver = new ChromeDriver(service, capabilities);
         //driver = new ChromeDriver();
 
+        //driver = new PhantomJSDriver();
         //driver = new ChromeDriver();
 //        driver = new FirefoxDriver();
         // driver = new InternetExplorerDriver();
