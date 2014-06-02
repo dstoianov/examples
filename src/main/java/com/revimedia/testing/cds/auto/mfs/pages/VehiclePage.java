@@ -38,9 +38,11 @@ public class VehiclePage extends Page {
 
     public VehiclePage fillInAllFields(StaticDataAutoMFS staticData) {
         selectByValue(ddVehicleBuildYear, staticData.getYear());
-        waitForSelectFill(ddVehicleMake);
+//        waitForSelectFill(ddVehicleMake);
+        waitForAjaxComplete();
         selectByValue(ddVehicleMake, staticData.getMake());
-        waitForSelectFill(ddVehicleModel);
+        //      waitForSelectFill(ddVehicleModel);
+        waitForAjaxComplete();
         selectByValue(ddVehicleModel, staticData.getModel());
 
         // TODO: workaround until 'cloning vehicle' will be implemented for auto/p campaign

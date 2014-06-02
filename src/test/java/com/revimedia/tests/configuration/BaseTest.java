@@ -32,7 +32,7 @@ public class BaseTest {
 
     @BeforeClass
     @Parameters(value = {"browser", "version", "url"})
-    public void setUp(@Optional("ie") String browser,
+    public void setUp(@Optional("chrome") String browser,
                       @Optional("9") String version,
 //                      @Optional("WIN") String platform,
 //                      @Optional("http://development.stagingrevi.com/auto/mfs/") String url) throws Exception {
