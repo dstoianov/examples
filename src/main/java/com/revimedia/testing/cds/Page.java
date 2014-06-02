@@ -1,5 +1,6 @@
 package com.revimedia.testing.cds;
 
+import com.revimedia.testing.configuration.ActionLogger;
 import com.revimedia.testing.configuration.utils.JsUtils;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.*;
@@ -12,9 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-import static com.revimedia.testing.cds.PageConstants.PAGE_CONTENT;
-import static com.revimedia.testing.cds.PageConstants.PAGE_ERRORS;
-import static com.revimedia.testing.cds.PageConstants.PAGE_ERRORS_BOTTOM_CONTAINER;
+import static com.revimedia.testing.cds.PageConstants.*;
 import static com.revimedia.testing.cds.constants.Disclaimers.*;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -31,6 +30,7 @@ public class Page {
     private static final int DEFAULT_TIMEOUT = 60;
     private JavascriptExecutor js;
     private WebDriverWait wait;
+    private static final ActionLogger logAction = new ActionLogger();
 
     public Page(WebDriver driver) {
         this.driver = driver;
@@ -39,13 +39,15 @@ public class Page {
     }
 
     public void clearAndType(WebElement webElement, String text) {
+        logAction.verbose("Clear and Type", webElement, text);
+        webElement.click();
         webElement.clear();
         webElement.sendKeys(text);
-        //webElement.sendKeys(Keys.TAB);
     }
 
     public void selectByValue(WebElement webElement, String text) {
 //        waitForSelectFill(driver, webElement);
+        logAction.verbose("select by text", webElement, text);
         new Select(webElement).selectByVisibleText(text);
         //waitForAjaxComplete();
     }

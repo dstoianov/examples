@@ -1,4 +1,4 @@
-package tipsandtricks.TestNGRetry2;
+package tipsandtricks.TestNGRetry;
 
 import org.apache.log4j.Logger;
 import org.testng.IRetryAnalyzer;

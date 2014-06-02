@@ -44,7 +44,7 @@ public class ActionLogger {
 
     public void verbose(String msg) {
         if (Config.VERBOSE) {
-            log.debug(msg);
+            log.info(msg);
         }
     }
 }
