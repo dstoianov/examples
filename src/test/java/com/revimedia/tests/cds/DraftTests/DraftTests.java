@@ -61,14 +61,14 @@ public class DraftTests extends BaseTest {
 
             String zipStateAndCity = compareAndSavePage.getZipStateAndCity();
 
-            if (zipStateAndCity.contains(contact.getCity() + ", " + contact.getState())) {
-                System.out.println(i + ")XXX Zip Code and City mismatched,  expected " + contact.getZipCode() + " " + contact.getCity() + " " + contact.getState());
-                System.out.println(i + ")XXX But  was " + zipStateAndCity.toString());
+            if (!zipStateAndCity.contains(contact.getCity() + ", " + contact.getState())) {
+                //System.out.println(i + ")XXX Zip Code and City mismatched,  expected " + contact.getZipCode() + " " + contact.getCity() + " " + contact.getState());
+                //System.out.println(i + ")XXX But  was " + zipStateAndCity.toString());
                 buffer.append(i + ")XXX Zip Code and City mismatched,  expected " + contact.getZipCode() + " " + contact.getCity() + " " + contact.getState() + "\n");
                 buffer.append(i + ")XXX But  was " + zipStateAndCity.toString() + "\n");
                 i++;
             }
-            System.out.println(buffer.toString());
+            //System.out.println(buffer.toString());
 
         }
 
