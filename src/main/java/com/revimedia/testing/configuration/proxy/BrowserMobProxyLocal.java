@@ -63,7 +63,7 @@ public class BrowserMobProxyLocal implements BrowserMobProxy {
 
     @Override
     public Har getHar() {
-        server.waitForNetworkTrafficToStop(5000, 45000);
+        //server.waitForNetworkTrafficToStop(5000, 70000);
         return server.getHar();
     }
 

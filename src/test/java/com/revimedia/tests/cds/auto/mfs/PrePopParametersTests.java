@@ -18,6 +18,7 @@ import com.revimedia.testing.configuration.proxy.HarParser;
 import com.revimedia.testing.configuration.utils.XmlToObject;
 import com.revimedia.tests.configuration.BaseTest;
 import com.revimedia.tests.configuration.dataproviders.AutoDataProvider;
+import net.lightbody.bmp.core.har.Har;
 import net.lightbody.bmp.core.har.HarEntry;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
@@ -97,9 +98,9 @@ public class PrePopParametersTests extends BaseTest {
         List<WebElement> gotErrorsOnPage = compareAndSavePage.getErrorsOnBottomPage();
 
         for (int i = 0; i < expectedErrorsOnPage.size(); i++) {
-            assertThat(expectedErrorsOnPage.get(i), is(gotErrorsOnPage.get(i).getText()));
+            assertThat(gotErrorsOnPage.get(i).getText(), is(expectedErrorsOnPage.get(i)));
         }
-        assertThat(gotErrorsOnPage.size(), is(expectedErrorsOnPage.size()));
+        assertThat(expectedErrorsOnPage.size(), is(gotErrorsOnPage.size()));
     }
 
     @Test(groups = {"submit", "vwo"}, dataProvider = "contactAndStaticDataAutoMFS", dataProviderClass = AutoDataProvider.class)
@@ -125,12 +126,13 @@ public class PrePopParametersTests extends BaseTest {
         compareAndSavePage = vehiclePage.fillInAllFields(staticData).clickOnContinue();
         compareAndSavePage.fillInAllFields(contact, staticData).submitForm();
 
-        Submit submit = HarParser.getSubmit(proxy.getHar());
+        Har har = proxy.getHar();
+        Submit submit = HarParser.getSubmit(har);
         LeadDataType leadDataType = XmlToObject.unMarshal(LeadDataType.class, submit.getRequest());
         AffiliateDataType affiliateData = leadDataType.getAffiliateData();
 
-        Map<String, String> dynamicPixelResponse = HarParser.getDynamicPixel(proxy.getHar());
-        HarEntry trackingData = HarParser.getTrackingData(proxy.getHar(), offerParameters.getOffer_id());
+        Map<String, String> dynamicPixelResponse = HarParser.getDynamicPixel(har);
+        HarEntry trackingData = HarParser.getTrackingData(har, offerParameters.getOffer_id());
 
         // Asserts
         assertThat(affiliateData.getId(), is(offerParameters.getAff_id()));

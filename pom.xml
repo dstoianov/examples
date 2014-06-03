@@ -368,6 +368,12 @@
                 <testng.suite>${basedir}/src/test/resources/testsuites/all_suites.xml</testng.suite>
             </properties>
         </profile>
+        <profile>
+            <id>bugs</id>
+            <properties>
+                <testng.suite>${basedir}/src/test/resources/testsuites/bugs.xml</testng.suite>
+            </properties>
+        </profile>
     </profiles>
 
     <reporting>

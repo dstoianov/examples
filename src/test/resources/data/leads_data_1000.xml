@@ -2637,7 +2637,7 @@
         <address>6363 South Fiddler's Green Cir</address>
         <emailAddress>elementum@SeddictumProin.ca</emailAddress>
         <zipCode>80111</zipCode>
-        <city>GREENWOOD</city>
+        <city>ENGLEWOOD</city>
         <state>CO</state>
     </ContactData>
     <ContactData>
@@ -4944,7 +4944,7 @@
         <city>DELRAY BEACH</city>
         <state>FL</state>
     </ContactData>
-   <ContactData>
+    <ContactData>
         <FirstName>Debra</FirstName>
         <LastName>Alvarez</LastName>
         <gender>Female</gender>
@@ -7065,7 +7065,7 @@
         <address>7750 N Union Blvd.</address>
         <emailAddress>amet@leo.com</emailAddress>
         <zipCode>80920</zipCode>
-        <city>CENTENNIAL</city>
+        <city>COLORADO SPRINGS</city>
         <state>CO</state>
     </ContactData>
     <ContactData>
@@ -7401,7 +7401,7 @@
         <address>2800 Executive Way</address>
         <emailAddress>tempus@anteVivamus.com</emailAddress>
         <zipCode>33025</zipCode>
-        <city>MIRAMAR</city>
+        <city>HOLLYWOOD</city>
         <state>FL</state>
     </ContactData>
     <ContactData>
@@ -7473,8 +7473,8 @@
         <address>5450 Riggins Court</address>
         <emailAddress>varius.et@at.net</emailAddress>
         <zipCode>86502</zipCode>
-        <city>RENO</city>
-        <state>NV</state>
+        <city>CHAMBERS</city>
+        <state>AZ</state>
     </ContactData>
     <ContactData>
         <FirstName>Denise</FirstName>
@@ -7569,7 +7569,7 @@
         <address>8601 North Scottsdale Road</address>
         <emailAddress>lorem@enimgravidasit.org</emailAddress>
         <zipCode>85253</zipCode>
-        <city>SCOTTSDALE</city>
+        <city>PARADISE VALLEY</city>
         <state>AZ</state>
     </ContactData>
     <ContactData>
@@ -7593,7 +7593,7 @@
         <address>10 Inverness Drive East</address>
         <emailAddress>Integer.mollis.Integer@tempusscelerisquelorem.com</emailAddress>
         <zipCode>80112</zipCode>
-        <city>DENVER</city>
+        <city>ENGLEWOOD</city>
         <state>CO</state>
     </ContactData>
     <ContactData>
@@ -7737,8 +7737,8 @@
         <address>520 Madison Avenue 10th Floor</address>
         <emailAddress>nec.mollis.vitae@nislsemconsequat.edu</emailAddress>
         <zipCode>10022</zipCode>
-        <city>HOUSTON</city>
-        <state>TX</state>
+        <city>NEW YORK</city>
+        <state>NY</state>
     </ContactData>
     <ContactData>
         <FirstName>Gemma</FirstName>
@@ -7943,18 +7943,6 @@
         <zipCode>80304</zipCode>
         <city>BOULDER</city>
         <state>CO</state>
-    </ContactData>
-    <ContactData>
-        <FirstName>Keiko</FirstName>
-        <LastName>Morin</LastName>
-        <gender>Female</gender>
-        <birthDate>Oct 10, 1974</birthDate>
-        <phoneNumber>560-437-6038</phoneNumber>
-        <address>840 Memorial Drive, 4th Floor</address>
-        <emailAddress>ad@tellusfaucibusleo.com</emailAddress>
-        <zipCode>2139</zipCode>
-        <city>CAMBRIDGE</city>
-        <state>MA</state>
     </ContactData>
     <ContactData>
         <FirstName>Cherokee</FirstName>

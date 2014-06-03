@@ -4,12 +4,13 @@ import com.revimedia.testing.cds.auto.staticdata.StaticDataAutoMFS;
 import com.revimedia.testing.configuration.dto.Contact;
 import com.revimedia.testing.configuration.dto.Contacts;
 import com.revimedia.testing.configuration.dto.OfferParameters;
+import com.revimedia.testing.configuration.helpers.CampaignsHelper;
 import com.revimedia.testing.configuration.helpers.DataHelper;
 import com.revimedia.testing.configuration.utils.PrePopIPHelper;
 import org.apache.commons.lang3.RandomStringUtils;
+import org.testng.ITestContext;
 import org.testng.annotations.DataProvider;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
@@ -71,16 +72,28 @@ public class AutoDataProvider extends DataProviderHelper {
     }
 
     @DataProvider
-    public static Object[][] contactAndStaticDataAutoMFSBoundaryTesting() {
-        Contact contact1 = new Contact("Kung Fu", "Panda", "Male", "Oct 31, 2000", "7180483889", "6221 Monterey Rd 101", "miley.cyrus@hotmail.com", "90005", "LOS ANGELES", "CA");
-        Contact contact2 = new Contact("Kung Fu", "Panda", "Female", "Feb 29, 1989", "3238550093", "123Fake", "blah.blahblah@gmail.con", "75201", "DALLAS", "TX");
+    public static Object[][] contactAndStaticDataAutoMFSBoundaryTesting(ITestContext context) {
+        String url = context.getCurrentXmlTest().getParameter("url");
+        String campaignName = "";
+        if (url != null) {
+            campaignName = CampaignsHelper.getCampaignName(url);
+        }
+
+        Contact contact1 = new Contact("Kung Fu", "Panda", "Male", "Oct 31, 1995", "7180483889", "6221 Monterey Rd 101", "miley.cyrus@hotmail.com", "90005", "LOS ANGELES", "CA");
+        Contact contact2 = new Contact("Robinson", "Crusoe", "Female", "Feb 29, 1989", "3238550093", "123Fake", "blah.blahblah@gmail.con", "75201", "DALLAS", "TX");
         //birthdate=Jul 31, 1980
         StaticDataAutoMFS staticData = (new StaticDataAutoMFS());
         staticData.setInsuranceCompany("Currently not insured");
+        List<String> expectedErrors1;
+        List<String> expectedErrors2;
 
-        List<String> expectedErrors1 = new ArrayList<>(Arrays.asList("Please enter a valid phone number.", "Select education level."));
-        List<String> expectedErrors2 = new ArrayList<>(Arrays.asList("Please enter street address.", "Please enter a valid email address.", "Select education level."));
-
+        if (campaignName.equalsIgnoreCase("auto/s")) {
+            expectedErrors1 = Arrays.asList("Phone number is invalid", "Select education level.");
+            expectedErrors2 = Arrays.asList("Please enter street address.", "Email address is invalid", "Select education level.");
+        } else {
+            expectedErrors1 = Arrays.asList("Please enter a valid phone number.", "Select education level.");
+            expectedErrors2 = Arrays.asList("Please enter street address.", "Please enter a valid email address.", "Select education level.");
+        }
 
         Object[][] result = {
                 {contact1, staticData, expectedErrors1},
