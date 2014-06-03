@@ -83,8 +83,8 @@ public class JustTest {
 
     private int getPort() {
         Random rand = new Random();
-        int min = 8085;
-        int max = 8095;
+        int min = 100;
+        int max = 250;
         int randomNum = rand.nextInt((max - min) + 1) + min;
         return randomNum;
     }
@@ -92,14 +92,10 @@ public class JustTest {
 
     @Test
     public void testCampaignName() throws Exception {
-        String s = "http://development.stagingrevi.com/auto/s/";
-        // "auto/mfs"
 
-        int i = s.indexOf(".com") + 5;
 
-        String ss = s.substring(i, s.length() - 1);
-        System.out.println(s);
-        System.out.println(ss);
+        System.out.println(5 % getPort());
+        System.out.println(getPort() % 5);
 
     }
 }
