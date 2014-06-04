@@ -4,6 +4,6 @@ mvn dependency:tree > dependency-tree.txt
 mvn install -Dmaven.test.skip=true
 mvn package -Dmaven.test.skip=true
 
-Run single test from command line
+Run single test from command line (http://maven.apache.org/surefire/maven-surefire-plugin/examples/single-test.html)
 mvn clean -Dtest=ExampleWithAssertThat#usingAssertThatPass test
 
