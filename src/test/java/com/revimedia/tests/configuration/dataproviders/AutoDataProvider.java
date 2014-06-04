@@ -20,9 +20,6 @@ import java.util.Map;
  */
 public class AutoDataProvider extends DataProviderHelper {
 
-    public static String xmlContactData = "./src/test/resources/data/leads_data_1000.xml";
-
-
     @DataProvider
     public static Object[][] contactAndStaticDataAutoMFS() {
         Object contact = unMarshalToObject(xmlContactData, Contacts.class);
