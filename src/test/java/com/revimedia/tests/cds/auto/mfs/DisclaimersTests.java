@@ -31,6 +31,7 @@ public class DisclaimersTests extends BaseTest {
 
         // ACT
         compareAndSavePage = vehiclePage.fillInAllFields(staticData).clickOnContinue();
+
         // Assert
         compareAndSavePage.verifyPrivacyPolicyAndTermsOfUseLinks();
         compareAndSavePage.verifyTCPADisclaimerAndLinksLinks();
