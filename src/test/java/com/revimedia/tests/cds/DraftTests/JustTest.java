@@ -1,10 +1,12 @@
 package com.revimedia.tests.cds.DraftTests;
 
 import com.revimedia.testing.cds.auto.staticdata.StaticDataAutoMFS;
+import org.apache.commons.lang3.time.DateFormatUtils;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.text.DateFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
@@ -12,6 +14,19 @@ import java.util.*;
  * Created by dstoianov on 5/23/2014, 4:24 PM.
  */
 public class JustTest {
+
+    public static Map<String, Integer> map = new HashMap<String, Integer>();
+
+
+    static {
+        map.put("0", 0);
+        map.put("1", 1);
+        map.put("2", 2);
+        map.put("3", 3);
+        map.put("4", 4);
+        map.put("5", 5);
+        map.put("5+", 10);
+    }
 
 
     @Test
@@ -89,13 +104,46 @@ public class JustTest {
         return randomNum;
     }
 
-
     @Test
-    public void testCampaignName() throws Exception {
+    public void testDateTests() throws Exception {
+        String dec = dateTransformExpirationDate("Dec");
+        String jun = dateTransformExpirationDate("Jun");
+        String jan = dateTransformExpirationDate("Jan");
 
 
-        System.out.println(5 % getPort());
-        System.out.println(getPort() % 5);
+        // String s1 = dateTransformInsuredSince("3", "0");
+        //String s2 = dateTransformInsuredSince("4", "10");
+        // String s = dateTransformInsuredSince("4", "11");
 
     }
+
+    public static String dateTransformExpirationDate(String insuredSinceMonths) {
+        try { // Dec -> 2014-12-01
+            Calendar c = Calendar.getInstance(Locale.ENGLISH);
+            int yearNow = c.get(Calendar.YEAR);
+            int monthNow = c.get(Calendar.MONTH) + 1;
+            Date mmm = (new SimpleDateFormat("MMM", Locale.ENGLISH)).parse(insuredSinceMonths);
+            String mm = DateFormatUtils.format(mmm, "MM", Locale.ENGLISH);
+            if (monthNow >= Integer.parseInt(mm)) {
+                return Integer.toString(yearNow + 1) + "-" + mm + "-01";
+            } else {
+                return Integer.toString(yearNow) + "-" + mm + "-01";
+            }
+        } catch (ParseException e) {
+            System.out.println("Can't transform '" + insuredSinceMonths + "' date to valid for compare!!!");
+            e.printStackTrace();
+        }
+        return insuredSinceMonths;
+    }
+
+
+    public static String dateTransformInsuredSince(String insuredSinceYear, String insuredSinceMonths) {
+        Calendar now = Calendar.getInstance(Locale.ENGLISH);
+        now.add(Calendar.YEAR, -map.get(insuredSinceYear));
+        now.add(Calendar.MONTH, -Integer.parseInt(insuredSinceMonths));
+        String end = DateFormatUtils.format(now, "yyyy-MM-dd", Locale.ENGLISH);
+        return end;
+    }
+
+
 }
