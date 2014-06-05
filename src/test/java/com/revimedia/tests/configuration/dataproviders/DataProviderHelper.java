@@ -12,6 +12,7 @@ import java.io.File;
  * Created by stde on 4/28/2014.
  */
 public class DataProviderHelper {
+    public static String xmlContactData = "./src/test/resources/data/leads_data_1000.xml";
 
     static <T extends RandomObject> Object[][] unMarshal(String xml_file_name, Class<T> clazz) {
         try {

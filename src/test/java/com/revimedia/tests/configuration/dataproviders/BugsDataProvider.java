@@ -9,9 +9,6 @@ import org.testng.annotations.DataProvider;
  */
 public class BugsDataProvider extends DataProviderHelper {
 
-    public static String xmlContactData = "./src/test/resources/data/leads_data_1000.xml";
-
-
     @DataProvider
     public static Object[][] contactAndStaticDataAutoMFSBugsTesting() {
         Contact contact1 = new Contact("Jackie", "Chan", "Male", "Oct 31, 1957", "3238550093", "6221 Monterey Rd 101", "miley.cyrus@hotmail.com", "90005", "LOS ANGELES", "CA");
