@@ -68,9 +68,11 @@ public class JustTest {
         copy.setMake("qqqqq");
         //assertThat(staticDataAutoMFS, is(equalTo(copy)));
         //assertThat((Object) staticDataAutoMFS, equalTo((Object) copy));
-        Assert.assertTrue(staticDataAutoMFS.equals(copy), "not Same");
+        // Assert.assertTrue(staticDataAutoMFS.equals(copy), "not Same");
 
+        boolean equals = Objects.equals(staticDataAutoMFS, copy);
 
+        Assert.assertTrue(equals);
     }
 
     @Test

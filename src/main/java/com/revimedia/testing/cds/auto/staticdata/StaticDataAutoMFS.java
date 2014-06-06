@@ -162,33 +162,33 @@ public class StaticDataAutoMFS implements Cloneable {
                         "\nmodel='" + model + '\'';
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        StaticDataAutoMFS that = (StaticDataAutoMFS) o;
-
-        if (creditRating != null ? !creditRating.equals(that.creditRating) : that.creditRating != null)
-            return false;
-        if (education != null ? !education.equals(that.education) : that.education != null)
-            return false;
-        if (insuranceCompany != null ? !insuranceCompany.equals(that.insuranceCompany) : that.insuranceCompany != null)
-            return false;
-        if (insuredSince != null ? !insuredSince.equals(that.insuredSince) : that.insuredSince != null)
-            return false;
-        if (make != null ? !make.equals(that.make) : that.make != null) {
-            System.out.println("make is different: \n 1) " + make + "\n2) " + that.make);
-            return false;
-        }
-        if (maritalStatus != null ? !maritalStatus.equals(that.maritalStatus) : that.maritalStatus != null)
-            return false;
-        if (model != null ? !model.equals(that.model) : that.model != null) return false;
-        if (residenceType != null ? !residenceType.equals(that.residenceType) : that.residenceType != null)
-            return false;
-        if (year != null ? !year.equals(that.year) : that.year != null) return false;
-
-        return true;
-    }
+//    @Override
+//    public boolean equals(Object o) {
+//        if (this == o) return true;
+//        if (o == null || getClass() != o.getClass()) return false;
+//
+//        StaticDataAutoMFS that = (StaticDataAutoMFS) o;
+//
+//        if (creditRating != null ? !creditRating.equals(that.creditRating) : that.creditRating != null)
+//            return false;
+//        if (education != null ? !education.equals(that.education) : that.education != null)
+//            return false;
+//        if (insuranceCompany != null ? !insuranceCompany.equals(that.insuranceCompany) : that.insuranceCompany != null)
+//            return false;
+//        if (insuredSince != null ? !insuredSince.equals(that.insuredSince) : that.insuredSince != null)
+//            return false;
+//        if (make != null ? !make.equals(that.make) : that.make != null) {
+//            System.out.println("make is different: \n 1) " + make + "\n2) " + that.make);
+//            return false;
+//        }
+//        if (maritalStatus != null ? !maritalStatus.equals(that.maritalStatus) : that.maritalStatus != null)
+//            return false;
+//        if (model != null ? !model.equals(that.model) : that.model != null) return false;
+//        if (residenceType != null ? !residenceType.equals(that.residenceType) : that.residenceType != null)
+//            return false;
+//        if (year != null ? !year.equals(that.year) : that.year != null) return false;
+//
+//        return true;
+//    }
 
 }

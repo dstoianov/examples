@@ -12,14 +12,13 @@ import com.revimedia.tests.configuration.dataproviders.AutoDataProvider;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeDriverService;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxProfile;
+import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.logging.LogEntries;
 import org.openqa.selenium.logging.LogEntry;
 import org.openqa.selenium.logging.LogType;
-import org.openqa.selenium.phantomjs.PhantomJSDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.FindBys;
@@ -33,7 +32,6 @@ import java.awt.event.KeyEvent;
 import java.io.File;
 import java.io.IOException;
 import java.lang.reflect.Field;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -94,13 +92,13 @@ public class DummyTest {
         //driver = new FirefoxDriver(firefoxProfile);
         //--------------------
 
-        driver = new ChromeDriver(service, capabilities);
+        //driver = new ChromeDriver(service, capabilities);
         //driver = new ChromeDriver();
 
         //driver = new PhantomJSDriver();
         //driver = new ChromeDriver();
 //        driver = new FirefoxDriver();
-        // driver = new InternetExplorerDriver();
+        driver = new InternetExplorerDriver();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         //driver.manage().window().maximize();
     }
@@ -108,6 +106,18 @@ public class DummyTest {
     @AfterMethod(alwaysRun = true)
     public void tearDown() {
         driver.quit();
+    }
+
+    @Test
+    public void testName() throws Exception {
+//
+//        //List<WebElement> visibleError = filter(isDisplayed(), driver.findElements(By.xpath(".//*[contains(@class, 'error')]")));
+//        List<String> errorText = new ArrayList<String>();
+//        for (WebElement error : visibleError) {
+//            if (error.getText() != "") {
+//                errorText.add(error.getText());
+//            }
+//        }
     }
 
     @Test(dataProvider = "contactAndStaticDataAutoMFS", dataProviderClass = AutoDataProvider.class)
