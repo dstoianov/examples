@@ -17,6 +17,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import com.google.common.base.Predicate;
 
 import static org.openqa.selenium.support.ui.ExpectedConditions.*;
+//https://github.com/eviltester/webDriverExperiments/blob/master/src/test/java/com/seleniumsimplified/webdriver/Section18_Lecture120_WebDriverWaitCustomExpectedConditions.java
 
 public class Section18_Lecture120_WebDriverWaitCustomExpectedConditions {
 
