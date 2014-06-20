@@ -10,6 +10,9 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.core.Is.is;
+
 /**
  * Created by dstoianov on 5/23/2014, 4:24 PM.
  */
@@ -148,4 +151,20 @@ public class JustTest {
     }
 
 
+    @Test
+    public void testCollection() throws Exception {
+
+
+        List<String> list1 = Arrays.asList("Please enter street address.", "Please enter a valid phone number.", "Please enter a valid email address.");
+        List<String> list2 = Arrays.asList("Please enter a valid phone number.", "Please enter street address.", "Please enter a valid email address.");
+
+
+        Collections.sort(list1);
+        Collections.sort(list2);
+
+        //assertThat(list1, hasSameItemsAsList(list2));
+       // assertThat("ksdfjds", hasItemInArray(list1), (org.hamcrest.Matcher<? super org.hamcrest.Matcher<List<String>[]>>) list2);
+        assertThat(list1, is(list2));
+
+    }
 }

@@ -52,6 +52,17 @@ public class DraftTests extends BaseTest {
     public void testCheckZipCode(Contacts contacts, StaticDataAutoMFS staticData) throws Exception {
         driverPage = new DriverPage(driver);
         StringBuffer buffer = new StringBuffer();
+
+
+        //@FindBy(xpath = "//div[contains(@class, 'ZipCode')]//input")
+        //private WebElement txtZipCode;
+
+       // WebElement element = driver.findElement(By.xpath("//div[contains(@class, 'ZipCode')]//input"));
+//        for(WebElement field : fields) {
+//             element = driver.findElement(map.getProperty(field.xpath));
+//        }
+
+
         int i = 0;
         for (Contact contact : contacts.getContacts()) {
             driverPage.open(this.url);

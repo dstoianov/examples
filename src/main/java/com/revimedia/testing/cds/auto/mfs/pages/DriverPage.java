@@ -7,9 +7,6 @@ import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.FindBys;
-
-import java.util.List;
 
 /**
  * User: stoianod
@@ -17,11 +14,17 @@ import java.util.List;
  */
 public class DriverPage extends Page {
     protected final Logger log = Logger.getLogger(this.getClass());
-
+    //protected String[] fieldsOnStep = [FirstName, LastName];
     public DriverPage(WebDriver driver) {
         super(driver);
         log.info("Driver Page is Loaded, STEP #1");
+        //BindElements(step);
     }
+
+//    protected void BindElements(int step){
+//        String xml = getXMLForCampaign()
+//        CampaignStepFields leadDataType = XmlToObject.unMarshal(CampaignStepFields.class, submit.getRequest());
+//    }
 
     // .//input[ancestor::div]
     @FindBy(xpath = "//div[contains(@class, 'ZipCode')]//input")
