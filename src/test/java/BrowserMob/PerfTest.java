@@ -14,18 +14,21 @@ import org.openqa.selenium.Proxy;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.net.PortProber;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.Test;
 
 import java.io.File;
 import java.io.FileOutputStream;
+import java.net.InetAddress;
 import java.util.concurrent.TimeUnit;
 
 public class PerfTest {
 
     String strFilePath = "./src/test/resources/har.txt";
     String strFilePath2 = "./src/test/resources/har2.txt";
+    ProxyServer server;
 
     @Test
     public void testName1() throws Exception {
@@ -75,7 +78,8 @@ public class PerfTest {
     public void testName2() throws Exception {
 
         // start the proxy
-        ProxyServer server = new ProxyServer(8071);
+        int port = PortProber.findFreePort();
+        server = new ProxyServer(port);
         server.start();
         //captures the moouse movements and navigations
 
@@ -85,8 +89,8 @@ public class PerfTest {
 
         // get the Selenium proxy object
         Proxy proxy = server.seleniumProxy();
-        proxy.setHttpProxy("localhost:8071");
-        proxy.setSocksProxy("localhost:8071");
+        proxy.setHttpProxy("localhost:" + port);
+        //proxy.setSocksProxy("localhost:" + port);
         // configure it as a desired capability
         DesiredCapabilities capabilities = new DesiredCapabilities();
         //capabilities.setCapability(CapabilityType.PROXY, server.seleniumProxy());
@@ -100,7 +104,7 @@ public class PerfTest {
         server.newHar("apple.com");
         //server.whitelistRequests();
 
-        driver.get("http://rvmd-denis.stagingrevi.com/auto/mfs/");
+        driver.get("http://development.stagingrevi.com/auto/mfs/");
 
         server.getHar().getLog().getEntries().clear();
 
@@ -109,6 +113,7 @@ public class PerfTest {
         driver.findElement(By.xpath("//button")).click();
 
         Thread.sleep(3000);
+        InetAddress localHost = server.getLocalHost();
 
         Har har = server.getHar();
         FileOutputStream fos = new FileOutputStream(strFilePath2);
