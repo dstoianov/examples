@@ -1,0 +1,237 @@
+[1.125][INFO]: COMMAND InitSession {
+   "desiredCapabilities": {
+      "chromeOptions": {
+         "args": [ "--enable-logging", "--v=2", "--log-level=3" ],
+         "extensions": [  ]
+      },
+      "loggingPrefs": {
+         "browser": "ALL",
+         "client": "ALL",
+         "driver": "ALL"
+      }
+   }
+}
+[1.126][WARNING]: Ignoring unrecognized log type: client
+[1.145][INFO]: Populating Preferences file: {
+   "alternate_error_pages": {
+      "enabled": false
+   },
+   "autofill": {
+      "enabled": false
+   },
+   "browser": {
+      "check_default_browser": false
+   },
+   "distribution": {
+      "import_bookmarks": false,
+      "import_history": false,
+      "import_search_engine": false,
+      "make_chrome_default_for_user": false,
+      "show_welcome_page": false,
+      "skip_first_run_ui": true
+   },
+   "dns_prefetching": {
+      "enabled": false
+   },
+   "profile": {
+      "content_settings": {
+         "pattern_pairs": {
+            "https://*,*": {
+               "media-stream": {
+                  "audio": "Default",
+                  "video": "Default"
+               }
+            }
+         }
+      },
+      "default_content_settings": {
+         "geolocation": 1,
+         "mouselock": 1,
+         "notifications": 1,
+         "popups": 1,
+         "ppapi-broker": 1
+      },
+      "password_manager_enabled": false
+   },
+   "safebrowsing": {
+      "enabled": false
+   },
+   "search": {
+      "suggest_enabled": false
+   },
+   "translate": {
+      "enabled": false
+   }
+}
+[1.147][INFO]: Populating Local State file: {
+   "background_mode": {
+      "enabled": false
+   },
+   "ssl": {
+      "rev_checking": {
+         "enabled": false
+      }
+   }
+}
+[1.176][INFO]: Launching chrome: "C:\Program Files (x86)\Google\Chrome\Application\chrome.exe" --disable-background-networking --disable-client-side-phishing-detection --disable-component-update --disable-default-apps --disable-hang-monitor --disable-prompt-on-repost --disable-sync --disable-web-resources --enable-logging --ignore-certificate-errors --load-extension="C:\Users\stde\AppData\Local\Temp\scoped_dir21440_26396\internal" --log-level=3 --logging-level=1 --metrics-recording-only --no-first-run --password-store=basic --remote-debugging-port=12821 --safebrowsing-disable-auto-update --safebrowsing-disable-download-protection --use-mock-keychain --user-data-dir="C:\Users\stde\AppData\Local\Temp\scoped_dir21440_13201" --v=2 data:,
+[3.816][INFO]: RESPONSE InitSession {
+   "acceptSslCerts": true,
+   "applicationCacheEnabled": false,
+   "browserConnectionEnabled": false,
+   "browserName": "chrome",
+   "chrome": {
+      "userDataDir": "C:\\Users\\stde\\AppData\\Local\\Temp\\scoped_dir21440_13201"
+   },
+   "cssSelectorsEnabled": true,
+   "databaseEnabled": false,
+   "handlesAlerts": true,
+   "javascriptEnabled": true,
+   "locationContextEnabled": true,
+   "nativeEvents": true,
+   "platform": "Windows NT",
+   "rotatable": false,
+   "takesHeapSnapshot": true,
+   "takesScreenshot": true,
+   "version": "35.0.1916.153",
+   "webStorageEnabled": true
+}
+[3.879][INFO]: COMMAND SetImplicitWait {
+   "ms": 10000
+}
+[3.879][INFO]: RESPONSE SetImplicitWait
+[3.890][INFO]: COMMAND Navigate {
+   "url": "http://www.facebook.com"
+}
+[3.894][INFO]: Waiting for pending navigations...
+[3.913][INFO]: Done waiting for pending navigations
+[4.927][INFO]: Waiting for pending navigations...
+[7.960][INFO]: Done waiting for pending navigations
+[7.960][INFO]: RESPONSE Navigate
+[7.967][INFO]: COMMAND GetLogTypes {
+
+}
+[7.967][INFO]: RESPONSE GetLogTypes [ "browser", "driver" ]
+[7.986][INFO]: COMMAND GetLog {
+   "type": "browser"
+}
+[7.986][INFO]: RESPONSE GetLog [  ]
+[7.990][INFO]: COMMAND GetLog {
+   "type": "driver"
+}
+[7.991][INFO]: RESPONSE GetLog [ {
+   "level": "WARNING",
+   "message": "Ignoring unrecognized log type: client\n",
+   "timestamp": 1403695866467.0
+}, {
+   "level": "INFO",
+   "message": "Populating Preferences file: {\n   \"alternate_error_pages\": {\n      \"enabled\": false\n   },\n   \"autofill\": {\n      \"enabled\": false\n   },\n   \"browser\": {\n      \"check_default_browser\": false\n   },\n  ...",
+   "timestamp": 1403695866486.0
+}, {
+   "level": "INFO",
+   "message": "Populating Local State file: {\n   \"background_mode\": {\n      \"enabled\": false\n   },\n   \"ssl\": {\n      \"rev_checking\": {\n         \"enabled\": false\n      }\n   }\n}\n",
+   "timestamp": 1403695866488.0
+}, {
+   "level": "INFO",
+   "message": "Launching chrome: \"C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe\" --disable-background-networking --disable-client-side-phishing-detection --disable-component-update --disable-default...",
+   "timestamp": 1403695866517.0
+}, {
+   "level": "DEBUG",
+   "message": "DevTools request: http://127.0.0.1:12821/json/version\n",
+   "timestamp": 1403695866520.0
+}, {
+   "level": "DEBUG",
+   "message": "DevTools response: {\r\n   \"Browser\": \"Chrome/35.0.1916.153\",\r\n   \"Protocol-Version\": \"1.0\",\r\n   \"User-Agent\": \"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0....",
+   "timestamp": 1403695869074.0
+}, {
+   "level": "DEBUG",
+   "message": "DevTools request: http://127.0.0.1:12821/json\n",
+   "timestamp": 1403695869074.0
+}, {
+   "level": "DEBUG",
+   "message": "DevTools response: [ {\r\n   \"description\": \"\",\r\n   \"devtoolsFrontendUrl\": \"/devtools/devtools.html?ws=127.0.0.1:12821/devtools/page/16594D9C-79F7-4FC8-852A-C8B75C1E44DB\",\r\n   \"faviconUrl\": \"chrome:/...",
+   "timestamp": 1403695869117.0
+}, {
+   "level": "DEBUG",
+   "message": "DevTools request: http://127.0.0.1:12821/json\n",
+   "timestamp": 1403695869118.0
+}, {
+   "level": "DEBUG",
+   "message": "DevTools response: [ {\r\n   \"description\": \"\",\r\n   \"devtoolsFrontendUrl\": \"/devtools/devtools.html?ws=127.0.0.1:12821/devtools/page/16594D9C-79F7-4FC8-852A-C8B75C1E44DB\",\r\n   \"faviconUrl\": \"chrome:/...",
+   "timestamp": 1403695869120.0
+}, {
+   "level": "INFO",
+   "message": "RESPONSE InitSession {\n   \"acceptSslCerts\": true,\n   \"applicationCacheEnabled\": false,\n   \"browserConnectionEnabled\": false,\n   \"browserName\": \"chrome\",\n   \"chrome\": {\n      \"userDataDir\": \"C:\\\\Use...",
+   "timestamp": 1403695869157.0
+}, {
+   "level": "INFO",
+   "message": "COMMAND SetImplicitWait {\n   \"ms\": 10000\n}\n",
+   "timestamp": 1403695869220.0
+}, {
+   "level": "INFO",
+   "message": "RESPONSE SetImplicitWait\n",
+   "timestamp": 1403695869220.0
+}, {
+   "level": "INFO",
+   "message": "COMMAND Navigate {\n   \"url\": \"http://www.facebook.com\"\n}\n",
+   "timestamp": 1403695869231.0
+}, {
+   "level": "DEBUG",
+   "message": "DEVTOOLS COMMAND Console.enable (id=1) {\n\n}\n",
+   "timestamp": 1403695869233.0
+}, {
+   "level": "DEBUG",
+   "message": "DEVTOOLS COMMAND DOM.getDocument (id=2) {\n\n}\n",
+   "timestamp": 1403695869233.0
+}, {
+   "level": "DEBUG",
+   "message": "DEVTOOLS COMMAND Runtime.enable (id=3) {\n\n}\n",
+   "timestamp": 1403695869233.0
+}, {
+   "level": "DEBUG",
+   "message": "DEVTOOLS COMMAND Page.enable (id=4) {\n\n}\n",
+   "timestamp": 1403695869233.0
+}, {
+   "level": "DEBUG",
+   "message": "DEVTOOLS COMMAND Page.enable (id=5) {\n\n}\n",
+   "timestamp": 1403695869234.0
+}, "..." ]
+[40.599][INFO]: COMMAND GetLog {
+   "type": "browser"
+}
+[40.599][INFO]: RESPONSE GetLog [  ]
+[40.606][INFO]: COMMAND GetLog {
+   "type": "browser"
+}
+[40.606][INFO]: RESPONSE GetLog [  ]
+[40.613][INFO]: COMMAND GetLog {
+   "type": "driver"
+}
+[40.613][INFO]: RESPONSE GetLog [ {
+   "level": "INFO",
+   "message": "RESPONSE GetLog [ {\n   \"level\": \"WARNING\",\n   \"message\": \"Ignoring unrecognized log type: client\\n\",\n   \"timestamp\": 1403695866467.0\n}, {\n   \"level\": \"INFO\",\n   \"message\": \"Populating Preferences f...",
+   "timestamp": 1403695873332.0
+}, {
+   "level": "INFO",
+   "message": "COMMAND GetLog {\n   \"type\": \"browser\"\n}\n",
+   "timestamp": 1403695905940.0
+}, {
+   "level": "INFO",
+   "message": "RESPONSE GetLog [  ]\n",
+   "timestamp": 1403695905940.0
+}, {
+   "level": "INFO",
+   "message": "COMMAND GetLog {\n   \"type\": \"browser\"\n}\n",
+   "timestamp": 1403695905947.0
+}, {
+   "level": "INFO",
+   "message": "RESPONSE GetLog [  ]\n",
+   "timestamp": 1403695905947.0
+}, {
+   "level": "INFO",
+   "message": "COMMAND GetLog {\n   \"type\": \"driver\"\n}\n",
+   "timestamp": 1403695905954.0
+} ]
+[40.630][INFO]: COMMAND Quit {
+
+}
+[40.782][INFO]: RESPONSE Quit
