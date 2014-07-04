@@ -4,12 +4,14 @@ package BrowserMob;
  * Created by Funker on 26.04.14.
  */
 
+import com.revimedia.testing.configuration.proxy.ProxyPorts;
 import net.lightbody.bmp.core.har.Har;
 import net.lightbody.bmp.core.har.HarEntry;
 import net.lightbody.bmp.core.har.HarRequest;
 import net.lightbody.bmp.core.har.HarResponse;
 import net.lightbody.bmp.proxy.ProxyServer;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Platform;
 import org.openqa.selenium.Proxy;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -198,8 +200,10 @@ public class PerfTest {
 
     @AfterMethod(alwaysRun = true)
     public void tearDown() throws Exception {
-        driver.quit();
-        server.stop();
+        if (driver != null) {
+            driver.quit();
+            server.stop();
+        }
     }
 
 
@@ -265,16 +269,19 @@ public class PerfTest {
 
         // get the Selenium proxy object
 
-        String base_url = "http://172.31.29.21:8084";
+//        String base_url = "http://172.31.29.21:8084";
         Proxy proxy = new Proxy();
-        // proxy.setProxyAutoconfigUrl(base_url);
         String PROXY = "172.31.29.21:" + port;
-        proxy.setHttpProxy(PROXY);
+        proxy.setHttpProxy(PROXY).setSslProxy(PROXY);
+
         DesiredCapabilities capabilities = DesiredCapabilities.internetExplorer();
+        capabilities.setVersion("10");
+        capabilities.setPlatform(Platform.ANY);
 //        capabilities.setCapability("ie.usePerProcessProxy", true);
-//        capabilities.setCapability(CapabilityType.PROXY, proxy);
-        capabilities.setCapability(CapabilityType.PROXY, server.seleniumProxy());
-        WebDriver driver = new RemoteWebDriver(new URL("http://172.31.29.37:4444/wd/hub"), capabilities);
+        capabilities.setCapability(CapabilityType.PROXY, proxy);
+
+//        capabilities.setCapability(CapabilityType.PROXY, server.seleniumProxy());
+        WebDriver driver = new RemoteWebDriver(new URL("http://172.31.29.21:4444/wd/hub"), capabilities);
         // RemoteWebDriver driver = new RemoteWebDriver(capabilities);
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
@@ -288,5 +295,6 @@ public class PerfTest {
 
         driver.quit();
         server.stop();
+        ProxyPorts.dismissPort(server.getPort());
     }
 }
