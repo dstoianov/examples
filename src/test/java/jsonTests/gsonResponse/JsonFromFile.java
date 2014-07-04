@@ -18,6 +18,7 @@ import java.util.Map;
 public class JsonFromFile {
 
     String file = ".\\src\\test\\java\\jsonTests\\gsonResponse\\Bq.Config.copy.json";
+    //String file = ".\\src\\test\\java\\jsonTests\\gsonResponse\\Bq.Config.copy.json";
 
     @Test
     public void testName2() throws Exception {
