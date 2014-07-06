@@ -12,7 +12,7 @@ public class VWOData {
 
     public static Map<String, List<String>> map = new HashMap<String, List<String>>();
 
-    public static List<String> AUTO_MFS = Arrays.asList("cds-auto-mfs", "cds-auto-mfs-step2", "cds-auto-mfs-step3", "cds-auto-mfs-step4");
+    public static List<String> AUTO_MFS = Arrays.asList("cds-auto-mfs", "cds-auto-mfs-step1", "cds-auto-mfs-step2", "cds-auto-mfs-thanks");
     private static List<String> AUTO_S = Arrays.asList("cds-auto-s", "cds-auto-s-step2", "cds-auto-s-step3", "cds-auto-s-step4");
 
 
