@@ -28,12 +28,11 @@ public class FindNodeIpAddress {
 
     @Test
     public void testRemoteIP() throws MalformedURLException {
-        new DesiredCapabilities();
+        // new DesiredCapabilities();
         DesiredCapabilities cap = DesiredCapabilities.firefox();
-        RemoteWebDriver remoteDriver = new RemoteWebDriver(
-                // 192.168.96.22
-                new URL("http://hub-ip-address:4444/wd/hub"), cap);
+        RemoteWebDriver remoteDriver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), cap);
         System.out.println(getIPOfNode(remoteDriver));
+        remoteDriver.quit();
     }
 
     private static String getIPOfNode(RemoteWebDriver remoteDriver) {
@@ -44,10 +43,8 @@ public class FindNodeIpAddress {
             int port = ce.getAddressOfRemoteServer().getPort();
             HttpHost host = new HttpHost(hostName, port);
             DefaultHttpClient client = new DefaultHttpClient();
-            URL sessionURL = new URL("http://" + hostName + ":" + port
-                    + "/grid/api/testsession?session=" + remoteDriver.getSessionId());
-            BasicHttpEntityEnclosingRequest r = new BasicHttpEntityEnclosingRequest(
-                    "POST", sessionURL.toExternalForm());
+            URL sessionURL = new URL("http://" + hostName + ":" + port + "/grid/api/testsession?session=" + remoteDriver.getSessionId());
+            BasicHttpEntityEnclosingRequest r = new BasicHttpEntityEnclosingRequest("POST", sessionURL.toExternalForm());
             HttpResponse response = client.execute(host, r);
             JSONObject object = extractObject(response);
             URL myURL = new URL(object.getString("proxyId"));

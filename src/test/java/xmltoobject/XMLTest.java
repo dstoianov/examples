@@ -45,6 +45,30 @@ public class XMLTest {
 
 
     @Test
+    public void testContactSetLastName() throws Exception {
+
+        Contacts all = (Contacts) unMarshalToObject("./src/test/resources/data/leads_data_1000.xml", Contacts.class);
+
+        Contacts contacts = new Contacts();
+        contacts.setContacts(new ArrayList<Contact>());
+
+        for (Contact c : all.getContacts()) {
+            c.setLastName("Dummy");
+            contacts.getContacts().add(c);
+        }
+        JAXBContext jaxbContext = JAXBContext.newInstance(Contacts.class);
+        Marshaller jaxbMarshaller = jaxbContext.createMarshaller();
+
+        jaxbMarshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+
+        //Marshal the employees list in console
+        //jaxbMarshaller.marshal(contacts, System.out);
+
+        //Marshal the employees list in file
+        jaxbMarshaller.marshal(contacts, new File("./src/test/resources/data/leads_data_1000_dummy.xml"));
+    }
+
+    @Test
     public void testName3() throws Exception {
 
         Users usersList = (Users) unMarshalToObject("./src/test/resources/data/users_data_new.xml", Users.class);
