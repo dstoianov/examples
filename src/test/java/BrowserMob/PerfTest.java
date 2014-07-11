@@ -237,7 +237,13 @@ public class PerfTest {
                 "http(s)?://.*\\.google\\.com\\.ua/(?!TealeafTarget).*;" +
                 "http(s)?://.*\\.stubhub\\.co.uk/(?!TealeafTarget).*").split(";");
 
-        //server.whitelistRequests(whiteList, 200);
+
+        server.blacklistRequests("http://.*\\.fbcdn.net/.*", 404);
+        server.blacklistRequests("http://ecx.images-amazon.com/.*", 404);
+        server.blacklistRequests("http://z-ecx.images-amazon.com/images/G/01/browser-scripts/.*", 404);
+
+
+        server.whitelistRequests(whiteList, 200);
 
         driver.get("http://www.yandex.ru/");
         Thread.sleep(1000);
