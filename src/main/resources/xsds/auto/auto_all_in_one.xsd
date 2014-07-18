@@ -61,6 +61,7 @@
         <xs:attribute type="xs:string" name="TimeZone"/>
         <xs:attribute type="xs:string" name="UserAgent"/>
         <xs:attribute type="xs:string" name="SessionLength"/>
+        <xs:attribute type="xs:string" name="TCPAText"/>
     </xs:complexType>
     <xs:complexType name="VehiclesType">
         <xs:sequence>
