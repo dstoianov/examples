@@ -1,4 +1,4 @@
-package tipsandtricks.RemoteIPSeleniumGridNode;
+package tipsandtricks.GetGridNodeIP;
 
 import org.apache.commons.io.IOUtils;
 import org.apache.http.HttpHost;
