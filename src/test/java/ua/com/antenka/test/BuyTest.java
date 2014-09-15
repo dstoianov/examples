@@ -1,10 +1,12 @@
 package ua.com.antenka.test;
 
+import com.revimedia.testing.configuration.dto.Contact;
+import com.revimedia.tests.configuration.dataproviders.AutoDataProvider;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -98,7 +100,7 @@ public class BuyTest {   //buy attack
     @BeforeClass
     public void setUp() {
         start = System.currentTimeMillis();
-        driver = new FirefoxDriver();
+        driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
@@ -113,5 +115,32 @@ public class BuyTest {   //buy attack
 
     private static void print(String msg, Object... args) {
         System.out.println(String.format(msg, args));
+    }
+
+    @Test(dataProvider = "contactData", invocationCount = 1, dataProviderClass = AutoDataProvider.class)
+    public void testLuxoftRegistration(Contact contact) throws Exception {
+
+        driver.get("http://www.luxoft.com/lts/logeek/ukraine/registration/");
+
+        WebElement name = driver.findElement(By.id("form_EV_NAME"));
+        WebElement lastName = driver.findElement(By.id("form_EV_SURNAME"));
+        WebElement email = driver.findElement(By.id("form_EV_EMAIL"));
+        WebElement specialization = driver.findElement(By.id("form_EV_SPECIALIZATION"));
+        WebElement submit = driver.findElement(By.name("web_form_submit"));
+
+        name.sendKeys(contact.getFirstName());
+        lastName.sendKeys(contact.getLastName());
+        email.sendKeys(contact.getEmailAddress());
+//        email.sendKeys(contact.getEmailAddress());
+
+        submit.click();
+
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(new ExpectedCondition<Boolean>() {
+            public Boolean apply(WebDriver driver) {
+                return driver.getPageSource().contains("Thank you for registering");
+            }
+        });
+
     }
 }

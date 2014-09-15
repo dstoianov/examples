@@ -29,8 +29,10 @@
                     </suiteXmlFiles>
                     <junitArtifactName>none:none</junitArtifactName>
                     <systemPropertyVariables>
-                        <phantomjs.binary.path>${basedir}/lib/phantomjs/phantomjs-1.9.7-windows/phantomjs.exe</phantomjs.binary.path>
-                        <org.uncommons.reportng.title>ReviMedia CDS 2.0 Automation Project  </org.uncommons.reportng.title>
+                        <phantomjs.binary.path>${basedir}/lib/phantomjs/phantomjs-1.9.7-windows/phantomjs.exe
+                        </phantomjs.binary.path>
+                        <org.uncommons.reportng.title>ReviMedia CDS 2.0 Automation Project
+                        </org.uncommons.reportng.title>
                         <!--<org.uncommons.reportng.show-expected-exceptions>false</org.uncommons.reportng.show-expected-exceptions>-->
                         <org.uncommons.reportng.escape-output>turn off</org.uncommons.reportng.escape-output>
                         <!--<org.uncommons.reportng.velocity-log>true</org.uncommons.reportng.velocity-log>-->
@@ -143,9 +145,9 @@
         </dependency>
 
         <!--<dependency>-->
-            <!--<groupId>org.xmlmatchers</groupId>-->
-            <!--<artifactId>xml-matchers</artifactId>-->
-            <!--<version>0.10</version>-->
+        <!--<groupId>org.xmlmatchers</groupId>-->
+        <!--<artifactId>xml-matchers</artifactId>-->
+        <!--<version>0.10</version>-->
         <!--</dependency>-->
 
         <dependency>
@@ -342,7 +344,7 @@
             </exclusions>
         </dependency>
 
-<!-- Yandex QA - tools examples-->
+        <!-- Yandex QA - tools examples-->
         <dependency>
             <groupId>ru.yandex.qatools.matchers</groupId>
             <artifactId>webdriver-matchers</artifactId>
@@ -375,6 +377,18 @@
                     <artifactId>hamcrest-all</artifactId>
                 </exclusion>
             </exclusions>
+        </dependency>
+
+        <dependency>
+            <groupId>javax.mail</groupId>
+            <artifactId>mail</artifactId>
+            <version>1.4</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.googlecode.gmail4j</groupId>
+            <artifactId>gmail4j</artifactId>
+            <version>0.4</version>
         </dependency>
 
 
