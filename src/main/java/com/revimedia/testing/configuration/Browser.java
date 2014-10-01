@@ -3,7 +3,9 @@ package com.revimedia.testing.configuration;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.phantomjs.PhantomJSDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.safari.SafariDriver;
 
@@ -31,6 +33,21 @@ public enum Browser {
         }
     },
 
+    PHANTOMJS("phantomjs") {
+        @Override
+        public WebDriver getDriverWithCapabilities(DesiredCapabilities capabilities) {
+            return new PhantomJSDriver(capabilities);
+        }
+    },
+
+    HTMLUNIT("htmlunit") {
+        @Override
+        public WebDriver getDriverWithCapabilities(DesiredCapabilities capabilities) {
+            HtmlUnitDriver driver = new HtmlUnitDriver(capabilities);
+            driver.setJavascriptEnabled(true);
+            return driver;
+        }
+    },
 
     SAFARI("safari") {
         @Override
