@@ -14,6 +14,11 @@ import java.util.zip.ZipOutputStream;
 
 public class WebPageTest {
 
+    //https://sites.google.com/a/webpagetest.org/docs/private-instances
+    //http://andydavies.me/blog/2012/09/18/how-to-create-an-all-in-one-webpagetest-private-instance/
+    //https://www.youtube.com/watch?v=0_kAPWSZNY4
+    // example of test result page http://www.webpagetest.org/result/130124_WN_GFX/1/details/
+
     private final String location;
     private final URL createTestUrl;
     private final URL workDoneUrl;
@@ -78,23 +83,28 @@ public class WebPageTest {
     }
 
     private void writeMultipartContent(OutputStream os, JSONObject testDescriptor, JSONArray devToolsLog, byte[] screenshot) throws IOException, JSONException {
-        String testId = testDescriptor.getJSONObject("data").getString("testId");
-        OutputStreamWriter writer = new OutputStreamWriter(os, "UTF-8");
-        startMimePart(writer, "location", null);
-        writer.write("\r\n" + location + "\r\n");
-        startMimePart(writer, "id", null);
-        writer.write("\r\n" + testId + "\r\n");
-        startMimePart(writer, "done", null);
-        writer.write("\r\n1\r\n");
-        startMimePart(writer, "file", "1_results.zip");
-        writer.write("Content-Type: application/zip\r\n");
-        writer.write("Content-Transfer-Encoding: binary\r\n\r\n");
-        writer.flush();
-        writeResultsZip(os, devToolsLog, screenshot);
-        writer.write("\r\n--");
-        writer.write(mimeBoundary);
-        writer.write("--\r\n");
-        writer.flush();
+        try {
+            String testId = testDescriptor.getJSONObject("data").getString("testId");
+            OutputStreamWriter writer = new OutputStreamWriter(os, "UTF-8");
+            startMimePart(writer, "location", null);
+            writer.write("\r\n" + location + "\r\n");
+            startMimePart(writer, "id", null);
+            writer.write("\r\n" + testId + "\r\n");
+            startMimePart(writer, "done", null);
+            writer.write("\r\n1\r\n");
+            startMimePart(writer, "file", "1_results.zip");
+            writer.write("Content-Type: application/zip\r\n");
+            writer.write("Content-Transfer-Encoding: binary\r\n\r\n");
+            writer.flush();
+            writeResultsZip(os, devToolsLog, screenshot);
+            writer.write("\r\n--");
+            writer.write(mimeBoundary);
+            writer.write("--\r\n");
+            writer.flush();
+        } catch (JSONException e) {
+            System.err.println(testDescriptor.get("statusText").toString());
+            System.err.println(e.toString());
+        }
     }
 
     private void startMimePart(Writer writer, String name, String filename) throws IOException {
