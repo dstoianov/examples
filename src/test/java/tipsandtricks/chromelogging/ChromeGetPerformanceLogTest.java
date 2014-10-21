@@ -52,9 +52,8 @@ public class ChromeGetPerformanceLogTest {
 
     private void printLogs() {
         LogEntries logEntries = driver.manage().logs().get(LogType.PERFORMANCE);
-        List<LogEntry> list = logEntries.getAll();
 
-        Set<LogEntry> all = new HashSet<>(logEntries.getAll());
+        System.out.println(logEntries.getAll().size() + " performance log entries found");
 
         for (LogEntry entry : logEntries) {
             System.out.println(entry.toString());
