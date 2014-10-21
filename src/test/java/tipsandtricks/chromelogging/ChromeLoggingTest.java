@@ -59,8 +59,8 @@ public class ChromeLoggingTest {
         logPrefs.enable(LogType.PERFORMANCE, Level.INFO);
         caps.setCapability(CapabilityType.LOGGING_PREFS, logPrefs);
 
-        RemoteWebDriver chromeDriver = new RemoteWebDriver(new URL(WEBDRIVER_SERVER_URL), caps);
-//        ChromeDriver chromeDriver = new ChromeDriver(caps);
+//        RemoteWebDriver chromeDriver = new RemoteWebDriver(new URL(WEBDRIVER_SERVER_URL), caps);
+        ChromeDriver chromeDriver = new ChromeDriver(caps);
         driver = new Augmenter().augment(chromeDriver);
         Capabilities actualCaps = ((HasCapabilities) driver).getCapabilities();
         System.out.println("Actual caps: " + actualCaps);
