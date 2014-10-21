@@ -21,7 +21,8 @@ import java.util.logging.Level;
 /**
  * Created by dstoianov on 2014-10-21.
  */
-public class SomeTest {
+public class ChromeGetPerformanceLogTest {
+
     RemoteWebDriver driver;
 
     @BeforeTest
@@ -43,7 +44,7 @@ public class SomeTest {
         printLogs();
     }
 
-    @AfterTest
+    @AfterTest(alwaysRun = true)
     public void tearDown() {
         driver.quit();
     }
