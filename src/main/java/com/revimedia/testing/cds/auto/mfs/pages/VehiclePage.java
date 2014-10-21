@@ -30,7 +30,7 @@ public class VehiclePage extends Page {
     @FindBy(xpath = "//div[contains(@class, 'Model')]//select")
     private WebElement ddVehicleModel;
 
-    @FindBy(xpath = "//input[@type='radio']")
+    @FindBy(xpath = "//*[contains(@class, 'bq-add-')]")
     private List<WebElement> rbtnExtraCar;
 
     @FindBy(xpath = "//button") //button class="bq-control bq-type-simple">

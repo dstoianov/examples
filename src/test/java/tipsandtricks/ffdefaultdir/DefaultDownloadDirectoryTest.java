@@ -4,8 +4,10 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxProfile;
+import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -14,6 +16,7 @@ import org.testng.annotations.Test;
 import java.io.File;
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.HashMap;
 
 /**
  * Created by Funker on 20.10.2014.
@@ -21,15 +24,15 @@ import java.util.Arrays;
 public class DefaultDownloadDirectoryTest {
 
     protected WebDriver driver;
-    private String FF_DOWNLOAD_DIR = "C:\\tmp\\selenium";
+    private String DOWNLOAD_DIR = "C:\\tmp\\selenium";
 
-    @BeforeClass
+    //    @BeforeClass
     public void setUp() throws IOException {
         FirefoxProfile profile = new FirefoxProfile();
 
-        creteDirIfNotExist(FF_DOWNLOAD_DIR); // optional
-        profile.setPreference("browser.download.dir", FF_DOWNLOAD_DIR);
-        profile.setPreference("browser.download.lastDir", FF_DOWNLOAD_DIR);
+        creteDirIfNotExist(DOWNLOAD_DIR); // optional
+        profile.setPreference("browser.download.dir", DOWNLOAD_DIR);
+        profile.setPreference("browser.download.lastDir", DOWNLOAD_DIR);
         profile.setPreference("browser.download.folderList", 2); //the parameter that tells Firefox to use the default download dir all the time
         profile.setPreference("browser.helperApps.alwaysAsk.force", false);
         profile.setPreference("browser.download.manager.showWhenStarting", false);
@@ -105,10 +108,31 @@ public class DefaultDownloadDirectoryTest {
         //http://stackoverflow.com/questions/25682766/how-to-handle-downloading-popup-alert-while-downloading-a-file-in-chrome
         //http://stackoverflow.com/questions/23530399/chrome-web-driver-download-files
 
-        //capabilities.setCapability("chrome.switches", Arrays.asList("--disable-translate"));
-        //capabilities.setCapability("chrome.switches", Arrays.asList("--enable-translate"));
         return new ChromeDriver(capabilities);
     }
 
 
+    @BeforeClass
+    public void getChrome2() {
+
+        HashMap<String, Object> chromePrefs = new HashMap<String, Object>();
+        chromePrefs.put("profile.default_content_settings.popups", 0);
+        chromePrefs.put("download.default_directory", DOWNLOAD_DIR);
+
+        ChromeOptions options = new ChromeOptions();
+
+        HashMap<String, Object> chromeOptionsMap = new HashMap<String, Object>();
+
+        options.setExperimentalOption("prefs", chromePrefs);
+//        options.addArguments("--test-type");
+//        options.addArguments("start-maximized");
+
+        DesiredCapabilities capabilities = DesiredCapabilities.chrome();
+
+        capabilities.setCapability(ChromeOptions.CAPABILITY, chromeOptionsMap);
+        capabilities.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
+        capabilities.setCapability(ChromeOptions.CAPABILITY, options);
+
+        driver = new ChromeDriver(capabilities);
+    }
 }

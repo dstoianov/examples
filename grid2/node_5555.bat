@@ -2,7 +2,7 @@
 @set port=5555
 @if not exist log mkdir log
 @echo Log file for Node %port% > log\node_%port%.log
-java -jar selenium-server-standalone-2.41.0.jar -role node -nodeConfig node_%port%.json -Dwebdriver.ie.driver=IEDriverServer.exe -Dwebdriver.chrome.driver=chromedriver.exe -log log\node_%port%.log
+java -jar selenium-server-standalone-2.43.1.jar -role node -nodeConfig node_%port%.json -Dwebdriver.ie.driver=IEDriverServer.exe -Dwebdriver.chrome.driver=chromedriver.exe -log log\node_%port%.log
 
 REM java -Dwebdriver.ie.driver=\webdriver\iedriver\iedriver_2.35.3_Win32bit.exe -Dwebdriver.chrome.driver=\webdriver\chromedriver\chromedriver_2.6_32bit.exe -cp D:\Testing\idea\Selenium-Grid-Extras\cmd\SeleniumGridExtras-1.2.3-SNAPSHOT-jar-with-dependencies.jar;\webdriver\2.37.0.jar org.openqa.grid.selenium.GridLauncher -role node -nodeConfig node_5555.json -log log\node_5555.log
 rem if not exist log mkdir log
