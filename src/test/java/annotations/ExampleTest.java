@@ -17,27 +17,33 @@ public class ExampleTest {
         System.out.println("Run test name --> '" + testMethod.getName() + "'");
     }
 
-    @Bug(id = "9999")
+
+    @Bug(id = {"9999", "8888"})
     @Test
     public void testName1() throws Exception {
         Assert.assertTrue(true);
     }
 
-    @Test(description = "test name")
+
+    @Bug(id = "7777")
+    @Test(description = "test description")
     public void testName2() throws Exception {
         Assert.assertTrue(true);
     }
+
 
     @AfterMethod
     public void after(Method testMethod) {
         Bug bug = testMethod.getAnnotation(Bug.class);
         if (bug != null) {
-            System.out.println("This is a bug, url: '" + bug.url() + bug.id() + "'");
+            for (String id : bug.id()) {
+                System.out.println("This is a bug, url: '" + bug.url() + id + "'");
+            }
         } else {
             System.out.println("This is no any bug annotation for this test --> '" + testMethod.getName() + "'");
         }
         Test test = testMethod.getAnnotation(Test.class);
-        if (!(test.description() == "")) {
+        if (!(test.description().equals(""))) {
             System.out.println("Test description is: '" + test.description() + "'");
         }
 
