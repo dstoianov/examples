@@ -7,6 +7,7 @@ import org.openqa.selenium.WebDriver;
 /**
  * Created by Funker on 26.04.14.
  */
+@SuppressWarnings(value = "unchecked")
 public class JsUtils {
     protected static final Logger log = Logger.getLogger(JsUtils.class);
     private JavascriptExecutor js;

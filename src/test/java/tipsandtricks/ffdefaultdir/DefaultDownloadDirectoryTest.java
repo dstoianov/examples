@@ -31,40 +31,34 @@ public class DefaultDownloadDirectoryTest {
         FirefoxProfile profile = new FirefoxProfile();
 
         creteDirIfNotExist(DOWNLOAD_DIR); // optional
+//        open new tab and print about:config check that all settings are correct
         profile.setPreference("browser.download.dir", DOWNLOAD_DIR);
         profile.setPreference("browser.download.lastDir", DOWNLOAD_DIR);
         profile.setPreference("browser.download.folderList", 2); //the parameter that tells Firefox to use the default download dir all the time
         profile.setPreference("browser.helperApps.alwaysAsk.force", false);
         profile.setPreference("browser.download.manager.showWhenStarting", false);
-        profile.setPreference("browser.helperApps.neverAsk.saveToDisk", "application/zip, application/x-zip, application/x-zip-compressed, application/download, application/octet-stream");
-        profile.setPreference("browser.helperApps.neverAsk.saveToDisk", "text/xml, text/csv, text/plain, text/log, application/zlib, application/x-gzip, application/x-compressed, application/x-gtar, multipart/x-gzip, application/tgz, application/gnutar, application/x-tar, application/gzip");
-        profile.setPreference("browser.helperApps.neverAsk.saveToDisk", "application/x-msexcel,application/excel,application/x-excel,application/excel,application/x-excel,application/excel,application/vnd.ms-excel,application/x-excel,application/x-msexcel");
-//        profile.setPreference("browser.helperApps.neverAsk.saveToDisk", "application/pdf, text/pdf, text/csv, application/vnd.ms-excel, text/xml, application/zip"); // pdf, csv, xml, xls
-//        profile.setPreference("browser.helperApps.neverAsk.saveToDisk", "application/zip"); // zip
-//        profile.setPreference("browser.helperApps.neverAsk.saveToDisk", "application/x-zip-compressed"); // zip
-//        profile.setPreference("browser.helperApps.neverAsk.saveToDisk", "application/x-zip"); // zip
-//        profile.setPreference("browser.helperApps.neverAsk.saveToDisk", "application/octet-stream"); // zip
-//        profile.setPreference("browser.helperApps.neverAsk.saveToDisk", "application/msword"); // pdf, csv, xml, xls
 
+//        Set to false so popup not displayed when download finished.
+//        profile.setPreference("browser.download.manager.closeWhenDone", true);
+//        profile.setPreference("browser.download.manager.showAlertOnComplete",false);
+//        profile.setPreference("browser.download.manager.showWhenStartinge",false);
+//        profile.setPreference("browser.download.panel.shown",false);
 
-        //open in browser about:config -> search by 'browser.download'
-/*
-        profile.setPreference("browser.download.manager.showWhenStarting", false);
-        profile.setPreference("browser.download.manager.focusWhenStarting", false);
-        profile.setPreference("browser.helperApps.alwaysAsk.force", false);
-        profile.setPreference("browser.download.manager.alertOnEXEOpen", false);
-        profile.setPreference("browser.download.manager.closeWhenDone", false);
-        profile.setPreference("browser.download.manager.showAlertOnComplete", false);
-        profile.setPreference("browser.download.manager.useWindow", false);
-        profile.setPreference("browser.download.manager.showWhenStarting", false);
-        profile.setPreference("services.sync.prefs.sync.browser.download.manager.showWhenStarting", false);
-*/
+        StringBuffer mimeTypes = new StringBuffer();
+        mimeTypes.append("application/zip, application/x-zip, application/x-zip-compressed, application/download, application/octet-stream"); //zip files
+        mimeTypes.append(", ");
+        mimeTypes.append("application/vnd.ms-excel, application/msexcel, application/x-msexcel, application/x-ms-excel, application/x-excel, application/x-dos_ms_excel, application/xls, application/x-xls, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"); //excel files
+        mimeTypes.append(", ");
+        mimeTypes.append("text/html, text/plain, image/jpeg, text/xml, text/csv, text/log"); //others files
 
+//        profile.setPreference("browser.helperApps.neverAsk.openFile", mimeTypes.toString());
+        profile.setPreference("browser.helperApps.neverAsk.saveToDisk", mimeTypes.toString());
+
+//        Set this to true to disable the pdf opening
         profile.setPreference("pdfjs.disabled", true);
 
         driver = new FirefoxDriver(profile);
         driver.manage().window().maximize();
-
     }
 
     @Test

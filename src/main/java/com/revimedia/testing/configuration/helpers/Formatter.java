@@ -21,6 +21,7 @@ import java.util.Map;
 /**
  * Created by dstoianov on 10.05.14.
  */
+@SuppressWarnings(value = "unchecked")
 public class Formatter {
 
     public static String prettyXMLFormat(String input) {
