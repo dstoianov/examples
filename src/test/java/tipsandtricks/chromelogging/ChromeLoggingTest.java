@@ -102,6 +102,7 @@ public class ChromeLoggingTest {
             screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
         }
 //        String resultUrl = new WebPageTest(new URL("http://localhost:8888/"), "Test", name).submitResult(devToolsLog, screenshot);
+//        String resultUrl = new WebPageTest(new URL("http://3mob.besaba.com/wpt/"), "Europe", name).submitResult(devToolsLog, screenshot);
         String resultUrl = new WebPageTest(new URL("http://webpagetest.org/"), "Europe", name).submitResult(devToolsLog, screenshot);
         System.out.println("Result page: " + resultUrl);
     }

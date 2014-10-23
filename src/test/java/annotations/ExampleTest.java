@@ -32,6 +32,11 @@ public class ExampleTest {
     }
 
 
+    @Test
+    public void testName3() throws Exception {
+        Assert.assertTrue(true);
+    }
+
     @AfterMethod
     public void after(Method testMethod) {
         Bug bug = testMethod.getAnnotation(Bug.class);
