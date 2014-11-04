@@ -101,9 +101,9 @@ public class ChromeLoggingTest {
         if (null == androidPackage) { // Chrome on Android does not yet support screenshots
             screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
         }
-//        String resultUrl = new WebPageTest(new URL("http://localhost:8888/"), "Test", name).submitResult(devToolsLog, screenshot);
+        String resultUrl = new WebPageTest(new URL("http://192.168.0.248:80/"), "Test", name).submitResult(devToolsLog, screenshot);
 //        String resultUrl = new WebPageTest(new URL("http://3mob.besaba.com/wpt/"), "Europe", name).submitResult(devToolsLog, screenshot);
-        String resultUrl = new WebPageTest(new URL("http://webpagetest.org/"), "Europe", name).submitResult(devToolsLog, screenshot);
+//        String resultUrl = new WebPageTest(new URL("http://webpagetest.org/"), "Europe", name).submitResult(devToolsLog, screenshot);
         System.out.println("Result page: " + resultUrl);
     }
 

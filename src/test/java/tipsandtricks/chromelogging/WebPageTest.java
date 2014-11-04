@@ -61,7 +61,13 @@ public class WebPageTest {
         }
         Reader reader = new InputStreamReader(http.getInputStream(), "UTF-8");
         try {
-            return new JSONObject(new JSONTokener(reader));
+//            return new JSONObject(new JSONTokener(reader));
+
+            JSONObject result = new JSONObject(new JSONTokener(reader));
+            if (!result.has("data")) {
+                throw new IOException("WebPageTest test creation failed for location " + location + ": " + result);
+            }
+            return result;
         } finally {
             reader.close();
         }
