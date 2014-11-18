@@ -31,8 +31,8 @@ public class JsonFromFile {
         Map<String, Object> disclaimerText = jsonMap.get("disclaimerText");
         Map<String, Object> homesecurity = (Map<String, Object>) disclaimerText.get("homesecurity");
 
-        Object tcpa = homesecurity.get("tcpa");
-        Object bestq = homesecurity.get("bestq");
+        String tcpa = (String) homesecurity.get("tcpa");
+        String bestq = (String) homesecurity.get("bestq");
 
     }
 
@@ -41,9 +41,12 @@ public class JsonFromFile {
         Gson gson = new Gson();
         try {
             BufferedReader br = new BufferedReader(new FileReader(file));
-            //convert the json string back to object
-            HashMap hashMap = gson.fromJson(br, HashMap.class);
-            Map<String, String> disclaimerText = (HashMap<String, String>) hashMap.get("disclaimerText");
+            Map<String, Map<String, Object>> hashMap = gson.fromJson(br, HashMap.class);
+            Map<String, Object> disclaimerText = hashMap.get("disclaimerText");
+            Map<String, Object> homesecurity = (Map<String, Object>) disclaimerText.get("homesecurity");
+
+            String tcpa = (String) homesecurity.get("tcpa");
+            String bestq = (String) homesecurity.get("bestq");
 
             System.out.println(hashMap);
         } catch (IOException e) {
