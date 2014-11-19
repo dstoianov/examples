@@ -8,8 +8,8 @@ import org.openqa.selenium.WebDriver;
  */
 public class DisclaimerText {
 
-    public WebDriver driver;
-    public JavascriptExecutor js;
+    private WebDriver driver;
+    private JavascriptExecutor js;
     private String disclaimerText = "return Bq.Config.disclaimerText";
 
     public DisclaimerText(WebDriver driver) {
