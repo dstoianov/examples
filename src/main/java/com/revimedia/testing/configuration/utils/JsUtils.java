@@ -16,13 +16,27 @@ public class JsUtils {
         this.js = (JavascriptExecutor) driver;
     }
 
-    public String getXMLSubmit() {
+    public static <T> T execute(String js, WebDriver driver) {
+        return (T) execute(js, driver, new Object[0]);
+    }
+
+    public static <T> T execute(String js, WebDriver driver, Object... arguments) {
+        JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
+        return (T) jsExecutor.executeScript(js, arguments);
+    }
+
+    public String getXMLSubmit() { //it used just for test debug
         String xml = (String) js.executeScript("return Bq.App.getXML(Bq.App.fields.getFields());");
         return xml.substring(8); //skip "XMLBody=".length = 8 of message
     }
 
-    public String getPPAndTC() {
+    public String getPPAndTU() {
         String script = "return $('.page-pp-tc').html();";
+        return (String) exec(script);
+    }
+
+    public String getPPAndTC() {
+        String script = "return $('.bq-copy').html();";
         return (String) exec(script);
     }
 
@@ -32,7 +46,7 @@ public class JsUtils {
     }
 
     public String getDisclaimer() {
-        String script = "return $('.bq-tcpa-disclaimer').html();";
+        String script = "return $('.bq-disclaimer-container').html();";
         return (String) exec(script);
     }
 
@@ -42,17 +56,12 @@ public class JsUtils {
     }
 
     public boolean isAjaxComplete() {
-        final Boolean result = (Boolean) js.executeScript("return $.active == 0");
-        return result;
+        System.out.println("Ajax return $.active == 0  is: '" + js.executeScript("return $.active") + "'");
+        return (Boolean) js.executeScript("return $.active == 0");
     }
 
-    public static <T> T execute(String js, WebDriver driver) {
-        return (T) execute(js, driver, new Object[0]);
-    }
-
-    public static <T> T execute(String js, WebDriver driver, Object... arguments) {
-        JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
-        return (T) jsExecutor.executeScript(js, arguments);
+    public boolean isPageLoaded() {
+        return js.executeScript("return document.readyState").equals("complete");
     }
 
     public String getSurveyPath() {

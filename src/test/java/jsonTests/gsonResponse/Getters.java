@@ -1,10 +1,10 @@
 package jsonTests.gsonResponse;
 
 /**
- * Created by dstoianov on 2014-11-19, 2:10 PM
+ * Created by Funker on 19.11.2014, 23:37.
  */
-public interface Getters {
 
+public interface Getters {
     String getTcpa();
 
     String getBestq();
