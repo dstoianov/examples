@@ -1,34 +1,61 @@
 package jsonTests.gsonResponse;
 
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+
 /**
  * Created by Funker on 19.11.2014, 1:36.
  */
 public class DisclaimerText {
 
-    private String tcpa;
-    private String bestq;
+    public WebDriver driver;
+    public static JavascriptExecutor js;
+    private String disclaimerText = "return Bq.Config.disclaimerText";
 
-    public DisclaimerText(String tcpa, String bestq) {
-        this.tcpa = tcpa;
-        this.bestq = bestq;
+    public DisclaimerText(WebDriver driver) {
+        this.driver = driver;
+        this.js = (JavascriptExecutor) driver;
     }
 
-    public DisclaimerText() {
+    public Auto getAuto() {
+        return new Auto();
     }
 
-    public String getTcpa() {
-        return tcpa;
+    public class Auto implements Getters {
+
+        @Override
+        public String getTcpa() {
+            return (String) js.executeScript(disclaimerText + ".auto.tcpa");
+        }
+
+        @Override
+        public String getBestq() {
+            return (String) js.executeScript(disclaimerText + ".auto.bestq");
+        }
     }
 
-    public void setTcpa(String tcpa) {
-        this.tcpa = tcpa;
+    public class AutoFinance {
     }
 
-    public String getBestq() {
-        return bestq;
+    public class Health {
     }
 
-    public void setBestq(String bestq) {
-        this.bestq = bestq;
+    public class Home {
     }
+
+    public class HomeSecurity {
+    }
+
+    public class Life {
+    }
+
+    public class Automotive {
+    }
+
+    public class Pet {
+    }
+
+    public class PetFullQuote {
+    }
+
 }
