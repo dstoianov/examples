@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified"
-           xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified"
+           elementFormDefault="qualified">
     <xs:element name="LeadData" type="LeadDataType"/>
     <xs:complexType name="InsuranceType">
         <xs:sequence>
@@ -53,6 +53,7 @@
             <xs:element type="xs:string" name="Weight"/>
             <xs:element type="xs:string" name="Student"/>
             <xs:element type="MedicalHistoryType" name="MedicalHistory"/>
+            <xs:element type="xs:string" name="HouseHoldIncome"/>
         </xs:sequence>
     </xs:complexType>
     <xs:complexType name="QuoteRequestType">
@@ -78,6 +79,7 @@
         <xs:attribute type="xs:string" name="TimeZone"/>
         <xs:attribute type="xs:string" name="UserAgent"/>
         <xs:attribute type="xs:string" name="SessionLength"/>
+        <xs:attribute type="xs:string" name="TCPAText"/>
     </xs:complexType>
     <xs:complexType name="ContactDataType">
         <xs:sequence>

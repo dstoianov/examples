@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified"
-           xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified"
+           elementFormDefault="qualified">
     <xs:element name="LeadData" type="LeadDataType"/>
     <xs:complexType name="HomesType">
         <xs:sequence>
@@ -18,6 +18,7 @@
                 <xs:attribute type="xs:string" name="SurveyPath"/>
                 <xs:attribute type="xs:string" name="TransactionId"/>
                 <xs:attribute type="xs:string" name="LeadId"/>
+                <xs:attribute type="xs:string" name="TrustedFormCertUrl"/>
                 <xs:attribute type="xs:string" name="VerifyAddress"/>
             </xs:extension>
         </xs:simpleContent>
@@ -38,6 +39,7 @@
     <xs:complexType name="HomeType">
         <xs:sequence>
             <xs:element type="xs:string" name="EntrancesExits"/>
+            <xs:element type="xs:string" name="CurrentSecuritySystemCompany"/>
             <xs:element type="xs:string" name="HasSystem"/>
             <xs:element type="xs:string" name="OwnRented"/>
             <xs:element type="xs:string" name="SqFootage"/>
@@ -47,6 +49,9 @@
     <xs:complexType name="SecuritySystemType">
         <xs:sequence>
             <xs:element type="xs:string" name="SecurityType"/>
+            <xs:element type="xs:string" name="InstallationType"/>
+            <xs:element type="xs:string" name="InterestReason"/>
+            <xs:element type="xs:string" name="PreWired"/>
             <xs:element type="xs:string" name="InstallationTimeFrame"/>
             <xs:element type="xs:string" name="AdditionalRequirements"/>
             <xs:element type="xs:string" name="SecurityUsage"/>
@@ -64,6 +69,7 @@
         <xs:attribute type="xs:string" name="TimeZone"/>
         <xs:attribute type="xs:string" name="UserAgent"/>
         <xs:attribute type="xs:string" name="SessionLength"/>
+        <xs:attribute type="xs:string" name="TCPAText"/>
     </xs:complexType>
     <xs:complexType name="ContactDataType">
         <xs:sequence>
@@ -76,6 +82,7 @@
             <xs:element type="xs:string" name="City"/>
             <xs:element type="xs:string" name="IPAddress"/>
             <xs:element type="xs:string" name="State"/>
+            <xs:element type="xs:string" name="BirthDate"/>
         </xs:sequence>
     </xs:complexType>
 </xs:schema>

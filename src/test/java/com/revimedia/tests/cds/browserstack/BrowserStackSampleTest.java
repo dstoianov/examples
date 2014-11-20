@@ -7,7 +7,7 @@ package com.revimedia.tests.cds.browserstack;
 import com.revimedia.testing.cds.auto.mfs.pages.CompareAndSavePage;
 import com.revimedia.testing.cds.auto.mfs.pages.DriverPage;
 import com.revimedia.testing.cds.auto.mfs.pages.VehiclePage;
-import com.revimedia.testing.cds.auto.staticdata.StaticDataAutoMFS;
+import com.revimedia.testing.cds.auto.staticdata.ExtraDataAutoMFS;
 import com.revimedia.testing.cds.constants.Messages;
 import com.revimedia.testing.configuration.dto.Contact;
 import com.revimedia.testing.configuration.helpers.DataHelper;
@@ -31,10 +31,13 @@ import static org.hamcrest.Matchers.containsString;
 import static org.hamcrest.Matchers.equalTo;
 
 public class BrowserStackSampleTest {
-    public WebDriver driver;
     public static final String USERNAME = "denysstoianov";
     public static final String AUTOMATE_KEY = "ydcKwxskuYNq7CDrK5WC";
     public static final String URL = "http://" + USERNAME + ":" + AUTOMATE_KEY + "@hub.browserstack.com/wd/hub";
+    public WebDriver driver;
+    public DriverPage driverPage;
+    public VehiclePage vehiclePage;
+    public CompareAndSavePage compareAndSavePage;
 
     @AfterClass
     public void tearDown() {
@@ -77,13 +80,8 @@ public class BrowserStackSampleTest {
 
     }
 
-
-    public DriverPage driverPage;
-    public VehiclePage vehiclePage;
-    public CompareAndSavePage compareAndSavePage;
-
     @Test(groups = {"eBureau Verification"}, dataProvider = "contactAndStaticDataAutoMFS", dataProviderClass = AutoDataProvider.class)
-    public void testShouldBeShowneBureauVerificationMessage(Contact contact, StaticDataAutoMFS staticData) throws Exception {
+    public void testShouldBeShowneBureauVerificationMessage(Contact contact, ExtraDataAutoMFS staticData) throws Exception {
 
         //ACT
         driverPage = new DriverPage(driver);
