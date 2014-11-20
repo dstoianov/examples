@@ -113,7 +113,6 @@ public class JsonFromFile {
 
     public void waitForPageLoaded(WebDriver driver) {
         long begin = new Date().getTime();
-
         final JsUtils js = new JsUtils(driver);
         new WebDriverWait(driver, 10).until(new ExpectedCondition<Boolean>() {
             public Boolean apply(WebDriver driver) {

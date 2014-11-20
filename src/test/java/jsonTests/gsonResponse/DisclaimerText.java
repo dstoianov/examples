@@ -13,44 +13,81 @@ public class DisclaimerText implements Getters {
     private JavascriptExecutor js;
     private String disclaimerText = "return Bq.Config.disclaimerText";
 
+    private Auto auto;
+    private Home home;
+    private Health health;
+    private AutoFinance autoFinance;
+    private HomeSecurity homeSecurity;
+    private Life life;
+    private Automotive automotive;
+    private Pet pet;
+    private PetFullQuote petFullQuote;
+
     public DisclaimerText(WebDriver driver) {
         this.js = (JavascriptExecutor) driver;
     }
 
     public Auto getAutoExpected() {
-        return new Auto();
+        if (auto == null) {
+            auto = new Auto();
+        }
+        return auto;
     }
 
     public Home getHomeExpected() {
-        return new Home();
+        if (home == null) {
+            home = new Home();
+        }
+        return home;
     }
 
     public Health getHealthExpected() {
-        return new Health();
+        if (health == null) {
+            health = new Health();
+        }
+        return health;
     }
 
     public AutoFinance getAutoFinanceExpected() {
-        return new AutoFinance();
+        if (autoFinance == null) {
+            autoFinance = new AutoFinance();
+        }
+        return autoFinance;
     }
 
     public HomeSecurity getHomeSecurityExpected() {
-        return new HomeSecurity();
+        if (homeSecurity == null) {
+            homeSecurity = new HomeSecurity();
+        }
+        return homeSecurity;
     }
 
     public Life getLifeExpected() {
-        return new Life();
+        if (life == null) {
+            life = new Life();
+        }
+        return life;
     }
 
     public Automotive getAutomotiveExpected() {
-        return new Automotive();
+        if (automotive == null) {
+            automotive = new Automotive();
+        }
+        return automotive;
     }
 
     public Pet getPetExpected() {
-        return new Pet();
+        if (pet == null) {
+            pet = new Pet();
+        }
+        return pet;
     }
 
     public PetFullQuote getPetFullQuoteExpected() {
-        return new PetFullQuote();
+        if (petFullQuote == null) {
+            petFullQuote = new PetFullQuote();
+        }
+        return petFullQuote;
     }
 
     private String clean(String unsafe) {
