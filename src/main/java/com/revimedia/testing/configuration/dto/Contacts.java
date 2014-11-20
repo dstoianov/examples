@@ -8,7 +8,7 @@ import java.util.Collections;
 import java.util.List;
 
 /**
- * Created by stde on 4/28/2014.
+ * Created by Denis Stoianov on 4/28/2014.
  */
 
 @XmlRootElement(name = "LeadsData")

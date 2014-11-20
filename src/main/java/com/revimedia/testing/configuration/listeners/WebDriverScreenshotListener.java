@@ -14,6 +14,11 @@ import java.lang.reflect.Method;
 
 public class WebDriverScreenshotListener implements ITestListener {//, IInvokedMethodListener {
 
+    private static void captureScreenshot(File outFile) throws Exception {
+        BufferedImage image = new Robot().createScreenCapture(new Rectangle(Toolkit.getDefaultToolkit().getScreenSize()));
+        ImageIO.write(image, "png", outFile);
+    }
+
     @Override
     public void onTestStart(ITestResult result) {
         // TODO Auto-generated method stub
@@ -31,7 +36,7 @@ public class WebDriverScreenshotListener implements ITestListener {//, IInvokedM
         File outputDirectory = new File(System.getProperty("user.dir"), "target/surefire-reports/screenshots");
         try {
             outputDirectory.mkdirs();
-            File outFile = new File(outputDirectory, DataHelper.getDate() + "-" + result.getName() + ".png");
+            File outFile = new File(outputDirectory, DataHelper.getCurrentDateAndTime() + "-" + result.getName() + ".png");
             captureScreenshot(outFile);
             //Reporter.log("<br>Open from ReportNG report:  <a href=\"../screenshots/" + outFile.getName() + "\">Screenshot</a>");
             Reporter.log("<br>Open from TestNG report: <a href=\"screenshots/" + outFile.getName() + "\">Screenshot</a>");
@@ -42,11 +47,6 @@ public class WebDriverScreenshotListener implements ITestListener {//, IInvokedM
             Reporter.log(e.getMessage());
         }
         Reporter.setCurrentTestResult(null);
-    }
-
-    private static void captureScreenshot(File outFile) throws Exception {
-        BufferedImage image = new Robot().createScreenCapture(new Rectangle(Toolkit.getDefaultToolkit().getScreenSize()));
-        ImageIO.write(image, "png", outFile);
     }
 
     @Override

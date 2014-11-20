@@ -1,11 +1,9 @@
 package com.revimedia.tests.cds.dummy.console.tests;
 
+import org.testng.annotations.Test;
+
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
-
-import com.revimedia.testing.cds.auto.staticdata.StaticDataAutoMFS;
-import org.testng.Assert;
-import org.testng.annotations.Test;
 
 /**
  * Demonstrates how Hamcrest matchers can be used with assertThat()

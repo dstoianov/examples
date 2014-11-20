@@ -1,6 +1,6 @@
 package com.revimedia.tests.configuration.dataproviders;
 
-import com.revimedia.testing.cds.auto.staticdata.StaticDataAutoMFS;
+import com.revimedia.testing.cds.auto.staticdata.ExtraDataAutoMFS;
 import com.revimedia.testing.configuration.dto.Contact;
 import org.testng.annotations.DataProvider;
 
@@ -15,8 +15,8 @@ public class BugsDataProvider extends DataProviderHelper {
         Contact contact2 = new Contact("Chuck", "Norris", "Female", "Feb 29, 1989", "3238550093", "123 Fake Street", "blah.blahblah@gmail.conm", "75201", "DALLAS", "TX");
         //birthdate=Jul 31, 1980
         return new Object[][]{
-                {contact1, new StaticDataAutoMFS()},
-                {contact2, new StaticDataAutoMFS()},
+                {contact1, new ExtraDataAutoMFS()},
+                {contact2, new ExtraDataAutoMFS()},
         };
     }
 

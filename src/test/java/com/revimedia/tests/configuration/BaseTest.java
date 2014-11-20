@@ -22,17 +22,15 @@ import java.lang.reflect.Method;
 
 //@Listeners({WebDriverScreenshotListener.class})
 public class BaseTest {
+    protected static final Logger log = Logger.getLogger(BaseTest.class);
+    public static WebDriverFactory instanceDriver;
     protected WebDriver driver;
     protected String url;
     protected BrowserMobProxyLocal proxy;
-    protected static final Logger log = Logger.getLogger(BaseTest.class);
-
-    public static WebDriverFactory instanceDriver;
-
 
     @BeforeClass
     @Parameters(value = {"browser", "version", "url"})
-    public void setUp(@Optional("firefox") String browser,
+    public void setUp(@Optional("chrome") String browser,
                       @Optional("9") String version,
 //                      @Optional("WIN") String platform,
                       @Optional("http://development.stagingrevi.com/auto/mfs/") String url) throws Exception {
@@ -89,7 +87,7 @@ public class BaseTest {
             Reporter.setCurrentTestResult(result);
             Reporter.setEscapeHtml(false);
             Reporter.log("<p>Failed test name: " + method.getName());
-            takeScreenShot(getMethodFullName(method) + "_teardown_" + DataHelper.getDate());
+            takeScreenShot(getMethodFullName(method) + "_teardown_" + DataHelper.getCurrentDateAndTime());
             Reporter.setCurrentTestResult(null);
         }
     }

@@ -5,10 +5,9 @@ import com.revimedia.testing.beans.auto.LeadDataType;
 import com.revimedia.testing.cds.auto.mfs.pages.CompareAndSavePage;
 import com.revimedia.testing.cds.auto.mfs.pages.DriverPage;
 import com.revimedia.testing.cds.auto.mfs.pages.VehiclePage;
-import com.revimedia.testing.cds.auto.staticdata.StaticDataAutoMFS;
-import com.revimedia.testing.cds.prepop.PrePopExitPage;
+import com.revimedia.testing.cds.auto.staticdata.ExtraDataAutoMFS;
 import com.revimedia.testing.cds.prepop.PrePopParameters;
-import com.revimedia.testing.cds.staticdata.VWOData;
+import com.revimedia.testing.cds.staticdata.VisualWebsiteOptimizerData;
 import com.revimedia.testing.configuration.dto.Contact;
 import com.revimedia.testing.configuration.dto.OfferParameters;
 import com.revimedia.testing.configuration.dto.Submit;
@@ -20,7 +19,6 @@ import com.revimedia.tests.configuration.BaseTest;
 import com.revimedia.tests.configuration.dataproviders.AutoDataProvider;
 import net.lightbody.bmp.core.har.Har;
 import net.lightbody.bmp.core.har.HarEntry;
-import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 
 import java.util.List;
@@ -38,36 +36,22 @@ public class PrePopParametersTests extends BaseTest {
     public VehiclePage vehiclePage;
     public CompareAndSavePage compareAndSavePage;
 
-    @Test(groups = {"prepop", "not ready yet"}, enabled = false, description = "Is not implemented yet on CDS 2.0")
-    public void shouldBeShownExitPopUpWindow() throws Exception {
-        PrePopExitPage exitTruePage = new PrePopExitPage(driver);
-        exitTruePage.reloadPageWithPrePopTrue();
-        exitTruePage.prePopShowUp();
-
-        assertThat(exitTruePage.getHeader(), is("Wait, don't leave! We are here to help you!"));
-        assertThat(exitTruePage.getPhoneTextLink(), is("(888) 759-1914"));
-
-        exitTruePage.closePopUp();
-
-        assertThat(exitTruePage.getHeader(), not(is("Wait, don't leave! We are here to help you!")));
-        assertThat(exitTruePage.getPhoneTextLink(), not(is("(888) 759-1914")));
-    }
-
-    @Test(groups = {"prepop"}, dataProvider = "contactAndStaticDataAutoMFS", dataProviderClass = AutoDataProvider.class)
-    public void shouldBePrefilledAndShownOnUIContactAndOtherParameters(Contact contact, StaticDataAutoMFS staticData) throws Exception {
+    @Test(groups = {"prepop"}, dataProvider = "contactAndExtraDataAutoMFS", dataProviderClass = AutoDataProvider.class)
+    public void shouldBePrefilledAndShownOnUIContactAndOtherParameters(Contact contact, ExtraDataAutoMFS extraData) throws Exception {
         // reload page with all pre pop parameters
         driverPage = new DriverPage(driver);
-        driverPage.open(PrePopParameters.generateURLForAutoMFSWithContactAndStatic(this.url, contact, staticData));
+        driverPage.open(PrePopParameters.generateURLForAutoMFSWithContactAndExtra(this.url, contact, extraData));
+        driverPage.fillInTheRestFields(extraData);
         // verify city is correct
         assertThat(driverPage.getPageText(), containsString(contact.getCity()));
         // verify InsuranceCompany is correct
-        assertThat(driverPage.getInsuranceCompanyValue(), is(staticData.getInsuranceCompany()));
+        assertThat(driverPage.getInsuranceCompanyValue(), is(extraData.getInsuranceCompany()));
 
         // verify InsuranceCompany is Displayed
         assertThat(driverPage.isZipCodeFieldDisplayed(), is(false));
 
-        vehiclePage = driverPage.fillInTheRestFields(staticData).clickOnContinue();
-        compareAndSavePage = vehiclePage.fillInAllFields(staticData).clickOnContinue();
+        vehiclePage = driverPage.clickOnContinue();
+        compareAndSavePage = vehiclePage.fillInAllFields(extraData).clickOnContinue();
 
         // Assertions
         assertThat(compareAndSavePage.getFirstNameValue(), equalTo(contact.getFirstName()));
@@ -81,56 +65,53 @@ public class PrePopParametersTests extends BaseTest {
         assertThat(compareAndSavePage.getEmailValue(), equalToIgnoringCase(contact.getEmailAddress()));
     }
 
-    @Test(groups = {"prepop"}, dataProvider = "contactAndStaticDataAutoMFSBoundaryTesting", dataProviderClass = AutoDataProvider.class)
-    public void shouldBeExpectedErrorsOnPageWhenEnterNonValidData(Contact contact, StaticDataAutoMFS staticData, List<String> expectedErrorsOnPage) throws Exception {
+    @Test(groups = {"prepop"}, dataProvider = "contactAndExtraDataAutoMFSBoundaryTesting", dataProviderClass = AutoDataProvider.class)
+    public void shouldBeExpectedErrorsOnPageWhenEnterNonValidData(Contact contact, ExtraDataAutoMFS extraData, List<String> expectedErrorsOnPage) throws Exception {
         // reload page with all pre pop parameters
         driverPage = new DriverPage(driver);
-        driverPage.open(PrePopParameters.generateURLForAutoMFSWithContactAndStatic(this.url, contact, staticData));
+        driverPage.open(PrePopParameters.generateURLForAutoMFSWithContactAndExtra(this.url, contact, extraData));
+        driverPage.fillInTheRestFields(extraData);
 
         assertThat(driverPage.getPageText(), containsString(contact.getCity()));
-        assertThat(driverPage.getInsuranceCompanyValue(), is(staticData.getInsuranceCompany()));
+        assertThat(driverPage.getInsuranceCompanyValue(), is(extraData.getInsuranceCompany()));
         assertThat(driverPage.isZipCodeFieldDisplayed(), is(false));
 
-        vehiclePage = driverPage.fillInTheRestFields(staticData).clickOnContinue();
-        compareAndSavePage = vehiclePage.fillInAllFields(staticData).clickOnContinue();
+        vehiclePage = driverPage.clickOnContinue();
+        compareAndSavePage = vehiclePage.fillInAllFields(extraData).clickOnContinue();
         compareAndSavePage.clickSubmit();
 
-        List<WebElement> gotErrorsOnPage = compareAndSavePage.getErrorsOnBottomPage();
-
-        for (int i = 0; i < expectedErrorsOnPage.size(); i++) {
-            assertThat(gotErrorsOnPage.get(i).getText(), is(expectedErrorsOnPage.get(i)));
-        }
-        assertThat(expectedErrorsOnPage.size(), is(gotErrorsOnPage.size()));
+        assertThat(compareAndSavePage.getErrorsOnBottomPageAsList(), is(equalTo(expectedErrorsOnPage)));
     }
 
-    @Test(groups = {"submit", "vwo"}, dataProvider = "contactAndStaticDataAutoMFS", dataProviderClass = AutoDataProvider.class)
-    public void shouldPresentInURLVisualWebsiteOptimizerData(Contact contact, StaticDataAutoMFS staticData) throws Exception {
+    @Test(groups = {"submit", "vwo"}, dataProvider = "contactAndExtraDataAutoMFS", dataProviderClass = AutoDataProvider.class)
+    public void shouldPresentInURLVisualWebsiteOptimizerData(Contact contact, ExtraDataAutoMFS extraData) throws Exception {
         driverPage = new DriverPage(driver);
-        vehiclePage = driverPage.fillInAllFields(contact, staticData).clickOnContinue();
-        compareAndSavePage = vehiclePage.fillInAllFields(staticData).clickOnContinue();
-        compareAndSavePage.fillInAllFields(contact, staticData).submitForm();
+        vehiclePage = driverPage.fillInAllFields(contact, extraData).clickOnContinue();
+        compareAndSavePage = vehiclePage.fillInAllFields(extraData).clickOnContinue();
+        compareAndSavePage.fillInAllFields(contact, extraData).submitForm();
 
         List<String> vwoData = HarParser.getVisualWebsiteOptimizerData(proxy.getHar());
-        List<String> visualWebsiteOptimizerList = VWOData.map.get(CampaignsHelper.getCampaignName(this.url));
+        List<String> visualWebsiteOptimizerList = VisualWebsiteOptimizerData.getVWOList(CampaignsHelper.getCampaignName(this.url));
 
         assertThat(vwoData, is(visualWebsiteOptimizerList));
         assertThat(vwoData.size(), is(visualWebsiteOptimizerList.size()));
     }
 
-    @Test(groups = {"submit", "Offer Parameters"}, dataProvider = "contactAndStaticAndOfferParametersDataAutoMFS", dataProviderClass = AutoDataProvider.class)
-    public void DRAFT_shouldPresentOfferParametersInXMLAndDynamicPixelDataInURL(Contact contact, StaticDataAutoMFS staticData, OfferParameters offerParameters) throws Exception {
+    @Test(groups = {"submit", "Offer Parameters"}, dataProvider = "contactExtraDataAndOfferParametersDataAutoMFS", dataProviderClass = AutoDataProvider.class)
+    public void DRAFT_shouldPresentOfferParametersInXMLAndDynamicPixelDataInURL(Contact contact, ExtraDataAutoMFS extraData, OfferParameters offerParameters) throws Exception {
         driverPage = new DriverPage(driver);
         //reload page with necessarily offer parameters in URL
         driverPage.open(this.url + offerParameters.toURLString());
-        vehiclePage = driverPage.fillInAllFields(contact, staticData).clickOnContinue();
-        compareAndSavePage = vehiclePage.fillInAllFields(staticData).clickOnContinue();
-        compareAndSavePage.fillInAllFields(contact, staticData).submitForm();
+        vehiclePage = driverPage.fillInAllFields(contact, extraData).clickOnContinue();
+        compareAndSavePage = vehiclePage.fillInAllFields(extraData).clickOnContinue();
+        compareAndSavePage.fillInAllFields(contact, extraData).submitForm();
 
         Har har = proxy.getHar();
         Submit submit = HarParser.getSubmit(har);
         LeadDataType leadDataType = XmlToObject.unMarshal(LeadDataType.class, submit.getRequest());
         AffiliateDataType affiliateData = leadDataType.getAffiliateData();
 
+        // Har har = proxy.getHar();
         Map<String, String> dynamicPixelResponse = HarParser.getDynamicPixel(har);
         HarEntry trackingData = HarParser.getTrackingData(har, offerParameters.getOffer_id());
 
@@ -146,19 +127,19 @@ public class PrePopParametersTests extends BaseTest {
 
         //TODO: ???
         assertThat(trackingData, is(notNullValue()));
-        assertThat(trackingData.getResponse().getStatus(), is(302));
+        assertThat("Wrong Response of Tracking Data", trackingData.getResponse().getStatus(), is(302));
 
     }
 
 
     @Test(groups = {"prepop", "prepop IP"}, enabled = false, description = "Is not implemented yet on CDS 2.0", dataProvider = "prePopIPParametersData", dataProviderClass = AutoDataProvider.class)
     public void DRAFT_shouldBeShownCityNameAndHidedZipCodeFieldOnPage(String prepop, Map<String, String> response) throws Exception {
-        driver.get(this.url + prepop);
         String city = response.get("City");
         String state = response.get("State");
         String zipCode = response.get("Zipcode");
 
         driverPage = new DriverPage(driver);
+        driverPage.open(this.url + prepop);
         assertThat(driverPage.getPageText(), containsString(city));
         assertThat(driverPage.isZipCodeFieldDisplayed(), is(false));
     }

@@ -12,4 +12,11 @@ public class CampaignsHelper {
         return url.substring(i, url.length() - 1);
     }
 
+    public static String getFullUrl(String url) {
+        if (!url.contains("http://")) {
+            return System.getProperty("test.environment") + url;
+        } else {
+            return url;
+        }
+    }
 }

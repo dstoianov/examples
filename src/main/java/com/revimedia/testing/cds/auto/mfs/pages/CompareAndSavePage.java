@@ -1,7 +1,7 @@
 package com.revimedia.testing.cds.auto.mfs.pages;
 
 import com.revimedia.testing.cds.Page;
-import com.revimedia.testing.cds.auto.staticdata.StaticDataAutoMFS;
+import com.revimedia.testing.cds.auto.staticdata.ExtraDataAutoMFS;
 import com.revimedia.testing.cds.constants.Messages;
 import com.revimedia.testing.configuration.dto.Contact;
 import org.apache.log4j.Logger;
@@ -10,62 +10,51 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import java.util.List;
+
 /**
- * User: stoianod
+ * User: Denis Stoianov
  * Date: 4/9/14
  */
 public class CompareAndSavePage extends Page {
     protected final Logger log = Logger.getLogger(this.getClass());
+    @FindBy(xpath = "//div[contains(@class, 'FirstName')]//input")
+    private WebElement txtFirstName;
+    @FindBy(xpath = "//div[contains(@class, 'LastName')]//input")
+    private WebElement txtLastName;
+    @FindBy(xpath = "//div[contains(@class, 'Education')]//select")
+    private WebElement ddEducation;
+    @FindBy(xpath = ".//input[@value='Male']")
+    private WebElement rbtnMale;
+    @FindBy(xpath = ".//input[@value='Female']")
+    private WebElement rbtnFemale;
+    @FindBy(xpath = "//div[contains(@class, 'BirthDate')]//select")
+    private List<WebElement> ddBirthDate;
+    @FindBy(xpath = "//div[contains(@class, 'Month')]//select")
+    private WebElement ddMonth;
+    @FindBy(xpath = "//div[contains(@class, 'Day')]//select")
+    private WebElement ddDay;
+    @FindBy(xpath = "//div[contains(@class, 'Year')]//select")
+    private WebElement ddYear;
+    @FindBy(xpath = "//div[contains(@class, 'Address')]//input")
+    private WebElement txtStreetAddress;
+    @FindBy(xpath = "//div[contains(@class, 'ZipCode')]//input")
+    private WebElement txtZipCode;
+    @FindBy(xpath = "//div[contains(@class, 'PhoneNumber')]//input")
+    private WebElement txtPhoneNumber;
+    @FindBy(xpath = "//div[contains(@class, 'EmailAddress')]//input")
+    private WebElement txtEmail;
+    @FindBy(xpath = "//button")
+    private WebElement btnGetMyQuotes; //bq-control bq-type-simple
+    @FindBy(xpath = "//button") //button class="bq-control bq-type-simple">
+    private WebElement btnContinue;
 
     public CompareAndSavePage(WebDriver driver) {
         super(driver);
         log.info("Compare & SAVE Page is Loaded, STEP #3");
     }
 
-    @FindBy(xpath = "//div[contains(@class, 'FirstName')]//input")
-    private WebElement txtFirstName;
-
-    @FindBy(xpath = "//div[contains(@class, 'LastName')]//input")
-    private WebElement txtLastName;
-
-    @FindBy(xpath = "//div[contains(@class, 'Education')]//select")
-    private WebElement ddEducation;
-
-    @FindBy(xpath = ".//input[@value='Male']")
-    private WebElement rbtnMale;
-
-    @FindBy(xpath = ".//input[@value='Female']")
-    private WebElement rbtnFemale;
-
-
-    @FindBy(xpath = "//div[contains(@class, 'Month')]//select")
-    private WebElement ddMonth;
-
-    @FindBy(xpath = "//div[contains(@class, 'Day')]//select")
-    private WebElement ddDay;
-
-    @FindBy(xpath = "//div[contains(@class, 'Year')]//select")
-    private WebElement ddYear;
-
-    @FindBy(xpath = "//div[contains(@class, 'Address')]//input")
-    private WebElement txtStreetAddress;
-
-    @FindBy(xpath = "//div[contains(@class, 'ZipCode')]//input")
-    private WebElement txtZipCode;
-
-    @FindBy(xpath = "//div[contains(@class, 'PhoneNumber')]//input")
-    private WebElement txtPhoneNumber;
-
-    @FindBy(xpath = "//div[contains(@class, 'EmailAddress')]//input")
-    private WebElement txtEmail;
-
-    @FindBy(xpath = "//button")
-    private WebElement btnGetMyQuotes; //bq-control bq-type-simple
-
-    @FindBy(xpath = "//button") //button class="bq-control bq-type-simple">
-    private WebElement btnContinue;
-
-    public CompareAndSavePage fillInAllFields(Contact contact, StaticDataAutoMFS staticData) {
+    public CompareAndSavePage fillInAllFields(Contact contact, ExtraDataAutoMFS staticData) {
         clearAndType(txtFirstName, contact.getFirstName());
         clearAndType(txtLastName, contact.getLastName());
         clearAndType(txtPhoneNumber, contact.getPhoneNumber());
@@ -90,15 +79,13 @@ public class CompareAndSavePage extends Page {
     }
 
     public void submitForm() {
-        waitForAjaxComplete();
         btnGetMyQuotes.click();
-        if (btnGetMyQuotes.isDisplayed()) {
-            // TODO: workaround for eBureau Verification
-            // waitForAjaxComplete();
-            //if (getPageText().contains(Messages.EBUREAU_VERIFICATION)) {
+        waitForAjaxComplete();
+        if (getPageText().contains(Messages.EBUREAU_VERIFICATION)) {
             btnGetMyQuotes.click();
         }
-        waitForAjaxComplete();
+        checkErrorsOnPage();
+        waitListings();
     }
 
     public String getFirstNameValue() {
@@ -144,5 +131,10 @@ public class CompareAndSavePage extends Page {
         return this;
     }
 
+    public CompareAndSavePage fillInTheRestFields(Contact contact, ExtraDataAutoMFS staticData) {
+        selectByValue(ddEducation, staticData.getEducation());
+        selectDate(ddMonth, ddDay, ddYear, contact.getBirthDate());
+        return this;
+    }
 
 }

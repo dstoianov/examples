@@ -4,9 +4,7 @@ package com.revimedia.tests.cds.DraftTests;
 import com.revimedia.testing.cds.auto.mfs.pages.CompareAndSavePage;
 import com.revimedia.testing.cds.auto.mfs.pages.DriverPage;
 import com.revimedia.testing.cds.auto.mfs.pages.VehiclePage;
-import com.revimedia.testing.cds.auto.staticdata.StaticDataAutoMFS;
-import com.revimedia.testing.cds.prepop.PrePop;
-import com.revimedia.testing.cds.prepop.PrePopParameters;
+import com.revimedia.testing.cds.auto.staticdata.ExtraDataAutoMFS;
 import com.revimedia.testing.configuration.dto.Contact;
 import com.revimedia.tests.configuration.dataproviders.AutoDataProvider;
 import org.openqa.selenium.By;
@@ -31,7 +29,6 @@ import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.io.File;
 import java.io.IOException;
-import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -48,6 +45,8 @@ import static ru.yandex.qatools.matchers.webdriver.DisplayedMatcher.displayed;
  */
 public class DummyTest {
     public WebDriver driver;
+    @FindBys({@FindBy(tagName = "a"), @FindBy(tagName = "img")})
+    List<WebElement> images;
 
     @BeforeMethod
     public void startBrowser() throws IOException {
@@ -129,7 +128,7 @@ public class DummyTest {
     }
 
     @Test(dataProvider = "contactAndStaticDataAutoMFS", dataProviderClass = AutoDataProvider.class)
-    public void basicTest(Contact contact, StaticDataAutoMFS staticData) throws Exception {
+    public void basicTest(Contact contact, ExtraDataAutoMFS staticData) throws Exception {
         driver.get("http://development.stagingrevi.com/auto/mfs");
 
         Robot robot = new Robot();
@@ -161,7 +160,6 @@ public class DummyTest {
         robot.keyRelease(KeyEvent.VK_ALT);
     }
 
-
     void printLog(String type) {
         List<LogEntry> entries = driver.manage().logs().get(type).getAll();
         //Set<String> entries = driver.manage().logs().getAvailableLogTypes();
@@ -187,9 +185,6 @@ public class DummyTest {
         }
     }
 
-    @FindBys({@FindBy(tagName = "a"), @FindBy(tagName = "img")})
-    List<WebElement> images;
-
     @Test
     public void testListToURL() throws Exception {
 
@@ -201,26 +196,6 @@ public class DummyTest {
 
         driver.findElement(byChained);
 
-
-    }
-
-    @Test(dataProvider = "contactAndStaticDataAutoMFS", dataProviderClass = AutoDataProvider.class)
-    public void testExitTrue(Contact contact, StaticDataAutoMFS staticData) throws Exception {
-
-
-        //PrePop prePop = new PrePop(contact);
-        //Class aClass = classLoader.loadClass("reflection.PrePop");
-        Class aClass = PrePop.class;
-
-        Field[] methods = aClass.getFields();
-
-        Class<?> firstname = aClass.getDeclaredField("firstname").getType();
-
-        driver.get("http://development.stagingrevi.com/auto/mfs");
-
-        String url2 = PrePopParameters.generateURLForAutoMFSWithContactAndStatic(driver.getCurrentUrl(), contact, staticData);
-
-        driver.get(url2);
 
     }
 

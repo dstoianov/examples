@@ -3,7 +3,7 @@ package com.revimedia.tests.cds.auto.mfs;
 import com.revimedia.testing.cds.auto.mfs.pages.CompareAndSavePage;
 import com.revimedia.testing.cds.auto.mfs.pages.DriverPage;
 import com.revimedia.testing.cds.auto.mfs.pages.VehiclePage;
-import com.revimedia.testing.cds.auto.staticdata.StaticDataAutoMFS;
+import com.revimedia.testing.cds.auto.staticdata.ExtraDataAutoMFS;
 import com.revimedia.testing.cds.constants.Messages;
 import com.revimedia.testing.configuration.dto.Contact;
 import com.revimedia.tests.configuration.BaseTest;
@@ -22,13 +22,13 @@ public class EBureauVerificationTests extends BaseTest {
     public VehiclePage vehiclePage;
     public CompareAndSavePage compareAndSavePage;
 
-    @Test(groups = {"eBureau Verification"}, dataProvider = "contactAndStaticDataAutoMFSForeBureauChecking", dataProviderClass = AutoDataProvider.class)
-    public void shouldBeShowneBureauVerificationMessage(Contact contact, StaticDataAutoMFS staticData) throws Exception {
+    @Test(groups = {"eBureau Verification"}, dataProvider = "contactAndExtraDataAutoMFSForeBureauChecking", dataProviderClass = AutoDataProvider.class)
+    public void shouldBeShowneBureauVerificationMessage(Contact contact, ExtraDataAutoMFS extraData) throws Exception {
         //ACT
         driverPage = new DriverPage(driver);
-        vehiclePage = driverPage.fillInAllFields(contact, staticData).clickOnContinue();
-        compareAndSavePage = vehiclePage.fillInAllFields(staticData).clickOnContinue();
-        compareAndSavePage.fillInAllFields(contact, staticData);
+        vehiclePage = driverPage.fillInAllFields(contact, extraData).clickOnContinue();
+        compareAndSavePage = vehiclePage.fillInAllFields(extraData).clickOnContinue();
+        compareAndSavePage.fillInAllFields(contact, extraData);
         compareAndSavePage.clickSubmit();
 
         //Assert

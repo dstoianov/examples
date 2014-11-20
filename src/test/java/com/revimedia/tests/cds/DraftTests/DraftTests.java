@@ -3,7 +3,7 @@ package com.revimedia.tests.cds.DraftTests;
 import com.revimedia.testing.cds.auto.mfs.pages.CompareAndSavePage;
 import com.revimedia.testing.cds.auto.mfs.pages.DriverPage;
 import com.revimedia.testing.cds.auto.mfs.pages.VehiclePage;
-import com.revimedia.testing.cds.auto.staticdata.StaticDataAutoMFS;
+import com.revimedia.testing.cds.auto.staticdata.ExtraDataAutoMFS;
 import com.revimedia.testing.configuration.dto.Contact;
 import com.revimedia.testing.configuration.dto.Contacts;
 import com.revimedia.testing.configuration.utils.JsUtils;
@@ -27,10 +27,31 @@ import static org.hamcrest.Matchers.is;
  * Created by Funker on 08.05.14.
  */
 public class DraftTests extends BaseTest {
+    public static String xmlContactData = "./src/test/resources/data/leads_data_1000.xml";
     public DriverPage driverPage;
     public VehiclePage vehiclePage;
     public CompareAndSavePage compareAndSavePage;
 
+    @DataProvider
+    public static Object[][] contactAndStaticDataAutoMFS() {
+        return new Object[][]{
+                {unMarshalToContact(xmlContactData, Contacts.class), new ExtraDataAutoMFS()},
+        };
+    }
+
+    static <T> Contacts unMarshalToContact(String xml_file_name, Class<T> clazz) {
+        try {
+            JAXBContext jaxbContext = JAXBContext.newInstance(clazz);
+            Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
+            T data = (T) jaxbUnmarshaller.unmarshal(new File(xml_file_name));
+
+            return (Contacts) data;
+
+        } catch (JAXBException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 
     @Test
     public void testCheckRequiredFields() throws Exception {
@@ -47,9 +68,8 @@ public class DraftTests extends BaseTest {
         //assertThat();
     }
 
-
     @Test(groups = {"submit"}, enabled = true, dataProvider = "contactAndStaticDataAutoMFS")
-    public void testCheckZipCode(Contacts contacts, StaticDataAutoMFS staticData) throws Exception {
+    public void testCheckZipCode(Contacts contacts, ExtraDataAutoMFS staticData) throws Exception {
         driverPage = new DriverPage(driver);
         StringBuffer buffer = new StringBuffer();
 
@@ -57,7 +77,7 @@ public class DraftTests extends BaseTest {
         //@FindBy(xpath = "//div[contains(@class, 'ZipCode')]//input")
         //private WebElement txtZipCode;
 
-       // WebElement element = driver.findElement(By.xpath("//div[contains(@class, 'ZipCode')]//input"));
+        // WebElement element = driver.findElement(By.xpath("//div[contains(@class, 'ZipCode')]//input"));
 //        for(WebElement field : fields) {
 //             element = driver.findElement(map.getProperty(field.xpath));
 //        }
@@ -85,31 +105,6 @@ public class DraftTests extends BaseTest {
         System.out.println("incorrect address is: " + i);
         System.out.println(buffer.toString());
 
-    }
-
-
-    @DataProvider
-    public static Object[][] contactAndStaticDataAutoMFS() {
-        return new Object[][]{
-                {unMarshalToContact(xmlContactData, Contacts.class), new StaticDataAutoMFS()},
-        };
-    }
-
-
-    public static String xmlContactData = "./src/test/resources/data/leads_data_1000.xml";
-
-    static <T> Contacts unMarshalToContact(String xml_file_name, Class<T> clazz) {
-        try {
-            JAXBContext jaxbContext = JAXBContext.newInstance(clazz);
-            Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
-            T data = (T) jaxbUnmarshaller.unmarshal(new File(xml_file_name));
-
-            return (Contacts) data;
-
-        } catch (JAXBException e) {
-            e.printStackTrace();
-        }
-        return null;
     }
 
     public void waitForAjaxComplete() {

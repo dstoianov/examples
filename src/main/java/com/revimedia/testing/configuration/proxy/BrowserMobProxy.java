@@ -19,4 +19,6 @@ public interface BrowserMobProxy {
     public Proxy getProxy() throws UnknownHostException;
 
     public Har getHar();
+
+    public void printHar(Har har);
 }
