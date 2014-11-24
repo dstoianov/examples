@@ -12,3 +12,4 @@
 /.idea
 /.git
 /*.log
+/*.log.lck
