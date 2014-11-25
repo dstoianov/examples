@@ -11,38 +11,22 @@ import org.testng.ITestResult;
  */
 public class CustomRetryAnalyzer2 implements IRetryAnalyzer {
 
-    private int count = 0;
-
-    private int maxCount = 2;
-    //protected Logger log;
-    //private static Logger testbaseLog;
     protected final Logger log = Logger.getLogger("testbase.testng");
-
-//    static {
-//
-//        //testbaseLog = Logger.getLogger("testbase.testng");
-//        log = Logger.getLogger("testbase.testng");
-//    }
+    private int count = 1;
+    private int maxCount = 3;
 
     public CustomRetryAnalyzer2() {
-
-        log.info(" ModeledRetryAnalyzer constructor " + this.getClass().getName());
-        System.out.println(" ModeledRetryAnalyzer constructor " + this.getClass().getName());
-
-        //testbaseLog.trace(" ModeledRetryAnalyzer constructor " + this.getClass().getName());
-
+//        log.info("ModeledRetryAnalyzer constructor " + this.getClass().getName());
+        System.out.println("ModeledRetryAnalyzer constructor " + this.getClass().getName());
     }
 
     @Override
     public boolean retry(ITestResult result) {
-        log.trace("running retry logic for  '"
-                + result.getName()
-                + "' \non class " + this.getClass().getName() + " \nwith status " + getTestResult(result) + "Retrying " + count + " times");
+        String messsage = String.format("Running retry logic for '%s' test \non class '%s'\nwith status '%s' \nRetrying '%s' times ",
+                result.getName(), this.getClass().getName(), getTestResult(result), count);
 
-        System.out.println("running retry logic for  '"
-                + result.getName()
-                + "'\non class " + this.getClass().getName() + "\nwith status " + getTestResult(result) + "\nRetrying " + count + " times");
-
+//        log.trace(messsage);
+        System.out.println(messsage);
         if (count < maxCount) {
             count++;
             return true;

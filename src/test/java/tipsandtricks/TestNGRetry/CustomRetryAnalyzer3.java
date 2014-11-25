@@ -9,8 +9,8 @@ import org.testng.Reporter;
  */
 public class CustomRetryAnalyzer3 implements IRetryAnalyzer {
 
-    private int count = 0;
-    private int maxCount = 2;
+    private int count = 1;
+    private int maxCount = 3;
 
     @Override
     public boolean retry(ITestResult result) {
@@ -18,6 +18,9 @@ public class CustomRetryAnalyzer3 implements IRetryAnalyzer {
             if (count < maxCount) {
                 count++;
                 result.setStatus(ITestResult.SUCCESS);
+                String message1 = String.format("'%s': Error in '%s' Retrying '%s' more times",
+                        Thread.currentThread().getName(), result.getName(), (maxCount - count));
+
                 String message = Thread.currentThread().getName() + ": Error in " + result.getName() + " Retrying "
                         + (maxCount + 1 - count) + " more times";
                 System.out.println(message);

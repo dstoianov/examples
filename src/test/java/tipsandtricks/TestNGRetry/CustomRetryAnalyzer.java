@@ -6,7 +6,7 @@ import org.testng.util.RetryAnalyzerCount;
 public class CustomRetryAnalyzer extends RetryAnalyzerCount {
 
     public CustomRetryAnalyzer() {
-        setCount(5);
+        setCount(3);
     }
 
     @Override
