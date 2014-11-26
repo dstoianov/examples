@@ -21,14 +21,14 @@ public class FixRetryListener extends TestListenerAdapter {
         // collect all id's from passed test
         Set<Integer> passedTestIds = new HashSet<>();
         for (ITestResult passedTest : testContext.getPassedTests().getAllResults()) {
-            passedTestIds.add(TestUtil.getId(passedTest));
+            passedTestIds.add(getId(passedTest));
         }
 
         Set<Integer> failedTestIds = new HashSet<>();
         for (ITestResult failedTest : testContext.getFailedTests().getAllResults()) {
 
             // id = class + method + dataprovider
-            int failedTestId = TestUtil.getId(failedTest);
+            int failedTestId = getId(failedTest);
 
             // if we saw this test as a failed test before we mark as to be deleted
             // or delete this failed test if there is at least one passed version
@@ -47,6 +47,13 @@ public class FixRetryListener extends TestListenerAdapter {
             }
         }
 
+    }
+
+    private int getId(ITestResult result) {
+        int id = result.getTestClass().getName().hashCode();
+        id = 31 * id + result.getMethod().getMethodName().hashCode();
+        id = 31 * id + (result.getParameters() != null ? Arrays.hashCode(result.getParameters()) : 0);
+        return id;
     }
 
 
