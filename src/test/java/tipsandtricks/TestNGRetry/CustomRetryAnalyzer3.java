@@ -18,11 +18,8 @@ public class CustomRetryAnalyzer3 implements IRetryAnalyzer {
             if (count < maxCount) {
                 count++;
                 result.setStatus(ITestResult.SUCCESS);
-                String message1 = String.format("'%s': Error in '%s' Retrying '%s' more times",
-                        Thread.currentThread().getName(), result.getName(), (maxCount - count));
-
-                String message = Thread.currentThread().getName() + ": Error in " + result.getName() + " Retrying "
-                        + (maxCount + 1 - count) + " more times";
+                String message = String.format("'%s': Error in '%s' Retrying '%s' more times", Thread.currentThread().getName(), result.getName(), (maxCount - count));
+//                String message = Thread.currentThread().getName() + ": Error in " + result.getName() + " Retrying " + (maxCount - count) + " more times";
                 System.out.println(message);
                 Reporter.log(message);
                 return true;

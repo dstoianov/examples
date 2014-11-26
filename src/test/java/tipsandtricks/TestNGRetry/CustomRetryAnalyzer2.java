@@ -3,6 +3,7 @@ package tipsandtricks.TestNGRetry;
 import org.apache.log4j.Logger;
 import org.testng.IRetryAnalyzer;
 import org.testng.ITestResult;
+import org.testng.Reporter;
 
 //import java.util.logging.Logger;
 
@@ -27,6 +28,7 @@ public class CustomRetryAnalyzer2 implements IRetryAnalyzer {
 
 //        log.trace(messsage);
         System.out.println(messsage);
+        Reporter.log(messsage);
         if (count < maxCount) {
             count++;
             return true;
