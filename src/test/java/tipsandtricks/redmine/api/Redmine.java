@@ -36,7 +36,7 @@ public class Redmine {
         System.out.println(issueById.getStatusName());
     }
 
-
+    // http://demo.redmine.org/projects/fnk/issues
     @Test
     public void testName2() throws Exception {
         RedmineManager mgr = RedmineManagerFactory.createWithUserAuth("http://demo.redmine.org/", "funker", "222222");
