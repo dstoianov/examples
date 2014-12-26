@@ -42,6 +42,8 @@ public class SearchingByRequestTest {
 
     @After
     public void killWebDriver() {
-        driver.quit();
+        if (driver != null) {
+            driver.quit();
+        }
     }
 }
