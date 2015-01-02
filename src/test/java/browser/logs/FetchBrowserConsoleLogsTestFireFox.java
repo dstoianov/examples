@@ -1,10 +1,5 @@
 package browser.logs;
 
-/**
- * Created by Denis Stoianov on 25/06/2014, 12:49 PM
- * E-mail: denis@revimedia.com
- */
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.logging.LogEntries;
