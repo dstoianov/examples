@@ -13,6 +13,7 @@ import org.testng.annotations.Test;
 import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.UUID;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -53,6 +54,7 @@ public class TakeScreenshotRemoteWebdriver {
         // then Augmenter will add the TakesScreenshot methods to the instance
         WebDriver augmentedDriver = new Augmenter().augment(driver);
         File screenshot = ((TakesScreenshot)augmentedDriver).getScreenshotAs(OutputType.FILE);
+        String uid = UUID.randomUUID().toString();
         FileUtils.copyFile(screenshot, new File("src/test/java/tipsandtricks/grid2/screenshots/screenshot2.png"));
 
 
