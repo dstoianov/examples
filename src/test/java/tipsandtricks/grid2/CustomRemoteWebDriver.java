@@ -13,8 +13,9 @@ public class CustomRemoteWebDriver extends RemoteWebDriver implements TakesScree
     public CustomRemoteWebDriver(URL remoteAddress, Capabilities desiredCapabilities) {
         super(remoteAddress, desiredCapabilities);
     }
+
     @Override
-    public <X> X  getScreenshotAs(OutputType<X> target) throws WebDriverException {
+    public <X> X getScreenshotAs(OutputType<X> target) throws WebDriverException {
         String base64Str = execute(DriverCommand.SCREENSHOT).getValue().toString();
         return target.convertFromBase64Png(base64Str);
     }

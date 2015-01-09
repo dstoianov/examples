@@ -1,24 +1,15 @@
 package parametrized.suite.s2;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import org.apache.http.annotation.Immutable;
-import org.testng.TestListenerAdapter;
+import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableMap;
 import org.testng.TestNG;
 import org.testng.annotations.Test;
-import org.testng.xml.XmlClass;
 import org.testng.xml.XmlPackage;
 import org.testng.xml.XmlSuite;
 import org.testng.xml.XmlTest;
 
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-
-import parametrized.suite.Initial;
-import parametrized.suite.Test1;
-import parametrized.suite.Test2;
-import parametrized.suite.Test3;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * User: stoianod
@@ -56,9 +47,6 @@ public class Init {
             tng.setXmlSuites(suites);
             tng.run();
         }
-
-
-
 
 
     }

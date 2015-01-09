@@ -4,7 +4,7 @@ package parametrized.suitdto;
  * User: stoianod
  * Date: 4/8/14
  */
-public  class UserTO {
+public class UserTO {
     String firstName;
     String lastName;
     int age;

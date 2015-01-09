@@ -1,28 +1,22 @@
 package parametrized.runsuite;
 
-import java.io.File;
-import java.io.IOException;
-import java.net.URL;
-
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.Augmenter;
-import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.remote.RemoteWebDriver;
-import org.openqa.selenium.support.Color;
 import org.testng.Assert;
-import org.testng.annotations.*;
+import org.testng.annotations.Test;
+
+import java.io.File;
+import java.io.IOException;
 
 /**
  * User: stoianod
  * Date: 4/8/14
  */
-public class TestCase extends BaseTest{
+public class TestCase extends BaseTest {
 
     @Test
     public void testPositiveSubmit() throws Exception {
@@ -42,8 +36,8 @@ public class TestCase extends BaseTest{
         }
     }
 
-    @Test(description =  "Fake Test")
-    public void testRequiredFields()throws Exception{
+    @Test(description = "Fake Test")
+    public void testRequiredFields() throws Exception {
         Assert.assertTrue(true);
     }
 

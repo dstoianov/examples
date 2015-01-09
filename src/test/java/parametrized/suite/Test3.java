@@ -9,12 +9,10 @@ import org.testng.annotations.Test;
 public class Test3 extends Initial {
 
 
-
     @Test//(groups = "test", dependsOnGroups = "init")
     public void testTest3() throws Exception {
         System.out.println(URL);
     }
-
 
 
 }

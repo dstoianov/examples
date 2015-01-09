@@ -7,7 +7,7 @@ public class EnumTest {
 
     @Test
     public void RunEnumTest() {
-        System.out.println(3+5);
+        System.out.println(3 + 5);
         System.out.println(UserStatus.ACTIVE.getStatusCode());
         System.out.println(UserStatus.INACTIVE.getStatusCode());
     }

@@ -25,7 +25,7 @@ import java.util.concurrent.TimeUnit;
  */
 public class Base {
 
-  //  public static Logger logger = Logger.getLogger(Base.class);
+    //  public static Logger logger = Logger.getLogger(Base.class);
 
     public WebDriver driver;
 
@@ -45,7 +45,7 @@ public class Base {
     @AfterTest
     public void tearDown() {
         driver.quit();
-       // logger.info("Stop WebDriver");
+        // logger.info("Stop WebDriver");
     }
 
 
@@ -69,13 +69,13 @@ public class Base {
         return null;
     }
 
-    public String getCurrentDate(){
+    public String getCurrentDate() {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         return sdf.format(new Date());
     }
 
 
-    public String getBrowserName(){
+    public String getBrowserName() {
         Capabilities caps = ((RemoteWebDriver) driver).getCapabilities();
         String browserName = caps.getBrowserName();
         String browserVersion = caps.getVersion();

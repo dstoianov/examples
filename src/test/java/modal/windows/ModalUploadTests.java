@@ -37,18 +37,19 @@ public class ModalUploadTests extends Base {
             x.ControlSetText(uploadClassWindow, "", "Edit1", file.getAbsolutePath());
             x.sleep(200);
             //x.controlClick(uploadClassWindow, "", "[CLASS:Button; TEXT:&Open; INSTANCE:1]");
-           x.controlClick(uploadClassWindow, "", "Button1");
+            x.controlClick(uploadClassWindow, "", "Button1");
             x.sleep(200);
-           // x.send("{ENTER}", false);
+            // x.send("{ENTER}", false);
         }
 
         driver.findElement(By.xpath("//input[@name='B4']")).click();
         Thread.sleep(4000);
     }
+
     @Test
     public void HTTPAuthenticationTest() throws InterruptedException {
-           driver.get("http://www.httpwatch.com/httpgallery/authentication/");
-           driver.findElement(By.xpath("//input[@id='displayImage']")).click();
+        driver.get("http://www.httpwatch.com/httpgallery/authentication/");
+        driver.findElement(By.xpath("//input[@id='displayImage']")).click();
 
 
         File file = new File("lib", "jacob-1.17-x86.dll"); //path to the jacob dll
@@ -57,19 +58,19 @@ public class ModalUploadTests extends Base {
         AutoItX x = new AutoItX();
 
         String chromeWindow = "[CLASS:Chrome_WidgetWin_1]";
-       //x.winActivate(chromeWindow);
+        //x.winActivate(chromeWindow);
         x.winWaitActive(chromeWindow, "", 1);
         if (x.winExists(chromeWindow)) {
             x.send("httpwatch");
             x.send("{TAB}", false);
             x.send("dhjhfj");
             x.send("{ENTER}", false);
-         }
+        }
         Thread.sleep(5000);
     }
 
     @Test
-    public void  UploadNewTest() throws InterruptedException {
+    public void UploadNewTest() throws InterruptedException {
         driver.get("http://www.httpwatch.com/httpgallery/methods/");
         driver.findElement(By.name("F1")).click();
 
@@ -85,7 +86,7 @@ public class ModalUploadTests extends Base {
         ait.send(fileToUpload, false);
         ait.send("{ENTER}", false);
         //ait.click("[TEXT:&Open]");
-       // up.click("Button1");
+        // up.click("Button1");
 
 
         driver.findElement(By.xpath("//input[@name='B4']")).click();
@@ -95,7 +96,6 @@ public class ModalUploadTests extends Base {
         Assert.assertTrue(driver.findElement(By.xpath("//*[@id='table31']")).isEnabled(), "Table is not Enabled");
         Thread.sleep(8000);
     }
-
 
 
 }

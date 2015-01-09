@@ -53,7 +53,7 @@ public class TakeScreenshotRemoteWebdriver {
         // if the driver does have the Capabilities to take a screenshot
         // then Augmenter will add the TakesScreenshot methods to the instance
         WebDriver augmentedDriver = new Augmenter().augment(driver);
-        File screenshot = ((TakesScreenshot)augmentedDriver).getScreenshotAs(OutputType.FILE);
+        File screenshot = ((TakesScreenshot) augmentedDriver).getScreenshotAs(OutputType.FILE);
         String uid = UUID.randomUUID().toString();
         FileUtils.copyFile(screenshot, new File("src/test/java/tipsandtricks/grid2/screenshots/screenshot2.png"));
 
@@ -61,7 +61,7 @@ public class TakeScreenshotRemoteWebdriver {
     }
 
     @AfterTest
-    public void tearDown(){
+    public void tearDown() {
         driver.quit();
     }
 }

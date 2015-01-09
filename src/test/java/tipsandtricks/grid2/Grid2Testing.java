@@ -35,14 +35,14 @@ public class Grid2Testing {
         // if the driver does have the Capabilities to take a screenshot
         // then Augmenter will add the TakesScreenshot methods to the instance
         WebDriver augmentedDriver = new Augmenter().augment(driver);
-        File screenshot = ((TakesScreenshot)augmentedDriver).getScreenshotAs(OutputType.FILE);
+        File screenshot = ((TakesScreenshot) augmentedDriver).getScreenshotAs(OutputType.FILE);
         FileUtils.copyFile(screenshot, new File("src/test/java/tipsandtricks/grid2/screenshots/screenshot2.png"));
 
 
     }
 
     @AfterTest
-    public void tearDown(){
+    public void tearDown() {
         driver.quit();
     }
 }

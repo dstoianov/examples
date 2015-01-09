@@ -23,13 +23,13 @@ public class DataProviders {
 
     }
 
-    public static List<String> scannerReader(){
+    public static List<String> scannerReader() {
         List<String> list = new ArrayList<String>();
         Scanner s = null;
         try {
             //s = new Scanner(new File("./src/test/java/ua/com/antenka/test/helpers/data.csv.txt"));
             s = new Scanner(new File("./src/test/java/ua/com/antenka/test/helpers/midle_name.txt"));
-            while (s.hasNext()){
+            while (s.hasNext()) {
                 list.add(s.next());
             }
         } catch (FileNotFoundException e) {
@@ -57,7 +57,7 @@ public class DataProviders {
         } finally {
             in.close();
         }
-        return  myList;
+        return myList;
     }
 
 

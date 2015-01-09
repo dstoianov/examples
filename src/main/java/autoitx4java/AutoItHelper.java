@@ -1,10 +1,8 @@
 package autoitx4java;
 
-import java.io.File;
-
-import autoitx4java.AutoItX;
-import com.jacob.com.ComThread;
 import com.jacob.com.LibraryLoader;
+
+import java.io.File;
 
 public class AutoItHelper {
 
@@ -18,9 +16,9 @@ public class AutoItHelper {
         System.setProperty(LibraryLoader.JACOB_DLL_PATH, jacob.getAbsolutePath());
     }
 
+    private final AutoItX aux;
     private String winTitle;
     private String winText;
-    private final AutoItX aux;
 
     public AutoItHelper(String winTitle) {
         this.winTitle = winTitle;
@@ -37,7 +35,7 @@ public class AutoItHelper {
         System.out.println("Title of modal window is: " + getTitle());
         return this;
     }
-    
+
     public AutoItHelper setText(String controlID, String text) {
         //aux.ControlSetText(uploadClassWindow, "", "Edit1", file.getAbsolutePath());
         aux.ControlSetText(winTitle, winText, controlID, text);
@@ -49,12 +47,12 @@ public class AutoItHelper {
         aux.send(text);
         return this;
     }
-    
+
     public AutoItHelper send(String text, boolean isRaw) {
         aux.send(text, isRaw);
         return this;
     }
-    
+
     public AutoItHelper click(String controlID) {
         aux.controlClick(winTitle, winText, controlID);
         System.out.println("Control clicked: " + controlID);
@@ -66,19 +64,19 @@ public class AutoItHelper {
         aux.processWaitClose(process, timeout);
     }
 
-	public AutoItHelper focus(String controlID) {
-		aux.controlFocus(winTitle, winText, controlID);
-		return this;
-	}
+    public AutoItHelper focus(String controlID) {
+        aux.controlFocus(winTitle, winText, controlID);
+        return this;
+    }
 
-	public String getText(String controlID) {
-		return aux.controlGetText(winTitle, winText, controlID);		
-	}
+    public String getText(String controlID) {
+        return aux.controlGetText(winTitle, winText, controlID);
+    }
 
     public String getTitle() {
         //return aux.winGetTitle("[active]");
         return aux.winGetTitle(winTitle, winText);
     }
 
-    
+
 }

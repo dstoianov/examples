@@ -54,7 +54,7 @@ public class CompareImages {
             } else {
                 strMsg = "Images are not matched";
             }
-         } catch (IOException e) {
+        } catch (IOException e) {
             System.out.println(e);
         }
         return strMsg;

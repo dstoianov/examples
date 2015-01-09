@@ -12,5 +12,6 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 public @interface Bug {
     public String[] id() default "";
+
     public String url() default "http://redmine.com/redmine/issues/";
 }

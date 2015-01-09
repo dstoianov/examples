@@ -1,6 +1,5 @@
 package parametrized.suite;
 
-import org.testng.annotations.DataProvider;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
@@ -10,12 +9,12 @@ import org.testng.annotations.Test;
  */
 public class Initial {
 
-    @Parameters({ "url" })
+    protected String URL;
+
+    @Parameters({"url"})
     @Test
     public void setURL(String URL) {
         this.URL = URL;
     }
-
-    protected String URL ;
 
 }

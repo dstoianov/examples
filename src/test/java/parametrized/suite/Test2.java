@@ -9,8 +9,7 @@ import org.testng.annotations.Test;
 public class Test2 extends Initial {
 
 
-
-   @Test//(groups = "test", dependsOnGroups = "init")
+    @Test//(groups = "test", dependsOnGroups = "init")
     public void testTest2() throws Exception {
         System.out.println(URL);
     }
