@@ -1,13 +1,14 @@
-package tipsandtricks.custom.element;
+package tipsandtricks.custom.element.elements.impl;
 
 import org.openqa.selenium.WebElement;
+import tipsandtricks.custom.element.elements.CheckBox;
 
 /**
- * Created by dstoianov on 2014-12-26.
+ * Created by Funker on 07.01.2015.
  */
-public class CheckBoxCustom extends ElementImpl implements CheckBox {
+public class CheckBoxImpl extends ElementImpl implements CheckBox {
 
-    public CheckBoxCustom(WebElement element) {
+    public CheckBoxImpl(WebElement element) {
         super(element);
     }
 
@@ -31,8 +32,5 @@ public class CheckBoxCustom extends ElementImpl implements CheckBox {
         return getWrappedElement().isSelected();
     }
 
-    @Override
-    public boolean elementWired() {
-        return false;
-    }
+
 }

@@ -1,10 +1,12 @@
-package tipsandtricks.custom.element;
+package tipsandtricks.custom.element.elements.impl;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.Point;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.internal.Coordinates;
+import org.openqa.selenium.internal.Locatable;
+import tipsandtricks.custom.element.elements.Element;
 
 import java.util.List;
 
@@ -41,63 +43,62 @@ public class ElementImpl implements Element {
 
     @Override
     public String getTagName() {
-        return null;
+        return element.getTagName();
     }
 
     @Override
     public String getAttribute(String name) {
-        return null;
+        return element.getAttribute(name);
     }
 
     @Override
     public boolean isSelected() {
-        return false;
+        return element.isSelected();
     }
 
     @Override
     public boolean isEnabled() {
-        return false;
+        return element.isEnabled();
     }
 
     @Override
     public String getText() {
-        return null;
+        return element.getText();
     }
 
     @Override
     public List<WebElement> findElements(By by) {
-        return null;
+        return element.findElements(by);
     }
 
     @Override
     public WebElement findElement(By by) {
-        return null;
+        return element.findElement(by);
     }
 
     @Override
     public boolean isDisplayed() {
-        return false;
+        return element.isDisplayed();
     }
 
     @Override
     public Point getLocation() {
-        return null;
+        return element.getLocation();
     }
 
     @Override
     public Dimension getSize() {
-        return null;
+        return element.getSize();
     }
 
     @Override
     public String getCssValue(String propertyName) {
-        return null;
+        return element.getCssValue(propertyName);
     }
-
 
     @Override
     public Coordinates getCoordinates() {
-        return null;
+        return ((Locatable) element).getCoordinates();
     }
 
     @Override
@@ -107,6 +108,11 @@ public class ElementImpl implements Element {
 
     @Override
     public boolean elementWired() {
-        return false;
+        return (element != null);
+    }
+
+    @Override
+    public String getHtml() {
+        return element.getAttribute("innerHTML");
     }
 }
