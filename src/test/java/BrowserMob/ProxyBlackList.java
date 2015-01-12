@@ -56,6 +56,9 @@ public class ProxyBlackList {
         server.blacklistRequests("http://ecx.images-amazon.com/.*", 404);
         server.blacklistRequests("http://z-ecx.images-amazon.com/images/G/01/browser-scripts/.*", 404);
 
+//        server.getStreamManager().setDownstreamKbps(25L);
+//        server.getStreamManager().setUpstreamKbps(25L);
+
         driver.get("http://www.amazon.com");
         Thread.sleep(7500);
 
