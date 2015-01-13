@@ -14,14 +14,8 @@
     <!-- Bootstrap styles -->
     <link rel="stylesheet" href="http://getbootstrap.com/dist/css/bootstrap.min.css"/>
 
-
     <!-- Font Awesome icons -->
     <link rel="stylesheet" href="http://weloveiconfonts.com/api/?family=fontawesome">
-    <style>
-        [class*="fontawesome-"]:before {
-            font-family: 'FontAwesome', sans-serif;
-        }
-    </style>
 
     <!-- jQuery -->
     <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
@@ -32,54 +26,10 @@
     <!-- Custom styles for this template -->
     <link href="signin.css" rel="stylesheet">
 
-
     <!-- Custom styles for the demo page -->
-    <style>
-        img {
-            max-width: 100%;
-        }
+    <link href="default.css" rel="stylesheet">
+    <link href="revi.css" rel="stylesheet">
 
-        .well {
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-            display: none;
-            margin: 1em;
-        }
-
-        pre.prettyprint {
-            padding: 9px 14px;
-        }
-
-        .fulltable {
-            max-width: 100%;
-            overflow: auto;
-        }
-
-        .container {
-            padding-left: 0;
-            padding-right: 0;
-        }
-
-        .lineheight {
-            line-height: 3em;
-        }
-
-        .pagetop {
-            background: url(http://subtlepatterns.com/patterns/congruent_outline.png) #333;
-            background-attachment: fixed;
-            color: #fff;
-        }
-
-        .page-header {
-            border-bottom: none;
-        }
-
-        .initialism {
-            font-weight: bold;
-            letter-spacing: 1px;
-            font-size: 12px;
-        }
-
-    </style>
 </head>
 <body>
 
@@ -177,7 +127,7 @@
     <input type="checkbox" name="vehicle" value="Bike"> I have a bike<br>
     <input type="checkbox" name="vehicle" value="Car" checked> I have a car<br>
     <input type="submit" value="Submit">
- <fieldset>
+
      <legend>options</legend>
      <b>С какими операционными системами вы знакомы?</b>
    <input type="checkbox" name="option1" value="a1" checked>Windows 95/98<Br>
@@ -185,8 +135,8 @@
    <input type="checkbox" name="option3" value="a3">System X<Br>
    <input type="checkbox" name="option4" value="a4">Linux<Br>
    <input type="checkbox" name="option5" value="a5">X3-DOS
-   <input type="submit" value="Отправить"></p>
-</fieldset>
+   <input type="submit" value="Отправить">
+
 
 </pre>
 
@@ -256,12 +206,16 @@
             </thead>
             <tr>
                 <td>
-                    <p>Example:</p>
+                    <p>Example of cars:
+                        <select id="myselect0-0">
+                            <option value="volvo">Volvo</option>
+                            <option value="saab">Saab</option>
+                            <option value="mercedes">Mercedes</option>
+                            <option value="audi">Audi</option>
+                        </select>
+                    </p>
 
-<pre class="prettyprint">
-<code>$.fn.popup.defaults.transition = 'all 0.3s';
-    $.fn.popup.defaults.pagecontainer = '.container';
-</code></pre>
+
                 </td>
             </tr>
         </table>
@@ -488,23 +442,6 @@
     });
 </script>
 
-<style>
-    #fadeandscale {
-        -webkit-transform: scale(0.8);
-        -moz-transform: scale(0.8);
-        -ms-transform: scale(0.8);
-        transform: scale(0.8);
-    }
-
-    .popup_visible #fadeandscale {
-        -webkit-transform: scale(1);
-        -moz-transform: scale(1);
-        -ms-transform: scale(1);
-        transform: scale(1);
-    }
-</style>
-
-
 <!-- Slide in -->
 
 <div id="slide" class="well">
@@ -549,36 +486,6 @@
     });
 </script>
 
-<style>
-    #slide_background {
-        -webkit-transition: all 0.3s 0.3s;
-        -moz-transition: all 0.3s 0.3s;
-        transition: all 0.3s 0.3s;
-    }
-
-    #slide,
-    #slide_wrapper {
-        -webkit-transition: all 0.4s;
-        -moz-transition: all 0.4s;
-        transition: all 0.4s;
-    }
-
-    #slide {
-        -webkit-transform: translateX(0) translateY(-40%);
-        -moz-transform: translateX(0) translateY(-40%);
-        -ms-transform: translateX(0) translateY(-40%);
-        transform: translateX(0) translateY(-40%);
-    }
-
-    .popup_visible #slide {
-        -webkit-transform: translateX(0) translateY(0);
-        -moz-transform: translateX(0) translateY(0);
-        -ms-transform: translateX(0) translateY(0);
-        transform: translateX(0) translateY(0);
-    }
-</style>
-
-
 <!-- Stand alone -->
 
 <div id="standalone">
@@ -619,21 +526,7 @@
     });
 </script>
 
-<style>
-    #standalone {
-        -webkit-transform: scale(0.8);
-        -moz-transform: scale(0.8);
-        -ms-transform: scale(0.8);
-        transform: scale(0.8);
-    }
 
-    .popup_visible #standalone {
-        -webkit-transform: scale(1);
-        -moz-transform: scale(1);
-        -ms-transform: scale(1);
-        transform: scale(1);
-    }
-</style>
 
 
 <!-- Active background -->
@@ -734,43 +627,6 @@
     });
 </script>
 
-<style>
-    #fall_background {
-        -webkit-transition: all 3s;
-        -moz-transition: all 3s;
-        transition: all 3s;
-    }
-
-    #fall_wrapper {
-        -webkit-transition: all 3s;
-        -moz-transition: all 3s;
-        transition: all 3s;
-        -webkit-perspective: 1300px;
-        -moz-perspective: 1300px;
-        perspective: 1300px;
-    }
-
-    #fall {
-        -webkit-transition: all 3s ease-in;
-        -moz-transition: all 3s ease-in;
-        transition: all 3s ease-in;
-        -webkit-transform-style: preserve-3d;
-        -moz-transform-style: preserve-3d;
-        transform-style: preserve-3d;
-        -webkit-transform: translateZ(600px) rotateX(20deg);
-        -moz-transform: translateZ(600px) rotateX(20deg);
-        -ms-transform: translateZ(600px) rotateX(20deg);
-        transform: translateZ(600px) rotateX(20deg);
-    }
-
-    .popup_visible #fall {
-        -webkit-transform: translateZ(0px) rotateX(0deg);
-        -moz-transform: translateZ(0px) rotateX(0deg);
-        -ms-transform: translateZ(0px) rotateX(0deg);
-        transform: translateZ(0px) rotateX(0deg);
-    }
-</style>
-
 
 <!-- Other examples -->
 
@@ -791,11 +647,6 @@
 
 <!-- Google Prettify syntax highlighting -->
 <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?autoload=true&lang=css"></script>
-<style>
-    pre.prettyprint {
-        padding: 9px 14px;
-    }
-</style>
 
 </body>
 </html>

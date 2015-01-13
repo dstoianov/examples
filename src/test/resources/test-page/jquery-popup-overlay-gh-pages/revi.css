@@ -1,0 +1,533 @@
+
+.bq-campaign, .bq-campaign div, .bq-campaign p, .bq-campaign span, .bq-campaign form, .bq-campaign fieldset, .bq-campaign legend, .bq-campaign label, .bq-campaign h1, .bq-campaign h2, .bq-campaign h3, .bq-campaign h4, .bq-campaign h5, .bq-campaign h6, .bq-campaign ol, .bq-campaign ul, .bq-campaign li, .bq-campaign img, .bq-campaign ins, .bq-campaign b, .bq-campaign i, .bq-campaign center {
+    border: 0 none;
+    font: inherit;
+    margin: 0;
+    padding: 0;
+    vertical-align: baseline;
+}
+.bq-campaign h1, .bq-campaign h2, .bq-campaign h3, .bq-campaign h4, .bq-campaign h5, .bq-campaign h6, .bq-campaign th, .bq-campaign td, .bq-campaign caption {
+    font-weight: normal;
+}
+.bq-campaign ol, .bq-campaign ul {
+    list-style: outside none none;
+}
+.bq-campaign .bq-label, .bq-campaign .bq-title {
+    display: block;
+    text-align: left;
+}
+.bq-campaign .bq-error .bq-label, .bq-campaign .bq-error .bq-title, .bq-campaign .bq-errors, .bq-campaign .bq-cloning-invalid .bq-cloning-adds .bq-label {
+    background-color: red;
+    color: #fff;
+}
+.bq-campaign .bq-error.bq-type-radio .bq-label {
+    background: inherit;
+    color: #000;
+}
+.bq-campaign .bq-errors {
+    border-radius: 9px;
+    margin: 0 40px;
+}
+.bq-errors .bq-errors-container {
+    display: block;
+    line-height: 1.45em;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    padding: 3px;
+    text-align: left;
+}
+.bq-errors .bq-errors-container li {
+    list-style-type: circle;
+    margin-left: 2em;
+}
+.bq-campaign .bq-control-container {
+    text-align: center;
+}
+.bq-campaign .bq-control.bq-type-simple {
+    background: url("http://cds.bestquotes.com/auto/mfs/media/images/all.png") no-repeat scroll 0 -99px rgba(0, 0, 0, 0);
+    border: 0 none;
+    cursor: pointer;
+    display: inline-block;
+    height: 44px;
+    width: 165px;
+}
+.bq-campaign .bq-control.bq-type-simple:focus {
+    outline: 1px solid #009715;
+}
+.bq-campaign .bq-control.bq-type-simple:active {
+    background: url("//campaign.bestquotes.com/auto/mfs/media/images/all.png") no-repeat scroll 0 -145px rgba(0, 0, 0, 0);
+}
+.bq-campaign.bq-step3 .bq-control.bq-type-simple {
+    background: url("//campaign.bestquotes.com/auto/mfs/media/images/all.png") no-repeat scroll 0 -200px rgba(0, 0, 0, 0);
+    height: 61px;
+    width: 238px;
+}
+.bq-campaign.bq-step3 .bq-layout .bq-control {
+    float: right;
+    margin: 0 0 8px 10px;
+}
+.bq-campaign .bq-control.bq-disable {
+    opacity: 0.5;
+}
+.bq-campaign .bq-disclaimer-container {
+    position: relative;
+}
+.bq-campaign .page-pp-tc {
+    color: #666;
+    padding-top: 35px;
+    text-align: center;
+}
+.bq-campaign .page-pp-tc a {
+    color: #666;
+    font-size: 10px;
+    font-weight: normal;
+    text-decoration: none;
+}
+.bq-campaign .bq-layout {
+    font-family: Arial;
+    font-size: 14px;
+    margin: 0 auto;
+    padding: 0;
+    width: 545px;
+}
+.bq-campaign .bq-layout h1 {
+    color: #404040;
+    font: bold 19px/1.2 Arial;
+    margin: 0 0 10px;
+}
+.bq-campaign .call-to-action {
+    color: #019614;
+    font-size: 12px;
+    font-weight: bold;
+    margin: 0.25em 0 0;
+}
+.bq-campaign .tabheader {
+    background: url("//campaign.bestquotes.com/auto/mfs/media/images/all.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+    height: 30px;
+    margin-bottom: 10px;
+    width: 550px;
+}
+.bq-campaign.bq-step1 .tabheader {
+    background: url("//campaign.bestquotes.com/auto/mfs/media/images/all.png") repeat scroll 0 0 rgba(0, 0, 0, 0);
+}
+.bq-campaign.bq-step2 .tabheader {
+    background: url("//campaign.bestquotes.com/auto/mfs/media/images/all.png") repeat scroll 0 -32px rgba(0, 0, 0, 0);
+}
+.bq-campaign.bq-step3 .tabheader {
+    background: url("//campaign.bestquotes.com/auto/mfs/media/images/all.png") repeat scroll 0 -63px rgba(0, 0, 0, 0);
+}
+.bq-campaign .first-line-divider {
+    border-bottom: 3px solid #dadada;
+    height: 3px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    width: 100%;
+}
+.bq-campaign .bq-field, .bq-campaign .bq-field-composite-container {
+    border-bottom: 1px solid #dadada;
+    overflow: hidden;
+    padding: 10px 60px;
+    position: relative;
+    text-align: right;
+}
+.bq-campaign .bq-fields-container {
+    margin-bottom: 20px;
+}
+.bq-campaign.bq-step1 .bq-fields-container, .bq-campaign.bq-step2 .bq-fields-container {
+    border-bottom: 1px solid #dadada;
+}
+.bq-campaign .bq-field .bq-label, .bq-campaign .bq-title {
+    float: left;
+    font-size: 14px;
+    font-weight: normal;
+    margin-top: 0.25em;
+}
+.bq-campaign .bq-field input {
+    outline-color: #009715;
+    padding: 1px;
+    width: 174px;
+}
+.bq-campaign .bq-field select {
+    outline-color: #009715;
+    padding: 1px;
+    width: 180px;
+}
+.bq-campaign .bq-field .bq-mark {
+    display: block;
+    font-size: 10px;
+    margin-left: 245px;
+    text-align: left;
+    width: 180px;
+}
+.bq-campaign .bq-type-email .bq-mark {
+    background: url("//campaign.bestquotes.com/auto/mfs/media/images/all.png") no-repeat scroll 0 -271px rgba(0, 0, 0, 0);
+    height: 15px;
+    width: 51px;
+}
+.bq-campaign .bq-type-email .bq-mark {
+}
+.bq-campaign .bq-type-radio .bq-field-radio-items {
+    float: right;
+}
+.bq-campaign .bq-type-radio .bq-field-radio-items .bq-radio-item {
+    float: left;
+}
+.bq-campaign .bq-type-radio .bq-radio-item {
+    cursor: pointer;
+    display: block;
+    position: relative;
+    text-align: left;
+    width: 87px;
+}
+.bq-campaign .bq-type-radio input {
+    height: 1px;
+    opacity: 0;
+    position: absolute;
+    width: 1px;
+}
+.bq-campaign .bq-type-radio .bq-label {
+    display: inline-block;
+    float: none;
+    margin-left: 15px;
+    margin-top: 2px;
+}
+.bq-campaign .bq-type-radio .bq-img {
+    background-image: url("media/images/all.png");
+    background-position: 0 -321px;
+    background-repeat: no-repeat;
+    height: 13px;
+    left: 0;
+    margin: 3px 3px 0 0;
+    position: absolute;
+    top: 0;
+    width: 12px;
+}
+.bq-campaign .bq-type-radio .bq-active .bq-active {
+    background-position: -15px -321px;
+}
+.bq-campaign .bq-atsk {
+    color: red;
+    font-weight: bold;
+}
+.bq-campaign .bq-field-composite-container .bq-field {
+    border-bottom: medium none;
+    padding: 0;
+}
+.bq-campaign .bq-field-composite-items {
+    display: inline-block;
+    width: 184px;
+}
+.bq-campaign .bq-field-composite-items .bq-type-select {
+    float: left;
+    margin-left: 4px;
+    overflow: inherit;
+    width: 52px;
+}
+.bq-campaign .bq-field-composite-items .bq-type-select select {
+    padding-left: 0;
+    padding-right: 0;
+    width: 100%;
+}
+.bq-campaign .bq-field-composite-items .bq-type-select.bq-name-Year {
+    width: 68px;
+}
+.lt-ie8 .bq-campaign .bq-field-composite-items .bq-name-Day select {
+    width: 52px;
+}
+.bq-campaign .bq-tcpa, .bq-campaign .bq-disclaimer {
+    color: #666;
+    display: none;
+    font-size: 10px;
+    line-height: 10px;
+    text-align: justify;
+}
+.bq-campaign .bq-tcpa {
+    margin-bottom: 8px;
+}
+.bq-campaign.bq-step3 .bq-tcpa, .bq-campaign.bq-step3 .bq-disclaimer {
+    display: block;
+}
+.bq-campaign.bq-step3 .bq-disclaimer {
+    margin-top: 60px;
+}
+.bq-campaign .bq-tcpa a, .bq-campaign .bq-disclaimer a {
+    color: #666;
+}
+.bq-preloader-listing .bq-campaign .bq-fields {
+    background: url("//campaign.bestquotes.com/auto/mediaforce/media/images/moss-ajax-loader.gif") no-repeat scroll 50% 50% rgba(0, 0, 0, 0);
+    height: 150px;
+}
+.bq-campaign.bq-step4 .bq-layout {
+    width: 992px;
+}
+.bq-campaign.bq-step4 .bq-fields-container {
+    border-bottom: medium none;
+}
+.bq-campaign.bq-step4 .bq-footer, .bq-campaign.bq-step4 .tabheader {
+    display: none;
+}
+.bq-campaign.bq-step4 .bq-header-container {
+    text-align: center;
+}
+.bq-campaign.bq-step4 .bq-layout h1 {
+    color: #009715;
+    font-size: 30px;
+}
+.bq-campaign.bq-step4 .call-to-action {
+    color: #060d51;
+    font-size: 17px;
+    margin-top: 0;
+}
+.bq-campaign.bq-step4 .first-line-divider, .bq-campaign.bq-step4 .bq-control-container {
+    display: none;
+}
+.bq-campaign .bq-upsell-container {
+    border-top: 1px solid #dadada;
+}
+.bq-campaign .bq-upsell {
+    background-color: #ededed;
+    border-radius: 10px;
+    font-size: 12px;
+    margin: 15px auto 0;
+    padding: 15px 30px 15px 34px;
+    position: relative;
+    text-shadow: 0 1px 0 #fff;
+}
+.bq-campaign .bq-upsell input {
+    float: left;
+}
+.bq-campaign .bq-upsell .bq-label {
+    display: block;
+    margin: 2px 0 0 25px;
+}
+.bq-campaign .bq-upsell .bq-icon {
+    background: url("//campaign.bestquotes.com/auto/mfs/media/images/all.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+    display: block;
+    height: 16px;
+    left: 16px;
+    position: absolute;
+    top: 16px;
+    width: 16px;
+}
+.bq-campaign .bq-upsell .bq-icon.automotive {
+    background: url("//campaign.bestquotes.com/auto/mfs/media/images/all.png") repeat scroll -16px -297px rgba(0, 0, 0, 0);
+}
+.bq-campaign .bq-upsell .bq-icon.health {
+    background: url("//campaign.bestquotes.com/auto/mfs/media/images/all.png") repeat scroll -31px -297px rgba(0, 0, 0, 0);
+}
+.bq-campaign .bq-upsell .bq-icon.life {
+    background: url("//campaign.bestquotes.com/auto/mfs/media/images/all.png") repeat scroll -45px 297px rgba(0, 0, 0, 0);
+}
+.bq-campaign .bq-upsell .bq-icon.pet {
+    background: url("//campaign.bestquotes.com/auto/mfs/media/images/all.png") repeat scroll -61px -298px rgba(0, 0, 0, 0);
+}
+.bq-campaign .bq-upsell .bq-icon.home {
+    background: url("//campaign.bestquotes.com/auto/mfs/media/images/all.png") repeat scroll -78px -298px rgba(0, 0, 0, 0);
+}
+.bq-campaign .bq-upsell .bq-icon.homesecurity {
+    background: url("//campaign.bestquotes.com/auto/mfs/media/images/all.png") repeat scroll -93px -297px rgba(0, 0, 0, 0);
+}
+.bq-campaign .bq-cloning .bq-cloning-wrapper {
+    position: relative;
+}
+.bq-campaign .bq-cloning .bq-cloning-header {
+    border-bottom: 1px solid #fff;
+}
+.bq-campaign .bq-cloning .bq-cloning-header, .bq-campaign .bq-cloning .bq-cloning-footer {
+    display: none;
+}
+.bq-campaign .bq-cloning .bq-cloning-buttons {
+    float: right;
+    padding: 7px 12px 0 0;
+    width: 140px;
+}
+.bq-campaign .bq-cloning .bq-cloning-label {
+    background: none repeat scroll 0 0 #44bf55;
+    color: #fff;
+    font-size: 14px;
+    padding: 10px 16px;
+}
+.bq-campaign .bq-cloning .bq-cloning-titles-label {
+    font-weight: bold;
+}
+.bq-campaign .bq-cloning .bq-cloning-titles-action {
+    margin-left: 4px;
+}
+.bq-campaign .bq-cloning .bq-cloning-title {
+    background: none repeat scroll 0 0 #ededed;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 10px 60px;
+}
+.bq-campaign .bq-cloning .bq-cloning-cancel {
+    color: #777;
+    cursor: pointer;
+    display: none;
+    font-size: 30px;
+    left: -26px;
+    margin-left: 100%;
+    position: absolute;
+    top: 0;
+    width: 18px;
+}
+.bq-campaign .bq-cloning .bq-cloning-cancel .bq-cancel-text {
+    display: none;
+}
+.bq-campaign .bq-cloning .bq-cloning-adds {
+    display: none;
+    overflow: hidden;
+    padding: 10px 60px;
+    text-align: right;
+}
+.bq-campaign .bq-cloning .bq-cloning-adds input {
+    height: 1px;
+    opacity: 0;
+    position: absolute;
+    width: 1px;
+}
+.bq-campaign .bq-cloning .bq-cloning-adds .bq-label {
+    float: left;
+    margin-top: 0.25em;
+}
+.bq-campaign .bq-cloning .bq-cloning-adds .bq-cloning-adds-buttons {
+    display: inline-block;
+    text-align: left;
+    width: 180px;
+}
+.bq-campaign .bq-cloning .bq-cloning-adds .bq-add-clone {
+    display: inline;
+    margin-right: 7px;
+}
+.bq-campaign .bq-cloning .bq-cloning-adds .bq-focus {
+    outline: 1px solid #009715;
+}
+.bq-campaign .bq-cloning .bq-cloning-adds .bq-add-clone ins {
+    background-image: url("//campaign.bestquotes.com/auto/mfs/media/images/all.png");
+    background-position: 0 -321px;
+    background-repeat: no-repeat;
+    display: inline-block;
+    height: 13px;
+    margin: 3px 3px 0 0;
+    width: 12px;
+}
+.bq-campaign .bq-cloning .bq-cloning-adds .bq-add-clone {
+    cursor: pointer;
+}
+.bq-campaign .bq-cloning .bq-cloning-adds .bq-add-clone.bq-active ins {
+    background-position: -15px -321px;
+}
+.bq-campaign .bq-cloning .bq-cloning-footer {
+    border-top: 2px solid #009715;
+    padding: 8px 16px 20px;
+    text-align: center;
+}
+.bq-campaign .bq-cloning .bq-cloning-save, .bq-campaign .bq-cloning .bq-cloning-edit, .bq-campaign .bq-cloning .bq-cloning-remove {
+    background: none repeat scroll 0 0 #ededed;
+    border: 1px solid #888;
+    border-radius: 4px;
+    cursor: pointer;
+    display: inline-block;
+    height: 20px;
+    line-height: 20px;
+    margin: 0 3px;
+    padding: 0 10px;
+    text-shadow: 0 1px 0 #fff;
+}
+.bq-campaign .bq-cloning .bq-cloning-save {
+    height: 24px;
+    line-height: 24px;
+}
+.bq-campaign .bq-cloning .bq-cloning-save:hover, .bq-campaign .bq-cloning .bq-cloning-edit:hover, .bq-campaign .bq-cloning .bq-cloning-remove:hover {
+    background-color: #fff;
+}
+.bq-campaign .bq-state-edit .bq-cloning-header, .bq-campaign .bq-state-edit .bq-cloning-footer, .bq-campaign .bq-state-edit .bq-cloning-cancel {
+    display: block;
+}
+.bq-campaign .bq-state-edit .bq-cloning-wrapper, .bq-campaign .bq-state-init .bq-cloning-wrapper {
+    border: 1px solid #44bf55;
+    margin-top: 10px;
+    position: relative;
+}
+.bq-campaign .bq-state-init .bq-cloning-adds, .bq-campaign .bq-state-init .bq-cloning-cancel {
+    display: block;
+}
+.bq-campaign .bq-cloning-index-1 .bq-cloning-wrapper {
+    border: medium none;
+    margin-top: 0;
+}
+.bq-campaign .bq-cloning-index-1 .bq-cloning-cancel {
+    display: none;
+}
+.bq-campaign .bq-state-cloned .bq-cloning-header {
+    display: block;
+}
+.bq-campaign .bq-state-cloned .bq-cloning-title, .bq-campaign .bq-state-cloned .bq-cloning-container, .bq-campaign .bq-state-saved .bq-cloning-title, .bq-campaign .bq-state-saved .bq-cloning-container, .bq-campaign .bq-state-saved .bq-cloning-footer {
+    display: none;
+}
+.bq-campaign .bq-state-saved .bq-cloning-header {
+    display: block;
+}
+.bq-campaign .bq-state-not-cloned .bq-cloning-header, .bq-campaign .bq-state-not-cloned .bq-cloning-adds {
+    display: block;
+}
+.bq-campaign .bq-state-not-cloned .bq-cloning-buttons {
+    display: none;
+}
+.bq-campaign .bq-cloning-group-Vehicle .bq-cloning-container {
+    padding: 10px 60px;
+    text-align: right;
+}
+.bq-campaign .bq-cloning-group-Vehicle .bq-cloning-container .bq-field-composite-items {
+    display: inline-block;
+}
+.bq-campaign .bq-cloning-group-Vehicle .bq-cloning-container .bq-field-composite-items .bq-label {
+    display: none;
+}
+.bq-campaign .bq-cloning-group-Vehicle .bq-cloning-container .bq-field-composite-items .bq-field {
+    border-bottom: medium none;
+    padding: 2px 0;
+}
+.bq-campaign .bq-cloning-group-Vehicle .bq-cloning-container .bq-type-select.bq-name-Year {
+    width: auto;
+}
+.bq-campaign .bq-overlay {
+    background-color: #000;
+    height: 100%;
+    left: 0;
+    opacity: 0.1;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 50;
+}
+.bq-campaign .bq-popup-close {
+    display: none;
+}
+.bq-campaign .bq-popup-main {
+    background: linear-gradient(#444, #222) repeat scroll 0 0 #222;
+    border: 1px solid #444;
+    border-radius: 0.6em;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.6);
+    color: #fff;
+    font-weight: normal;
+    left: 50%;
+    padding: 5px 10px;
+    position: fixed;
+    text-shadow: 0 1px 1px #111;
+    top: 45%;
+}
+.bq-errors-container li:empty {
+    display: none;
+}
+.bq-campaign.bq-step2 .bq-control.bq-type-simple {
+    background-position: -244px -196px;
+}
+.bq-campaign.bq-step2 .bq-control.bq-type-simple:active {
+    background-position: -244px -242px;
+}
+.bq-campaign .bq-errors div {
+    height: 0;
+}
+.bq-campaign .bq-errors .bq-errors-container {
+    height: auto;
+}
