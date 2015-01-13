@@ -1,4 +1,4 @@
-package tipsandtricks.custom.elementV2.core;
+package tipsandtricks.custom.elementV2.decorator;
 
 import org.openqa.selenium.WebElement;
 import tipsandtricks.custom.elementV2.impl.IElement;

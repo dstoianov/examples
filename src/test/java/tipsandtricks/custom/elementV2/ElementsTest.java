@@ -1,7 +1,8 @@
 package tipsandtricks.custom.elementV2;
 
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.Test;
 import tipsandtricks.custom.elementV2.impl.CheckBox;
@@ -16,7 +17,7 @@ import static org.hamcrest.Matchers.is;
  */
 public class ElementsTest {
 
-    public WebDriver driver = new FirefoxDriver();
+    public WebDriver driver = new ChromeDriver();
 
     @Test
     public void testCheckBox() throws Exception {
@@ -26,8 +27,15 @@ public class ElementsTest {
         driver.get("http://the-internet.herokuapp.com/checkboxes");
 
         List<CheckBox> checkBoxList = page.getCheckBoxList();
+        List<WebElement> webElementsList = page.getWebElementsList();
 
         assertThat(checkBoxList.size(), is(2));
+        assertThat(checkBoxList.get(0).toString(), is("Name for CheckBox List 1 [0]"));
+        assertThat(checkBoxList.get(1).toString(), is("Name for CheckBox List 1 [1]"));
+
+        assertThat(webElementsList.size(), is(2));
+        assertThat(webElementsList.toString(), is("Name for list WebElements"));
+
 
         page.getCheckBox().setChecked(false);
         assertThat(page.getCheckBox().isChecked(), is(false));
@@ -37,6 +45,8 @@ public class ElementsTest {
         assertThat(page.getCheckBox().isChecked(), is(true));
 
         boolean checked = page.getCheckBoxAsWebElement().isSelected();
+
+        assertThat(page.getCheckBoxAsWebElement().toString(), is("Name for single WebElement"));
         assertThat(checked, is(true));
     }
 
@@ -46,7 +56,12 @@ public class ElementsTest {
         driver.get("http://the-internet.herokuapp.com/dynamic_controls");
 
         page.getButton().click();
+
+        String name = page.getButton().getName();
         String html = page.getButton().getHtml();
+
+        assertThat(name, is("Name for Button"));
+        assertThat(html, is("Add"));
     }
 
 

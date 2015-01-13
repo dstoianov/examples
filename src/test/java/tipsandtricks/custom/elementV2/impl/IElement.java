@@ -7,6 +7,8 @@ public interface IElement {
 
     String getHtml();
 
+    void setName(String name);
+
     void click();
 
 }
