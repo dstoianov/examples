@@ -41,11 +41,10 @@
             <p>jQuery plugin for responsive and accessible modal windows and tooltips</p>
 
             <p class="h1">
-                <a href="https://github.com/vast-engineering/jquery-popup-overlay/archive/gh-pages.zip"
-                   class="btn btn-primary btn-success btn-lg"><span class="fontawesome-download-alt"></span>
-                    Download</a>
-                <a href="https://github.com/vast-engineering/jquery-popup-overlay" class="btn btn-lg btn-default"><span
-                        class="fontawesome-github"></span> View project on GitHub</a>
+                <a href="https://github.com/vast-engineering/jquery-popup-overlay/archive/gh-pages.zip" class="btn btn-primary btn-success btn-lg">
+                    <span class="fontawesome-download-alt"></span> Download</a>
+                <a href="https://github.com/vast-engineering/jquery-popup-overlay" class="btn btn-lg btn-default">
+                    <span class="fontawesome-github"></span> View project on GitHub</a>
             </p>
 
             <p class="text-muted">Currently v1.7.6</p>
@@ -116,145 +115,196 @@
 
             <tr>
                 <td>
-
                     <form name='registration' onSubmit="return formValidation();">
-                        <ul>
-                            <label for="userid">User id: </label>
-                            <input type="text" id="userid" size="12"/><br>
-                            <label for="passid">Password: </label>
-                            <input type="password" id="passid" size="12"/><br>
-                            <label for="username">Name: </label>
-                            <input type="text" id="username" size="50"/><br>
-                            <label for="address">Address: </label>
-                            <input type="text" id="address" size="50"/><br>
-                            <label for="country">Country: </label>
-                            <select id="country">
-                                <option selected="" value="Default">(Please select a country)</option>
-                                <option value="AF">Australia</option>
-                                <option value="AL">Canada</option>
-                                <option value="DZ">India</option>
-                                <option value="AS">Russia</option>
-                                <option value="AD">USA</option>
-                            </select><br>
-                            <label for="zip">ZIP Code: </label>
-                            <input type="text" id="zip"/><br>
-                            <label for="email">Email: </label>
-                            <input type="text" id="email" size="50"/><br>
-                            <label id="gender">Sex: </label>
-                            <input type="radio" name="sex" value="Male"/><span> Male</span>
-                            <input type="radio" name="sex" value="Female"/><span> Female</span><br>
+                        <table width="60%">
+                            <tbody>
+                            <tr>
+                                <td>
+                                    <label for="userid">User id: </label>
+                                </td>
+                                <td>
+                                    <input type="text" id="userid" size="50"/><br>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="passid">Password: </label>
+                                </td>
+                                <td>
+                                    <input type="password" id="passid" size="50"/><br>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="username">Name: </label>
+                                </td>
+                                <td>
+                                    <input type="text" id="username" size="50"/><br>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="address">Address: </label>
+                                </td>
+                                <td>
+                                    <input type="text" id="address" size="50"/><br>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="country">Country: </label>
+                                </td>
+                                <td>
+                                    <select id="country" style="width: 75%">
+                                        <option selected="" value="Default">(Please select a country)</option>
+                                        <option value="AF">Australia</option>
+                                        <option value="AL">Canada</option>
+                                        <option value="DZ">India</option>
+                                        <option value="AS">Russia</option>
+                                        <option value="AD">USA</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="zip">ZIP Code: </label>
+                                </td>
+                                <td>
+                                    <input type="text" id="zip"/><br>
+                                </td>
+                            </tr>
 
-                            <div class="bq-field-composite-container bq-name-composite-BirthDate">
-                                <label for="month" class="bq-title">Date of birth:</label>
-                                <select data-name="Month" id="month">
-                                    <option value="null">MM</option>
-                                    <option value="Jan">Jan</option>
-                                    <option value="Feb">Feb</option>
-                                    <option value="Mar">Mar</option>
-                                    <option value="Apr">Apr</option>
-                                    <option value="May">May</option>
-                                    <option value="Jun">Jun</option>
-                                    <option value="Jul">Jul</option>
-                                    <option value="Aug">Aug</option>
-                                    <option value="Sep">Sep</option>
-                                    <option value="Oct">Oct</option>
-                                    <option value="Nov">Nov</option>
-                                    <option value="Dec">Dec</option>
-                                </select>
-                                <select data-name="Day">
-                                    <option value="null">DD</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
-                                    <option value="6">6</option>
-                                    <option value="7">7</option>
-                                    <option value="8">8</option>
-                                    <option value="9">9</option>
-                                    <option value="10">10</option>
-                                    <option value="11">11</option>
-                                    <option value="12">12</option>
-                                    <option value="13">13</option>
-                                    <option value="14">14</option>
-                                    <option value="15">15</option>
-                                    <option value="16">16</option>
-                                    <option value="17">17</option>
-                                    <option value="18">18</option>
-                                    <option value="19">19</option>
-                                    <option value="20">20</option>
-                                    <option value="21">21</option>
-                                    <option value="22">22</option>
-                                    <option value="23">23</option>
-                                    <option value="24">24</option>
-                                    <option value="25">25</option>
-                                    <option value="26">26</option>
-                                    <option value="27">27</option>
-                                    <option value="28">28</option>
-                                    <option value="29">29</option>
-                                    <option value="30">30</option>
-                                    <option value="31">31</option>
-                                </select>
-                                <select data-name="Year">
-                                    <option value="null">YYYY</option>
-                                    <option value="2015">2015</option>
-                                    <option value="2014">2014</option>
-                                    <option value="2013">2013</option>
-                                    <option value="2012">2012</option>
-                                    <option value="2011">2011</option>
-                                    <option value="2010">2010</option>
-                                    <option value="2009">2009</option>
-                                    <option value="2008">2008</option>
-                                    <option value="2007">2007</option>
-                                    <option value="2006">2006</option>
-                                    <option value="2005">2005</option>
-                                    <option value="2004">2004</option>
-                                    <option value="2003">2003</option>
-                                    <option value="2002">2002</option>
-                                    <option value="2001">2001</option>
-                                </select>
-                            </div>
+                            <tr>
+                                <td>
+                                    <label for="email">Email: </label>
+                                </td>
+                                <td>
+                                    <input type="text" id="email" size="50"/><br>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label id="gender">Sex: </label>
+                                </td>
+                                <td>
+                                    <input type="radio" name="sex" value="Male"/><span> Male</span>
+                                    <input type="radio" name="sex" value="Female"/><span> Female</span>
+                                    <input type="radio" name="sex" value="Female" checked/><span> None</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="month" class="bq-title">Date of birth:</label>
+                                </td>
+                                <td>
+                                    <div class="bq-field-composite-container bq-name-composite-BirthDate">
+                                        <select data-name="Month" id="month">
+                                            <option value="null">MM</option>
+                                            <option value="Jan">Jan</option>
+                                            <option value="Feb">Feb</option>
+                                            <option value="Mar">Mar</option>
+                                            <option value="Apr">Apr</option>
+                                            <option value="May">May</option>
+                                            <option value="Jun">Jun</option>
+                                            <option value="Jul">Jul</option>
+                                            <option value="Aug">Aug</option>
+                                            <option value="Sep">Sep</option>
+                                            <option value="Oct">Oct</option>
+                                            <option value="Nov">Nov</option>
+                                            <option value="Dec">Dec</option>
+                                        </select>
+                                        <select data-name="Day">
+                                            <option value="null">DD</option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                            <option value="6">6</option>
+                                            <option value="7">7</option>
+                                            <option value="8">8</option>
+                                            <option value="9">9</option>
+                                            <option value="10">10</option>
+                                            <option value="11">11</option>
+                                            <option value="12">12</option>
+                                            <option value="13">13</option>
+                                            <option value="14">14</option>
+                                            <option value="15">15</option>
+                                            <option value="16">16</option>
+                                            <option value="17">17</option>
+                                            <option value="18">18</option>
+                                            <option value="19">19</option>
+                                            <option value="20">20</option>
+                                            <option value="21">21</option>
+                                            <option value="22">22</option>
+                                            <option value="23">23</option>
+                                            <option value="24">24</option>
+                                            <option value="25">25</option>
+                                            <option value="26">26</option>
+                                            <option value="27">27</option>
+                                            <option value="28">28</option>
+                                            <option value="29">29</option>
+                                            <option value="30">30</option>
+                                            <option value="31">31</option>
+                                        </select>
+                                        <select data-name="Year">
+                                            <option value="null">YYYY</option>
+                                            <option value="2015">2015</option>
+                                            <option value="2014">2014</option>
+                                            <option value="2013">2013</option>
+                                            <option value="2012">2012</option>
+                                            <option value="2011">2011</option>
+                                            <option value="2010">2010</option>
+                                            <option value="2009">2009</option>
+                                            <option value="2008">2008</option>
+                                            <option value="2007">2007</option>
+                                            <option value="2006">2006</option>
+                                            <option value="2005">2005</option>
+                                            <option value="2004">2004</option>
+                                            <option value="2003">2003</option>
+                                            <option value="2002">2002</option>
+                                            <option value="2001">2001</option>
+                                        </select>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <label>Language: </label>
+                                </td>
+                                <td>
+                                    <input type="checkbox" name="en" value="en" checked><span> English</span><br>
+                                    <input type="checkbox" name="de" value="de"><span> German</span><br>
+                                    <input type="checkbox" name="nonen" value="noen"><span> Non English</span><br>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="desc">About:</label>
+                                </td>
+                                <td>
+                                    <textarea name="desc" id="desc" style="width: 75%"></textarea><br>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="fileupload">Upload file:</label>
+                                </td>
+                                <td>
+                                    <input type="file" id="fileupload" accept="image/*"/>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
 
 
-                            <table width="50%">
-                                <tr>
-                                    <td>
-                                        <label>Language: </label>
-                                    </td>
-                                    <td>
-                                        <input type="checkbox" name="en" value="en" checked><span> English</span><br>
-                                        <input type="checkbox" name="de" value="de"><span> German</span><br>
-                                        <input type="checkbox" name="nonen" value="noen"><span> Non English</span><br>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <label for="desc">About:</label>
-                                    </td>
-                                    <td>
-                                        <textarea name="desc" id="desc"></textarea><br>
-                                    </td>
-                                </tr>
-
-                            </table>
-
-
-                            <input type="file" name="fileupload" accept="image/*" />
-
-                            <input type="submit" name="submit" value="Submit"/>
+                        <input type="submit" name="submit" value="Submit"/>
                         </ul>
                     </form>
                 </td>
             </tr>
         </table>
-
-
-
-
-
-
-
-
 
 
         <h3>Callback events</h3>
