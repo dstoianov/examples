@@ -7,6 +7,8 @@ import org.testng.annotations.AfterSuite;
 import org.testng.annotations.Test;
 import tipsandtricks.custom.elementV2.impl.CheckBox;
 
+import java.io.File;
+import java.net.URI;
 import java.util.List;
 
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -18,6 +20,8 @@ import static org.hamcrest.Matchers.is;
 public class ElementsTest {
 
     public WebDriver driver = new ChromeDriver();
+    final static String testPage = "./src/test/resources/test-page/jquery-popup/index.html";
+    final static String form = "forms.html";
 
     @Test
     public void testCheckBox() throws Exception {
@@ -75,6 +79,23 @@ public class ElementsTest {
         assertThat(page.getSelect().getFirstSelectedOption().getText(), is(text));
 
         assertThat(page.getSelect().getOptions().size(), is(6));
+    }
+
+
+    @Test
+    public void testName() throws Exception {
+        ElementsTest.get(driver, testPage);
+
+    }
+
+
+    public static void get(WebDriver driver, String resource) {
+        URI formsHtml = new File(resource).toURI();
+//        URL formsHtml = ElementsTest.class.getClassLoader().getResource(resource);
+        if (formsHtml == null) {
+            throw new RuntimeException();
+        }
+        driver.get(formsHtml.toString());
     }
 
     @AfterSuite(alwaysRun = true)
