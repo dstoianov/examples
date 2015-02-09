@@ -48,3 +48,16 @@ Bq.App.steps.length
 
 
 get Next button $('.bq-step1 .bq-control.bq-type-simple')
+
+
+find elements
+input: .bq-name-ZipCode input
+select: .bq-name-InsuranceCompany select
+
+ends with: [class$='-BirthDate'] select
+
+
+
+
+
+
