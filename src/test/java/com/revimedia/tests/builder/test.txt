@@ -39,5 +39,12 @@ Bq.App.fields.getFields().get('InsuranceCompany').get('sets').toString()
 Bq.App.fields.getFields().get('InsuranceCompany').get('type')
 
 
-Bq.App.steps.getStep(1).get('content').fields
+Bq.App.steps.getStep(2).get('content').fields
 
+
+
+get count of all steps
+Bq.App.steps.length
+
+
+get Next button $('.bq-step1 .bq-control.bq-type-simple')
