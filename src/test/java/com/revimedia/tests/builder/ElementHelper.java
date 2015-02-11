@@ -31,6 +31,7 @@ public class ElementHelper {
 
     private static String getType(Element element) throws Exception {
         String type = element.getType();
+        type.matches("input|zipUS");
         if (type.equalsIgnoreCase("input") || type.equalsIgnoreCase("zipUS") || type.equalsIgnoreCase("name")
                 || type.equalsIgnoreCase("address") || type.equalsIgnoreCase("email") || type.equalsIgnoreCase("email")) {
             return "input";
