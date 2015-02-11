@@ -16,14 +16,8 @@ type:
 
 Bq.App.settings.toJSON()
 
-
-Bq.App.settings.toJSON()
-
 Bq.App.steps.getStep(1).toJSON()
-
 Bq.App.fields.getFields().toJSON()
-
-Bq.App.steps.getFields()
 
 Bq.App.fields.getFields().getStep(1).toJSON()
 
@@ -56,6 +50,13 @@ select: .bq-name-InsuranceCompany select
 
 ends with: [class$='-BirthDate'] select
 
+Vehicle
+
+Bq.App.fields.getFields().get('Cloning').toJSON()
+
+Bq.App.fields.getFields().get('Year').toJSON()
+Bq.App.fields.getFields().get('Make').toJSON()
+Bq.App.fields.getFields().get('Model').toJSON()
 
 
 
