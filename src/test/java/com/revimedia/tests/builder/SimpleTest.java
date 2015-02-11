@@ -39,7 +39,7 @@ public class SimpleTest {
         int stepsCount = jsHelper.getStepsCount();
 
         List<String> fieldsOnPage1 = jsHelper.getFieldsOnPage(1);
-//        List<String> fieldsOnPage2 = jsHelper.getFieldsOnPage(2); org.openqa.selenium.WebDriverException: unknown error: Maximum call stack size exceeded
+//        List<String> fieldsOnPage2 = jsHelper.getFieldsOnPage(2);// org.openqa.selenium.WebDriverException: unknown error: Maximum call stack size exceeded
         List<String> fieldsOnPage3 = jsHelper.getFieldsOnPage(3);
 
 //   js.executeScript("document.getElementsByTagName('head')[0].innerHTML += '<script src=\"<PATH_TO_FILE>\" type=\"text/javascript\"></script>';");
@@ -84,7 +84,11 @@ public class SimpleTest {
         ElementHelper.set(driver, fields3.get(1), "Deayetr");
         ElementHelper.set(driver, fields3.get(2), "None");
         ElementHelper.set(driver, fields3.get(3), "Male");
-        ElementHelper.set(driver, fields3.get(4), "1985-02-19");
+        ElementHelper.set(driver, fields3.get(4), "Mar 12, 1987");
+        ElementHelper.set(driver, fields3.get(5), "Ahsjdshjdf 222");
+        ElementHelper.set(driver, fields3.get(6), "20202");
+        ElementHelper.set(driver, fields3.get(7), "5655656565");
+        ElementHelper.set(driver, fields3.get(8), "c@c.com");
 
     }
 
@@ -106,5 +110,19 @@ public class SimpleTest {
         return driver.findElement(By.cssSelector(".bq-step1 .bq-control.bq-type-simple"));
     }
 
+/*    @Test
+    public void expectedTest() throws Exception {
+        driver.get(url);
+        JSHelper jsHelper = new JSHelper(driver);
+        jsHelper.waitForAjaxComplete();
 
+        int stepsCount = jsHelper.getStepsCount();
+
+        PagesBuilder pagesBuilder = new PagesBuilder(stepsCount);
+        pagesBuilder.buildAllPages();
+        pagesBuilder.populateAllPages(new UserData());
+        pagesBuilder.submiteCampany();
+
+
+    }*/
 }

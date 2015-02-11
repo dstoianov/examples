@@ -59,6 +59,7 @@ public class JSHelper {
     public int getStepsCount() {
         String script = "return Bq.App.steps.length;";
         long l = (long) exec(script);
+        System.out.println(String.format("This company contain '%s' steps", l));
         return (int) l;
     }
 

@@ -27,12 +27,7 @@ public class Element {
         this.title = (String) mappedObject.get("title");
         this.value = (String) mappedObject.get("value");
         this.hidden = (boolean) mappedObject.get("hidden");
-
-        Object sets = mappedObject.get("sets");
-        if (!name.equalsIgnoreCase("BirthDate")) {
-            this.sets = (List<String>) sets;
-        }
-
+        this.sets = (List<String>) mappedObject.get("sets");
     }
 
     public Element(String type, String name, List<String> sets, String value, String title, boolean hidden) {
