@@ -26,6 +26,10 @@ public class BuilderPage {
     public void build() {
         for (String e : fieldsOnPage) {
             Object fieldByName = jsHelper.getFieldByName(e);
+            System.out.println(String.format("Build element '%s'", e));
+            if (e.equalsIgnoreCase("BirthDate")) {
+                int i = 0;
+            }
             fields.add(new Element(fieldByName));
         }
     }

@@ -10,6 +10,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
 
 /**
  * Created by Funker on 10.02.2015.
@@ -25,11 +26,12 @@ public class JSHelper {
     public JSHelper(WebDriver driver) {
         this.driver = driver;
         this.wait = new WebDriverWait(driver, DEFAULT_TIMEOUT);
+        driver.manage().timeouts().setScriptTimeout(12, TimeUnit.SECONDS);
         this.js = (JavascriptExecutor) driver;
     }
 
-    private Object exec(String script) {
-        log.info("Execute Script on page: '" + script + "'");
+    public Object exec(String script) {
+        log.info("Execute js script: '" + script + "'");
         return js.executeScript(script);
     }
 
@@ -74,12 +76,18 @@ public class JSHelper {
                 throw new Exception("Unknown instanceof of Object " + o.getClass());
             }
         }
-        System.out.println(String.format("On page present '%s' fields, like this: %s", result.size(), result.toString()));
+        System.out.println(String.format("On page '#%s' present '%s' fields %s", i, result.size(), result.toString()));
         return result;
     }
 
     public Object getFieldByName(String name) {
         String script = String.format("return Bq.App.fields.getFields().get('%s').toJSON();", name);
+        return exec(script);
+    }
+
+    public Object getFieldByNameLimit(String name) {
+        String script = String.format("return Bq.App.fields.getFields().get('%s').toJSON();", name);
+//        Object e = exec("return Error.stackTraceLimit=undefined;");
         return exec(script);
     }
 

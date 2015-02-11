@@ -41,7 +41,7 @@ Bq.App.fields.getFields().get('InsuranceCompany').get('type')
 
 Bq.App.steps.getStep(2).get('content').fields
 
-
+setTimeout('Bq.App.fields.getFields().get('HasSystem').toJSON()', 5000)
 
 get count of all steps
 Bq.App.steps.length
