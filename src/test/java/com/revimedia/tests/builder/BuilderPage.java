@@ -25,12 +25,19 @@ public class BuilderPage {
 
     public void build() {
         for (String e : fieldsOnPage) {
-            Object fieldByName = jsHelper.getFieldByName(e);
             System.out.println(String.format("Build element '%s'", e));
             if (e.equalsIgnoreCase("BirthDate")) {
-                int i = 0;
+//                List<String> sets = jsHelper.exec("return Bq.App.fields.getFields().get('BirthDate').get('sets');");
+                String type = (String) jsHelper.exec("return Bq.App.fields.getFields().get('Education').get('type');");
+                String value = (String) jsHelper.exec("return Bq.App.fields.getFields().get('Education').get('value');");
+                String name = (String) jsHelper.exec("return Bq.App.fields.getFields().get('Education').get('name');");
+                String title = (String) jsHelper.exec("return Bq.App.fields.getFields().get('Education').get('title');");
+                boolean hidden = (boolean) jsHelper.exec("return Bq.App.fields.getFields().get('Education').get('hidden');");
+                fields.add(new Element(type, name, null, value, title, hidden));
+            } else {
+                Object fieldByName = jsHelper.getFieldByName(e);
+                fields.add(new Element(fieldByName));
             }
-            fields.add(new Element(fieldByName));
         }
     }
 

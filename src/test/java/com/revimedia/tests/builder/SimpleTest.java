@@ -49,17 +49,8 @@ public class SimpleTest {
 //                "callback();");
 
 
-        Object sets = jsHelper.exec("return Bq.App.fields.getFields().get('BirthDate').get('sets');");
-        String type = (String) jsHelper.exec("return Bq.App.fields.getFields().get('Education').get('type');");
-        String value = (String) jsHelper.exec("return Bq.App.fields.getFields().get('Education').get('value');");
-        String name = (String) jsHelper.exec("return Bq.App.fields.getFields().get('Education').get('name');");
-        String title = (String) jsHelper.exec("return Bq.App.fields.getFields().get('Education').get('title');");
-        boolean hidden = (boolean) jsHelper.exec("return Bq.App.fields.getFields().get('Education').get('hidden');");
-
-//        new Element(type, name, sets, )
-
-        Object birthDate = jsHelper.getFieldByNameLimit("BirthDate");
-        Element element = new Element(birthDate);
+//        Object birthDate = jsHelper.getFieldByNameLimit("BirthDate");
+//        Element element = new Element(birthDate);
 
         BuilderPage page1 = new BuilderPage(driver, fieldsOnPage1);
         page1.build();
@@ -89,11 +80,11 @@ public class SimpleTest {
         List<Element> fields3 = page3.getFields();
 
         // for page 3
-        ElementHelper.set(driver, fields.get(0), "Aderr");
-        ElementHelper.set(driver, fields.get(1), "Deayetr");
-        ElementHelper.set(driver, fields.get(2), "None");
-        ElementHelper.set(driver, fields.get(3), "Male");
-        ElementHelper.set(driver, fields.get(4), "1985-02-19");
+        ElementHelper.set(driver, fields3.get(0), "Aderr");
+        ElementHelper.set(driver, fields3.get(1), "Deayetr");
+        ElementHelper.set(driver, fields3.get(2), "None");
+        ElementHelper.set(driver, fields3.get(3), "Male");
+        ElementHelper.set(driver, fields3.get(4), "1985-02-19");
 
     }
 
