@@ -1,0 +1,1354 @@
+[
+  {
+    "name": "FirstName",
+    "path": "ContactData",
+    "type": "name",
+    "active": true,
+    "title": "First Name:",
+    "required": [
+      {
+        "type": "notEmpty",
+        "message": "Please enter valid first name."
+      },
+      {
+        "type": "name",
+        "message": "Please enter valid first name."
+      },
+      {
+        "type": "minLength",
+        "value": 2
+      }
+    ],
+    "value": null,
+    "sets": null,
+    "valid": true,
+    "validationViewType": null,
+    "subTitle": "",
+    "hidden": false,
+    "disabled": false,
+    "explicit": false,
+    "edit": null,
+    "mark": false,
+    "textMark": "",
+    "editSection": "",
+    "resetSection": "",
+    "sup": "",
+    "placeholder": "",
+    "animate": false,
+    "maxLength": null,
+    "tooltip": "",
+    "styled": false,
+    "uniqLabel": null,
+    "switchOn": false,
+    "autoFocus": false,
+    "valueBefore": null,
+    "labelValue": null,
+    "initValue": null
+  },
+  {
+    "name": "LastName",
+    "path": "ContactData",
+    "type": "name",
+    "active": true,
+    "title": "Last Name:",
+    "required": [
+      {
+        "type": "notEmpty",
+        "message": "Please enter valid last name."
+      },
+      {
+        "type": "name",
+        "message": "Please enter valid last name."
+      },
+      {
+        "type": "minLength",
+        "value": 2
+      }
+    ],
+    "value": null,
+    "sets": null,
+    "valid": true,
+    "validationViewType": null,
+    "subTitle": "",
+    "hidden": false,
+    "disabled": false,
+    "explicit": false,
+    "edit": null,
+    "mark": false,
+    "textMark": "",
+    "editSection": "",
+    "resetSection": "",
+    "sup": "",
+    "placeholder": "",
+    "animate": false,
+    "maxLength": null,
+    "tooltip": "",
+    "styled": false,
+    "uniqLabel": null,
+    "switchOn": false,
+    "autoFocus": false,
+    "valueBefore": null,
+    "labelValue": null,
+    "initValue": null
+  },
+  {
+    "name": "PhoneNumber",
+    "path": "ContactData",
+    "type": "phoneUS",
+    "active": true,
+    "title": "Phone Number:",
+    "maxLength": 10,
+    "required": [
+      {
+        "type": "notEmpty",
+        "message": "Please enter valid phone number."
+      },
+      {
+        "type": "phoneUS",
+        "message": "Please enter valid phone number."
+      }
+    ],
+    "mask": "(999) 999-9999",
+    "mark": "we respect your privacy",
+    "value": null,
+    "sets": null,
+    "valid": true,
+    "validationViewType": null,
+    "subTitle": "",
+    "hidden": false,
+    "disabled": false,
+    "explicit": false,
+    "edit": null,
+    "textMark": "",
+    "editSection": "",
+    "resetSection": "",
+    "sup": "",
+    "placeholder": "",
+    "animate": false,
+    "tooltip": "",
+    "styled": false,
+    "uniqLabel": null,
+    "switchOn": false,
+    "autoFocus": false,
+    "valueBefore": null,
+    "labelValue": null,
+    "initValue": null
+  },
+  {
+    "name": "Address",
+    "path": "ContactData",
+    "type": "address",
+    "active": true,
+    "title": "Street address:",
+    "required": "Please enter valid street address.",
+    "value": null,
+    "sets": null,
+    "valid": true,
+    "validationViewType": null,
+    "subTitle": "",
+    "hidden": false,
+    "disabled": false,
+    "explicit": false,
+    "edit": null,
+    "mark": false,
+    "textMark": "",
+    "editSection": "",
+    "resetSection": "",
+    "sup": "",
+    "placeholder": "",
+    "animate": false,
+    "maxLength": null,
+    "tooltip": "",
+    "styled": false,
+    "uniqLabel": null,
+    "switchOn": false,
+    "autoFocus": false,
+    "valueBefore": null,
+    "labelValue": null,
+    "initValue": null
+  },
+  {
+    "name": "EmailAddress",
+    "path": "ContactData",
+    "type": "email",
+    "active": true,
+    "title": "Email:",
+    "required": [
+      {
+        "type": "notEmpty",
+        "message": "Please enter valid email address."
+      },
+      {
+        "type": "email",
+        "message": "Please enter valid email address."
+      }
+    ],
+    "mark": true,
+    "value": null,
+    "sets": null,
+    "valid": true,
+    "validationViewType": null,
+    "subTitle": "",
+    "hidden": false,
+    "disabled": false,
+    "explicit": false,
+    "edit": null,
+    "textMark": "",
+    "editSection": "",
+    "resetSection": "",
+    "sup": "",
+    "placeholder": "",
+    "animate": false,
+    "maxLength": null,
+    "tooltip": "",
+    "styled": false,
+    "uniqLabel": null,
+    "switchOn": false,
+    "autoFocus": false,
+    "valueBefore": null,
+    "labelValue": null,
+    "initValue": null
+  },
+  {
+    "name": "ZipCode",
+    "path": "ContactData",
+    "type": "zipUS",
+    "active": true,
+    "title": "Zip Code:",
+    "required": [
+      {
+        "type": "notEmpty",
+        "message": "Please enter zip code."
+      },
+      {
+        "type": "minLength",
+        "value": 4,
+        "message": "Enter at least 4 characters."
+      },
+      {
+        "type": "zipUS",
+        "message": "Zip code is invalid."
+      }
+    ],
+    "maxLength": 5,
+    "updateLayout": ["update:header"],
+    "hidePrepoped": true,
+    "value": null,
+    "sets": null,
+    "valid": true,
+    "validationViewType": null,
+    "subTitle": "",
+    "hidden": false,
+    "disabled": false,
+    "explicit": false,
+    "edit": null,
+    "mark": false,
+    "textMark": "",
+    "editSection": "",
+    "resetSection": "",
+    "sup": "",
+    "placeholder": "",
+    "animate": false,
+    "tooltip": "",
+    "styled": false,
+    "uniqLabel": null,
+    "switchOn": false,
+    "autoFocus": false,
+    "valueBefore": null,
+    "labelValue": null,
+    "initValue": null
+  },
+  {
+    "name": "City",
+    "path": "ContactData",
+    "type": "name",
+    "active": true,
+    "required": "Please enter valid city.",
+    "value": null,
+    "sets": null,
+    "valid": true,
+    "validationViewType": null,
+    "title": "",
+    "subTitle": "",
+    "hidden": false,
+    "disabled": false,
+    "explicit": false,
+    "edit": null,
+    "mark": false,
+    "textMark": "",
+    "editSection": "",
+    "resetSection": "",
+    "sup": "",
+    "placeholder": "",
+    "animate": false,
+    "maxLength": null,
+    "tooltip": "",
+    "styled": false,
+    "uniqLabel": null,
+    "switchOn": false,
+    "autoFocus": false,
+    "valueBefore": null,
+    "labelValue": null,
+    "initValue": null
+  },
+  {
+    "name": "IPAddress",
+    "path": "ContactData",
+    "type": "ipAddress",
+    "active": true,
+    "required": true,
+    "value": "192.168.0.1",
+    "sets": null,
+    "valid": true,
+    "validationViewType": null,
+    "title": "",
+    "subTitle": "",
+    "hidden": false,
+    "disabled": false,
+    "explicit": false,
+    "edit": null,
+    "mark": false,
+    "textMark": "",
+    "editSection": "",
+    "resetSection": "",
+    "sup": "",
+    "placeholder": "",
+    "animate": false,
+    "maxLength": null,
+    "tooltip": "",
+    "styled": false,
+    "uniqLabel": null,
+    "switchOn": false,
+    "autoFocus": false,
+    "valueBefore": null,
+    "labelValue": null,
+    "initValue": "192.168.0.1"
+  },
+  {
+    "name": "State",
+    "path": "ContactData",
+    "type": "text",
+    "active": true,
+    "required": "Please enter valid state.",
+    "sets": [
+      [
+        "AL",
+        "Alabama"
+      ],
+      [
+        "AK",
+        "Alaska"
+      ],
+      [
+        "AZ",
+        "Arizona"
+      ],
+      [
+        "AR",
+        "Arkansas"
+      ],
+      [
+        "CA",
+        "California"
+      ],
+      [
+        "CO",
+        "Colorado"
+      ],
+      [
+        "CT",
+        "Connecticut"
+      ],
+      [
+        "DE",
+        "Delaware"
+      ],
+      [
+        "DC",
+        "District of Columbia"
+      ],
+      [
+        "FL",
+        "Florida"
+      ],
+      [
+        "GA",
+        "Georgia"
+      ],
+      [
+        "HI",
+        "Hawaii"
+      ],
+      [
+        "ID",
+        "Idaho"
+      ],
+      [
+        "IL",
+        "Illinois"
+      ],
+      [
+        "IN",
+        "Indiana"
+      ],
+      [
+        "IA",
+        "Iowa"
+      ],
+      [
+        "KS",
+        "Kansas"
+      ],
+      [
+        "KY",
+        "Kentucky"
+      ],
+      [
+        "LA",
+        "Louisiana"
+      ],
+      [
+        "ME",
+        "Maine"
+      ],
+      [
+        "MD",
+        "Maryland"
+      ],
+      [
+        "MA",
+        "Massachusetts"
+      ],
+      [
+        "MI",
+        "Michigan"
+      ],
+      [
+        "MN",
+        "Minnesota"
+      ],
+      [
+        "MS",
+        "Mississippi"
+      ],
+      [
+        "MO",
+        "Missouri"
+      ],
+      [
+        "MT",
+        "Montana"
+      ],
+      [
+        "NE",
+        "Nebraska"
+      ],
+      [
+        "NV",
+        "Nevada"
+      ],
+      [
+        "NH",
+        "New Hampshire"
+      ],
+      [
+        "NJ",
+        "New Jersey"
+      ],
+      [
+        "NM",
+        "New Mexico"
+      ],
+      [
+        "NY",
+        "New York"
+      ],
+      [
+        "NC",
+        "North Carolina"
+      ],
+      [
+        "ND",
+        "North Dakota"
+      ],
+      [
+        "OH",
+        "Ohio"
+      ],
+      [
+        "OK",
+        "Oklahoma"
+      ],
+      [
+        "OR",
+        "Oregon"
+      ],
+      [
+        "PA",
+        "Pennsylvania"
+      ],
+      [
+        "RI",
+        "Rhode Island"
+      ],
+      [
+        "SC",
+        "South Carolina"
+      ],
+      [
+        "SD",
+        "South Dakota"
+      ],
+      [
+        "TN",
+        "Tennessee"
+      ],
+      [
+        "TX",
+        "Texas"
+      ],
+      [
+        "UT",
+        "Utah"
+      ],
+      [
+        "VT",
+        "Vermont"
+      ],
+      [
+        "VA",
+        "Virginia"
+      ],
+      [
+        "WA",
+        "Washington"
+      ],
+      [
+        "WV",
+        "West Virginia"
+      ],
+      [
+        "WI",
+        "Wisconsin"
+      ]
+    ],
+    "value": null,
+    "valid": true,
+    "validationViewType": null,
+    "title": "",
+    "subTitle": "",
+    "hidden": false,
+    "disabled": false,
+    "explicit": false,
+    "edit": null,
+    "mark": false,
+    "textMark": "",
+    "editSection": "",
+    "resetSection": "",
+    "sup": "",
+    "placeholder": "",
+    "animate": false,
+    "maxLength": null,
+    "tooltip": "",
+    "styled": false,
+    "uniqLabel": null,
+    "switchOn": false,
+    "autoFocus": false,
+    "valueBefore": null,
+    "labelValue": null,
+    "initValue": null
+  },
+  {
+    "name": "BirthDate",
+    "path": [
+      "ContactData",
+      "HomeSecurity.Person"
+    ],
+    "type": "composite",
+    "active": true,
+    "title": "Date of birth:",
+    "required": [
+      {
+        "type": "composite",
+        "message": "Select date of birth"
+      },
+      {
+        "type": "minAge",
+        "value": 16,
+        "message": "Select date of birth"
+      }
+    ],
+    "collection": {
+      "length": 3,
+      "models": [
+        {
+          "cid": "c26",
+          "attributes": {
+            "name": "Month",
+            "type": "select",
+            "active": true,
+            "explicit": "MM",
+            "parentModel": "-pruned-",
+            "value": null,
+            "sets": "-pruned-",
+            "valid": true,
+            "validationViewType": null,
+            "title": "",
+            "subTitle": "",
+            "hidden": false,
+            "disabled": false,
+            "edit": null,
+            "mark": false,
+            "textMark": "",
+            "editSection": "",
+            "resetSection": "",
+            "sup": "",
+            "placeholder": "",
+            "animate": false,
+            "maxLength": null,
+            "tooltip": "",
+            "styled": false,
+            "uniqLabel": null,
+            "switchOn": false,
+            "autoFocus": false,
+            "valueBefore": null,
+            "labelValue": null
+          },
+          "_changing": false,
+          "_previousAttributes": {
+            "name": "Month",
+            "type": "select",
+            "active": true,
+            "explicit": "MM",
+            "parentModel": "-pruned-",
+            "value": null,
+            "sets": null,
+            "valid": true,
+            "validationViewType": null,
+            "title": "",
+            "subTitle": "",
+            "hidden": false,
+            "disabled": false,
+            "edit": null,
+            "mark": false,
+            "textMark": "",
+            "editSection": "",
+            "resetSection": "",
+            "sup": "",
+            "placeholder": "",
+            "animate": false,
+            "maxLength": null,
+            "tooltip": "",
+            "styled": false,
+            "uniqLabel": null,
+            "switchOn": false,
+            "autoFocus": false,
+            "valueBefore": null,
+            "labelValue": null
+          },
+          "changed": {
+            "sets": "-pruned-"
+          },
+          "id": "Month",
+          "_pending": false,
+          "collection": "-pruned-",
+          "_events": {
+            "all": "-pruned-"
+          }
+        },
+        {
+          "cid": "c27",
+          "attributes": {
+            "name": "Day",
+            "type": "select",
+            "active": true,
+            "explicit": "DD",
+            "parentModel": "-pruned-",
+            "value": null,
+            "sets": "-pruned-",
+            "valid": true,
+            "validationViewType": null,
+            "title": "",
+            "subTitle": "",
+            "hidden": false,
+            "disabled": false,
+            "edit": null,
+            "mark": false,
+            "textMark": "",
+            "editSection": "",
+            "resetSection": "",
+            "sup": "",
+            "placeholder": "",
+            "animate": false,
+            "maxLength": null,
+            "tooltip": "",
+            "styled": false,
+            "uniqLabel": null,
+            "switchOn": false,
+            "autoFocus": false,
+            "valueBefore": null,
+            "labelValue": null
+          },
+          "_changing": false,
+          "_previousAttributes": {
+            "name": "Day",
+            "type": "select",
+            "active": true,
+            "explicit": "DD",
+            "parentModel": "-pruned-",
+            "value": null,
+            "sets": null,
+            "valid": true,
+            "validationViewType": null,
+            "title": "",
+            "subTitle": "",
+            "hidden": false,
+            "disabled": false,
+            "edit": null,
+            "mark": false,
+            "textMark": "",
+            "editSection": "",
+            "resetSection": "",
+            "sup": "",
+            "placeholder": "",
+            "animate": false,
+            "maxLength": null,
+            "tooltip": "",
+            "styled": false,
+            "uniqLabel": null,
+            "switchOn": false,
+            "autoFocus": false,
+            "valueBefore": null,
+            "labelValue": null
+          },
+          "changed": {
+            "sets": "-pruned-"
+          },
+          "id": "Day",
+          "_pending": false,
+          "collection": "-pruned-",
+          "_events": {
+            "all": "-pruned-"
+          }
+        },
+        {
+          "cid": "c28",
+          "attributes": {
+            "name": "Year",
+            "type": "select",
+            "active": true,
+            "explicit": "YYYY",
+            "parentModel": "-pruned-",
+            "value": null,
+            "sets": "-pruned-",
+            "valid": true,
+            "validationViewType": null,
+            "title": "",
+            "subTitle": "",
+            "hidden": false,
+            "disabled": false,
+            "edit": null,
+            "mark": false,
+            "textMark": "",
+            "editSection": "",
+            "resetSection": "",
+            "sup": "",
+            "placeholder": "",
+            "animate": false,
+            "maxLength": null,
+            "tooltip": "",
+            "styled": false,
+            "uniqLabel": null,
+            "switchOn": false,
+            "autoFocus": false,
+            "valueBefore": null,
+            "labelValue": null
+          },
+          "_changing": false,
+          "_previousAttributes": {
+            "name": "Year",
+            "type": "select",
+            "active": true,
+            "explicit": "YYYY",
+            "parentModel": "-pruned-",
+            "value": null,
+            "sets": null,
+            "valid": true,
+            "validationViewType": null,
+            "title": "",
+            "subTitle": "",
+            "hidden": false,
+            "disabled": false,
+            "edit": null,
+            "mark": false,
+            "textMark": "",
+            "editSection": "",
+            "resetSection": "",
+            "sup": "",
+            "placeholder": "",
+            "animate": false,
+            "maxLength": null,
+            "tooltip": "",
+            "styled": false,
+            "uniqLabel": null,
+            "switchOn": false,
+            "autoFocus": false,
+            "valueBefore": null,
+            "labelValue": null
+          },
+          "changed": {
+            "sets": "-pruned-"
+          },
+          "id": "Year",
+          "_pending": false,
+          "collection": "-pruned-",
+          "_events": {
+            "all": "-pruned-"
+          }
+        }
+      ],
+      "_byId": {
+        "c26": "-pruned-",
+        "Month": "-pruned-",
+        "c27": "-pruned-",
+        "Day": "-pruned-",
+        "c28": "-pruned-",
+        "Year": "-pruned-"
+      }
+    },
+    "sets": {
+      "start": "2015-02-12T14:41:56.337Z",
+      "end": "1925-02-12T14:41:56.337Z"
+    },
+    "value": "1980-07-13T21:00:00.000Z",
+    "valid": true,
+    "validationViewType": null,
+    "subTitle": "",
+    "hidden": false,
+    "disabled": false,
+    "explicit": false,
+    "edit": null,
+    "mark": false,
+    "textMark": "",
+    "editSection": "",
+    "resetSection": "",
+    "sup": "",
+    "placeholder": "",
+    "animate": false,
+    "maxLength": null,
+    "tooltip": "",
+    "styled": false,
+    "uniqLabel": null,
+    "switchOn": false,
+    "autoFocus": false,
+    "valueBefore": null,
+    "labelValue": null,
+    "initValue": "1980-07-13T21:00:00.000Z"
+  },
+  {
+    "name": "Gender",
+    "path": "HomeSecurity.Person",
+    "type": "select",
+    "active": true,
+    "title": "Gender:",
+    "required": "Select gender.",
+    "sets": [
+      "Male",
+      "Female"
+    ],
+    "value": "Male",
+    "valid": true,
+    "validationViewType": null,
+    "subTitle": "",
+    "hidden": false,
+    "disabled": false,
+    "explicit": false,
+    "edit": null,
+    "mark": false,
+    "textMark": "",
+    "editSection": "",
+    "resetSection": "",
+    "sup": "",
+    "placeholder": "",
+    "animate": false,
+    "maxLength": null,
+    "tooltip": "",
+    "styled": false,
+    "uniqLabel": null,
+    "switchOn": false,
+    "autoFocus": false,
+    "valueBefore": null,
+    "labelValue": null,
+    "initValue": "Male"
+  },
+  {
+    "name": "EntrancesExits",
+    "path": "HomeSecurity.Homes.Home",
+    "active": true,
+    "required": true,
+    "sets": [
+      "1",
+      "2 to 4",
+      "5",
+      "5+"
+    ],
+    "value": "2 to 4",
+    "valid": true,
+    "validationViewType": null,
+    "title": "",
+    "subTitle": "",
+    "hidden": false,
+    "disabled": false,
+    "explicit": false,
+    "edit": null,
+    "mark": false,
+    "textMark": "",
+    "editSection": "",
+    "resetSection": "",
+    "sup": "",
+    "placeholder": "",
+    "animate": false,
+    "maxLength": null,
+    "tooltip": "",
+    "styled": false,
+    "uniqLabel": null,
+    "switchOn": false,
+    "autoFocus": false,
+    "valueBefore": null,
+    "labelValue": null,
+    "initValue": "2 to 4"
+  },
+  {
+    "name": "CurrentSecuritySystemCompany",
+    "path": "HomeSecurity.Homes.Home",
+    "active": true,
+    "required": "Please select current security systems company.",
+    "type": "select",
+    "sets": [
+      "ADT",
+      "Lifeshield/DirectTV",
+      "ProtectAmerica",
+      "Vivint",
+      "Monitronics",
+      "Alliance",
+      "Protection 1",
+      "Other"
+    ],
+    "title": "Current security systems company:",
+    "explicit": "-- Select --",
+    "hidden": true,
+    "ignoreValueBefore": "Other",
+    "value": null,
+    "valid": true,
+    "validationViewType": null,
+    "subTitle": "",
+    "disabled": false,
+    "edit": null,
+    "mark": false,
+    "textMark": "",
+    "editSection": "",
+    "resetSection": "",
+    "sup": "",
+    "placeholder": "",
+    "animate": false,
+    "maxLength": null,
+    "tooltip": "",
+    "styled": false,
+    "uniqLabel": null,
+    "switchOn": false,
+    "autoFocus": false,
+    "valueBefore": null,
+    "labelValue": null,
+    "initValue": null
+  },
+  {
+    "name": "HasSystem",
+    "path": "HomeSecurity.Homes.Home",
+    "active": true,
+    "required": "Do you have an alarm system in place and/or monitoring?",
+    "type": "radio",
+    "sets": [
+      "Yes",
+      "No"
+    ],
+    "title": "Do you have an alarm system in place and/or monitoring?",
+    "updateFields": [
+      {
+        "name": "CurrentSecuritySystemCompany",
+        "onValueChange": {
+          "values": [
+            "-pruned-",
+            "-pruned-"
+          ]
+        }
+      }
+    ],
+    "value": null,
+    "valid": true,
+    "validationViewType": null,
+    "subTitle": "",
+    "hidden": false,
+    "disabled": false,
+    "explicit": false,
+    "edit": null,
+    "mark": false,
+    "textMark": "",
+    "editSection": "",
+    "resetSection": "",
+    "sup": "",
+    "placeholder": "",
+    "animate": false,
+    "maxLength": null,
+    "tooltip": "",
+    "styled": false,
+    "uniqLabel": null,
+    "switchOn": false,
+    "autoFocus": false,
+    "valueBefore": null,
+    "labelValue": null,
+    "initValue": null
+  },
+  {
+    "name": "OwnRented",
+    "path": "HomeSecurity.Homes.Home",
+    "active": true,
+    "required": true,
+    "type": "radio",
+    "sets": [
+      "Own",
+      "Rented"
+    ],
+    "value": null,
+    "valid": true,
+    "validationViewType": null,
+    "title": "",
+    "subTitle": "",
+    "hidden": false,
+    "disabled": false,
+    "explicit": false,
+    "edit": null,
+    "mark": false,
+    "textMark": "",
+    "editSection": "",
+    "resetSection": "",
+    "sup": "",
+    "placeholder": "",
+    "animate": false,
+    "maxLength": null,
+    "tooltip": "",
+    "styled": false,
+    "uniqLabel": null,
+    "switchOn": false,
+    "autoFocus": false,
+    "valueBefore": null,
+    "labelValue": null,
+    "initValue": null
+  },
+  {
+    "name": "SqFootage",
+    "path": "HomeSecurity.Homes.Home",
+    "active": true,
+    "required": true,
+    "sets": [
+      "less than 1000",
+      "1001 to 2500",
+      "2501 to 5000",
+      "5000+"
+    ],
+    "value": "1001 to 2500",
+    "valid": true,
+    "validationViewType": null,
+    "title": "",
+    "subTitle": "",
+    "hidden": false,
+    "disabled": false,
+    "explicit": false,
+    "edit": null,
+    "mark": false,
+    "textMark": "",
+    "editSection": "",
+    "resetSection": "",
+    "sup": "",
+    "placeholder": "",
+    "animate": false,
+    "maxLength": null,
+    "tooltip": "",
+    "styled": false,
+    "uniqLabel": null,
+    "switchOn": false,
+    "autoFocus": false,
+    "valueBefore": null,
+    "labelValue": null,
+    "initValue": "1001 to 2500"
+  },
+  {
+    "name": "SecurityType",
+    "path": "HomeSecurity.Homes.Home.SecuritySystem",
+    "active": true,
+    "required": true,
+    "sets": [
+      "Only burglar/intrusion",
+      "Only fire detection",
+      "Both burglar and fire detection"
+    ],
+    "value": "Both burglar and fire detection",
+    "valid": true,
+    "validationViewType": null,
+    "title": "",
+    "subTitle": "",
+    "hidden": false,
+    "disabled": false,
+    "explicit": false,
+    "edit": null,
+    "mark": false,
+    "textMark": "",
+    "editSection": "",
+    "resetSection": "",
+    "sup": "",
+    "placeholder": "",
+    "animate": false,
+    "maxLength": null,
+    "tooltip": "",
+    "styled": false,
+    "uniqLabel": null,
+    "switchOn": false,
+    "autoFocus": false,
+    "valueBefore": null,
+    "labelValue": null,
+    "initValue": "Both burglar and fire detection"
+  },
+  {
+    "name": "InstallationType",
+    "active": true,
+    "path": "HomeSecurity.Homes.Home.SecuritySystem",
+    "value": "No Preference",
+    "sets": null,
+    "valid": true,
+    "validationViewType": null,
+    "title": "",
+    "subTitle": "",
+    "hidden": false,
+    "disabled": false,
+    "explicit": false,
+    "edit": null,
+    "mark": false,
+    "textMark": "",
+    "editSection": "",
+    "resetSection": "",
+    "sup": "",
+    "placeholder": "",
+    "animate": false,
+    "maxLength": null,
+    "tooltip": "",
+    "styled": false,
+    "uniqLabel": null,
+    "switchOn": false,
+    "autoFocus": false,
+    "valueBefore": null,
+    "labelValue": null,
+    "initValue": "No Preference"
+  },
+  {
+    "name": "InterestReason",
+    "path": "HomeSecurity.Homes.Home.SecuritySystem",
+    "active": true,
+    "value": "Peace of mind",
+    "sets": null,
+    "valid": true,
+    "validationViewType": null,
+    "title": "",
+    "subTitle": "",
+    "hidden": false,
+    "disabled": false,
+    "explicit": false,
+    "edit": null,
+    "mark": false,
+    "textMark": "",
+    "editSection": "",
+    "resetSection": "",
+    "sup": "",
+    "placeholder": "",
+    "animate": false,
+    "maxLength": null,
+    "tooltip": "",
+    "styled": false,
+    "uniqLabel": null,
+    "switchOn": false,
+    "autoFocus": false,
+    "valueBefore": null,
+    "labelValue": null,
+    "initValue": "Peace of mind"
+  },
+  {
+    "name": "PreWired",
+    "active": true,
+    "path": "HomeSecurity.Homes.Home.SecuritySystem",
+    "value": "Yes",
+    "sets": null,
+    "valid": true,
+    "validationViewType": null,
+    "title": "",
+    "subTitle": "",
+    "hidden": false,
+    "disabled": false,
+    "explicit": false,
+    "edit": null,
+    "mark": false,
+    "textMark": "",
+    "editSection": "",
+    "resetSection": "",
+    "sup": "",
+    "placeholder": "",
+    "animate": false,
+    "maxLength": null,
+    "tooltip": "",
+    "styled": false,
+    "uniqLabel": null,
+    "switchOn": false,
+    "autoFocus": false,
+    "valueBefore": null,
+    "labelValue": null,
+    "initValue": "Yes"
+  },
+  {
+    "name": "InstallationTimeFrame",
+    "path": "HomeSecurity.Homes.Home.SecuritySystem",
+    "active": true,
+    "required": "How soon do you need a security system?",
+    "type": "select",
+    "sets": [
+      "Immediately",
+      "In one month",
+      "In two months",
+      "More than two months"
+    ],
+    "title": "How soon do you need a security system?",
+    "explicit": "-- Select --",
+    "value": null,
+    "valid": true,
+    "validationViewType": null,
+    "subTitle": "",
+    "hidden": false,
+    "disabled": false,
+    "edit": null,
+    "mark": false,
+    "textMark": "",
+    "editSection": "",
+    "resetSection": "",
+    "sup": "",
+    "placeholder": "",
+    "animate": false,
+    "maxLength": null,
+    "tooltip": "",
+    "styled": false,
+    "uniqLabel": null,
+    "switchOn": false,
+    "autoFocus": false,
+    "valueBefore": null,
+    "labelValue": null,
+    "initValue": null
+  },
+  {
+    "name": "SecurityUsage",
+    "path": "HomeSecurity.Homes.Home.SecuritySystem",
+    "active": true,
+    "required": "Select property type.",
+    "type": "select",
+    "sets": [
+      {
+        "label": "Owned",
+        "value": "Residential"
+      },
+      {
+        "label": "Rented",
+        "value": "Residential"
+      },
+      {
+        "label": "Commercial",
+        "value": "Business"
+      }
+    ],
+    "title": "Property Type:",
+    "explicit": "-- Select --",
+    "updateFields": [
+      {
+        "name": "OwnRented",
+        "onValueChange": {
+          "values": [
+            "-pruned-",
+            "-pruned-"
+          ]
+        }
+      }
+    ],
+    "value": null,
+    "valid": true,
+    "validationViewType": null,
+    "subTitle": "",
+    "hidden": false,
+    "disabled": false,
+    "edit": null,
+    "mark": false,
+    "textMark": "",
+    "editSection": "",
+    "resetSection": "",
+    "sup": "",
+    "placeholder": "",
+    "animate": false,
+    "maxLength": null,
+    "tooltip": "",
+    "styled": false,
+    "uniqLabel": null,
+    "switchOn": false,
+    "autoFocus": false,
+    "valueBefore": null,
+    "labelValue": null,
+    "initValue": null
+  },
+  {
+    "name": "ProInstall",
+    "path": "HomeSecurity.Homes.Home.SecuritySystem",
+    "active": true,
+    "required": "What are your installation preferences?",
+    "type": "select",
+    "sets": [
+      {
+        "label": "Professional Installation",
+        "value": "Yes"
+      },
+      {
+        "label": "Self Installation",
+        "value": "No, I will install myself"
+      },
+      {
+        "label": "No Preference",
+        "value": "Not sure"
+      }
+    ],
+    "title": "What are your installation preferences?",
+    "value": "Not sure",
+    "valid": true,
+    "validationViewType": null,
+    "subTitle": "",
+    "hidden": false,
+    "disabled": false,
+    "explicit": false,
+    "edit": null,
+    "mark": false,
+    "textMark": "",
+    "editSection": "",
+    "resetSection": "",
+    "sup": "",
+    "placeholder": "",
+    "animate": false,
+    "maxLength": null,
+    "tooltip": "",
+    "styled": false,
+    "uniqLabel": null,
+    "switchOn": false,
+    "autoFocus": false,
+    "valueBefore": null,
+    "labelValue": null,
+    "initValue": "Not sure"
+  }
+]

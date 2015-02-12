@@ -10,7 +10,7 @@ import org.openqa.selenium.support.ui.Select;
  */
 public class ElementHelper {
 
-    public static void set(WebDriver driver, Element element, String value) {
+    public static void set(WebDriver driver, Element element, String value) throws Exception {
         String type = element.getType().toLowerCase();
         boolean isInput = type.matches("input|zipUS|name|address|phoneUS|email".toLowerCase());
         WebElement wElement;
@@ -44,7 +44,7 @@ public class ElementHelper {
             selectDate(wElement, value);
             return;
         } else {
-            new Exception(String.format("Unknown type of element '%s', element name '%s'", type, element.getName()));
+            throw new Exception(String.format("Unknown type of element '%s', element name '%s'", type, element.getName()));
         }
 
     }

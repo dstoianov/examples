@@ -17,7 +17,8 @@ type:
 Bq.App.settings.toJSON()
 
 Bq.App.steps.getStep(1).toJSON()
-Bq.App.fields.getFields().toJSON()
+
+Bq.App.fields.getFields().toJSON() //get all fields
 
 Bq.App.fields.getFields().getStep(1).toJSON()
 
