@@ -59,7 +59,7 @@ public class JSHelper {
     public int getStepsCount() {
         String script = "return Bq.App.steps.length;";
         long l = (long) exec(script);
-        System.out.println(String.format("This company contain '%s' steps", l));
+        System.out.println(String.format("This company contain '%s' steps", l - 1));
         return (int) l;
     }
 
@@ -82,12 +82,12 @@ public class JSHelper {
     }
 
     public Object getFieldByName(String name) {
-        String script = String.format("return Bq.App.fields.getFields().get('%s').toJSON();", name);
+        String script = String.format("return Bq.App.fields.getElements().get('%s').toJSON();", name);
         return exec(script);
     }
 
     public Object getFieldByNameLimit(String name) {
-        String script = String.format("return Bq.App.fields.getFields().get('%s').toJSON();", name);
+        String script = String.format("return Bq.App.fields.getElements().get('%s').toJSON();", name);
 //        Object e = exec("return Error.stackTraceLimit=undefined;");
         return exec(script);
     }

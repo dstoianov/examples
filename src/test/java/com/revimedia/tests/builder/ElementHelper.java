@@ -10,7 +10,7 @@ import org.openqa.selenium.support.ui.Select;
  */
 public class ElementHelper {
 
-    public static void set(WebDriver driver, Element element, String value) throws Exception {
+    public static void set(WebDriver driver, Element element, String value) {
         String type = element.getType().toLowerCase();
         boolean isInput = type.matches("input|zipUS|name|address|phoneUS|email".toLowerCase());
         WebElement wElement;
@@ -44,7 +44,7 @@ public class ElementHelper {
             selectDate(wElement, value);
             return;
         } else {
-            throw new Exception(String.format("Unknown type of element '%s', element name '%s'", type, element.getName()));
+            new Exception(String.format("Unknown type of element '%s', element name '%s'", type, element.getName()));
         }
 
     }
@@ -58,7 +58,7 @@ public class ElementHelper {
         element1.click();
     }
 
-    public static void selectDate(WebElement e, String birthDate) {
+    private static void selectDate(WebElement e, String birthDate) {
         //Mar 12, 1987
         int blank = birthDate.indexOf(" ");
         int comma = birthDate.indexOf(",");
@@ -70,7 +70,7 @@ public class ElementHelper {
         selectByVisibleText(e.findElement(By.cssSelector(".bq-name-Year select")), year);
     }
 
-    public static void selectByVisibleText(WebElement webElement, String text) {
+    private static void selectByVisibleText(WebElement webElement, String text) {
         new Select(webElement).selectByVisibleText(text);
     }
 

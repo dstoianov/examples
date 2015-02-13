@@ -10,7 +10,9 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -19,7 +21,9 @@ import java.util.concurrent.TimeUnit;
 public class SimpleTest {
 
     protected WebDriver driver;
+    protected JSHelper jsHelper;
     protected String url = "http://development.stagingrevi.com/auto/mfs/";
+    protected Map<String, String> map = new HashMap<String, String>();
 
     @BeforeClass
     public void setUp() {
@@ -28,6 +32,31 @@ public class SimpleTest {
 //        driver = new FirefoxDriver();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 //        driver.manage().window().maximize();
+        jsHelper = new JSHelper(driver);
+/*
+        <FirstName>Dorian</FirstName>
+        <LastName>Dummy</LastName>
+        <gender>Female</gender>
+        <birthDate>Apr 26, 1982</birthDate>
+        <phoneNumber>560-803-9491</phoneNumber>
+        <address>7500 Dallas Parkway</address>
+        <emailAddress>sit.amet.massa@consequatenimdiam.ca</emailAddress>
+        <zipCode>75024</zipCode>
+        <city>PLANO</city>
+        <state>TX</state>
+ */
+
+        map.put("firstName", "Dorian");
+        map.put("lastName", "Dummy");
+        map.put("gender", "Female");
+        map.put("birthDate", "Apr 26, 1982");
+        map.put("phoneNumber", "5608039491");
+        map.put("address", "7500 Dallas Parkway");
+        map.put("emailAddress", "sit.amet.massa@consequatenimdiam.ca");
+        map.put("zipCode", "75024");
+        map.put("city", "PLANO");
+        map.put("state", "TX");
+
     }
 
     @Test
@@ -42,19 +71,12 @@ public class SimpleTest {
 //        List<String> fieldsOnPage2 = jsHelper.getFieldsOnPage(2);// org.openqa.selenium.WebDriverException: unknown error: Maximum call stack size exceeded
         List<String> fieldsOnPage3 = jsHelper.getFieldsOnPage(3);
 
-//   js.executeScript("document.getElementsByTagName('head')[0].innerHTML += '<script src=\"<PATH_TO_FILE>\" type=\"text/javascript\"></script>';");
-//        js.ExecuteAsyncScript("setInterval(function () {" +
-//                "    alert('Hello');" +
-//                "}, 3000);" +
-//                "callback();");
-
-
 //        Object birthDate = jsHelper.getFieldByNameLimit("BirthDate");
 //        Element element = new Element(birthDate);
 
-        BuilderPage page1 = new BuilderPage(driver, fieldsOnPage1);
+        Page page1 = new Page(driver, fieldsOnPage1);
         page1.build();
-        List<Element> fields = page1.getFields();
+        List<Element> fields = page1.getElements();
 
 // for page 1
         ElementHelper.set(driver, fields.get(0), "20202");
@@ -75,9 +97,9 @@ public class SimpleTest {
         jsHelper.waitForAjaxComplete();
 
 
-        BuilderPage page3 = new BuilderPage(driver, fieldsOnPage3);
+        Page page3 = new Page(driver, fieldsOnPage3);
         page3.build();
-        List<Element> fields3 = page3.getFields();
+        List<Element> fields3 = page3.getElements();
 
         // for page 3
         ElementHelper.set(driver, fields3.get(0), "Aderr");
@@ -125,4 +147,17 @@ public class SimpleTest {
 
 
     }*/
+
+
+    @Test
+    public void testNameLifeMf() throws Exception {
+        driver.get("http://development.stagingrevi.com/life/mf/");
+        jsHelper.waitForAjaxComplete();
+
+        BuilderCampaign campaign = new BuilderCampaign(driver);
+
+        campaign.buildAllPages();
+        List<Page> campaignWithInitControls = campaign.getCampaign();
+        campaign.fillInAllPages(map);
+    }
 }
