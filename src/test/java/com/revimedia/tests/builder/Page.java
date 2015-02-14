@@ -29,12 +29,19 @@ public class Page {
             if (e.equalsIgnoreCase("BirthDate")) {
                 fields.add(initElement(e));
             } else if (e.equalsIgnoreCase("Height")) {
-                fields.add(initElement("Height_FT"));
+                fields.add(initElementFull("Height_FT"));
+                fields.add(initElementFull("Height_Inch"));
             } else {
                 Object fieldByName = jsHelper.getFieldByName(e);
                 fields.add(new Element(fieldByName));
+//                fields.add(initElementFull(e));
             }
         }
+    }
+
+    private Element initElementFull(String elementName) {
+        Object fieldByName = jsHelper.getFieldByName(elementName);
+        return new Element(fieldByName);
     }
 
     private Element initElement(String e) {
