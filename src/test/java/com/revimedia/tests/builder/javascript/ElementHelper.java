@@ -6,6 +6,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
+import java.util.List;
+import java.util.Random;
+
 /**
  * Created by Funker on 10.02.2015.
  */
@@ -90,13 +93,19 @@ public class ElementHelper {
     }
 
 
-    public static void main(String[] args) {
-        String s = "zipUS";
-        String ss = "input|zipUS|name|address|email";
-        boolean isInput1 = s.matches("input|zipUS|name|address|email");
-        boolean isInput2 = s.toLowerCase().matches("input|zipUS|name|address|email");
+    public static void setSelectRandom(WebDriver driver, Element element) {
+        List<String> sets = element.getSets();
+        int i = (new Random()).nextInt(sets.size());
 
-        System.out.println("Hello World!");
+        System.out.println(String.format("'%s' select --> '%s', element name '%s'", element.getTitle(), sets.get(i), element.getName()));
+
+        String css = String.format(".bq-name-%s %s", element.getName(), "select");
+        WebElement e = driver.findElement(By.cssSelector(css));
+        selectByVisibleText(e, sets.get(i));
     }
 
+
+    public static void setInput(WebDriver driver, Element element, String value) {
+
+    }
 }
