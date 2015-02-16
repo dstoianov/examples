@@ -8,6 +8,7 @@ import ru.yandex.qatools.htmlelements.element.HtmlElement;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
+import static org.hamcrest.core.StringEndsWith.endsWith;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
@@ -38,5 +39,11 @@ public class MockitoTests {
     public void isElementDisplayed() {
         WebElement element = MockFactory.mockDisplayedElement(By.className("some fake css"), driver);
         assertThat(element.isDisplayed(), is(true));
+    }
+
+    @Test
+    public void testName() throws Exception {
+        assertThat("some text", endsWith("texte"));
+
     }
 }
