@@ -8,8 +8,8 @@
   "transactionId": "",
   "cds2": true,
   "container": "#bq-form-here",
-  "vertical": "homesecurity",
-  "campaign": "mf",
+  "vertical": "auto",
+  "campaign": "mfs",
   "ajaxBase": "/",
   "offerId": "",
   "prepopIp": false,
@@ -22,22 +22,46 @@
   "progressbarStart": 0,
   "bWoopraOn": false,
   "buildenv": false,
-  "cdsBase": null,
-  "logger": {},
-  "isPopOut": false,
-  "homing": {},
+  "origin": "http://localhost:8093",
+  "cdsBase": "/",
   "surveyPath": "auto-frame2",
   "leadId": "",
   "step": 1,
   "isIE7": false,
-  "isPopout": null,
-  "isUpsell": null,
+  "isPopout": false,
+  "isUpsell": false,
   "iOS": false,
   "iOSChromeBrowser": null,
   "IE": false,
-  "campaignHTML": {},
-  "fieldsHTML": {},
-  "controlsHTML": {},
+  "url": {
+    "data": {
+      "attr": {
+        "fragment": "",
+        "query": "",
+        "file": "",
+        "directory": "/builder/",
+        "path": "/builder/",
+        "relative": "/builder/",
+        "port": "8093",
+        "host": "localhost",
+        "password": "",
+        "user": "",
+        "userInfo": "",
+        "authority": "localhost:8093",
+        "protocol": "http",
+        "source": "http://localhost:8093/builder/",
+        "base": "http://localhost:8093"
+      },
+      "param": {
+        "query": {},
+        "fragment": {}
+      },
+      "seg": {
+        "path": ["builder"],
+        "fragment": [""]
+      }
+    }
+  },
   "campaignViews": {},
   "campaignModels": {}
 }

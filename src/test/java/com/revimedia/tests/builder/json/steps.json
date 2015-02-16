@@ -37,7 +37,27 @@
         {
           "name": "Cloning",
           "group": "Vehicle",
-          "fields": ["-pruned-"],
+          "fields": [
+            {
+              "name": "SingleTitle",
+              "type": "compositeView",
+              "fields": [
+                "Year",
+                "Make",
+                "Model",
+                "AnnualMiles",
+                "CollisionDeductible",
+                "ComphrensiveDeductible",
+                "Garage",
+                "OneWayDistance",
+                "PrimaryUse",
+                "Ownership",
+                "WeeklyCommuteDays"
+              ],
+              "title": "Select your car <span class=\"bq-atsk\">*</span>",
+              "required": "Height is required."
+            }
+          ],
           "titles": {
             "title": "Please enter the details of car #<%=indexInGroup%>",
             "label": ". <%=Year%> <%=Make%> <%=Model%>",
@@ -56,17 +76,6 @@
           },
           "error": {
             "message": "Select add an extra car"
-          },
-          "modelWithCollection": {
-            "cid": "c276",
-            "attributes": "-pruned-",
-            "_changing": false,
-            "_previousAttributes": "-pruned-",
-            "changed": "-pruned-",
-            "id": 1,
-            "_pending": false,
-            "collection": "-pruned-",
-            "_events": "-pruned-"
           }
         }
       ]
