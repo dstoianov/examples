@@ -2,7 +2,6 @@ package com.revimedia.tests.builder.json;
 
 import com.google.gson.internal.LinkedTreeMap;
 import com.revimedia.tests.builder.Element;
-import com.revimedia.tests.builder.javascript.ElementHelper;
 import org.apache.commons.beanutils.BeanUtils;
 import org.openqa.selenium.WebDriver;
 
@@ -78,11 +77,43 @@ public class JsonCampaign {
     }
 
     public void fillInAllPages(Map<String, String> contactData) {
-        for (JsonPage p : campaign) {
-            List<Element> elements = p.getElements();
-            for (Element e : elements) {
-                ElementHelper.set(driver, e, "dd");
+        for (JsonPage page : campaign) {
+            System.out.println(">>>>>>>>>>>>>>>>>> Start filling in page " + page.getPageNumber() + " ---------------------");
+
+            List<Element> elements = page.getElements();
+
+            for (Element element : elements) {
+                if (element.getType().matches("select|polk".toLowerCase())) {
+                    List<String> sets = element.getSets();
+                    System.out.println(String.format("Fake '%s' set for element name '%s'", element.getTitle(), element.getName()));
+//                    System.out.println(String.format("'%s' set --> '%s', element name '%s'", element.getTitle(), sets, element.getName()));
+                    //ElementHelper.setSelect(driver, element, value);
+/*
+                } else if (element.getType().matches("input".toLowerCase())) {
+                    String value = contactData.get(element.getName());
+                    System.out.println(String.format("Fake '%s' set for element name '%s'", element.getTitle(), element.getName()));
+*/
+
+                } else {
+                    String value = contactData.get(element.getName());
+                    if (value == null) {
+                        throw new Error(String.format("Unknown name '%s' of element, element title '%s'", element.getName(), element.getTitle()));
+                    } else {
+                        System.out.println(String.format("'%s' set --> '%s', element name '%s'", element.getTitle(), value, element.getName()));
+//                    ElementHelper.set(driver, element, value);
+                    }
+                }
             }
+            System.out.println("<<<<<<<<<<<<<<<<<< End filling in page " + page.getPageNumber() + " ---------------------");
         }
     }
+
+/*    private static String contactDataGetValue(Element element, Map<String, String> contactData) {
+        String value = contactData.get(element.getName());
+        if (value == null) {
+            throw new Error(String.format("Unknown name '%s' of element, element title '%s'", element.getName(), element.getTitle()));
+        }
+        return value;
+    }*/
+
 }

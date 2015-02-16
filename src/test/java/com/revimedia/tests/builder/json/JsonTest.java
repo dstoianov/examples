@@ -12,6 +12,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by Funker on 12.02.2015.
@@ -32,7 +33,7 @@ public class JsonTest {
         campaign.buildAllPages();
 
         List<JsonPage> campaign1 = campaign.getCampaign();
-
+        campaign.fillInAllPages(getContactData());
         System.out.println("Campaign build took: " + timer.stop());
 
     }
@@ -64,5 +65,19 @@ public class JsonTest {
         return temp;
     }
 
+    private static Map<String, String> getContactData() {
+        Map<String, String> map = new HashMap<String, String>();
+        map.put("FirstName", "Dorian");
+        map.put("LastName", "Dummy");
+        map.put("Gender", "Female");
+        map.put("BirthDate", "Apr 26, 1982");
+        map.put("PhoneNumber", "5608039491");
+        map.put("Address", "7500 Dallas Parkway");
+        map.put("EmailAddress", "sit.amet.massa@consequatenimdiam.ca");
+        map.put("ZipCode", "75024");
+        map.put("City", "PLANO");
+        map.put("State", "TX");
+        return map;
+    }
 
 }

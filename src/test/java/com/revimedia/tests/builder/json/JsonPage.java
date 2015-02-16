@@ -80,4 +80,7 @@ public class JsonPage {
         return elements;
     }
 
+    public String getPageNumber() {
+        return pageNumber;
+    }
 }
