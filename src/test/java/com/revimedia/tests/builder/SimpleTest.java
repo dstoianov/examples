@@ -1,6 +1,10 @@
 package com.revimedia.tests.builder;
 
 
+import com.revimedia.tests.builder.javascript.BuilderCampaign;
+import com.revimedia.tests.builder.javascript.ElementHelper;
+import com.revimedia.tests.builder.javascript.JSHelper;
+import com.revimedia.tests.builder.javascript.Page;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;

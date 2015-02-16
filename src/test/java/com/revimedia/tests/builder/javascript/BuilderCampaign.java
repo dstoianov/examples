@@ -1,5 +1,6 @@
-package com.revimedia.tests.builder;
+package com.revimedia.tests.builder.javascript;
 
+import com.revimedia.tests.builder.Element;
 import org.openqa.selenium.WebDriver;
 
 import java.util.ArrayList;

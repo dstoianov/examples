@@ -1,5 +1,6 @@
-package com.revimedia.tests.builder;
+package com.revimedia.tests.builder.javascript;
 
+import com.revimedia.tests.builder.Element;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;

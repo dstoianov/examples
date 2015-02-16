@@ -1,4 +1,4 @@
-package com.revimedia.tests.builder;
+package com.revimedia.tests.builder.javascript;
 
 import org.apache.commons.beanutils.BeanUtils;
 import org.apache.log4j.Logger;
