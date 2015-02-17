@@ -54,9 +54,11 @@ public class JsonTest {
         campaign.buildAllPages();
 
         List<JsonPage> pages = campaign.getPages();
+
+        System.out.println("Json read, parsing and build campaign took: " + timer.stop());
+
         campaign.fillInAllPages(getContactData());
 
-        System.out.println("Campaign build took: " + timer.stop());
 
     }
 

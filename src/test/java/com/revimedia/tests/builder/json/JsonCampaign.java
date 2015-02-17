@@ -69,6 +69,7 @@ public class JsonCampaign {
                     result.add("Year");
                     result.add("Make");
                     result.add("Model");
+                    result.add("ExtraCar");
                 } else {
                     result.add(name);
                 }

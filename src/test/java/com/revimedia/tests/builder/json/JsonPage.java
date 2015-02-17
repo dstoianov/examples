@@ -4,6 +4,7 @@ import com.google.gson.internal.LinkedTreeMap;
 import com.revimedia.tests.builder.Element;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
@@ -35,6 +36,10 @@ public class JsonPage {
             System.out.println(String.format("Build element '%s'", e));
             if (e.equalsIgnoreCase("BirthDate")) {
                 elements.add(initCompositElement(e));
+            } else if (e.equalsIgnoreCase("ExtraCar")) {
+                List<Object> sets = new ArrayList<Object>(Arrays.asList("Yes", "No"));
+                Element element = new Element("radio", "AddExtraCar", sets, null, "Add an extra car?", false);
+                elements.add(element);
 //            } else if (e.equalsIgnoreCase("Cloning")) {
 //                elements.add(null);
 //                elements.add(initElementFull("Height_FT"));
