@@ -46,14 +46,14 @@ public class JsonTest {
         Stopwatch timer = Stopwatch.createStarted();
 
         Gson gson = new Gson();
-//        HashMap settings = gson.fromJson(readFile("settings.json"), HashMap.class);
+        Object settings = gson.fromJson(readFile("settings.json"), Object.class);
         Object fields = gson.fromJson(readFile("fields.json"), Object.class);
         Object steps = gson.fromJson(readFile("steps.json"), Object.class);
 
         JsonCampaign campaign = new JsonCampaign(driver, steps, fields);
         campaign.buildAllPages();
 
-        List<JsonPage> campaign1 = campaign.getCampaign();
+        List<JsonPage> pages = campaign.getPages();
         campaign.fillInAllPages(getContactData());
 
         System.out.println("Campaign build took: " + timer.stop());

@@ -20,7 +20,7 @@ public class JsonCampaign {
     protected WebDriver driver;
     protected Object steps;
     protected Object fields;
-    protected List<JsonPage> campaign = new ArrayList<JsonPage>();
+    protected List<JsonPage> pages = new ArrayList<JsonPage>();
 
     public JsonCampaign(WebDriver driver, Object steps, Object fields) {
         this.driver = driver;
@@ -34,12 +34,12 @@ public class JsonCampaign {
             List<String> fieldsOnPage = fieldsFromSteps.get(i);
             JsonPage jsonPage = new JsonPage(fields, fieldsOnPage, i + 1);
             jsonPage.build();
-            campaign.add(jsonPage);
+            pages.add(jsonPage);
         }
     }
 
-    public List<JsonPage> getCampaign() {
-        return campaign;
+    public List<JsonPage> getPages() {
+        return pages;
     }
 
 
@@ -80,21 +80,20 @@ public class JsonCampaign {
     }
 
     public void fillInAllPages(Map<String, String> contactData) throws Exception {
-        for (JsonPage page : campaign) {
+        for (JsonPage page : pages) {
             System.out.println(">>>>>>>>>>>>>>>>>> Start filling in page " + page.getPageNumber() + " ---------------------");
 
             List<Element> elements = page.getElements();
 
             for (Element element : elements) {
-                if (element.getType().matches("select|polk".toLowerCase())) {
+                String type = element.getType().toLowerCase();
+                if (type.matches("select|polk".toLowerCase())) {
                     ElementHelper.setSelectRandom(driver, element);
                 } else {
-
                     String value = contactData.get(element.getName());
                     if (value == null) {
                         throw new Error(String.format("Unknown name '%s' of element, element title '%s'", element.getName(), element.getTitle()));
                     }
-                    String type = element.getType().toLowerCase();
                     boolean isInput = type.matches("input|zipUS|name|address|phoneUS|email".toLowerCase());
                     if (isInput) {
                         ElementHelper.setInput(driver, element, value);
