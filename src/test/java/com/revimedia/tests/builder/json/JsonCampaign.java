@@ -4,7 +4,9 @@ import com.google.gson.internal.LinkedTreeMap;
 import com.revimedia.tests.builder.Element;
 import com.revimedia.tests.builder.javascript.ElementHelper;
 import org.apache.commons.beanutils.BeanUtils;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -77,7 +79,7 @@ public class JsonCampaign {
         return result;
     }
 
-    public void fillInAllPages(Map<String, String> contactData) {
+    public void fillInAllPages(Map<String, String> contactData) throws Exception {
         for (JsonPage page : campaign) {
             System.out.println(">>>>>>>>>>>>>>>>>> Start filling in page " + page.getPageNumber() + " ---------------------");
 
@@ -85,28 +87,39 @@ public class JsonCampaign {
 
             for (Element element : elements) {
                 if (element.getType().matches("select|polk".toLowerCase())) {
-                    System.out.println(String.format("Fake select '%s', name '%s'", element.getTitle(), element.getName()));
-//                    ElementHelper.setSelectRandom(driver, element);
+                    ElementHelper.setSelectRandom(driver, element);
                 } else {
+
                     String value = contactData.get(element.getName());
                     if (value == null) {
                         throw new Error(String.format("Unknown name '%s' of element, element title '%s'", element.getName(), element.getTitle()));
-                    } else {
-                        System.out.println(String.format("Fake input '%s', name '%s'", element.getTitle(), element.getName()));
+                    }
+                    String type = element.getType().toLowerCase();
+                    boolean isInput = type.matches("input|zipUS|name|address|phoneUS|email".toLowerCase());
+                    if (isInput) {
                         ElementHelper.setInput(driver, element, value);
+                    } else if (type.equalsIgnoreCase("radio")) {
+                        ElementHelper.setRadio(driver, element, value);
+                    } else if (type.equalsIgnoreCase("composite") && element.getName().equalsIgnoreCase("BirthDate")) {
+                        ElementHelper.setBirthDay(driver, element, value);
+                    } else {
+                        throw new Exception(String.format("Unknown type of element '%s', element name '%s'", type, element.getName()));
                     }
                 }
             }
             System.out.println("<<<<<<<<<<<<<<<<<< End filling in page " + page.getPageNumber() + " ---------------------");
+
+            clickNextButton(page.getPageNumber());
         }
     }
 
-/*    private static String contactDataGetValue(Element element, Map<String, String> contactData) {
-        String value = contactData.get(element.getName());
-        if (value == null) {
-            throw new Error(String.format("Unknown name '%s' of element, element title '%s'", element.getName(), element.getTitle()));
-        }
-        return value;
-    }*/
+
+    public void clickNextButton(String pageNumber) {
+        System.out.println(String.format("Click Next Button on page '%s'", pageNumber));
+        String locator = String.format(".bq-step%s .bq-control.bq-type-simple", pageNumber);
+        WebElement nextButton = driver.findElement(By.cssSelector(locator));
+        nextButton.click();
+
+    }
 
 }

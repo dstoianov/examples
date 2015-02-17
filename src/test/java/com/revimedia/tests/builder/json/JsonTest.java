@@ -2,10 +2,12 @@ package com.revimedia.tests.builder.json;
 
 import com.google.common.base.Stopwatch;
 import com.google.gson.Gson;
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
+import com.revimedia.tests.builder.javascript.JSHelper;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -13,19 +15,38 @@ import java.io.FileReader;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
 
 /**
  * Created by Funker on 12.02.2015.
  */
 public class JsonTest {
+    protected WebDriver driver;
 
-    public static void main(String[] args) throws Exception {
+    @AfterClass(alwaysRun = true)
+    public void tearDown() throws Exception {
+        driver.quit();
+    }
+
+    @BeforeClass
+    public void setUp() {
+        driver = new ChromeDriver();
+//        driver = new PhantomJSDriver();
+//        driver = new FirefoxDriver();
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+//        driver.manage().window().maximize();
+        JSHelper jsHelper = new JSHelper(driver);
+        driver.get("http://development.stagingrevi.com/auto/mfs");
+        jsHelper.waitForAjaxComplete();
+
+    }
+
+    @Test
+    public void testJson() throws Exception {
         Stopwatch timer = Stopwatch.createStarted();
 
         Gson gson = new Gson();
-        WebDriver driver = null;
-
-        HashMap settings = gson.fromJson(readFile("settings.json"), HashMap.class);
+//        HashMap settings = gson.fromJson(readFile("settings.json"), HashMap.class);
         Object fields = gson.fromJson(readFile("fields.json"), Object.class);
         Object steps = gson.fromJson(readFile("steps.json"), Object.class);
 
@@ -34,35 +55,15 @@ public class JsonTest {
 
         List<JsonPage> campaign1 = campaign.getCampaign();
         campaign.fillInAllPages(getContactData());
+
         System.out.println("Campaign build took: " + timer.stop());
 
     }
-
 
     private static BufferedReader readFile(String s) throws FileNotFoundException {
         FileReader fileReader = new FileReader("src/test/java/com/revimedia/tests/builder/json/" + s);
         BufferedReader br = new BufferedReader(fileReader);
         return br;
-    }
-
-
-    static Object jsonParser(String jsonStr, String key) throws JSONException {
-        int i = 0;
-        Object temp = null;
-        Object json = new JSONObject(jsonStr);
-        String[] keys = key.split("[.]");
-        while (i < keys.length) {
-
-            if (json instanceof JSONArray) {
-                int index = Integer.parseInt(keys[i]);
-                temp = ((JSONArray) json).get(index);
-            } else if (json instanceof JSONObject) {
-                temp = ((JSONObject) json).get(keys[i]);
-            }
-            json = temp;
-            i++;
-        }
-        return temp;
     }
 
     private static Map<String, String> getContactData() {

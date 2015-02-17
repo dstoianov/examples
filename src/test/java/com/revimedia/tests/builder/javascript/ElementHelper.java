@@ -6,6 +6,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
+import java.lang.reflect.InvocationTargetException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
@@ -93,19 +95,71 @@ public class ElementHelper {
     }
 
 
-    public static void setSelectRandom(WebDriver driver, Element element) {
-        List<String> sets = element.getSets();
-        int i = (new Random()).nextInt(sets.size());
-
-        System.out.println(String.format("'%s' select --> '%s', element name '%s'", element.getTitle(), sets.get(i), element.getName()));
+    public static void setSelectRandom(WebDriver driver, Element element) throws IllegalAccessException, NoSuchMethodException, InvocationTargetException {
+//        List<Object> sets = element.getSets();
+//        if (element.getName().equalsIgnoreCase("Make")){
+//            int i = sets.size() - 1;
+//        }
+//        int i = (new Random()).nextInt(sets.size()-1);
+//        Object o = sets.get(i);
+//        String value = null;
+//        if (o instanceof String) {
+//            value = o.toString();
+//        } else if (o instanceof Map) {
+//            value = BeanUtils.getProperty(o, "label");
+//            if (value == null) {
+//                value = BeanUtils.getProperty(o, "Value");
+//            }
+//        } else {
+//            System.out.println(String.format("Unknown instance of object '%s'", o.getClass()));
+//        }
 
         String css = String.format(".bq-name-%s %s", element.getName(), "select");
         WebElement e = driver.findElement(By.cssSelector(css));
-        selectByVisibleText(e, sets.get(i));
+        String option = getOption(e);
+
+        System.out.println(String.format("'%s' select --> '%s', element name '%s'", element.getTitle(), option, element.getName()));
+        selectByVisibleText(e, option);
     }
 
 
     public static void setInput(WebDriver driver, Element element, String value) {
+        System.out.println(String.format("'%s' type --> '%s', element name '%s'", element.getTitle(), value, element.getName()));
+        String css = String.format(".bq-name-%s %s", element.getName(), "input");
+        WebElement e = driver.findElement(By.cssSelector(css));
+        e.click();
+        e.clear();
+        e.sendKeys(value);
+    }
 
+    public static void setRadio(WebDriver driver, Element element, String value) {
+        System.out.println(String.format("'%s' click --> '%s', element name '%s'", element.getTitle(), value, element.getName()));
+        String css = String.format(".bq-name-%s .bq-%s", element.getName(), value);
+        WebElement e = driver.findElement(By.cssSelector(css));
+        e.click();
+    }
+
+    public static void setBirthDay(WebDriver driver, Element element, String value) {
+        System.out.println(String.format("'%s' set --> '%s', element name '%s'", element.getTitle(), value, element.getName()));
+        String css = String.format(".bq-name-%s-%s", element.getType(), element.getName());
+        WebElement e = driver.findElement(By.cssSelector(css));
+        selectDate(e, value);
+    }
+
+    private static String getOption(WebElement e) {
+        List<String> options = getAllOptionsFromSelect(e);
+        String option = options.get((new Random().nextInt(options.size() - 1)));
+        return option;
+    }
+
+    private static List<String> getAllOptionsFromSelect(WebElement element) {
+        List<String> result = new ArrayList<>();
+        List<WebElement> options = new Select(element).getOptions();
+        for (WebElement option : options) {
+            result.add(option.getText());
+        }
+        result.remove(0);// remove <option value="null"> --select-- </option>
+//        log.info("\n----------------Displayed values in Drop Down -----------------\n" + result.toString() + "\n");
+        return result;
     }
 }

@@ -12,7 +12,7 @@ public class Element {
 
     private String type;
     private String name;
-    private List<String> sets;
+    private List<Object> sets;
     private String value;
     private String title;
     private boolean hidden;
@@ -27,10 +27,10 @@ public class Element {
         this.title = (String) mappedObject.get("title");
         this.value = (String) mappedObject.get("value");
         this.hidden = (boolean) mappedObject.get("hidden");
-        this.sets = (List<String>) mappedObject.get("sets");
+        this.sets = (List<Object>) mappedObject.get("sets");
     }
 
-    public Element(String type, String name, List<String> sets, String value, String title, boolean hidden) {
+    public Element(String type, String name, List<Object> sets, String value, String title, boolean hidden) {
         this.type = type;
         this.name = name;
         this.sets = sets;
@@ -48,7 +48,7 @@ public class Element {
         return name;
     }
 
-    public List<String> getSets() {
+    public List<Object> getSets() {
         return sets;
     }
 
