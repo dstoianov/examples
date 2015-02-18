@@ -36,7 +36,9 @@ public class JSHelper {
     }
 
     public boolean isAjaxComplete() {
-        Boolean result = (Boolean) js.executeScript("return $.active == 0");
+        //return (window.jQuery != null) && (jQuery.active === 0);
+//        Boolean result = (Boolean) js.executeScript("return $.active == 0");
+        Boolean result = (Boolean) js.executeScript("return (window.jQuery != null) && ($.active === 0)");
         System.out.println(String.format("Ajax return $.active == 0  is: '%s'", result));
         return result;
     }
