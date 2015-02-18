@@ -87,14 +87,18 @@ public class JsonCampaign {
             List<Element> elements = page.getElements();
 
             for (Element element : elements) {
+
                 String type = element.getType().toLowerCase();
-                if (type.matches("select|polk".toLowerCase())) {
-                    ElementHelper.setSelectRandom(driver, element);
-                } else {
+                String name = element.getName().toLowerCase();
+                boolean isContactDataElement = name.matches("ZipCode|Gender|FirstName|LastName|address|PhoneNumber|EmailAddress|BirthDate".toLowerCase());
+
+                if (isContactDataElement) {
+
                     String value = contactData.get(element.getName());
                     if (value == null) {
                         throw new Error(String.format("Unknown name '%s' of element, element title '%s'", element.getName(), element.getTitle()));
                     }
+
                     boolean isInput = type.matches("input|zipUS|name|address|phoneUS|email".toLowerCase());
                     if (isInput) {
                         ElementHelper.setInput(driver, element, value);
@@ -105,7 +109,15 @@ public class JsonCampaign {
                     } else {
                         throw new Exception(String.format("Unknown type of element '%s', element name '%s'", type, element.getName()));
                     }
+
+                } else if (type.matches("select|polk".toLowerCase())) {
+                    ElementHelper.setSelectRandom(driver, element);
+                } else if (type.equalsIgnoreCase("radio")) {
+                    ElementHelper.setRadio(driver, element, "no");
+                } else {
+                    throw new Exception(String.format("Unknown type of element '%s', element name '%s'", type, element.getName()));
                 }
+
             }
             System.out.println("<<<<<<<<<<<<<<<<<< End filling in page " + page.getPageNumber() + " ---------------------");
 

@@ -134,7 +134,12 @@ public class ElementHelper {
 
     public static void setRadio(WebDriver driver, Element element, String value) {
         System.out.println(String.format("'%s' click --> '%s', element name '%s'", element.getTitle(), value, element.getName()));
-        String css = String.format(".bq-name-%s .bq-%s", element.getName(), value);
+        String css = "";
+        if (element.getName().equalsIgnoreCase("AddExtraCar")) {
+            css = String.format(".bq-cloning-adds .bq-add-%s", value);
+        } else {
+            css = String.format(".bq-name-%s .bq-%s", element.getName(), value);
+        }
         WebElement e = driver.findElement(By.cssSelector(css));
         e.click();
     }
@@ -148,6 +153,9 @@ public class ElementHelper {
 
     private static String getOption(WebElement e) {
         List<String> options = getAllOptionsFromSelect(e);
+//        if (options.size() <= 0) {
+//            new Exception("Has no any options in the drop down for select");
+//        }
         String option = options.get((new Random().nextInt(options.size() - 1)));
         return option;
     }
