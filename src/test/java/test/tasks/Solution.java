@@ -40,7 +40,7 @@ public class Solution {
         if ((null == str) || (str.length() <= 1)) {
             return str;
         }
-        return reverse(str.substring(1)) + str.charAt(0);
+        return reverseByReflex(str.substring(1)) + str.charAt(0);
     }
 
     public static String reverse(String s) {
