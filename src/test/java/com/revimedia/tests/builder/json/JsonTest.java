@@ -22,6 +22,7 @@ import java.util.concurrent.TimeUnit;
  */
 public class JsonTest {
     protected WebDriver driver;
+    protected JSHelper jsHelper = null;
 
     @AfterClass(alwaysRun = true)
     public void tearDown() throws Exception {
@@ -35,7 +36,8 @@ public class JsonTest {
 //        driver = new FirefoxDriver();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 //        driver.manage().window().maximize();
-        JSHelper jsHelper = new JSHelper(driver);
+//        JSHelper jsHelper = new JSHelper(driver);
+        jsHelper = JSHelper.getInstance(driver);
         driver.get("http://development.stagingrevi.com/auto/mfs");
         jsHelper.waitForAjaxComplete();
 

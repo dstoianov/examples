@@ -1,5 +1,6 @@
 package com.revimedia.tests.builder.javascript;
 
+import com.google.common.base.Stopwatch;
 import org.apache.commons.beanutils.BeanUtils;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.JavascriptExecutor;
@@ -23,6 +24,15 @@ public class JSHelper {
     private WebDriver driver;
     private WebDriverWait wait;
 
+    private static JSHelper instance = null;
+
+    public static JSHelper getInstance(WebDriver driver) {
+        if (instance == null) {
+            instance = new JSHelper(driver);
+        }
+        return instance;
+    }
+
     public JSHelper(WebDriver driver) {
         this.driver = driver;
         this.wait = new WebDriverWait(driver, DEFAULT_TIMEOUT);
@@ -39,7 +49,7 @@ public class JSHelper {
         //return (window.jQuery != null) && (jQuery.active === 0);
 //        Boolean result = (Boolean) js.executeScript("return $.active == 0");
         Boolean result = (Boolean) js.executeScript("return (window.jQuery != null) && ($.active === 0)");
-        System.out.println(String.format("Ajax return $.active == 0  is: '%s'", result));
+//        System.out.println(String.format("Ajax return $.active == 0  is: '%s'", result));
         return result;
     }
 
@@ -48,14 +58,15 @@ public class JSHelper {
     }
 
     public void waitForAjaxComplete() {
-        System.out.println("waiting for ajax completion");
+//        System.out.println("Waiting for ajax complete...");
+        Stopwatch timer = Stopwatch.createStarted();
         final JSHelper js = new JSHelper(driver);
         wait.until(new ExpectedCondition<Boolean>() {
             public Boolean apply(WebDriver driver) {
                 return js.isAjaxComplete();
             }
         });
-        System.out.println("All ajax calls are complete");
+        System.out.println("All ajax calls are complete, it took: " + timer.stop());
     }
 
     public int getStepsCount() {

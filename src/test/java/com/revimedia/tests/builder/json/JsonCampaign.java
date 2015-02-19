@@ -3,6 +3,7 @@ package com.revimedia.tests.builder.json;
 import com.google.gson.internal.LinkedTreeMap;
 import com.revimedia.tests.builder.Element;
 import com.revimedia.tests.builder.javascript.ElementHelper;
+import com.revimedia.tests.builder.javascript.JSHelper;
 import org.apache.commons.beanutils.BeanUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -21,6 +22,7 @@ public class JsonCampaign {
     protected Object steps;
     protected Object fields;
     protected List<JsonPage> pages = new ArrayList<JsonPage>();
+    private JSHelper jsHelper = JSHelper.getInstance(driver);
 
     public JsonCampaign(WebDriver driver, Object steps, Object fields) {
         this.driver = driver;
@@ -110,8 +112,11 @@ public class JsonCampaign {
                         throw new Exception(String.format("Unknown type of element '%s', element name '%s'", type, element.getName()));
                     }
 
-                } else if (type.matches("select|polk".toLowerCase())) {
+                } else if (type.matches("select".toLowerCase())) {
                     ElementHelper.setSelectRandom(driver, element);
+                } else if (type.matches("polk".toLowerCase())) {
+                    ElementHelper.setSelectRandom(driver, element);
+                    jsHelper.waitForAjaxComplete();
                 } else if (type.equalsIgnoreCase("radio")) {
                     ElementHelper.setRadio(driver, element, "no");
                 } else {
@@ -131,7 +136,7 @@ public class JsonCampaign {
         String locator = String.format(".bq-step%s .bq-control.bq-type-simple", pageNumber);
         WebElement nextButton = driver.findElement(By.cssSelector(locator));
         nextButton.click();
-
+        jsHelper.waitForAjaxComplete();
     }
 
 }
