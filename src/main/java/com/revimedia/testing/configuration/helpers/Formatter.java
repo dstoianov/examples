@@ -1,7 +1,12 @@
 package com.revimedia.testing.configuration.helpers;
 
 
-import org.codehaus.jackson.map.ObjectMapper;
+//import org.codehaus.jackson.map.ObjectMapper;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonParser;
 
 import javax.xml.transform.OutputKeys;
 import javax.xml.transform.Source;
@@ -44,7 +49,7 @@ public class Formatter {
         }
     }
 
-    public static String prettyJSONFormat(String input) {
+/*    public static String prettyJSONFormat(String input) {
         try {
             ObjectMapper mapper = new ObjectMapper();
             Object json = mapper.readValue(input, Object.class);
@@ -54,10 +59,19 @@ public class Formatter {
             e.printStackTrace();
         }
         return input;
+    }*/
+
+    public static String prettyJSONFormat(String jsonContent) {
+        JsonParser parser = new JsonParser();
+        Gson gson = new GsonBuilder().setPrettyPrinting().create();
+        JsonElement el = parser.parse(jsonContent);
+        return gson.toJson(el);
     }
 
+
     public static List<String> itemsJSONToList(String jsonTxt) throws IOException {
-        Map<String, Object> map = new ObjectMapper().readValue(jsonTxt, HashMap.class);
+//        Map<String, Object> map = new ObjectMapper().readValue(jsonTxt, HashMap.class);
+        Map<String, Object> map = new Gson().fromJson(jsonTxt, HashMap.class);
         List<Map<String, String>> items = (List<Map<String, String>>) map.get("Items");
         List<String> result = new ArrayList<String>();
         for (Map<String, String> item : items) {
