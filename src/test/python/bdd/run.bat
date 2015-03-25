@@ -1,0 +1,1 @@
+lettuce --with-xunit --xunit-file=report.xml
