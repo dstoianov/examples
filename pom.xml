@@ -8,8 +8,12 @@
     <artifactId>JavaExamples</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <name>Java Examples Project</name>
+
+
     <properties>
-        <selenium-java.version>2.43.1</selenium-java.version>
+        <!--<selenium-java.version>2.43.1</selenium-java.version>-->
+        <selenium-java.version>2.45.0</selenium-java.version>
         <testng.suite>${basedir}/src/test/resources/testsuites/default_console_suite.xml</testng.suite>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.7</maven.compiler.source>
