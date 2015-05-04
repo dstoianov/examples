@@ -420,6 +420,26 @@
             <version>0.4</version>
         </dependency>
 
+        <!--        <dependency>
+                    <groupId>org.apache.httpcomponents</groupId>
+                    <artifactId>httpclient</artifactId>
+                    <version>4.4.1</version>
+                    &lt;!&ndash;<scope>compile</scope>&ndash;&gt;
+                </dependency>-->
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpmime</artifactId>
+            <version>4.3.2</version>
+            <!--<scope>compile</scope>-->
+        </dependency>
+
+        // google spreadsheet
+        <dependency>
+            <groupId>com.google.gdata</groupId>
+            <artifactId>core</artifactId>
+            <version>1.47.1</version>
+        </dependency>
+
     </dependencies>
 
     <!--Repository for reporty-ng-->

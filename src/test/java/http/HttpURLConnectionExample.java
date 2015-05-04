@@ -93,8 +93,7 @@ public class HttpURLConnectionExample {
         System.out.println("Post parameters : " + urlParameters);
         System.out.println("Response Code : " + responseCode);
 
-        BufferedReader in = new BufferedReader(
-                new InputStreamReader(con.getInputStream()));
+        BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
         String inputLine;
         StringBuffer response = new StringBuffer();
 

@@ -59,7 +59,9 @@ public class JSHelper {
 
     public void waitForAjaxComplete() {
 //        System.out.println("Waiting for ajax complete...");
-        Stopwatch timer = Stopwatch.createStarted();
+//        Stopwatch timer = Stopwatch.createStarted();
+        Stopwatch timer = new Stopwatch();
+        timer.start();
         final JSHelper js = new JSHelper(driver);
         wait.until(new ExpectedCondition<Boolean>() {
             public Boolean apply(WebDriver driver) {

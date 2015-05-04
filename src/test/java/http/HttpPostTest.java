@@ -1,13 +1,17 @@
 package http;
 
-import org.apache.commons.httpclient.HttpClient;
 import org.apache.http.HttpEntity;
+import org.apache.http.HttpHost;
 import org.apache.http.HttpResponse;
+import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpPost;
+import org.apache.http.entity.ContentType;
 import org.apache.http.entity.mime.MultipartEntity;
+import org.apache.http.entity.mime.MultipartEntityBuilder;
 import org.apache.http.entity.mime.content.FileBody;
 import org.apache.http.entity.mime.content.StringBody;
 import org.apache.http.impl.client.CloseableHttpClient;
+import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
 import org.testng.annotations.Test;
@@ -23,29 +27,45 @@ public class HttpPostTest {
 
     @Test
     public void testName() throws Exception {
+        HttpHost proxy = new HttpHost("127.0.0.1", 8888);
+//        CloseableHttpClient httpClient = HttpClients.createDefault();
+        CloseableHttpClient httpClient = HttpClientBuilder.create().setProxy(proxy).build();
+        HttpPost httpPost = new HttpPost(url);
 
-        CloseableHttpClient httpClient = HttpClients.createDefault();
-        HttpPost uploadFile = new HttpPost(url);
+        MultipartEntityBuilder builder = MultipartEntityBuilder.create();
+        File file = new File("D:\\My Documents\\Dropbox\\Resume.docx");
+        builder.addBinaryBody("file", file, ContentType.APPLICATION_OCTET_STREAM, "Resume.docx");
 
-        MultipartEntity reqEntity = new MultipartEntity();
+        builder.addTextBody("firstname", "xxxxx");
+        builder.addTextBody("lastname", "xxxxx");
+        builder.addTextBody("email", "xxxxx@gmail.com");
+        builder.addTextBody("jobtitle", "Java Senior Software Engineer in Test (f/m)");
+        builder.addTextBody("source", "https://zanox.softgarden.io/vacancies?1");
 
-/*        MultipartEntityBuilder builder = MultipartEntityBuilder.create();
+        HttpEntity reqEntity = builder.build();
 
-        builder.addTextBody("field1", "yes", ContentType.TEXT_PLAIN);
-        builder.addBinaryBody("file", new File("..."), ContentType.APPLICATION_OCTET_STREAM, "file.ext");
-        HttpEntity multipart = builder.build();*/
+        httpPost.setEntity(reqEntity);
 
-        uploadFile.setEntity(multipart);
+        System.out.println("executing request " + httpPost.getRequestLine());
 
-        response = httpClient.execute(uploadFile);
-        responseEntity = response.getEntity();
+        CloseableHttpResponse response = httpClient.execute(httpPost);
 
+        System.out.println("----------------------------------------");
+        System.out.println(response.getStatusLine());
+        HttpEntity resEntity = response.getEntity();
+        if (resEntity != null) {
+            System.out.println("Response content length: " + resEntity.getContentLength());
+        }
+        System.out.println(EntityUtils.toString(resEntity));
+        EntityUtils.consume(resEntity);
+
+        httpClient.close();
     }
 
 
     public static void main(String[] args) throws IOException {
 
-        HttpClient httpclient = new HttpClient();
+        CloseableHttpClient httpClient = HttpClients.createDefault();
         HttpPost httppost = new HttpPost("https://api.constantcontact.com/v2/library/files");
 
         httppost.addHeader("Authorization", "Bearer 70e8e17d-e1ed-4b7a-8a8a-40383d74d467");
@@ -70,7 +90,7 @@ public class HttpPostTest {
 
         httppost.setEntity(reqEntity);
 
-        HttpResponse response = httpclient.execute(httppost);
+        HttpResponse response = httpClient.execute(httppost);
         System.out.println(response);
 
         HttpEntity resEntity = response.getEntity();
@@ -78,7 +98,7 @@ public class HttpPostTest {
         System.out.println(EntityUtils.toString(resEntity));
 
         EntityUtils.consume(resEntity);
-        httpclient.getConnectionManager().shutdown();
+        httpClient.close();
     }
 
 }

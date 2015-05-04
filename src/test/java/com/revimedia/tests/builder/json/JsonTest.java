@@ -45,7 +45,9 @@ public class JsonTest {
 
     @Test
     public void testJson() throws Exception {
-        Stopwatch timer = Stopwatch.createStarted();
+//        Stopwatch timer = Stopwatch.createStarted();
+        Stopwatch timer = new Stopwatch();
+        timer.start();
 
         Gson gson = new Gson();
         Object settings = gson.fromJson(readFile("settings.json"), Object.class);
