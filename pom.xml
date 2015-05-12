@@ -16,6 +16,7 @@
         <selenium-java.version>2.45.0</selenium-java.version>
         <testng.suite>${basedir}/src/test/resources/testsuites/default_console_suite.xml</testng.suite>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <driver.path>${basedir}/src/test/resources/drivers</driver.path>
         <maven.compiler.source>1.7</maven.compiler.source>
         <maven.compiler.target>1.7</maven.compiler.target>
     </properties>
@@ -33,18 +34,15 @@
                     </suiteXmlFiles>
                     <junitArtifactName>none:none</junitArtifactName>
                     <systemPropertyVariables>
-                        <phantomjs.binary.path>${basedir}/lib/phantomjs/phantomjs-1.9.7-windows/phantomjs.exe
-                        </phantomjs.binary.path>
-                        <org.uncommons.reportng.title>ReviMedia CDS 2.0 Automation Project
-                        </org.uncommons.reportng.title>
+                        <!--<phantomjs.binary.path>${basedir}/lib/phantomjs/phantomjs-1.9.7-windows/phantomjs.exe-->
+                        <!--</phantomjs.binary.path>-->
+                        <org.uncommons.reportng.title>Automation Project</org.uncommons.reportng.title>
                         <!--<org.uncommons.reportng.show-expected-exceptions>false</org.uncommons.reportng.show-expected-exceptions>-->
                         <org.uncommons.reportng.escape-output>turn off</org.uncommons.reportng.escape-output>
                         <!--<org.uncommons.reportng.velocity-log>true</org.uncommons.reportng.velocity-log>-->
-                        <webdriver.chrome.driver>${basedir}/src/test/resources/drivers/chromedriver.exe
-                        </webdriver.chrome.driver>
-                        <!--<webdriver.ie.driver>${basedir}/src/test/resources/drivers/IEDriverServer.exe</webdriver.ie.driver>-->
-                        <phantomjs.binary.path>${basedir}/src/test/resources/drivers/phantomjs.exe
-                        </phantomjs.binary.path>
+                        <webdriver.chrome.driver>${driver.path}/chromedriver.exe</webdriver.chrome.driver>
+                        <webdriver.ie.driver>${driver.path}/IEDriverServer.exe</webdriver.ie.driver>
+                        <phantomjs.binary.path>${driver.path}/phantomjs.exe</phantomjs.binary.path>
                     </systemPropertyVariables>
                     <!--<additionalClasspathElements>-->
                     <!--<additionalClasspathElement>${basedir}/src/test/resources/drivers</additionalClasspathElement>-->
@@ -433,12 +431,6 @@
             <!--<scope>compile</scope>-->
         </dependency>
 
-        // google spreadsheet
-        <dependency>
-            <groupId>com.google.gdata</groupId>
-            <artifactId>core</artifactId>
-            <version>1.47.1</version>
-        </dependency>
 
     </dependencies>
 
