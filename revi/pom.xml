@@ -20,7 +20,7 @@
         <!--<selenium-java.version>2.43.1</selenium-java.version>-->
         <selenium-java.version>2.45.0</selenium-java.version>
         <!--<testng.suite>${basedir}/src/test/resources/testsuites/default_console_suite.xml</testng.suite>-->
-        <!--<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>-->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <driver.path>${basedir}/src/test/resources/drivers</driver.path>
         <maven.compiler.source>1.7</maven.compiler.source>
         <maven.compiler.target>1.7</maven.compiler.target>
@@ -49,9 +49,62 @@
                 <inherited>true</inherited>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.3</version>
                 <configuration>
                     <source>${maven.compiler.source}</source>
                     <target>${maven.compiler.target}</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.jvnet.jaxb2.maven2</groupId>
+                <artifactId>maven-jaxb2-plugin</artifactId>
+                <version>0.8.3</version>
+                <executions>
+                    <execution>
+                        <id>schema1-generate-auto</id>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                        <configuration>
+                            <schemaDirectory>${basedir}/src/main/resources/xsds/auto</schemaDirectory>
+                            <generatePackage>com.revimedia.testing.beans.auto</generatePackage>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>schema2-generate-health</id>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                        <configuration>
+                            <schemaDirectory>${basedir}/src/main/resources/xsds/health</schemaDirectory>
+                            <generatePackage>com.revimedia.testing.beans.health</generatePackage>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>schema3-generate-homesecurity</id>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                        <configuration>
+                            <schemaDirectory>${basedir}/src/main/resources/xsds/homesecurity</schemaDirectory>
+                            <generatePackage>com.revimedia.testing.beans.homesecurity</generatePackage>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>schema4-generate-home</id>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                        <configuration>
+                            <schemaDirectory>${basedir}/src/main/resources/xsds/home</schemaDirectory>
+                            <generatePackage>com.revimedia.testing.beans.home</generatePackage>
+                        </configuration>
+                    </execution>
+                </executions>
+                <configuration>
+                    <forceRegenerate>true</forceRegenerate>
+                    <!--<verbose>true</verbose>-->
+                    <!--<extension>true</extension>-->
                 </configuration>
             </plugin>
         </plugins>
@@ -70,16 +123,108 @@
             <artifactId>testng</artifactId>
             <version>6.8.8</version>
         </dependency>
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.11</version>
-        </dependency>
+        <!--        <dependency>
+                    <groupId>junit</groupId>
+                    <artifactId>junit</artifactId>
+                    <version>4.11</version>
+                </dependency>-->
         <dependency>
             <groupId>org.hamcrest</groupId>
             <artifactId>hamcrest-all</artifactId>
             <version>1.3</version>
         </dependency>
+
+        <dependency>
+            <groupId>joda-time</groupId>
+            <artifactId>joda-time</artifactId>
+            <version>2.7</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>1.7.7</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.4</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>2.2.4</version>
+        </dependency>
+
+        <dependency>
+            <groupId>commons-beanutils</groupId>
+            <artifactId>commons-beanutils</artifactId>
+            <version>1.9.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.github.detro.ghostdriver</groupId>
+            <artifactId>phantomjsdriver</artifactId>
+            <version>1.1.0</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.seleniumhq.selenium</groupId>
+                    <artifactId>selenium-remote-driver</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.seleniumhq.selenium</groupId>
+                    <artifactId>selenium-server</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <dependency>
+            <groupId>net.lightbody.bmp</groupId>
+            <artifactId>browsermob-proxy</artifactId>
+            <version>2.0.0</version>
+            <exclusions>
+                <!--SLF4J: Class path contains multiple SLF4J bindings.-->
+                <!--SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.-->
+                <exclusion>
+                    <groupId>org.slf4j</groupId>
+                    <artifactId>slf4j-jdk14</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+
+        <!--
+                <dependency>
+                    <groupId>net.lightbody.bmp</groupId>
+                    <artifactId>browsermob-proxy</artifactId>
+                    <version>2.0-beta-9</version>
+                    <exclusions>
+                        <exclusion>
+                            <groupId>org.seleniumhq.selenium</groupId>
+                            <artifactId>selenium-api</artifactId>
+                        </exclusion>
+                        <exclusion>
+                            <groupId>org.slf4j</groupId>
+                            <artifactId>slf4j-jdk14</artifactId>
+                        </exclusion>
+                        <exclusion>
+                            <groupId>log4j</groupId>
+                            <artifactId>log4j</artifactId>
+                        </exclusion>
+                       <exclusion>
+                            <groupId>org.apache.httpcomponents</groupId>
+                            <artifactId>httpclient</artifactId>
+                        </exclusion>
+                        <exclusion>
+                            <groupId>commons-httpclient</groupId>
+                            <artifactId>commons-httpclient</artifactId>
+                        </exclusion>
+                    </exclusions>
+                </dependency>
+        -->
+
+
     </dependencies>
 
 </project>

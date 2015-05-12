@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="3" name="Company Name AUTO" parallel="tests">
+
+    <listeners>
+        <listener class-name="org.uncommons.reportng.HTMLReporter"/>
+        <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
+    </listeners>
+
+    <test name="FirstTest IE">
+        <parameter name="browser" value="ie"/>
+        <parameter name="version" value="7"/>
+        <!--<parameter name="platform" value="MAC"/>-->
+        <parameter name="url" value="http://ya.ru"/>
+        <classes>
+            <class name="parametrized.runsuite.TestCase"/>
+        </classes>
+    </test>
+    <!-- Test -->
+    <test name="SecondTest FireFox">
+        <parameter name="browser" value="ie"/>
+        <parameter name="version" value="7"/>
+        <!--<parameter name="platform" value="WINDOWS"/>-->
+        <parameter name="url" value="http://ya.ru"/>
+        <classes>
+            <class name="parametrized.runsuite.TestCase"/>
+        </classes>
+    </test>
+    <!-- Test -->
+    <test name="ThirdTest Chrome">
+        <parameter name="browser" value="ie"/>
+        <parameter name="version" value="7"/>
+        <!--<parameter name="platform" value="MAC"/>-->
+        <parameter name="url" value="http://yahoo.com"/>
+        <classes>
+            <class name="parametrized.runsuite.TestCase"/>
+        </classes>
+    </test>
+    <!-- Test -->
+</suite> <!-- Suite -->

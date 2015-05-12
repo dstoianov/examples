@@ -12,7 +12,6 @@ import java.util.GregorianCalendar;
  */
 public class CompareTest {
 
-
     @Test
     public void testName() throws Exception {
 
@@ -40,12 +39,9 @@ public class CompareTest {
         boolean equals = attribute1.equals(attribute2);
         boolean equals2 = attribute1.equals(attribute3);
 
-
         System.out.println(equals);
         System.out.println(equals2);
-
     }
-
 
     @Test
     public void testName3() throws Exception {

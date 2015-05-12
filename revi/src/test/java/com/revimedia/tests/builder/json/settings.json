@@ -1,0 +1,91 @@
+{
+  "target": "#bq-form-here",
+  "affiliateId": 1,
+  "affiliateSubId": "",
+  "affiliateSubId2": "",
+  "sourceId": "",
+  "thank_you": null,
+  "transactionId": "",
+  "surveyPath": "AutoFrameSteps",
+  "isEndPageExist": false,
+  "vertical": "auto",
+  "campaignName": "zipcode",
+  "campaignType": "LongForm",
+  "GAtrack": "cds-auto-a",
+  "redirectDelay": 30000,
+  "endoffer_id": 176,
+  "cds2": true,
+  "container": "#bq-form-here",
+  "swipe": true,
+  "inboundPhoneNumber": "(888) 237-8786",
+  "inboundPhoneNumberFormatted": "(888) 237-8786",
+  "scrollTop": true,
+  "validationViewType": "highlightElementWhenError",
+  "wl": {
+    "c": {
+      "headTitle": "CheaperCarInsurance.net"
+    },
+    "mf": {
+      "headTitle": "InsuranceComparisons.org"
+    }
+  },
+  "campaign": "a",
+  "offerId": "",
+  "prepopIp": false,
+  "fromTrack": "cds-auto-a",
+  "updateSurvey": "AutoFrameSteps",
+  "withoutPixel": "",
+  "isPrepopFilled": true,
+  "prepoparea": false,
+  "telesign": null,
+  "progressbarStart": 0,
+  "bWoopraOn": false,
+  "buildenv": false,
+  "origin": "http://localhost:8093",
+  "cdsBase": "/",
+  "step": 1,
+  "isIE7": false,
+  "isPopout": false,
+  "isUpsell": false,
+  "iOS": false,
+  "iOSChromeBrowser": null,
+  "IE": false,
+  "ajaxBase": "/",
+  "url": {
+    "data": {
+      "attr": {
+        "fragment": "page/1",
+        "query": "",
+        "file": "",
+        "directory": "/auto/a/",
+        "path": "/auto/a/",
+        "relative": "/auto/a/#page/1",
+        "port": "8093",
+        "host": "localhost",
+        "password": "",
+        "user": "",
+        "userInfo": "",
+        "authority": "localhost:8093",
+        "protocol": "http",
+        "source": "http://localhost:8093/auto/a/#page/1",
+        "base": "http://localhost:8093"
+      },
+      "param": {
+        "query": {},
+        "fragment": {
+          "page/1": ""
+        }
+      },
+      "seg": {
+        "path": [
+          "auto",
+          "a"
+        ],
+        "fragment": [
+          "page",
+          "1"
+        ]
+      }
+    }
+  }
+}
