@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="ReportNG  test" verbose="1">
+
+    <listeners>
+        <listener class-name="org.uncommons.reportng.HTMLReporter"/>
+        <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
+    </listeners>
+    <test name="Example of Test NG">
+
+        <parameter name="browser" value="Chrome"></parameter>
+        <parameter name="baseURL1" value="http://wipro.annectos.net"></parameter>
+        <!--<sysproperty key="org.uncommons.reportng.escape-output" value="false"/>-->
+        <!--<sysproperty key="org.uncommons.reportng.title" value="My Test Report 1234"/>-->
+        <classes>
+            <class name="parametrized.suite.s2.Init"/>
+            <class name="parametrized.suitdto.TestWithTO"/>
+        </classes>
+    </test>
+</suite>

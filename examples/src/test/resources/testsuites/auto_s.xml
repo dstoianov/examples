@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="1" name="Auto S Campaign" parallel="tests">
+
+    <listeners>
+        <listener class-name="org.uncommons.reportng.HTMLReporter"/>
+        <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
+    </listeners>
+
+    <test name="Chrome Browser, Latest Version">
+        <parameter name="browser" value="chrome"/>
+        <parameter name="version" value="any"/>
+        <parameter name="url" value="http://development.stagingrevi.com/auto/s/"/>
+        <classes>
+            <class name="com.revimedia.tests.cds.auto.mfs.SubmitTests"/>
+            <class name="com.revimedia.tests.cds.auto.mfs.DisclaimersTests"/>
+            <class name="com.revimedia.tests.cds.auto.mfs.EBureauVerificationTests"/>
+            <class name="com.revimedia.tests.cds.auto.mfs.PrePopParametersTests"/>
+        </classes>
+
+    </test>
+
+</suite>

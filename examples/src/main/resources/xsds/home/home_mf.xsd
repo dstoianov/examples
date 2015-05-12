@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified"
+           elementFormDefault="qualified">
+    <xs:element name="LeadData" type="LeadDataType"/>
+    <xs:complexType name="InsuranceType">
+        <xs:sequence>
+            <xs:element type="RequestedPolicyType" name="RequestedPolicy"/>
+            <xs:element type="CurrentPolicyType" name="CurrentPolicy"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="HomesType">
+        <xs:sequence>
+            <xs:element type="HomeType" name="Home"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="CurrentPolicyType">
+        <xs:sequence>
+            <xs:element type="xs:string" name="ExpirationDate"/>
+            <xs:element type="xs:string" name="InsuredSince"/>
+            <xs:element type="xs:string" name="InsuranceCompany"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="FeaturesType">
+        <xs:sequence>
+            <xs:element type="xs:string" name="BrushHazard"/>
+            <xs:element type="xs:string" name="CentralAirConditioning"/>
+            <xs:element type="xs:string" name="CopperWaterPipes"/>
+            <xs:element type="xs:string" name="CoveredDeckOrPatio"/>
+            <xs:element type="xs:string" name="Deadbolts"/>
+            <xs:element type="xs:string" name="FireExtinguisher"/>
+            <xs:element type="xs:string" name="FireHydrant"/>
+            <xs:element type="xs:string" name="Fireplace"/>
+            <xs:element type="xs:string" name="Electricity"/>
+            <xs:element type="xs:string" name="HotTub"/>
+            <xs:element type="xs:string" name="IndoorSprinklers"/>
+            <xs:element type="xs:string" name="Sauna"/>
+            <xs:element type="xs:string" name="SmokerInHousehold"/>
+            <xs:element type="xs:string" name="SumpPump"/>
+            <xs:element type="xs:string" name="SwimmingPool"/>
+            <xs:element type="xs:string" name="SwimmingPoolIsFenced"/>
+            <xs:element type="xs:string" name="Trampoline"/>
+            <xs:element type="xs:string" name="WoodburningStove"/>
+            <xs:element type="xs:string" name="NearFireStation"/>
+            <xs:element type="xs:string" name="FloodPlain"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="AffiliateDataType">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute type="xs:string" name="Id"/>
+                <xs:attribute type="xs:string" name="OfferId"/>
+                <xs:attribute type="xs:string" name="SubId"/>
+                <xs:attribute type="xs:string" name="Sub2Id"/>
+                <xs:attribute type="xs:string" name="Source"/>
+                <xs:attribute type="xs:string" name="SurveyPath"/>
+                <xs:attribute type="xs:string" name="TransactionId"/>
+                <xs:attribute type="xs:string" name="LeadId"/>
+                <xs:attribute type="xs:string" name="VerifyAddress"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+    <xs:complexType name="PersonType">
+        <xs:sequence>
+            <xs:element type="xs:string" name="BirthDate"/>
+            <xs:element type="xs:string" name="Gender"/>
+            <xs:element type="xs:string" name="CreditRating"/>
+            <xs:element type="xs:string" name="Occupation"/>
+            <xs:element type="xs:string" name="Education"/>
+            <xs:element type="xs:string" name="MaritalStatus"/>
+            <xs:element type="xs:string" name="YearsAtPreviousResidence"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="QuoteRequestType">
+        <xs:sequence>
+            <xs:element type="HomesType" name="Homes"/>
+            <xs:element type="PersonType" name="Person"/>
+            <xs:element type="InsuranceType" name="Insurance"/>
+        </xs:sequence>
+        <xs:attribute type="xs:string" name="QuoteType"/>
+    </xs:complexType>
+    <xs:complexType name="HomeType">
+        <xs:sequence>
+            <xs:element type="PropertyAddressType" name="PropertyAddress"/>
+            <xs:element type="xs:string" name="Deductible"/>
+            <xs:element type="xs:string" name="Bathrooms"/>
+            <xs:element type="xs:string" name="Bedrooms"/>
+            <xs:element type="xs:string" name="ConstructionClass"/>
+            <xs:element type="xs:string" name="ConstructionType"/>
+            <xs:element type="xs:string" name="DwellingValue"/>
+            <xs:element type="xs:string" name="Dog"/>
+            <xs:element type="xs:string" name="DangerousDogBreed"/>
+            <xs:element type="xs:string" name="IsLivingHere"/>
+            <xs:element type="xs:string" name="ExteriorWalls"/>
+            <xs:element type="xs:string" name="FireAlarm"/>
+            <xs:element type="xs:string" name="Foundation"/>
+            <xs:element type="xs:string" name="Garage"/>
+            <xs:element type="xs:string" name="MunicipalLocation"/>
+            <xs:element type="xs:string" name="NewlyPurchased"/>
+            <xs:element type="xs:string" name="Stories"/>
+            <xs:element type="xs:string" name="Occupancy"/>
+            <xs:element type="xs:string" name="PropertyOwned"/>
+            <xs:element type="xs:string" name="PanelType"/>
+            <xs:element type="xs:string" name="PrimaryHeating"/>
+            <xs:element type="xs:string" name="ProximityWater"/>
+            <xs:element type="xs:string" name="RoofAge"/>
+            <xs:element type="xs:string" name="RoofType"/>
+            <xs:element type="xs:string" name="HomeSecurity"/>
+            <xs:element type="xs:string" name="SquareFootage"/>
+            <xs:element type="xs:string" name="PropertyType"/>
+            <xs:element type="xs:string" name="WiringType"/>
+            <xs:element type="xs:string" name="YearBuilt"/>
+            <xs:element type="xs:string" name="YearUpgraded"/>
+            <xs:element type="FeaturesType" name="Features"/>
+            <xs:element type="xs:string" name="ClaimsOrLossesPast5Years"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="RequestedPolicyType">
+        <xs:sequence>
+            <xs:element type="xs:string" name="InterestedMortgageProtection"/>
+            <xs:element type="xs:string" name="PersonalLiabilityCoverage"/>
+            <xs:element type="xs:string" name="CoverageType"/>
+            <xs:element type="xs:string" name="CoverageAmount"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="LeadDataType">
+        <xs:sequence>
+            <xs:element type="AffiliateDataType" name="AffiliateData"/>
+            <xs:element type="QuoteRequestType" name="QuoteRequest"/>
+            <xs:element type="ContactDataType" name="ContactData"/>
+        </xs:sequence>
+        <xs:attribute type="xs:string" name="Target"/>
+        <xs:attribute type="xs:string" name="RequestTime"/>
+        <xs:attribute type="xs:string" name="TimeZone"/>
+        <xs:attribute type="xs:string" name="UserAgent"/>
+        <xs:attribute type="xs:string" name="SessionLength"/>
+        <xs:attribute type="xs:string" name="TCPAText"/>
+    </xs:complexType>
+    <xs:complexType name="ContactDataType">
+        <xs:sequence>
+            <xs:element type="xs:string" name="FirstName"/>
+            <xs:element type="xs:string" name="LastName"/>
+            <xs:element type="xs:string" name="PhoneNumber"/>
+            <xs:element type="xs:string" name="Address"/>
+            <xs:element type="xs:string" name="EmailAddress"/>
+            <xs:element type="xs:string" name="ZipCode"/>
+            <xs:element type="xs:string" name="City"/>
+            <xs:element type="xs:string" name="IPAddress"/>
+            <xs:element type="xs:string" name="State"/>
+            <xs:element type="xs:string" name="BirthDate"/>
+            <xs:element type="xs:string" name="YearsAtResidence"/>
+            <xs:element type="xs:string" name="MonthsAtResidence"/>
+            <xs:element type="xs:string" name="ResidenceType"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="PropertyAddressType">
+        <xs:sequence>
+            <xs:element type="xs:string" name="ZipCode"/>
+            <xs:element type="xs:string" name="City"/>
+            <xs:element type="xs:string" name="State"/>
+            <xs:element type="xs:string" name="Address1"/>
+            <xs:element type="xs:string" name="Address2"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

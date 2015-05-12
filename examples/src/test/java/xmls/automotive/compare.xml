@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LeadData Target="Lead.CDSInsert" RequestTime="2014-05-16 00:10:30" TimeZone="+0300"
+          UserAgent="Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/34.0.1847.131 Safari/537.36"
+          SessionLength="51">
+    <AffiliateData Id="1" OfferId="" SubId="" Sub2Id="" Source="" SurveyPath="COPY_OF_auto-frame2" TransactionId=""
+                   LeadId="D6772527-17AA-003B-49C5-B778F29B8CCE" TrustedFormCertUrl="" VerifyAddress="true"/>
+    <ContactData>
+        <FirstName>Erwr</FirstName>
+        <LastName>Wrewrew</LastName>
+        <PhoneNumber>5565656656</PhoneNumber>
+        <Address>werw 44</Address>
+        <EmailAddress>rtrtrt@fdf.ru</EmailAddress>
+        <ZipCode>10102</ZipCode>
+        <City>NEW YORK</City>
+        <State>NY</State>
+        <ContactTime>Morning</ContactTime>
+        <ContactMethod>Phone</ContactMethod>
+        <IPAddress>192.168.0.1</IPAddress>
+    </ContactData>
+    <QuoteRequest QuoteType="Automotive-New">
+        <Drivers>
+            <Driver>
+                <BirthDate>1975-01-01</BirthDate>
+                <Gender>Male</Gender>
+            </Driver>
+        </Drivers>
+        <Vehicles>
+            <Vehicle>
+                <VIN>WAUMFBFM0D0000000</VIN>
+                <DecidedPurchase>Ready to buy</DecidedPurchase>
+                <InterestedIn>New cars</InterestedIn>
+                <Financing>Credit union</Financing>
+                <CarBuyTimeFrame>1 week</CarBuyTimeFrame>
+            </Vehicle>
+        </Vehicles>
+    </QuoteRequest>
+</LeadData>

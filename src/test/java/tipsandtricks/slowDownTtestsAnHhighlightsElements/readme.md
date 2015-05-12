@@ -1,1 +1,0 @@
-http://software-testing.ru/library/testing/functional-testing/1440-selenium2-slow-highlight

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LeadData Target="Lead.CDSInsert" RequestTime="2014-05-16 20:54:00" TimeZone="+0300"
+          UserAgent="Mozilla/5.0 (Windows NT 6.1; WOW64; rv:29.0) Gecko/20100101 Firefox/29.0" SessionLength="93351">
+    <AffiliateData Id="1" OfferId="" SubId="" Sub2Id="" Source="" SurveyPath="AutoFrameSteps" TransactionId=""
+                   LeadId="6B4F83DF-B42D-B84F-68C2-8F33CA0E3502" VerifyAddress="true"/>
+    <QuoteRequest QuoteType="Auto">
+        <Drivers>
+            <Driver>
+                <FirstName>Dff</FirstName>
+                <LastName>Fghfhgf</LastName>
+                <Gender>Male</Gender>
+                <BirthDate>1962-02-05</BirthDate>
+                <LicenseState>NY</LicenseState>
+                <AgeLicensed>16</AgeLicensed>
+                <YearsAtEmployer>5</YearsAtEmployer>
+                <RequiresSR22Filing>No</RequiresSR22Filing>
+                <LicenseEverSuspendedRevoked>No</LicenseEverSuspendedRevoked>
+                <CreditRating>Good</CreditRating>
+                <Occupation>Employeed</Occupation>
+                <LicenseStatus>Current</LicenseStatus>
+                <Education>Doctorate Degree</Education>
+                <MaritalStatus>Married</MaritalStatus>
+                <RelationshipToApplicant>self</RelationshipToApplicant>
+            </Driver>
+        </Drivers>
+        <Vehicles>
+            <Vehicle>
+                <AnnualMiles>12500</AnnualMiles>
+                <CollisionDeductible>500</CollisionDeductible>
+                <ComphrensiveDeductible>500</ComphrensiveDeductible>
+                <Garage>No Cover</Garage>
+                <OneWayDistance>10-19</OneWayDistance>
+                <PrimaryUse>Commute To/From Work</PrimaryUse>
+                <Ownership>Yes</Ownership>
+                <WeeklyCommuteDays>5</WeeklyCommuteDays>
+                <Year>2012</Year>
+                <Make>BUICK</Make>
+                <Model>LaCrosse</Model>
+            </Vehicle>
+            <Vehicle>
+                <Year>2011</Year>
+                <Make>CADILLAC</Make>
+                <Model>DTS Luxury Collection</Model>
+                <AnnualMiles>12500</AnnualMiles>
+                <CollisionDeductible>500</CollisionDeductible>
+                <ComphrensiveDeductible>500</ComphrensiveDeductible>
+                <Garage>No Cover</Garage>
+                <OneWayDistance>10-19</OneWayDistance>
+                <PrimaryUse>Commute To/From Work</PrimaryUse>
+                <Ownership>Yes</Ownership>
+                <WeeklyCommuteDays>5</WeeklyCommuteDays>
+            </Vehicle>
+            <Vehicle>
+                <Year>1993</Year>
+                <Make>BUICK</Make>
+                <Model>Park Avenue Ultra Supercharged</Model>
+                <AnnualMiles>12500</AnnualMiles>
+                <CollisionDeductible>500</CollisionDeductible>
+                <ComphrensiveDeductible>500</ComphrensiveDeductible>
+                <Garage>No Cover</Garage>
+                <OneWayDistance>10-19</OneWayDistance>
+                <PrimaryUse>Commute To/From Work</PrimaryUse>
+                <Ownership>Yes</Ownership>
+                <WeeklyCommuteDays>5</WeeklyCommuteDays>
+            </Vehicle>
+        </Vehicles>
+        <Insurance>
+            <CurrentPolicy>
+                <ExpirationDate>2014-06-16</ExpirationDate>
+                <InsuredSince>2011-05-16</InsuredSince>
+                <InsuranceCompany>AFLAC</InsuranceCompany>
+            </CurrentPolicy>
+            <RequestedPolicy>
+                <PropertyDamage/>
+                <CoverageType>Standard Protection</CoverageType>
+                <BodilyInjury/>
+            </RequestedPolicy>
+        </Insurance>
+    </QuoteRequest>
+    <ContactData>
+        <FirstName>Dff</FirstName>
+        <LastName>Fghfhgf</LastName>
+        <PhoneNumber>5656566565</PhoneNumber>
+        <Address>fghfghf 454</Address>
+        <EmailAddress>cjhj@dfhjh.ru</EmailAddress>
+        <ZipCode>10101</ZipCode>
+        <City>NEW YORK</City>
+        <IPAddress>192.168.0.1</IPAddress>
+        <State>NY</State>
+        <YearsAtResidence>1</YearsAtResidence>
+        <MonthsAtResidence>0</MonthsAtResidence>
+        <ResidenceType>My own house</ResidenceType>
+    </ContactData>
+</LeadData>

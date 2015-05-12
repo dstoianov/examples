@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LeadData Target="Lead.CDSInsert" RequestTime="2014-05-16 00:15:03" TimeZone="+0300"
+          UserAgent="Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/34.0.1847.131 Safari/537.36"
+          SessionLength="33">
+    <AffiliateData Id="1" OfferId="" SubId="" Sub2Id="" Source="" SurveyPath="COPY_OF_auto-frame2" TransactionId=""
+                   LeadId="D6772527-17AA-003B-49C5-B778F29B8CCE" TrustedFormCertUrl="" VerifyAddress="true"/>
+    <ContactData>
+        <FirstName>Gdfgdf</FirstName>
+        <LastName>Gdfgdfgd</LastName>
+        <PhoneNumber>5656565656</PhoneNumber>
+        <Address>fgdfgdf 44</Address>
+        <EmailAddress>dfgdf@dfdf.ru</EmailAddress>
+        <ZipCode>20202</ZipCode>
+        <City>WASHINGTON</City>
+        <State>DC</State>
+        <ContactTime>Morning</ContactTime>
+        <ContactMethod>Email</ContactMethod>
+        <IPAddress>192.168.0.1</IPAddress>
+    </ContactData>
+    <QuoteRequest QuoteType="Automotive-New">
+        <Drivers>
+            <Driver>
+                <BirthDate>1975-01-01</BirthDate>
+                <Gender>Male</Gender>
+            </Driver>
+        </Drivers>
+        <Vehicles>
+            <Vehicle>
+                <VIN>WAUKEBFM0D0000000</VIN>
+                <DecidedPurchase>Ready to buy</DecidedPurchase>
+                <InterestedIn>New cars</InterestedIn>
+                <Financing>Lease</Financing>
+                <CarBuyTimeFrame>1 week</CarBuyTimeFrame>
+                <Dealers>
+                    <DealerID>67FF3592-FA1A-4F37-955E-9B6CDE9B94C9</DealerID>
+                </Dealers>
+            </Vehicle>
+        </Vehicles>
+    </QuoteRequest>
+</LeadData>

@@ -1,0 +1,8 @@
+vitalik-selenium-py | Summary: vitalik-selenium-py | URL: https://code.google.com/p/vitalik-selenium-py/
+pfs-vostapenko | Summary: Программирование для тестировщиков – Василий Остапенко | URL: https://code.google.com/p/pfs-vostapenko/
+se-java-belikov | Summary: Курс Selenium и Java – Александр Беликов | URL: https://code.google.com/p/se-java-belikov/
+se-java-ivoueva | Summary: Курс Selenium и Java – Воюева Ирина | URL: https://code.google.com/p/se-java-ivoueva/
+se-java-kolesnikova | Summary: Курс Selenium и Java - Светлана Колесникова | URL: https://code.google.com/p/se-java-kolesnikova/
+se-java-panasiuk | Summary: Курс Selenium и Java – Дмитрий Панасюк | URL: https://code.google.com/p/se-java-panasiuk/
+se-java-speransky | Summary: Курс Selenium и Java – Сперанский | URL: https://code.google.com/p/se-java-speransky/
+se-py-olgasmirnova | Summary: selenium 2.0 + python, 3, Smirnova Olga | URL: https://code.google.com/p/se-py-olgasmirnova/

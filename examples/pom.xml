@@ -1,0 +1,510 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.companyname.tests</groupId>
+        <artifactId>examples-module</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
+    <!--<groupId>JavaExamples</groupId>-->
+    <artifactId>examples</artifactId>
+    <!-- <version>1.0-SNAPSHOT</version>-->
+
+    <name>Java Examples Project</name>
+
+
+    <properties>
+        <!--<selenium-java.version>2.43.1</selenium-java.version>-->
+        <selenium-java.version>2.45.0</selenium-java.version>
+        <testng.suite>${basedir}/src/test/resources/testsuites/default_console_suite.xml</testng.suite>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <driver.path>${basedir}/src/test/resources/drivers</driver.path>
+        <maven.compiler.source>1.7</maven.compiler.source>
+        <maven.compiler.target>1.7</maven.compiler.target>
+    </properties>
+
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.16</version>
+                <configuration>
+                    <suiteXmlFiles>
+                        <suiteXmlFile>${testng.suite}</suiteXmlFile>
+                    </suiteXmlFiles>
+                    <junitArtifactName>none:none</junitArtifactName>
+                    <systemPropertyVariables>
+                        <!--<phantomjs.binary.path>${basedir}/lib/phantomjs/phantomjs-1.9.7-windows/phantomjs.exe-->
+                        <!--</phantomjs.binary.path>-->
+                        <org.uncommons.reportng.title>Automation Project</org.uncommons.reportng.title>
+                        <!--<org.uncommons.reportng.show-expected-exceptions>false</org.uncommons.reportng.show-expected-exceptions>-->
+                        <org.uncommons.reportng.escape-output>turn off</org.uncommons.reportng.escape-output>
+                        <!--<org.uncommons.reportng.velocity-log>true</org.uncommons.reportng.velocity-log>-->
+                        <webdriver.chrome.driver>${driver.path}/chromedriver.exe</webdriver.chrome.driver>
+                        <webdriver.ie.driver>${driver.path}/IEDriverServer.exe</webdriver.ie.driver>
+                        <phantomjs.binary.path>${driver.path}/phantomjs.exe</phantomjs.binary.path>
+                    </systemPropertyVariables>
+                    <!--<additionalClasspathElements>-->
+                    <!--<additionalClasspathElement>${basedir}/src/test/resources/drivers</additionalClasspathElement>-->
+                    <!--</additionalClasspathElements>-->
+                </configuration>
+            </plugin>
+
+
+            <plugin>
+                <groupId>org.jvnet.jaxb2.maven2</groupId>
+                <artifactId>maven-jaxb2-plugin</artifactId>
+                <version>0.8.3</version>
+                <executions>
+                    <execution>
+                        <id>schema1-generate-auto</id>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                        <configuration>
+                            <schemaDirectory>${basedir}/src/main/resources/xsds/auto</schemaDirectory>
+                            <generatePackage>com.revimedia.testing.beans.auto</generatePackage>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>schema2-generate-health</id>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                        <configuration>
+                            <schemaDirectory>${basedir}/src/main/resources/xsds/health</schemaDirectory>
+                            <generatePackage>com.revimedia.testing.beans.health</generatePackage>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>schema3-generate-homesecurity</id>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                        <configuration>
+                            <schemaDirectory>${basedir}/src/main/resources/xsds/homesecurity</schemaDirectory>
+                            <generatePackage>com.revimedia.testing.beans.homesecurity</generatePackage>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>schema4-generate-home</id>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                        <configuration>
+                            <schemaDirectory>${basedir}/src/main/resources/xsds/home</schemaDirectory>
+                            <generatePackage>com.revimedia.testing.beans.home</generatePackage>
+                        </configuration>
+                    </execution>
+                </executions>
+                <configuration>
+                    <forceRegenerate>true</forceRegenerate>
+                    <!--<verbose>true</verbose>-->
+                    <!--<extension>true</extension>-->
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <inherited>true</inherited>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>${maven.compiler.source}</source>
+                    <target>${maven.compiler.target}</target>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-site-plugin</artifactId>
+                <version>2.4</version>
+                <!-- latest version is 3.4 -->
+            </plugin>
+            <!--mvn versions:display-dependency-updates-->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>versions-maven-plugin</artifactId>
+                <version>2.1</version>
+            </plugin>
+        </plugins>
+    </build>
+
+
+    <dependencies>
+
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>${selenium-java.version}</version>
+            <!--            <exclusions>
+                            <exclusion>
+                                <artifactId>httpclient</artifactId>
+                                <groupId>org.apache.httpcomponents</groupId>
+                            </exclusion>
+                        </exclusions>-->
+        </dependency>
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>6.8.8</version>
+            <!--<scope>test</scope>-->
+        </dependency>
+
+        <dependency>
+            <groupId>ru.yandex.qatools.htmlelements</groupId>
+            <artifactId>htmlelements-java</artifactId>
+            <version>1.13</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.hamcrest</groupId>
+            <artifactId>hamcrest-all</artifactId>
+            <version>1.3</version>
+        </dependency>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-all</artifactId>
+            <version>1.8.5</version>
+        </dependency>
+        <!--<dependency>-->
+        <!--<groupId>org.xmlmatchers</groupId>-->
+        <!--<artifactId>xml-matchers</artifactId>-->
+        <!--<version>0.10</version>-->
+        <!--</dependency>-->
+
+        <dependency>
+            <groupId>com.jcraft</groupId>
+            <artifactId>jsch</artifactId>
+            <version>0.1.50</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi</artifactId>
+            <version>3.9</version>
+        </dependency>
+
+        <dependency>
+            <groupId>xml-apis</groupId>
+            <artifactId>xml-apis</artifactId>
+            <version>1.4.01</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi-ooxml</artifactId>
+            <version>3.9</version>
+        </dependency>
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.11</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.jsoup</groupId>
+            <artifactId>jsoup</artifactId>
+            <version>1.7.3</version>
+        </dependency>
+        <dependency>
+            <groupId>jacob-project</groupId>
+            <artifactId>jacob</artifactId>
+            <version>1.17</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/../lib/jacob.jar</systemPath>
+        </dependency>
+        <!--        <dependency>
+                    <groupId>autoitx4java</groupId>
+                    <artifactId>autoitx4java</artifactId>
+                    <version>0.0.1</version>
+                    <scope>system</scope>
+                    <systemPath>${project.basedir}/lib/AutoItX4Java.jar</systemPath>
+                </dependency>-->
+
+        <dependency>
+            <groupId>org.uncommons</groupId>
+            <artifactId>reportng</artifactId>
+            <version>1.1.4</version>
+            <scope>test</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.testng</groupId>
+                    <artifactId>testng</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>com.google.inject</groupId>
+            <artifactId>guice</artifactId>
+            <version>3.0</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!--        <dependency>
+                    <groupId>org.databene</groupId>
+                    <artifactId>feed4testng</artifactId>
+                    <version>1.0</version>
+                </dependency>-->
+
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.3.2</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>org.fluttercode.datafactory</groupId>
+            <artifactId>datafactory</artifactId>
+            <version>0.8</version>
+            <type>jar</type>
+        </dependency>
+
+        <dependency>
+            <groupId>org.jfairy</groupId>
+            <artifactId>jfairy</artifactId>
+            <version>0.2.4</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.slf4j</groupId>
+                    <artifactId>slf4j-log4j12</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>log4j</groupId>
+                    <artifactId>log4j</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <dependency>
+            <groupId>com.github.javafaker</groupId>
+            <artifactId>javafaker</artifactId>
+            <version>0.3</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.slf4j</groupId>
+                    <artifactId>slf4j-simple</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>log4j</groupId>
+                    <artifactId>log4j</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>1.7.5</version>
+        </dependency>
+
+        <dependency>
+            <groupId>net.lightbody.bmp</groupId>
+            <artifactId>browsermob-proxy</artifactId>
+            <version>2.0-beta-9</version>
+            <!--<scope>test</scope>-->
+            <exclusions>
+                <exclusion>
+                    <groupId>org.seleniumhq.selenium</groupId>
+                    <artifactId>selenium-api</artifactId>
+                </exclusion>
+
+                <exclusion>
+                    <groupId>org.slf4j</groupId>
+                    <artifactId>slf4j-jdk14</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>log4j</groupId>
+                    <artifactId>log4j</artifactId>
+                </exclusion>
+
+                <exclusion>
+                    <groupId>org.apache.httpcomponents</groupId>
+                    <artifactId>httpclient</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>commons-httpclient</groupId>
+                    <artifactId>commons-httpclient</artifactId>
+                </exclusion>
+
+            </exclusions>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+            <version>4.3.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.taskadapter</groupId>
+            <artifactId>redmine-java-api</artifactId>
+            <version>2.0.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>2.2.4</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-surefire-report-plugin</artifactId>
+            <version>2.17</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>com.github.detro.ghostdriver</groupId>
+            <artifactId>phantomjsdriver</artifactId>
+            <version>1.1.0</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.seleniumhq.selenium</groupId>
+                    <artifactId>selenium-remote-driver</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.seleniumhq.selenium</groupId>
+                    <artifactId>selenium-server</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <!-- Yandex QA - tools examples-->
+        <dependency>
+            <groupId>ru.yandex.qatools.matchers</groupId>
+            <artifactId>webdriver-matchers</artifactId>
+            <version>1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>ru.yandex.qatools.matchers</groupId>
+            <artifactId>collection-matchers</artifactId>
+            <version>1.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>ru.yandex.qatools.matchers</groupId>
+            <artifactId>matcher-decorators</artifactId>
+            <version>1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.cthul</groupId>
+            <artifactId>cthul-matchers</artifactId>
+            <version>1.1.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.googlecode.lambdaj</groupId>
+            <artifactId>lambdaj</artifactId>
+            <version>2.3.3</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.hamcrest</groupId>
+                    <artifactId>hamcrest-all</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <dependency>
+            <groupId>javax.mail</groupId>
+            <artifactId>mail</artifactId>
+            <version>1.4</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.googlecode.gmail4j</groupId>
+            <artifactId>gmail4j</artifactId>
+            <version>0.4</version>
+        </dependency>
+
+        <!--        <dependency>
+                    <groupId>org.apache.httpcomponents</groupId>
+                    <artifactId>httpclient</artifactId>
+                    <version>4.4.1</version>
+                    &lt;!&ndash;<scope>compile</scope>&ndash;&gt;
+                </dependency>-->
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpmime</artifactId>
+            <version>4.3.2</version>
+            <!--<scope>compile</scope>-->
+        </dependency>
+
+
+    </dependencies>
+
+    <!--Repository for reporty-ng-->
+    <pluginRepositories>
+        <pluginRepository>
+            <id>reporty-ng</id>
+            <url>https://github.com/cosminaru/reporty-ng/raw/master/dist/maven</url>
+        </pluginRepository>
+    </pluginRepositories>
+
+
+    <profiles>
+        <profile>
+            <id>auto-mfs</id>
+            <properties>
+                <testng.suite>${basedir}/src/test/resources/testsuites/auto_mfs.xml</testng.suite>
+            </properties>
+        </profile>
+        <profile>
+            <id>auto-s</id>
+            <properties>
+                <testng.suite>${basedir}/src/test/resources/testsuites/auto_s.xml</testng.suite>
+            </properties>
+        </profile>
+        <profile>
+            <id>console</id>
+            <properties>
+                <testng.suite>${basedir}/src/test/resources/testsuites/default_console_suite.xml</testng.suite>
+            </properties>
+        </profile>
+        <profile>
+            <id>all-campaigns</id>
+            <properties>
+                <testng.suite>${basedir}/src/test/resources/testsuites/all_suites.xml</testng.suite>
+            </properties>
+        </profile>
+        <profile>
+            <id>bugs</id>
+            <properties>
+                <testng.suite>${basedir}/src/test/resources/testsuites/bugs.xml</testng.suite>
+            </properties>
+        </profile>
+    </profiles>
+
+    <reporting>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-report-plugin</artifactId>
+                <!--<version>2.18.1</version>-->
+            </plugin>
+            <!--<plugin>
+                <groupId>org.reportyng</groupId>
+                <artifactId>reporty-ng</artifactId>
+                <version>1.2</version>
+                <configuration>
+                    &lt;!&ndash;Setting the output directory&ndash;&gt;
+                    <outputDir>${project.basedir}/target/surefire-reports/testng-xslt/${pom.artifactId}</outputDir>
+                    &lt;!&ndash;Setting the testNgXslt.showRuntimeTotals flag&ndash;&gt;
+                    <showRuntimeTotals>true</showRuntimeTotals>
+                    &lt;!&ndash;Setting the testNgXslt.cssFile parameter. This should be relative to the '${basedir}/target/site/testng-xslt' directory&ndash;&gt;
+                    <sortTestCaseLinks>true</sortTestCaseLinks>
+                    <testDetailsFilter>FAIL,PASS,SKIP,CONF</testDetailsFilter>
+                </configuration>
+            </plugin>-->
+        </plugins>
+    </reporting>
+
+
+</project>

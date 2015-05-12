@@ -1,2 +1,0 @@
-pft-yarsentiev | Summary: Программирование для тестировщиков – <Юрий Арсентьев> | URL: https://code.google.com/p/pft-yarsentiev/
-se-java-podobytko | Summary: Курс Selenium и Java – Антон Подобытько | URL: https://code.google.com/p/se-java-podobytko/

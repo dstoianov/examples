@@ -1,0 +1,12 @@
+<suite name="Simple Logger Suite">
+    <listeners>
+        <listener class-name="tipsandtricks.testng.loggingAndReporting.CustomLogging"/>
+        <listener class-name="tipsandtricks.testng.loggingAndReporting.CustomReporter"/>
+        <listener class-name="tipsandtricks.testng.loggingAndReporting.CustomReport"/>
+    </listeners>
+    <test name="Simple Logger test">
+        <classes>
+            <class name="tipsandtricks.testng.loggingAndReporting.SampleTest"/>
+        </classes>
+    </test>
+</suite>

@@ -1,0 +1,798 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <title>jQuery Popup Overlay</title>
+
+    <meta name="description" content="jQuery plugin for responsive and accessible modal windows and tooltips."/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <!-- Bootstrap styles -->
+    <!--<link rel="stylesheet" href="http://getbootstrap.com/dist/css/bootstrap.min.css"/>-->
+    <link rel="stylesheet" href="bootstrap.css"/>
+
+    <!-- Font Awesome icons -->
+    <!--<link rel="stylesheet" href="http://weloveiconfonts.com/api/?family=fontawesome">-->
+
+    <!-- jQuery -->
+    <!--<script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>-->
+    <script src="jquery-1.8.2.min.js"></script>
+
+    <!-- jQuery Popup Overlay -->
+    <script src="jquery.popupoverlay.js"></script>
+
+    <!-- Custom styles for this template -->
+    <link href="signin.css" rel="stylesheet">
+
+    <!-- Custom styles for the demo page -->
+    <link href="default.css" rel="stylesheet">
+
+</head>
+<body>
+
+<div class="pagetop">
+    <div class="container">
+        <div class="page-header col-md-10 col-md-offset-1">
+            <h1>jQuery Popup Overlay</h1>
+
+            <p>jQuery plugin for responsive and accessible modal windows and tooltips</p>
+
+            <p class="h1">
+                <a href="https://github.com/vast-engineering/jquery-popup-overlay/archive/gh-pages.zip"
+                   class="btn btn-primary btn-success btn-lg">
+                    <span class="fontawesome-download-alt"></span> Download</a>
+                <a href="https://github.com/vast-engineering/jquery-popup-overlay" class="btn btn-lg btn-default">
+                    <span class="fontawesome-github"></span> View project on GitHub</a>
+            </p>
+
+            <p class="text-muted">Currently v1.7.6</p>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+
+    <section class="col-md-10 col-md-offset-1">
+
+        <h2>Demo</h2>
+
+        <p class="lineheight">
+            <a class="initialism test12_open btn btn-success" href="#test12">Sign in Form</a>
+            <a class="initialism basic_open btn btn-success" href="#basic">Basic</a>
+            <a class="initialism fade_open btn btn-success" href="#fade">Fade</a>
+            <a class="initialism fadeandscale_open btn btn-success" href="#fadeandscale">Fade &amp; scale</a>
+            <button class="initialism slide_open btn btn-success">Slide</button>
+            <button class="initialism standalone_open btn btn-success">Stand alone</button>
+            <a class="initialism active_bg_open btn btn-success" href="#active_bg">Active background</a>
+            <a href="#my_tooltip" class="initialism my_tooltip_open btn btn-success" id="my_tooltip_open">Tooltip</a>
+            <button class="initialism fall_open btn btn-success">Callback events</button>
+            <button class="initialism other_open btn btn-success">&hellip;</button>
+        </p>
+
+        <h3>Defaults</h3>
+
+        <table class="table table-bordered table-striped">
+            <thead>
+            <tr>
+                <td><p>Default values for options and events can be modified.</p></td>
+            </tr>
+            </thead>
+            <tr>
+                <td>
+                    <p>Example of cars:
+                        <select id="myselect0-0">
+                            <option value="volvo">Volvo</option>
+                            <option value="saab">Saab</option>
+                            <option value="mercedes">Mercedes</option>
+                            <option value="audi">Audi</option>
+                        </select>
+                    </p>
+                    <input type="checkbox" name="maths" value="on"> Maths
+                    <input type="checkbox" name="physics" value="off" checked> Physics<br>
+
+                    <input type="radio" name="subject" value="maths"> Maths
+                    <input type="radio" name="subject" value="physics"> Physics
+
+                    <p>
+                        <b> Animals: </b>
+                        <select size="1" name="animals">
+                            <option value="probiscus">probiscus</option>
+                            <option value="spider">spider</option>
+                            <option value="lemur">lemur</option>
+                            <option value="chimp">chimp</option>
+                            <option value="gorilla" selected="selected">gorilla</option>
+                            <option value="orangutan">orangutan</option>
+                        </select>
+                    </p>
+                    <input type="submit" name="submit" value="Submit"/>
+                    <input type="reset" name="reset" value="Reset"/>
+                    <input type="button" name="ok" value="OK"/>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td>
+                    <form name='registration' onSubmit="return formValidation();">
+                        <table width="60%">
+                            <tbody>
+                            <tr>
+                                <td>
+                                    <label for="userid">User id: </label>
+                                </td>
+                                <td>
+                                    <input type="text" id="userid" size="50"/><br>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="passid">Password: </label>
+                                </td>
+                                <td>
+                                    <input type="password" id="passid" size="50"/><br>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="username">Name: </label>
+                                </td>
+                                <td>
+                                    <input type="text" id="username" size="50"/><br>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="address">Address: </label>
+                                </td>
+                                <td>
+                                    <input type="text" id="address" size="50"/><br>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="country">Country: </label>
+                                </td>
+                                <td>
+                                    <select id="country" style="width: 75%">
+                                        <option selected="" value="Default">(Please select a country)</option>
+                                        <option value="AF">Australia</option>
+                                        <option value="AL">Canada</option>
+                                        <option value="DZ">India</option>
+                                        <option value="AS">Russia</option>
+                                        <option value="AD">USA</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="zip">ZIP Code: </label>
+                                </td>
+                                <td>
+                                    <input type="text" id="zip"/><br>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <label for="email">Email: </label>
+                                </td>
+                                <td>
+                                    <input type="text" id="email" size="50"/><br>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label id="gender">Sex: </label>
+                                </td>
+                                <td>
+                                    <input type="radio" name="sex" value="Male"/><span> Male</span>
+                                    <input type="radio" name="sex" value="Female"/><span> Female</span>
+                                    <input type="radio" name="sex" value="Female" checked/><span> None</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="month" class="bq-title">Date of birth:</label>
+                                </td>
+                                <td>
+                                    <div class="bq-field-composite-container bq-name-composite-BirthDate">
+                                        <select data-name="Month" id="month">
+                                            <option value="null">MM</option>
+                                            <option value="Jan">Jan</option>
+                                            <option value="Feb">Feb</option>
+                                            <option value="Mar">Mar</option>
+                                            <option value="Apr">Apr</option>
+                                            <option value="May">May</option>
+                                            <option value="Jun">Jun</option>
+                                            <option value="Jul">Jul</option>
+                                            <option value="Aug">Aug</option>
+                                            <option value="Sep">Sep</option>
+                                            <option value="Oct">Oct</option>
+                                            <option value="Nov">Nov</option>
+                                            <option value="Dec">Dec</option>
+                                        </select>
+                                        <select data-name="Day">
+                                            <option value="null">DD</option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                            <option value="6">6</option>
+                                            <option value="7">7</option>
+                                            <option value="8">8</option>
+                                            <option value="9">9</option>
+                                            <option value="10">10</option>
+                                            <option value="11">11</option>
+                                            <option value="12">12</option>
+                                            <option value="13">13</option>
+                                            <option value="14">14</option>
+                                            <option value="15">15</option>
+                                            <option value="16">16</option>
+                                            <option value="17">17</option>
+                                            <option value="18">18</option>
+                                            <option value="19">19</option>
+                                            <option value="20">20</option>
+                                            <option value="21">21</option>
+                                            <option value="22">22</option>
+                                            <option value="23">23</option>
+                                            <option value="24">24</option>
+                                            <option value="25">25</option>
+                                            <option value="26">26</option>
+                                            <option value="27">27</option>
+                                            <option value="28">28</option>
+                                            <option value="29">29</option>
+                                            <option value="30">30</option>
+                                            <option value="31">31</option>
+                                        </select>
+                                        <select data-name="Year">
+                                            <option value="null">YYYY</option>
+                                            <option value="2015">2015</option>
+                                            <option value="2014">2014</option>
+                                            <option value="2013">2013</option>
+                                            <option value="2012">2012</option>
+                                            <option value="2011">2011</option>
+                                            <option value="2010">2010</option>
+                                            <option value="2009">2009</option>
+                                            <option value="2008">2008</option>
+                                            <option value="2007">2007</option>
+                                            <option value="2006">2006</option>
+                                            <option value="2005">2005</option>
+                                            <option value="2004">2004</option>
+                                            <option value="2003">2003</option>
+                                            <option value="2002">2002</option>
+                                            <option value="2001">2001</option>
+                                        </select>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <label>Language: </label>
+                                </td>
+                                <td>
+                                    <input type="checkbox" name="en" value="en" checked><span> English</span><br>
+                                    <input type="checkbox" name="de" value="de"><span> German</span><br>
+                                    <input type="checkbox" name="nonen" value="noen"><span> Non English</span><br>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="desc">About:</label>
+                                </td>
+                                <td>
+                                    <textarea name="desc" id="desc" style="width: 75%"></textarea><br>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="fileupload">Upload file:</label>
+                                </td>
+                                <td>
+                                    <input type="file" id="fileupload" accept="image/*"/>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+
+
+                        <input type="submit" name="submit" value="Submit"/>
+                        </ul>
+                    </form>
+                </td>
+            </tr>
+        </table>
+
+
+        <h3>Callback events</h3>
+
+        <table class="table table-bordered table-striped">
+            <thead>
+            <tr>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Description</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>beforeopen</td>
+                <td>function</td>
+                <td>Callback function which will execute before the popup is opened.</td>
+            </tr>
+            <tr>
+                <td>onopen</td>
+                <td>function</td>
+                <td>Callback function which will execute when the popup starts to open.</td>
+            </tr>
+            <tr>
+                <td>onclose</td>
+                <td>function</td>
+                <td>Callback function which will execute when the popup starts to close.</td>
+            </tr>
+            <tr>
+                <td>opentransitionend</td>
+                <td>function</td>
+                <td>Callback function which will execute after the opening CSS transition is over, only if transition
+                    actually occurs and if supported by the browser.
+                </td>
+            </tr>
+            <tr>
+                <td>closetransitionend</td>
+                <td>function</td>
+                <td>Callback function which will execute after the closing CSS transition is over, only if transition
+                    actually occurs and if supported by the browser.
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <p>Example:</p>
+<pre class="prettyprint">
+<code>$('#my_popup').popup({
+    onopen: function() {
+    alert('Popup just opened!');
+    }
+    });</code>
+</pre>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+
+        <script>
+            $('tbody').sortable();
+        </script>
+
+
+        <h3>Methods</h3>
+
+        <table class="table table-bordered table-striped">
+            <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>.popup(options)</td>
+                <td><p>Activates your content as a popup. Accepts an optional options <code>object</code>.</p>
+<pre class="prettyprint">
+<code>$('#my_popup').popup({
+    background: false
+    });
+</code>
+</pre>
+                </td>
+            </tr>
+            <tr>
+                <td>.popup('show')</td>
+                <td>
+                    <p>Manually opens a popup.</p>
+                    <pre class="prettyprint"><code>$('#my_popup').popup('show');</code></pre>
+                </td>
+            </tr>
+            <tr>
+                <td>.popup('hide')</td>
+                <td>
+                    <p>Manually hides a popup.</p>
+                    <pre class="prettyprint"><code>$('#my_popup').popup('hide');</code></pre>
+                </td>
+            </tr>
+            <tr>
+                <td>.popup('toggle')</td>
+                <td>
+                    <p>Manually toggles a popup.</p>
+                    <pre class="prettyprint"><code>$('#my_popup').popup('toggle');</code></pre>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+
+
+        <p>&nbsp;</p>
+
+    </section>
+
+    <footer class="col-md-10 col-md-offset-1" role="contentinfo">
+
+        <iframe src="http://ghbtns.com/github-btn.html?user=vast-engineering&repo=jquery-popup-overlay&type=watch&size=small&count=true"
+                allowtransparency="true" frameborder="0" scrolling="0" width="100" height="20"></iframe>
+
+        <p class="text-muted">
+            <small>Released under the <a href="http://opensource.org/licenses/MIT">MIT</a> license.</small>
+        </p>
+    </footer>
+
+</div>
+
+
+<!-- Set defaults -->
+<script>
+    $(document).ready(function () {
+        $.fn.popup.defaults.pagecontainer = '.container'
+    });
+</script>
+
+
+<!-- Test -->
+
+<div id="test12" class="well" style="max-width:44em;">
+    <h2>Sign in</h2>
+
+    <form class="form-signin" role="form">
+        <h4 class="form-signin-heading">Please sign in</h4>
+        <label for="inputEmail" class="sr-only">Email address</label>
+        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+
+        <div class="checkbox">
+            <label>
+                <input type="checkbox" value="remember-me" id="remember-me"> Remember me
+            </label>
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+        <button class="test12_close btn-lg btn btn-primary btn-block btn-default">Close</button>
+    </form>
+
+</div>
+<!-- /container -->
+<script>
+    $(document).ready(function () {
+        $('#test12').popup();
+    });
+</script>
+
+
+<!-- Basic -->
+
+<div id="basic" class="well" style="max-width:44em;">
+    <h4>Basic example</h4>
+
+    <p>Try to change the width and height of browser window, or to rotate your device, and also try to navigate with the
+        <kbd>Tab</kbd> key.</p>
+    <select id="myselect3" class="my_select">
+        <option value="1">Mr</option>
+        <option value="2">Mrs</option>
+        <option value="3">Ms</option>
+        <option selected="selected" value="4">Dr</option>
+        <option value="5">Prof</option>
+    </select>
+
+    <select name="garden" multiple="multiple">
+        <option>Flowers</option>
+        <option selected="selected">Shrubs</option>
+        <option>Trees</option>
+        <option selected="selected">Bushes</option>
+        <option>Grass</option>
+        <option>Dirt</option>
+    </select>
+
+    <div></div>
+
+    <p>You can close the dialog by pressing the <kbd>Esc</kbd> key, or by clicking on the background outside the content
+        area, or by clicking on the Close button.</p>
+    <button class="basic_close fade_open btn btn-default">Next example</button>
+    <button class="basic_close btn btn-default">Close</button>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $('#basic').popup();
+    });
+</script>
+
+
+<!-- Fade -->
+
+<div id="fade" class="well">
+    <h4>Fade example</h4>
+<pre class="prettyprint">
+<code>$('#fade').popup({
+    transition: 'all 0.3s',
+    scrolllock: true // optional
+    });</code>
+</pre>
+    <p>Or you can set transitions directly in CSS:</p>
+    <pre class="prettyprint"><code>$('#fade').popup();</code></pre>
+<pre class="prettyprint"><code>#fade,
+    #fade_wrapper,
+    #fade_background {
+    transition: all 0.3s;
+    }
+    <input type="button" name="close" value="Submit">Close name</input>
+    <button type="button">Click Me!</button>
+</code>
+
+<select id="myselect0">
+    <option value="volvo">Volvo</option>
+    <option value="saab">Saab</option>
+    <option value="mercedes">Mercedes</option>
+    <option value="audi">Audi</option>
+</select>
+
+        <select id="myselect">
+            <option value="1">Mr</option>
+            <option value="2">Mrs</option>
+            <option value="3">Ms</option>
+            <option value="4">Dr</option>
+            <option value="5">Prof</option>
+        </select>
+</pre>
+    <button class="fade_close fadeandscale_open btn btn-default">Next example</button>
+    <button class="fade_close btn btn-default">Close</button>
+</div>
+
+<script>
+    $(document).ready(function () {
+
+        $('#fade').popup({
+            transition: 'all 0.3s',
+            scrolllock: true
+        });
+
+    });
+</script>
+
+
+<!-- Fade & scale -->
+
+<div id="fadeandscale" class="well">
+    <h4>Fade &amp; scale example</h4>
+<pre class="prettyprint">
+<code>$('#fadeandscale').popup({
+    transition: 'all 0.3s'
+    });</code>
+</pre>
+<pre class="prettyprint">
+<code>#fadeandscale {
+    transform: scale(0.8);
+    }
+    .popup_visible #fadeandscale {
+    transform: scale(1);
+    }</code>
+</pre>
+    <button class="fadeandscale_close slide_open btn btn-default">Next example</button>
+    <button class="fadeandscale_close btn btn-default">Close</button>
+</div>
+
+<script>
+    $(document).ready(function () {
+
+        $('#fadeandscale').popup({
+            pagecontainer: '.container',
+            transition: 'all 0.3s'
+        });
+
+    });
+</script>
+
+<!-- Slide in -->
+
+<div id="slide" class="well">
+    <h4>Slide in example</h4>
+<pre class="prettyprint">
+<code>$('#slide').popup({
+    outline: true, // optional
+    focusdelay: 400, // optional
+    vertical: 'top' //optional
+    });
+</code>
+</pre>
+<pre class="prettyprint">
+<code>#slide_background {
+    transition: all 0.3s 0.3s;
+    }
+    #slide,
+    #slide_wrapper {
+    transition: all 0.3s ease-out;
+    }
+    #slide {
+    transform: translateX(0) translateY(-40%);
+    }
+    .popup_visible #slide {
+    transform: translateX(0) translateY(0);
+    }
+</code>
+</pre>
+    <button class="slide_close standalone_open btn btn-default">Next example</button>
+    <button class="slide_close btn btn-default">Close</button>
+</div>
+
+<script>
+    $(document).ready(function () {
+
+        $('#slide').popup({
+            focusdelay: 400,
+            outline: true,
+            vertical: 'top'
+        });
+
+    });
+</script>
+
+<!-- Stand alone -->
+
+<div id="standalone">
+    <h4>Stand alone example</h4>
+<pre class="prettyprint">
+<code>$('#standalone').popup({
+    color: 'white',
+    opacity: 1,
+    transition: '0.3s',
+    scrolllock: true
+    });
+</code>
+</pre>
+<pre class="prettyprint">
+<code>#standalone {
+    transform: scale(0.8);
+    }
+    .popup_visible #standalone {
+    transform: scale(1);
+    }
+</code>
+</pre>
+    <button class="standalone_close active_bg_open btn btn-default">Next example</button>
+    <button class="standalone_close btn btn-default">Close</button>
+</div>
+
+
+<script>
+    $(document).ready(function () {
+
+        $('#standalone').popup({
+            color: 'white',
+            opacity: 1,
+            transition: '0.3s',
+            scrolllock: true
+        });
+
+    });
+</script>
+
+
+<!-- Active background -->
+
+<div id="active_bg" class="well" style="max-width:44em;">
+    <h4>Active background example</h4>
+
+    <p>You can click on any element at the background : they still active and won't close the popup.</p>
+
+    <p>You can close the dialog by pressing the <kbd>Esc</kbd> key, or by clicking on the Close button.</p>
+    <button class="active_bg_close my_tooltip_open btn btn-default">Next example</button>
+    <button class="active_bg_close btn btn-default">Close</button>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $('#active_bg').popup({
+            backgroundactive: true
+        });
+    });
+</script>
+
+
+<!-- Tooltip -->
+
+<div id="my_tooltip" class="well">
+    <a href="#" class="my_tooltip_close" style="float:right;padding:0 0.4em;">×</a>
+    <h4>Tooltip example</h4>
+
+    <p>Tooltip content will be positioned relative to the opening link.</p>
+    <button class="my_tooltip_close fall_open btn btn-default">Next example</button>
+    <button class="my_tooltip_close btn btn-default">Close</button>
+</div>
+
+<script>
+    $(document).ready(function () {
+
+        $('#my_tooltip').popup({
+            type: 'tooltip',
+            vertical: 'top',
+            transition: '0.3s all 0.1s',
+            tooltipanchor: $('#my_tooltip_open')
+        });
+
+    });
+</script>
+
+
+<!-- Callback events -->
+
+<div id="fall" class="well" style="max-width: 45em;">
+    <h4>Callback events</h4>
+<pre class="prettyprint">
+<code>$('#fall').popup({
+    beforeopen: function () {
+    alert('beforeopen');
+    },
+    onopen: function () {
+    alert('onopen');
+    },
+    onclose: function () {
+    alert('onclose');
+    },
+    opentransitionend: function () {
+    alert('opentransitionend');
+    },
+    closetransitionend: function () {
+    alert('closetransitionend');
+    }
+    });
+</code>
+</pre>
+    <button class="fall_close other_open btn btn-default">Next example</button>
+    <button class="fall_close btn btn-default">Close</button>
+</div>
+
+<script>
+    $(document).ready(function () {
+
+        $('#fall').popup({
+            beforeopen: function () {
+                alert('beforeopen');
+            },
+            onopen: function () {
+                alert('onopen');
+            },
+            onclose: function () {
+                alert('onclose');
+            },
+            opentransitionend: function () {
+                alert('opentransitionend');
+            },
+            closetransitionend: function () {
+                alert('closetransitionend');
+            }
+        });
+
+    });
+</script>
+
+
+<!-- Other examples -->
+
+<div id="other" class="well" style="max-width:44em; min-width: 30em;">
+    <h4>Other examples:</h4>
+    <ul>
+        <li><a target="_blank" href="http://jsbin.com/makajini/1/edit">Viewport Image</a></li>
+    </ul>
+    <button class="other_close btn btn-default">Close</button>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $('#other').popup();
+    });
+</script>
+
+
+<!-- Google Prettify syntax highlighting -->
+<!--<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?autoload=true&lang=css"></script>-->
+
+</body>
+</html>
