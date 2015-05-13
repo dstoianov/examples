@@ -1,7 +1,5 @@
 package ua.com.antenka.test;
 
-import com.revimedia.testing.configuration.dto.Contact;
-import com.revimedia.tests.configuration.dataproviders.AutoDataProvider;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
@@ -117,7 +115,7 @@ public class BuyTest {   //buy attack
         System.out.println(String.format(msg, args));
     }
 
-    @Test(dataProvider = "contactData", invocationCount = 1, dataProviderClass = AutoDataProvider.class)
+/*    @Test(dataProvider = "contactData", invocationCount = 1, dataProviderClass = AutoDataProvider.class)
     public void testLuxoftRegistration(Contact contact) throws Exception {
 
         driver.get("http://www.luxoft.com/lts/logeek/ukraine/registration/");
@@ -142,5 +140,5 @@ public class BuyTest {   //buy attack
             }
         });
 
-    }
+    }*/
 }

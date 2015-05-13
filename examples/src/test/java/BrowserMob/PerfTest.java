@@ -4,7 +4,6 @@ package BrowserMob;
  * Created by Funker on 26.04.14.
  */
 
-import com.revimedia.testing.configuration.proxy.ProxyPorts;
 import net.lightbody.bmp.core.har.Har;
 import net.lightbody.bmp.core.har.HarEntry;
 import net.lightbody.bmp.core.har.HarRequest;
@@ -301,6 +300,6 @@ public class PerfTest {
 
         driver.quit();
         server.stop();
-        ProxyPorts.dismissPort(server.getPort());
+
     }
 }

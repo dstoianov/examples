@@ -1,6 +1,5 @@
 package BrowserMob;
 
-import com.revimedia.testing.configuration.config.Config;
 import net.lightbody.bmp.core.har.Har;
 import net.lightbody.bmp.core.har.HarEntry;
 import net.lightbody.bmp.core.har.HarRequest;
@@ -18,8 +17,8 @@ import java.util.List;
 public class BrowserMobProxyLocal2 {//implements IBrowserMobProxy {
 
     private static ProxyServer server;
-    private static int port = Config.SELENIUM_PROXY_PORT;
-    private static String proxyIp = Config.SELENIUM_PROXY_IP;
+    private static int port = 8081;
+    private static String proxyIp = "localhost";
     private static Proxy proxy;
 
 

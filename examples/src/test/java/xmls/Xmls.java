@@ -1,6 +1,6 @@
 package xmls;
 
-import com.revimedia.testing.beans.auto.LeadDataType;
+//import com.revimedia.testing.beans.auto.LeadDataType;
 import org.junit.Test;
 
 import javax.xml.bind.JAXBContext;
@@ -30,25 +30,21 @@ public class Xmls {
 
     @Test
     public void testName() throws Exception {
-
-        LeadDataType mfs_3_cars = from(auto_mfs_3_cars);
-        LeadDataType p = from(autofinance_zipcode);
+//        LeadDataType mfs_3_cars = from(auto_mfs_3_cars);
+//        LeadDataType p = from(autofinance_zipcode);
         //com.revimedia.testing.leaddata.beans.health.LeadDataType health = from(health_mf);
         //LeadDataType z = from(homesecurity_z);
-
     }
 
 
     @Test
     public void testTCPAText() throws Exception {
-
-        LeadDataType from = from(TCPAText);
-
+//        LeadDataType from = from(TCPAText);
     }
 
-    public static LeadDataType from(String xml) throws JAXBException, IOException {
-        return unmarshal(LeadDataType.class, xml);
-    }
+//    public static LeadDataType from(String xml) throws JAXBException, IOException {
+//        return unmarshal(LeadDataType.class, xml);
+//    }
 
 
     public static <T> T unmarshal(Class<T> clazz, URL xml) throws JAXBException, IOException {
