@@ -46,7 +46,7 @@ public class ProxyTest {
     @Test
     public void testName1() throws Exception {
         // start the proxy
-        ProxyServer server = new ProxyServer(4444);
+        ProxyServer server = new ProxyServer(8081);
         server.start();
 
 // get the Selenium proxy object
