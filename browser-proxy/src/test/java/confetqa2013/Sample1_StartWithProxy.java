@@ -1,4 +1,4 @@
-package BrowserMob.confetqa2013;
+package confetqa2013;
 
 import net.lightbody.bmp.proxy.ProxyServer;
 import org.openqa.selenium.By;
@@ -11,22 +11,21 @@ import org.testng.annotations.Test;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.containsString;
 
-public class Sample2_Authentication {
+
+public class Sample1_StartWithProxy {
 
     @Test
-    public void autoBasicAuthorization() throws Exception {
+    public void startWithProxy() throws Exception {
         ProxyServer bmp = new ProxyServer(8071);
         bmp.start();
-
-        bmp.autoBasicAuthorization("", "admin", "password");
 
         DesiredCapabilities caps = new DesiredCapabilities();
         caps.setCapability(CapabilityType.PROXY, bmp.seleniumProxy());
 
         WebDriver driver = new FirefoxDriver(caps);
 
-        driver.get("http://localhost/restricted");
-        assertThat(driver.findElement(By.tagName("body")).getText(), containsString("Access granted"));
+        driver.get("http://localhost/");
+        assertThat(driver.findElement(By.tagName("body")).getText(), containsString("WampServer"));
 
         driver.quit();
 

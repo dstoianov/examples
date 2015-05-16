@@ -1,4 +1,4 @@
-package BrowserMob.confetqa2013;
+package confetqa2013;
 
 import net.lightbody.bmp.proxy.ProxyServer;
 import org.apache.http.HttpException;

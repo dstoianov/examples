@@ -1,4 +1,4 @@
-package BrowserMob.confetqa2013;
+package confetqa2013;
 
 import net.lightbody.bmp.core.har.Har;
 import net.lightbody.bmp.core.har.HarEntry;
@@ -9,6 +9,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
 
 import static org.hamcrest.CoreMatchers.is;
@@ -16,20 +17,24 @@ import static org.hamcrest.MatcherAssert.assertThat;
 
 public class Sample3_GettingHar {
 
+    WebDriver driver;
+    ProxyServer bmp;
+
     @Test
     public void gettingHar() throws Exception {
-        ProxyServer bmp = new ProxyServer(8072);
+        bmp = new ProxyServer(8072);
         bmp.start();
 
         DesiredCapabilities caps = new DesiredCapabilities();
         caps.setCapability(CapabilityType.PROXY, bmp.seleniumProxy());
 
-        WebDriver driver = new FirefoxDriver(caps);
+        driver = new FirefoxDriver(caps);
 
-        bmp.newHar("yandex.ru");
+        bmp.newHar("ya.ru");
 
-        driver.get("http://yandex.ru/");
+        driver.get("http://ya.ru/");
 
+        bmp.waitForNetworkTrafficToStop(300, 10000);
         Har har = bmp.getHar();
 
         for (HarEntry entry : har.getLog().getEntries()) {
@@ -45,4 +50,13 @@ public class Sample3_GettingHar {
 
         bmp.stop();
     }
+
+    @AfterMethod(alwaysRun = true)
+    public void tearDown() throws Exception {
+        if (driver != null) {
+            driver.quit();
+            bmp.stop();
+        }
+    }
+
 }

@@ -1,4 +1,4 @@
-package BrowserMob.confetqa2013;
+package confetqa2013;
 
 import net.lightbody.bmp.core.har.Har;
 import net.lightbody.bmp.proxy.ProxyServer;
