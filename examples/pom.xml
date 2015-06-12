@@ -285,6 +285,11 @@
             <version>2.4.3</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.xerial</groupId>
+            <artifactId>sqlite-jdbc</artifactId>
+            <version>3.8.9.1</version>
+        </dependency>
 
         <dependency>
             <groupId>org.slf4j</groupId>
