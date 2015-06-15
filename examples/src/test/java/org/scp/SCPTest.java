@@ -10,6 +10,7 @@ import com.jcraft.jsch.JSch;
 import com.jcraft.jsch.Session;
 
 import java.io.*;
+import java.util.Hashtable;
 import java.util.Properties;
 
 public class SCPTest {
@@ -141,7 +142,7 @@ public class SCPTest {
 
 
     public static class MyLogger implements com.jcraft.jsch.Logger {
-        static java.util.Hashtable name = new java.util.Hashtable();
+        static Hashtable name = new Hashtable();
 
         static {
             name.put(new Integer(DEBUG), "DEBUG: ");
