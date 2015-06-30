@@ -11,7 +11,7 @@ import java.util.*;
 /**
  * Created by Funker on 29.06.2015.
  */
-public class CheckRepoTest extends Base {
+public class CheckRepoTest extends BaseTest {
 
     String url = "https://code.google.com/u/barancev/";
 
