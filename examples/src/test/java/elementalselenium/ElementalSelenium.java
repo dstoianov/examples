@@ -15,11 +15,10 @@ import java.util.List;
 /**
  * Created by dstoianov on 2015-06-30.
  */
-public class elementalselenium extends BaseTest {
-
+public class ElementalSelenium extends BaseTest {
 
     @Test
-    public void testName() throws Exception {
+    public void testElementalSelenium() throws Exception {
 
         driver.get("http://elementalselenium.com/tips");
 
@@ -43,6 +42,7 @@ public class elementalselenium extends BaseTest {
 
         List<ESBean> result = new ArrayList<>();
         for (ESBean b : esBeans) {
+            System.out.println("Load url " + b.getHref());
             driver.get(b.getHref());
             String html = driver.findElement(By.cssSelector(".content .large-9")).getAttribute("innerHTML").trim();
             b.setBody(html);
@@ -56,26 +56,33 @@ public class elementalselenium extends BaseTest {
         StringBuilder sb = new StringBuilder();
 
         sb.append("<html><body>\n");
+        sb.append("<a name=\"top\"></a>\n");
         sb.append("<h1>").append("Elemental <em>Se</em>lenium").append("</h1>\n");
         sb.append("<hr color=\"purple\">\n");
 
-        sb.append("<h2>").append("Tips Contents").append("</h2>\n");
+        sb.append("<h2>").append("Tips Content").append("</h2>\n");
 
         for (ESBean b : beanList) {
-            sb.append(b.getNumber()).append(". ").append(b.getTitle()).append("<br>\n");
+            sb.append(b.getNumber()).append(". ").append(b.getTitle()).append(" ");
+            sb.append("<a href=\"").append("#tips_").append(b.getNumber()).append("\">").append("read").append("</a><br>\n");
         }
 
         sb.append("<hr color=\"purple\">\n");
 
         for (ESBean b : beanList) {
-            sb.append("<h2>").append(b.getNumber()).append(". ").append(b.getTitle()).append("</h2>\n");
+            sb.append("<a name =\"").append("tips_" + b.getNumber()).append("\"></a>\n");
+
+            sb.append("<h2>").append(b.getNumber()).append(". ").append(b.getTitle()).append(" ");
+            sb.append("<a href=\"#top\">top</a>\n").append(" ");
+            sb.append("<a href=\"").append(b.getHref()).append("\">").append(b.getHref()).append("</a>").append("</h2>\n");
+
             sb.append("<h3>").append(b.getMeta()).append("</h3>\n");
             sb.append("<h4>").append(b.getTags()).append("</h4>\n");
-            sb.append("<HR WIDTH=\"40%\" ALIGN=\"LEFT\">\n");
+            sb.append("<hr width=\"40%\" align=\"left\">\n");
             sb.append(b.getBody()).append("<br>\n");
             sb.append("<hr>\n");
         }
-
+        sb.append("<a href=\"#top\">top</a>\n");
         sb.append("</body></html>\n");
 
         try {
@@ -83,8 +90,6 @@ public class elementalselenium extends BaseTest {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
     }
-
 
 }
