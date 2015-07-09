@@ -17,6 +17,7 @@ import java.io.InputStreamReader;
 import java.lang.reflect.Type;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.net.URLConnection;
 import java.util.Map;
 
 public class HttpURLConnectionExample {
@@ -27,18 +28,39 @@ public class HttpURLConnectionExample {
 
         HttpURLConnectionExample http = new HttpURLConnectionExample();
 
+        String url = "http://development.stagingrevi.com/api/OfferViews/";
+
         System.out.println("Testing 1 - Send Http GET request");
         http.sendGet();
+
+        http.doConnection(url);
 
         //System.out.println("\nTesting 2 - Send Http POST request");
         //http.sendPost();
 
     }
 
+
+    private void doConnection(String url) throws Exception {
+        URL oracle = new URL(url);
+        URLConnection yc = oracle.openConnection();
+        BufferedReader in = new BufferedReader(new InputStreamReader(yc.getInputStream()));
+
+        String inputLine;
+        StringBuilder response = new StringBuilder();
+
+        while ((inputLine = in.readLine()) != null)
+            response.append(inputLine);
+        in.close();
+        System.out.println(response.toString());
+    }
+
+
     // HTTP GET request
     private void sendGet() throws Exception {
 
-        String url = "http://development.stagingrevi.com/ajax/location/ip";
+//        String url = "http://development.stagingrevi.com/ajax/location/ip";
+        String url = "http://development.stagingrevi.com/api/OfferViews/";
 
         URL obj = new URL(url);
         HttpURLConnection con = (HttpURLConnection) obj.openConnection();
@@ -55,7 +77,7 @@ public class HttpURLConnectionExample {
 
         BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
         String inputLine;
-        StringBuffer response = new StringBuffer();
+        StringBuilder response = new StringBuilder();
 
         while ((inputLine = in.readLine()) != null) {
             response.append(inputLine);
