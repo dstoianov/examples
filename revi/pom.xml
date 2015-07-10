@@ -107,6 +107,59 @@
                     <!--<extension>true</extension>-->
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>org.jsonschema2pojo</groupId>
+                <artifactId>jsonschema2pojo-maven-plugin</artifactId>
+                <version>0.4.11</version>
+                <executions>
+                    <execution>
+                        <id>schema-generate-offer-view-list</id>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                        <configuration>
+                            <!--<sourceType>jsonschema</sourceType>-->
+                            <sourceType>json</sourceType>
+                            <sourceDirectory>src/main/resources/jsons/offer</sourceDirectory>
+                            <outputDirectory>${project.build.directory}/generated-sources/java-gen</outputDirectory>
+                            <targetPackage>com.crunchbase.json2pojo.offerviewbean</targetPackage>
+                            <annotationStyle>gson</annotationStyle>
+                            <useCommonsLang3>true</useCommonsLang3>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>schema-generate-schema</id>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                        <configuration>
+                            <sourceType>jsonschema</sourceType>
+                            <sourceDirectory>src/main/resources/jsons/schema</sourceDirectory>
+                            <outputDirectory>${project.build.directory}/generated-sources/java-gen</outputDirectory>
+                            <targetPackage>com.crunchbase.json2pojo.jsonschema</targetPackage>
+                            <annotationStyle>gson</annotationStyle>
+                            <useCommonsLang3>true</useCommonsLang3>
+                        </configuration>
+                    </execution>
+                    <!--                    <execution>
+                                            <id>schema-generate-crunchbase-json</id>
+                                            <goals>
+                                                <goal>generate</goal>
+                                            </goals>
+                                            <configuration>
+                                                <sourceType>json</sourceType>
+                                                <sourceDirectory>src/main/resources/crunchbase_json</sourceDirectory>
+                                                <outputDirectory>${project.build.directory}/generated-sources/java-gen</outputDirectory>
+                                                <targetPackage>com.crunchbase.json2pojo.crunchbasejson</targetPackage>
+                                                <annotationStyle>gson</annotationStyle>
+                                                <useCommonsLang3>true</useCommonsLang3>
+                                            </configuration>
+                                        </execution>-->
+
+                </executions>
+            </plugin>
+
+
         </plugins>
     </build>
 

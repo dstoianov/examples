@@ -1,0 +1,3 @@
+http://www.jsonschema2pojo.org/
+http://blog.qatools.ru/maven/json-schemas-2/
+http://jsonschema.net/#/

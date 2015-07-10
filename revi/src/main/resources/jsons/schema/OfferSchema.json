@@ -1,0 +1,25 @@
+{
+  "type": "object",
+  "properties": {
+    "Result": {
+      "type": "string"
+    },
+    "TotalCount": {
+      "type": "integer"
+    },
+    "OfferViewList": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "Title": {
+            "type": "string"
+          },
+          "OfferViewGuid": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

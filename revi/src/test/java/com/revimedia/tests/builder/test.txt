@@ -60,6 +60,15 @@ Bq.App.fields.getFields().get('Make').toJSON()
 Bq.App.fields.getFields().get('Model').toJSON()
 
 
+http://development.stagingrevi.com/api/OfferViews/
+http://development.stagingrevi.com/api/OfferViews/70844C03-E2D9-4AB5-8512-20094E4DB3B9
+http://development.stagingrevi.com/api/Settings/70844C03-E2D9-4AB5-8512-20094E4DB3B9
+http://development.stagingrevi.com/api/Fields/70844C03-E2D9-4AB5-8512-20094E4DB3B9
+http://development.stagingrevi.com/api/Steps/70844C03-E2D9-4AB5-8512-20094E4DB3B9
+
+http://development.stagingrevi.com/offer/?ovi=F8CFF49B-7CC3-4EB6-83CD-7AECDDE7150F
+
+
 
 
 

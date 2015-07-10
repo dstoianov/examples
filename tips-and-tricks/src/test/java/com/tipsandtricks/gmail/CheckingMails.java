@@ -10,8 +10,7 @@ import java.util.Properties;
 
 public class CheckingMails {
 
-    public static void check(String host, String storeType, String user,
-                             String password) {
+    public static void check(String host, String storeType, String user, String password) {
         try {
 
             //create properties field
