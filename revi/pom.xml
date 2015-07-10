@@ -113,49 +113,61 @@
                 <version>0.4.11</version>
                 <executions>
                     <execution>
-                        <id>schema-generate-offer-view-list</id>
-                        <goals>
-                            <goal>generate</goal>
-                        </goals>
-                        <configuration>
-                            <!--<sourceType>jsonschema</sourceType>-->
-                            <sourceType>json</sourceType>
-                            <sourceDirectory>src/main/resources/jsons/offer</sourceDirectory>
-                            <outputDirectory>${project.build.directory}/generated-sources/java-gen</outputDirectory>
-                            <targetPackage>com.crunchbase.json2pojo.offerviewbean</targetPackage>
-                            <annotationStyle>gson</annotationStyle>
-                            <useCommonsLang3>true</useCommonsLang3>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <id>schema-generate-schema</id>
+                        <id>schema-generate-schema-field</id>
                         <goals>
                             <goal>generate</goal>
                         </goals>
                         <configuration>
                             <sourceType>jsonschema</sourceType>
-                            <sourceDirectory>src/main/resources/jsons/schema</sourceDirectory>
+                            <sourceDirectory>src/main/resources/jsons/schema/field</sourceDirectory>
                             <outputDirectory>${project.build.directory}/generated-sources/java-gen</outputDirectory>
-                            <targetPackage>com.crunchbase.json2pojo.jsonschema</targetPackage>
+                            <targetPackage>com.revimedia.testing.json2pojo.field</targetPackage>
                             <annotationStyle>gson</annotationStyle>
                             <useCommonsLang3>true</useCommonsLang3>
                         </configuration>
                     </execution>
-                    <!--                    <execution>
-                                            <id>schema-generate-crunchbase-json</id>
-                                            <goals>
-                                                <goal>generate</goal>
-                                            </goals>
-                                            <configuration>
-                                                <sourceType>json</sourceType>
-                                                <sourceDirectory>src/main/resources/crunchbase_json</sourceDirectory>
-                                                <outputDirectory>${project.build.directory}/generated-sources/java-gen</outputDirectory>
-                                                <targetPackage>com.crunchbase.json2pojo.crunchbasejson</targetPackage>
-                                                <annotationStyle>gson</annotationStyle>
-                                                <useCommonsLang3>true</useCommonsLang3>
-                                            </configuration>
-                                        </execution>-->
-
+                    <execution>
+                        <id>schema-generate-schema-offer</id>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                        <configuration>
+                            <sourceType>jsonschema</sourceType>
+                            <sourceDirectory>src/main/resources/jsons/schema/offer</sourceDirectory>
+                            <outputDirectory>${project.build.directory}/generated-sources/java-gen</outputDirectory>
+                            <targetPackage>com.revimedia.testing.json2pojo.offer</targetPackage>
+                            <annotationStyle>gson</annotationStyle>
+                            <useCommonsLang3>true</useCommonsLang3>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>schema-generate-schema-step</id>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                        <configuration>
+                            <sourceType>jsonschema</sourceType>
+                            <sourceDirectory>src/main/resources/jsons/schema/step</sourceDirectory>
+                            <outputDirectory>${project.build.directory}/generated-sources/java-gen</outputDirectory>
+                            <targetPackage>com.revimedia.testing.json2pojo.step</targetPackage>
+                            <annotationStyle>gson</annotationStyle>
+                            <useCommonsLang3>true</useCommonsLang3>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>schema-generate-schema-settings</id>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                        <configuration>
+                            <sourceType>jsonschema</sourceType>
+                            <sourceDirectory>src/main/resources/jsons/schema/settings</sourceDirectory>
+                            <outputDirectory>${project.build.directory}/generated-sources/java-gen</outputDirectory>
+                            <targetPackage>com.revimedia.testing.json2pojo.settings</targetPackage>
+                            <annotationStyle>gson</annotationStyle>
+                            <useCommonsLang3>true</useCommonsLang3>
+                        </configuration>
+                    </execution>
                 </executions>
             </plugin>
 

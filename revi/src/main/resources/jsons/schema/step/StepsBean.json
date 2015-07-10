@@ -1,0 +1,80 @@
+{
+  "type": "object",
+  "properties": {
+    "Result": {
+      "type": "string"
+    },
+    "Steps": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "step": {
+            "type": "integer"
+          },
+          "header": {
+            "type": "object",
+            "properties": {
+              "title": {
+                "type": "string"
+              },
+              "subTitle": {
+                "type": "string"
+              }
+            }
+          },
+          "content": {
+            "type": "object",
+            "properties": {
+              "fields": {
+                "type": "array",
+                "items": [
+                  {
+                    "type": "object",
+                    "javaType": "java.lang.Object"
+                  }
+                ]
+              }
+            }
+          },
+          "control": {
+            "type": "object",
+            "properties": {
+              "region": {
+                "type": "boolean"
+              }
+            }
+          },
+          "errors": {
+            "type": "object",
+            "properties": {
+              "list": {
+                "type": "boolean"
+              },
+              "message": {
+                "type": "string"
+              }
+            }
+          },
+          "action": {
+            "type": "object",
+            "javaType": "java.lang.Object"
+          },
+          "cssClass": {
+            "type": "string"
+          },
+          "tcpa": {
+            "type": "boolean"
+          },
+          "disclaimer": {
+            "type": "boolean"
+          },
+          "css": {
+            "type": "object",
+            "javaType": "java.lang.Object"
+          }
+        }
+      }
+    }
+  }
+}

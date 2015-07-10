@@ -1,0 +1,107 @@
+{
+  "type": "object",
+  "properties": {
+    "Result": {
+      "type": "string"
+    },
+    "Settings": {
+      "type": "object",
+      "properties": {
+        "container": {
+          "type": "string"
+        },
+        "vertical": {
+          "type": "string"
+        },
+        "campaign": {
+          "type": "string"
+        },
+        "ajaxBase": {
+          "type": "string"
+        },
+        "offerId": {
+          "id": "offerId",
+          "type": "string"
+        },
+        "affiliateId": {
+          "type": "integer"
+        },
+        "affiliateSubId": {
+          "type": "string"
+        },
+        "affiliateSubId2": {
+          "type": "string"
+        },
+        "sourceId": {
+          "type": "string"
+        },
+        "transactionId": {
+          "type": "string"
+        },
+        "ovi": {
+          "type": "string"
+        },
+        "return_url": {
+          "type": "string"
+        },
+        "redirect_url": {
+          "type": "string"
+        },
+        "prepopIp": {
+          "type": "boolean"
+        },
+        "endoffer_id": {
+          "type": "integer"
+        },
+        "withoutPixel": {
+          "type": "string"
+        },
+        "isPrepopFilled": {
+          "type": "boolean"
+        },
+        "prepoparea": {
+          "type": "boolean"
+        },
+        "inboundPhoneNumberFormatted": {
+          "type": "string"
+        },
+        "telesign": {
+          "type": "string"
+        },
+        "progressbarStart": {
+          "type": "integer"
+        },
+        "bWoopraOn": {
+          "type": "boolean"
+        },
+        "listingBanner": {
+          "type": "boolean"
+        },
+        "listingPopunderBanner": {
+          "type": "boolean"
+        },
+        "bAddrAuto": {
+          "type": "boolean"
+        },
+        "isUpsellPage": {
+          "type": "boolean"
+        },
+        "cdsBase": {
+          "type": "string"
+        },
+        "surveyPath": {
+          "type": "string"
+        },
+        "step": {
+          "type": "integer"
+        },
+        "isPopout": {
+          "type": "boolean"
+        },
+        "isUpsell": {
+          "type": "boolean"
+        }
+      }
+    }
+  }
+}

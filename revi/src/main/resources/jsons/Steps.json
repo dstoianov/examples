@@ -1,0 +1,188 @@
+{
+  "Result": "BaeOK",
+  "Steps": [
+    {
+      "step": 1,
+      "header": {
+        "title": "<%= City %> Drivers Save Up to 75% on Auto Insurance!",
+        "subTitle": "It's Fast and FREE to compare car insurance quotes & save money. Start with some basic info."
+      },
+      "content": {
+        "fields": [
+          {
+            "name": "ZipCode",
+            "hidePrepoped": true
+          },
+          "InsuranceCompany",
+          "InsuredSince",
+          "ResidenceType",
+          "MaritalStatus",
+          "CreditRating"
+        ]
+      },
+      "control": {
+        "region": true
+      },
+      "errors": {
+        "list": true,
+        "message": "Some information is incorrect or incomplete.Please correct the highlighted fields above."
+      },
+      "css": {
+        "layout": {},
+        "pptc": {},
+        "progressbar": {},
+        "header": {},
+        "control": {}
+      }
+    },
+    {
+      "step": 2,
+      "header": {
+        "title": "Vehicle Details",
+        "subTitle": "Select the car(s) you would like to insure. You may save more when you insure multiple cars."
+      },
+      "content": {
+        "fields": [
+          {
+            "name": "Cloning",
+            "group": "Vehicle",
+            "fields": [
+              {
+                "name": "Polk",
+                "type": "compositeView",
+                "fields": [
+                  "Year",
+                  "Make",
+                  "Model"
+                ],
+                "title": "Select your car <span class=\"bq-atsk\">*</span>",
+                "required": [
+                  {
+                    "type": "compositeView",
+                    "messageType": "errorFromField"
+                  }
+                ],
+                "doNotSend": true
+              },
+              "AnnualMiles",
+              "CollisionDeductible",
+              "ComphrensiveDeductible",
+              "Garage",
+              "OneWayDistance",
+              "PrimaryUse",
+              "Ownership",
+              "WeeklyCommuteDays"
+            ],
+            "titles": {
+              "title": "Please enter the details of car #<%=indexInGroup%>",
+              "label": ". <%=Year%> <%=Make%> <%=Model%>",
+              "index": "<%=indexInGroup%>",
+              "adds": "Add an extra car?"
+            },
+            "buttons": {
+              "edit": "Edit",
+              "remove": "Remove",
+              "save": "Save changes"
+            },
+            "animate": {
+              "remove": "slideUp",
+              "cancel": "hide",
+              "add": "fadeIn"
+            },
+            "error": {
+              "message": "Select add an extra car"
+            },
+            "limitPopup": {
+              "title": "The maximum limit is 5 cars.",
+              "subTitle": "",
+              "buttons": {
+                "no": "Got it"
+              }
+            }
+          }
+        ]
+      },
+      "control": {
+        "region": true
+      },
+      "errors": {
+        "list": true,
+        "message": "Some information is incorrect or incomplete.Please correct the highlighted fields above."
+      }
+    },
+    {
+      "step": 3,
+      "header": {
+        "title": "Great News! <%= Make %> Drivers Can Save More.",
+        "subTitle": "Safe & Secure - Your information will only be used to send you quotes."
+      },
+      "content": {
+        "fields": [
+          {
+            "name": "FirstName",
+            "mark": "<%=City%>"
+          },
+          "LastName",
+          "Education",
+          "Gender",
+          "BirthDate",
+          "Address",
+          {
+            "name": "ZipCode",
+            "mark": "[<%=City%>, <%=StateCode%>]",
+            "hidePrepoped": false
+          },
+          "PhoneNumber",
+          "EmailAddress"
+        ]
+      },
+      "control": {
+        "region": true
+      },
+      "tcpa": true,
+      "disclaimer": true,
+      "errors": {
+        "list": true,
+        "message": "Some information is incorrect or incomplete.Please correct the highlighted fields above."
+      },
+      "action": "submit",
+      "cssClass": "bq-step-submit"
+    },
+    {
+      "step": 4,
+      "header": {
+        "title": "Others who have requested quotes for Auto Insurance were also interested in these offers:",
+        "subTitle": "Select the FREE offers you are interested in or click Continue if you don’t want to save more."
+      },
+      "content": {},
+      "control": {
+        "region": true
+      },
+      "action": [
+        "upsellPage",
+        "upsellAction"
+      ],
+      "cssClass": "bq-step-upsellpage"
+    },
+    {
+      "step": 5,
+      "header": {
+        "title": "Great <%=upFrom || verticalTitle%> Insurance Rates!",
+        "subTitle": "Compare a handful of the companies below to get your rates."
+      },
+      "action": [
+        {
+          "type": "listing",
+          "parameters": {
+            "placementposition": "SurehitsPremium"
+          }
+        },
+        {
+          "type": "redirect",
+          "parameters": {}
+        }
+      ],
+      "cssClass": "bq-step-listings"
+    }
+  ]
+}

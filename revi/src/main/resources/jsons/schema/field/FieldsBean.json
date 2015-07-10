@@ -1,0 +1,125 @@
+{
+  "type": "object",
+  "properties": {
+    "Result": {
+      "type": "string"
+    },
+    "Fields": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "path": {
+            "type": "object",
+            "javaType": "java.lang.Object"
+          },
+          "type": {
+            "type": "string"
+          },
+          "active": {
+            "type": "boolean"
+          },
+          "fields": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "title": {
+            "type": "object",
+            "javaType": "java.lang.Object"
+          },
+          "required": {
+            "type": "object",
+            "javaType": "java.lang.Object"
+          },
+          "value": {
+            "type": "string"
+          },
+          "sets": {
+            "type": "object",
+            "javaType": "java.lang.Object"
+          },
+          "valid": {
+            "type": "boolean"
+          },
+          "validationViewType": {
+            "type": "string"
+          },
+          "subTitle": {
+            "type": "string"
+          },
+          "hidden": {
+            "type": "boolean"
+          },
+          "disabled": {
+            "type": "boolean"
+          },
+          "explicit": {
+            "type": "object",
+            "javaType": "java.lang.Object"
+          },
+          "edit": {
+            "type": "object",
+            "javaType": "java.lang.Object"
+          },
+          "mark": {
+            "type": "boolean"
+          },
+          "textMark": {
+            "type": "string"
+          },
+          "editSection": {
+            "type": "string"
+          },
+          "resetSection": {
+            "type": "string"
+          },
+          "sup": {
+            "type": "string"
+          },
+          "placeholder": {
+            "type": "string"
+          },
+          "animate": {
+            "type": "boolean"
+          },
+          "maxLength": {
+            "type": "integer"
+          },
+          "tooltip": {
+            "type": "string"
+          },
+          "styled": {
+            "type": "boolean"
+          },
+          "uniqLabel": {
+            "type": "string"
+          },
+          "switchOn": {
+            "type": "boolean"
+          },
+          "autoFocus": {
+            "type": "boolean"
+          },
+          "valueBefore": {
+            "type": "string"
+          },
+          "labelValue": {
+            "type": "string"
+          },
+          "compositeViewName": {
+            "type": "object",
+            "javaType": "java.lang.Object"
+          },
+          "initValue": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}
