@@ -1,4 +1,4 @@
-package com.revimedia.tests.builder;
+package com.revimedia.tests.builder.javascript;
 
 //import org.codehaus.jackson.map.ObjectMapper;
 

@@ -1,7 +1,7 @@
 package com.revimedia.tests.builder.json;
 
 import com.google.gson.internal.LinkedTreeMap;
-import com.revimedia.tests.builder.Element;
+import com.revimedia.tests.builder.javascript.Element;
 
 import java.util.ArrayList;
 import java.util.Arrays;

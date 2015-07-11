@@ -1,10 +1,6 @@
-package com.revimedia.tests.builder;
+package com.revimedia.tests.builder.javascript;
 
 
-import com.revimedia.tests.builder.javascript.BuilderCampaign;
-import com.revimedia.tests.builder.javascript.ElementHelper;
-import com.revimedia.tests.builder.javascript.JSHelper;
-import com.revimedia.tests.builder.javascript.Page;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -22,7 +18,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * Created by Funker on 07.02.2015.
  */
-public class SimpleTest {
+public class SimpleJSTest {
 
     protected WebDriver driver;
     protected JSHelper jsHelper;
