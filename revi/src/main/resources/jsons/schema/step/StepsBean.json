@@ -25,6 +25,7 @@
           },
           "content": {
             "type": "object",
+            "javaType": "java.lang.Object",
             "properties": {
               "fields": {
                 "type": "array",

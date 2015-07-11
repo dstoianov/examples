@@ -7,22 +7,6 @@
     "Settings": {
       "type": "object",
       "properties": {
-        "container": {
-          "type": "string"
-        },
-        "vertical": {
-          "type": "string"
-        },
-        "campaign": {
-          "type": "string"
-        },
-        "ajaxBase": {
-          "type": "string"
-        },
-        "offerId": {
-          "id": "offerId",
-          "type": "string"
-        },
         "affiliateId": {
           "type": "integer"
         },
@@ -32,74 +16,132 @@
         "affiliateSubId2": {
           "type": "string"
         },
-        "sourceId": {
+        "ajaxBase": {
           "type": "string"
-        },
-        "transactionId": {
-          "type": "string"
-        },
-        "ovi": {
-          "type": "string"
-        },
-        "return_url": {
-          "type": "string"
-        },
-        "redirect_url": {
-          "type": "string"
-        },
-        "prepopIp": {
-          "type": "boolean"
-        },
-        "endoffer_id": {
-          "type": "integer"
-        },
-        "withoutPixel": {
-          "type": "string"
-        },
-        "isPrepopFilled": {
-          "type": "boolean"
-        },
-        "prepoparea": {
-          "type": "boolean"
-        },
-        "inboundPhoneNumberFormatted": {
-          "type": "string"
-        },
-        "telesign": {
-          "type": "string"
-        },
-        "progressbarStart": {
-          "type": "integer"
-        },
-        "bWoopraOn": {
-          "type": "boolean"
-        },
-        "listingBanner": {
-          "type": "boolean"
-        },
-        "listingPopunderBanner": {
-          "type": "boolean"
         },
         "bAddrAuto": {
           "type": "boolean"
         },
-        "isUpsellPage": {
+        "bWoopraOn": {
+          "type": "boolean"
+        },
+        "campaign": {
+          "type": "string"
+        },
+        "campaignType": {
+          "type": "string"
+        },
+        "cds2": {
           "type": "boolean"
         },
         "cdsBase": {
           "type": "string"
         },
-        "surveyPath": {
+        "container": {
+          "type": "string"
+        },
+        "endoffer_id": {
+          "type": "integer"
+        },
+        "fromTrack": {
+          "type": "string"
+        },
+        "GAtrack": {
+          "type": "string"
+        },
+        "IE": {
+          "type": "boolean"
+        },
+        "inboundPhoneNumberFormatted": {
+          "type": "string"
+        },
+        "iOS": {
+          "type": "boolean"
+        },
+        "iOSChromeBrowser": {
+          "type": "boolean"
+        },
+        "isEndPageExist": {
+          "type": "boolean"
+        },
+        "isIE7": {
+          "type": "boolean"
+        },
+        "isPopout": {
+          "type": "boolean"
+        },
+        "isPrepopFilled": {
+          "type": "boolean"
+        },
+        "isUpsell": {
+          "type": "boolean"
+        },
+        "isUpsellPage": {
+          "type": "boolean"
+        },
+        "listingBanner": {
+          "type": "object",
+          "javaType": "java.lang.Object"
+        },
+        "listingPopunderBanner": {
+          "type": "boolean"
+        },
+        "offerId": {
+          "type": "string"
+        },
+        "origin": {
+          "type": "string"
+        },
+        "ovi": {
+          "type": "string"
+        },
+        "prepoparea": {
+          "type": "boolean"
+        },
+        "prepopIp": {
+          "type": "boolean"
+        },
+        "progressbarStart": {
+          "type": "integer"
+        },
+        "redirectDelay": {
+          "type": "integer"
+        },
+        "redirect_url": {
+          "type": "string"
+        },
+        "return_url": {
+          "type": "string"
+        },
+        "sourceId": {
           "type": "string"
         },
         "step": {
           "type": "integer"
         },
-        "isPopout": {
-          "type": "boolean"
+        "surveyPath": {
+          "type": "string"
         },
-        "isUpsell": {
-          "type": "boolean"
+        "target": {
+          "type": "string"
+        },
+        "telesign": {
+          "type": "string"
+        },
+        "thank_you": {
+          "type": "string"
+        },
+        "transactionId": {
+          "type": "string"
+        },
+        "updateSurvey": {
+          "type": "string"
+        },
+        "vertical": {
+          "type": "string"
+        },
+        "withoutPixel": {
+          "type": "string"
         }
       }
     }

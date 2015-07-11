@@ -2660,7 +2660,7 @@
         "Make",
         "Model"
       ],
-      "title": "Select your car <span class=\"bq-atsk\">*</span>",
+      "title": "Select your car <span class='bq-atsk'>*</span>",
       "required": [
         {
           "type": "compositeView",
