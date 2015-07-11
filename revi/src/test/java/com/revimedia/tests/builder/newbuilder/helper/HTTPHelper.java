@@ -1,7 +1,7 @@
-package com.revimedia.tests.builder.newbuilder;
+package com.revimedia.tests.builder.newbuilder.helper;
 
 /**
- * Created by dstoianov on 5/26/2014, 6:38 PM.
+ * Created by dstoianov on 5/26/2015, 6:38 PM.
  */
 
 import java.io.BufferedReader;

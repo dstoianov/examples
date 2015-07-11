@@ -1,4 +1,4 @@
-package com.revimedia.tests.builder.newbuilder;
+package com.revimedia.tests.builder.newbuilder.dto;
 
 import com.revimedia.testing.json2pojo.field.FieldsBean;
 import com.revimedia.testing.json2pojo.settings.SettingsBean;
@@ -10,6 +10,7 @@ import com.revimedia.testing.json2pojo.step.StepsBean;
 public class CampaignSettings {
 
     private String guid;
+    private String title;
     private SettingsBean settingsBean;
     private FieldsBean fieldsBean;
     private StepsBean stepsBean;
@@ -20,6 +21,14 @@ public class CampaignSettings {
 
     public void setGuid(String guid) {
         this.guid = guid;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public SettingsBean getSettingsBean() {
