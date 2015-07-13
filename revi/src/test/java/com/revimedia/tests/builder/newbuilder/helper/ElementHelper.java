@@ -35,7 +35,7 @@ public class ElementHelper {
         if (isInput) {
             System.out.println(String.format("'%s' type --> '%s', element name '%s'", element.getTitle(), value, element.getName()));
             String css = String.format(".bq-name-%s %s", element.getName(), "input");
-            wElement = driver.findElement(By.cssSelector(css));
+            wElement = $(By.cssSelector(css));
             wElement.click();
             wElement.clear();
             wElement.sendKeys(value);
@@ -43,12 +43,12 @@ public class ElementHelper {
         } else if (type.equalsIgnoreCase("select") || type.equalsIgnoreCase("polk")) {
             System.out.println(String.format("'%s' select --> '%s', element name '%s'", element.getTitle(), value, element.getName()));
             String css = String.format(".bq-name-%s %s", element.getName(), "select");
-            wElement = driver.findElement(By.cssSelector(css));
+            wElement = $(By.cssSelector(css));
 
             if (type.equalsIgnoreCase("polk")) {
                 selectByVisibleText(wElement, value);
                 jsHelper.waitForAjaxComplete();
-                driver.findElement(By.cssSelector(".bq-add-no")).click();
+                $(By.cssSelector(".bq-add-no")).click();
             } else {
                 selectByVisibleText(wElement, value);
             }
@@ -56,13 +56,13 @@ public class ElementHelper {
         } else if (type.equalsIgnoreCase("radio")) {
             System.out.println(String.format("'%s' click --> '%s', element name '%s'", element.getTitle(), value, element.getName()));
             String css = String.format(".bq-name-%s .bq-%s", element.getName(), value);
-            wElement = driver.findElement(By.cssSelector(css));
+            wElement = $(By.cssSelector(css));
             wElement.click();
             return;
         } else if (type.equalsIgnoreCase("composite") && element.getName().equalsIgnoreCase("BirthDate")) {
             System.out.println(String.format("'%s' set --> '%s', element name '%s'", element.getTitle(), value, element.getName()));
             String css = String.format(".bq-name-%s-%s", type, element.getName());
-            wElement = driver.findElement(By.cssSelector(css));
+            wElement = $(By.cssSelector(css));
             selectDate(wElement, value);
             return;
         } else {
@@ -101,20 +101,6 @@ public class ElementHelper {
             int min = 1;
             int i = min + (int) (new Random().nextFloat() * (max - min));
             select.selectByIndex(i);
-        }
-    }
-
-    private String getType(Element element) {
-        String type = element.getType().toLowerCase();
-        boolean isInput = type.matches("input|zipUS|name|address|email|radio".toLowerCase());
-        if (isInput) {
-            return "input";
-        } else if (type.equalsIgnoreCase("select")) {
-            return type;
-//        } else if (type.equalsIgnoreCase("radio")) {
-//            return "";
-        } else {
-            throw new FrameworkException(String.format("Unknown type of element '%s'", type));
         }
     }
 
@@ -215,5 +201,15 @@ public class ElementHelper {
         String currentUrl = driver.getCurrentUrl();
         int pageNumber = Integer.parseInt(currentUrl.substring(currentUrl.indexOf("#page/") + 6));
         return pageNumber == stepNumber;
+    }
+
+    private WebElement $(By by) {
+        System.out.println(String.format("\tFind element '%s'", by.toString()));
+        return driver.findElement(by);
+    }
+
+    private List<WebElement> $$(By by) {
+        System.out.println(String.format("\tFind elements '%s'", by.toString()));
+        return driver.findElements(by);
     }
 }

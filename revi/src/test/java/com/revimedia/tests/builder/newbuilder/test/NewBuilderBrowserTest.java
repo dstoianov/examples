@@ -50,9 +50,9 @@ public class NewBuilderBrowserTest {
         map.put("state", "TX");
 
         return new Object[][]{
-//                {"70844C03-E2D9-4AB5-8512-20094E4DB3B9", map}, // work
+                {"70844C03-E2D9-4AB5-8512-20094E4DB3B9", map}, // work
 //                {"42726873-9B6B-4E56-A75B-D91C675AC659", map},
-                {"F8CFF49B-7CC3-4EB6-83CD-7AECDDE7150F", map}
+//                {"F8CFF49B-7CC3-4EB6-83CD-7AECDDE7150F", map}
         };
     }
 
