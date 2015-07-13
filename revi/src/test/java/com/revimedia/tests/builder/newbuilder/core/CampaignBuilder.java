@@ -72,6 +72,7 @@ public class CampaignBuilder {
                     fieldsOnPage.add(s.toString());
                 }
             } else {
+                log.error("Unknown instance of object '{}', To string '{}'", o.getClass(), o.toString());
                 throw new FrameworkException("Unknown instance of object" + o.getClass() + ", To string  " + o.toString());
             }
         }
