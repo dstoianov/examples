@@ -187,7 +187,8 @@ public class ElementHelper {
     public void nextPage(int step) {
         if (isOnThisPage(step)) {
 //        .bq-step1
-            WebElement element = driver.findElement(By.cssSelector(".bq-control.bq-type-simple"));
+            log.info("Click on Next Page");
+            WebElement element = $(By.cssSelector(".bq-control.bq-type-simple"));
             element.click();
             jsHelper.waitForAjaxComplete();
         }

@@ -37,6 +37,7 @@ public class CampaignBuilder {
     }
 
     public CampaignBuilder build() {
+        System.out.println("");
         log.info("Start building campaign '{}'", settings.getGuid());
 
         for (Step step : settings.getStepsBean().getSteps()) {
@@ -51,7 +52,7 @@ public class CampaignBuilder {
                 campaign.add(page);
             }
         }
-        log.info("Finish building campaign..");
+        log.info("Finish building campaign..\n");
         return this;
     }
 
