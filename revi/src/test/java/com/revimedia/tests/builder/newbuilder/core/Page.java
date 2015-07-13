@@ -2,6 +2,9 @@ package com.revimedia.tests.builder.newbuilder.core;
 
 import com.revimedia.testing.json2pojo.field.Field;
 import com.revimedia.testing.json2pojo.field.FieldsBean;
+import com.revimedia.tests.builder.newbuilder.dto.Element;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,6 +13,8 @@ import java.util.List;
  * Created by Funker on 09.02.2015.
  */
 public class Page {
+
+    private static final Logger log = LoggerFactory.getLogger(Page.class);
 
     private List<String> fieldsOnPage = new ArrayList<>();
     private List<Element> fields = new ArrayList<>();
@@ -24,7 +29,7 @@ public class Page {
 
     public void build() {
         for (String e : fieldsOnPage) {
-            System.out.println(String.format("Build element '%s'", e));
+            log.info("Build element '{}'", e);
             Field field = null;
             for (Field f : fieldsBean.getFields()) {
                 if (f.getName().equalsIgnoreCase(e)) {

@@ -2,11 +2,12 @@ package com.revimedia.tests.builder.javascript;
 
 import com.google.common.base.Stopwatch;
 import org.apache.commons.beanutils.BeanUtils;
-import org.apache.log4j.Logger;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,7 +19,7 @@ import java.util.concurrent.TimeUnit;
  */
 public class JSHelper {
 
-    protected static final Logger log = Logger.getLogger(JSHelper.class);
+    protected static final Logger log = LoggerFactory.getLogger(JSHelper.class);
     private static final int DEFAULT_TIMEOUT = 10;
     private JavascriptExecutor js;
     private WebDriver driver;
@@ -68,13 +69,13 @@ public class JSHelper {
                 return js.isAjaxComplete();
             }
         });
-        System.out.println("All ajax calls are complete, it took: " + timer.stop());
+        log.debug("All ajax calls are complete, it took: {}", timer.stop());
     }
 
     public int getStepsCount() {
         String script = "return Bq.App.steps.length;";
         long l = (long) exec(script);
-        System.out.println(String.format("This company contain '%s' steps", l - 1));
+        log.info("This company contain '{}' steps", l - 1);
         return (int) l;
     }
 

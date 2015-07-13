@@ -4,6 +4,9 @@ package com.revimedia.tests.builder.newbuilder.helper;
  * Created by dstoianov on 5/26/2015, 6:38 PM.
  */
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
@@ -13,6 +16,7 @@ import java.net.URLConnection;
 public class HTTPHelper {
 
     private final String USER_AGENT = "Mozilla/5.0";
+    private static final Logger log = LoggerFactory.getLogger(HTTPHelper.class);
 
     public void doConnection(String url) throws Exception {
         URL oracle = new URL(url);
@@ -42,8 +46,8 @@ public class HTTPHelper {
         con.setRequestProperty("User-Agent", USER_AGENT);
 
         int responseCode = con.getResponseCode();
-        System.out.println("\nSending 'GET' request to URL : " + url);
-        System.out.println("Response Code : " + responseCode);
+        log.info("Sending 'GET' request to URL : " + url);
+        log.info("Response Code : " + responseCode);
 
         BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
         String inputLine;
@@ -59,7 +63,7 @@ public class HTTPHelper {
         String res = res1.replace("<span class=\"bq-atsk\">", "<span class='bq-atsk'>");
 
         //print result
-        System.out.println(res);
+        log.debug(res);
 
         return res;
     }

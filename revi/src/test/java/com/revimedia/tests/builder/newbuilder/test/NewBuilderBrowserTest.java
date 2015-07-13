@@ -42,7 +42,7 @@ public class NewBuilderBrowserTest {
         map.put("lastname", "Dummy");
         map.put("gender", "Female");
         map.put("birthdate", "Apr 26, 1982");
-        map.put("phonenumber", "5608039491");
+        map.put("phonenumber", "6565656565");
         map.put("address", "7500 Dallas Parkway");
         map.put("emailaddress", "sit.amet.massa@consequatenimdiam.ca");
         map.put("zipcode", "75024");

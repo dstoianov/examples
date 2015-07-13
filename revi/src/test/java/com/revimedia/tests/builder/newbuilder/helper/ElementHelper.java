@@ -3,11 +3,13 @@ package com.revimedia.tests.builder.newbuilder.helper;
 import com.revimedia.tests.builder.exception.FrameworkException;
 import com.revimedia.tests.builder.javascript.JSHelper;
 import com.revimedia.tests.builder.newbuilder.core.CampaignBuilder;
-import com.revimedia.tests.builder.newbuilder.core.Element;
+import com.revimedia.tests.builder.newbuilder.dto.Element;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,6 +20,7 @@ import java.util.Random;
  */
 public class ElementHelper {
 
+    private static final Logger log = LoggerFactory.getLogger(ElementHelper.class);
     private WebDriver driver;
     protected JSHelper jsHelper;
 
@@ -33,7 +36,7 @@ public class ElementHelper {
         WebElement wElement;
 
         if (isInput) {
-            System.out.println(String.format("'%s' type --> '%s', element name '%s'", element.getTitle(), value, element.getName()));
+            log.info("'{}' type --> '{}', element name '{}'", element.getTitle(), value, element.getName());
             String css = String.format(".bq-name-%s %s", element.getName(), "input");
             wElement = $(By.cssSelector(css));
             wElement.click();
@@ -41,7 +44,7 @@ public class ElementHelper {
             wElement.sendKeys(value);
             return;
         } else if (type.equalsIgnoreCase("select") || type.equalsIgnoreCase("polk")) {
-            System.out.println(String.format("'%s' select --> '%s', element name '%s'", element.getTitle(), value, element.getName()));
+            log.info("'{}' select --> '{}', element name '{}'", element.getTitle(), value, element.getName());
             String css = String.format(".bq-name-%s %s", element.getName(), "select");
             wElement = $(By.cssSelector(css));
 
@@ -54,13 +57,13 @@ public class ElementHelper {
             }
             return;
         } else if (type.equalsIgnoreCase("radio")) {
-            System.out.println(String.format("'%s' click --> '%s', element name '%s'", element.getTitle(), value, element.getName()));
+            log.info("'{}' click --> '{}', element name '{}'", element.getTitle(), value, element.getName());
             String css = String.format(".bq-name-%s .bq-%s", element.getName(), value);
             wElement = $(By.cssSelector(css));
             wElement.click();
             return;
         } else if (type.equalsIgnoreCase("composite") && element.getName().equalsIgnoreCase("BirthDate")) {
-            System.out.println(String.format("'%s' set --> '%s', element name '%s'", element.getTitle(), value, element.getName()));
+            log.info("'{}' set --> '{}', element name '{}'", element.getTitle(), value, element.getName());
             String css = String.format(".bq-name-%s-%s", type, element.getName());
             wElement = $(By.cssSelector(css));
             selectDate(wElement, value);
@@ -192,7 +195,7 @@ public class ElementHelper {
 
     public void open(String guid) {
         String url = "http://development.stagingrevi.com/offer/?ovi=" + guid;
-        System.out.println("\n\tOpen url " + url);
+        log.info("\tOpen url " + url);
         driver.get(url);
         jsHelper.waitForAjaxComplete();
     }
@@ -204,12 +207,12 @@ public class ElementHelper {
     }
 
     private WebElement $(By by) {
-        System.out.println(String.format("\tFind element '%s'", by.toString()));
+        log.info("\tFind element '{}'", by.toString());
         return driver.findElement(by);
     }
 
     private List<WebElement> $$(By by) {
-        System.out.println(String.format("\tFind elements '%s'", by.toString()));
+        log.info("\tFind elements '{}'", by.toString());
         return driver.findElements(by);
     }
 }

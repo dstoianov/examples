@@ -9,6 +9,8 @@ import com.revimedia.testing.json2pojo.settings.SettingsBean;
 import com.revimedia.testing.json2pojo.step.StepsBean;
 import com.revimedia.tests.builder.exception.FrameworkException;
 import com.revimedia.tests.builder.newbuilder.dto.CampaignSettings;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.List;
 
@@ -18,6 +20,7 @@ import java.util.List;
 public class BeanHelper {
 
     private static String url = "http://development.stagingrevi.com/api/";
+    private static final Logger log = LoggerFactory.getLogger(BeanHelper.class);
 
     public static CampaignSettings getCampaignSettings(String guid) throws Exception {
 

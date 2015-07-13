@@ -1,8 +1,4 @@
-package com.revimedia.tests.builder.newbuilder.core;
-
-//import org.codehaus.jackson.map.ObjectMapper;
-
-//import com.fasterxml.jackson.databind.ObjectMapper;
+package com.revimedia.tests.builder.newbuilder.dto;
 
 import com.revimedia.testing.json2pojo.field.Field;
 

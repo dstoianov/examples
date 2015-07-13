@@ -4,8 +4,11 @@ import com.google.gson.internal.LinkedTreeMap;
 import com.revimedia.testing.json2pojo.step.Step;
 import com.revimedia.tests.builder.exception.FrameworkException;
 import com.revimedia.tests.builder.newbuilder.dto.CampaignSettings;
+import com.revimedia.tests.builder.newbuilder.dto.Element;
 import com.revimedia.tests.builder.newbuilder.helper.ElementHelper;
 import org.openqa.selenium.WebDriver;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,6 +19,7 @@ import java.util.Map;
  */
 public class CampaignBuilder {
 
+    private static final Logger log = LoggerFactory.getLogger(CampaignBuilder.class);
     protected WebDriver driver;
     protected CampaignSettings settings;
     protected List<Page> campaign = new ArrayList<Page>();
@@ -33,11 +37,11 @@ public class CampaignBuilder {
     }
 
     public CampaignBuilder build() {
-        System.out.println("Start building campaign " + settings.getGuid());
+        log.info("Start building campaign '{}'", settings.getGuid());
 
         for (Step step : settings.getStepsBean().getSteps()) {
             if (step.getContent() != null && step.getContent().getFields().size() != 0) {
-                System.out.println(String.format("\nBuild page number '%s'..", step.getStep()));
+                log.info("Build page number '{}'..", step.getStep());
 
                 List<Object> fields = step.getContent().getFields();
                 List<String> fieldsOnPage = getFieldsOnPage(fields);
@@ -47,7 +51,7 @@ public class CampaignBuilder {
                 campaign.add(page);
             }
         }
-        System.out.println("\nFinish building campaign..");
+        log.info("Finish building campaign..");
         return this;
     }
 
@@ -70,14 +74,14 @@ public class CampaignBuilder {
                 throw new FrameworkException("Unknown instance of object" + o.getClass() + ", To string  " + o.toString());
             }
         }
-        System.out.println(String.format("On page present '%s' fields %s", fieldsOnPage.size(), fieldsOnPage.toString()));
+        log.info("On page present '{}' fields {}", fieldsOnPage.size(), fieldsOnPage.toString());
         return fieldsOnPage;
     }
 
 
     public void fillInAllPages(Map<String, String> map) {
         for (Page p : campaign) {
-            System.out.println(String.format("\nStart filling in page '%s'..", p.getStepNumber()));
+            log.info("Start filling in page '{}'..", p.getStepNumber());
             List<Element> elements = p.getElements();
 
             for (Element e : elements) {
@@ -85,7 +89,7 @@ public class CampaignBuilder {
             }
             elementHelper.nextPage(p.getStepNumber());
         }
-        System.out.println("\nSubmit campaign..");
+        log.info("Submit campaign..");
     }
 
     private String getValue(String key, Map<String, String> map) {
