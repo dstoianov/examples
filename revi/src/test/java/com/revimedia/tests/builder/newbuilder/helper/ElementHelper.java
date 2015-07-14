@@ -33,40 +33,42 @@ public class ElementHelper {
 
         String type = element.getType().toLowerCase();
         boolean isInput = type.matches("input|zipUS|name|address|phoneUS|email".toLowerCase());
-        WebElement wElement;
+        WebElement webElement;
 
         if (isInput) {
             log.info("'{}' type --> '{}', element name '{}'", element.getTitle(), value, element.getName());
             String css = String.format(".bq-name-%s %s", element.getName(), "input");
-            wElement = $(By.cssSelector(css));
-            wElement.click();
-            wElement.clear();
-            wElement.sendKeys(value);
+            webElement = $(By.cssSelector(css));
+            webElement.click();
+            webElement.clear();
+            webElement.sendKeys(value);
             return;
         } else if (type.equalsIgnoreCase("select") || type.equalsIgnoreCase("polk")) {
-            log.info("'{}' select --> '{}', element name '{}'", element.getTitle(), value, element.getName());
+//            log.info("'{}' select --> '{}', element name '{}'", element.getTitle(), value, element.getName());
             String css = String.format(".bq-name-%s %s", element.getName(), "select");
-            wElement = $(By.cssSelector(css));
+            webElement = $(By.cssSelector(css));
 
             if (type.equalsIgnoreCase("polk")) {
-                selectByVisibleText(wElement, value);
+                selectByVisibleText(webElement, value);
                 jsHelper.waitForAjaxComplete();
                 $(By.cssSelector(".bq-add-no")).click();
+            } else if (value != null) {
+                selectByVisibleText(webElement, value);
             } else {
-                selectByVisibleText(wElement, value);
+                selectByVisibleText(webElement, element);
             }
             return;
         } else if (type.equalsIgnoreCase("radio")) {
             log.info("'{}' click --> '{}', element name '{}'", element.getTitle(), value, element.getName());
             String css = String.format(".bq-name-%s .bq-%s", element.getName(), value);
-            wElement = $(By.cssSelector(css));
-            wElement.click();
+            webElement = $(By.cssSelector(css));
+            webElement.click();
             return;
         } else if (type.equalsIgnoreCase("composite") && element.getName().equalsIgnoreCase("BirthDate")) {
             log.info("'{}' set --> '{}', element name '{}'", element.getTitle(), value, element.getName());
             String css = String.format(".bq-name-%s-%s", type, element.getName());
-            wElement = $(By.cssSelector(css));
-            selectDate(wElement, value);
+            webElement = $(By.cssSelector(css));
+            selectDate(webElement, value);
             return;
         } else {
             throw new FrameworkException(String.format("Unknown type of element '%s', element name '%s'", type, element.getName()));
@@ -94,6 +96,22 @@ public class ElementHelper {
         selectByVisibleText(e.findElement(By.cssSelector(".bq-name-Day select")), day);
         selectByVisibleText(e.findElement(By.cssSelector(".bq-name-Year select")), year);
     }
+
+
+    private void selectByVisibleText(WebElement webElement, Element element) {
+        if (element.getValue() != null) {
+            log.info("'{}' select --> '{}', element name '{}'", element.getTitle(), element.getValue(), element.getName());
+            new Select(webElement).selectByVisibleText(element.getValue());
+        } else {
+            Select select = new Select(webElement);
+            int max = select.getOptions().size();
+            int min = 1;
+            int i = min + (int) (new Random().nextFloat() * (max - min));
+            select.selectByIndex(i);
+            log.info("'{}' select random by index --> '{}', element name '{}'", element.getTitle(), i, element.getName());
+        }
+    }
+
 
     private void selectByVisibleText(WebElement webElement, String text) {
         if (text != null) {
@@ -187,6 +205,7 @@ public class ElementHelper {
     public void nextPage(int step) {
         if (isOnThisPage(step)) {
 //        .bq-step1
+            $(By.tagName("body")).click();
             log.info("Click on Next Page");
             WebElement element = $(By.cssSelector(".bq-control.bq-type-simple"));
             element.click();
@@ -208,12 +227,12 @@ public class ElementHelper {
     }
 
     private WebElement $(By by) {
-        log.info("\tFind element '{}'", by.toString());
+//        log.info("\tFind element '{}'", by.toString());
         return driver.findElement(by);
     }
 
     private List<WebElement> $$(By by) {
-        log.info("\tFind elements '{}'", by.toString());
+//        log.info("\tFind elements '{}'", by.toString());
         return driver.findElements(by);
     }
 }

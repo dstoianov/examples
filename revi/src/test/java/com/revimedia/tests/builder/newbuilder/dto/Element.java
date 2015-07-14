@@ -1,6 +1,10 @@
 package com.revimedia.tests.builder.newbuilder.dto;
 
+import com.google.gson.internal.LinkedTreeMap;
 import com.revimedia.testing.json2pojo.field.Field;
+
+import java.util.ArrayList;
+import java.util.Random;
 
 /**
  * Created by Funker on 09.02.2015.
@@ -19,8 +23,9 @@ public class Element {
         this.type = field.getType();
         this.name = field.getName();
         this.title = field.getTitle().toString();
-        this.value = field.getValue();
         this.hidden = field.getHidden();
+//        this.value = field.getValue();
+        this.value = setValue(field.getSets());
         this.sets = field.getSets();
     }
 
@@ -47,4 +52,32 @@ public class Element {
     public String getTitle() {
         return title;
     }
+
+    private String setValue(Object sets) {
+        if (sets != null) {
+            if (sets instanceof ArrayList) {
+                Object o = ((ArrayList) sets).get(new Random().nextInt(((ArrayList) sets).size()));
+                if (o instanceof String) {
+                    return o.toString();
+                } else if (o instanceof LinkedTreeMap) {
+                    Object label = ((LinkedTreeMap) o).get("label");
+                    if (label == null) {
+                        return null;
+                    }
+                    return label.toString();
+                } else {
+                    System.out.println("Unknown type of sets " + sets.getClass() + " " + sets.toString());
+                }
+            } else if (sets instanceof LinkedTreeMap) {
+                //TODO: need to think about in how to handle it
+                return null;
+            } else {
+                System.out.println("Unknown type of sets " + sets.getClass() + " " + sets.toString());
+            }
+
+        }
+        return null;
+    }
+
+
 }
