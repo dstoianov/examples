@@ -3,6 +3,7 @@ package com.revimedia.tests.builder.newbuilder.helper;
 import com.revimedia.tests.builder.exception.FrameworkException;
 import com.revimedia.tests.builder.javascript.JSHelper;
 import com.revimedia.tests.builder.newbuilder.core.CampaignBuilder;
+import com.revimedia.tests.builder.newbuilder.core.Page;
 import com.revimedia.tests.builder.newbuilder.dto.Element;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -42,9 +43,8 @@ public class ElementHelper {
             webElement.click();
             webElement.clear();
             webElement.sendKeys(value);
-            return;
         } else if (type.equalsIgnoreCase("select") || type.equalsIgnoreCase("polk")) {
-//            log.info("'{}' select --> '{}', element name '{}'", element.getTitle(), value, element.getName());
+            log.info("'{}' select --> '{}', element name '{}'", element.getTitle(), value, element.getName());
             String css = String.format(".bq-name-%s %s", element.getName(), "select");
             webElement = $(By.cssSelector(css));
 
@@ -52,24 +52,21 @@ public class ElementHelper {
                 selectByVisibleText(webElement, value);
                 jsHelper.waitForAjaxComplete();
                 $(By.cssSelector(".bq-add-no")).click();
-            } else if (value != null) {
-                selectByVisibleText(webElement, value);
+//            } else if (value != null) {
+//                selectByVisibleText(webElement, value);
             } else {
-                selectByVisibleText(webElement, element);
+                selectByVisibleText(webElement, value);
             }
-            return;
         } else if (type.equalsIgnoreCase("radio")) {
             log.info("'{}' click --> '{}', element name '{}'", element.getTitle(), value, element.getName());
             String css = String.format(".bq-name-%s .bq-%s", element.getName(), value);
             webElement = $(By.cssSelector(css));
             webElement.click();
-            return;
         } else if (type.equalsIgnoreCase("composite") && element.getName().equalsIgnoreCase("BirthDate")) {
             log.info("'{}' set --> '{}', element name '{}'", element.getTitle(), value, element.getName());
             String css = String.format(".bq-name-%s-%s", type, element.getName());
             webElement = $(By.cssSelector(css));
             selectDate(webElement, value);
-            return;
         } else {
             throw new FrameworkException(String.format("Unknown type of element '%s', element name '%s'", type, element.getName()));
         }
@@ -202,11 +199,11 @@ public class ElementHelper {
         return result;
     }
 
-    public void nextPage(int step) {
-        if (isOnThisPage(step)) {
+    public void nextPage(Page p) {
+        if (isOnThisPage(p.getStepNumber())) {
 //        .bq-step1
             $(By.tagName("body")).click();
-            log.info("Click on Next Page");
+            log.info("Click 'Next' page");
             WebElement element = $(By.cssSelector(".bq-control.bq-type-simple"));
             element.click();
             jsHelper.waitForAjaxComplete();

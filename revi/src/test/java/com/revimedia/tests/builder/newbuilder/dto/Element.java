@@ -1,10 +1,6 @@
 package com.revimedia.tests.builder.newbuilder.dto;
 
-import com.google.gson.internal.LinkedTreeMap;
 import com.revimedia.testing.json2pojo.field.Field;
-
-import java.util.ArrayList;
-import java.util.Random;
 
 /**
  * Created by Funker on 09.02.2015.
@@ -24,8 +20,8 @@ public class Element {
         this.name = field.getName();
         this.title = field.getTitle().toString();
         this.hidden = field.getHidden();
-//        this.value = field.getValue();
-        this.value = setValue(field.getSets());
+        this.value = field.getValue();
+//        this.value = setValue(field.getSets());
         this.sets = field.getSets();
     }
 
@@ -53,7 +49,7 @@ public class Element {
         return title;
     }
 
-    private String setValue(Object sets) {
+/*    private String setValue(Object sets) {
         if (sets != null) {
             if (sets instanceof ArrayList) {
                 Object o = ((ArrayList) sets).get(new Random().nextInt(((ArrayList) sets).size()));
@@ -77,7 +73,7 @@ public class Element {
 
         }
         return null;
-    }
+    }*/
 
 
 }

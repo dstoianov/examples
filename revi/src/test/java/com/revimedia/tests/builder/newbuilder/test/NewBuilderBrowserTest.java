@@ -1,6 +1,7 @@
 package com.revimedia.tests.builder.newbuilder.test;
 
 
+import com.revimedia.testing.cds.auto.staticdata.CommonExtraData;
 import com.revimedia.tests.builder.newbuilder.core.CampaignBuilder;
 import com.revimedia.tests.builder.newbuilder.dto.CampaignSettings;
 import com.revimedia.tests.builder.newbuilder.helper.BeanHelper;
@@ -49,6 +50,12 @@ public class NewBuilderBrowserTest {
         map.put("city", "PLANO");
         map.put("state", "TX");
 
+        String[] car = CommonExtraData.getRandomCar();
+        map.put("year", car[0]);
+        map.put("make", car[1]);
+        map.put("model", car[2]);
+
+
         return new Object[][]{
                 {"70844C03-E2D9-4AB5-8512-20094E4DB3B9", map}, // work
 //                {"42726873-9B6B-4E56-A75B-D91C675AC659", map},
@@ -57,14 +64,14 @@ public class NewBuilderBrowserTest {
     }
 
     @Test(dataProvider = "GuidProvider")
-    public void testMainSubmit(String guid, Map<String, String> map) throws Exception {
+    public void testMainSubmit(String guid, Map<String, String> contact) throws Exception {
 
         CampaignSettings campaignSettings = BeanHelper.getCampaignSettings(guid);
         CampaignBuilder campaign = new CampaignBuilder(driver, campaignSettings);
 
         campaign.build();
         campaign.open();
-        campaign.fillInAllPages(map);
+        campaign.fillInAllPages(contact);
     }
 
 }
