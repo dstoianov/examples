@@ -127,6 +127,9 @@ public class CampaignBuilder {
                         return null;
                     }
                     return label.toString();
+                } else if (o instanceof Double) {
+                    Integer s = ((Double) o).intValue();
+                    return s.toString();
                 } else {
                     System.out.println("Unknown type of sets " + sets.getClass() + " " + sets.toString());
                 }

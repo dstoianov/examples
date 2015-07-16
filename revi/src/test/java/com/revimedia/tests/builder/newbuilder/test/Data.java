@@ -14,14 +14,14 @@ public class Data {
     @DataProvider(name = "goodCampaigns")
     public static Object[][] goodNumbers() {
         return new Object[][]{
-                {"70844C03-E2D9-4AB5-8512-20094E4DB3B9"},
+                {"70844C03-E2D9-4AB5-8512-20094E4DB3B9"}, //Worked old campaign
                 {"42726873-9B6B-4E56-A75B-D91C675AC659"},
                 {"BE7F0F54-0BF9-41D3-BA06-E4ED65700703"},
-                {"9C9B9B8F-C357-4336-A09A-117D38EC9F76"},
+                {"9C9B9B8F-C357-4336-A09A-117D38EC9F76"}, //??
                 {"5F54C23D-01A2-4F92-A62E-4603D5C9C39F"},
-                {"DD37D5DA-FE78-4815-B99F-06551E3E62D0"},
+                {"DD37D5DA-FE78-4815-B99F-06551E3E62D0"}, //??
                 {"40C24D19-96B8-44B3-AFCB-7D8A8B1293AD"},
-                {"22B49D07-28F9-4946-A9C1-097BDD55D236"},
+                {"22B49D07-28F9-4946-A9C1-097BDD55D236"}, //??
                 {"B18FC762-C029-49C4-BF91-E1E96A47FEA1"},
                 {"853B8ED3-F0ED-44FD-ABE5-E05FC2003FF4"},
                 {"80081DF2-FE73-40B0-AA27-7BC908B1F804"},
