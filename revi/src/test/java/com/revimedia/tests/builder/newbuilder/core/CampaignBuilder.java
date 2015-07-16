@@ -93,6 +93,7 @@ public class CampaignBuilder {
             elementHelper.nextPage(p);
         }
         log.info("Submit campaign..");
+        elementHelper.sleep(5000);
     }
 
     private String getValue(Element e, Map<String, String> contactData) {

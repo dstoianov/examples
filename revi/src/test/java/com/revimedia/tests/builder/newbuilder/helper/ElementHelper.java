@@ -232,4 +232,12 @@ public class ElementHelper {
 //        log.info("\tFind elements '{}'", by.toString());
         return driver.findElements(by);
     }
+
+    public void sleep(long i) {
+        try {
+            Thread.sleep(i);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
 }
