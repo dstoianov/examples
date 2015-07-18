@@ -58,7 +58,7 @@ public enum Browser {
 
     private String name;
 
-    private Browser(String name) {
+    Browser(String name) {
         this.name = name;
     }
 

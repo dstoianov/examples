@@ -7,6 +7,8 @@ import com.revimedia.tests.builder.newbuilder.dto.CampaignSettings;
 import com.revimedia.tests.builder.newbuilder.helper.BeanHelper;
 import org.testng.annotations.Test;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -41,9 +43,10 @@ public class NewBuilderApiTest extends Data {
         SettingsBean settingsFor = BeanHelper.getSettingsFor(c.getOfferViewGuid());
     }
 
-    @Test(dataProvider = "allListOfCampaigns")
+    @Test(dataProvider = "allListOfCampaigns", description = "Print statistics for all campaigns")
     public void testCheckBuilderForAllCampaignsTogether(List<OfferViewList> OfferViewList) throws Exception {
         StringBuilder sb = new StringBuilder();
+        List<String> errors = new ArrayList<>();
         sb.append("\n");
 
         for (OfferViewList c : OfferViewList) {
@@ -52,9 +55,33 @@ public class NewBuilderApiTest extends Data {
                 CampaignSettings campaignSettings = BeanHelper.getCampaignSettings(c.getOfferViewGuid());
                 sb.append("{\"").append(c.getOfferViewGuid()).append("\"},\n");
             } catch (JsonSyntaxException e) {
+                errors.add(e.getMessage() + " - " + c.getOfferViewGuid() + " - " + c.getTitle());
             }
+        }
+        int total = OfferViewList.size();
+        int err = errors.size();
+        String s = String.format("\nTotal campaigns on server '%s'," +
+                        "\nFramework can work with '%s' campaigns," +
+                        "\nCampaigns with any error(s) '%s'," +
+                        "\nThe percentage of covered campaigns is = '%s %%'",
+                total, (total - err), err, ((total - err) * 100 / total));
+        System.out.println(s);
+        System.out.println(sb.toString());
+
+        Collections.sort(errors);
+        for (String e : errors) {
+            System.out.println(e);
+        }
+    }
+
+
+    @Test(dataProvider = "allListOfCampaigns", description = "Just print all campaigns on server")
+    public void testPrintAllCampaigns(List<OfferViewList> OfferViewList) {
+        StringBuilder sb = new StringBuilder();
+        sb.append("\n");
+        for (OfferViewList c : OfferViewList) {
+            sb.append(c.getOfferViewGuid()).append(" - ").append(c.getTitle()).append("\n");
         }
         System.out.println(sb.toString());
     }
-
 }
