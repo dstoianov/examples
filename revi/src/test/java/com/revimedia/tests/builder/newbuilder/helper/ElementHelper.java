@@ -234,6 +234,7 @@ public class ElementHelper {
     }
 
     public void sleep(long i) {
+        System.out.println("Waiting for a " + i / 1000 + " sec...");
         try {
             Thread.sleep(i);
         } catch (InterruptedException e) {

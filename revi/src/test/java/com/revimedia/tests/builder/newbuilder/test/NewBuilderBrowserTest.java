@@ -57,9 +57,8 @@ public class NewBuilderBrowserTest {
 
 
         return new Object[][]{
-//                {"70844C03-E2D9-4AB5-8512-20094E4DB3B9", map}, // work
-                {"D79B9C3A-C879-4F6D-9C18-7F157689905F", map},
-//                {"F8CFF49B-7CC3-4EB6-83CD-7AECDDE7150F", map}
+                {"88368545-FB77-40BC-AE55-ABD7978271C3", map},
+                {"DA907EC3-2F37-47E5-996C-FFF79E5724D0", map}
         };
     }
 
