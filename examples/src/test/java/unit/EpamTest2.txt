@@ -1,0 +1,64 @@
+Task:
+
+   Please create set of test data to check bellow function:
+
+Additional explanation:
+
+Integer is a number,
+String is equel to a word, few characters or sentence,
+
+Logic function:
+
+fun (Integer a, Integer b, Integer c) return String
+{
+	if
+		(a>2 and a<3 and b==5)
+	   or
+		(a = 1/b)
+	then
+	   return 'Status_1'
+	endif
+
+	z = c/a
+
+ 	if (a == 0)
+        then
+           return 'Status_2'
+        endif
+
+
+ 	if (z > 10)
+        then
+           return 'Status_3'
+        endif
+
+	return 'Status_4'
+}
+
+
+
+    a         |          b         |        x            |       function output  |
+-----------------------------------------------------------------------------------
+              |                    |                     |                        |
+              |                    |                     |                        |
+              |                    |                     |                        |
+              |                    |                     |                        |
+              |                    |                     |                        |
+              |                    |                     |                        |
+              |                    |                     |                        |
+              |                    |                     |                        |
+              |                    |                     |                        |
+              |                    |                     |                        |
+              |                    |                     |                        |
+              |                    |                     |                        |
+              |                    |                     |                        |
+              |                    |                     |                        |
+              |                    |                     |                        |
+              |                    |                     |                        |
+              |                    |                     |                        |
+              |                    |                     |                        |
+              |                    |                     |                        |
+              |                    |                     |                        |
+              |                    |                     |                        |
+              |                    |                     |                        |
+
