@@ -53,7 +53,7 @@ public class NewBuilderApiTest extends Data {
             try {
                 System.out.println(String.format("Check campaign with title '%s' and guid '%s'..", c.getTitle(), c.getOfferViewGuid()));
                 CampaignSettings campaignSettings = BeanHelper.getCampaignSettings(c.getOfferViewGuid());
-                sb.append("{\"").append(c.getOfferViewGuid()).append("\"},\n");
+                sb.append("{ \"").append(c.getOfferViewGuid()).append("\", \"").append(c.getTitle()).append("\" },\n");
             } catch (JsonSyntaxException e) {
                 errors.add(e.getMessage() + " - " + c.getOfferViewGuid() + " - " + c.getTitle());
             }
