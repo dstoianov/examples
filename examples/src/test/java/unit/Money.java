@@ -8,17 +8,16 @@ public final class Money {
         USD
     }
 
-    private Double value;
+    private Float value;
 
     private Currency currency;
 
     /**
      * Constructor for class Money.
-     *
-     * @param value    value
+     *  @param value    value
      * @param currency currency
      */
-    public Money(Double value, Currency currency) {
+    public Money(Float value, Currency currency) {
         this.value = value;
         this.currency = currency;
     }
@@ -26,7 +25,7 @@ public final class Money {
     /**
      * Return value passed to the constructor.
      */
-    public Double getValue() {
+    public Float getValue() {
         return value;
     }
 
@@ -37,7 +36,7 @@ public final class Money {
         return currency;
     }
 
-    public void setValue(Double value) {
+    public void setValue(Float value) {
         this.value = value;
     }
 
@@ -70,8 +69,8 @@ public final class Money {
      * @param args ars
      */
     public static void main(String[] args) {
-        final Money a = new Money(67.89, Currency.EUR); //pass 67.89 EUR as parameters
-        final Money b = new Money(98.76, Currency.USD); //pass 98.76 USD as parameters
+        final Money a = new Money(67.89f, Currency.EUR); //pass 67.89 EUR as parameters
+        final Money b = new Money(98.76f, Currency.USD); //pass 98.76 USD as parameters
 
         Money money = a.multiplyBy(5);
         System.out.println(money);
