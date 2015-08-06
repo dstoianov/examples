@@ -5,7 +5,7 @@ Task:
 Additional explanation:
 
 Integer is a number,
-String is equel to a word, few characters or sentence,
+String is equal to a word, few characters or sentence,
 
 Logic function:
 

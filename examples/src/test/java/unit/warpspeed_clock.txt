@@ -1,0 +1,20 @@
+Question:
+    What is the angle between the arrows of a clock at 3:15?
+    What is the angle between the hour-hand and minute-hand of a clock at 3:15?
+
+Answer:
+    The total circle is 360... Divide that by 12 to get the angle of 1 hour... That will be 30...
+    If the hour-hand moves by 30 in 1 hour, it will move by 7.5 in 1/4th of an hour...
+
+At quarter past the hour, the minute-hand is exactly at 3:00 but the hour-hand has moved 1/4 of the way between 3:00 and 4:00.
+Therefore 1/4 times 1/12 = 1/48 of the clock.  With the clock having 360 degrees, 360/48 = 7.5 degrees.
+
+
+At 3:15 the small-hand is (1/4) the way from 3 to 4
+From 3 to 4 is 360/12 = 30 degrees
+(1/4)*30Degrees = 7.5 degrees.
+
+
+
+
+So the answer should be 7.5...
