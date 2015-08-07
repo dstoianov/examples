@@ -11,7 +11,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 public class EpamTest {
 
 
-/*    Implement method do check if a string is a palindrom
+/*    Implement method do check if a string is a palindrome
 
     Kayak - true
     foo - false
