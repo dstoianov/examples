@@ -60,7 +60,11 @@ public class HTTPHelper {
 
         String result = response.toString().replace("\\", "");
         String res1 = result.substring(1, result.length() - 1);
-        String res = res1.replace("<span class=\"bq-atsk\">", "<span class='bq-atsk'>").replace("<span class=\"bq-span\">", "<span class='bq-span'>");
+        String res = res1
+                .replace("<span class=\"bq-atsk\">", "<span class='bq-atsk'>")
+                .replace("<span class=\"bq-span\">", "<span class='bq-span'>")
+                .replace("<span class=\"bq-endpage-subtitle\">", "<span class='bq-endpage-subtitle'>")
+                .replace("class=\"another-color\"", "class='another-color'");
 
         //print result
 //        log.info(res);

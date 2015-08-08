@@ -27,8 +27,13 @@
             "type": "object",
             "properties": {
               "fields": {
-                "type": "object",
-                "javaType": "java.lang.Object"
+                "type": "array",
+                "items": [
+                  {
+                    "type": "object",
+                    "javaType": "java.lang.Object"
+                  }
+                ]
               }
             }
           },

@@ -40,6 +40,10 @@ public class ElementHelper {
             log.info("'{}' type --> '{}', element name '{}'", element.getTitle(), value, element.getName());
             String css = String.format(".bq-name-%s %s", element.getName(), "input");
             webElement = $(By.cssSelector(css));
+            if (!webElement.isEnabled()) {
+                log.info("Element '{}' is disabled with text '{}', skip typing...", element.getName(), webElement.getText());
+                return;
+            }
             webElement.click();
             webElement.clear();
             webElement.sendKeys(value);
@@ -201,11 +205,11 @@ public class ElementHelper {
 
     public void nextPage(Page p) {
         if (isOnThisPage(p.getStepNumber())) {
-//        .bq-step1
-            $(By.tagName("body")).click();
+            $("body").click(); // move focus to element
             log.info("Click 'Next' page");
-            WebElement element = $(By.cssSelector(".bq-control.bq-type-simple"));
-            element.click();
+            if (!isOnThisPage(p.getStepNumber() + 1)) {
+                $(".bq-control.bq-type-simple").click();
+            }
             jsHelper.waitForAjaxComplete();
         }
     }
@@ -226,6 +230,11 @@ public class ElementHelper {
     private WebElement $(By by) {
 //        log.info("\tFind element '{}'", by.toString());
         return driver.findElement(by);
+    }
+
+    private WebElement $(String cssSelector) {
+//        log.info("\tFind element '{}'", by.toString());
+        return driver.findElement(By.cssSelector(cssSelector));
     }
 
     private List<WebElement> $$(By by) {

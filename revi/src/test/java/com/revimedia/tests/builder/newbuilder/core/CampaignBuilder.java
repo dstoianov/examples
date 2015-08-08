@@ -41,10 +41,16 @@ public class CampaignBuilder {
         log.info("Start building campaign '{}'", settings.getGuid());
 
         for (Step step : settings.getStepsBean().getSteps()) {
-            if (step.getContent() != null && step.getContent().getFields().size() != 0) {
+//            if (step.getContent() != null && step.getContent().getFields().size() != 0) {
+            if (step.getContent() == null || (step.getContent().getFields() instanceof Boolean)) {
+                continue;
+            }
+
+            if (step.getContent().getFields() != null) {
                 log.info("Build page number '{}'..", step.getStep());
 
-                List<Object> fields = step.getContent().getFields();
+                @SuppressWarnings("unchecked")
+                List<Object> fields = (ArrayList<Object>) step.getContent().getFields();
                 List<String> fieldsOnPage = getFieldsOnPage(fields);
 
                 Page page = new Page(fieldsOnPage, settings.getFieldsBean(), step.getStep());
@@ -68,6 +74,9 @@ public class CampaignBuilder {
                     fieldsOnPage.add("Year");
                     fieldsOnPage.add("Make");
                     fieldsOnPage.add("Model");
+                } else if (s.toString().equalsIgnoreCase("Height")) {
+                    fieldsOnPage.add("Height_FT");
+                    fieldsOnPage.add("Height_Inch");
                 } else {
                     fieldsOnPage.add(s.toString());
                 }
@@ -106,7 +115,7 @@ public class CampaignBuilder {
         } else if (valueFromSet != null) {
             return valueFromSet;
         } else {
-            throw new FrameworkException("No data for element " + e.getName());
+            throw new FrameworkException(String.format("No data for element '%s'", e.getName()));
         }
     }
 
@@ -134,7 +143,7 @@ public class CampaignBuilder {
                     System.out.println("Unknown type of sets " + sets.getClass() + " " + sets.toString());
                 }
             } else if (sets instanceof LinkedTreeMap) {
-                //TODO: need to think about in how to handle it
+                //TODO: need to think about it how to handle this
                 return null;
             } else {
                 System.out.println("Unknown type of sets " + sets.getClass() + " " + sets.toString());

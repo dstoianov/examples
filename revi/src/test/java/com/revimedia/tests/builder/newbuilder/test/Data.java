@@ -38,8 +38,7 @@ public class Data {
     @DataProvider(name = "badCampaigns")
     public static Object[][] badNumbers() {
         return new Object[][]{
-                {"F8CFF49B-7CC3-4EB6-83CD-7AECDDE7150F"},
-                {"60B3F385-10D6-400D-9D04-90E96AAE4C03"},
+                {"9A610B50-0E9A-46D5-B810-70A405AC3FEA"},
         };
     }
 

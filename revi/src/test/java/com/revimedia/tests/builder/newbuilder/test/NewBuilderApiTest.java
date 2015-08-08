@@ -3,13 +3,19 @@ package com.revimedia.tests.builder.newbuilder.test;
 import com.google.gson.JsonSyntaxException;
 import com.revimedia.testing.json2pojo.offer.OfferViewList;
 import com.revimedia.testing.json2pojo.settings.SettingsBean;
+import com.revimedia.tests.builder.newbuilder.core.CampaignBuilder;
 import com.revimedia.tests.builder.newbuilder.dto.CampaignSettings;
 import com.revimedia.tests.builder.newbuilder.helper.BeanHelper;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 
 /**
  * Created by Funker on 11.07.2015.
@@ -19,7 +25,11 @@ public class NewBuilderApiTest extends Data {
     @Test(dataProvider = "badCampaigns")
     public void testCheckBuilderForCampaignBad(String guid) throws Exception {
         System.out.println(String.format("Check campaign with guid '%s'..", guid));
-        BeanHelper.getCampaignSettings(guid);
+        WebDriver driver = mockDriver();
+
+        CampaignSettings campaignSettings = BeanHelper.getCampaignSettings(guid);
+        CampaignBuilder campaign = new CampaignBuilder(driver, campaignSettings);
+        campaign.build();
     }
 
 
@@ -45,6 +55,7 @@ public class NewBuilderApiTest extends Data {
 
     @Test(dataProvider = "allListOfCampaigns", description = "Print statistics for all campaigns")
     public void testCheckBuilderForAllCampaignsTogether(List<OfferViewList> OfferViewList) throws Exception {
+        WebDriver driver = mockDriver();
         StringBuilder sb = new StringBuilder();
         List<String> errors = new ArrayList<>();
         sb.append("\n");
@@ -53,6 +64,8 @@ public class NewBuilderApiTest extends Data {
             try {
                 System.out.println(String.format("Check campaign with title '%s' and guid '%s'..", c.getTitle(), c.getOfferViewGuid()));
                 CampaignSettings campaignSettings = BeanHelper.getCampaignSettings(c.getOfferViewGuid());
+                CampaignBuilder campaign = new CampaignBuilder(driver, campaignSettings);
+                campaign.build();
                 sb.append("{ \"").append(c.getOfferViewGuid()).append("\", \"").append(c.getTitle()).append("\" },\n");
             } catch (JsonSyntaxException e) {
                 errors.add(e.getMessage() + " - " + c.getOfferViewGuid() + " - " + c.getTitle());
@@ -83,5 +96,14 @@ public class NewBuilderApiTest extends Data {
             sb.append(c.getOfferViewGuid()).append(" - ").append(c.getTitle()).append("\n");
         }
         System.out.println(sb.toString());
+    }
+
+    public static WebDriver mockDriver() {
+        WebDriver driver = mock(ChromeDriver.class);
+        WebDriver.Options webDriverOptionsMock = mock(WebDriver.Options.class);
+        WebDriver.Timeouts timeoutsMock = mock(WebDriver.Timeouts.class);
+        when(driver.manage()).thenReturn(webDriverOptionsMock);
+        when(driver.manage().timeouts()).thenReturn(timeoutsMock);
+        return driver;
     }
 }
