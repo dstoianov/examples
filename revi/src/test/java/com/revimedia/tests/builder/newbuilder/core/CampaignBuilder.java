@@ -5,6 +5,7 @@ import com.revimedia.testing.json2pojo.step.Step;
 import com.revimedia.tests.builder.exception.FrameworkException;
 import com.revimedia.tests.builder.newbuilder.dto.CampaignSettings;
 import com.revimedia.tests.builder.newbuilder.dto.Element;
+import com.revimedia.tests.builder.newbuilder.dto.WebField;
 import com.revimedia.tests.builder.newbuilder.helper.ElementHelper;
 import org.openqa.selenium.WebDriver;
 import org.slf4j.Logger;
@@ -38,7 +39,7 @@ public class CampaignBuilder {
 
     public CampaignBuilder build() {
         System.out.println("");
-        log.info("Start building campaign '{}'", settings.getGuid());
+        log.info("Start building campaign '{}', '{}'", settings.getGuid(), settings.getTitle());
 
         for (Step step : settings.getStepsBean().getSteps()) {
 //            if (step.getContent() != null && step.getContent().getFields().size() != 0) {
@@ -63,7 +64,7 @@ public class CampaignBuilder {
     }
 
     private List<String> getFieldsOnPage(List<Object> fields) {
-        List<String> fieldsOnPage = new ArrayList<String>();
+        List<String> fieldsOnPage = new ArrayList<>();
         for (Object o : fields) {
             if (o instanceof String) {
                 fieldsOnPage.add(o.toString());
@@ -71,21 +72,34 @@ public class CampaignBuilder {
                 @SuppressWarnings("unchecked")
                 Object s = ((LinkedTreeMap<String, Object>) o).get("name");
                 if (s.toString().equalsIgnoreCase("Cloning")) {
-                    fieldsOnPage.add("Year");
-                    fieldsOnPage.add("Make");
-                    fieldsOnPage.add("Model");
+                    fieldsOnPage.add(WebField.YAEAR.getName());
+                    fieldsOnPage.add(WebField.MAKE.getName());
+                    fieldsOnPage.add(WebField.MODEL.getName());
                 } else if (s.toString().equalsIgnoreCase("Height")) {
-                    fieldsOnPage.add("Height_FT");
-                    fieldsOnPage.add("Height_Inch");
+                    fieldsOnPage.add(WebField.HEIGHT_FT.getName());
+                    fieldsOnPage.add(WebField.HEIGHT_INCH.getName());
                 } else {
                     fieldsOnPage.add(s.toString());
                 }
             } else {
-                log.error("Unknown instance of object '{}', to string '{}'", o.getClass(), o.toString());
-                throw new FrameworkException("Unknown instance of object " + o.getClass() + ", to string " + o.toString());
+                String message = String.format("Unknown instance of object '%s', to string '%s'", o.getClass(), o.toString());
+                log.error(message);
+                throw new FrameworkException(message);
             }
         }
+        fieldsOnPage = checkForLogicWithDubFields(fieldsOnPage);
         log.info("On page present '{}' fields {}", fieldsOnPage.size(), fieldsOnPage.toString());
+        return fieldsOnPage;
+    }
+
+    private List<String> checkForLogicWithDubFields(List<String> fieldsOnPage) {
+        for (String f : fieldsOnPage) {
+            if (f.equalsIgnoreCase(WebField.ADDRESS1.getName())) {
+                fieldsOnPage.remove(WebField.YEARS_AT_RESIDENCE.getName());
+                log.info("Remove '{}' field", WebField.YEARS_AT_RESIDENCE);
+                break;
+            }
+        }
         return fieldsOnPage;
     }
 
@@ -135,7 +149,7 @@ public class CampaignBuilder {
                     if (label == null) {
                         return null;
                     }
-                    return label.toString();
+                    return label.toString().replace("вЂ“", "–"); //home campaign, correct value for Approx. Sq. Footage
                 } else if (o instanceof Double) {
                     Integer s = ((Double) o).intValue();
                     return s.toString();

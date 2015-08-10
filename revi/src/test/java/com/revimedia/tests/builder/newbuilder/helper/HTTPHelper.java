@@ -68,7 +68,7 @@ public class HTTPHelper {
 
         //print result
 //        log.info(res);
-        System.out.println(res);
+//        System.out.println(res);
 
         return res;
     }

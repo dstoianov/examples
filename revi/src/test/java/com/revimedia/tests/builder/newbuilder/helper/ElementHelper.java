@@ -39,9 +39,9 @@ public class ElementHelper {
         if (isInput) {
             log.info("'{}' type --> '{}', element name '{}'", element.getTitle(), value, element.getName());
             String css = String.format(".bq-name-%s %s", element.getName(), "input");
-            webElement = $(By.cssSelector(css));
+            webElement = $(css);
             if (!webElement.isEnabled()) {
-                log.info("Element '{}' is disabled with text '{}', skip typing...", element.getName(), webElement.getText());
+                log.info("Element '{}' is disabled with text '{}', skip typing...", element.getName(), webElement.getAttribute("value"));
                 return;
             }
             webElement.click();
@@ -50,12 +50,12 @@ public class ElementHelper {
         } else if (type.equalsIgnoreCase("select") || type.equalsIgnoreCase("polk")) {
             log.info("'{}' select --> '{}', element name '{}'", element.getTitle(), value, element.getName());
             String css = String.format(".bq-name-%s %s", element.getName(), "select");
-            webElement = $(By.cssSelector(css));
+            webElement = $(css);
 
             if (type.equalsIgnoreCase("polk")) {
                 selectByVisibleText(webElement, value);
                 jsHelper.waitForAjaxComplete();
-                $(By.cssSelector(".bq-add-no")).click();
+                $(".bq-add-no").click();
 //            } else if (value != null) {
 //                selectByVisibleText(webElement, value);
             } else {
@@ -64,12 +64,12 @@ public class ElementHelper {
         } else if (type.equalsIgnoreCase("radio")) {
             log.info("'{}' click --> '{}', element name '{}'", element.getTitle(), value, element.getName());
             String css = String.format(".bq-name-%s .bq-%s", element.getName(), value);
-            webElement = $(By.cssSelector(css));
+            webElement = $(css);
             webElement.click();
         } else if (type.equalsIgnoreCase("composite") && element.getName().equalsIgnoreCase("BirthDate")) {
             log.info("'{}' set --> '{}', element name '{}'", element.getTitle(), value, element.getName());
             String css = String.format(".bq-name-%s-%s", type, element.getName());
-            webElement = $(By.cssSelector(css));
+            webElement = $(css);
             selectDate(webElement, value);
         } else {
             throw new FrameworkException(String.format("Unknown type of element '%s', element name '%s'", type, element.getName()));
@@ -216,7 +216,7 @@ public class ElementHelper {
 
     public void open(String guid) {
         String url = "http://development.stagingrevi.com/offer/?ovi=" + guid;
-        log.info("\tOpen url " + url);
+        log.info("Open url " + url);
         driver.get(url);
         jsHelper.waitForAjaxComplete();
     }

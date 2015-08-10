@@ -66,7 +66,7 @@ public class NewBuilderApiTest extends Data {
                 CampaignSettings campaignSettings = BeanHelper.getCampaignSettings(c.getOfferViewGuid());
                 CampaignBuilder campaign = new CampaignBuilder(driver, campaignSettings);
                 campaign.build();
-                sb.append("{ \"").append(c.getOfferViewGuid()).append("\", \"").append(c.getTitle()).append("\" },\n");
+                sb.append("{ \"").append(c.getOfferViewGuid()).append("\", \"").append(c.getTitle()).append("\", map },\n");
             } catch (JsonSyntaxException e) {
                 errors.add(e.getMessage() + " - " + c.getOfferViewGuid() + " - " + c.getTitle());
             }

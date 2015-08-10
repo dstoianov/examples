@@ -21,6 +21,13 @@ public class Page {
     private int stepNumber;
     private FieldsBean fieldsBean;
 
+    /**
+     * Instantiates a new Page.
+     *
+     * @param fieldsOnPage the fields on page
+     * @param fieldsBean   the fields bean
+     * @param step         the step
+     */
     public Page(List<String> fieldsOnPage, FieldsBean fieldsBean, Integer step) {
         this.fieldsOnPage = fieldsOnPage;
         this.fieldsBean = fieldsBean;
