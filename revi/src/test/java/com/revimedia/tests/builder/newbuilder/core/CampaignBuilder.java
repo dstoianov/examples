@@ -39,7 +39,7 @@ public class CampaignBuilder {
 
     public CampaignBuilder build() {
         System.out.println("");
-        log.info("Start building campaign '{}', '{}'", settings.getGuid(), settings.getTitle());
+        log.info("Start building campaign '{}', '{}/{}'", settings.getGuid(), settings.getSettingsBean().getSettings().getVertical(), settings.getSettingsBean().getSettings().getCampaign());
 
         for (Step step : settings.getStepsBean().getSteps()) {
             if (step.getContent() == null || (step.getContent().getFields() instanceof Boolean)) {

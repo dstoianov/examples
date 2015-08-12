@@ -67,8 +67,8 @@ public class NewBuilderApiTest extends Data {
         int total = OfferViewList.size();
         int err = errors.size();
         String s = String.format("\nTotal campaigns on server '%s'," +
-                        "\nFramework can work with '%s' campaigns, or - '%s%%'" +
-                        "\nCampaigns with any error(s) '%s',",
+                        "\nFramework can work with '%s' campaigns, or '%s%%'" +
+                        "\nCampaigns with any error(s) '%s'",
                 total, (total - err), ((total - err) * 100 / total), err);
         System.out.println(s);
         System.out.println(sb.toString());

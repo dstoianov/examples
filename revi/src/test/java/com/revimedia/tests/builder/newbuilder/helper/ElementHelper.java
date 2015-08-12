@@ -3,6 +3,7 @@ package com.revimedia.tests.builder.newbuilder.helper;
 import com.revimedia.tests.builder.exception.FrameworkException;
 import com.revimedia.tests.builder.javascript.JSHelper;
 import com.revimedia.tests.builder.newbuilder.core.CampaignBuilder;
+import com.revimedia.tests.builder.newbuilder.core.ConciseAPI;
 import com.revimedia.tests.builder.newbuilder.core.Page;
 import com.revimedia.tests.builder.newbuilder.dto.Element;
 import org.openqa.selenium.By;
@@ -20,7 +21,7 @@ import java.util.Random;
 /**
  * Created by Funker on 11.07.2015.
  */
-public class ElementHelper {
+public class ElementHelper extends ConciseAPI {
 
     private static final Logger log = LoggerFactory.getLogger(ElementHelper.class);
     private WebDriver driver;
@@ -29,6 +30,11 @@ public class ElementHelper {
     public ElementHelper(CampaignBuilder campaignBuilder) {
         this.driver = campaignBuilder.getDriver();
         this.jsHelper = new JSHelper(driver);
+    }
+
+    @Override
+    public WebDriver getDriver() {
+        return driver;
     }
 
     public void set(Element element, String value) {
@@ -204,8 +210,7 @@ public class ElementHelper {
 //        if (options.size() <= 0) {
 //            new Exception("Has no any options in the drop down for select");
 //        }
-        String option = options.get((new Random().nextInt(options.size() - 1)));
-        return option;
+        return options.get((new Random().nextInt(options.size() - 1)));
     }
 
     private List<String> getAllOptionsFromSelect(WebElement element) {
@@ -231,10 +236,9 @@ public class ElementHelper {
         }
     }
 
+    @Override
     public void open(String guid) {
-        String url = "http://development.stagingrevi.com/offer/?ovi=" + guid;
-        log.info("Open url " + url);
-        driver.get(url);
+        super.open("http://development.stagingrevi.com/offer/?ovi=" + guid);
         jsHelper.waitForAjaxComplete();
     }
 
@@ -244,32 +248,5 @@ public class ElementHelper {
         return pageNumber == stepNumber;
     }
 
-    private WebElement $(By by) {
-//        log.info("\tFind element '{}'", by.toString());
-        return driver.findElement(by);
-    }
 
-    private WebElement $(String cssSelector) {
-//        log.info("\tFind element '{}'", by.toString());
-        return driver.findElement(By.cssSelector(cssSelector));
-    }
-
-    private List<WebElement> $$(By by) {
-//        log.info("\tFind elements '{}'", by.toString());
-        return driver.findElements(by);
-    }
-
-    private List<WebElement> $$(String cssSelector) {
-//        log.info("\tFind elements '{}'", by.toString());
-        return driver.findElements(By.cssSelector(cssSelector));
-    }
-
-    public void sleep(long i) {
-        System.out.println("Waiting for a " + i / 1000 + " sec...");
-        try {
-            Thread.sleep(i);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-    }
 }
