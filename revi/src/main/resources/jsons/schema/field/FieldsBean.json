@@ -28,6 +28,9 @@
               "type": "string"
             }
           },
+          "collection": {
+            "$ref": "composite.json"
+          },
           "title": {
             "type": "object",
             "javaType": "java.lang.Object"

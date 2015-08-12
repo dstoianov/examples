@@ -73,3 +73,10 @@ http://development.stagingrevi.com/offer/?ovi=FCFE964E-AC1F-418A-B8AE-3A61474CC4
 http://development.stagingrevi.com/api/Steps/88368545-FB77-40BC-AE55-ABD7978271C3
 
 
+http://www.w3schools.com/cssref/css_selectors.asp
+[title~=flower]
+
+div [value^='Existing']
+
+.bq-name-ProjectStatus [class*='bq-Existing']
+div [class*="Existing"]

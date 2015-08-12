@@ -17,15 +17,15 @@ public class Page {
     private static final Logger log = LoggerFactory.getLogger(Page.class);
 
     private List<String> fieldsOnPage = new ArrayList<>();
-    private List<Element> fields = new ArrayList<>();
+    private List<Element> elements = new ArrayList<>();
     private int stepNumber;
     private FieldsBean fieldsBean;
 
     /**
      * Instantiates a new Page.
      *
-     * @param fieldsOnPage the fields on page
-     * @param fieldsBean   the fields bean
+     * @param fieldsOnPage the elements on page
+     * @param fieldsBean   the elements bean
      * @param step         the step
      */
     public Page(List<String> fieldsOnPage, FieldsBean fieldsBean, Integer step) {
@@ -35,6 +35,7 @@ public class Page {
     }
 
     public void build() {
+        log.info("Build page number '{}'..", stepNumber);
         for (String e : fieldsOnPage) {
             log.info("Build element '{}'", e);
             Field field = null;
@@ -45,7 +46,7 @@ public class Page {
                 }
             }
             Element element = new Element(field);
-            fields.add(element);
+            elements.add(element);
         }
     }
 
@@ -54,6 +55,6 @@ public class Page {
     }
 
     public List<Element> getElements() {
-        return fields;
+        return elements;
     }
 }

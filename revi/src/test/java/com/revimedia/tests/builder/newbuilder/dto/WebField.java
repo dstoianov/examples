@@ -12,6 +12,8 @@ public enum WebField {
     MAKE("Make"),
     MODEL("Model"),
 
+    EXPIRATION_DATE("ExpirationDate"),
+    MONTH("Month"),
 
     HEIGHT_FT("Height_FT"),
     HEIGHT_INCH("Height_Inch"),;

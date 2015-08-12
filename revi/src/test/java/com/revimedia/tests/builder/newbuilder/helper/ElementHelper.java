@@ -6,6 +6,7 @@ import com.revimedia.tests.builder.newbuilder.core.CampaignBuilder;
 import com.revimedia.tests.builder.newbuilder.core.Page;
 import com.revimedia.tests.builder.newbuilder.dto.Element;
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
@@ -56,21 +57,36 @@ public class ElementHelper {
                 selectByVisibleText(webElement, value);
                 jsHelper.waitForAjaxComplete();
                 $(".bq-add-no").click();
-//            } else if (value != null) {
-//                selectByVisibleText(webElement, value);
             } else {
                 selectByVisibleText(webElement, value);
             }
         } else if (type.equalsIgnoreCase("radio")) {
             log.info("'{}' click --> '{}', element name '{}'", element.getTitle(), value, element.getName());
             String css = String.format(".bq-name-%s .bq-%s", element.getName(), value);
-            webElement = $(css);
-            webElement.click();
-        } else if (type.equalsIgnoreCase("composite") && element.getName().equalsIgnoreCase("BirthDate")) {
+            try {
+                webElement = $(css);
+                webElement.click();
+            } catch (NoSuchElementException e) {
+                List<WebElement> elements = $$(String.format(".bq-name-%s .bq-label", element.getName()));
+                for (WebElement label : elements) {
+                    if (label.getText().equalsIgnoreCase(value)) {
+                        label.click();
+                        break;
+                    }
+                }
+            }
+        } else if (type.equalsIgnoreCase("composite")) {
             log.info("'{}' set --> '{}', element name '{}'", element.getTitle(), value, element.getName());
             String css = String.format(".bq-name-%s-%s", type, element.getName());
-            webElement = $(css);
-            selectDate(webElement, value);
+            if (element.getName().equalsIgnoreCase("BirthDate")) {
+                webElement = $(css);
+                selectDate(webElement, value);
+            } else if (element.getName().equalsIgnoreCase("ExpirationDate")) {
+                webElement = $(css + " [data-name='Month']");
+                selectByVisibleText(webElement, value);
+            } else {
+                throw new FrameworkException(String.format("Unknown type of composite element name '%s'", element.getName()));
+            }
         } else {
             throw new FrameworkException(String.format("Unknown type of element '%s', element name '%s'", type, element.getName()));
         }
@@ -121,7 +137,7 @@ public class ElementHelper {
             Select select = new Select(webElement);
             int max = select.getOptions().size();
             int min = 1;
-            int i = min + (int) (new Random().nextFloat() * (max - min));
+            int i = min + new Random().nextInt() * (max - min);
             select.selectByIndex(i);
         }
     }
@@ -208,6 +224,7 @@ public class ElementHelper {
             $("body").click(); // move focus to element
             log.info("Click 'Next' page");
             if (!isOnThisPage(p.getStepNumber() + 1)) {
+//                click again if still on this page
                 $(".bq-control.bq-type-simple").click();
             }
             jsHelper.waitForAjaxComplete();
@@ -240,6 +257,11 @@ public class ElementHelper {
     private List<WebElement> $$(By by) {
 //        log.info("\tFind elements '{}'", by.toString());
         return driver.findElements(by);
+    }
+
+    private List<WebElement> $$(String cssSelector) {
+//        log.info("\tFind elements '{}'", by.toString());
+        return driver.findElements(By.cssSelector(cssSelector));
     }
 
     public void sleep(long i) {

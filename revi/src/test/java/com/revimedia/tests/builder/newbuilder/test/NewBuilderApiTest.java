@@ -41,13 +41,6 @@ public class NewBuilderApiTest extends Data {
 
 
     @Test(dataProvider = "allCampaigns")
-    public void testCheckBuilderForAllCampaigns(OfferViewList c) throws Exception {
-        System.out.println(String.format("Check campaign with title '%s' and guid '%s'..", c.getTitle(), c.getOfferViewGuid()));
-        CampaignSettings campaignSettings = BeanHelper.getCampaignSettings(c.getOfferViewGuid());
-    }
-
-
-    @Test(dataProvider = "allCampaigns")
     public void testCheckSettingsJSON(OfferViewList c) throws Exception {
         System.out.println(String.format("Check Settings for campaign with title '%s' and guid '%s'..", c.getTitle(), c.getOfferViewGuid()));
         SettingsBean settingsFor = BeanHelper.getSettingsFor(c.getOfferViewGuid());
@@ -74,10 +67,9 @@ public class NewBuilderApiTest extends Data {
         int total = OfferViewList.size();
         int err = errors.size();
         String s = String.format("\nTotal campaigns on server '%s'," +
-                        "\nFramework can work with '%s' campaigns," +
-                        "\nCampaigns with any error(s) '%s'," +
-                        "\nThe percentage of covered campaigns is = '%s %%'",
-                total, (total - err), err, ((total - err) * 100 / total));
+                        "\nFramework can work with '%s' campaigns, or - '%s%%'" +
+                        "\nCampaigns with any error(s) '%s',",
+                total, (total - err), ((total - err) * 100 / total), err);
         System.out.println(s);
         System.out.println(sb.toString());
 

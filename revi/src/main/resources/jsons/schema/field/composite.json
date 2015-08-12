@@ -1,0 +1,25 @@
+{
+  "id": "#collection",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "name": {
+        "type": "string"
+      },
+      "sets": {
+        "type": "object",
+        "javaType": "java.lang.Object"
+      },
+      "hidden": {
+        "type": "boolean"
+      },
+      "value": {
+        "type": "string"
+      },
+      "type": {
+        "type": "string"
+      }
+    }
+  }
+}

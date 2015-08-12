@@ -42,13 +42,11 @@ public class CampaignBuilder {
         log.info("Start building campaign '{}', '{}'", settings.getGuid(), settings.getTitle());
 
         for (Step step : settings.getStepsBean().getSteps()) {
-//            if (step.getContent() != null && step.getContent().getFields().size() != 0) {
             if (step.getContent() == null || (step.getContent().getFields() instanceof Boolean)) {
-                continue;
+                continue; //skip incorrect data or end (empty) of campaign
             }
 
             if (step.getContent().getFields() != null) {
-                log.info("Build page number '{}'..", step.getStep());
 
                 @SuppressWarnings("unchecked")
                 List<Object> fields = (ArrayList<Object>) step.getContent().getFields();
@@ -129,7 +127,7 @@ public class CampaignBuilder {
         } else if (valueFromSet != null) {
             return valueFromSet;
         } else {
-            throw new FrameworkException(String.format("No data for element '%s'", e.getName()));
+            throw new FrameworkException(String.format("No data(value, text, sets) for element '%s'", e.getName()));
         }
     }
 
@@ -164,5 +162,13 @@ public class CampaignBuilder {
             }
         }
         return null;
+    }
+
+    public void verifyDataForAllElements(Map<String, String> contact) {
+        for (Page p : campaign) {
+            for (Element e : p.getElements()) {
+
+            }
+        }
     }
 }
