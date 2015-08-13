@@ -18,7 +18,7 @@ import java.util.*;
  */
 public class CampaignBuilder {
 
-    private static final Logger lOG = LoggerFactory.getLogger(CampaignBuilder.class);
+    private static final Logger log = LoggerFactory.getLogger(CampaignBuilder.class);
 
     protected WebDriver driver;
     protected CampaignSettings settings;
@@ -39,7 +39,7 @@ public class CampaignBuilder {
 
     public CampaignBuilder build() {
         System.out.println("");
-        lOG.info("Start building campaign '{}', '{}/{}'", settings.getGuid(), settings.getSettingsBean().getSettings().getVertical(), settings.getSettingsBean().getSettings().getCampaign());
+        log.info("Start building campaign '{}', '{}/{}'", settings.getGuid(), settings.getSettingsBean().getSettings().getVertical(), settings.getSettingsBean().getSettings().getCampaign());
 
         for (Step step : settings.getStepsBean().getSteps()) {
             if (step.getContent() == null || (step.getContent().getFields() instanceof Boolean)) {
@@ -57,7 +57,7 @@ public class CampaignBuilder {
                 campaign.add(page);
             }
         }
-        lOG.info("Finish building campaign..\n");
+        log.info("Finish building campaign..\n");
         return this;
     }
 
@@ -81,12 +81,12 @@ public class CampaignBuilder {
                 }
             } else {
                 String message = String.format("Unknown instance of object '%s', to string '%s'", o.getClass(), o.toString());
-                lOG.error(message);
+                log.error(message);
                 throw new FrameworkException(message);
             }
         }
         fieldsOnPage = checkForLogicWithDubFields(fieldsOnPage);
-        lOG.info("On page present '{}' fields {}", fieldsOnPage.size(), fieldsOnPage.toString());
+        log.info("On page present '{}' fields {}", fieldsOnPage.size(), fieldsOnPage.toString());
         return fieldsOnPage;
     }
 
@@ -94,7 +94,7 @@ public class CampaignBuilder {
         for (String f : fieldsOnPage) {
             if (f.equalsIgnoreCase(WebField.ADDRESS1.getName())) {
                 fieldsOnPage.remove(WebField.YEARS_AT_RESIDENCE.getName());
-                lOG.info("Remove '{}' field", WebField.YEARS_AT_RESIDENCE);
+                log.info("Remove '{}' field", WebField.YEARS_AT_RESIDENCE);
                 break;
             }
         }
@@ -104,7 +104,7 @@ public class CampaignBuilder {
 
     public void fillInAllPages(Map<String, String> contactData) {
         for (Page p : campaign) {
-            lOG.info("Start filling in page '{}'..", p.getStepNumber());
+            log.info("Start filling in page '{}'..", p.getStepNumber());
             List<Element> elements = p.getElements();
 
             for (Element e : elements) {
@@ -113,7 +113,7 @@ public class CampaignBuilder {
             }
             elementHelper.nextPage(p);
         }
-        lOG.info("Submit campaign..");
+        log.info("Submit campaign..");
         elementHelper.sleep(5000);
     }
 

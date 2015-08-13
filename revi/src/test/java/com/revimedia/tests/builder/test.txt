@@ -80,3 +80,6 @@ div [value^='Existing']
 
 .bq-name-ProjectStatus [class*='bq-Existing']
 div [class*="Existing"]
+
+style guide
+http://google.github.io/styleguide/javaguide.html#s5.2.4-constant-names
