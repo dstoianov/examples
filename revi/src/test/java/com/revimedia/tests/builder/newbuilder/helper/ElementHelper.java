@@ -23,7 +23,7 @@ import java.util.Random;
  */
 public class ElementHelper extends ConciseAPI {
 
-    private static final Logger log = LoggerFactory.getLogger(ElementHelper.class);
+    private static final Logger LOG = LoggerFactory.getLogger(ElementHelper.class);
     private WebDriver driver;
     protected JSHelper jsHelper;
 
@@ -44,18 +44,18 @@ public class ElementHelper extends ConciseAPI {
         WebElement webElement;
 
         if (isInput) {
-            log.info("'{}' type --> '{}', element name '{}'", element.getTitle(), value, element.getName());
+            LOG.info("'{}' type --> '{}', element name '{}'", element.getTitle(), value, element.getName());
             String css = String.format(".bq-name-%s %s", element.getName(), "input");
             webElement = $(css);
             if (!webElement.isEnabled()) {
-                log.info("Element '{}' is disabled with text '{}', skip typing...", element.getName(), webElement.getAttribute("value"));
+                LOG.info("Element '{}' is disabled with text '{}', skip typing...", element.getName(), webElement.getAttribute("value"));
                 return;
             }
             webElement.click();
             webElement.clear();
             webElement.sendKeys(value);
         } else if (type.equalsIgnoreCase("select") || type.equalsIgnoreCase("polk")) {
-            log.info("'{}' select --> '{}', element name '{}'", element.getTitle(), value, element.getName());
+            LOG.info("'{}' select --> '{}', element name '{}'", element.getTitle(), value, element.getName());
             String css = String.format(".bq-name-%s %s", element.getName(), "select");
             webElement = $(css);
 
@@ -67,7 +67,7 @@ public class ElementHelper extends ConciseAPI {
                 selectByVisibleText(webElement, value);
             }
         } else if (type.equalsIgnoreCase("radio")) {
-            log.info("'{}' click --> '{}', element name '{}'", element.getTitle(), value, element.getName());
+            LOG.info("'{}' click --> '{}', element name '{}'", element.getTitle(), value, element.getName());
             String css = String.format(".bq-name-%s .bq-%s", element.getName(), value);
             try {
                 webElement = $(css);
@@ -82,7 +82,7 @@ public class ElementHelper extends ConciseAPI {
                 }
             }
         } else if (type.equalsIgnoreCase("composite")) {
-            log.info("'{}' set --> '{}', element name '{}'", element.getTitle(), value, element.getName());
+            LOG.info("'{}' set --> '{}', element name '{}'", element.getTitle(), value, element.getName());
             String css = String.format(".bq-name-%s-%s", type, element.getName());
             if (element.getName().equalsIgnoreCase("BirthDate")) {
                 webElement = $(css);
@@ -123,7 +123,7 @@ public class ElementHelper extends ConciseAPI {
 
     private void selectByVisibleText(WebElement webElement, Element element) {
         if (element.getValue() != null) {
-            log.info("'{}' select --> '{}', element name '{}'", element.getTitle(), element.getValue(), element.getName());
+            LOG.info("'{}' select --> '{}', element name '{}'", element.getTitle(), element.getValue(), element.getName());
             new Select(webElement).selectByVisibleText(element.getValue());
         } else {
             Select select = new Select(webElement);
@@ -131,7 +131,7 @@ public class ElementHelper extends ConciseAPI {
             int min = 1;
             int i = min + (int) (new Random().nextFloat() * (max - min));
             select.selectByIndex(i);
-            log.info("'{}' select random by index --> '{}', element name '{}'", element.getTitle(), i, element.getName());
+            LOG.info("'{}' select random by index --> '{}', element name '{}'", element.getTitle(), i, element.getName());
         }
     }
 
@@ -220,14 +220,14 @@ public class ElementHelper extends ConciseAPI {
             result.add(option.getText());
         }
         result.remove(0);// remove <option value="null"> --select-- </option>
-//        log.info("\n----------------Displayed values in Drop Down -----------------\n" + result.toString() + "\n");
+//        LOG.info("\n----------------Displayed values in Drop Down -----------------\n" + result.toString() + "\n");
         return result;
     }
 
     public void nextPage(Page p) {
         if (isOnThisPage(p.getStepNumber())) {
             $("body").click(); // move focus to element
-            log.info("Click 'Next' page");
+            LOG.info("Click 'Next' page");
             if (!isOnThisPage(p.getStepNumber() + 1)) {
 //                click again if still on this page
                 $(".bq-control.bq-type-simple").click();

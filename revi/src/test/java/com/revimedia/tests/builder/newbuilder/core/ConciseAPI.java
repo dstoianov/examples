@@ -14,12 +14,12 @@ import java.util.List;
  */
 public abstract class ConciseAPI {
 
-    private static final Logger log = LoggerFactory.getLogger(ConciseAPI.class);
+    private static final Logger LOG = LoggerFactory.getLogger(ConciseAPI.class);
 
     public abstract WebDriver getDriver();
 
     protected WebElement $(By locator) {
-//        log.info("\tFind element '{}'", locator.toString());
+//        LOG.info("\tFind element '{}'", locator.toString());
         return getDriver().findElement(locator);
     }
 
@@ -28,7 +28,7 @@ public abstract class ConciseAPI {
     }
 
     protected List<WebElement> $$(By locator) {
-//        log.info("\tFind elements '{}'", locator.toString());
+//        LOG.info("\tFind elements '{}'", locator.toString());
         return getDriver().findElements(locator);
     }
 
@@ -41,12 +41,12 @@ public abstract class ConciseAPI {
     }
 
     protected void open(String url) {
-        log.info("Open url " + url);
+        LOG.info("Open url " + url);
         getDriver().get(url);
     }
 
     public void sleep(long i) {
-        log.info("Waiting for a '{}' sec...", i / 1000);
+        LOG.info("Waiting for a '{}' sec...", i / 1000);
         try {
             Thread.sleep(i);
         } catch (InterruptedException e) {
