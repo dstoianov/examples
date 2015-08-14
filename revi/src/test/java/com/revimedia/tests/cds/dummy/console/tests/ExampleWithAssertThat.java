@@ -53,7 +53,9 @@ public class ExampleWithAssertThat {
         List<String> result = new ArrayList<String>();
 
         for (String prop : props.stringPropertyNames()) {
-            if (prop.equals("java.class.path") || prop.equals("java.library.path")) {
+            if (prop.equals("java.class.path") ||
+                    prop.equals("java.library.path") ||
+                    prop.equals("surefire.test.class.path")) {
                 continue;
             }
             result.add(String.format("%s = %s", prop, System.getProperty(prop)));
