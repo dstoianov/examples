@@ -81,5 +81,11 @@ div [value^='Existing']
 .bq-name-ProjectStatus [class*='bq-Existing']
 div [class*="Existing"]
 
+
+jankins parametried build
+https://wiki.jenkins-ci.org/display/JENKINS/Parameterized+Build
+
+
 style guide
 http://google.github.io/styleguide/javaguide.html#s5.2.4-constant-names
+https://docs.oracle.com/javase/6/docs/api/java/util/logging/Logger.html#GLOBAL_LOGGER_NAME

@@ -17,6 +17,9 @@
       "value": {
         "type": "string"
       },
+      "displayedText": {
+        "type": "string"
+      },
       "type": {
         "type": "string"
       }

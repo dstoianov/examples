@@ -19,7 +19,7 @@
     <properties>
         <!--<selenium-java.version>2.43.1</selenium-java.version>-->
         <selenium-java.version>2.45.0</selenium-java.version>
-        <!--<testng.suite>${basedir}/src/test/resources/testsuites/default_console_suite.xml</testng.suite>-->
+        <testng.suite>${basedir}/src/test/resources/testsuites/default_console_suite.xml</testng.suite>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <driver.path>${basedir}/src/test/resources/drivers</driver.path>
         <maven.compiler.source>1.7</maven.compiler.source>
@@ -35,7 +35,7 @@
                 <version>2.18.1</version>
                 <configuration>
                     <suiteXmlFiles>
-                        <!--<suiteXmlFile>${testng.suite}</suiteXmlFile>-->
+                        <suiteXmlFile>${testng.suite}</suiteXmlFile>
                     </suiteXmlFiles>
                     <junitArtifactName>none:none</junitArtifactName>
                     <systemPropertyVariables>
