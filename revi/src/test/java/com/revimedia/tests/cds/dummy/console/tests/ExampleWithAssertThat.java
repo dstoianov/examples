@@ -40,6 +40,6 @@ public class ExampleWithAssertThat {
         System.out.printf("browser '%s'\n", System.getProperty("browser"));
         System.out.printf("Guid '%s'\n", System.getProperty("guid"));
         System.out.printf("Threads count '%s'\n", System.getProperty("threads"));
-        System.out.printf("Note message '%s'\n", System.getProperty("note"));
+        System.out.printf("Note message '%s'\n\n", System.getProperty("note"));
     }
 }
