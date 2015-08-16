@@ -1,6 +1,7 @@
 package com.revimedia.tests.builder.newbuilder.core;
 
 import com.google.gson.internal.LinkedTreeMap;
+import com.revimedia.testing.json2pojo.field.Composite;
 import com.revimedia.testing.json2pojo.step.Step;
 import com.revimedia.tests.builder.exception.FrameworkException;
 import com.revimedia.tests.builder.newbuilder.dto.CampaignSettings;
@@ -23,12 +24,14 @@ public class CampaignBuilder {
     protected WebDriver driver;
     protected CampaignSettings settings;
     protected List<Page> campaign = new ArrayList<Page>();
-    protected Map<String, String> fieldValue = new HashMap<String, String>();
     protected ElementHelper elementHelper;
+
 
     public CampaignBuilder(WebDriver driver, CampaignSettings settings) {
         this.driver = driver;
         this.settings = settings;
+        String title = settings.getSettingsBean().getSettings().getVertical() + "/" + settings.getSettingsBean().getSettings().getCampaign();
+        this.settings.setTitle(title);
         this.elementHelper = new ElementHelper(this);
     }
 
@@ -39,7 +42,7 @@ public class CampaignBuilder {
 
     public CampaignBuilder build() {
         System.out.println("");
-        log.info("Start building campaign '{}', '{}/{}'", settings.getGuid(), settings.getSettingsBean().getSettings().getVertical(), settings.getSettingsBean().getSettings().getCampaign());
+        log.info("Start building campaign '{}', '{}'", settings.getGuid(), settings.getTitle());
 
         for (Step step : settings.getStepsBean().getSteps()) {
             if (step.getContent() == null || (step.getContent().getFields() instanceof Boolean)) {
@@ -85,31 +88,57 @@ public class CampaignBuilder {
                 throw new FrameworkException(message);
             }
         }
-        fieldsOnPage = checkForLogicWithDubFields(fieldsOnPage);
         log.info("On page present '{}' fields {}", fieldsOnPage.size(), fieldsOnPage.toString());
         return fieldsOnPage;
     }
 
-    private List<String> checkForLogicWithDubFields(List<String> fieldsOnPage) {
-        for (String f : fieldsOnPage) {
-            if (f.equalsIgnoreCase(WebField.ADDRESS1.getName())) {
-                fieldsOnPage.remove(WebField.YEARS_AT_RESIDENCE.getName());
-                log.info("Remove '{}' field", WebField.YEARS_AT_RESIDENCE);
-                break;
+    public void checkDependencyElements() {
+        log.info("Check dependency between fields..");
+        List<String> elementForRemove = new ArrayList<>();
+        for (Page p : campaign) {
+            for (Element e : p.getElements()) {
+
+                /**
+                 * Logic for Element Is Living Here (Yes/No)
+                 */
+                if (e.getName().equals(WebField.IS_LIVING_HERE.getName())) {
+
+                    if (e.getDisplayedText().equals("No")) {
+                        elementForRemove.add(WebField.YEARS_AT_RESIDENCE.getName());
+                    } else {
+                        elementForRemove.add(WebField.PROPERTY_ZIP_CODE.getName());
+                        elementForRemove.add(WebField.ADDRESS1.getName());
+                    }
+                }
+
+                if (e.getName().equals(WebField.EXPIRATION_DATE.getName())) {
+                    e.getComposite().get(1).setHidden(true);
+                }
+
             }
         }
-        return fieldsOnPage;
+        removeElementsFromCampaign(elementForRemove);
+        log.info("Dependency between fields have been checked..");
     }
 
+    private void removeElementsFromCampaign(List<String> elements) {
+        for (String elementName : elements) {
+            for (Page p : campaign) {
+                for (Element e : p.getElements()) {
+                    if (e.getName().equalsIgnoreCase(elementName)) {
+                        log.info("Remove element '{}'", elementName);
+                        p.getElements().remove(e);
+                    }
+                }
+            }
+        }
+    }
 
-    public void fillInAllPages(Map<String, String> contactData) {
+    public void fillInAllPages() {
         for (Page p : campaign) {
             log.info("Start filling in page '{}'..", p.getStepNumber());
-            List<Element> elements = p.getElements();
-
-            for (Element e : elements) {
-                String value = getValue(e, contactData);
-                elementHelper.set(e, value);
+            for (Element e : p.getElements()) {
+                elementHelper.set(e);
             }
             elementHelper.nextPage(p);
         }
@@ -117,58 +146,129 @@ public class CampaignBuilder {
         elementHelper.sleep(5000);
     }
 
-    private String getValue(Element e, Map<String, String> contactData) {
-
-        String value = contactData.get(e.getName().toLowerCase());
-        String valueFromSet = getValueFromSet(e.getSets());
-
-        if (value != null) {
-            return value;
-        } else if (valueFromSet != null) {
-            return valueFromSet;
-        } else {
-            throw new FrameworkException(String.format("No data(value, text, sets) for element '%s'", e.getName()));
-        }
-    }
-
     public WebDriver getDriver() {
         return driver;
     }
 
+    public void setDataForAllElements(Map<String, String> contact) {
+        Map<String, String> dataSet = null;
+        log.info("Start collect and set data for campaign '{}'", settings.getTitle());
 
-    private String getValueFromSet(Object sets) {
-        if (sets != null) {
-            if (sets instanceof ArrayList) {
-                Object o = ((ArrayList) sets).get(new Random().nextInt(((ArrayList) sets).size()));
-                if (o instanceof String) {
-                    return o.toString();
-                } else if (o instanceof LinkedTreeMap) {
-                    Object label = ((LinkedTreeMap) o).get("label");
-                    if (label == null) {
-                        return null;
-                    }
-                    return label.toString().replace("вЂ“", "–"); //home campaign, correct value for Approx. Sq. Footage
-                } else if (o instanceof Double) {
-                    Integer s = ((Double) o).intValue();
-                    return s.toString();
-                } else {
-                    System.out.println("Unknown type of sets " + sets.getClass() + " " + sets.toString());
+        setContactData(contact);
+
+        for (Page p : campaign) {
+            log.info("Start collect data for page '{}'", p.getStepNumber());
+            for (Element e : p.getElements()) {
+//                if (e.getName().equalsIgnoreCase("ExpirationDate")) {
+//                    String s = "";
+//                }
+                if (e.getDisplayedText() != null) {
+                    continue;
                 }
-            } else if (sets instanceof LinkedTreeMap) {
-                //TODO: need to think about it how to handle this
-                return null;
-            } else {
-                System.out.println("Unknown type of sets " + sets.getClass() + " " + sets.toString());
+
+                if (e.getType().equals("composite")) {
+                    for (Composite c : e.getComposite()) {
+                        dataSet = getKeyAndValueFromSet(c.getSets());
+
+                        log.info("\tset text '{}' and value '{}' for element '{} - {}'", dataSet.get("text"), dataSet.get("value"), e.getName(), c.getName());
+
+                        c.setDisplayedText(dataSet.get("text"));
+                        c.setValue(dataSet.get("value"));
+                    }
+                } else if (e.getSets() != null) {
+                    dataSet = getKeyAndValueFromSet(e.getSets());
+                    String msg = String.format("set text '%s' and value '%s' to element '%s'", dataSet.get("text"), dataSet.get("value"), e.getName());
+                    log.info(msg);
+                    e.setValue(dataSet.get("value"));
+                    e.setDisplayedText(dataSet.get("text"));
+                } else {
+                    throw new FrameworkException(String.format("No data (value or text from set) for element '%s'", e.getName()));
+                }
             }
         }
-        return null;
     }
 
-    public void verifyDataForAllElements(Map<String, String> contact) {
+    private void setContactData(Map<String, String> contact) {
+        log.info("Set 'Contact' data for campaign..");
+        int i = 0;
         for (Page p : campaign) {
             for (Element e : p.getElements()) {
-
+                String valueContact = contact.get(e.getName().toLowerCase());
+                if (valueContact != null) {
+                    e.setDisplayedText(valueContact);
+                    i++;
+                }
             }
+        }
+        log.info("Data 'Contact' for campaign has been set... was set '{}' elements", i);
+    }
+
+
+    private Map<String, String> getKeyAndValueFromSet(Object sets) {
+        Map<String, String> result = new HashMap<>();
+
+        if (sets == null) {
+            throw new FrameworkException("Set is equal to null, no data in set");
+        }
+
+        if (sets instanceof ArrayList) {
+            Object o = ((ArrayList) sets).get(new Random().nextInt(((ArrayList) sets).size()));
+            if (o instanceof String) {
+                result.put("text", o.toString());
+            } else if (o instanceof Double) {
+                Integer s = ((Double) o).intValue();
+                result.put("text", s.toString());
+            } else if (o instanceof LinkedTreeMap) {
+
+                Object text = ((Map) o).get("label");
+                Object value = ((Map) o).get("value");
+
+                if (value != null && value instanceof Double) {
+                    value = ((Double) value).intValue();
+                }
+
+                if (text == null) {
+                    return null;
+                }
+
+                String textResult = text.toString().replace("вЂ“", "–");//home campaign, correct value for Approx. Sq. Footage
+                result.put("text", textResult);
+                result.put("value", value.toString());
+
+            } else {
+                throw new FrameworkException(String.format("Unknown type of set '%s', '%s'", sets.getClass(), sets.toString()));
+            }
+        } else {
+            throw new FrameworkException(String.format("Unknown instance of set '%s', '%s'", sets.getClass(), sets.toString()));
+        }
+
+        return result;
+    }
+
+    public void verifyCampaignData() {
+        StringBuilder sb = new StringBuilder();
+        for (Page p : campaign) {
+            log.info("Verify data for page '{}'", p.getStepNumber());
+            for (Element e : p.getElements()) {
+
+                if (e.getType().equals("composite") && e.getDisplayedText() == null) {
+                    for (Composite c : e.getComposite()) {
+                        if (c.getDisplayedText() == null) {
+                            sb.append("Element '")
+                                    .append(e.getName()).append(" - ").append(c.getName())
+                                    .append("' does not have data").append("\n");
+                        }
+                    }
+                }
+
+                if (e.getDisplayedText() == null && !e.getType().equals("composite")) {
+                    sb.append("Element '").append(e.getName()).append("' does not have data").append("\n");
+                }
+            }
+        }
+        if (sb.toString().length() != 0) {
+            String info = String.format("Campaign '%s', '%s'\n", settings.getTitle(), settings.getGuid());
+            throw new FrameworkException(info + sb.toString());
         }
     }
 }

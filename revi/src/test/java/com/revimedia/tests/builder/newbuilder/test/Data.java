@@ -1,44 +1,74 @@
 package com.revimedia.tests.builder.newbuilder.test;
 
+import com.revimedia.testing.cds.auto.staticdata.CommonExtraData;
 import com.revimedia.testing.json2pojo.offer.OfferViewList;
 import com.revimedia.tests.builder.newbuilder.helper.BeanHelper;
 import org.testng.annotations.DataProvider;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by Funker on 11.07.2015.
  */
 public class Data {
 
-    @DataProvider(name = "goodCampaigns")
-    public static Object[][] goodNumbers() {
-        return new Object[][]{
-                {"70844C03-E2D9-4AB5-8512-20094E4DB3B9"}, //Worked old campaign
-                {"42726873-9B6B-4E56-A75B-D91C675AC659"},
-                {"BE7F0F54-0BF9-41D3-BA06-E4ED65700703"},
-                {"9C9B9B8F-C357-4336-A09A-117D38EC9F76"}, //??
-                {"5F54C23D-01A2-4F92-A62E-4603D5C9C39F"},
-                {"DD37D5DA-FE78-4815-B99F-06551E3E62D0"}, //??
-                {"40C24D19-96B8-44B3-AFCB-7D8A8B1293AD"},
-                {"22B49D07-28F9-4946-A9C1-097BDD55D236"}, //??
-                {"B18FC762-C029-49C4-BF91-E1E96A47FEA1"},
-                {"853B8ED3-F0ED-44FD-ABE5-E05FC2003FF4"},
-                {"80081DF2-FE73-40B0-AA27-7BC908B1F804"},
-                {"74ECE745-DF89-485D-B267-C719EAC82838"},
-                {"4EAF6FAB-4702-402E-B484-051B87D63F76"},
-                {"F2DB07BE-7647-4157-AFF8-0F5356EC4DE6"},
-                {"EB1BC971-F054-493E-9E62-24F109CF8A29"},
-                {"7036F46C-29D2-426B-91C5-82F869535633"},
-                {"56242AC4-447D-4898-BA61-53F343243AD7"},
-                {"EFED9305-6853-4D71-99AA-4D351E472497"},
-        };
+
+    private static Map<String, String> getContact() {
+        Map<String, String> map = new HashMap<String, String>();
+        map.put("firstname", "Dorian");
+        map.put("lastname", "Dummy");
+        map.put("gender", "Female");
+        map.put("birthdate", "Apr 26, 1982");
+        map.put("phonenumber", "6565656565");
+        map.put("address", "7500 Dallas Parkway");
+        map.put("emailaddress", "sit.amet.massa@consequatenimdiam.ca");
+        map.put("zipcode", "75024");
+        map.put("city", "PLANO");
+        map.put("state", "TX");
+
+        String[] car = CommonExtraData.getRandomCar();
+        map.put("year", car[0]);
+        map.put("make", car[1]);
+        map.put("model", car[2]);
+
+        map.put("hassystem", "Yes");
+        map.put("propertyvalue", "Over $2,000,000");
+
+//        map.put("islivinghere", "No");
+        map.put("propertyzipcode", "56565");
+        map.put("address1", "Fake adr 63");
+
+
+        map.put("ownrented", "Rented");
+//        map.put("expirationdate", "Mar"); //temporary workaround
+
+        return map;
     }
 
-    @DataProvider(name = "badCampaigns")
+    @DataProvider(name = "Campaigns")
     public static Object[][] badNumbers() {
+        Map<String, String> map = getContact();
         return new Object[][]{
-                {"9A610B50-0E9A-46D5-B810-70A405AC3FEA"},
+                {"9A610B50-0E9A-46D5-B810-70A405AC3FEA", "health", map},
+                {"79482715-7653-4A5E-9936-CD428B298E2C", "solar", map}, //bad radio button
+                {"2D3D1708-6BFC-431B-8B0D-A3B19EA4E849", "home", map},
+                {"0B630F68-190C-4508-85F1-50964D153744", "mortgage", map},
+//
+//                {"88368545-FB77-40BC-AE55-ABD7978271C3", "GloryToUkraine", map},
+//                {"DA907EC3-2F37-47E5-996C-FFF79E5724D0", "auto", map},
+//                {"EFD9D7ED-3835-4AFA-97D3-73BEDAEDA4AD", "homesecurity", map},
+//                {"4D926807-2EDD-4824-B391-5EBE8210EF62", "life", map},
+//                {"FCFE964E-AC1F-418A-B8AE-3A61474CC4D4", "medicalalerts", map},
+//                {"320493C8-21EC-440C-B8E8-133D1D7E169E", "awdawd", map},
+//                {"85E29948-464B-4F17-9C62-AB2C5DE80701", "testAPI", map},
+//                {"A99BB4A4-D817-4A98-B53D-34433972C6B8", "afsdafsd", map},
+//                {"7257FE12-EEEB-4CF8-B091-225B8F273140", "asd", map},
+//                {"1B6A9957-BB98-4428-950E-978570609697", "asd", map},
+//                {"A949BF05-D72C-4EE4-91EE-ECA942AC2504", "asd", map},
+//                {"C409FE57-F255-467F-A96D-A0493BD00A80", "test upsellpage", map},
+
         };
     }
 

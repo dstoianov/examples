@@ -2,7 +2,6 @@ package com.revimedia.tests.builder.newbuilder.test;
 
 import com.google.gson.JsonSyntaxException;
 import com.revimedia.testing.json2pojo.offer.OfferViewList;
-import com.revimedia.testing.json2pojo.settings.SettingsBean;
 import com.revimedia.tests.builder.newbuilder.core.CampaignBuilder;
 import com.revimedia.tests.builder.newbuilder.dto.CampaignSettings;
 import com.revimedia.tests.builder.newbuilder.helper.BeanHelper;
@@ -13,6 +12,7 @@ import org.testng.annotations.Test;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Map;
 
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
@@ -22,28 +22,17 @@ import static org.mockito.Mockito.when;
  */
 public class NewBuilderApiTest extends Data {
 
-    @Test(dataProvider = "badCampaigns")
-    public void testCheckBuilderForCampaignBad(String guid) throws Exception {
+    @Test(dataProvider = "Campaigns")
+    public void testCheckBuilderForCampaignBad(String guid, String title, Map<String, String> contact) throws Exception {
         System.out.println(String.format("Check campaign with guid '%s'..", guid));
         WebDriver driver = mockDriver();
 
         CampaignSettings campaignSettings = BeanHelper.getCampaignSettings(guid);
         CampaignBuilder campaign = new CampaignBuilder(driver, campaignSettings);
         campaign.build();
-    }
-
-
-    @Test(dataProvider = "goodCampaigns")
-    public void testCheckBuilderForCampaign(String guid) throws Exception {
-        System.out.println(String.format("Check campaign with guid '%s'..", guid));
-        BeanHelper.getCampaignSettings(guid);
-    }
-
-
-    @Test(dataProvider = "allCampaigns")
-    public void testCheckSettingsJSON(OfferViewList c) throws Exception {
-        System.out.println(String.format("Check Settings for campaign with title '%s' and guid '%s'..", c.getTitle(), c.getOfferViewGuid()));
-        SettingsBean settingsFor = BeanHelper.getSettingsFor(c.getOfferViewGuid());
+        campaign.setDataForAllElements(contact);
+        campaign.verifyCampaignData();
+        campaign.checkDependencyElements();
     }
 
     @Test(dataProvider = "allListOfCampaigns", description = "Print statistics for all campaigns")

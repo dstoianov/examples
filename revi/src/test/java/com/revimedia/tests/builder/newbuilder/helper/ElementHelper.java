@@ -1,5 +1,6 @@
 package com.revimedia.tests.builder.newbuilder.helper;
 
+import com.revimedia.testing.json2pojo.field.Composite;
 import com.revimedia.tests.builder.exception.FrameworkException;
 import com.revimedia.tests.builder.javascript.JSHelper;
 import com.revimedia.tests.builder.newbuilder.core.CampaignBuilder;
@@ -59,16 +60,20 @@ public class ElementHelper extends ConciseAPI {
     }
 
     private void setComposite(Element element) {
-        log.info("'{}' set --> '{}', element name '{}'", element.getTitle(), element.getDisplayedText(), element.getName());
         String css = String.format(".bq-name-%s-%s", element.getType(), element.getName());
         WebElement webElement;
         if (element.getName().equalsIgnoreCase("BirthDate")) {
+            log.info("'{}' set --> '{}', element name '{}'", element.getTitle(), element.getDisplayedText(), element.getName());
             selectDate($(css), element.getDisplayedText());
-//        } else if (element.getName().equalsIgnoreCase("ExpirationDate")) {
-//            webElement = $(css + " [data-name='Month']");
-//            selectByVisibleText(webElement, element.getDisplayedText());
         } else {
-            throw new FrameworkException(String.format("Unknown type of composite element name '%s',\n'%s'", element.getName(), element.toString()));
+            for (Composite c : element.getComposite()) {
+                if (!c.getHidden()) {
+                    log.info("'{}' set --> '{}', element name '{} - {}'", element.getTitle(), c.getDisplayedText(), element.getName(), c.getName());
+                    String cssComposite = String.format("%s .bq-name-%s select", css, c.getName());
+                    webElement = $(cssComposite);
+                    selectByVisibleText(webElement, c.getDisplayedText());
+                }
+            }
         }
     }
 
