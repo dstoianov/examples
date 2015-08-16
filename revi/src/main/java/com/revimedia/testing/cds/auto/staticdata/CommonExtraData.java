@@ -49,7 +49,7 @@ public class CommonExtraData {
         carMap.put(5, new String[]{"2002", "BUICK", "Regal LS"});
         carMap.put(6, new String[]{"2012", "MERCEDES-BENZ", "CLS-Class CLS550"});
         carMap.put(7, new String[]{"2012", "HONDA", "Accord EX-L w/Navi"});
-        carMap.put(8, new String[]{"2012", "KIA", "Soul Soul+"});
+        carMap.put(8, new String[]{"2012", "KIA", "Soul+"});
     }
 
     private static String getRandomValueFromList(String[] list) {
