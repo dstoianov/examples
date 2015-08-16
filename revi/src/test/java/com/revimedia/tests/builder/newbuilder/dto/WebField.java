@@ -5,7 +5,9 @@ package com.revimedia.tests.builder.newbuilder.dto;
  */
 public enum WebField {
 
+    IS_LIVING_HERE("IsLivingHere"),
     YEARS_AT_RESIDENCE("YearsAtResidence"),
+    PROPERTY_ZIP_CODE("PropertyZipCode"),
     ADDRESS1("Address1"),
 
     YAEAR("Year"),

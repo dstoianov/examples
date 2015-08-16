@@ -41,12 +41,13 @@ public abstract class ConciseAPI {
     }
 
     protected void open(String url) {
+        System.out.println("\n");
         log.info("Open url " + url);
         getDriver().get(url);
     }
 
     public void sleep(long i) {
-        log.info("Waiting for a '{}' sec...", i / 1000);
+        log.info("Waiting for '{}' sec...", i / 1000);
         try {
             Thread.sleep(i);
         } catch (InterruptedException e) {

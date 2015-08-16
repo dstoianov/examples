@@ -10,13 +10,14 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 
 /**
  * Created by Funker on 11.07.2015.
@@ -26,9 +27,12 @@ public class ElementHelper extends ConciseAPI {
     private static final Logger log = LoggerFactory.getLogger(ElementHelper.class);
     private WebDriver driver;
     protected JSHelper jsHelper;
+    private static final int DEFAULT_TIMEOUT = 10;
+    private WebDriverWait wait;
 
     public ElementHelper(CampaignBuilder campaignBuilder) {
         this.driver = campaignBuilder.getDriver();
+        this.wait = new WebDriverWait(driver, DEFAULT_TIMEOUT);
         this.jsHelper = new JSHelper(driver);
     }
 
@@ -37,76 +41,80 @@ public class ElementHelper extends ConciseAPI {
         return driver;
     }
 
-    public void set(Element element, String value) {
-
+    public void set(Element element) {
         String type = element.getType().toLowerCase();
         boolean isInput = type.matches("input|zipUS|name|address|phoneUS|email".toLowerCase());
-        WebElement webElement;
 
         if (isInput) {
-            log.info("'{}' type --> '{}', element name '{}'", element.getTitle(), value, element.getName());
-            String css = String.format(".bq-name-%s %s", element.getName(), "input");
-            webElement = $(css);
-            if (!webElement.isEnabled()) {
-                log.info("Element '{}' is disabled with text '{}', skip typing...", element.getName(), webElement.getAttribute("value"));
-                return;
-            }
-            webElement.click();
-            webElement.clear();
-            webElement.sendKeys(value);
+            setInput(element);
         } else if (type.equalsIgnoreCase("select") || type.equalsIgnoreCase("polk")) {
-            log.info("'{}' select --> '{}', element name '{}'", element.getTitle(), value, element.getName());
-            String css = String.format(".bq-name-%s %s", element.getName(), "select");
-            webElement = $(css);
-
-            if (type.equalsIgnoreCase("polk")) {
-                selectByVisibleText(webElement, value);
-                jsHelper.waitForAjaxComplete();
-                $(".bq-add-no").click();
-            } else {
-                selectByVisibleText(webElement, value);
-            }
+            setSelect(element);
         } else if (type.equalsIgnoreCase("radio")) {
-            log.info("'{}' click --> '{}', element name '{}'", element.getTitle(), value, element.getName());
-            String css = String.format(".bq-name-%s .bq-%s", element.getName(), value);
-            try {
-                webElement = $(css);
-                webElement.click();
-            } catch (NoSuchElementException e) {
-                List<WebElement> elements = $$(String.format(".bq-name-%s .bq-label", element.getName()));
-                for (WebElement label : elements) {
-                    if (label.getText().equalsIgnoreCase(value)) {
-                        label.click();
-                        break;
-                    }
-                }
-            }
+            setRadio(element);
         } else if (type.equalsIgnoreCase("composite")) {
-            log.info("'{}' set --> '{}', element name '{}'", element.getTitle(), value, element.getName());
-            String css = String.format(".bq-name-%s-%s", type, element.getName());
-            if (element.getName().equalsIgnoreCase("BirthDate")) {
-                webElement = $(css);
-                selectDate(webElement, value);
-            } else if (element.getName().equalsIgnoreCase("ExpirationDate")) {
-                webElement = $(css + " [data-name='Month']");
-                selectByVisibleText(webElement, value);
-            } else {
-                throw new FrameworkException(String.format("Unknown type of composite element name '%s'", element.getName()));
-            }
+            setComposite(element);
         } else {
             throw new FrameworkException(String.format("Unknown type of element '%s', element name '%s'", type, element.getName()));
         }
-
     }
 
-    private void setRadio(WebElement element, String value) {
-        String innerHTML = element.getAttribute("innerHTML");
-        //
-        WebElement radio = element.findElement(By.xpath("..//"));
-        WebElement element1 = radio.findElement(By.cssSelector(String.format("[value='%s']", value)));
-
-        element1.click();
+    private void setComposite(Element element) {
+        log.info("'{}' set --> '{}', element name '{}'", element.getTitle(), element.getDisplayedText(), element.getName());
+        String css = String.format(".bq-name-%s-%s", element.getType(), element.getName());
+        WebElement webElement;
+        if (element.getName().equalsIgnoreCase("BirthDate")) {
+            selectDate($(css), element.getDisplayedText());
+//        } else if (element.getName().equalsIgnoreCase("ExpirationDate")) {
+//            webElement = $(css + " [data-name='Month']");
+//            selectByVisibleText(webElement, element.getDisplayedText());
+        } else {
+            throw new FrameworkException(String.format("Unknown type of composite element name '%s',\n'%s'", element.getName(), element.toString()));
+        }
     }
+
+    private void setSelect(Element element) {
+        log.info("'{}' select --> '{}', element name '{}'", element.getTitle(), element.getDisplayedText(), element.getName());
+        String css = String.format(".bq-name-%s %s", element.getName(), "select");
+        WebElement webElement = $(css);
+
+        if (element.getType().equalsIgnoreCase("polk")) {
+            selectByVisibleText(webElement, element.getDisplayedText());
+            jsHelper.waitForAjaxComplete();
+            $(".bq-add-no").click();
+        } else {
+            selectByVisibleText(webElement, element.getDisplayedText());
+        }
+    }
+
+    private void setRadio(Element element) {
+        log.info("'{}' click --> '{}', element name '{}'", element.getTitle(), element.getDisplayedText(), element.getName());
+        try {
+            String css = String.format(".bq-name-%s .bq-%s", element.getName(), element.getDisplayedText());
+            $(css).click();
+        } catch (NoSuchElementException e) {
+            List<WebElement> elements = $$(String.format(".bq-name-%s .bq-label", element.getName()));
+            for (WebElement label : elements) {
+                if (label.getText().equalsIgnoreCase(element.getDisplayedText())) {
+                    label.click();
+                    break;
+                }
+            }
+        }
+    }
+
+    private void setInput(Element element) {
+        log.info("'{}' type --> '{}', element name '{}'", element.getTitle(), element.getDisplayedText(), element.getName());
+        String css = String.format(".bq-name-%s %s", element.getName(), "input");
+        WebElement webElement = $(css);
+        if (!webElement.isEnabled()) {
+            log.info("Element '{}' is disabled with text '{}', skip typing...", element.getName(), webElement.getAttribute("value"));
+            return;
+        }
+        webElement.click();
+        webElement.clear();
+        webElement.sendKeys(element.getDisplayedText());
+    }
+
 
     private void selectDate(WebElement e, String birthDate) {
         //Mar 12, 1987
@@ -121,96 +129,9 @@ public class ElementHelper extends ConciseAPI {
     }
 
 
-    private void selectByVisibleText(WebElement webElement, Element element) {
-        if (element.getValue() != null) {
-            log.info("'{}' select --> '{}', element name '{}'", element.getTitle(), element.getValue(), element.getName());
-            new Select(webElement).selectByVisibleText(element.getValue());
-        } else {
-            Select select = new Select(webElement);
-            int max = select.getOptions().size();
-            int min = 1;
-            int i = min + (int) (new Random().nextFloat() * (max - min));
-            select.selectByIndex(i);
-            log.info("'{}' select random by index --> '{}', element name '{}'", element.getTitle(), i, element.getName());
-        }
-    }
-
-
     private void selectByVisibleText(WebElement webElement, String text) {
-        if (text != null) {
-            new Select(webElement).selectByVisibleText(text);
-        } else {
-            Select select = new Select(webElement);
-            int max = select.getOptions().size();
-            int min = 1;
-            int i = min + new Random().nextInt() * (max - min);
-            select.selectByIndex(i);
-        }
-    }
-
-
-    public void setSelectRandom(Element element) {
-//        List<Object> sets = element.getSets();
-//        if (element.getName().equalsIgnoreCase("Make")){
-//            int i = sets.size() - 1;
-//        }
-//        int i = (new Random()).nextInt(sets.size()-1);
-//        Object o = sets.get(i);
-//        String value = null;
-//        if (o instanceof String) {
-//            value = o.toString();
-//        } else if (o instanceof Map) {
-//            value = BeanUtils.getProperty(o, "label");
-//            if (value == null) {
-//                value = BeanUtils.getProperty(o, "Value");
-//            }
-//        } else {
-//            System.out.println(String.format("Unknown instance of object '%s'", o.getClass()));
-//        }
-
-        String css = String.format(".bq-name-%s %s", element.getName(), "select");
-        WebElement e = driver.findElement(By.cssSelector(css));
-        String option = getOption(e);
-
-        System.out.println(String.format("'%s' select --> '%s', element name '%s'", element.getTitle(), option, element.getName()));
-        selectByVisibleText(e, option);
-    }
-
-
-/*    public static void setInput(WebDriver driver, Element element, String value) {
-        System.out.println(String.format("'%s' type --> '%s', element name '%s'", element.getTitle(), value, element.getName()));
-        String css = String.format(".bq-name-%s %s", element.getName(), "input");
-        WebElement e = driver.findElement(By.cssSelector(css));
-        e.click();
-        e.clear();
-        e.sendKeys(value);
-    }*/
-
-/*    public static void setRadio(WebDriver driver, Element element, String value) {
-        System.out.println(String.format("'%s' click --> '%s', element name '%s'", element.getTitle(), value, element.getName()));
-        String css = "";
-        if (element.getName().equalsIgnoreCase("AddExtraCar")) {
-            css = String.format(".bq-cloning-adds .bq-add-%s", value);
-        } else {
-            css = String.format(".bq-name-%s .bq-%s", element.getName(), value);
-        }
-        WebElement e = driver.findElement(By.cssSelector(css));
-        e.click();
-    }*/
-
-/*    public void setBirthDay(WebDriver driver, Element element, String value) {
-        System.out.println(String.format("'%s' set --> '%s', element name '%s'", element.getTitle(), value, element.getName()));
-        String css = String.format(".bq-name-%s-%s", element.getType(), element.getName());
-        WebElement e = driver.findElement(By.cssSelector(css));
-        selectDate(e, value);
-    }*/
-
-    private String getOption(WebElement e) {
-        List<String> options = getAllOptionsFromSelect(e);
-//        if (options.size() <= 0) {
-//            new Exception("Has no any options in the drop down for select");
-//        }
-        return options.get((new Random().nextInt(options.size() - 1)));
+        wait.until(ExpectedConditions.visibilityOf(webElement));
+        new Select(webElement).selectByVisibleText(text);
     }
 
     private List<String> getAllOptionsFromSelect(WebElement element) {

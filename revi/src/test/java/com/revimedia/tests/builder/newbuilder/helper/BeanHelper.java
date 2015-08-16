@@ -31,17 +31,6 @@ public class BeanHelper {
         String fieldsJson = http.doGet(url + "Fields/" + guid);
         String stepsJson = http.doGet(url + "Steps/" + guid);
 
-/*        String offerViewsListJson = http.doGet(url + "OfferViews/");
-        OfferBean offerBean = new Gson().fromJson(offerViewsListJson, new TypeToken<OfferBean>() {
-        }.getType());
-
-        for (OfferViewList o : offerBean.getOfferViewList()) {
-            if (o.getOfferViewGuid().equalsIgnoreCase(guid)) {
-                settings.setTitle(o.getTitle());
-                break;
-            }
-        }*/
-
         SettingsBean settingsBean = new Gson().fromJson(settingsJson, new TypeToken<SettingsBean>() {
         }.getType());
 

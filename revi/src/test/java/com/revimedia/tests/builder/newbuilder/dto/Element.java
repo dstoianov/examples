@@ -14,6 +14,7 @@ public class Element {
     private String name;
     private Object sets;
     private List<Composite> composite;
+    private String displayedText;
     private String value;
     private String title;
     private boolean hidden;
@@ -43,6 +44,18 @@ public class Element {
 
     public String getValue() {
         return value;
+    }
+
+    public void setValue(String value) {
+        this.value = value;
+    }
+
+    public String getDisplayedText() {
+        return displayedText;
+    }
+
+    public void setDisplayedText(String displayedText) {
+        this.displayedText = displayedText;
     }
 
     public boolean isHidden() {
