@@ -22,7 +22,7 @@ import static org.mockito.Mockito.when;
  */
 public class NewBuilderApiTest extends Data {
 
-    @Test(dataProvider = "Campaigns")
+    @Test(dataProvider = "Campaigns", invocationCount = 5)
     public void testCheckBuilderForCampaignBad(String guid, String title, Map<String, String> contact) throws Exception {
         System.out.println(String.format("Check campaign with guid '%s'..", guid));
         WebDriver driver = mockDriver();

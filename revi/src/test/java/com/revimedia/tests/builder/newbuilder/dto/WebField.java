@@ -14,8 +14,14 @@ public enum WebField {
     MAKE("Make"),
     MODEL("Model"),
 
+    HAS_SYSTEM("HasSystem"),
+    CURRENT_SECURITY_SYSTEM_COMPANY("CurrentSecuritySystemCompany"),
+
     EXPIRATION_DATE("ExpirationDate"),
-    MONTH("Month"),
+    OWN_RENTED("OwnRented"),
+    AUTHORIZED_FOR_PROPERTY_CHANGES("AuthorizedForPropertyChanges"),
+    INSURANCE_COMPANY("InsuranceCompany"),
+    INSURED_SINCE("InsuredSince"),
 
     HEIGHT_FT("Height_FT"),
     HEIGHT_INCH("Height_Inch"),;

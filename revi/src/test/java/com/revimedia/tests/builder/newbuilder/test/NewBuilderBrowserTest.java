@@ -37,7 +37,7 @@ public class NewBuilderBrowserTest {
     }
 
 
-    @Test(dataProvider = "Campaigns", invocationCount = 1, dataProviderClass = Data.class)
+    @Test(dataProvider = "Campaigns", invocationCount = 5, dataProviderClass = Data.class)
     public void testMainSubmit(String guid, String title, Map<String, String> contact) throws Exception {
 
         CampaignSettings campaignSettings = BeanHelper.getCampaignSettings(guid);

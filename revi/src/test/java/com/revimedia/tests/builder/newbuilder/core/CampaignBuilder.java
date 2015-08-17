@@ -21,10 +21,10 @@ public class CampaignBuilder {
 
     private static final Logger log = LoggerFactory.getLogger(CampaignBuilder.class);
 
-    protected WebDriver driver;
-    protected CampaignSettings settings;
-    protected List<Page> campaign = new ArrayList<Page>();
-    protected ElementHelper elementHelper;
+    private WebDriver driver;
+    private CampaignSettings settings;
+    private List<Page> campaign = new ArrayList<>();
+    private ElementHelper elementHelper;
 
 
     public CampaignBuilder(WebDriver driver, CampaignSettings settings) {
@@ -42,8 +42,8 @@ public class CampaignBuilder {
 
     public CampaignBuilder build() {
         System.out.println("");
+//        campaign = new ArrayList<Page>();
         log.info("Start building campaign '{}', '{}'", settings.getGuid(), settings.getTitle());
-
         for (Step step : settings.getStepsBean().getSteps()) {
             if (step.getContent() == null || (step.getContent().getFields() instanceof Boolean)) {
                 continue; //skip incorrect data or end (empty) of campaign
@@ -93,7 +93,7 @@ public class CampaignBuilder {
     }
 
     public void checkDependencyElements() {
-        log.info("Check dependency between fields..");
+        log.info("Check dependency between elements..");
         List<String> elementForRemove = new ArrayList<>();
         for (Page p : campaign) {
             for (Element e : p.getElements()) {
@@ -115,19 +115,56 @@ public class CampaignBuilder {
                     e.getComposite().get(1).setHidden(true);
                 }
 
+                /**
+                 * Logic for Element Own Rented (Own/Rented) (e.g. solar/mf campaign)
+                 */
+                if (e.getName().equals(WebField.OWN_RENTED.getName())) {
+
+                    if (e.getDisplayedText().equals("Own")) {
+                        elementForRemove.add(WebField.AUTHORIZED_FOR_PROPERTY_CHANGES.getName());
+                    }
+                }
+
+                /**
+                 * Logic for Element InsuranceCompany, if InsuranceCompany = Currently not insured
+                 * it has to be removed element InsuredSince
+                 */
+                if (e.getName().equals(WebField.INSURANCE_COMPANY.getName())) {
+
+                    if (e.getDisplayedText().equals("Currently not insured")) {
+                        elementForRemove.add(WebField.INSURED_SINCE.getName());
+                    }
+                }
+
+                /**
+                 * Logic for Element Has System, if HasSystem = No
+                 * it has to be removed element CurrentSecuritySystemCompany
+                 */
+                if (e.getName().equals(WebField.HAS_SYSTEM.getName())) {
+
+                    if (e.getDisplayedText().equals("No")) {
+                        elementForRemove.add(WebField.CURRENT_SECURITY_SYSTEM_COMPANY.getName());
+                    }
+                }
+
+
             }
         }
-        removeElementsFromCampaign(elementForRemove);
-        log.info("Dependency between fields have been checked..");
+        if (elementForRemove.size() != 0) {
+            removeElementsFromCampaign(elementForRemove);
+        }
+        log.info("Dependency between elements have been checked..");
     }
 
     private void removeElementsFromCampaign(List<String> elements) {
+        log.info("Removing '{}' element(s) '{}'..", elements.size(), elements);
         for (String elementName : elements) {
             for (Page p : campaign) {
                 for (Element e : p.getElements()) {
                     if (e.getName().equalsIgnoreCase(elementName)) {
                         log.info("Remove element '{}'", elementName);
                         p.getElements().remove(e);
+                        break; // prevent java.util.ConcurrentModificationException
                     }
                 }
             }
