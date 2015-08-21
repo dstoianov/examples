@@ -65,7 +65,7 @@ public class FetchBrowserConsoleLogsTestChrome {
     @BeforeMethod
     public void startBrowser() throws IOException {
         ChromeDriverService service = new ChromeDriverService.Builder()
-                .usingDriverExecutable(new File("src/test/resources/drivers/chromedriver.exe"))
+                .usingDriverExecutable(new File("./examples/src/test/resources/drivers/chromedriver.exe"))
                 .usingAnyFreePort()
                 .withLogFile(new File("lib/logs/chrome_log.log"))
                 .build();
