@@ -3,11 +3,16 @@ package ua.com.rozetka.speed.test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import java.util.concurrent.TimeUnit;
@@ -24,39 +29,49 @@ import static org.hamcrest.core.IsNot.not;
  * Time: 12:11 AM
  * To change this template use File | Settings | File Templates.
  */
+@Listeners(value = {CustomListener.class, CustomReport.class})
 public class SpeedTest {
 
-    Long start = null;
-    WebDriver driver;
-    Long stop = null;
+    private static final Logger log = LoggerFactory.getLogger(SpeedTest.class);
+
+    RemoteWebDriver driver;
+    WebDriverWait wait;
 
 
     @BeforeClass
     public void setUp() {
-        start = System.currentTimeMillis();
-        driver = new FirefoxDriver();
+        log.info("Start browser");
+//        driver = new FirefoxDriver();
+        driver = new ChromeDriver();
+//        driver.setLogLevel(Level.INFO);
+        driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        wait = new WebDriverWait(driver, 10);
     }
 
     @Test
     public void firstTest() {
-        driver.get("http://rozetka.com.ua/");
-        driver.findElement(By.name("signin")).click();
+        driver.get("https://my.rozetka.com.ua/");
+//        $(By.name("signin")).click();
 
-        WebElement login = driver.findElement(By.xpath("(//*[@class='auth-f']//input)[1]"));
+        WebElement login = $(By.cssSelector("input[name='login']"));
         login.clear();
         login.sendKeys("funker@land.ru");
 
-        WebElement pass = driver.findElement(By.xpath("(//*[@class='auth-f']//input)[2]"));
+        WebElement pass = $(By.cssSelector("input[name='password']"));
         pass.clear();
         pass.sendKeys("222222");
-        driver.findElement(By.xpath("//*[@class='auth-f']//button")).click();
+        $(By.cssSelector("#signin_form button")).click();
 
-        WebElement signOut = findElement(By.xpath("//a[@name='signout']"));
+        WebElement signOut = $(By.cssSelector(".profile-m-edit-signout"));
+        wait.until(ExpectedConditions.elementToBeClickable(signOut));
+        wait.until(ExpectedConditions.visibilityOf(signOut));
 
         assertThat(signOut.isDisplayed(), is(true));
         signOut.click();
-        assertThat(findElement(By.name("signin")).isDisplayed(), is(true));
+        WebElement signIn = wait.until(ExpectedConditions.visibilityOfElementLocated(By.name("signin")));
+
+        assertThat(signIn.isDisplayed(), is(true));
     }
 
     @Test
@@ -85,9 +100,7 @@ public class SpeedTest {
     @AfterClass
     public void tearDown() {
         driver.quit();
-        stop = System.currentTimeMillis();
-        print("That took %s seconds", (double) ((stop - start) / 1000));
-        //System.out.println("That took " + (double) ((stop - start) / 1000) + " seconds");
+        log.info("Stop browser");
     }
 
     private WebElement findElement(final By by) {
@@ -99,7 +112,12 @@ public class SpeedTest {
         });
     }
 
+    private WebElement $(By by) {
+        return driver.findElement(by);
+    }
 
+
+    //  print("That took %s seconds", 25);
     private static void print(String msg, Object... args) {
         System.out.println(String.format(msg, args));
     }
