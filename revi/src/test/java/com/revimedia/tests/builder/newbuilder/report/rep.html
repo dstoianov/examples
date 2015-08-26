@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        .test-pass {
+            background: lightgreen;
+        }
+
+        .test-fail {
+            background: firebrick;
+        }
+
+        .test-skip {
+            background: firebrick;
+        }
+
+    </style>
+
+</head>
+<body>
+
+<h1>My First Heading</h1>
+
+<p>My first paragraph.</p>
+
+
+<table cellspacing="0" id="t01">
+    <thead>
+    <tr>
+        <th rowspan="2">Number</th>
+        <th rowspan="2">Class Name</th>
+        <th rowspan="2">Test Name</th>
+        <th colspan="4">Feature Result</th>
+        <th rowspan="2">Thread #</th>
+        <th rowspan="2">Time (sec)</th>
+        <th rowspan="2">Status</th>
+    </tr>
+    <tr>
+        <th>number</th>
+        <th>name</th>
+        <th>result</th>
+        <th>message</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr class="test-pass">
+        <td>0</td>
+        <td> com.softassert.SoftAssertionTest2</td>
+        <td>testPass1</td>
+        <td colspan="4">
+            <table>
+                <tr>
+                    <td>number</td>
+                    <td>name</td>
+                    <td>result</td>
+                    <td>message</td>
+                </tr>
+                <tr>
+                    <td> 1</td>
+                    <td>some name</td>
+                    <td> PAss</td>
+                    <td></td>
+                </tr>
+            </table>
+
+        </td>
+        <td>thread 24</td>
+        <td>35</td>
+        <td>PASS</td>
+    </tr>
+    <tr class="google-visualization-table-tr-odd">
+        <td>1</td>
+        <td>com.revimedia.tests.cds.auto.mfs. DisclaimersTests</td>
+        <td>shouldBePresentOnEachPage Disclaimer PrivacyPolicyAndTermsOfUseLinks</td>
+        <td>
+            <table>
+                <thead></thead>
+                <tr>
+                    <th>#</th>
+                    <th>name</th>
+                    <th>result</th>
+                    <th>message error</th>
+                </tr>
+                <tr>
+                    <td> 1</td>
+                    <td>Tcpa disclaimer verification</td>
+                    <td>pass</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Bestq disclaimer verification</td>
+                    <td>pass</td>
+                    <td></td>
+                </tr>
+            </table>
+        </td>
+        <td>thread 2</td>
+        <td>00:15:254</td>
+        <td>PASS</td>
+    </tr>
+    <tr class="google-visualization-table-tr-even">
+        <td class="google-visualization-table-td google-visualization-table-td-number">2</td>
+        <td class="google-visualization-table-td">testForSoftAssertionFailure1</td>
+        <td class="google-visualization-table-td">com.softassert.SoftAssertionTest1</td>
+        <td class="google-visualization-table-td google-visualization-table-td-number">1020</td>
+    </tr>
+    <tr class="google-visualization-table-tr-odd">
+        <td class="google-visualization-table-td google-visualization-table-td-number">3</td>
+        <td class="google-visualization-table-td">testCrazy</td>
+        <td class="google-visualization-table-td">com.mycompany.test.SeriousComponent1Test</td>
+        <td class="google-visualization-table-td google-visualization-table-td-number">1006</td>
+    </tr>
+    <tr class="google-visualization-table-tr-even">
+        <td class="google-visualization-table-td google-visualization-table-td-number">4</td>
+        <td class="google-visualization-table-td">testFunny</td>
+        <td class="google-visualization-table-td">com.mycompany.test.SeriousComponent1Test</td>
+        <td class="google-visualization-table-td google-visualization-table-td-number">1001</td>
+    </tr>
+    <tr class="google-visualization-table-tr-odd">
+        <td class="google-visualization-table-td google-visualization-table-td-number">5</td>
+        <td class="google-visualization-table-td">testFunny</td>
+        <td class="google-visualization-table-td">com.mycompany.test.SeriousComponent2Test</td>
+        <td class="google-visualization-table-td google-visualization-table-td-number">1001</td>
+    </tr>
+    </tbody>
+</table>
+<p>
+
+<table id="feature">
+    <thead></thead>
+    <tr>
+        <th>#</th>
+        <th>name</th>
+        <th>result</th>
+        <th>message error</th>
+    </tr>
+    <tr>
+        <td> 1</td>
+        <td>some name</td>
+        <td> PAss</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>some name</td>
+        <td>PAss</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td> 3</td>
+        <td>some name</td>
+        <td>FAIL</td>
+        <td bgcolor="red">java.lang.AssertionError:<br>
+            The following '1' assertions failed:<br>
+            1) [message pass/description] expected: 'diur' but was: '45 wertert'
+        </td>
+    </tr>
+
+</table>
+
+
+<p>
+
+<table>
+    <thead></thead>
+    <tr>
+        <th>#</th>
+        <th>name</th>
+        <th>result</th>
+        <th>message error</th>
+    </tr>
+    <tr>
+        <td> 1</td>
+        <td>Tcpa disclaimer verification</td>
+        <td>pass</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>Bestq disclaimer verification</td>
+        <td>pass</td>
+        <td></td>
+    </tr>
+</table>
+
+
+</body>
+</html>

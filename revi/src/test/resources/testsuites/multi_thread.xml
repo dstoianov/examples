@@ -3,7 +3,8 @@
 <!--<suite thread-count="2" name="Parallel test suite" parallel="methods">-->
 <suite name="Parallel test suite">
 
-    <test name="Regression" parallel="methods" thread-count="2">
+    <!--<test name="Regression" parallel="methods" thread-count="2">-->
+    <test name="Regression">
         <packages>
             <package name="com.revimedia.tests.builder.newbuilder.test.multithread.*"/>
         </packages>
