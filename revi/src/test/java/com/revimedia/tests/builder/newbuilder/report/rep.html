@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="utf-8">
+    <title>Report</title>
 
     <style>
         table, th, td {
@@ -9,32 +11,60 @@
         }
 
         .test-pass {
-            background: lightgreen;
+            background: #88ee88;
         }
 
         .test-fail {
-            background: firebrick;
+            background: #ff8888;
         }
 
         .test-skip {
-            background: firebrick;
+            background: #ffff77;
         }
 
+        body {
+            font: 14px verdana, sans-serif;
+        }
     </style>
 
 </head>
 <body>
 
-<h1>My First Heading</h1>
+<h1>Test Report By Features (example)</h1>
 
-<p>My first paragraph.</p>
+<table width="30%" border="1">
+    <tr>
+        <th>Name</th>
+        <th>Value</th>
+    </tr>
+    <tr>
+        <td>Suite name</td>
+        <td>run all tests</td>
+    </tr>
+    <tr>
+        <td>Guid</td>
+        <td>sdfsdfsdfsdfsdf-sdfsdf-sdf-sdfsdfsdfsd-fsdfsd</td>
+    </tr>
+    <tr>
+        <td>Browser</td>
+        <td>chrome</td>
+    </tr>
+    <tr>
+        <td>threads</td>
+        <td>3</td>
+    </tr>
+</table>
+<p>
 
+<h3>Total features in suite <b>35</b> passed <b> 30</b>, failed <b>5</b></h3>
 
-<table cellspacing="0" id="t01">
+<p>
+
+<table cellspacing="0" id="t01" width="90%">
     <thead>
     <tr>
         <th rowspan="2">Number</th>
-        <th rowspan="2">Class Name</th>
+        <th rowspan="2" width="20%">Class Name</th>
         <th rowspan="2">Test Name</th>
         <th colspan="4">Feature Result</th>
         <th rowspan="2">Thread #</th>
@@ -50,88 +80,80 @@
     </thead>
     <tbody>
     <tr class="test-pass">
-        <td>0</td>
-        <td> com.softassert.SoftAssertionTest2</td>
-        <td>testPass1</td>
-        <td colspan="4">
-            <table>
-                <tr>
-                    <td>number</td>
-                    <td>name</td>
-                    <td>result</td>
-                    <td>message</td>
-                </tr>
-                <tr>
-                    <td> 1</td>
-                    <td>some name</td>
-                    <td> PAss</td>
-                    <td></td>
-                </tr>
-            </table>
-
-        </td>
-        <td>thread 24</td>
-        <td>35</td>
-        <td>PASS</td>
-    </tr>
-    <tr class="google-visualization-table-tr-odd">
+        <td rowspan="3">0</td>
+        <td rowspan="3"> com.softassert.SoftAssertionTest2</td>
+        <td rowspan="3">testPass1</td>
         <td>1</td>
-        <td>com.revimedia.tests.cds.auto.mfs. DisclaimersTests</td>
-        <td>shouldBePresentOnEachPage Disclaimer PrivacyPolicyAndTermsOfUseLinks</td>
-        <td>
-            <table>
-                <thead></thead>
-                <tr>
-                    <th>#</th>
-                    <th>name</th>
-                    <th>result</th>
-                    <th>message error</th>
-                </tr>
-                <tr>
-                    <td> 1</td>
-                    <td>Tcpa disclaimer verification</td>
-                    <td>pass</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Bestq disclaimer verification</td>
-                    <td>pass</td>
-                    <td></td>
-                </tr>
-            </table>
-        </td>
-        <td>thread 2</td>
-        <td>00:15:254</td>
-        <td>PASS</td>
+        <td>some name</td>
+        <td>pass</td>
+        <td></td>
+        <td rowspan="3">thread 24</td>
+        <td rowspan="3">35</td>
+        <td rowspan="3">PASS</td>
+    </tr>
+
+    <tr class="test-pass">
+        <td>2</td>
+        <td>some name</td>
+        <td>pass</td>
+        <td></td>
+    </tr>
+    <tr class="test-pass">
+        <td>3</td>
+        <td>some name</td>
+        <td>pass</td>
+        <td></td>
+    </tr>
+    <tr class="test-fail">
+        <td rowspan="2">1</td>
+        <td rowspan="2">com.revimedia.tests.cds.auto.mfs. DisclaimersTests</td>
+        <td rowspan="2">shouldBePresentOnEachPage Disclaimer PrivacyPolicyAndTermsOfUseLinks</td>
+        <td>1</td>
+        <td>Tcpa disclaimer verification</td>
+        <td>fail</td>
+        <td>expected: 'diur'<br>but was: '45 wertert'</td>
+        <td rowspan="2">thread 3</td>
+        <td rowspan="2">00:15:254</td>
+        <td rowspan="2">FAIL</td>
+    </tr>
+    <tr class="test-pass">
+        <td>2</td>
+        <td>Bestq disclaimer verification</td>
+        <td>pass</td>
+        <td></td>
     </tr>
     <tr class="google-visualization-table-tr-even">
-        <td class="google-visualization-table-td google-visualization-table-td-number">2</td>
-        <td class="google-visualization-table-td">testForSoftAssertionFailure1</td>
-        <td class="google-visualization-table-td">com.softassert.SoftAssertionTest1</td>
-        <td class="google-visualization-table-td google-visualization-table-td-number">1020</td>
+        <td>2</td>
+        <td>testForSoftAssertionFailure1</td>
+        <td>com.softassert.SoftAssertionTest1</td>
+        <td>number</td>
+        <td>name</td>
+        <td>result</td>
+        <td>message</td>
+        <td>thread</td>
+        <td>time</td>
+        <td>status</td>
     </tr>
-    <tr class="google-visualization-table-tr-odd">
-        <td class="google-visualization-table-td google-visualization-table-td-number">3</td>
-        <td class="google-visualization-table-td">testCrazy</td>
-        <td class="google-visualization-table-td">com.mycompany.test.SeriousComponent1Test</td>
-        <td class="google-visualization-table-td google-visualization-table-td-number">1006</td>
-    </tr>
-    <tr class="google-visualization-table-tr-even">
-        <td class="google-visualization-table-td google-visualization-table-td-number">4</td>
-        <td class="google-visualization-table-td">testFunny</td>
-        <td class="google-visualization-table-td">com.mycompany.test.SeriousComponent1Test</td>
-        <td class="google-visualization-table-td google-visualization-table-td-number">1001</td>
-    </tr>
-    <tr class="google-visualization-table-tr-odd">
-        <td class="google-visualization-table-td google-visualization-table-td-number">5</td>
-        <td class="google-visualization-table-td">testFunny</td>
-        <td class="google-visualization-table-td">com.mycompany.test.SeriousComponent2Test</td>
-        <td class="google-visualization-table-td google-visualization-table-td-number">1001</td>
+    <tr class="test-skip">
+        <td>3</td>
+        <td>testCrazy</td>
+        <td>com.mycompany.test.SeriousComponent1Test</td>
+        <td>number</td>
+        <td>name</td>
+        <td>result</td>
+        <td>message</td>
+        <td>thread</td>
+        <td>time</td>
+        <td>SKIP</td>
     </tr>
     </tbody>
 </table>
+
 <p>
+    werewr
+
+<p>
+    werewr
 
 <table id="feature">
     <thead></thead>
@@ -167,28 +189,6 @@
 
 
 <p>
-
-<table>
-    <thead></thead>
-    <tr>
-        <th>#</th>
-        <th>name</th>
-        <th>result</th>
-        <th>message error</th>
-    </tr>
-    <tr>
-        <td> 1</td>
-        <td>Tcpa disclaimer verification</td>
-        <td>pass</td>
-        <td></td>
-    </tr>
-    <tr>
-        <td>2</td>
-        <td>Bestq disclaimer verification</td>
-        <td>pass</td>
-        <td></td>
-    </tr>
-</table>
 
 
 </body>
