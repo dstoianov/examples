@@ -47,7 +47,7 @@ public class Data {
         return map;
     }
 
-    @DataProvider(name = "Campaigns")
+    @DataProvider(name = "Campaigns") // , parallel = true
     public static Object[][] badNumbers() {
         Map<String, String> map = getContact();
         return new Object[][]{
@@ -60,16 +60,16 @@ public class Data {
 
                 {"EFD9D7ED-3835-4AFA-97D3-73BEDAEDA4AD", "homesecurity", map},
 
-//                { "79482715-7653-4A5E-9936-CD428B298E2C", "solar", map },
-//                { "DA907EC3-2F37-47E5-996C-FFF79E5724D0", "auto", map },
-//                { "88368545-FB77-40BC-AE55-ABD7978271C3", "GloryToUkraine", map },
-//                { "9A610B50-0E9A-46D5-B810-70A405AC3FEA", "health", map },
-//                { "2D3D1708-6BFC-431B-8B0D-A3B19EA4E849", "home", map },
-//                { "4D926807-2EDD-4824-B391-5EBE8210EF62", "life", map },
-//                { "FCFE964E-AC1F-418A-B8AE-3A61474CC4D4", "medicalalerts", map },
-//                { "0B630F68-190C-4508-85F1-50964D153744", "mortgage", map },
-//                { "320493C8-21EC-440C-B8E8-133D1D7E169E", "awdawd", map },
-//                { "A99BB4A4-D817-4A98-B53D-34433972C6B8", "afsdafsd", map },
+                {"79482715-7653-4A5E-9936-CD428B298E2C", "solar", map},
+                {"DA907EC3-2F37-47E5-996C-FFF79E5724D0", "auto", map},
+                {"88368545-FB77-40BC-AE55-ABD7978271C3", "GloryToUkraine", map},
+                {"9A610B50-0E9A-46D5-B810-70A405AC3FEA", "health", map},
+                {"2D3D1708-6BFC-431B-8B0D-A3B19EA4E849", "home", map},
+                {"4D926807-2EDD-4824-B391-5EBE8210EF62", "life", map},
+                {"FCFE964E-AC1F-418A-B8AE-3A61474CC4D4", "medicalalerts", map},
+                {"0B630F68-190C-4508-85F1-50964D153744", "mortgage", map},
+                {"320493C8-21EC-440C-B8E8-133D1D7E169E", "awdawd", map},
+                {"A99BB4A4-D817-4A98-B53D-34433972C6B8", "afsdafsd", map},
 //
         };
     }
