@@ -9,7 +9,7 @@ import java.util.Map;
 /**
  * Created by Funker on 22.08.2015.
  */
-public class SoftAssertions extends Assertion {
+public class SoftAssertionsTestNG extends Assertion {
 
     // LinkedHashMap to preserve the order
     private Map<AssertionError, IAssert> m_errors = Maps.newLinkedHashMap();
