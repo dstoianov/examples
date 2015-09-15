@@ -5,9 +5,9 @@ import org.testng.annotations.Test;
 /**
  * Created by Funker on 22.08.2015.
  */
-public class SoftAssertionTest {
+public class SoftAssertionTestNGTest {
 
-    protected SoftAssertions softly = new SoftAssertions();
+    protected SoftAssertionsTestNG softly = new SoftAssertionsTestNG();
 
     @Test
     public void testForSoftAssertion1() {
