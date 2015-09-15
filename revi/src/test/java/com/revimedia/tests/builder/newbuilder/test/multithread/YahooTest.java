@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 public class YahooTest extends BaseTest {
 
 
-    @Test
+    @Test(groups = "forDevTeam")
     public void testName() throws Exception {
         sleep();
         driver.get("https://www.yahoo.com/");

@@ -126,7 +126,7 @@
                         <configuration>
                             <sourceType>jsonschema</sourceType>
                             <sourceDirectory>${basedir}/src/main/resources/jsons/schema/field</sourceDirectory>
-                            <outputDirectory>${project.build.directory}/generated-sources/java-gen</outputDirectory>
+                            <!--<outputDirectory>${project.build.directory}/generated-sources/java-gen</outputDirectory>-->
                             <targetPackage>com.revimedia.testing.json2pojo.field</targetPackage>
                             <annotationStyle>gson</annotationStyle>
                             <useCommonsLang3>true</useCommonsLang3>
@@ -140,7 +140,7 @@
                         <configuration>
                             <sourceType>jsonschema</sourceType>
                             <sourceDirectory>${basedir}/src/main/resources/jsons/schema/offer</sourceDirectory>
-                            <outputDirectory>${project.build.directory}/generated-sources/java-gen</outputDirectory>
+                            <!--<outputDirectory>${project.build.directory}/generated-sources/java-gen</outputDirectory>-->
                             <targetPackage>com.revimedia.testing.json2pojo.offer</targetPackage>
                             <annotationStyle>gson</annotationStyle>
                             <useCommonsLang3>true</useCommonsLang3>
@@ -154,7 +154,7 @@
                         <configuration>
                             <sourceType>jsonschema</sourceType>
                             <sourceDirectory>${basedir}/src/main/resources/jsons/schema/step</sourceDirectory>
-                            <outputDirectory>${project.build.directory}/generated-sources/java-gen</outputDirectory>
+                            <!--<outputDirectory>${project.build.directory}/generated-sources/java-gen</outputDirectory>-->
                             <targetPackage>com.revimedia.testing.json2pojo.step</targetPackage>
                             <annotationStyle>gson</annotationStyle>
                             <useCommonsLang3>true</useCommonsLang3>
@@ -168,7 +168,7 @@
                         <configuration>
                             <sourceType>jsonschema</sourceType>
                             <sourceDirectory>${basedir}/src/main/resources/jsons/schema/settings</sourceDirectory>
-                            <outputDirectory>${project.build.directory}/generated-sources/java-gen</outputDirectory>
+                            <!--<outputDirectory>${project.build.directory}/generated-sources/java-gen</outputDirectory>-->
                             <targetPackage>com.revimedia.testing.json2pojo.settings</targetPackage>
                             <annotationStyle>gson</annotationStyle>
                             <useCommonsLang3>true</useCommonsLang3>
