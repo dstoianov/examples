@@ -1,5 +1,6 @@
 package com.revimedia.tests.builder.newbuilder.test.multithread;
 
+import com.revimedia.tests.builder.newbuilder.test.multithread.listener.TestSuiteListener;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -12,6 +13,7 @@ import org.testng.ITestContext;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Listeners;
 
 import java.lang.reflect.Method;
 import java.util.concurrent.TimeUnit;
@@ -19,12 +21,12 @@ import java.util.concurrent.TimeUnit;
 /**
  * Created by Funker on 14.08.2015.
  */
+@Listeners({TestSuiteListener.class})
 public abstract class BaseTest {
 
     private static final Logger log = LoggerFactory.getLogger(BaseTest.class);
 
     protected WebDriver driver;
-
 
     @BeforeClass
     public void setUp() {
@@ -88,17 +90,8 @@ public abstract class BaseTest {
         }
     }
 
-    public void randomWait() {
-        try {
-            Thread.sleep((long) (Math.random() * 1000));
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-    }
-
     public String printThreadId() {
-        long threadId = Thread.currentThread().getId();
-        return String.format("Thread #%s", threadId);
+        return String.format("Thread #%s", Thread.currentThread().getId());
     }
 
 
