@@ -30,9 +30,10 @@ public abstract class BaseTest {
 
     @BeforeClass
     public void setUp() {
-        System.setProperty("webdriver.chrome.driver", "./src/test/resources/drivers/chromedriver.exe");
-        System.setProperty("phantomjs.binary.path", "./revi/src/test/resources/drivers/phantomjs.exe");
-
+        if (!System.getProperty("os.name").equalsIgnoreCase("linux")) {
+            System.setProperty("webdriver.chrome.driver", "./src/test/resources/drivers/chromedriver.exe");
+            System.setProperty("phantomjs.binary.path", "./revi/src/test/resources/drivers/phantomjs.exe");
+        }
 //        String browser = AppProperties.getInstance().getBrowser();
 
         String browser = System.getProperty("browser");
