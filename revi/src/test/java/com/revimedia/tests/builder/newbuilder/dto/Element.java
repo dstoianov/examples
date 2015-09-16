@@ -26,7 +26,7 @@ public class Element {
         this.title = field.getTitle().toString();
         this.hidden = field.getHidden();
         this.value = field.getValue();
-        this.composite = field.getCollection();
+        this.composite = field.getComposite();
         this.sets = field.getSets();
     }
 
