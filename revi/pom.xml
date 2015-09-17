@@ -237,21 +237,21 @@
             <scope>test</scope>
         </dependency>
 
-        <dependency>
-            <groupId>com.github.detro</groupId>
-            <artifactId>phantomjsdriver</artifactId>
-            <version>1.2.0</version>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.seleniumhq.selenium</groupId>
-                    <artifactId>selenium-remote-driver</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>org.seleniumhq.selenium</groupId>
-                    <artifactId>selenium-server</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
+        <!--        <dependency>
+                    <groupId>com.github.detro</groupId>
+                    <artifactId>phantomjsdriver</artifactId>
+                    <version>1.2.0</version>
+                    <exclusions>
+                        <exclusion>
+                            <groupId>org.seleniumhq.selenium</groupId>
+                            <artifactId>selenium-remote-driver</artifactId>
+                        </exclusion>
+                        <exclusion>
+                            <groupId>org.seleniumhq.selenium</groupId>
+                            <artifactId>selenium-server</artifactId>
+                        </exclusion>
+                    </exclusions>
+                </dependency>-->
 
         <dependency>
             <groupId>net.lightbody.bmp</groupId>

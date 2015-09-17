@@ -28,6 +28,9 @@ public abstract class BaseTest {
 
     protected WebDriver driver;
 
+//    mvn -Dthreads=2 -Dbrowser=chrome clean test
+
+
     @BeforeClass
     public void setUp() {
         if (!System.getProperty("os.name").equalsIgnoreCase("linux")) {
