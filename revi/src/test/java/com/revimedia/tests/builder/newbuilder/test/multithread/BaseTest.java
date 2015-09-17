@@ -30,13 +30,14 @@ public abstract class BaseTest {
     protected WebDriver driver;
 
 //    mvn -Dthreads=2 -Dbrowser=chrome clean test
+//    mvn -Dthreads=2 -Dbrowser=phantomjs clean test
 
 
     @BeforeClass
     public void setUp() {
         ChromeOptions options = null;
+
         if (System.getProperty("os.name").equalsIgnoreCase("linux")) {
-            System.setProperty("webdriver.chrome.logfile", "logfile.log");
             options = new ChromeOptions();
             options.addArguments("chrome.switches", "--no-sandbox");
             driver = new ChromeDriver(options);
@@ -61,6 +62,7 @@ public abstract class BaseTest {
         } else if (browser.equalsIgnoreCase(BrowserType.PHANTOMJS)) {
             driver = new PhantomJSDriver();
         } else {
+            System.out.println(String.format("No such browser '%s', start default browser chrome", browser));
             driver = new ChromeDriver();
         }
 
