@@ -28,7 +28,7 @@
               "type": "string"
             }
           },
-          "collection": {
+          "composite": {
             "$ref": "composite.json"
           },
           "title": {

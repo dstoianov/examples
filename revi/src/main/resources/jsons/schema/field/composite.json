@@ -1,5 +1,5 @@
 {
-  "id": "#collection",
+  "id": "#composite",
   "type": "array",
   "items": {
     "type": "object",

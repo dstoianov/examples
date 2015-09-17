@@ -8,21 +8,21 @@ import org.testng.annotations.Test;
 public class YandexTest extends BaseTest {
 
 
-    @Test
+    @Test(groups = "forDevTeam")
     public void testName1() throws Exception {
         sleep();
         driver.get("https://www.yandex.ru/");
         sleep();
     }
 
-    @Test
+    @Test(groups = "forDevTeam")
     public void testName2() throws Exception {
         sleep();
         driver.get("https://www.yandex.com/");
         sleep();
     }
 
-    @Test
+    @Test(groups = "forDevTeam")
     public void testName3() throws Exception {
         sleep();
         driver.get("https://www.yandex.com.ua/");
