@@ -36,7 +36,6 @@ public abstract class BaseTest {
     public void setUp() {
         ChromeOptions options = null;
         if (System.getProperty("os.name").equalsIgnoreCase("linux")) {
-            System.setProperty("webdriver.chrome.driver", "chromedriver.log");
             System.setProperty("webdriver.chrome.logfile", "logfile.log");
             options = new ChromeOptions();
             options.addArguments("chrome.switches", "--no-sandbox");
