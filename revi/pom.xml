@@ -237,7 +237,7 @@
             <scope>test</scope>
         </dependency>
 
-        <!--        <dependency>
+        <dependency>
                     <groupId>com.github.detro</groupId>
                     <artifactId>phantomjsdriver</artifactId>
                     <version>1.2.0</version>
@@ -251,7 +251,7 @@
                             <artifactId>selenium-server</artifactId>
                         </exclusion>
                     </exclusions>
-                </dependency>-->
+        </dependency>
 
         <dependency>
             <groupId>net.lightbody.bmp</groupId>

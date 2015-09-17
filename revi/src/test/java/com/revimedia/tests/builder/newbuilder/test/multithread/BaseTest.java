@@ -63,7 +63,7 @@ public abstract class BaseTest {
             driver = new PhantomJSDriver();
         } else {
             System.out.println(String.format("No such browser '%s', start default browser chrome", browser));
-            driver = new ChromeDriver();
+            driver = new ChromeDriver(options);
         }
 
 //        if (AppProperties.getInstance().isBrowserMaximize()) {
