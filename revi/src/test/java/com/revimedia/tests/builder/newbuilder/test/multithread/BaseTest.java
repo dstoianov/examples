@@ -3,6 +3,7 @@ package com.revimedia.tests.builder.newbuilder.test.multithread;
 import com.revimedia.tests.builder.newbuilder.test.multithread.listener.TestSuiteListener;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.phantomjs.PhantomJSDriver;
@@ -33,7 +34,14 @@ public abstract class BaseTest {
 
     @BeforeClass
     public void setUp() {
-        if (!System.getProperty("os.name").equalsIgnoreCase("linux")) {
+        ChromeOptions options = null;
+        if (System.getProperty("os.name").equalsIgnoreCase("linux")) {
+            System.setProperty("webdriver.chrome.driver", "chromedriver.log");
+            System.setProperty("webdriver.chrome.logfile", "logfile.log");
+            options = new ChromeOptions();
+            options.addArguments("chrome.switches", "--no-sandbox");
+            driver = new ChromeDriver(options);
+        } else {
             System.setProperty("webdriver.chrome.driver", "./src/test/resources/drivers/chromedriver.exe");
             System.setProperty("phantomjs.binary.path", "./revi/src/test/resources/drivers/phantomjs.exe");
         }
@@ -46,7 +54,7 @@ public abstract class BaseTest {
         log.info(String.format("Start the browser '%s'", browser));
 
         if (browser.equalsIgnoreCase(BrowserType.CHROME)) {
-            driver = new ChromeDriver();
+            driver = new ChromeDriver(options);
         } else if (browser.equalsIgnoreCase(BrowserType.FIREFOX)) {
             driver = new FirefoxDriver();
         } else if (browser.equalsIgnoreCase(BrowserType.IE)) {
