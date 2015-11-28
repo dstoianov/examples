@@ -31,7 +31,12 @@ public class JavaGroovyConfig {
     }
 
     public String getProperty(String key) {
-        return config.toProperties().getProperty(key);
+        String value = System.getProperty(key);
+        if (value != null) {
+            return value;
+        } else {
+            return config.toProperties().getProperty(key);
+        }
     }
 }
 
