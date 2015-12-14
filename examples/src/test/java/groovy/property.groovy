@@ -26,6 +26,13 @@ environments {
 
     uat {
         server.URL = 'http://uat:9080'
+        app {
+            value = 200
+        }
+    }
+
+    hotfix {
+        server.URL = 'http://hotfix:9080'
     }
 
     prod {
