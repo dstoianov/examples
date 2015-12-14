@@ -1,10 +1,7 @@
 package com.tipsandtricks.webelement.custom.element.elements.impl;
 
 import com.tipsandtricks.webelement.custom.element.elements.Element;
-import org.openqa.selenium.By;
-import org.openqa.selenium.Dimension;
-import org.openqa.selenium.Point;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.internal.Coordinates;
 import org.openqa.selenium.internal.Locatable;
 
@@ -114,5 +111,10 @@ public class ElementImpl implements Element {
     @Override
     public String getHtml() {
         return element.getAttribute("innerHTML");
+    }
+
+    @Override
+    public <X> X getScreenshotAs(OutputType<X> outputType) throws WebDriverException {
+        return element.getScreenshotAs(outputType);
     }
 }
