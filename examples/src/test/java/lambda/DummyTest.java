@@ -105,7 +105,7 @@ public class DummyTest {
         List<WebElement> visibleError = filter(displayed(), driver.findElements(By.xpath(".//*[contains(@class, 'error')]")));
         List<String> errorText = new ArrayList<String>();
         for (WebElement error : visibleError) {
-            if (error.getText() != "") {
+            if (!error.getText().equals("")) {
                 errorText.add(error.getText());
             }
         }
