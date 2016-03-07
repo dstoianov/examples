@@ -370,7 +370,7 @@
             </exclusions>
         </dependency>
 
-        <!-- Yandex QA - tools examples-->
+        <!--Yandex QA - tools examples-->
         <dependency>
             <groupId>ru.yandex.qatools.matchers</groupId>
             <artifactId>webdriver-matchers</artifactId>
