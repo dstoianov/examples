@@ -19,7 +19,7 @@ import java.util.Map;
  * Created by Denis Stoianov on 24/06/2014, 5:33 PM
  * E-mail: denis@revimedia.com
  */
-public class Sdd {
+public class ProxyStartStopExample {
     ProxyServer server;
     WebDriver driver;
 
