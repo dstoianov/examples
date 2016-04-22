@@ -1,0 +1,2357 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="15" total="64" passed="49">
+  <reporter-output>
+  </reporter-output>
+  <suite name="CFE Scope" duration-ms="1491077" started-at="2016-04-21T23:59:49Z" finished-at="2016-04-22T00:24:40Z">
+    <groups>
+      <group name="new car flow">
+        <method signature="ErrorMessagesTest.newFlowErrorMessagesTest(com.auto1.cfe.bean.SellCountryFlowData)[pri:0, instance:com.auto1.cfe.tests.jav.ErrorMessagesTest@7548e1fb]" name="newFlowErrorMessagesTest" class="com.auto1.cfe.tests.jav.ErrorMessagesTest"/>
+        <method signature="SellCarTest.newCarFlowBookingTest(com.auto1.cfe.bean.SellCountryFlowData)[pri:0, instance:com.auto1.cfe.tests.jav.SellCarTest@505f45cc]" name="newCarFlowBookingTest" class="com.auto1.cfe.tests.jav.SellCarTest"/>
+      </group> <!-- new car flow -->
+      <group name="dynamic step">
+        <method signature="ErrorMessagesTest.newFlowErrorMessagesTest(com.auto1.cfe.bean.SellCountryFlowData)[pri:0, instance:com.auto1.cfe.tests.jav.ErrorMessagesTest@7548e1fb]" name="newFlowErrorMessagesTest" class="com.auto1.cfe.tests.jav.ErrorMessagesTest"/>
+      </group> <!-- dynamic step -->
+    </groups>
+    <test name="JAV suite" duration-ms="1491077" started-at="2016-04-21T23:59:49Z" finished-at="2016-04-22T00:24:40Z">
+      <class name="com.auto1.cfe.tests.jav.SellCarTest">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.auto1.cfe.tests.jav.SellCarTest@505f45cc]" name="setUp" is-config="true" duration-ms="1048" started-at="2016-04-22T02:06:42Z" finished-at="2016-04-22T02:06:43Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="initPages([Ljava.lang.Object;)[pri:0, instance:com.auto1.cfe.tests.jav.SellCarTest@505f45cc]" name="initPages" is-config="true" duration-ms="2" started-at="2016-04-22T02:06:43Z" finished-at="2016-04-22T02:06:43Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@4dcac9b1]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initPages -->
+        <test-method status="PASS" signature="newCarFlowBookingTest(com.auto1.cfe.bean.SellCountryFlowData)[pri:0, instance:com.auto1.cfe.tests.jav.SellCarTest@505f45cc]" name="newCarFlowBookingTest" duration-ms="13311" started-at="2016-04-22T02:06:43Z" data-provider="flowCountryProviderJAV" finished-at="2016-04-22T02:06:57Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[car: modelVariant: 6.0 W12:331.00; type: 010600480130001; brand: Audi; model: A8; year: 2006; shape: 1025; country: germany; kilometer: 20000; ownerEmail: it-test+selenium-newcarflow-priced@wkda.de; seller: firstName: Test JAV; lastName: Selenium Tester; mobilePrefix: +49; mobileNumber: 8009994440; country: name: germany; code: de; url: https://www.jetztautoverkaufen.de]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- newCarFlowBookingTest -->
+        <test-method status="PASS" signature="clearCookies()[pri:0, instance:com.auto1.cfe.tests.jav.SellCarTest@505f45cc]" name="clearCookies" is-config="true" duration-ms="275" started-at="2016-04-22T02:06:57Z" finished-at="2016-04-22T02:06:57Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clearCookies -->
+        <test-method status="PASS" signature="initPages([Ljava.lang.Object;)[pri:0, instance:com.auto1.cfe.tests.jav.SellCarTest@505f45cc]" name="initPages" is-config="true" duration-ms="1" started-at="2016-04-22T02:06:57Z" finished-at="2016-04-22T02:06:57Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@7be21e4d]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initPages -->
+        <test-method status="PASS" signature="newCarFlowBookingTest(com.auto1.cfe.bean.SellCountryFlowData)[pri:0, instance:com.auto1.cfe.tests.jav.SellCarTest@505f45cc]" name="newCarFlowBookingTest" duration-ms="13130" started-at="2016-04-22T02:06:57Z" data-provider="flowCountryProviderJAV" finished-at="2016-04-22T02:07:10Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[car: modelVariant: 6.0 W12:331.00; type: 010600480130001; brand: Audi; model: A8; year: 2006; shape: 1025; country: austria; kilometer: 20000; ownerEmail: it-test+selenium-newcarflow-priced@wkda.de; seller: firstName: Test JAV; lastName: Selenium Tester; mobilePrefix: +49; mobileNumber: 8009994440; country: name: austria; code: at; url: https://www.jetztautoverkaufen.at]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- newCarFlowBookingTest -->
+        <test-method status="PASS" signature="clearCookies()[pri:0, instance:com.auto1.cfe.tests.jav.SellCarTest@505f45cc]" name="clearCookies" is-config="true" duration-ms="372" started-at="2016-04-22T02:07:10Z" finished-at="2016-04-22T02:07:10Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clearCookies -->
+        <test-method status="PASS" signature="initPages([Ljava.lang.Object;)[pri:0, instance:com.auto1.cfe.tests.jav.SellCarTest@505f45cc]" name="initPages" is-config="true" duration-ms="2" started-at="2016-04-22T02:07:10Z" finished-at="2016-04-22T02:07:10Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@5ef845e9]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initPages -->
+        <test-method status="PASS" signature="newCarFlowBookingTest(com.auto1.cfe.bean.SellCountryFlowData)[pri:0, instance:com.auto1.cfe.tests.jav.SellCarTest@505f45cc]" name="newCarFlowBookingTest" duration-ms="12476" started-at="2016-04-22T02:07:10Z" data-provider="flowCountryProviderJAV" finished-at="2016-04-22T02:07:23Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[car: modelVariant: 6.0 W12:331.00; type: 010600480130001; brand: Audi; model: A8; year: 2006; shape: 1025; country: netherland; kilometer: 20000; ownerEmail: it-test+selenium-newcarflow-priced@wkda.de; seller: firstName: Test JAV; lastName: Selenium Tester; mobilePrefix: +49; mobileNumber: 8009994440; country: name: netherland; code: nl; url: https://www.meteenautoverkopen.nl]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- newCarFlowBookingTest -->
+        <test-method status="PASS" signature="clearCookies()[pri:0, instance:com.auto1.cfe.tests.jav.SellCarTest@505f45cc]" name="clearCookies" is-config="true" duration-ms="258" started-at="2016-04-22T02:07:23Z" finished-at="2016-04-22T02:07:23Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clearCookies -->
+        <test-method status="PASS" signature="initPages([Ljava.lang.Object;)[pri:0, instance:com.auto1.cfe.tests.jav.SellCarTest@505f45cc]" name="initPages" is-config="true" duration-ms="2" started-at="2016-04-22T02:07:23Z" finished-at="2016-04-22T02:07:23Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@39677403]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initPages -->
+        <test-method status="PASS" signature="newCarFlowBookingTest(com.auto1.cfe.bean.SellCountryFlowData)[pri:0, instance:com.auto1.cfe.tests.jav.SellCarTest@505f45cc]" name="newCarFlowBookingTest" duration-ms="13139" started-at="2016-04-22T02:07:23Z" data-provider="flowCountryProviderJAV" finished-at="2016-04-22T02:07:36Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[car: modelVariant: 6.0 W12:331.00; type: 010600480130001; brand: Audi; model: A8; year: 2006; shape: 1025; country: spain; kilometer: 20000; ownerEmail: it-test+selenium-newcarflow-priced@wkda.de; seller: firstName: Test JAV; lastName: Selenium Tester; mobilePrefix: +49; mobileNumber: 8009994440; country: name: spain; code: es; url: https://www.vendercoche.es]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- newCarFlowBookingTest -->
+        <test-method status="PASS" signature="clearCookies()[pri:0, instance:com.auto1.cfe.tests.jav.SellCarTest@505f45cc]" name="clearCookies" is-config="true" duration-ms="342" started-at="2016-04-22T02:07:36Z" finished-at="2016-04-22T02:07:37Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clearCookies -->
+        <test-method status="PASS" signature="initPages([Ljava.lang.Object;)[pri:0, instance:com.auto1.cfe.tests.jav.SellCarTest@505f45cc]" name="initPages" is-config="true" duration-ms="1" started-at="2016-04-22T02:07:37Z" finished-at="2016-04-22T02:07:37Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@22fba5df]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initPages -->
+        <test-method status="PASS" signature="newCarFlowBookingTest(com.auto1.cfe.bean.SellCountryFlowData)[pri:0, instance:com.auto1.cfe.tests.jav.SellCarTest@505f45cc]" name="newCarFlowBookingTest" duration-ms="11883" started-at="2016-04-22T02:07:37Z" data-provider="flowCountryProviderJAV" finished-at="2016-04-22T02:07:48Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[car: modelVariant: 6.0 W12:331.00; type: 010600480130001; brand: Audi; model: A8; year: 2006; shape: 1025; country: france; kilometer: 20000; ownerEmail: it-test+selenium-newcarflow-priced@wkda.de; seller: firstName: Test JAV; lastName: Selenium Tester; mobilePrefix: +49; mobileNumber: 8009994440; country: name: france; code: fr; url: https://www.vendresavoiture.fr]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- newCarFlowBookingTest -->
+        <test-method status="PASS" signature="clearCookies()[pri:0, instance:com.auto1.cfe.tests.jav.SellCarTest@505f45cc]" name="clearCookies" is-config="true" duration-ms="341" started-at="2016-04-22T02:07:48Z" finished-at="2016-04-22T02:07:49Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clearCookies -->
+        <test-method status="PASS" signature="initPages([Ljava.lang.Object;)[pri:0, instance:com.auto1.cfe.tests.jav.SellCarTest@505f45cc]" name="initPages" is-config="true" duration-ms="2" started-at="2016-04-22T02:07:49Z" finished-at="2016-04-22T02:07:49Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@4980d7bb]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initPages -->
+        <test-method status="PASS" signature="newCarFlowBookingTest(com.auto1.cfe.bean.SellCountryFlowData)[pri:0, instance:com.auto1.cfe.tests.jav.SellCarTest@505f45cc]" name="newCarFlowBookingTest" duration-ms="12619" started-at="2016-04-22T02:07:49Z" data-provider="flowCountryProviderJAV" finished-at="2016-04-22T02:08:01Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[car: modelVariant: 6.0 W12:331.00; type: 010600480130001; brand: Audi; model: A8; year: 2006; shape: 1025; country: belgium; kilometer: 20000; ownerEmail: it-test+selenium-newcarflow-priced@wkda.de; seller: firstName: Test JAV; lastName: Selenium Tester; mobilePrefix: +49; mobileNumber: 8009994440; country: name: belgium; code: be; url: https://www.nuautoverkopen.be]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- newCarFlowBookingTest -->
+        <test-method status="PASS" signature="clearCookies()[pri:0, instance:com.auto1.cfe.tests.jav.SellCarTest@505f45cc]" name="clearCookies" is-config="true" duration-ms="337" started-at="2016-04-22T02:08:01Z" finished-at="2016-04-22T02:08:02Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clearCookies -->
+        <test-method status="PASS" signature="initPages([Ljava.lang.Object;)[pri:0, instance:com.auto1.cfe.tests.jav.SellCarTest@505f45cc]" name="initPages" is-config="true" duration-ms="1" started-at="2016-04-22T02:08:02Z" finished-at="2016-04-22T02:08:02Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@55cb146f]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initPages -->
+        <test-method status="PASS" signature="newCarFlowBookingTest(com.auto1.cfe.bean.SellCountryFlowData)[pri:0, instance:com.auto1.cfe.tests.jav.SellCarTest@505f45cc]" name="newCarFlowBookingTest" duration-ms="12373" started-at="2016-04-22T02:08:02Z" data-provider="flowCountryProviderJAV" finished-at="2016-04-22T02:08:14Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[car: modelVariant: 6.0 W12:331.00; type: 010600480130001; brand: Audi; model: A8; year: 2006; shape: 1025; country: italy; kilometer: 20000; ownerEmail: it-test+selenium-newcarflow-priced@wkda.de; seller: firstName: Test JAV; lastName: Selenium Tester; mobilePrefix: +49; mobileNumber: 8009994440; country: name: italy; code: it; url: https://www.vendo-auto.it]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- newCarFlowBookingTest -->
+        <test-method status="PASS" signature="clearCookies()[pri:0, instance:com.auto1.cfe.tests.jav.SellCarTest@505f45cc]" name="clearCookies" is-config="true" duration-ms="335" started-at="2016-04-22T02:08:14Z" finished-at="2016-04-22T02:08:15Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clearCookies -->
+        <test-method status="PASS" signature="initPages([Ljava.lang.Object;)[pri:0, instance:com.auto1.cfe.tests.jav.SellCarTest@505f45cc]" name="initPages" is-config="true" duration-ms="2" started-at="2016-04-22T02:08:15Z" finished-at="2016-04-22T02:08:15Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@578eb5b9]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initPages -->
+        <test-method status="PASS" signature="newCarFlowBookingTest(com.auto1.cfe.bean.SellCountryFlowData)[pri:0, instance:com.auto1.cfe.tests.jav.SellCarTest@505f45cc]" name="newCarFlowBookingTest" duration-ms="12026" started-at="2016-04-22T02:08:15Z" data-provider="flowCountryProviderJAV" finished-at="2016-04-22T02:08:27Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[car: modelVariant: 6.0 W12:331.00; type: 010600480130001; brand: Audi; model: A8; year: 2006; shape: 1025; country: sweden; kilometer: 20000; ownerEmail: it-test+selenium-newcarflow-priced@wkda.de; seller: firstName: Test JAV; lastName: Selenium Tester; mobilePrefix: +49; mobileNumber: 8009994440; country: name: sweden; code: se; url: https://www.saljaminbil.se]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- newCarFlowBookingTest -->
+        <test-method status="PASS" signature="clearCookies()[pri:0, instance:com.auto1.cfe.tests.jav.SellCarTest@505f45cc]" name="clearCookies" is-config="true" duration-ms="335" started-at="2016-04-22T02:08:27Z" finished-at="2016-04-22T02:08:27Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clearCookies -->
+        <test-method status="PASS" signature="initPages([Ljava.lang.Object;)[pri:0, instance:com.auto1.cfe.tests.jav.SellCarTest@505f45cc]" name="initPages" is-config="true" duration-ms="1" started-at="2016-04-22T02:08:27Z" finished-at="2016-04-22T02:08:27Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@282427ca]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initPages -->
+        <test-method status="PASS" signature="oldCarFlowBookingTest(com.auto1.cfe.bean.SellCountryFlowData)[pri:0, instance:com.auto1.cfe.tests.jav.SellCarTest@505f45cc]" name="oldCarFlowBookingTest" duration-ms="38074" started-at="2016-04-22T02:08:27Z" data-provider="flowCountryProviderJAV" finished-at="2016-04-22T02:09:05Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[car: description: Good; horsePower: 60 hp; doorCount: 1143; fuelType: 1040; gearType: 1139; acType: 1050; condition: 1134; carBelongsTo: 1135; brand: Audi; model: A8; year: -1994; shape: 1008; country: germany; kilometer: 100000; ownerEmail: it-test+selenium-oldcarflow-noPrice@wkda.de; seller: firstName: Test JAV; lastName: Selenium Tester; mobilePrefix: +49; mobileNumber: 8009994440; country: name: germany; code: de; url: https://www.jetztautoverkaufen.de]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- oldCarFlowBookingTest -->
+        <test-method status="PASS" signature="clearCookies()[pri:0, instance:com.auto1.cfe.tests.jav.SellCarTest@505f45cc]" name="clearCookies" is-config="true" duration-ms="314" started-at="2016-04-22T02:09:05Z" finished-at="2016-04-22T02:09:05Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clearCookies -->
+        <test-method status="PASS" signature="initPages([Ljava.lang.Object;)[pri:0, instance:com.auto1.cfe.tests.jav.SellCarTest@505f45cc]" name="initPages" is-config="true" duration-ms="1" started-at="2016-04-22T02:09:05Z" finished-at="2016-04-22T02:09:05Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@67d6007a]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initPages -->
+        <test-method status="PASS" signature="oldCarFlowBookingTest(com.auto1.cfe.bean.SellCountryFlowData)[pri:0, instance:com.auto1.cfe.tests.jav.SellCarTest@505f45cc]" name="oldCarFlowBookingTest" duration-ms="34944" started-at="2016-04-22T02:09:05Z" data-provider="flowCountryProviderJAV" finished-at="2016-04-22T02:09:40Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[car: description: Good; horsePower: 60 hp; doorCount: 1143; fuelType: 1040; gearType: 1139; acType: 1050; condition: 1134; carBelongsTo: 1135; brand: Audi; model: A8; year: -1994; shape: 1008; country: austria; kilometer: 100000; ownerEmail: it-test+selenium-oldcarflow-noPrice@wkda.de; seller: firstName: Test JAV; lastName: Selenium Tester; mobilePrefix: +49; mobileNumber: 8009994440; country: name: austria; code: at; url: https://www.jetztautoverkaufen.at]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- oldCarFlowBookingTest -->
+        <test-method status="PASS" signature="clearCookies()[pri:0, instance:com.auto1.cfe.tests.jav.SellCarTest@505f45cc]" name="clearCookies" is-config="true" duration-ms="353" started-at="2016-04-22T02:09:40Z" finished-at="2016-04-22T02:09:41Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clearCookies -->
+        <test-method status="PASS" signature="initPages([Ljava.lang.Object;)[pri:0, instance:com.auto1.cfe.tests.jav.SellCarTest@505f45cc]" name="initPages" is-config="true" duration-ms="1" started-at="2016-04-22T02:09:41Z" finished-at="2016-04-22T02:09:41Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@6ab30883]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initPages -->
+        <test-method status="PASS" signature="oldCarFlowBookingTest(com.auto1.cfe.bean.SellCountryFlowData)[pri:0, instance:com.auto1.cfe.tests.jav.SellCarTest@505f45cc]" name="oldCarFlowBookingTest" duration-ms="36039" started-at="2016-04-22T02:09:41Z" data-provider="flowCountryProviderJAV" finished-at="2016-04-22T02:10:17Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[car: description: Good; horsePower: 60 hp; doorCount: 1143; fuelType: 1040; gearType: 1139; acType: 1050; condition: 1134; carBelongsTo: 1135; brand: Audi; model: A8; year: -1994; shape: 1008; country: netherland; kilometer: 100000; ownerEmail: it-test+selenium-oldcarflow-noPrice@wkda.de; seller: firstName: Test JAV; lastName: Selenium Tester; mobilePrefix: +49; mobileNumber: 8009994440; country: name: netherland; code: nl; url: https://www.meteenautoverkopen.nl]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- oldCarFlowBookingTest -->
+        <test-method status="PASS" signature="clearCookies()[pri:0, instance:com.auto1.cfe.tests.jav.SellCarTest@505f45cc]" name="clearCookies" is-config="true" duration-ms="353" started-at="2016-04-22T02:10:17Z" finished-at="2016-04-22T02:10:17Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clearCookies -->
+        <test-method status="PASS" signature="initPages([Ljava.lang.Object;)[pri:0, instance:com.auto1.cfe.tests.jav.SellCarTest@505f45cc]" name="initPages" is-config="true" duration-ms="2" started-at="2016-04-22T02:10:17Z" finished-at="2016-04-22T02:10:17Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@48325b11]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initPages -->
+        <test-method status="PASS" signature="oldCarFlowBookingTest(com.auto1.cfe.bean.SellCountryFlowData)[pri:0, instance:com.auto1.cfe.tests.jav.SellCarTest@505f45cc]" name="oldCarFlowBookingTest" duration-ms="35399" started-at="2016-04-22T02:10:17Z" data-provider="flowCountryProviderJAV" finished-at="2016-04-22T02:10:52Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[car: description: Good; horsePower: 60 hp; doorCount: 1143; fuelType: 1040; gearType: 1139; acType: 1050; condition: 1134; carBelongsTo: 1135; brand: Audi; model: A8; year: -1994; shape: 1008; country: spain; kilometer: 100000; ownerEmail: it-test+selenium-oldcarflow-noPrice@wkda.de; seller: firstName: Test JAV; lastName: Selenium Tester; mobilePrefix: +49; mobileNumber: 8009994440; country: name: spain; code: es; url: https://www.vendercoche.es]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- oldCarFlowBookingTest -->
+        <test-method status="PASS" signature="clearCookies()[pri:0, instance:com.auto1.cfe.tests.jav.SellCarTest@505f45cc]" name="clearCookies" is-config="true" duration-ms="388" started-at="2016-04-22T02:10:52Z" finished-at="2016-04-22T02:10:53Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clearCookies -->
+        <test-method status="PASS" signature="initPages([Ljava.lang.Object;)[pri:0, instance:com.auto1.cfe.tests.jav.SellCarTest@505f45cc]" name="initPages" is-config="true" duration-ms="1" started-at="2016-04-22T02:10:53Z" finished-at="2016-04-22T02:10:53Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@41a12faa]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initPages -->
+        <test-method status="PASS" signature="oldCarFlowBookingTest(com.auto1.cfe.bean.SellCountryFlowData)[pri:0, instance:com.auto1.cfe.tests.jav.SellCarTest@505f45cc]" name="oldCarFlowBookingTest" duration-ms="35794" started-at="2016-04-22T02:10:53Z" data-provider="flowCountryProviderJAV" finished-at="2016-04-22T02:11:29Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[car: description: Good; horsePower: 60 hp; doorCount: 1143; fuelType: 1040; gearType: 1139; acType: 1050; condition: 1134; carBelongsTo: 1135; brand: Audi; model: A8; year: -1994; shape: 1008; country: france; kilometer: 100000; ownerEmail: it-test+selenium-oldcarflow-noPrice@wkda.de; seller: firstName: Test JAV; lastName: Selenium Tester; mobilePrefix: +49; mobileNumber: 8009994440; country: name: france; code: fr; url: https://www.vendresavoiture.fr]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- oldCarFlowBookingTest -->
+        <test-method status="PASS" signature="clearCookies()[pri:0, instance:com.auto1.cfe.tests.jav.SellCarTest@505f45cc]" name="clearCookies" is-config="true" duration-ms="411" started-at="2016-04-22T02:11:29Z" finished-at="2016-04-22T02:11:29Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clearCookies -->
+        <test-method status="PASS" signature="initPages([Ljava.lang.Object;)[pri:0, instance:com.auto1.cfe.tests.jav.SellCarTest@505f45cc]" name="initPages" is-config="true" duration-ms="1" started-at="2016-04-22T02:11:29Z" finished-at="2016-04-22T02:11:29Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@16a32234]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initPages -->
+        <test-method status="PASS" signature="oldCarFlowBookingTest(com.auto1.cfe.bean.SellCountryFlowData)[pri:0, instance:com.auto1.cfe.tests.jav.SellCarTest@505f45cc]" name="oldCarFlowBookingTest" duration-ms="35365" started-at="2016-04-22T02:11:29Z" data-provider="flowCountryProviderJAV" finished-at="2016-04-22T02:12:04Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[car: description: Good; horsePower: 60 hp; doorCount: 1143; fuelType: 1040; gearType: 1139; acType: 1050; condition: 1134; carBelongsTo: 1135; brand: Audi; model: A8; year: -1994; shape: 1008; country: belgium; kilometer: 100000; ownerEmail: it-test+selenium-oldcarflow-noPrice@wkda.de; seller: firstName: Test JAV; lastName: Selenium Tester; mobilePrefix: +49; mobileNumber: 8009994440; country: name: belgium; code: be; url: https://www.nuautoverkopen.be]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- oldCarFlowBookingTest -->
+        <test-method status="PASS" signature="clearCookies()[pri:0, instance:com.auto1.cfe.tests.jav.SellCarTest@505f45cc]" name="clearCookies" is-config="true" duration-ms="380" started-at="2016-04-22T02:12:04Z" finished-at="2016-04-22T02:12:05Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clearCookies -->
+        <test-method status="PASS" signature="initPages([Ljava.lang.Object;)[pri:0, instance:com.auto1.cfe.tests.jav.SellCarTest@505f45cc]" name="initPages" is-config="true" duration-ms="1" started-at="2016-04-22T02:12:05Z" finished-at="2016-04-22T02:12:05Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@64a6d773]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initPages -->
+        <test-method status="PASS" signature="oldCarFlowBookingTest(com.auto1.cfe.bean.SellCountryFlowData)[pri:0, instance:com.auto1.cfe.tests.jav.SellCarTest@505f45cc]" name="oldCarFlowBookingTest" duration-ms="35573" started-at="2016-04-22T02:12:05Z" data-provider="flowCountryProviderJAV" finished-at="2016-04-22T02:12:40Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[car: description: Good; horsePower: 60 hp; doorCount: 1143; fuelType: 1040; gearType: 1139; acType: 1050; condition: 1134; carBelongsTo: 1135; brand: Audi; model: A8; year: -1994; shape: 1008; country: italy; kilometer: 100000; ownerEmail: it-test+selenium-oldcarflow-noPrice@wkda.de; seller: firstName: Test JAV; lastName: Selenium Tester; mobilePrefix: +49; mobileNumber: 8009994440; country: name: italy; code: it; url: https://www.vendo-auto.it]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- oldCarFlowBookingTest -->
+        <test-method status="PASS" signature="clearCookies()[pri:0, instance:com.auto1.cfe.tests.jav.SellCarTest@505f45cc]" name="clearCookies" is-config="true" duration-ms="353" started-at="2016-04-22T02:12:40Z" finished-at="2016-04-22T02:12:41Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clearCookies -->
+        <test-method status="PASS" signature="initPages([Ljava.lang.Object;)[pri:0, instance:com.auto1.cfe.tests.jav.SellCarTest@505f45cc]" name="initPages" is-config="true" duration-ms="1" started-at="2016-04-22T02:12:41Z" finished-at="2016-04-22T02:12:41Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@3e16e225]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initPages -->
+        <test-method status="PASS" signature="oldCarFlowBookingTest(com.auto1.cfe.bean.SellCountryFlowData)[pri:0, instance:com.auto1.cfe.tests.jav.SellCarTest@505f45cc]" name="oldCarFlowBookingTest" duration-ms="37543" started-at="2016-04-22T02:12:41Z" data-provider="flowCountryProviderJAV" finished-at="2016-04-22T02:13:18Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[car: description: Good; horsePower: 60 hp; doorCount: 1143; fuelType: 1040; gearType: 1139; acType: 1050; condition: 1134; carBelongsTo: 1135; brand: Audi; model: A8; year: -1994; shape: 1008; country: sweden; kilometer: 100000; ownerEmail: it-test+selenium-oldcarflow-noPrice@wkda.de; seller: firstName: Test JAV; lastName: Selenium Tester; mobilePrefix: +49; mobileNumber: 8009994440; country: name: sweden; code: se; url: https://www.saljaminbil.se]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- oldCarFlowBookingTest -->
+        <test-method status="PASS" signature="clearCookies()[pri:0, instance:com.auto1.cfe.tests.jav.SellCarTest@505f45cc]" name="clearCookies" is-config="true" duration-ms="282" started-at="2016-04-22T02:13:18Z" finished-at="2016-04-22T02:13:18Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clearCookies -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.auto1.cfe.tests.jav.SellCarTest@505f45cc]" name="tearDown" is-config="true" duration-ms="601" started-at="2016-04-22T02:13:18Z" finished-at="2016-04-22T02:13:19Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.auto1.cfe.tests.jav.SellCarTest -->
+      <class name="com.auto1.cfe.tests.jav.TrackingCidTest">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.auto1.cfe.tests.jav.TrackingCidTest@994544]" name="setUp" is-config="true" duration-ms="1048" started-at="2016-04-22T02:13:19Z" finished-at="2016-04-22T02:13:20Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="initPages([Ljava.lang.Object;)[pri:0, instance:com.auto1.cfe.tests.jav.TrackingCidTest@994544]" name="initPages" is-config="true" duration-ms="2" started-at="2016-04-22T02:13:20Z" finished-at="2016-04-22T02:13:20Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@76824632]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initPages -->
+        <test-method status="PASS" signature="newCidTrackingTest(com.auto1.cfe.bean.SellCountryFlowData)[pri:0, instance:com.auto1.cfe.tests.jav.TrackingCidTest@994544]" name="newCidTrackingTest" duration-ms="21390" started-at="2016-04-22T02:13:20Z" data-provider="flowCountryProviderJAV" finished-at="2016-04-22T02:13:41Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[car: modelVariant: 6.0 W12:331.00; type: 010600480130001; brand: Audi; model: A8; year: 2006; shape: 1025; country: germany; kilometer: 20000; ownerEmail: it-test+selenium-newcarflow-priced@wkda.de; seller: firstName: Test JAV; lastName: Selenium Tester; mobilePrefix: +49; mobileNumber: 8009994440; country: name: germany; code: de; url: https://www.jetztautoverkaufen.de]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- newCidTrackingTest -->
+        <test-method status="PASS" signature="clearCookies()[pri:0, instance:com.auto1.cfe.tests.jav.TrackingCidTest@994544]" name="clearCookies" is-config="true" duration-ms="59" started-at="2016-04-22T02:13:41Z" finished-at="2016-04-22T02:13:42Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clearCookies -->
+        <test-method status="PASS" signature="initPages([Ljava.lang.Object;)[pri:0, instance:com.auto1.cfe.tests.jav.TrackingCidTest@994544]" name="initPages" is-config="true" duration-ms="1" started-at="2016-04-22T02:13:42Z" finished-at="2016-04-22T02:13:42Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@79bf7854]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initPages -->
+        <test-method status="PASS" signature="newCidTrackingTest(com.auto1.cfe.bean.SellCountryFlowData)[pri:0, instance:com.auto1.cfe.tests.jav.TrackingCidTest@994544]" name="newCidTrackingTest" duration-ms="16242" started-at="2016-04-22T02:13:42Z" data-provider="flowCountryProviderJAV" finished-at="2016-04-22T02:13:58Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[car: modelVariant: 6.0 W12:331.00; type: 010600480130001; brand: Audi; model: A8; year: 2006; shape: 1025; country: austria; kilometer: 20000; ownerEmail: it-test+selenium-newcarflow-priced@wkda.de; seller: firstName: Test JAV; lastName: Selenium Tester; mobilePrefix: +49; mobileNumber: 8009994440; country: name: austria; code: at; url: https://www.jetztautoverkaufen.at]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- newCidTrackingTest -->
+        <test-method status="PASS" signature="clearCookies()[pri:0, instance:com.auto1.cfe.tests.jav.TrackingCidTest@994544]" name="clearCookies" is-config="true" duration-ms="55" started-at="2016-04-22T02:13:58Z" finished-at="2016-04-22T02:13:58Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clearCookies -->
+        <test-method status="PASS" signature="initPages([Ljava.lang.Object;)[pri:0, instance:com.auto1.cfe.tests.jav.TrackingCidTest@994544]" name="initPages" is-config="true" duration-ms="1" started-at="2016-04-22T02:13:58Z" finished-at="2016-04-22T02:13:58Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@2bf0355f]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initPages -->
+        <test-method status="PASS" signature="newCidTrackingTest(com.auto1.cfe.bean.SellCountryFlowData)[pri:0, instance:com.auto1.cfe.tests.jav.TrackingCidTest@994544]" name="newCidTrackingTest" duration-ms="17010" started-at="2016-04-22T02:13:58Z" data-provider="flowCountryProviderJAV" finished-at="2016-04-22T02:14:15Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[car: modelVariant: 6.0 W12:331.00; type: 010600480130001; brand: Audi; model: A8; year: 2006; shape: 1025; country: netherland; kilometer: 20000; ownerEmail: it-test+selenium-newcarflow-priced@wkda.de; seller: firstName: Test JAV; lastName: Selenium Tester; mobilePrefix: +49; mobileNumber: 8009994440; country: name: netherland; code: nl; url: https://www.meteenautoverkopen.nl]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- newCidTrackingTest -->
+        <test-method status="PASS" signature="clearCookies()[pri:0, instance:com.auto1.cfe.tests.jav.TrackingCidTest@994544]" name="clearCookies" is-config="true" duration-ms="71" started-at="2016-04-22T02:14:15Z" finished-at="2016-04-22T02:14:15Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clearCookies -->
+        <test-method status="PASS" signature="initPages([Ljava.lang.Object;)[pri:0, instance:com.auto1.cfe.tests.jav.TrackingCidTest@994544]" name="initPages" is-config="true" duration-ms="2" started-at="2016-04-22T02:14:15Z" finished-at="2016-04-22T02:14:15Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@227eedce]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initPages -->
+        <test-method status="PASS" signature="newCidTrackingTest(com.auto1.cfe.bean.SellCountryFlowData)[pri:0, instance:com.auto1.cfe.tests.jav.TrackingCidTest@994544]" name="newCidTrackingTest" duration-ms="18390" started-at="2016-04-22T02:14:15Z" data-provider="flowCountryProviderJAV" finished-at="2016-04-22T02:14:33Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[car: modelVariant: 6.0 W12:331.00; type: 010600480130001; brand: Audi; model: A8; year: 2006; shape: 1025; country: spain; kilometer: 20000; ownerEmail: it-test+selenium-newcarflow-priced@wkda.de; seller: firstName: Test JAV; lastName: Selenium Tester; mobilePrefix: +49; mobileNumber: 8009994440; country: name: spain; code: es; url: https://www.vendercoche.es]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- newCidTrackingTest -->
+        <test-method status="PASS" signature="clearCookies()[pri:0, instance:com.auto1.cfe.tests.jav.TrackingCidTest@994544]" name="clearCookies" is-config="true" duration-ms="48" started-at="2016-04-22T02:14:33Z" finished-at="2016-04-22T02:14:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clearCookies -->
+        <test-method status="PASS" signature="initPages([Ljava.lang.Object;)[pri:0, instance:com.auto1.cfe.tests.jav.TrackingCidTest@994544]" name="initPages" is-config="true" duration-ms="1" started-at="2016-04-22T02:14:33Z" finished-at="2016-04-22T02:14:33Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@46a98c65]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initPages -->
+        <test-method status="PASS" signature="newCidTrackingTest(com.auto1.cfe.bean.SellCountryFlowData)[pri:0, instance:com.auto1.cfe.tests.jav.TrackingCidTest@994544]" name="newCidTrackingTest" duration-ms="19262" started-at="2016-04-22T02:14:33Z" data-provider="flowCountryProviderJAV" finished-at="2016-04-22T02:14:53Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[car: modelVariant: 6.0 W12:331.00; type: 010600480130001; brand: Audi; model: A8; year: 2006; shape: 1025; country: france; kilometer: 20000; ownerEmail: it-test+selenium-newcarflow-priced@wkda.de; seller: firstName: Test JAV; lastName: Selenium Tester; mobilePrefix: +49; mobileNumber: 8009994440; country: name: france; code: fr; url: https://www.vendresavoiture.fr]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- newCidTrackingTest -->
+        <test-method status="PASS" signature="clearCookies()[pri:0, instance:com.auto1.cfe.tests.jav.TrackingCidTest@994544]" name="clearCookies" is-config="true" duration-ms="40" started-at="2016-04-22T02:14:53Z" finished-at="2016-04-22T02:14:53Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clearCookies -->
+        <test-method status="PASS" signature="initPages([Ljava.lang.Object;)[pri:0, instance:com.auto1.cfe.tests.jav.TrackingCidTest@994544]" name="initPages" is-config="true" duration-ms="2" started-at="2016-04-22T02:14:53Z" finished-at="2016-04-22T02:14:53Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@44d6213c]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initPages -->
+        <test-method status="PASS" signature="newCidTrackingTest(com.auto1.cfe.bean.SellCountryFlowData)[pri:0, instance:com.auto1.cfe.tests.jav.TrackingCidTest@994544]" name="newCidTrackingTest" duration-ms="15424" started-at="2016-04-22T02:14:53Z" data-provider="flowCountryProviderJAV" finished-at="2016-04-22T02:15:08Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[car: modelVariant: 6.0 W12:331.00; type: 010600480130001; brand: Audi; model: A8; year: 2006; shape: 1025; country: belgium; kilometer: 20000; ownerEmail: it-test+selenium-newcarflow-priced@wkda.de; seller: firstName: Test JAV; lastName: Selenium Tester; mobilePrefix: +49; mobileNumber: 8009994440; country: name: belgium; code: be; url: https://www.nuautoverkopen.be]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- newCidTrackingTest -->
+        <test-method status="PASS" signature="clearCookies()[pri:0, instance:com.auto1.cfe.tests.jav.TrackingCidTest@994544]" name="clearCookies" is-config="true" duration-ms="54" started-at="2016-04-22T02:15:08Z" finished-at="2016-04-22T02:15:08Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clearCookies -->
+        <test-method status="PASS" signature="initPages([Ljava.lang.Object;)[pri:0, instance:com.auto1.cfe.tests.jav.TrackingCidTest@994544]" name="initPages" is-config="true" duration-ms="1" started-at="2016-04-22T02:15:08Z" finished-at="2016-04-22T02:15:08Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@6ea6be34]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initPages -->
+        <test-method status="PASS" signature="newCidTrackingTest(com.auto1.cfe.bean.SellCountryFlowData)[pri:0, instance:com.auto1.cfe.tests.jav.TrackingCidTest@994544]" name="newCidTrackingTest" duration-ms="16499" started-at="2016-04-22T02:15:08Z" data-provider="flowCountryProviderJAV" finished-at="2016-04-22T02:15:25Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[car: modelVariant: 6.0 W12:331.00; type: 010600480130001; brand: Audi; model: A8; year: 2006; shape: 1025; country: italy; kilometer: 20000; ownerEmail: it-test+selenium-newcarflow-priced@wkda.de; seller: firstName: Test JAV; lastName: Selenium Tester; mobilePrefix: +49; mobileNumber: 8009994440; country: name: italy; code: it; url: https://www.vendo-auto.it]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- newCidTrackingTest -->
+        <test-method status="PASS" signature="clearCookies()[pri:0, instance:com.auto1.cfe.tests.jav.TrackingCidTest@994544]" name="clearCookies" is-config="true" duration-ms="43" started-at="2016-04-22T02:15:25Z" finished-at="2016-04-22T02:15:25Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clearCookies -->
+        <test-method status="PASS" signature="initPages([Ljava.lang.Object;)[pri:0, instance:com.auto1.cfe.tests.jav.TrackingCidTest@994544]" name="initPages" is-config="true" duration-ms="2" started-at="2016-04-22T02:15:25Z" finished-at="2016-04-22T02:15:25Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@3b633eb3]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initPages -->
+        <test-method status="PASS" signature="newCidTrackingTest(com.auto1.cfe.bean.SellCountryFlowData)[pri:0, instance:com.auto1.cfe.tests.jav.TrackingCidTest@994544]" name="newCidTrackingTest" duration-ms="17287" started-at="2016-04-22T02:15:25Z" data-provider="flowCountryProviderJAV" finished-at="2016-04-22T02:15:42Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[car: modelVariant: 6.0 W12:331.00; type: 010600480130001; brand: Audi; model: A8; year: 2006; shape: 1025; country: sweden; kilometer: 20000; ownerEmail: it-test+selenium-newcarflow-priced@wkda.de; seller: firstName: Test JAV; lastName: Selenium Tester; mobilePrefix: +49; mobileNumber: 8009994440; country: name: sweden; code: se; url: https://www.saljaminbil.se]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- newCidTrackingTest -->
+        <test-method status="PASS" signature="clearCookies()[pri:0, instance:com.auto1.cfe.tests.jav.TrackingCidTest@994544]" name="clearCookies" is-config="true" duration-ms="78" started-at="2016-04-22T02:15:42Z" finished-at="2016-04-22T02:15:42Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clearCookies -->
+        <test-method status="PASS" signature="initPages([Ljava.lang.Object;)[pri:0, instance:com.auto1.cfe.tests.jav.TrackingCidTest@994544]" name="initPages" is-config="true" duration-ms="2" started-at="2016-04-22T02:15:42Z" finished-at="2016-04-22T02:15:42Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@31a3471e]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initPages -->
+        <test-method status="PASS" signature="newCidTrackingWithCrmTest(com.auto1.cfe.bean.SellCountryFlowData)[pri:0, instance:com.auto1.cfe.tests.jav.TrackingCidTest@994544]" name="newCidTrackingWithCrmTest" duration-ms="20102" started-at="2016-04-22T02:15:42Z" data-provider="flowCountryProviderJAV" finished-at="2016-04-22T02:16:02Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[car: modelVariant: 6.0 W12:331.00; type: 010600480130001; brand: Audi; model: A8; year: 2006; shape: 1025; country: germany; kilometer: 20000; ownerEmail: it-test+selenium-newcarflow-priced@wkda.de; seller: firstName: Test JAV; lastName: Selenium Tester; mobilePrefix: +49; mobileNumber: 8009994440; country: name: germany; code: de; url: https://www.jetztautoverkaufen.de]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- newCidTrackingWithCrmTest -->
+        <test-method status="PASS" signature="clearCookies()[pri:0, instance:com.auto1.cfe.tests.jav.TrackingCidTest@994544]" name="clearCookies" is-config="true" duration-ms="66" started-at="2016-04-22T02:16:02Z" finished-at="2016-04-22T02:16:02Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clearCookies -->
+        <test-method status="PASS" signature="initPages([Ljava.lang.Object;)[pri:0, instance:com.auto1.cfe.tests.jav.TrackingCidTest@994544]" name="initPages" is-config="true" duration-ms="2" started-at="2016-04-22T02:16:02Z" finished-at="2016-04-22T02:16:02Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@44894fd7]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initPages -->
+        <test-method status="PASS" signature="newCidTrackingWithCrmTest(com.auto1.cfe.bean.SellCountryFlowData)[pri:0, instance:com.auto1.cfe.tests.jav.TrackingCidTest@994544]" name="newCidTrackingWithCrmTest" duration-ms="17308" started-at="2016-04-22T02:16:02Z" data-provider="flowCountryProviderJAV" finished-at="2016-04-22T02:16:20Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[car: modelVariant: 6.0 W12:331.00; type: 010600480130001; brand: Audi; model: A8; year: 2006; shape: 1025; country: austria; kilometer: 20000; ownerEmail: it-test+selenium-newcarflow-priced@wkda.de; seller: firstName: Test JAV; lastName: Selenium Tester; mobilePrefix: +49; mobileNumber: 8009994440; country: name: austria; code: at; url: https://www.jetztautoverkaufen.at]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- newCidTrackingWithCrmTest -->
+        <test-method status="PASS" signature="clearCookies()[pri:0, instance:com.auto1.cfe.tests.jav.TrackingCidTest@994544]" name="clearCookies" is-config="true" duration-ms="59" started-at="2016-04-22T02:16:20Z" finished-at="2016-04-22T02:16:20Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clearCookies -->
+        <test-method status="PASS" signature="initPages([Ljava.lang.Object;)[pri:0, instance:com.auto1.cfe.tests.jav.TrackingCidTest@994544]" name="initPages" is-config="true" duration-ms="2" started-at="2016-04-22T02:16:20Z" finished-at="2016-04-22T02:16:20Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@1f850e6c]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initPages -->
+        <test-method status="PASS" signature="newCidTrackingWithCrmTest(com.auto1.cfe.bean.SellCountryFlowData)[pri:0, instance:com.auto1.cfe.tests.jav.TrackingCidTest@994544]" name="newCidTrackingWithCrmTest" duration-ms="16746" started-at="2016-04-22T02:16:20Z" data-provider="flowCountryProviderJAV" finished-at="2016-04-22T02:16:36Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[car: modelVariant: 6.0 W12:331.00; type: 010600480130001; brand: Audi; model: A8; year: 2006; shape: 1025; country: netherland; kilometer: 20000; ownerEmail: it-test+selenium-newcarflow-priced@wkda.de; seller: firstName: Test JAV; lastName: Selenium Tester; mobilePrefix: +49; mobileNumber: 8009994440; country: name: netherland; code: nl; url: https://www.meteenautoverkopen.nl]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- newCidTrackingWithCrmTest -->
+        <test-method status="PASS" signature="clearCookies()[pri:0, instance:com.auto1.cfe.tests.jav.TrackingCidTest@994544]" name="clearCookies" is-config="true" duration-ms="50" started-at="2016-04-22T02:16:36Z" finished-at="2016-04-22T02:16:36Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clearCookies -->
+        <test-method status="PASS" signature="initPages([Ljava.lang.Object;)[pri:0, instance:com.auto1.cfe.tests.jav.TrackingCidTest@994544]" name="initPages" is-config="true" duration-ms="2" started-at="2016-04-22T02:16:36Z" finished-at="2016-04-22T02:16:36Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@3db13d89]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initPages -->
+        <test-method status="PASS" signature="newCidTrackingWithCrmTest(com.auto1.cfe.bean.SellCountryFlowData)[pri:0, instance:com.auto1.cfe.tests.jav.TrackingCidTest@994544]" name="newCidTrackingWithCrmTest" duration-ms="17486" started-at="2016-04-22T02:16:36Z" data-provider="flowCountryProviderJAV" finished-at="2016-04-22T02:16:54Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[car: modelVariant: 6.0 W12:331.00; type: 010600480130001; brand: Audi; model: A8; year: 2006; shape: 1025; country: spain; kilometer: 20000; ownerEmail: it-test+selenium-newcarflow-priced@wkda.de; seller: firstName: Test JAV; lastName: Selenium Tester; mobilePrefix: +49; mobileNumber: 8009994440; country: name: spain; code: es; url: https://www.vendercoche.es]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- newCidTrackingWithCrmTest -->
+        <test-method status="PASS" signature="clearCookies()[pri:0, instance:com.auto1.cfe.tests.jav.TrackingCidTest@994544]" name="clearCookies" is-config="true" duration-ms="47" started-at="2016-04-22T02:16:54Z" finished-at="2016-04-22T02:16:54Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clearCookies -->
+        <test-method status="PASS" signature="initPages([Ljava.lang.Object;)[pri:0, instance:com.auto1.cfe.tests.jav.TrackingCidTest@994544]" name="initPages" is-config="true" duration-ms="1" started-at="2016-04-22T02:16:54Z" finished-at="2016-04-22T02:16:54Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@16810696]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initPages -->
+        <test-method status="PASS" signature="newCidTrackingWithCrmTest(com.auto1.cfe.bean.SellCountryFlowData)[pri:0, instance:com.auto1.cfe.tests.jav.TrackingCidTest@994544]" name="newCidTrackingWithCrmTest" duration-ms="15482" started-at="2016-04-22T02:16:54Z" data-provider="flowCountryProviderJAV" finished-at="2016-04-22T02:17:09Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[car: modelVariant: 6.0 W12:331.00; type: 010600480130001; brand: Audi; model: A8; year: 2006; shape: 1025; country: france; kilometer: 20000; ownerEmail: it-test+selenium-newcarflow-priced@wkda.de; seller: firstName: Test JAV; lastName: Selenium Tester; mobilePrefix: +49; mobileNumber: 8009994440; country: name: france; code: fr; url: https://www.vendresavoiture.fr]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- newCidTrackingWithCrmTest -->
+        <test-method status="PASS" signature="clearCookies()[pri:0, instance:com.auto1.cfe.tests.jav.TrackingCidTest@994544]" name="clearCookies" is-config="true" duration-ms="43" started-at="2016-04-22T02:17:09Z" finished-at="2016-04-22T02:17:09Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clearCookies -->
+        <test-method status="PASS" signature="initPages([Ljava.lang.Object;)[pri:0, instance:com.auto1.cfe.tests.jav.TrackingCidTest@994544]" name="initPages" is-config="true" duration-ms="1" started-at="2016-04-22T02:17:09Z" finished-at="2016-04-22T02:17:09Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@18780466]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initPages -->
+        <test-method status="PASS" signature="newCidTrackingWithCrmTest(com.auto1.cfe.bean.SellCountryFlowData)[pri:0, instance:com.auto1.cfe.tests.jav.TrackingCidTest@994544]" name="newCidTrackingWithCrmTest" duration-ms="16527" started-at="2016-04-22T02:17:09Z" data-provider="flowCountryProviderJAV" finished-at="2016-04-22T02:17:26Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[car: modelVariant: 6.0 W12:331.00; type: 010600480130001; brand: Audi; model: A8; year: 2006; shape: 1025; country: belgium; kilometer: 20000; ownerEmail: it-test+selenium-newcarflow-priced@wkda.de; seller: firstName: Test JAV; lastName: Selenium Tester; mobilePrefix: +49; mobileNumber: 8009994440; country: name: belgium; code: be; url: https://www.nuautoverkopen.be]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- newCidTrackingWithCrmTest -->
+        <test-method status="PASS" signature="clearCookies()[pri:0, instance:com.auto1.cfe.tests.jav.TrackingCidTest@994544]" name="clearCookies" is-config="true" duration-ms="43" started-at="2016-04-22T02:17:26Z" finished-at="2016-04-22T02:17:26Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clearCookies -->
+        <test-method status="PASS" signature="initPages([Ljava.lang.Object;)[pri:0, instance:com.auto1.cfe.tests.jav.TrackingCidTest@994544]" name="initPages" is-config="true" duration-ms="1" started-at="2016-04-22T02:17:26Z" finished-at="2016-04-22T02:17:26Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@2fb99f6b]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initPages -->
+        <test-method status="PASS" signature="newCidTrackingWithCrmTest(com.auto1.cfe.bean.SellCountryFlowData)[pri:0, instance:com.auto1.cfe.tests.jav.TrackingCidTest@994544]" name="newCidTrackingWithCrmTest" duration-ms="17884" started-at="2016-04-22T02:17:26Z" data-provider="flowCountryProviderJAV" finished-at="2016-04-22T02:17:44Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[car: modelVariant: 6.0 W12:331.00; type: 010600480130001; brand: Audi; model: A8; year: 2006; shape: 1025; country: italy; kilometer: 20000; ownerEmail: it-test+selenium-newcarflow-priced@wkda.de; seller: firstName: Test JAV; lastName: Selenium Tester; mobilePrefix: +49; mobileNumber: 8009994440; country: name: italy; code: it; url: https://www.vendo-auto.it]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- newCidTrackingWithCrmTest -->
+        <test-method status="PASS" signature="clearCookies()[pri:0, instance:com.auto1.cfe.tests.jav.TrackingCidTest@994544]" name="clearCookies" is-config="true" duration-ms="69" started-at="2016-04-22T02:17:44Z" finished-at="2016-04-22T02:17:44Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clearCookies -->
+        <test-method status="PASS" signature="initPages([Ljava.lang.Object;)[pri:0, instance:com.auto1.cfe.tests.jav.TrackingCidTest@994544]" name="initPages" is-config="true" duration-ms="1" started-at="2016-04-22T02:17:44Z" finished-at="2016-04-22T02:17:44Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@1bd0b260]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initPages -->
+        <test-method status="PASS" signature="newCidTrackingWithCrmTest(com.auto1.cfe.bean.SellCountryFlowData)[pri:0, instance:com.auto1.cfe.tests.jav.TrackingCidTest@994544]" name="newCidTrackingWithCrmTest" duration-ms="17594" started-at="2016-04-22T02:17:44Z" data-provider="flowCountryProviderJAV" finished-at="2016-04-22T02:18:02Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[car: modelVariant: 6.0 W12:331.00; type: 010600480130001; brand: Audi; model: A8; year: 2006; shape: 1025; country: sweden; kilometer: 20000; ownerEmail: it-test+selenium-newcarflow-priced@wkda.de; seller: firstName: Test JAV; lastName: Selenium Tester; mobilePrefix: +49; mobileNumber: 8009994440; country: name: sweden; code: se; url: https://www.saljaminbil.se]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- newCidTrackingWithCrmTest -->
+        <test-method status="PASS" signature="clearCookies()[pri:0, instance:com.auto1.cfe.tests.jav.TrackingCidTest@994544]" name="clearCookies" is-config="true" duration-ms="48" started-at="2016-04-22T02:18:02Z" finished-at="2016-04-22T02:18:02Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clearCookies -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.auto1.cfe.tests.jav.TrackingCidTest@994544]" name="tearDown" is-config="true" duration-ms="601" started-at="2016-04-22T02:18:02Z" finished-at="2016-04-22T02:18:02Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.auto1.cfe.tests.jav.TrackingCidTest -->
+      <class name="com.auto1.cfe.tests.jav.TransactionalEmailsTest">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.auto1.cfe.tests.jav.TransactionalEmailsTest@5df92089]" name="setUp" is-config="true" duration-ms="1021" started-at="2016-04-22T02:18:02Z" finished-at="2016-04-22T02:18:03Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="initPages([Ljava.lang.Object;)[pri:0, instance:com.auto1.cfe.tests.jav.TransactionalEmailsTest@5df92089]" name="initPages" is-config="true" duration-ms="2" started-at="2016-04-22T02:18:03Z" finished-at="2016-04-22T02:18:03Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@57bb23a]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initPages -->
+        <test-method status="FAIL" signature="newFlowTransactionEmailsTest(com.auto1.cfe.bean.SellCountryFlowData)[pri:0, instance:com.auto1.cfe.tests.jav.TransactionalEmailsTest@5df92089]" name="newFlowTransactionEmailsTest" duration-ms="39734" started-at="2016-04-22T02:18:03Z" data-provider="flowCountryProviderJAV" finished-at="2016-04-22T02:18:43Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[car: modelVariant: 6.0 W12:331.00; type: 010600480130001; brand: Audi; model: A8; year: 2006; shape: 1025; country: germany; kilometer: 20000; ownerEmail: it-test+selenium-newcarflow-priced-2016-04-22.02-18-03-de@wkda.de; seller: firstName: Test JAV; lastName: Selenium Tester; mobilePrefix: +49; mobileNumber: 8009994440; country: name: germany; code: de; url: https://www.jetztautoverkaufen.de]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[There is an issue with the pricing or booking e-mail template]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: There is an issue with the pricing or booking e-mail template
+	at com.auto1.cfe.common.mail.MailHelper.checkWhetherEmailHasProperLink(MailHelper.java:159)
+	at com.auto1.cfe.common.mail.MailHelper.checkWhetherEmailHasProperLink(MailHelper.java:91)
+	at com.auto1.cfe.common.mail.MailHelper.checkEmail(MailHelper.java:67)
+	at com.auto1.cfe.tests.jav.TransactionalEmailsTest.newFlowTransactionEmailsTest(TransactionalEmailsTest.java:37)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:639)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:816)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1124)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:774)
+	at org.testng.TestRunner.run(TestRunner.java:624)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:359)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:261)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+	at org.testng.TestNG.run(TestNG.java:1048)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:295)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:84)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:90)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:203)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:155)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- newFlowTransactionEmailsTest -->
+        <test-method status="PASS" signature="clearCookies()[pri:0, instance:com.auto1.cfe.tests.jav.TransactionalEmailsTest@5df92089]" name="clearCookies" is-config="true" duration-ms="212" started-at="2016-04-22T02:18:43Z" finished-at="2016-04-22T02:18:44Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clearCookies -->
+        <test-method status="PASS" signature="initPages([Ljava.lang.Object;)[pri:0, instance:com.auto1.cfe.tests.jav.TransactionalEmailsTest@5df92089]" name="initPages" is-config="true" duration-ms="2" started-at="2016-04-22T02:18:44Z" finished-at="2016-04-22T02:18:44Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@5df8ddc7]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initPages -->
+        <test-method status="FAIL" signature="newFlowTransactionEmailsTest(com.auto1.cfe.bean.SellCountryFlowData)[pri:0, instance:com.auto1.cfe.tests.jav.TransactionalEmailsTest@5df92089]" name="newFlowTransactionEmailsTest" duration-ms="25200" started-at="2016-04-22T02:18:44Z" data-provider="flowCountryProviderJAV" finished-at="2016-04-22T02:19:09Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[car: modelVariant: 6.0 W12:331.00; type: 010600480130001; brand: Audi; model: A8; year: 2006; shape: 1025; country: austria; kilometer: 20000; ownerEmail: it-test+selenium-newcarflow-priced-2016-04-22.02-18-44-at@wkda.de; seller: firstName: Test JAV; lastName: Selenium Tester; mobilePrefix: +49; mobileNumber: 8009994440; country: name: austria; code: at; url: https://www.jetztautoverkaufen.at]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[There is an issue with the pricing or booking e-mail template]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: There is an issue with the pricing or booking e-mail template
+	at com.auto1.cfe.common.mail.MailHelper.checkWhetherEmailHasProperLink(MailHelper.java:159)
+	at com.auto1.cfe.common.mail.MailHelper.checkWhetherEmailHasProperLink(MailHelper.java:91)
+	at com.auto1.cfe.common.mail.MailHelper.checkEmail(MailHelper.java:67)
+	at com.auto1.cfe.tests.jav.TransactionalEmailsTest.newFlowTransactionEmailsTest(TransactionalEmailsTest.java:37)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:639)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:816)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1124)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:774)
+	at org.testng.TestRunner.run(TestRunner.java:624)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:359)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:261)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+	at org.testng.TestNG.run(TestNG.java:1048)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:295)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:84)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:90)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:203)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:155)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- newFlowTransactionEmailsTest -->
+        <test-method status="PASS" signature="clearCookies()[pri:0, instance:com.auto1.cfe.tests.jav.TransactionalEmailsTest@5df92089]" name="clearCookies" is-config="true" duration-ms="243" started-at="2016-04-22T02:19:09Z" finished-at="2016-04-22T02:19:09Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clearCookies -->
+        <test-method status="PASS" signature="initPages([Ljava.lang.Object;)[pri:0, instance:com.auto1.cfe.tests.jav.TransactionalEmailsTest@5df92089]" name="initPages" is-config="true" duration-ms="1" started-at="2016-04-22T02:19:09Z" finished-at="2016-04-22T02:19:09Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@3e5943d4]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initPages -->
+        <test-method status="FAIL" signature="newFlowTransactionEmailsTest(com.auto1.cfe.bean.SellCountryFlowData)[pri:0, instance:com.auto1.cfe.tests.jav.TransactionalEmailsTest@5df92089]" name="newFlowTransactionEmailsTest" duration-ms="38192" started-at="2016-04-22T02:19:09Z" data-provider="flowCountryProviderJAV" finished-at="2016-04-22T02:19:48Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[car: modelVariant: 6.0 W12:331.00; type: 010600480130001; brand: Audi; model: A8; year: 2006; shape: 1025; country: netherland; kilometer: 20000; ownerEmail: it-test+selenium-newcarflow-priced-2016-04-22.02-19-09-nl@wkda.de; seller: firstName: Test JAV; lastName: Selenium Tester; mobilePrefix: +49; mobileNumber: 8009994440; country: name: netherland; code: nl; url: https://www.meteenautoverkopen.nl]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[There is an issue with the pricing or booking e-mail template]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: There is an issue with the pricing or booking e-mail template
+	at com.auto1.cfe.common.mail.MailHelper.checkWhetherEmailHasProperLink(MailHelper.java:159)
+	at com.auto1.cfe.common.mail.MailHelper.checkWhetherEmailHasProperLink(MailHelper.java:91)
+	at com.auto1.cfe.common.mail.MailHelper.checkEmail(MailHelper.java:67)
+	at com.auto1.cfe.tests.jav.TransactionalEmailsTest.newFlowTransactionEmailsTest(TransactionalEmailsTest.java:37)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:639)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:816)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1124)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:774)
+	at org.testng.TestRunner.run(TestRunner.java:624)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:359)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:261)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+	at org.testng.TestNG.run(TestNG.java:1048)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:295)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:84)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:90)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:203)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:155)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- newFlowTransactionEmailsTest -->
+        <test-method status="PASS" signature="clearCookies()[pri:0, instance:com.auto1.cfe.tests.jav.TransactionalEmailsTest@5df92089]" name="clearCookies" is-config="true" duration-ms="200" started-at="2016-04-22T02:19:48Z" finished-at="2016-04-22T02:19:48Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clearCookies -->
+        <test-method status="PASS" signature="initPages([Ljava.lang.Object;)[pri:0, instance:com.auto1.cfe.tests.jav.TransactionalEmailsTest@5df92089]" name="initPages" is-config="true" duration-ms="1" started-at="2016-04-22T02:19:48Z" finished-at="2016-04-22T02:19:48Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@2084b5cd]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initPages -->
+        <test-method status="FAIL" signature="newFlowTransactionEmailsTest(com.auto1.cfe.bean.SellCountryFlowData)[pri:0, instance:com.auto1.cfe.tests.jav.TransactionalEmailsTest@5df92089]" name="newFlowTransactionEmailsTest" duration-ms="35502" started-at="2016-04-22T02:19:48Z" data-provider="flowCountryProviderJAV" finished-at="2016-04-22T02:20:23Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[car: modelVariant: 6.0 W12:331.00; type: 010600480130001; brand: Audi; model: A8; year: 2006; shape: 1025; country: spain; kilometer: 20000; ownerEmail: it-test+selenium-newcarflow-priced-2016-04-22.02-19-48-es@wkda.de; seller: firstName: Test JAV; lastName: Selenium Tester; mobilePrefix: +49; mobileNumber: 8009994440; country: name: spain; code: es; url: https://www.vendercoche.es]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[There is an issue with the pricing or booking e-mail template]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: There is an issue with the pricing or booking e-mail template
+	at com.auto1.cfe.common.mail.MailHelper.checkWhetherEmailHasProperLink(MailHelper.java:159)
+	at com.auto1.cfe.common.mail.MailHelper.checkWhetherEmailHasProperLink(MailHelper.java:91)
+	at com.auto1.cfe.common.mail.MailHelper.checkEmail(MailHelper.java:67)
+	at com.auto1.cfe.tests.jav.TransactionalEmailsTest.newFlowTransactionEmailsTest(TransactionalEmailsTest.java:37)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:639)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:816)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1124)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:774)
+	at org.testng.TestRunner.run(TestRunner.java:624)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:359)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:261)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+	at org.testng.TestNG.run(TestNG.java:1048)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:295)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:84)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:90)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:203)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:155)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- newFlowTransactionEmailsTest -->
+        <test-method status="PASS" signature="clearCookies()[pri:0, instance:com.auto1.cfe.tests.jav.TransactionalEmailsTest@5df92089]" name="clearCookies" is-config="true" duration-ms="223" started-at="2016-04-22T02:20:24Z" finished-at="2016-04-22T02:20:24Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clearCookies -->
+        <test-method status="PASS" signature="initPages([Ljava.lang.Object;)[pri:0, instance:com.auto1.cfe.tests.jav.TransactionalEmailsTest@5df92089]" name="initPages" is-config="true" duration-ms="1" started-at="2016-04-22T02:20:24Z" finished-at="2016-04-22T02:20:24Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@78b62985]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initPages -->
+        <test-method status="FAIL" signature="newFlowTransactionEmailsTest(com.auto1.cfe.bean.SellCountryFlowData)[pri:0, instance:com.auto1.cfe.tests.jav.TransactionalEmailsTest@5df92089]" name="newFlowTransactionEmailsTest" duration-ms="36978" started-at="2016-04-22T02:20:24Z" data-provider="flowCountryProviderJAV" finished-at="2016-04-22T02:21:01Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[car: modelVariant: 6.0 W12:331.00; type: 010600480130001; brand: Audi; model: A8; year: 2006; shape: 1025; country: france; kilometer: 20000; ownerEmail: it-test+selenium-newcarflow-priced-2016-04-22.02-20-24-fr@wkda.de; seller: firstName: Test JAV; lastName: Selenium Tester; mobilePrefix: +49; mobileNumber: 8009994440; country: name: france; code: fr; url: https://www.vendresavoiture.fr]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[There is an issue with the pricing or booking e-mail template]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: There is an issue with the pricing or booking e-mail template
+	at com.auto1.cfe.common.mail.MailHelper.checkWhetherEmailHasProperLink(MailHelper.java:159)
+	at com.auto1.cfe.common.mail.MailHelper.checkWhetherEmailHasProperLink(MailHelper.java:91)
+	at com.auto1.cfe.common.mail.MailHelper.checkEmail(MailHelper.java:67)
+	at com.auto1.cfe.tests.jav.TransactionalEmailsTest.newFlowTransactionEmailsTest(TransactionalEmailsTest.java:37)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:639)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:816)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1124)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:774)
+	at org.testng.TestRunner.run(TestRunner.java:624)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:359)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:261)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+	at org.testng.TestNG.run(TestNG.java:1048)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:295)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:84)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:90)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:203)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:155)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- newFlowTransactionEmailsTest -->
+        <test-method status="PASS" signature="clearCookies()[pri:0, instance:com.auto1.cfe.tests.jav.TransactionalEmailsTest@5df92089]" name="clearCookies" is-config="true" duration-ms="203" started-at="2016-04-22T02:21:01Z" finished-at="2016-04-22T02:21:01Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clearCookies -->
+        <test-method status="PASS" signature="initPages([Ljava.lang.Object;)[pri:0, instance:com.auto1.cfe.tests.jav.TransactionalEmailsTest@5df92089]" name="initPages" is-config="true" duration-ms="2" started-at="2016-04-22T02:21:01Z" finished-at="2016-04-22T02:21:01Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@63bbd5b1]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initPages -->
+        <test-method status="FAIL" signature="newFlowTransactionEmailsTest(com.auto1.cfe.bean.SellCountryFlowData)[pri:0, instance:com.auto1.cfe.tests.jav.TransactionalEmailsTest@5df92089]" name="newFlowTransactionEmailsTest" duration-ms="35976" started-at="2016-04-22T02:21:01Z" data-provider="flowCountryProviderJAV" finished-at="2016-04-22T02:21:37Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[car: modelVariant: 6.0 W12:331.00; type: 010600480130001; brand: Audi; model: A8; year: 2006; shape: 1025; country: belgium; kilometer: 20000; ownerEmail: it-test+selenium-newcarflow-priced-2016-04-22.02-21-01-be@wkda.de; seller: firstName: Test JAV; lastName: Selenium Tester; mobilePrefix: +49; mobileNumber: 8009994440; country: name: belgium; code: be; url: https://www.nuautoverkopen.be]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[There is an issue with the pricing or booking e-mail template]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: There is an issue with the pricing or booking e-mail template
+	at com.auto1.cfe.common.mail.MailHelper.checkWhetherEmailHasProperLink(MailHelper.java:159)
+	at com.auto1.cfe.common.mail.MailHelper.checkWhetherEmailHasProperLink(MailHelper.java:91)
+	at com.auto1.cfe.common.mail.MailHelper.checkEmail(MailHelper.java:67)
+	at com.auto1.cfe.tests.jav.TransactionalEmailsTest.newFlowTransactionEmailsTest(TransactionalEmailsTest.java:37)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:639)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:816)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1124)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:774)
+	at org.testng.TestRunner.run(TestRunner.java:624)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:359)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:261)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+	at org.testng.TestNG.run(TestNG.java:1048)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:295)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:84)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:90)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:203)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:155)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- newFlowTransactionEmailsTest -->
+        <test-method status="PASS" signature="clearCookies()[pri:0, instance:com.auto1.cfe.tests.jav.TransactionalEmailsTest@5df92089]" name="clearCookies" is-config="true" duration-ms="209" started-at="2016-04-22T02:21:38Z" finished-at="2016-04-22T02:21:38Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clearCookies -->
+        <test-method status="PASS" signature="initPages([Ljava.lang.Object;)[pri:0, instance:com.auto1.cfe.tests.jav.TransactionalEmailsTest@5df92089]" name="initPages" is-config="true" duration-ms="1" started-at="2016-04-22T02:21:38Z" finished-at="2016-04-22T02:21:38Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@17087df1]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initPages -->
+        <test-method status="FAIL" signature="newFlowTransactionEmailsTest(com.auto1.cfe.bean.SellCountryFlowData)[pri:0, instance:com.auto1.cfe.tests.jav.TransactionalEmailsTest@5df92089]" name="newFlowTransactionEmailsTest" duration-ms="36341" started-at="2016-04-22T02:21:38Z" data-provider="flowCountryProviderJAV" finished-at="2016-04-22T02:22:14Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[car: modelVariant: 6.0 W12:331.00; type: 010600480130001; brand: Audi; model: A8; year: 2006; shape: 1025; country: italy; kilometer: 20000; ownerEmail: it-test+selenium-newcarflow-priced-2016-04-22.02-21-38-it@wkda.de; seller: firstName: Test JAV; lastName: Selenium Tester; mobilePrefix: +49; mobileNumber: 8009994440; country: name: italy; code: it; url: https://www.vendo-auto.it]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[There is an issue with the pricing or booking e-mail template]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: There is an issue with the pricing or booking e-mail template
+	at com.auto1.cfe.common.mail.MailHelper.checkWhetherEmailHasProperLink(MailHelper.java:159)
+	at com.auto1.cfe.common.mail.MailHelper.checkWhetherEmailHasProperLink(MailHelper.java:91)
+	at com.auto1.cfe.common.mail.MailHelper.checkEmail(MailHelper.java:67)
+	at com.auto1.cfe.tests.jav.TransactionalEmailsTest.newFlowTransactionEmailsTest(TransactionalEmailsTest.java:37)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:639)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:816)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1124)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:774)
+	at org.testng.TestRunner.run(TestRunner.java:624)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:359)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:261)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+	at org.testng.TestNG.run(TestNG.java:1048)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:295)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:84)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:90)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:203)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:155)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- newFlowTransactionEmailsTest -->
+        <test-method status="PASS" signature="clearCookies()[pri:0, instance:com.auto1.cfe.tests.jav.TransactionalEmailsTest@5df92089]" name="clearCookies" is-config="true" duration-ms="208" started-at="2016-04-22T02:22:14Z" finished-at="2016-04-22T02:22:15Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clearCookies -->
+        <test-method status="PASS" signature="initPages([Ljava.lang.Object;)[pri:0, instance:com.auto1.cfe.tests.jav.TransactionalEmailsTest@5df92089]" name="initPages" is-config="true" duration-ms="1" started-at="2016-04-22T02:22:15Z" finished-at="2016-04-22T02:22:15Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@12a79800]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initPages -->
+        <test-method status="FAIL" signature="newFlowTransactionEmailsTest(com.auto1.cfe.bean.SellCountryFlowData)[pri:0, instance:com.auto1.cfe.tests.jav.TransactionalEmailsTest@5df92089]" name="newFlowTransactionEmailsTest" duration-ms="36623" started-at="2016-04-22T02:22:15Z" data-provider="flowCountryProviderJAV" finished-at="2016-04-22T02:22:51Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[car: modelVariant: 6.0 W12:331.00; type: 010600480130001; brand: Audi; model: A8; year: 2006; shape: 1025; country: sweden; kilometer: 20000; ownerEmail: it-test+selenium-newcarflow-priced-2016-04-22.02-22-15-se@wkda.de; seller: firstName: Test JAV; lastName: Selenium Tester; mobilePrefix: +49; mobileNumber: 8009994440; country: name: sweden; code: se; url: https://www.saljaminbil.se]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[There is an issue with the pricing or booking e-mail template]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: There is an issue with the pricing or booking e-mail template
+	at com.auto1.cfe.common.mail.MailHelper.checkWhetherEmailHasProperLink(MailHelper.java:159)
+	at com.auto1.cfe.common.mail.MailHelper.checkWhetherEmailHasProperLink(MailHelper.java:91)
+	at com.auto1.cfe.common.mail.MailHelper.checkEmail(MailHelper.java:67)
+	at com.auto1.cfe.tests.jav.TransactionalEmailsTest.newFlowTransactionEmailsTest(TransactionalEmailsTest.java:37)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:639)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:816)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1124)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:774)
+	at org.testng.TestRunner.run(TestRunner.java:624)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:359)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:261)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+	at org.testng.TestNG.run(TestNG.java:1048)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:295)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:84)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:90)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:203)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:155)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- newFlowTransactionEmailsTest -->
+        <test-method status="PASS" signature="clearCookies()[pri:0, instance:com.auto1.cfe.tests.jav.TransactionalEmailsTest@5df92089]" name="clearCookies" is-config="true" duration-ms="200" started-at="2016-04-22T02:22:52Z" finished-at="2016-04-22T02:22:52Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clearCookies -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.auto1.cfe.tests.jav.TransactionalEmailsTest@5df92089]" name="tearDown" is-config="true" duration-ms="608" started-at="2016-04-22T02:22:52Z" finished-at="2016-04-22T02:22:52Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.auto1.cfe.tests.jav.TransactionalEmailsTest -->
+      <class name="com.auto1.cfe.tests.jav.UnSubscribeTest">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.auto1.cfe.tests.jav.UnSubscribeTest@6f0c45f4]" name="setUp" is-config="true" duration-ms="1054" started-at="2016-04-22T02:22:52Z" finished-at="2016-04-22T02:22:53Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="initPages([Ljava.lang.Object;)[pri:0, instance:com.auto1.cfe.tests.jav.UnSubscribeTest@6f0c45f4]" name="initPages" is-config="true" duration-ms="2" started-at="2016-04-22T02:22:53Z" finished-at="2016-04-22T02:22:53Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@5b9461d0]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initPages -->
+        <test-method status="PASS" signature="newUnsubscribeEmailTest(com.auto1.cfe.bean.SellCountryFlowData)[pri:0, instance:com.auto1.cfe.tests.jav.UnSubscribeTest@6f0c45f4]" name="newUnsubscribeEmailTest" duration-ms="13380" started-at="2016-04-22T02:22:53Z" data-provider="flowCountryProviderJAV" finished-at="2016-04-22T02:23:07Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[car: modelVariant: 6.0 W12:331.00; type: 010600480130001; brand: Audi; model: A8; year: 2006; shape: 1025; country: germany; kilometer: 20000; ownerEmail: it-test+selenium-newcarflow-priced@wkda.de; seller: firstName: Test JAV; lastName: Selenium Tester; mobilePrefix: +49; mobileNumber: 8009994440; country: name: germany; code: de; url: https://www.jetztautoverkaufen.de]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- newUnsubscribeEmailTest -->
+        <test-method status="PASS" signature="clearCookies()[pri:0, instance:com.auto1.cfe.tests.jav.UnSubscribeTest@6f0c45f4]" name="clearCookies" is-config="true" duration-ms="231" started-at="2016-04-22T02:23:07Z" finished-at="2016-04-22T02:23:07Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clearCookies -->
+        <test-method status="PASS" signature="initPages([Ljava.lang.Object;)[pri:0, instance:com.auto1.cfe.tests.jav.UnSubscribeTest@6f0c45f4]" name="initPages" is-config="true" duration-ms="2" started-at="2016-04-22T02:23:07Z" finished-at="2016-04-22T02:23:07Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@663f314e]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initPages -->
+        <test-method status="PASS" signature="newUnsubscribeEmailTest(com.auto1.cfe.bean.SellCountryFlowData)[pri:0, instance:com.auto1.cfe.tests.jav.UnSubscribeTest@6f0c45f4]" name="newUnsubscribeEmailTest" duration-ms="11696" started-at="2016-04-22T02:23:07Z" data-provider="flowCountryProviderJAV" finished-at="2016-04-22T02:23:19Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[car: modelVariant: 6.0 W12:331.00; type: 010600480130001; brand: Audi; model: A8; year: 2006; shape: 1025; country: austria; kilometer: 20000; ownerEmail: it-test+selenium-newcarflow-priced@wkda.de; seller: firstName: Test JAV; lastName: Selenium Tester; mobilePrefix: +49; mobileNumber: 8009994440; country: name: austria; code: at; url: https://www.jetztautoverkaufen.at]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- newUnsubscribeEmailTest -->
+        <test-method status="PASS" signature="clearCookies()[pri:0, instance:com.auto1.cfe.tests.jav.UnSubscribeTest@6f0c45f4]" name="clearCookies" is-config="true" duration-ms="239" started-at="2016-04-22T02:23:19Z" finished-at="2016-04-22T02:23:19Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clearCookies -->
+        <test-method status="PASS" signature="initPages([Ljava.lang.Object;)[pri:0, instance:com.auto1.cfe.tests.jav.UnSubscribeTest@6f0c45f4]" name="initPages" is-config="true" duration-ms="21" started-at="2016-04-22T02:23:19Z" finished-at="2016-04-22T02:23:19Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@320c2f8d]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initPages -->
+        <test-method status="PASS" signature="newUnsubscribeEmailTest(com.auto1.cfe.bean.SellCountryFlowData)[pri:0, instance:com.auto1.cfe.tests.jav.UnSubscribeTest@6f0c45f4]" name="newUnsubscribeEmailTest" duration-ms="12965" started-at="2016-04-22T02:23:19Z" data-provider="flowCountryProviderJAV" finished-at="2016-04-22T02:23:32Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[car: modelVariant: 6.0 W12:331.00; type: 010600480130001; brand: Audi; model: A8; year: 2006; shape: 1025; country: netherland; kilometer: 20000; ownerEmail: it-test+selenium-newcarflow-priced@wkda.de; seller: firstName: Test JAV; lastName: Selenium Tester; mobilePrefix: +49; mobileNumber: 8009994440; country: name: netherland; code: nl; url: https://www.meteenautoverkopen.nl]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- newUnsubscribeEmailTest -->
+        <test-method status="PASS" signature="clearCookies()[pri:0, instance:com.auto1.cfe.tests.jav.UnSubscribeTest@6f0c45f4]" name="clearCookies" is-config="true" duration-ms="221" started-at="2016-04-22T02:23:32Z" finished-at="2016-04-22T02:23:32Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clearCookies -->
+        <test-method status="PASS" signature="initPages([Ljava.lang.Object;)[pri:0, instance:com.auto1.cfe.tests.jav.UnSubscribeTest@6f0c45f4]" name="initPages" is-config="true" duration-ms="1" started-at="2016-04-22T02:23:32Z" finished-at="2016-04-22T02:23:32Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@1c45c654]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initPages -->
+        <test-method status="PASS" signature="newUnsubscribeEmailTest(com.auto1.cfe.bean.SellCountryFlowData)[pri:0, instance:com.auto1.cfe.tests.jav.UnSubscribeTest@6f0c45f4]" name="newUnsubscribeEmailTest" duration-ms="13339" started-at="2016-04-22T02:23:32Z" data-provider="flowCountryProviderJAV" finished-at="2016-04-22T02:23:46Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[car: modelVariant: 6.0 W12:331.00; type: 010600480130001; brand: Audi; model: A8; year: 2006; shape: 1025; country: spain; kilometer: 20000; ownerEmail: it-test+selenium-newcarflow-priced@wkda.de; seller: firstName: Test JAV; lastName: Selenium Tester; mobilePrefix: +49; mobileNumber: 8009994440; country: name: spain; code: es; url: https://www.vendercoche.es]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- newUnsubscribeEmailTest -->
+        <test-method status="PASS" signature="clearCookies()[pri:0, instance:com.auto1.cfe.tests.jav.UnSubscribeTest@6f0c45f4]" name="clearCookies" is-config="true" duration-ms="217" started-at="2016-04-22T02:23:46Z" finished-at="2016-04-22T02:23:46Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clearCookies -->
+        <test-method status="PASS" signature="initPages([Ljava.lang.Object;)[pri:0, instance:com.auto1.cfe.tests.jav.UnSubscribeTest@6f0c45f4]" name="initPages" is-config="true" duration-ms="1" started-at="2016-04-22T02:23:46Z" finished-at="2016-04-22T02:23:46Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@64a7aeed]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initPages -->
+        <test-method status="PASS" signature="newUnsubscribeEmailTest(com.auto1.cfe.bean.SellCountryFlowData)[pri:0, instance:com.auto1.cfe.tests.jav.UnSubscribeTest@6f0c45f4]" name="newUnsubscribeEmailTest" duration-ms="15329" started-at="2016-04-22T02:23:46Z" data-provider="flowCountryProviderJAV" finished-at="2016-04-22T02:24:01Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[car: modelVariant: 6.0 W12:331.00; type: 010600480130001; brand: Audi; model: A8; year: 2006; shape: 1025; country: france; kilometer: 20000; ownerEmail: it-test+selenium-newcarflow-priced@wkda.de; seller: firstName: Test JAV; lastName: Selenium Tester; mobilePrefix: +49; mobileNumber: 8009994440; country: name: france; code: fr; url: https://www.vendresavoiture.fr]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- newUnsubscribeEmailTest -->
+        <test-method status="PASS" signature="clearCookies()[pri:0, instance:com.auto1.cfe.tests.jav.UnSubscribeTest@6f0c45f4]" name="clearCookies" is-config="true" duration-ms="196" started-at="2016-04-22T02:24:01Z" finished-at="2016-04-22T02:24:01Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clearCookies -->
+        <test-method status="PASS" signature="initPages([Ljava.lang.Object;)[pri:0, instance:com.auto1.cfe.tests.jav.UnSubscribeTest@6f0c45f4]" name="initPages" is-config="true" duration-ms="1" started-at="2016-04-22T02:24:01Z" finished-at="2016-04-22T02:24:01Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@7b8d4676]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initPages -->
+        <test-method status="PASS" signature="newUnsubscribeEmailTest(com.auto1.cfe.bean.SellCountryFlowData)[pri:0, instance:com.auto1.cfe.tests.jav.UnSubscribeTest@6f0c45f4]" name="newUnsubscribeEmailTest" duration-ms="11632" started-at="2016-04-22T02:24:01Z" data-provider="flowCountryProviderJAV" finished-at="2016-04-22T02:24:13Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[car: modelVariant: 6.0 W12:331.00; type: 010600480130001; brand: Audi; model: A8; year: 2006; shape: 1025; country: belgium; kilometer: 20000; ownerEmail: it-test+selenium-newcarflow-priced@wkda.de; seller: firstName: Test JAV; lastName: Selenium Tester; mobilePrefix: +49; mobileNumber: 8009994440; country: name: belgium; code: be; url: https://www.nuautoverkopen.be]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- newUnsubscribeEmailTest -->
+        <test-method status="PASS" signature="clearCookies()[pri:0, instance:com.auto1.cfe.tests.jav.UnSubscribeTest@6f0c45f4]" name="clearCookies" is-config="true" duration-ms="230" started-at="2016-04-22T02:24:13Z" finished-at="2016-04-22T02:24:13Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clearCookies -->
+        <test-method status="PASS" signature="initPages([Ljava.lang.Object;)[pri:0, instance:com.auto1.cfe.tests.jav.UnSubscribeTest@6f0c45f4]" name="initPages" is-config="true" duration-ms="1" started-at="2016-04-22T02:24:13Z" finished-at="2016-04-22T02:24:13Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@282e7ecd]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initPages -->
+        <test-method status="PASS" signature="newUnsubscribeEmailTest(com.auto1.cfe.bean.SellCountryFlowData)[pri:0, instance:com.auto1.cfe.tests.jav.UnSubscribeTest@6f0c45f4]" name="newUnsubscribeEmailTest" duration-ms="12457" started-at="2016-04-22T02:24:13Z" data-provider="flowCountryProviderJAV" finished-at="2016-04-22T02:24:26Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[car: modelVariant: 6.0 W12:331.00; type: 010600480130001; brand: Audi; model: A8; year: 2006; shape: 1025; country: italy; kilometer: 20000; ownerEmail: it-test+selenium-newcarflow-priced@wkda.de; seller: firstName: Test JAV; lastName: Selenium Tester; mobilePrefix: +49; mobileNumber: 8009994440; country: name: italy; code: it; url: https://www.vendo-auto.it]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- newUnsubscribeEmailTest -->
+        <test-method status="PASS" signature="clearCookies()[pri:0, instance:com.auto1.cfe.tests.jav.UnSubscribeTest@6f0c45f4]" name="clearCookies" is-config="true" duration-ms="236" started-at="2016-04-22T02:24:26Z" finished-at="2016-04-22T02:24:26Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clearCookies -->
+        <test-method status="PASS" signature="initPages([Ljava.lang.Object;)[pri:0, instance:com.auto1.cfe.tests.jav.UnSubscribeTest@6f0c45f4]" name="initPages" is-config="true" duration-ms="1" started-at="2016-04-22T02:24:26Z" finished-at="2016-04-22T02:24:26Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@1aeb7afa]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initPages -->
+        <test-method status="PASS" signature="newUnsubscribeEmailTest(com.auto1.cfe.bean.SellCountryFlowData)[pri:0, instance:com.auto1.cfe.tests.jav.UnSubscribeTest@6f0c45f4]" name="newUnsubscribeEmailTest" duration-ms="12968" started-at="2016-04-22T02:24:26Z" data-provider="flowCountryProviderJAV" finished-at="2016-04-22T02:24:39Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[car: modelVariant: 6.0 W12:331.00; type: 010600480130001; brand: Audi; model: A8; year: 2006; shape: 1025; country: sweden; kilometer: 20000; ownerEmail: it-test+selenium-newcarflow-priced@wkda.de; seller: firstName: Test JAV; lastName: Selenium Tester; mobilePrefix: +49; mobileNumber: 8009994440; country: name: sweden; code: se; url: https://www.saljaminbil.se]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- newUnsubscribeEmailTest -->
+        <test-method status="PASS" signature="clearCookies()[pri:0, instance:com.auto1.cfe.tests.jav.UnSubscribeTest@6f0c45f4]" name="clearCookies" is-config="true" duration-ms="206" started-at="2016-04-22T02:24:39Z" finished-at="2016-04-22T02:24:39Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clearCookies -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.auto1.cfe.tests.jav.UnSubscribeTest@6f0c45f4]" name="tearDown" is-config="true" duration-ms="595" started-at="2016-04-22T02:24:39Z" finished-at="2016-04-22T02:24:40Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.auto1.cfe.tests.jav.UnSubscribeTest -->
+      <class name="com.auto1.cfe.tests.jav.ErrorMessagesTest">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.auto1.cfe.tests.jav.ErrorMessagesTest@7548e1fb]" name="setUp" is-config="true" duration-ms="2622" started-at="2016-04-22T01:59:49Z" finished-at="2016-04-22T01:59:51Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="initPages([Ljava.lang.Object;)[pri:0, instance:com.auto1.cfe.tests.jav.ErrorMessagesTest@7548e1fb]" name="initPages" is-config="true" duration-ms="254" started-at="2016-04-22T01:59:51Z" finished-at="2016-04-22T01:59:52Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@1d726cbf]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initPages -->
+        <test-method status="PASS" signature="newFlowErrorMessagesTest(com.auto1.cfe.bean.SellCountryFlowData)[pri:0, instance:com.auto1.cfe.tests.jav.ErrorMessagesTest@7548e1fb]" name="newFlowErrorMessagesTest" duration-ms="17399" started-at="2016-04-22T01:59:52Z" data-provider="flowCountryProviderJAV" finished-at="2016-04-22T02:00:09Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[car: modelVariant: 6.0 W12:331.00; type: 010600480130001; brand: Audi; model: A8; year: 2006; shape: 1025; country: germany; kilometer: 20000; ownerEmail: it-test+selenium-newcarflow-priced@wkda.de; seller: firstName: Test JAV; lastName: Selenium Tester; mobilePrefix: +49; mobileNumber: 8009994440; country: name: germany; code: de; url: https://www.jetztautoverkaufen.de]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- newFlowErrorMessagesTest -->
+        <test-method status="PASS" signature="clearCookies()[pri:0, instance:com.auto1.cfe.tests.jav.ErrorMessagesTest@7548e1fb]" name="clearCookies" is-config="true" duration-ms="687" started-at="2016-04-22T02:00:09Z" finished-at="2016-04-22T02:00:10Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clearCookies -->
+        <test-method status="PASS" signature="initPages([Ljava.lang.Object;)[pri:0, instance:com.auto1.cfe.tests.jav.ErrorMessagesTest@7548e1fb]" name="initPages" is-config="true" duration-ms="2" started-at="2016-04-22T02:00:10Z" finished-at="2016-04-22T02:00:10Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@1e5d346d]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initPages -->
+        <test-method status="FAIL" signature="newFlowErrorMessagesTest(com.auto1.cfe.bean.SellCountryFlowData)[pri:0, instance:com.auto1.cfe.tests.jav.ErrorMessagesTest@7548e1fb]" name="newFlowErrorMessagesTest" duration-ms="11803" started-at="2016-04-22T02:00:10Z" data-provider="flowCountryProviderJAV" finished-at="2016-04-22T02:00:21Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[car: modelVariant: 6.0 W12:331.00; type: 010600480130001; brand: Audi; model: A8; year: 2006; shape: 1025; country: austria; kilometer: 20000; ownerEmail: it-test+selenium-newcarflow-priced@wkda.de; seller: firstName: Test JAV; lastName: Selenium Tester; mobilePrefix: +49; mobileNumber: 8009994440; country: name: austria; code: at; url: https://www.jetztautoverkaufen.at]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[Url should contain 'confirm' word
+Expected: is a string containing "confirm"
+     but: was "https://www.jetztautoverkaufen.at/booking/8684f4784cf62a16831d9c463559c234/"]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: Url should contain 'confirm' word
+Expected: is a string containing "confirm"
+     but: was "https://www.jetztautoverkaufen.at/booking/8684f4784cf62a16831d9c463559c234/"
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at com.auto1.cfe.tests.BaseTest.verifyAppointmentIsBooked(BaseTest.java:61)
+	at com.auto1.cfe.tests.jav.ErrorMessagesTest.newFlowErrorMessagesTest(ErrorMessagesTest.java:36)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:639)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:816)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1124)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:774)
+	at org.testng.TestRunner.run(TestRunner.java:624)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:359)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:261)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+	at org.testng.TestNG.run(TestNG.java:1048)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:295)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:84)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:90)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:203)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:155)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- newFlowErrorMessagesTest -->
+        <test-method status="PASS" signature="clearCookies()[pri:0, instance:com.auto1.cfe.tests.jav.ErrorMessagesTest@7548e1fb]" name="clearCookies" is-config="true" duration-ms="236" started-at="2016-04-22T02:00:22Z" finished-at="2016-04-22T02:00:22Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clearCookies -->
+        <test-method status="PASS" signature="initPages([Ljava.lang.Object;)[pri:0, instance:com.auto1.cfe.tests.jav.ErrorMessagesTest@7548e1fb]" name="initPages" is-config="true" duration-ms="2" started-at="2016-04-22T02:00:22Z" finished-at="2016-04-22T02:00:22Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@8a62abd]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initPages -->
+        <test-method status="FAIL" signature="newFlowErrorMessagesTest(com.auto1.cfe.bean.SellCountryFlowData)[pri:0, instance:com.auto1.cfe.tests.jav.ErrorMessagesTest@7548e1fb]" name="newFlowErrorMessagesTest" duration-ms="11975" started-at="2016-04-22T02:00:22Z" data-provider="flowCountryProviderJAV" finished-at="2016-04-22T02:00:34Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[car: modelVariant: 6.0 W12:331.00; type: 010600480130001; brand: Audi; model: A8; year: 2006; shape: 1025; country: netherland; kilometer: 20000; ownerEmail: it-test+selenium-newcarflow-priced@wkda.de; seller: firstName: Test JAV; lastName: Selenium Tester; mobilePrefix: +49; mobileNumber: 8009994440; country: name: netherland; code: nl; url: https://www.meteenautoverkopen.nl]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[Url should contain 'confirm' word
+Expected: is a string containing "confirm"
+     but: was "https://www.meteenautoverkopen.nl/booking/246f15a54834d10649f73c19d119fcf1/"]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: Url should contain 'confirm' word
+Expected: is a string containing "confirm"
+     but: was "https://www.meteenautoverkopen.nl/booking/246f15a54834d10649f73c19d119fcf1/"
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at com.auto1.cfe.tests.BaseTest.verifyAppointmentIsBooked(BaseTest.java:61)
+	at com.auto1.cfe.tests.jav.ErrorMessagesTest.newFlowErrorMessagesTest(ErrorMessagesTest.java:36)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:639)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:816)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1124)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:774)
+	at org.testng.TestRunner.run(TestRunner.java:624)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:359)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:261)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+	at org.testng.TestNG.run(TestNG.java:1048)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:295)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:84)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:90)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:203)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:155)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- newFlowErrorMessagesTest -->
+        <test-method status="PASS" signature="clearCookies()[pri:0, instance:com.auto1.cfe.tests.jav.ErrorMessagesTest@7548e1fb]" name="clearCookies" is-config="true" duration-ms="253" started-at="2016-04-22T02:00:34Z" finished-at="2016-04-22T02:00:35Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clearCookies -->
+        <test-method status="PASS" signature="initPages([Ljava.lang.Object;)[pri:0, instance:com.auto1.cfe.tests.jav.ErrorMessagesTest@7548e1fb]" name="initPages" is-config="true" duration-ms="2" started-at="2016-04-22T02:00:35Z" finished-at="2016-04-22T02:00:35Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@6c429d5b]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initPages -->
+        <test-method status="FAIL" signature="newFlowErrorMessagesTest(com.auto1.cfe.bean.SellCountryFlowData)[pri:0, instance:com.auto1.cfe.tests.jav.ErrorMessagesTest@7548e1fb]" name="newFlowErrorMessagesTest" duration-ms="11859" started-at="2016-04-22T02:00:35Z" data-provider="flowCountryProviderJAV" finished-at="2016-04-22T02:00:47Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[car: modelVariant: 6.0 W12:331.00; type: 010600480130001; brand: Audi; model: A8; year: 2006; shape: 1025; country: spain; kilometer: 20000; ownerEmail: it-test+selenium-newcarflow-priced@wkda.de; seller: firstName: Test JAV; lastName: Selenium Tester; mobilePrefix: +49; mobileNumber: 8009994440; country: name: spain; code: es; url: https://www.vendercoche.es]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[Url should contain 'confirm' word
+Expected: is a string containing "confirm"
+     but: was "https://www.vendercoche.es/booking/a779735f00c88a85857c1a60c52bbcb6/"]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: Url should contain 'confirm' word
+Expected: is a string containing "confirm"
+     but: was "https://www.vendercoche.es/booking/a779735f00c88a85857c1a60c52bbcb6/"
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at com.auto1.cfe.tests.BaseTest.verifyAppointmentIsBooked(BaseTest.java:61)
+	at com.auto1.cfe.tests.jav.ErrorMessagesTest.newFlowErrorMessagesTest(ErrorMessagesTest.java:36)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:639)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:816)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1124)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:774)
+	at org.testng.TestRunner.run(TestRunner.java:624)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:359)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:261)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+	at org.testng.TestNG.run(TestNG.java:1048)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:295)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:84)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:90)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:203)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:155)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- newFlowErrorMessagesTest -->
+        <test-method status="PASS" signature="clearCookies()[pri:0, instance:com.auto1.cfe.tests.jav.ErrorMessagesTest@7548e1fb]" name="clearCookies" is-config="true" duration-ms="222" started-at="2016-04-22T02:00:47Z" finished-at="2016-04-22T02:00:47Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clearCookies -->
+        <test-method status="PASS" signature="initPages([Ljava.lang.Object;)[pri:0, instance:com.auto1.cfe.tests.jav.ErrorMessagesTest@7548e1fb]" name="initPages" is-config="true" duration-ms="2" started-at="2016-04-22T02:00:47Z" finished-at="2016-04-22T02:00:47Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@625b03f8]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initPages -->
+        <test-method status="FAIL" signature="newFlowErrorMessagesTest(com.auto1.cfe.bean.SellCountryFlowData)[pri:0, instance:com.auto1.cfe.tests.jav.ErrorMessagesTest@7548e1fb]" name="newFlowErrorMessagesTest" duration-ms="12192" started-at="2016-04-22T02:00:47Z" data-provider="flowCountryProviderJAV" finished-at="2016-04-22T02:00:59Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[car: modelVariant: 6.0 W12:331.00; type: 010600480130001; brand: Audi; model: A8; year: 2006; shape: 1025; country: france; kilometer: 20000; ownerEmail: it-test+selenium-newcarflow-priced@wkda.de; seller: firstName: Test JAV; lastName: Selenium Tester; mobilePrefix: +49; mobileNumber: 8009994440; country: name: france; code: fr; url: https://www.vendresavoiture.fr]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[Url should contain 'confirm' word
+Expected: is a string containing "confirm"
+     but: was "https://www.vendresavoiture.fr/booking/203262c95e94ae56ef4a9333bca67d8a/"]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: Url should contain 'confirm' word
+Expected: is a string containing "confirm"
+     but: was "https://www.vendresavoiture.fr/booking/203262c95e94ae56ef4a9333bca67d8a/"
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at com.auto1.cfe.tests.BaseTest.verifyAppointmentIsBooked(BaseTest.java:61)
+	at com.auto1.cfe.tests.jav.ErrorMessagesTest.newFlowErrorMessagesTest(ErrorMessagesTest.java:36)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:639)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:816)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1124)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:774)
+	at org.testng.TestRunner.run(TestRunner.java:624)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:359)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:261)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+	at org.testng.TestNG.run(TestNG.java:1048)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:295)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:84)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:90)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:203)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:155)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- newFlowErrorMessagesTest -->
+        <test-method status="PASS" signature="clearCookies()[pri:0, instance:com.auto1.cfe.tests.jav.ErrorMessagesTest@7548e1fb]" name="clearCookies" is-config="true" duration-ms="212" started-at="2016-04-22T02:01:00Z" finished-at="2016-04-22T02:01:00Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clearCookies -->
+        <test-method status="PASS" signature="initPages([Ljava.lang.Object;)[pri:0, instance:com.auto1.cfe.tests.jav.ErrorMessagesTest@7548e1fb]" name="initPages" is-config="true" duration-ms="2" started-at="2016-04-22T02:01:00Z" finished-at="2016-04-22T02:01:00Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@1552bd82]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initPages -->
+        <test-method status="FAIL" signature="newFlowErrorMessagesTest(com.auto1.cfe.bean.SellCountryFlowData)[pri:0, instance:com.auto1.cfe.tests.jav.ErrorMessagesTest@7548e1fb]" name="newFlowErrorMessagesTest" duration-ms="11398" started-at="2016-04-22T02:01:00Z" data-provider="flowCountryProviderJAV" finished-at="2016-04-22T02:01:11Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[car: modelVariant: 6.0 W12:331.00; type: 010600480130001; brand: Audi; model: A8; year: 2006; shape: 1025; country: belgium; kilometer: 20000; ownerEmail: it-test+selenium-newcarflow-priced@wkda.de; seller: firstName: Test JAV; lastName: Selenium Tester; mobilePrefix: +49; mobileNumber: 8009994440; country: name: belgium; code: be; url: https://www.nuautoverkopen.be]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[Url should contain 'confirm' word
+Expected: is a string containing "confirm"
+     but: was "https://www.nuautoverkopen.be/booking/1be01a21d2412db8fa37e9a7a65e5807/"]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: Url should contain 'confirm' word
+Expected: is a string containing "confirm"
+     but: was "https://www.nuautoverkopen.be/booking/1be01a21d2412db8fa37e9a7a65e5807/"
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at com.auto1.cfe.tests.BaseTest.verifyAppointmentIsBooked(BaseTest.java:61)
+	at com.auto1.cfe.tests.jav.ErrorMessagesTest.newFlowErrorMessagesTest(ErrorMessagesTest.java:36)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:639)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:816)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1124)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:774)
+	at org.testng.TestRunner.run(TestRunner.java:624)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:359)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:261)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+	at org.testng.TestNG.run(TestNG.java:1048)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:295)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:84)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:90)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:203)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:155)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- newFlowErrorMessagesTest -->
+        <test-method status="PASS" signature="clearCookies()[pri:0, instance:com.auto1.cfe.tests.jav.ErrorMessagesTest@7548e1fb]" name="clearCookies" is-config="true" duration-ms="222" started-at="2016-04-22T02:01:11Z" finished-at="2016-04-22T02:01:12Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clearCookies -->
+        <test-method status="PASS" signature="initPages([Ljava.lang.Object;)[pri:0, instance:com.auto1.cfe.tests.jav.ErrorMessagesTest@7548e1fb]" name="initPages" is-config="true" duration-ms="1" started-at="2016-04-22T02:01:12Z" finished-at="2016-04-22T02:01:12Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@2c188e57]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initPages -->
+        <test-method status="FAIL" signature="newFlowErrorMessagesTest(com.auto1.cfe.bean.SellCountryFlowData)[pri:0, instance:com.auto1.cfe.tests.jav.ErrorMessagesTest@7548e1fb]" name="newFlowErrorMessagesTest" duration-ms="13531" started-at="2016-04-22T02:01:12Z" data-provider="flowCountryProviderJAV" finished-at="2016-04-22T02:01:25Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[car: modelVariant: 6.0 W12:331.00; type: 010600480130001; brand: Audi; model: A8; year: 2006; shape: 1025; country: italy; kilometer: 20000; ownerEmail: it-test+selenium-newcarflow-priced@wkda.de; seller: firstName: Test JAV; lastName: Selenium Tester; mobilePrefix: +49; mobileNumber: 8009994440; country: name: italy; code: it; url: https://www.vendo-auto.it]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[Url should contain 'confirm' word
+Expected: is a string containing "confirm"
+     but: was "https://www.vendo-auto.it/booking/8b98126a989667aa8faf648b2eee0af8/"]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: Url should contain 'confirm' word
+Expected: is a string containing "confirm"
+     but: was "https://www.vendo-auto.it/booking/8b98126a989667aa8faf648b2eee0af8/"
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at com.auto1.cfe.tests.BaseTest.verifyAppointmentIsBooked(BaseTest.java:61)
+	at com.auto1.cfe.tests.jav.ErrorMessagesTest.newFlowErrorMessagesTest(ErrorMessagesTest.java:36)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:639)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:816)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1124)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:774)
+	at org.testng.TestRunner.run(TestRunner.java:624)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:359)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:261)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+	at org.testng.TestNG.run(TestNG.java:1048)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:295)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:84)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:90)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:203)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:155)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- newFlowErrorMessagesTest -->
+        <test-method status="PASS" signature="clearCookies()[pri:0, instance:com.auto1.cfe.tests.jav.ErrorMessagesTest@7548e1fb]" name="clearCookies" is-config="true" duration-ms="242" started-at="2016-04-22T02:01:25Z" finished-at="2016-04-22T02:01:26Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clearCookies -->
+        <test-method status="PASS" signature="initPages([Ljava.lang.Object;)[pri:0, instance:com.auto1.cfe.tests.jav.ErrorMessagesTest@7548e1fb]" name="initPages" is-config="true" duration-ms="2" started-at="2016-04-22T02:01:26Z" finished-at="2016-04-22T02:01:26Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@544876ca]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initPages -->
+        <test-method status="FAIL" signature="newFlowErrorMessagesTest(com.auto1.cfe.bean.SellCountryFlowData)[pri:0, instance:com.auto1.cfe.tests.jav.ErrorMessagesTest@7548e1fb]" name="newFlowErrorMessagesTest" duration-ms="13765" started-at="2016-04-22T02:01:26Z" data-provider="flowCountryProviderJAV" finished-at="2016-04-22T02:01:39Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[car: modelVariant: 6.0 W12:331.00; type: 010600480130001; brand: Audi; model: A8; year: 2006; shape: 1025; country: sweden; kilometer: 20000; ownerEmail: it-test+selenium-newcarflow-priced@wkda.de; seller: firstName: Test JAV; lastName: Selenium Tester; mobilePrefix: +49; mobileNumber: 8009994440; country: name: sweden; code: se; url: https://www.saljaminbil.se]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[Url should contain 'confirm' word
+Expected: is a string containing "confirm"
+     but: was "https://www.saljaminbil.se/booking/e2299329ada496000105158cf2e03f52/"]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: Url should contain 'confirm' word
+Expected: is a string containing "confirm"
+     but: was "https://www.saljaminbil.se/booking/e2299329ada496000105158cf2e03f52/"
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at com.auto1.cfe.tests.BaseTest.verifyAppointmentIsBooked(BaseTest.java:61)
+	at com.auto1.cfe.tests.jav.ErrorMessagesTest.newFlowErrorMessagesTest(ErrorMessagesTest.java:36)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:639)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:816)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1124)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:774)
+	at org.testng.TestRunner.run(TestRunner.java:624)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:359)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:261)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+	at org.testng.TestNG.run(TestNG.java:1048)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:295)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:84)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:90)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:203)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:155)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- newFlowErrorMessagesTest -->
+        <test-method status="PASS" signature="clearCookies()[pri:0, instance:com.auto1.cfe.tests.jav.ErrorMessagesTest@7548e1fb]" name="clearCookies" is-config="true" duration-ms="210" started-at="2016-04-22T02:01:40Z" finished-at="2016-04-22T02:01:40Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clearCookies -->
+        <test-method status="PASS" signature="initPages([Ljava.lang.Object;)[pri:0, instance:com.auto1.cfe.tests.jav.ErrorMessagesTest@7548e1fb]" name="initPages" is-config="true" duration-ms="1" started-at="2016-04-22T02:01:40Z" finished-at="2016-04-22T02:01:40Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@6e36fb78]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initPages -->
+        <test-method status="PASS" signature="oldFlowErrorMessagesTest(com.auto1.cfe.bean.SellCountryFlowData)[pri:0, instance:com.auto1.cfe.tests.jav.ErrorMessagesTest@7548e1fb]" name="oldFlowErrorMessagesTest" duration-ms="37039" started-at="2016-04-22T02:01:40Z" data-provider="flowCountryProviderJAV" finished-at="2016-04-22T02:02:17Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[car: description: Good; horsePower: 60 hp; doorCount: 1143; fuelType: 1040; gearType: 1139; acType: 1050; condition: 1134; carBelongsTo: 1135; brand: Audi; model: A8; year: -1994; shape: 1008; country: germany; kilometer: 100000; ownerEmail: it-test+selenium-oldcarflow-noPrice@wkda.de; seller: firstName: Test JAV; lastName: Selenium Tester; mobilePrefix: +49; mobileNumber: 8009994440; country: name: germany; code: de; url: https://www.jetztautoverkaufen.de]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- oldFlowErrorMessagesTest -->
+        <test-method status="PASS" signature="clearCookies()[pri:0, instance:com.auto1.cfe.tests.jav.ErrorMessagesTest@7548e1fb]" name="clearCookies" is-config="true" duration-ms="387" started-at="2016-04-22T02:02:17Z" finished-at="2016-04-22T02:02:17Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clearCookies -->
+        <test-method status="PASS" signature="initPages([Ljava.lang.Object;)[pri:0, instance:com.auto1.cfe.tests.jav.ErrorMessagesTest@7548e1fb]" name="initPages" is-config="true" duration-ms="2" started-at="2016-04-22T02:02:17Z" finished-at="2016-04-22T02:02:17Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@6e08e591]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initPages -->
+        <test-method status="PASS" signature="oldFlowErrorMessagesTest(com.auto1.cfe.bean.SellCountryFlowData)[pri:0, instance:com.auto1.cfe.tests.jav.ErrorMessagesTest@7548e1fb]" name="oldFlowErrorMessagesTest" duration-ms="37045" started-at="2016-04-22T02:02:17Z" data-provider="flowCountryProviderJAV" finished-at="2016-04-22T02:02:54Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[car: description: Good; horsePower: 60 hp; doorCount: 1143; fuelType: 1040; gearType: 1139; acType: 1050; condition: 1134; carBelongsTo: 1135; brand: Audi; model: A8; year: -1994; shape: 1008; country: austria; kilometer: 100000; ownerEmail: it-test+selenium-oldcarflow-noPrice@wkda.de; seller: firstName: Test JAV; lastName: Selenium Tester; mobilePrefix: +49; mobileNumber: 8009994440; country: name: austria; code: at; url: https://www.jetztautoverkaufen.at]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- oldFlowErrorMessagesTest -->
+        <test-method status="PASS" signature="clearCookies()[pri:0, instance:com.auto1.cfe.tests.jav.ErrorMessagesTest@7548e1fb]" name="clearCookies" is-config="true" duration-ms="373" started-at="2016-04-22T02:02:54Z" finished-at="2016-04-22T02:02:55Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clearCookies -->
+        <test-method status="PASS" signature="initPages([Ljava.lang.Object;)[pri:0, instance:com.auto1.cfe.tests.jav.ErrorMessagesTest@7548e1fb]" name="initPages" is-config="true" duration-ms="1" started-at="2016-04-22T02:02:55Z" finished-at="2016-04-22T02:02:55Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@60aa431]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initPages -->
+        <test-method status="PASS" signature="oldFlowErrorMessagesTest(com.auto1.cfe.bean.SellCountryFlowData)[pri:0, instance:com.auto1.cfe.tests.jav.ErrorMessagesTest@7548e1fb]" name="oldFlowErrorMessagesTest" duration-ms="38245" started-at="2016-04-22T02:02:55Z" data-provider="flowCountryProviderJAV" finished-at="2016-04-22T02:03:33Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[car: description: Good; horsePower: 60 hp; doorCount: 1143; fuelType: 1040; gearType: 1139; acType: 1050; condition: 1134; carBelongsTo: 1135; brand: Audi; model: A8; year: -1994; shape: 1008; country: netherland; kilometer: 100000; ownerEmail: it-test+selenium-oldcarflow-noPrice@wkda.de; seller: firstName: Test JAV; lastName: Selenium Tester; mobilePrefix: +49; mobileNumber: 8009994440; country: name: netherland; code: nl; url: https://www.meteenautoverkopen.nl]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- oldFlowErrorMessagesTest -->
+        <test-method status="PASS" signature="clearCookies()[pri:0, instance:com.auto1.cfe.tests.jav.ErrorMessagesTest@7548e1fb]" name="clearCookies" is-config="true" duration-ms="338" started-at="2016-04-22T02:03:33Z" finished-at="2016-04-22T02:03:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clearCookies -->
+        <test-method status="PASS" signature="initPages([Ljava.lang.Object;)[pri:0, instance:com.auto1.cfe.tests.jav.ErrorMessagesTest@7548e1fb]" name="initPages" is-config="true" duration-ms="2" started-at="2016-04-22T02:03:33Z" finished-at="2016-04-22T02:03:33Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@11e36c1c]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initPages -->
+        <test-method status="PASS" signature="oldFlowErrorMessagesTest(com.auto1.cfe.bean.SellCountryFlowData)[pri:0, instance:com.auto1.cfe.tests.jav.ErrorMessagesTest@7548e1fb]" name="oldFlowErrorMessagesTest" duration-ms="37139" started-at="2016-04-22T02:03:33Z" data-provider="flowCountryProviderJAV" finished-at="2016-04-22T02:04:10Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[car: description: Good; horsePower: 60 hp; doorCount: 1143; fuelType: 1040; gearType: 1139; acType: 1050; condition: 1134; carBelongsTo: 1135; brand: Audi; model: A8; year: -1994; shape: 1008; country: spain; kilometer: 100000; ownerEmail: it-test+selenium-oldcarflow-noPrice@wkda.de; seller: firstName: Test JAV; lastName: Selenium Tester; mobilePrefix: +49; mobileNumber: 8009994440; country: name: spain; code: es; url: https://www.vendercoche.es]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- oldFlowErrorMessagesTest -->
+        <test-method status="PASS" signature="clearCookies()[pri:0, instance:com.auto1.cfe.tests.jav.ErrorMessagesTest@7548e1fb]" name="clearCookies" is-config="true" duration-ms="299" started-at="2016-04-22T02:04:10Z" finished-at="2016-04-22T02:04:11Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clearCookies -->
+        <test-method status="PASS" signature="initPages([Ljava.lang.Object;)[pri:0, instance:com.auto1.cfe.tests.jav.ErrorMessagesTest@7548e1fb]" name="initPages" is-config="true" duration-ms="2" started-at="2016-04-22T02:04:11Z" finished-at="2016-04-22T02:04:11Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@48d7a863]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initPages -->
+        <test-method status="PASS" signature="oldFlowErrorMessagesTest(com.auto1.cfe.bean.SellCountryFlowData)[pri:0, instance:com.auto1.cfe.tests.jav.ErrorMessagesTest@7548e1fb]" name="oldFlowErrorMessagesTest" duration-ms="37290" started-at="2016-04-22T02:04:11Z" data-provider="flowCountryProviderJAV" finished-at="2016-04-22T02:04:48Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[car: description: Good; horsePower: 60 hp; doorCount: 1143; fuelType: 1040; gearType: 1139; acType: 1050; condition: 1134; carBelongsTo: 1135; brand: Audi; model: A8; year: -1994; shape: 1008; country: france; kilometer: 100000; ownerEmail: it-test+selenium-oldcarflow-noPrice@wkda.de; seller: firstName: Test JAV; lastName: Selenium Tester; mobilePrefix: +49; mobileNumber: 8009994440; country: name: france; code: fr; url: https://www.vendresavoiture.fr]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- oldFlowErrorMessagesTest -->
+        <test-method status="PASS" signature="clearCookies()[pri:0, instance:com.auto1.cfe.tests.jav.ErrorMessagesTest@7548e1fb]" name="clearCookies" is-config="true" duration-ms="364" started-at="2016-04-22T02:04:48Z" finished-at="2016-04-22T02:04:48Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clearCookies -->
+        <test-method status="PASS" signature="initPages([Ljava.lang.Object;)[pri:0, instance:com.auto1.cfe.tests.jav.ErrorMessagesTest@7548e1fb]" name="initPages" is-config="true" duration-ms="2" started-at="2016-04-22T02:04:48Z" finished-at="2016-04-22T02:04:48Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@615ae885]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initPages -->
+        <test-method status="PASS" signature="oldFlowErrorMessagesTest(com.auto1.cfe.bean.SellCountryFlowData)[pri:0, instance:com.auto1.cfe.tests.jav.ErrorMessagesTest@7548e1fb]" name="oldFlowErrorMessagesTest" duration-ms="36983" started-at="2016-04-22T02:04:48Z" data-provider="flowCountryProviderJAV" finished-at="2016-04-22T02:05:25Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[car: description: Good; horsePower: 60 hp; doorCount: 1143; fuelType: 1040; gearType: 1139; acType: 1050; condition: 1134; carBelongsTo: 1135; brand: Audi; model: A8; year: -1994; shape: 1008; country: belgium; kilometer: 100000; ownerEmail: it-test+selenium-oldcarflow-noPrice@wkda.de; seller: firstName: Test JAV; lastName: Selenium Tester; mobilePrefix: +49; mobileNumber: 8009994440; country: name: belgium; code: be; url: https://www.nuautoverkopen.be]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- oldFlowErrorMessagesTest -->
+        <test-method status="PASS" signature="clearCookies()[pri:0, instance:com.auto1.cfe.tests.jav.ErrorMessagesTest@7548e1fb]" name="clearCookies" is-config="true" duration-ms="328" started-at="2016-04-22T02:05:25Z" finished-at="2016-04-22T02:05:26Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clearCookies -->
+        <test-method status="PASS" signature="initPages([Ljava.lang.Object;)[pri:0, instance:com.auto1.cfe.tests.jav.ErrorMessagesTest@7548e1fb]" name="initPages" is-config="true" duration-ms="2" started-at="2016-04-22T02:05:26Z" finished-at="2016-04-22T02:05:26Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@32a2f3b3]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initPages -->
+        <test-method status="PASS" signature="oldFlowErrorMessagesTest(com.auto1.cfe.bean.SellCountryFlowData)[pri:0, instance:com.auto1.cfe.tests.jav.ErrorMessagesTest@7548e1fb]" name="oldFlowErrorMessagesTest" duration-ms="37994" started-at="2016-04-22T02:05:26Z" data-provider="flowCountryProviderJAV" finished-at="2016-04-22T02:06:04Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[car: description: Good; horsePower: 60 hp; doorCount: 1143; fuelType: 1040; gearType: 1139; acType: 1050; condition: 1134; carBelongsTo: 1135; brand: Audi; model: A8; year: -1994; shape: 1008; country: italy; kilometer: 100000; ownerEmail: it-test+selenium-oldcarflow-noPrice@wkda.de; seller: firstName: Test JAV; lastName: Selenium Tester; mobilePrefix: +49; mobileNumber: 8009994440; country: name: italy; code: it; url: https://www.vendo-auto.it]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- oldFlowErrorMessagesTest -->
+        <test-method status="PASS" signature="clearCookies()[pri:0, instance:com.auto1.cfe.tests.jav.ErrorMessagesTest@7548e1fb]" name="clearCookies" is-config="true" duration-ms="360" started-at="2016-04-22T02:06:04Z" finished-at="2016-04-22T02:06:04Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clearCookies -->
+        <test-method status="PASS" signature="initPages([Ljava.lang.Object;)[pri:0, instance:com.auto1.cfe.tests.jav.ErrorMessagesTest@7548e1fb]" name="initPages" is-config="true" duration-ms="2" started-at="2016-04-22T02:06:04Z" finished-at="2016-04-22T02:06:04Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@38abfa77]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initPages -->
+        <test-method status="PASS" signature="oldFlowErrorMessagesTest(com.auto1.cfe.bean.SellCountryFlowData)[pri:0, instance:com.auto1.cfe.tests.jav.ErrorMessagesTest@7548e1fb]" name="oldFlowErrorMessagesTest" duration-ms="37036" started-at="2016-04-22T02:06:04Z" data-provider="flowCountryProviderJAV" finished-at="2016-04-22T02:06:41Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[car: description: Good; horsePower: 60 hp; doorCount: 1143; fuelType: 1040; gearType: 1139; acType: 1050; condition: 1134; carBelongsTo: 1135; brand: Audi; model: A8; year: -1994; shape: 1008; country: sweden; kilometer: 100000; ownerEmail: it-test+selenium-oldcarflow-noPrice@wkda.de; seller: firstName: Test JAV; lastName: Selenium Tester; mobilePrefix: +49; mobileNumber: 8009994440; country: name: sweden; code: se; url: https://www.saljaminbil.se]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- oldFlowErrorMessagesTest -->
+        <test-method status="PASS" signature="clearCookies()[pri:0, instance:com.auto1.cfe.tests.jav.ErrorMessagesTest@7548e1fb]" name="clearCookies" is-config="true" duration-ms="352" started-at="2016-04-22T02:06:41Z" finished-at="2016-04-22T02:06:42Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clearCookies -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.auto1.cfe.tests.jav.ErrorMessagesTest@7548e1fb]" name="tearDown" is-config="true" duration-ms="740" started-at="2016-04-22T02:06:42Z" finished-at="2016-04-22T02:06:42Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="createAllureProperties()[pri:0, instance:com.auto1.cfe.tests.jav.ErrorMessagesTest@7548e1fb]" name="createAllureProperties" is-config="true" duration-ms="9" started-at="2016-04-22T02:24:40Z" finished-at="2016-04-22T02:24:40Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createAllureProperties -->
+      </class> <!-- com.auto1.cfe.tests.jav.ErrorMessagesTest -->
+    </test> <!-- JAV suite -->
+  </suite> <!-- CFE Scope -->
+</testng-results>

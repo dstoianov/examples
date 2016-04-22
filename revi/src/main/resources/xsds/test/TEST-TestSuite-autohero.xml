@@ -1,0 +1,734 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="TestSuite" time="138.963" tests="12" errors="0" skipped="0" failures="12">
+  <properties>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_73\jre\bin"/>
+    <property name="java.vm.version" value="25.73-b02"/>
+    <property name="browser.name" value="chrome"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="maven.multiModuleProjectDirectory" value="C:\Jenkins\workspace\autohero-ui-tests-win-prod-chrome"/>
+    <property name="java.vendor.url" value="http://java.oracle.com/"/>
+    <property name="path.separator" value=";"/>
+    <property name="guice.disable.misplaced.annotation.check" value="true"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="user.script" value=""/>
+    <property name="user.country" value="US"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="user.dir" value="C:\Jenkins\workspace\autohero-ui-tests-win-prod-chrome"/>
+    <property name="java.runtime.version" value="1.8.0_73-b02"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
+    <property name="java.endorsed.dirs" value="C:\Program Files\Java\jdk1.8.0_73\jre\lib\endorsed"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.io.tmpdir" value="C:\Users\ADMINI~1\AppData\Local\Temp\"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.variant" value=""/>
+    <property name="os.name" value="Windows Server 2012 R2"/>
+    <property name="classworlds.conf" value="/home/deploy/jenkins-maven\bin\m2.conf"/>
+    <property name="sun.jnu.encoding" value="Cp1252"/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk1.8.0_73\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;/home/deploy/jenkins-maven/bin;C:\Program Files\Java\jdk1.8.0_73/bin;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Amazon\cfn-bootstrap\;C:\Program Files\Java\jdk1.8.0_73\bin;C:\Jenkins\maven\bin;C:\Program Files\Git\cmd;."/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.class.version" value="52.0"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="os.version" value="6.3"/>
+    <property name="user.home" value="C:\Users\Administrator"/>
+    <property name="user.timezone" value="Europe/Berlin"/>
+    <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob"/>
+    <property name="java.specification.version" value="1.8"/>
+    <property name="file.encoding" value="Cp1252"/>
+    <property name="user.name" value="Administrator"/>
+    <property name="java.class.path" value="/home/deploy/jenkins-maven\boot\plexus-classworlds-2.5.2.jar"/>
+    <property name="java.vm.specification.version" value="1.8"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.home" value="C:\Program Files\Java\jdk1.8.0_73\jre"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -f pom.xml clean test -Pautohero -Denvironment=PROD -Dbrowser.name=chrome"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.language" value="en"/>
+    <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.version" value="1.8.0_73"/>
+    <property name="java.ext.dirs" value="C:\Program Files\Java\jdk1.8.0_73\jre\lib\ext;C:\Windows\Sun\Java\lib\ext"/>
+    <property name="sun.boot.class.path" value="C:\Program Files\Java\jdk1.8.0_73\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_73\jre\lib\rt.jar;C:\Program Files\Java\jdk1.8.0_73\jre\lib\sunrsasign.jar;C:\Program Files\Java\jdk1.8.0_73\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_73\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_73\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_73\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_73\jre\classes"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="environment" value="PROD"/>
+    <property name="maven.home" value="C:\home\deploy\jenkins-maven"/>
+    <property name="file.separator" value="\"/>
+    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="sun.desktop" value="windows"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+  </properties>
+  <testcase name="newFlowErrorMessagesTest" classname="com.auto1.cfe.tests.autohero.ErrorMessagesTest" time="23.281">
+    <failure message="Timed out after 5 seconds waiting for element to be clickable: Submit&#10;Build info: version: &apos;2.52.0&apos;, revision: &apos;4c2593cfc3689a7fcd7be52549167e5ccc93ad28&apos;, time: &apos;2016-02-11 11:22:43&apos;&#10;System info: host: &apos;WIN-GNT33N1A3IK&apos;, ip: &apos;172.30.2.72&apos;, os.name: &apos;Windows Server 2012 R2&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.3&apos;, java.version: &apos;1.8.0_73&apos;&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, chrome={chromedriverVersion=2.21.371459 (36d3d07f660ff2bc1bf28a75d1cdabed0983e7c4), userDataDir=C:\Users\ADMINI~1\AppData\Local\Temp\scoped_dir2852_16007}, takesHeapSnapshot=true, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=50.0.2661.87, platform=WIN8_1, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=true, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]&#10;Session ID: 1ea23d9545568da5481fa76501f4ddc2" type="org.openqa.selenium.TimeoutException">org.openqa.selenium.TimeoutException: Timed out after 5 seconds waiting for element to be clickable: Submit
+Build info: version: '2.52.0', revision: '4c2593cfc3689a7fcd7be52549167e5ccc93ad28', time: '2016-02-11 11:22:43'
+System info: host: 'WIN-GNT33N1A3IK', ip: '172.30.2.72', os.name: 'Windows Server 2012 R2', os.arch: 'amd64', os.version: '6.3', java.version: '1.8.0_73'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, chrome={chromedriverVersion=2.21.371459 (36d3d07f660ff2bc1bf28a75d1cdabed0983e7c4), userDataDir=C:\Users\ADMINI~1\AppData\Local\Temp\scoped_dir2852_16007}, takesHeapSnapshot=true, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=50.0.2661.87, platform=WIN8_1, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=true, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: 1ea23d9545568da5481fa76501f4ddc2
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:422)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:363)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:500)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:361)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.AjaxElementLocator.access$001(AjaxElementLocator.java:41)
+	at org.openqa.selenium.support.pagefactory.AjaxElementLocator$SlowLoadingElement.isLoaded(AjaxElementLocator.java:157)
+	at org.openqa.selenium.support.ui.SlowLoadableComponent.get(SlowLoadableComponent.java:70)
+	at org.openqa.selenium.support.pagefactory.AjaxElementLocator.findElement(AjaxElementLocator.java:87)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at ru.yandex.qatools.htmlelements.loader.decorator.proxyhandlers.WebElementNamedProxyHandler.invoke(WebElementNamedProxyHandler.java:25)
+	at com.sun.proxy.$Proxy17.isDisplayed(Unknown Source)
+	at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:302)
+	at org.openqa.selenium.support.ui.ExpectedConditions.access$100(ExpectedConditions.java:41)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:288)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:285)
+	at org.openqa.selenium.support.ui.ExpectedConditions$23.apply(ExpectedConditions.java:696)
+	at org.openqa.selenium.support.ui.ExpectedConditions$23.apply(ExpectedConditions.java:689)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:238)
+	at com.auto1.cfe.common.ErrorMessagesChecker.checkFor(ErrorMessagesChecker.java:37)
+	at com.auto1.cfe.common.ErrorMessagesChecker.checkFor(ErrorMessagesChecker.java:30)
+	at com.auto1.cfe.pages.SelectCarPage.fillInWithCheckingError(SelectCarPage.java:124)
+	at com.auto1.cfe.pages.SelectCarPage.fillInNewFlowWithErrorChecking(SelectCarPage.java:115)
+	at com.auto1.cfe.tests.autohero.ErrorMessagesTest.newFlowErrorMessagesTest(ErrorMessagesTest.java:29)
+</failure>
+    <system-out><![CDATA[2016-04-22 02:59:48 INFO  CustomListener:22 - Test suite: Auto Hero suite
+2016-04-22 02:59:48 INFO  CustomListener:23 - Parameters {}
+2016-04-22 02:59:48 INFO  ApplicationManager:22 - Start browser 'chrome'
+2016-04-22 02:59:48 INFO  ApplicationManager:74 - Detected OS is 'WINDOWS'
+2016-04-22 02:59:48 INFO  ApplicationManager:75 - Chrome driver path is './src/test/resources/drivers/win/chromedriver.exe'
+2016-04-22 02:59:48 INFO  ApplicationManager:76 - IE driver path is './src/test/resources/drivers/win/IEDriverServer.exe'
+2016-04-22 02:59:50 INFO  SelectCarPage:29 - Open page 'SelectCarPage'
+2016-04-22 02:59:50 INFO  CustomListener:31 - [TestClass name=class com.auto1.cfe.tests.autohero.ErrorMessagesTest]
+2016-04-22 02:59:50 INFO  CustomListener:33 - << newFlowErrorMessagesTest >>
+2016-04-22 02:59:50 INFO  CustomListener:34 - Test parameters [car: trim: 101352262; modelVariant: Basis:220.00; type: 017100280010001; brand: Porsche; model: Cayenne; year: 2011; shape: 1035; country: belgium; kilometer: 20000; ownerEmail: it-test+selenium-newcarflow-priced@wkda.de; seller: firstName: Test Auto Hero; lastName: Selenium Tester; mobilePrefix: +49; mobileNumber: 8444935872; country: name: belgium; code: com; url: https://www.autohero.com/nl-be]
+2016-04-22 02:59:51 INFO  Page:53 - Open url 'https://www.autohero.com/nl-be'
+2016-04-22 02:59:52 INFO  ErrorMessagesChecker:35 - Click on button 'Submit'
+]]></system-out>
+    <system-err><![CDATA[Starting ChromeDriver 2.21.371459 (36d3d07f660ff2bc1bf28a75d1cdabed0983e7c4) on port 16401
+Only local connections are allowed.
+]]></system-err>
+  </testcase>
+  <testcase name="newFlowErrorMessagesTest" classname="com.auto1.cfe.tests.autohero.ErrorMessagesTest" time="22.065">
+    <failure message="Timed out after 5 seconds waiting for element to be clickable: Submit&#10;Build info: version: &apos;2.52.0&apos;, revision: &apos;4c2593cfc3689a7fcd7be52549167e5ccc93ad28&apos;, time: &apos;2016-02-11 11:22:43&apos;&#10;System info: host: &apos;WIN-GNT33N1A3IK&apos;, ip: &apos;172.30.2.72&apos;, os.name: &apos;Windows Server 2012 R2&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.3&apos;, java.version: &apos;1.8.0_73&apos;&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, chrome={chromedriverVersion=2.21.371459 (36d3d07f660ff2bc1bf28a75d1cdabed0983e7c4), userDataDir=C:\Users\ADMINI~1\AppData\Local\Temp\scoped_dir2852_16007}, takesHeapSnapshot=true, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=50.0.2661.87, platform=WIN8_1, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=true, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]&#10;Session ID: 1ea23d9545568da5481fa76501f4ddc2" type="org.openqa.selenium.TimeoutException">org.openqa.selenium.TimeoutException: Timed out after 5 seconds waiting for element to be clickable: Submit
+Build info: version: '2.52.0', revision: '4c2593cfc3689a7fcd7be52549167e5ccc93ad28', time: '2016-02-11 11:22:43'
+System info: host: 'WIN-GNT33N1A3IK', ip: '172.30.2.72', os.name: 'Windows Server 2012 R2', os.arch: 'amd64', os.version: '6.3', java.version: '1.8.0_73'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, chrome={chromedriverVersion=2.21.371459 (36d3d07f660ff2bc1bf28a75d1cdabed0983e7c4), userDataDir=C:\Users\ADMINI~1\AppData\Local\Temp\scoped_dir2852_16007}, takesHeapSnapshot=true, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=50.0.2661.87, platform=WIN8_1, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=true, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: 1ea23d9545568da5481fa76501f4ddc2
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:422)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:363)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:500)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:361)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.AjaxElementLocator.access$001(AjaxElementLocator.java:41)
+	at org.openqa.selenium.support.pagefactory.AjaxElementLocator$SlowLoadingElement.isLoaded(AjaxElementLocator.java:157)
+	at org.openqa.selenium.support.ui.SlowLoadableComponent.get(SlowLoadableComponent.java:70)
+	at org.openqa.selenium.support.pagefactory.AjaxElementLocator.findElement(AjaxElementLocator.java:87)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at ru.yandex.qatools.htmlelements.loader.decorator.proxyhandlers.WebElementNamedProxyHandler.invoke(WebElementNamedProxyHandler.java:25)
+	at com.sun.proxy.$Proxy17.isDisplayed(Unknown Source)
+	at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:302)
+	at org.openqa.selenium.support.ui.ExpectedConditions.access$100(ExpectedConditions.java:41)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:288)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:285)
+	at org.openqa.selenium.support.ui.ExpectedConditions$23.apply(ExpectedConditions.java:696)
+	at org.openqa.selenium.support.ui.ExpectedConditions$23.apply(ExpectedConditions.java:689)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:238)
+	at com.auto1.cfe.common.ErrorMessagesChecker.checkFor(ErrorMessagesChecker.java:37)
+	at com.auto1.cfe.common.ErrorMessagesChecker.checkFor(ErrorMessagesChecker.java:30)
+	at com.auto1.cfe.pages.SelectCarPage.fillInWithCheckingError(SelectCarPage.java:124)
+	at com.auto1.cfe.pages.SelectCarPage.fillInNewFlowWithErrorChecking(SelectCarPage.java:115)
+	at com.auto1.cfe.tests.autohero.ErrorMessagesTest.newFlowErrorMessagesTest(ErrorMessagesTest.java:29)
+</failure>
+    <system-out><![CDATA[2016-04-22 03:00:14 ERROR CustomListener:47 - newFlowErrorMessagesTest --- FAILED --- 
+2016-04-22 03:00:14 ERROR CustomListener:51 - org.openqa.selenium.TimeoutException: Timed out after 5 seconds waiting for element to be clickable: Submit
+Build info: version: '2.52.0', revision: '4c2593cfc3689a7fcd7be52549167e5ccc93ad28', time: '2016-02-11 11:22:43'
+System info: host: 'WIN-GNT33N1A3IK', ip: '172.30.2.72', os.name: 'Windows Server 2012 R2', os.arch: 'amd64', os.version: '6.3', java.version: '1.8.0_73'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, chrome={chromedriverVersion=2.21.371459 (36d3d07f660ff2bc1bf28a75d1cdabed0983e7c4), userDataDir=C:\Users\ADMINI~1\AppData\Local\Temp\scoped_dir2852_16007}, takesHeapSnapshot=true, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=50.0.2661.87, platform=WIN8_1, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=true, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: 1ea23d9545568da5481fa76501f4ddc2
+
+2016-04-22 03:00:14 INFO  HttpHelper:43 - Test environment - post request not sent
+2016-04-22 03:00:14 INFO  ApplicationManager:37 - Delete all cookies..
+
+
+2016-04-22 03:00:14 INFO  SelectCarPage:29 - Open page 'SelectCarPage'
+2016-04-22 03:00:14 INFO  CustomListener:31 - [TestClass name=class com.auto1.cfe.tests.autohero.ErrorMessagesTest]
+2016-04-22 03:00:14 INFO  CustomListener:33 - << newFlowErrorMessagesTest >>
+2016-04-22 03:00:14 INFO  CustomListener:34 - Test parameters [car: trim: 101352262; modelVariant: Basis:220.00; type: 017100280010001; brand: Porsche; model: Cayenne; year: 2011; shape: 1035; country: belgium; kilometer: 20000; ownerEmail: it-test+selenium-newcarflow-priced@wkda.de; seller: firstName: Test Auto Hero; lastName: Selenium Tester; mobilePrefix: +49; mobileNumber: 8444935872; country: name: belgium; code: com; url: https://www.autohero.com/fr-be]
+2016-04-22 03:00:14 INFO  Page:53 - Open url 'https://www.autohero.com/fr-be'
+2016-04-22 03:00:15 INFO  ErrorMessagesChecker:35 - Click on button 'Submit'
+]]></system-out>
+  </testcase>
+  <testcase name="newCarFlowBookingTest" classname="com.auto1.cfe.tests.autohero.SellCarTest" time="23.474">
+    <failure message="Timed out after 5 seconds. Unable to locate the element&#10;For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html&#10;Build info: version: &apos;2.52.0&apos;, revision: &apos;4c2593cfc3689a7fcd7be52549167e5ccc93ad28&apos;, time: &apos;2016-02-11 11:22:43&apos;&#10;System info: host: &apos;WIN-GNT33N1A3IK&apos;, ip: &apos;172.30.2.72&apos;, os.name: &apos;Windows Server 2012 R2&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.3&apos;, java.version: &apos;1.8.0_73&apos;&#10;Driver info: driver.version: unknown" type="org.openqa.selenium.NoSuchElementException"><![CDATA[org.openqa.selenium.NoSuchElementException: Timed out after 5 seconds. Unable to locate the element
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.52.0', revision: '4c2593cfc3689a7fcd7be52549167e5ccc93ad28', time: '2016-02-11 11:22:43'
+System info: host: 'WIN-GNT33N1A3IK', ip: '172.30.2.72', os.name: 'Windows Server 2012 R2', os.arch: 'amd64', os.version: '6.3', java.version: '1.8.0_73'
+Driver info: driver.version: unknown
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:422)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:363)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:500)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:361)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.AjaxElementLocator.access$001(AjaxElementLocator.java:41)
+	at org.openqa.selenium.support.pagefactory.AjaxElementLocator$SlowLoadingElement.isLoaded(AjaxElementLocator.java:157)
+	at org.openqa.selenium.support.ui.SlowLoadableComponent.get(SlowLoadableComponent.java:70)
+	at org.openqa.selenium.support.pagefactory.AjaxElementLocator.findElement(AjaxElementLocator.java:87)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at ru.yandex.qatools.htmlelements.loader.decorator.proxyhandlers.WebElementNamedProxyHandler.invoke(WebElementNamedProxyHandler.java:25)
+	at com.sun.proxy.$Proxy17.getTagName(Unknown Source)
+	at org.openqa.selenium.support.ui.Select.<init>(Select.java:44)
+	at ru.yandex.qatools.htmlelements.element.Select.getSelect(Select.java:35)
+	at ru.yandex.qatools.htmlelements.element.Select.selectByVisibleText(Select.java:93)
+	at com.auto1.cfe.pages.core.Page.selectByText(Page.java:110)
+	at com.auto1.cfe.pages.SelectCarPage.selectBrand(SelectCarPage.java:92)
+	at com.auto1.cfe.pages.SelectCarPage.fillIn(SelectCarPage.java:78)
+	at com.auto1.cfe.pages.SelectCarPage.fillInNewFlow(SelectCarPage.java:71)
+	at com.auto1.cfe.tests.autohero.SellCarTest.newCarFlowBookingTest(SellCarTest.java:34)
+]]></failure>
+    <system-out><![CDATA[2016-04-22 03:00:37 ERROR CustomListener:47 - newFlowErrorMessagesTest --- FAILED --- 
+2016-04-22 03:00:37 ERROR CustomListener:51 - org.openqa.selenium.TimeoutException: Timed out after 5 seconds waiting for element to be clickable: Submit
+Build info: version: '2.52.0', revision: '4c2593cfc3689a7fcd7be52549167e5ccc93ad28', time: '2016-02-11 11:22:43'
+System info: host: 'WIN-GNT33N1A3IK', ip: '172.30.2.72', os.name: 'Windows Server 2012 R2', os.arch: 'amd64', os.version: '6.3', java.version: '1.8.0_73'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, chrome={chromedriverVersion=2.21.371459 (36d3d07f660ff2bc1bf28a75d1cdabed0983e7c4), userDataDir=C:\Users\ADMINI~1\AppData\Local\Temp\scoped_dir2852_16007}, takesHeapSnapshot=true, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=50.0.2661.87, platform=WIN8_1, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=true, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: 1ea23d9545568da5481fa76501f4ddc2
+
+2016-04-22 03:00:37 INFO  HttpHelper:43 - Test environment - post request not sent
+2016-04-22 03:00:37 INFO  ApplicationManager:37 - Delete all cookies..
+
+
+2016-04-22 03:00:37 INFO  ApplicationManager:44 - Stop browser..
+2016-04-22 03:00:38 INFO  ApplicationManager:22 - Start browser 'chrome'
+2016-04-22 03:00:38 INFO  ApplicationManager:74 - Detected OS is 'WINDOWS'
+2016-04-22 03:00:38 INFO  ApplicationManager:75 - Chrome driver path is './src/test/resources/drivers/win/chromedriver.exe'
+2016-04-22 03:00:38 INFO  ApplicationManager:76 - IE driver path is './src/test/resources/drivers/win/IEDriverServer.exe'
+2016-04-22 03:00:39 INFO  SelectCarPage:29 - Open page 'SelectCarPage'
+2016-04-22 03:00:39 INFO  CustomListener:31 - [TestClass name=class com.auto1.cfe.tests.autohero.SellCarTest]
+2016-04-22 03:00:39 INFO  CustomListener:33 - << newCarFlowBookingTest >>
+2016-04-22 03:00:39 INFO  CustomListener:34 - Test parameters [car: trim: 101352262; modelVariant: Basis:220.00; type: 017100280010001; brand: Porsche; model: Cayenne; year: 2011; shape: 1035; country: belgium; kilometer: 20000; ownerEmail: it-test+selenium-newcarflow-priced@wkda.de; seller: firstName: Test Auto Hero; lastName: Selenium Tester; mobilePrefix: +49; mobileNumber: 8444935872; country: name: belgium; code: com; url: https://www.autohero.com/nl-be]
+2016-04-22 03:00:39 INFO  Page:53 - Open url 'https://www.autohero.com/nl-be'
+2016-04-22 03:00:41 INFO  Page:109 - Select 'Make/brand' by text 'Porsche'
+]]></system-out>
+    <system-err><![CDATA[Starting ChromeDriver 2.21.371459 (36d3d07f660ff2bc1bf28a75d1cdabed0983e7c4) on port 33903
+Only local connections are allowed.
+]]></system-err>
+  </testcase>
+  <testcase name="newCarFlowBookingTest" classname="com.auto1.cfe.tests.autohero.SellCarTest" time="22.086">
+    <failure message="Timed out after 5 seconds. Unable to locate the element&#10;For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html&#10;Build info: version: &apos;2.52.0&apos;, revision: &apos;4c2593cfc3689a7fcd7be52549167e5ccc93ad28&apos;, time: &apos;2016-02-11 11:22:43&apos;&#10;System info: host: &apos;WIN-GNT33N1A3IK&apos;, ip: &apos;172.30.2.72&apos;, os.name: &apos;Windows Server 2012 R2&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.3&apos;, java.version: &apos;1.8.0_73&apos;&#10;Driver info: driver.version: unknown" type="org.openqa.selenium.NoSuchElementException"><![CDATA[org.openqa.selenium.NoSuchElementException: Timed out after 5 seconds. Unable to locate the element
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.52.0', revision: '4c2593cfc3689a7fcd7be52549167e5ccc93ad28', time: '2016-02-11 11:22:43'
+System info: host: 'WIN-GNT33N1A3IK', ip: '172.30.2.72', os.name: 'Windows Server 2012 R2', os.arch: 'amd64', os.version: '6.3', java.version: '1.8.0_73'
+Driver info: driver.version: unknown
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:422)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:363)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:500)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:361)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.AjaxElementLocator.access$001(AjaxElementLocator.java:41)
+	at org.openqa.selenium.support.pagefactory.AjaxElementLocator$SlowLoadingElement.isLoaded(AjaxElementLocator.java:157)
+	at org.openqa.selenium.support.ui.SlowLoadableComponent.get(SlowLoadableComponent.java:70)
+	at org.openqa.selenium.support.pagefactory.AjaxElementLocator.findElement(AjaxElementLocator.java:87)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at ru.yandex.qatools.htmlelements.loader.decorator.proxyhandlers.WebElementNamedProxyHandler.invoke(WebElementNamedProxyHandler.java:25)
+	at com.sun.proxy.$Proxy17.getTagName(Unknown Source)
+	at org.openqa.selenium.support.ui.Select.<init>(Select.java:44)
+	at ru.yandex.qatools.htmlelements.element.Select.getSelect(Select.java:35)
+	at ru.yandex.qatools.htmlelements.element.Select.selectByVisibleText(Select.java:93)
+	at com.auto1.cfe.pages.core.Page.selectByText(Page.java:110)
+	at com.auto1.cfe.pages.SelectCarPage.selectBrand(SelectCarPage.java:92)
+	at com.auto1.cfe.pages.SelectCarPage.fillIn(SelectCarPage.java:78)
+	at com.auto1.cfe.pages.SelectCarPage.fillInNewFlow(SelectCarPage.java:71)
+	at com.auto1.cfe.tests.autohero.SellCarTest.newCarFlowBookingTest(SellCarTest.java:34)
+]]></failure>
+    <system-out><![CDATA[2016-04-22 03:01:03 ERROR CustomListener:47 - newCarFlowBookingTest --- FAILED --- 
+2016-04-22 03:01:03 ERROR CustomListener:51 - org.openqa.selenium.NoSuchElementException: Timed out after 5 seconds. Unable to locate the element
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.52.0', revision: '4c2593cfc3689a7fcd7be52549167e5ccc93ad28', time: '2016-02-11 11:22:43'
+System info: host: 'WIN-GNT33N1A3IK', ip: '172.30.2.72', os.name: 'Windows Server 2012 R2', os.arch: 'amd64', os.version: '6.3', java.version: '1.8.0_73'
+Driver info: driver.version: unknown
+
+2016-04-22 03:01:03 INFO  HttpHelper:43 - Test environment - post request not sent
+2016-04-22 03:01:03 INFO  ApplicationManager:37 - Delete all cookies..
+
+
+2016-04-22 03:01:03 INFO  SelectCarPage:29 - Open page 'SelectCarPage'
+2016-04-22 03:01:03 INFO  CustomListener:31 - [TestClass name=class com.auto1.cfe.tests.autohero.SellCarTest]
+2016-04-22 03:01:03 INFO  CustomListener:33 - << newCarFlowBookingTest >>
+2016-04-22 03:01:03 INFO  CustomListener:34 - Test parameters [car: trim: 101352262; modelVariant: Basis:220.00; type: 017100280010001; brand: Porsche; model: Cayenne; year: 2011; shape: 1035; country: belgium; kilometer: 20000; ownerEmail: it-test+selenium-newcarflow-priced@wkda.de; seller: firstName: Test Auto Hero; lastName: Selenium Tester; mobilePrefix: +49; mobileNumber: 8444935872; country: name: belgium; code: com; url: https://www.autohero.com/fr-be]
+2016-04-22 03:01:03 INFO  Page:53 - Open url 'https://www.autohero.com/fr-be'
+2016-04-22 03:01:04 INFO  Page:109 - Select 'Make/brand' by text 'Porsche'
+]]></system-out>
+  </testcase>
+  <testcase name="newFlowCidTrackingTest" classname="com.auto1.cfe.tests.autohero.TrackingCidTest" time="23.399">
+    <failure message="Timed out after 5 seconds. Unable to locate the element&#10;For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html&#10;Build info: version: &apos;2.52.0&apos;, revision: &apos;4c2593cfc3689a7fcd7be52549167e5ccc93ad28&apos;, time: &apos;2016-02-11 11:22:43&apos;&#10;System info: host: &apos;WIN-GNT33N1A3IK&apos;, ip: &apos;172.30.2.72&apos;, os.name: &apos;Windows Server 2012 R2&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.3&apos;, java.version: &apos;1.8.0_73&apos;&#10;Driver info: driver.version: unknown" type="org.openqa.selenium.NoSuchElementException"><![CDATA[org.openqa.selenium.NoSuchElementException: Timed out after 5 seconds. Unable to locate the element
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.52.0', revision: '4c2593cfc3689a7fcd7be52549167e5ccc93ad28', time: '2016-02-11 11:22:43'
+System info: host: 'WIN-GNT33N1A3IK', ip: '172.30.2.72', os.name: 'Windows Server 2012 R2', os.arch: 'amd64', os.version: '6.3', java.version: '1.8.0_73'
+Driver info: driver.version: unknown
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:422)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:363)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:500)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:361)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.AjaxElementLocator.access$001(AjaxElementLocator.java:41)
+	at org.openqa.selenium.support.pagefactory.AjaxElementLocator$SlowLoadingElement.isLoaded(AjaxElementLocator.java:157)
+	at org.openqa.selenium.support.ui.SlowLoadableComponent.get(SlowLoadableComponent.java:70)
+	at org.openqa.selenium.support.pagefactory.AjaxElementLocator.findElement(AjaxElementLocator.java:87)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at ru.yandex.qatools.htmlelements.loader.decorator.proxyhandlers.WebElementNamedProxyHandler.invoke(WebElementNamedProxyHandler.java:25)
+	at com.sun.proxy.$Proxy17.getTagName(Unknown Source)
+	at org.openqa.selenium.support.ui.Select.<init>(Select.java:44)
+	at ru.yandex.qatools.htmlelements.element.Select.getSelect(Select.java:35)
+	at ru.yandex.qatools.htmlelements.element.Select.selectByVisibleText(Select.java:93)
+	at com.auto1.cfe.pages.core.Page.selectByText(Page.java:110)
+	at com.auto1.cfe.pages.SelectCarPage.selectBrand(SelectCarPage.java:92)
+	at com.auto1.cfe.pages.SelectCarPage.fillIn(SelectCarPage.java:78)
+	at com.auto1.cfe.pages.SelectCarPage.fillInNewFlow(SelectCarPage.java:71)
+	at com.auto1.cfe.tests.autohero.TrackingCidTest.newFlowCidTrackingTest(TrackingCidTest.java:40)
+]]></failure>
+    <system-out><![CDATA[2016-04-22 03:01:25 ERROR CustomListener:47 - newCarFlowBookingTest --- FAILED --- 
+2016-04-22 03:01:25 ERROR CustomListener:51 - org.openqa.selenium.NoSuchElementException: Timed out after 5 seconds. Unable to locate the element
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.52.0', revision: '4c2593cfc3689a7fcd7be52549167e5ccc93ad28', time: '2016-02-11 11:22:43'
+System info: host: 'WIN-GNT33N1A3IK', ip: '172.30.2.72', os.name: 'Windows Server 2012 R2', os.arch: 'amd64', os.version: '6.3', java.version: '1.8.0_73'
+Driver info: driver.version: unknown
+
+2016-04-22 03:01:25 INFO  HttpHelper:43 - Test environment - post request not sent
+2016-04-22 03:01:25 INFO  ApplicationManager:37 - Delete all cookies..
+
+
+2016-04-22 03:01:25 INFO  ApplicationManager:44 - Stop browser..
+2016-04-22 03:01:26 INFO  ApplicationManager:22 - Start browser 'chrome'
+2016-04-22 03:01:26 INFO  ApplicationManager:74 - Detected OS is 'WINDOWS'
+2016-04-22 03:01:26 INFO  ApplicationManager:75 - Chrome driver path is './src/test/resources/drivers/win/chromedriver.exe'
+2016-04-22 03:01:26 INFO  ApplicationManager:76 - IE driver path is './src/test/resources/drivers/win/IEDriverServer.exe'
+2016-04-22 03:01:27 INFO  SelectCarPage:29 - Open page 'SelectCarPage'
+2016-04-22 03:01:27 INFO  CustomListener:31 - [TestClass name=class com.auto1.cfe.tests.autohero.TrackingCidTest]
+2016-04-22 03:01:27 INFO  CustomListener:33 - << newFlowCidTrackingTest >>
+2016-04-22 03:01:27 INFO  CustomListener:34 - Test parameters [car: trim: 101352262; modelVariant: Basis:220.00; type: 017100280010001; brand: Porsche; model: Cayenne; year: 2011; shape: 1035; country: belgium; kilometer: 20000; ownerEmail: it-test+selenium-newcarflow-priced@wkda.de; seller: firstName: Test Auto Hero; lastName: Selenium Tester; mobilePrefix: +49; mobileNumber: 8444935872; country: name: belgium; code: com; url: https://www.autohero.com/nl-be]
+2016-04-22 03:01:27 INFO  Page:53 - Open url 'https://www.autohero.com/nl-be/?MID=COM_SES_99_88_7_6_5_287'
+2016-04-22 03:01:29 INFO  Page:109 - Select 'Make/brand' by text 'Porsche'
+]]></system-out>
+    <system-err><![CDATA[Starting ChromeDriver 2.21.371459 (36d3d07f660ff2bc1bf28a75d1cdabed0983e7c4) on port 16667
+Only local connections are allowed.
+]]></system-err>
+  </testcase>
+  <testcase name="newFlowCidTrackingTest" classname="com.auto1.cfe.tests.autohero.TrackingCidTest" time="22.052">
+    <failure message="Timed out after 5 seconds. Unable to locate the element&#10;For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html&#10;Build info: version: &apos;2.52.0&apos;, revision: &apos;4c2593cfc3689a7fcd7be52549167e5ccc93ad28&apos;, time: &apos;2016-02-11 11:22:43&apos;&#10;System info: host: &apos;WIN-GNT33N1A3IK&apos;, ip: &apos;172.30.2.72&apos;, os.name: &apos;Windows Server 2012 R2&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.3&apos;, java.version: &apos;1.8.0_73&apos;&#10;Driver info: driver.version: unknown" type="org.openqa.selenium.NoSuchElementException"><![CDATA[org.openqa.selenium.NoSuchElementException: Timed out after 5 seconds. Unable to locate the element
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.52.0', revision: '4c2593cfc3689a7fcd7be52549167e5ccc93ad28', time: '2016-02-11 11:22:43'
+System info: host: 'WIN-GNT33N1A3IK', ip: '172.30.2.72', os.name: 'Windows Server 2012 R2', os.arch: 'amd64', os.version: '6.3', java.version: '1.8.0_73'
+Driver info: driver.version: unknown
+	at sun.reflect.GeneratedConstructorAccessor10.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:422)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:363)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:500)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:361)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.AjaxElementLocator.access$001(AjaxElementLocator.java:41)
+	at org.openqa.selenium.support.pagefactory.AjaxElementLocator$SlowLoadingElement.isLoaded(AjaxElementLocator.java:157)
+	at org.openqa.selenium.support.ui.SlowLoadableComponent.get(SlowLoadableComponent.java:70)
+	at org.openqa.selenium.support.pagefactory.AjaxElementLocator.findElement(AjaxElementLocator.java:87)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at ru.yandex.qatools.htmlelements.loader.decorator.proxyhandlers.WebElementNamedProxyHandler.invoke(WebElementNamedProxyHandler.java:25)
+	at com.sun.proxy.$Proxy17.getTagName(Unknown Source)
+	at org.openqa.selenium.support.ui.Select.<init>(Select.java:44)
+	at ru.yandex.qatools.htmlelements.element.Select.getSelect(Select.java:35)
+	at ru.yandex.qatools.htmlelements.element.Select.selectByVisibleText(Select.java:93)
+	at com.auto1.cfe.pages.core.Page.selectByText(Page.java:110)
+	at com.auto1.cfe.pages.SelectCarPage.selectBrand(SelectCarPage.java:92)
+	at com.auto1.cfe.pages.SelectCarPage.fillIn(SelectCarPage.java:78)
+	at com.auto1.cfe.pages.SelectCarPage.fillInNewFlow(SelectCarPage.java:71)
+	at com.auto1.cfe.tests.autohero.TrackingCidTest.newFlowCidTrackingTest(TrackingCidTest.java:40)
+]]></failure>
+    <system-out><![CDATA[2016-04-22 03:01:51 ERROR CustomListener:47 - newFlowCidTrackingTest --- FAILED --- 
+2016-04-22 03:01:51 ERROR CustomListener:51 - org.openqa.selenium.NoSuchElementException: Timed out after 5 seconds. Unable to locate the element
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.52.0', revision: '4c2593cfc3689a7fcd7be52549167e5ccc93ad28', time: '2016-02-11 11:22:43'
+System info: host: 'WIN-GNT33N1A3IK', ip: '172.30.2.72', os.name: 'Windows Server 2012 R2', os.arch: 'amd64', os.version: '6.3', java.version: '1.8.0_73'
+Driver info: driver.version: unknown
+
+2016-04-22 03:01:51 INFO  ApplicationManager:37 - Delete all cookies..
+
+
+2016-04-22 03:01:51 INFO  SelectCarPage:29 - Open page 'SelectCarPage'
+2016-04-22 03:01:51 INFO  CustomListener:31 - [TestClass name=class com.auto1.cfe.tests.autohero.TrackingCidTest]
+2016-04-22 03:01:51 INFO  CustomListener:33 - << newFlowCidTrackingTest >>
+2016-04-22 03:01:51 INFO  CustomListener:34 - Test parameters [car: trim: 101352262; modelVariant: Basis:220.00; type: 017100280010001; brand: Porsche; model: Cayenne; year: 2011; shape: 1035; country: belgium; kilometer: 20000; ownerEmail: it-test+selenium-newcarflow-priced@wkda.de; seller: firstName: Test Auto Hero; lastName: Selenium Tester; mobilePrefix: +49; mobileNumber: 8444935872; country: name: belgium; code: com; url: https://www.autohero.com/fr-be]
+2016-04-22 03:01:51 INFO  Page:53 - Open url 'https://www.autohero.com/fr-be/?MID=COM_SES_99_88_7_6_5_287'
+2016-04-22 03:01:52 INFO  Page:109 - Select 'Make/brand' by text 'Porsche'
+]]></system-out>
+  </testcase>
+  <testcase name="newFlowCidTrackingWithCrmTest" classname="com.auto1.cfe.tests.autohero.TrackingCidTest" time="21.862">
+    <failure message="Timed out after 5 seconds. Unable to locate the element&#10;For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html&#10;Build info: version: &apos;2.52.0&apos;, revision: &apos;4c2593cfc3689a7fcd7be52549167e5ccc93ad28&apos;, time: &apos;2016-02-11 11:22:43&apos;&#10;System info: host: &apos;WIN-GNT33N1A3IK&apos;, ip: &apos;172.30.2.72&apos;, os.name: &apos;Windows Server 2012 R2&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.3&apos;, java.version: &apos;1.8.0_73&apos;&#10;Driver info: driver.version: unknown" type="org.openqa.selenium.NoSuchElementException"><![CDATA[org.openqa.selenium.NoSuchElementException: Timed out after 5 seconds. Unable to locate the element
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.52.0', revision: '4c2593cfc3689a7fcd7be52549167e5ccc93ad28', time: '2016-02-11 11:22:43'
+System info: host: 'WIN-GNT33N1A3IK', ip: '172.30.2.72', os.name: 'Windows Server 2012 R2', os.arch: 'amd64', os.version: '6.3', java.version: '1.8.0_73'
+Driver info: driver.version: unknown
+	at sun.reflect.GeneratedConstructorAccessor10.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:422)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:363)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:500)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:361)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.AjaxElementLocator.access$001(AjaxElementLocator.java:41)
+	at org.openqa.selenium.support.pagefactory.AjaxElementLocator$SlowLoadingElement.isLoaded(AjaxElementLocator.java:157)
+	at org.openqa.selenium.support.ui.SlowLoadableComponent.get(SlowLoadableComponent.java:70)
+	at org.openqa.selenium.support.pagefactory.AjaxElementLocator.findElement(AjaxElementLocator.java:87)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at ru.yandex.qatools.htmlelements.loader.decorator.proxyhandlers.WebElementNamedProxyHandler.invoke(WebElementNamedProxyHandler.java:25)
+	at com.sun.proxy.$Proxy17.getTagName(Unknown Source)
+	at org.openqa.selenium.support.ui.Select.<init>(Select.java:44)
+	at ru.yandex.qatools.htmlelements.element.Select.getSelect(Select.java:35)
+	at ru.yandex.qatools.htmlelements.element.Select.selectByVisibleText(Select.java:93)
+	at com.auto1.cfe.pages.core.Page.selectByText(Page.java:110)
+	at com.auto1.cfe.pages.SelectCarPage.selectBrand(SelectCarPage.java:92)
+	at com.auto1.cfe.pages.SelectCarPage.fillIn(SelectCarPage.java:78)
+	at com.auto1.cfe.pages.SelectCarPage.fillInNewFlow(SelectCarPage.java:71)
+	at com.auto1.cfe.tests.autohero.TrackingCidTest.newFlowCidTrackingWithCrmTest(TrackingCidTest.java:68)
+]]></failure>
+    <system-out><![CDATA[2016-04-22 03:02:13 ERROR CustomListener:47 - newFlowCidTrackingTest --- FAILED --- 
+2016-04-22 03:02:13 ERROR CustomListener:51 - org.openqa.selenium.NoSuchElementException: Timed out after 5 seconds. Unable to locate the element
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.52.0', revision: '4c2593cfc3689a7fcd7be52549167e5ccc93ad28', time: '2016-02-11 11:22:43'
+System info: host: 'WIN-GNT33N1A3IK', ip: '172.30.2.72', os.name: 'Windows Server 2012 R2', os.arch: 'amd64', os.version: '6.3', java.version: '1.8.0_73'
+Driver info: driver.version: unknown
+
+2016-04-22 03:02:13 INFO  ApplicationManager:37 - Delete all cookies..
+
+
+2016-04-22 03:02:13 INFO  SelectCarPage:29 - Open page 'SelectCarPage'
+2016-04-22 03:02:13 INFO  CustomListener:31 - [TestClass name=class com.auto1.cfe.tests.autohero.TrackingCidTest]
+2016-04-22 03:02:13 INFO  CustomListener:33 - << newFlowCidTrackingWithCrmTest >>
+2016-04-22 03:02:13 INFO  CustomListener:34 - Test parameters [car: trim: 101352262; modelVariant: Basis:220.00; type: 017100280010001; brand: Porsche; model: Cayenne; year: 2011; shape: 1035; country: belgium; kilometer: 20000; ownerEmail: it-test+selenium-newcarflow-priced@wkda.de; seller: firstName: Test Auto Hero; lastName: Selenium Tester; mobilePrefix: +49; mobileNumber: 8444935872; country: name: belgium; code: com; url: https://www.autohero.com/nl-be]
+2016-04-22 03:02:13 INFO  Page:53 - Open url 'https://www.autohero.com/nl-be/?MID=COM_SES_99_88_7_6_5_287'
+2016-04-22 03:02:14 INFO  Page:109 - Select 'Make/brand' by text 'Porsche'
+]]></system-out>
+  </testcase>
+  <testcase name="newFlowCidTrackingWithCrmTest" classname="com.auto1.cfe.tests.autohero.TrackingCidTest" time="21.933">
+    <failure message="Timed out after 5 seconds. Unable to locate the element&#10;For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html&#10;Build info: version: &apos;2.52.0&apos;, revision: &apos;4c2593cfc3689a7fcd7be52549167e5ccc93ad28&apos;, time: &apos;2016-02-11 11:22:43&apos;&#10;System info: host: &apos;WIN-GNT33N1A3IK&apos;, ip: &apos;172.30.2.72&apos;, os.name: &apos;Windows Server 2012 R2&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.3&apos;, java.version: &apos;1.8.0_73&apos;&#10;Driver info: driver.version: unknown" type="org.openqa.selenium.NoSuchElementException"><![CDATA[org.openqa.selenium.NoSuchElementException: Timed out after 5 seconds. Unable to locate the element
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.52.0', revision: '4c2593cfc3689a7fcd7be52549167e5ccc93ad28', time: '2016-02-11 11:22:43'
+System info: host: 'WIN-GNT33N1A3IK', ip: '172.30.2.72', os.name: 'Windows Server 2012 R2', os.arch: 'amd64', os.version: '6.3', java.version: '1.8.0_73'
+Driver info: driver.version: unknown
+	at sun.reflect.GeneratedConstructorAccessor10.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:422)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:363)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:500)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:361)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.AjaxElementLocator.access$001(AjaxElementLocator.java:41)
+	at org.openqa.selenium.support.pagefactory.AjaxElementLocator$SlowLoadingElement.isLoaded(AjaxElementLocator.java:157)
+	at org.openqa.selenium.support.ui.SlowLoadableComponent.get(SlowLoadableComponent.java:70)
+	at org.openqa.selenium.support.pagefactory.AjaxElementLocator.findElement(AjaxElementLocator.java:87)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at ru.yandex.qatools.htmlelements.loader.decorator.proxyhandlers.WebElementNamedProxyHandler.invoke(WebElementNamedProxyHandler.java:25)
+	at com.sun.proxy.$Proxy17.getTagName(Unknown Source)
+	at org.openqa.selenium.support.ui.Select.<init>(Select.java:44)
+	at ru.yandex.qatools.htmlelements.element.Select.getSelect(Select.java:35)
+	at ru.yandex.qatools.htmlelements.element.Select.selectByVisibleText(Select.java:93)
+	at com.auto1.cfe.pages.core.Page.selectByText(Page.java:110)
+	at com.auto1.cfe.pages.SelectCarPage.selectBrand(SelectCarPage.java:92)
+	at com.auto1.cfe.pages.SelectCarPage.fillIn(SelectCarPage.java:78)
+	at com.auto1.cfe.pages.SelectCarPage.fillInNewFlow(SelectCarPage.java:71)
+	at com.auto1.cfe.tests.autohero.TrackingCidTest.newFlowCidTrackingWithCrmTest(TrackingCidTest.java:68)
+]]></failure>
+    <system-out><![CDATA[2016-04-22 03:02:36 ERROR CustomListener:47 - newFlowCidTrackingWithCrmTest --- FAILED --- 
+2016-04-22 03:02:36 ERROR CustomListener:51 - org.openqa.selenium.NoSuchElementException: Timed out after 5 seconds. Unable to locate the element
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.52.0', revision: '4c2593cfc3689a7fcd7be52549167e5ccc93ad28', time: '2016-02-11 11:22:43'
+System info: host: 'WIN-GNT33N1A3IK', ip: '172.30.2.72', os.name: 'Windows Server 2012 R2', os.arch: 'amd64', os.version: '6.3', java.version: '1.8.0_73'
+Driver info: driver.version: unknown
+
+2016-04-22 03:02:36 INFO  ApplicationManager:37 - Delete all cookies..
+
+
+2016-04-22 03:02:36 INFO  SelectCarPage:29 - Open page 'SelectCarPage'
+2016-04-22 03:02:36 INFO  CustomListener:31 - [TestClass name=class com.auto1.cfe.tests.autohero.TrackingCidTest]
+2016-04-22 03:02:36 INFO  CustomListener:33 - << newFlowCidTrackingWithCrmTest >>
+2016-04-22 03:02:36 INFO  CustomListener:34 - Test parameters [car: trim: 101352262; modelVariant: Basis:220.00; type: 017100280010001; brand: Porsche; model: Cayenne; year: 2011; shape: 1035; country: belgium; kilometer: 20000; ownerEmail: it-test+selenium-newcarflow-priced@wkda.de; seller: firstName: Test Auto Hero; lastName: Selenium Tester; mobilePrefix: +49; mobileNumber: 8444935872; country: name: belgium; code: com; url: https://www.autohero.com/fr-be]
+2016-04-22 03:02:36 INFO  Page:53 - Open url 'https://www.autohero.com/fr-be/?MID=COM_SES_99_88_7_6_5_287'
+2016-04-22 03:02:36 INFO  Page:109 - Select 'Make/brand' by text 'Porsche'
+]]></system-out>
+  </testcase>
+  <testcase name="newFlowTransactionEmailsTest" classname="com.auto1.cfe.tests.autohero.TransactionalEmailsTest" time="23.479">
+    <failure message="Timed out after 5 seconds. Unable to locate the element&#10;For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html&#10;Build info: version: &apos;2.52.0&apos;, revision: &apos;4c2593cfc3689a7fcd7be52549167e5ccc93ad28&apos;, time: &apos;2016-02-11 11:22:43&apos;&#10;System info: host: &apos;WIN-GNT33N1A3IK&apos;, ip: &apos;172.30.2.72&apos;, os.name: &apos;Windows Server 2012 R2&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.3&apos;, java.version: &apos;1.8.0_73&apos;&#10;Driver info: driver.version: unknown" type="org.openqa.selenium.NoSuchElementException"><![CDATA[org.openqa.selenium.NoSuchElementException: Timed out after 5 seconds. Unable to locate the element
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.52.0', revision: '4c2593cfc3689a7fcd7be52549167e5ccc93ad28', time: '2016-02-11 11:22:43'
+System info: host: 'WIN-GNT33N1A3IK', ip: '172.30.2.72', os.name: 'Windows Server 2012 R2', os.arch: 'amd64', os.version: '6.3', java.version: '1.8.0_73'
+Driver info: driver.version: unknown
+	at sun.reflect.GeneratedConstructorAccessor10.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:422)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:363)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:500)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:361)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.AjaxElementLocator.access$001(AjaxElementLocator.java:41)
+	at org.openqa.selenium.support.pagefactory.AjaxElementLocator$SlowLoadingElement.isLoaded(AjaxElementLocator.java:157)
+	at org.openqa.selenium.support.ui.SlowLoadableComponent.get(SlowLoadableComponent.java:70)
+	at org.openqa.selenium.support.pagefactory.AjaxElementLocator.findElement(AjaxElementLocator.java:87)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at ru.yandex.qatools.htmlelements.loader.decorator.proxyhandlers.WebElementNamedProxyHandler.invoke(WebElementNamedProxyHandler.java:25)
+	at com.sun.proxy.$Proxy17.getTagName(Unknown Source)
+	at org.openqa.selenium.support.ui.Select.<init>(Select.java:44)
+	at ru.yandex.qatools.htmlelements.element.Select.getSelect(Select.java:35)
+	at ru.yandex.qatools.htmlelements.element.Select.selectByVisibleText(Select.java:93)
+	at com.auto1.cfe.pages.core.Page.selectByText(Page.java:110)
+	at com.auto1.cfe.pages.SelectCarPage.selectBrand(SelectCarPage.java:92)
+	at com.auto1.cfe.pages.SelectCarPage.fillIn(SelectCarPage.java:78)
+	at com.auto1.cfe.pages.SelectCarPage.fillInNewFlow(SelectCarPage.java:71)
+	at com.auto1.cfe.tests.autohero.TransactionalEmailsTest.newFlowTransactionEmailsTest(TransactionalEmailsTest.java:31)
+]]></failure>
+    <system-out><![CDATA[2016-04-22 03:02:58 ERROR CustomListener:47 - newFlowCidTrackingWithCrmTest --- FAILED --- 
+2016-04-22 03:02:58 ERROR CustomListener:51 - org.openqa.selenium.NoSuchElementException: Timed out after 5 seconds. Unable to locate the element
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.52.0', revision: '4c2593cfc3689a7fcd7be52549167e5ccc93ad28', time: '2016-02-11 11:22:43'
+System info: host: 'WIN-GNT33N1A3IK', ip: '172.30.2.72', os.name: 'Windows Server 2012 R2', os.arch: 'amd64', os.version: '6.3', java.version: '1.8.0_73'
+Driver info: driver.version: unknown
+
+2016-04-22 03:02:58 INFO  ApplicationManager:37 - Delete all cookies..
+
+
+2016-04-22 03:02:58 INFO  ApplicationManager:44 - Stop browser..
+2016-04-22 03:02:59 INFO  ApplicationManager:22 - Start browser 'chrome'
+2016-04-22 03:02:59 INFO  ApplicationManager:74 - Detected OS is 'WINDOWS'
+2016-04-22 03:02:59 INFO  ApplicationManager:75 - Chrome driver path is './src/test/resources/drivers/win/chromedriver.exe'
+2016-04-22 03:02:59 INFO  ApplicationManager:76 - IE driver path is './src/test/resources/drivers/win/IEDriverServer.exe'
+2016-04-22 03:03:00 INFO  SelectCarPage:29 - Open page 'SelectCarPage'
+2016-04-22 03:03:00 INFO  CustomListener:31 - [TestClass name=class com.auto1.cfe.tests.autohero.TransactionalEmailsTest]
+2016-04-22 03:03:00 INFO  CustomListener:33 - << newFlowTransactionEmailsTest >>
+2016-04-22 03:03:00 INFO  CustomListener:34 - Test parameters [car: trim: 101352262; modelVariant: Basis:220.00; type: 017100280010001; brand: Porsche; model: Cayenne; year: 2011; shape: 1035; country: belgium; kilometer: 20000; ownerEmail: it-test+selenium-newcarflow-priced@wkda.de; seller: firstName: Test Auto Hero; lastName: Selenium Tester; mobilePrefix: +49; mobileNumber: 8444935872; country: name: belgium; code: com; url: https://www.autohero.com/nl-be]
+2016-04-22 03:03:00 INFO  MailHelper:245 - Email 'it-test+selenium-newcarflow-priced-2016-04-22.03-03-00-com@wkda.de'
+2016-04-22 03:03:00 INFO  Page:53 - Open url 'https://www.autohero.com/nl-be'
+2016-04-22 03:03:02 INFO  Page:109 - Select 'Make/brand' by text 'Porsche'
+]]></system-out>
+    <system-err><![CDATA[Starting ChromeDriver 2.21.371459 (36d3d07f660ff2bc1bf28a75d1cdabed0983e7c4) on port 13975
+Only local connections are allowed.
+]]></system-err>
+  </testcase>
+  <testcase name="newFlowTransactionEmailsTest" classname="com.auto1.cfe.tests.autohero.TransactionalEmailsTest" time="22.107">
+    <failure message="Timed out after 5 seconds. Unable to locate the element&#10;For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html&#10;Build info: version: &apos;2.52.0&apos;, revision: &apos;4c2593cfc3689a7fcd7be52549167e5ccc93ad28&apos;, time: &apos;2016-02-11 11:22:43&apos;&#10;System info: host: &apos;WIN-GNT33N1A3IK&apos;, ip: &apos;172.30.2.72&apos;, os.name: &apos;Windows Server 2012 R2&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.3&apos;, java.version: &apos;1.8.0_73&apos;&#10;Driver info: driver.version: unknown" type="org.openqa.selenium.NoSuchElementException"><![CDATA[org.openqa.selenium.NoSuchElementException: Timed out after 5 seconds. Unable to locate the element
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.52.0', revision: '4c2593cfc3689a7fcd7be52549167e5ccc93ad28', time: '2016-02-11 11:22:43'
+System info: host: 'WIN-GNT33N1A3IK', ip: '172.30.2.72', os.name: 'Windows Server 2012 R2', os.arch: 'amd64', os.version: '6.3', java.version: '1.8.0_73'
+Driver info: driver.version: unknown
+	at sun.reflect.GeneratedConstructorAccessor10.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:422)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:363)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:500)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:361)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.AjaxElementLocator.access$001(AjaxElementLocator.java:41)
+	at org.openqa.selenium.support.pagefactory.AjaxElementLocator$SlowLoadingElement.isLoaded(AjaxElementLocator.java:157)
+	at org.openqa.selenium.support.ui.SlowLoadableComponent.get(SlowLoadableComponent.java:70)
+	at org.openqa.selenium.support.pagefactory.AjaxElementLocator.findElement(AjaxElementLocator.java:87)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at ru.yandex.qatools.htmlelements.loader.decorator.proxyhandlers.WebElementNamedProxyHandler.invoke(WebElementNamedProxyHandler.java:25)
+	at com.sun.proxy.$Proxy17.getTagName(Unknown Source)
+	at org.openqa.selenium.support.ui.Select.<init>(Select.java:44)
+	at ru.yandex.qatools.htmlelements.element.Select.getSelect(Select.java:35)
+	at ru.yandex.qatools.htmlelements.element.Select.selectByVisibleText(Select.java:93)
+	at com.auto1.cfe.pages.core.Page.selectByText(Page.java:110)
+	at com.auto1.cfe.pages.SelectCarPage.selectBrand(SelectCarPage.java:92)
+	at com.auto1.cfe.pages.SelectCarPage.fillIn(SelectCarPage.java:78)
+	at com.auto1.cfe.pages.SelectCarPage.fillInNewFlow(SelectCarPage.java:71)
+	at com.auto1.cfe.tests.autohero.TransactionalEmailsTest.newFlowTransactionEmailsTest(TransactionalEmailsTest.java:31)
+]]></failure>
+    <system-out><![CDATA[2016-04-22 03:03:24 ERROR CustomListener:47 - newFlowTransactionEmailsTest --- FAILED --- 
+2016-04-22 03:03:24 ERROR CustomListener:51 - org.openqa.selenium.NoSuchElementException: Timed out after 5 seconds. Unable to locate the element
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.52.0', revision: '4c2593cfc3689a7fcd7be52549167e5ccc93ad28', time: '2016-02-11 11:22:43'
+System info: host: 'WIN-GNT33N1A3IK', ip: '172.30.2.72', os.name: 'Windows Server 2012 R2', os.arch: 'amd64', os.version: '6.3', java.version: '1.8.0_73'
+Driver info: driver.version: unknown
+
+2016-04-22 03:03:24 INFO  HttpHelper:43 - Test environment - post request not sent
+2016-04-22 03:03:24 INFO  ApplicationManager:37 - Delete all cookies..
+
+
+2016-04-22 03:03:24 INFO  SelectCarPage:29 - Open page 'SelectCarPage'
+2016-04-22 03:03:24 INFO  CustomListener:31 - [TestClass name=class com.auto1.cfe.tests.autohero.TransactionalEmailsTest]
+2016-04-22 03:03:24 INFO  CustomListener:33 - << newFlowTransactionEmailsTest >>
+2016-04-22 03:03:24 INFO  CustomListener:34 - Test parameters [car: trim: 101352262; modelVariant: Basis:220.00; type: 017100280010001; brand: Porsche; model: Cayenne; year: 2011; shape: 1035; country: belgium; kilometer: 20000; ownerEmail: it-test+selenium-newcarflow-priced@wkda.de; seller: firstName: Test Auto Hero; lastName: Selenium Tester; mobilePrefix: +49; mobileNumber: 8444935872; country: name: belgium; code: com; url: https://www.autohero.com/fr-be]
+2016-04-22 03:03:24 INFO  MailHelper:245 - Email 'it-test+selenium-newcarflow-priced-2016-04-22.03-03-24-com@wkda.de'
+2016-04-22 03:03:24 INFO  Page:53 - Open url 'https://www.autohero.com/fr-be'
+2016-04-22 03:03:24 INFO  Page:109 - Select 'Make/brand' by text 'Porsche'
+]]></system-out>
+  </testcase>
+  <testcase name="newFlowUnsubscribeEmailTest" classname="com.auto1.cfe.tests.autohero.UnSubscribeTest" time="23.468">
+    <failure message="Timed out after 5 seconds. Unable to locate the element&#10;For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html&#10;Build info: version: &apos;2.52.0&apos;, revision: &apos;4c2593cfc3689a7fcd7be52549167e5ccc93ad28&apos;, time: &apos;2016-02-11 11:22:43&apos;&#10;System info: host: &apos;WIN-GNT33N1A3IK&apos;, ip: &apos;172.30.2.72&apos;, os.name: &apos;Windows Server 2012 R2&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.3&apos;, java.version: &apos;1.8.0_73&apos;&#10;Driver info: driver.version: unknown" type="org.openqa.selenium.NoSuchElementException"><![CDATA[org.openqa.selenium.NoSuchElementException: Timed out after 5 seconds. Unable to locate the element
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.52.0', revision: '4c2593cfc3689a7fcd7be52549167e5ccc93ad28', time: '2016-02-11 11:22:43'
+System info: host: 'WIN-GNT33N1A3IK', ip: '172.30.2.72', os.name: 'Windows Server 2012 R2', os.arch: 'amd64', os.version: '6.3', java.version: '1.8.0_73'
+Driver info: driver.version: unknown
+	at sun.reflect.GeneratedConstructorAccessor10.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:422)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:363)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:500)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:361)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.AjaxElementLocator.access$001(AjaxElementLocator.java:41)
+	at org.openqa.selenium.support.pagefactory.AjaxElementLocator$SlowLoadingElement.isLoaded(AjaxElementLocator.java:157)
+	at org.openqa.selenium.support.ui.SlowLoadableComponent.get(SlowLoadableComponent.java:70)
+	at org.openqa.selenium.support.pagefactory.AjaxElementLocator.findElement(AjaxElementLocator.java:87)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at ru.yandex.qatools.htmlelements.loader.decorator.proxyhandlers.WebElementNamedProxyHandler.invoke(WebElementNamedProxyHandler.java:25)
+	at com.sun.proxy.$Proxy17.getTagName(Unknown Source)
+	at org.openqa.selenium.support.ui.Select.<init>(Select.java:44)
+	at ru.yandex.qatools.htmlelements.element.Select.getSelect(Select.java:35)
+	at ru.yandex.qatools.htmlelements.element.Select.selectByVisibleText(Select.java:93)
+	at com.auto1.cfe.pages.core.Page.selectByText(Page.java:110)
+	at com.auto1.cfe.pages.SelectCarPage.selectBrand(SelectCarPage.java:92)
+	at com.auto1.cfe.pages.SelectCarPage.fillIn(SelectCarPage.java:78)
+	at com.auto1.cfe.pages.SelectCarPage.fillInNewFlow(SelectCarPage.java:71)
+	at com.auto1.cfe.tests.autohero.UnSubscribeTest.newFlowUnsubscribeEmailTest(UnSubscribeTest.java:30)
+]]></failure>
+    <system-out><![CDATA[2016-04-22 03:03:46 ERROR CustomListener:47 - newFlowTransactionEmailsTest --- FAILED --- 
+2016-04-22 03:03:46 ERROR CustomListener:51 - org.openqa.selenium.NoSuchElementException: Timed out after 5 seconds. Unable to locate the element
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.52.0', revision: '4c2593cfc3689a7fcd7be52549167e5ccc93ad28', time: '2016-02-11 11:22:43'
+System info: host: 'WIN-GNT33N1A3IK', ip: '172.30.2.72', os.name: 'Windows Server 2012 R2', os.arch: 'amd64', os.version: '6.3', java.version: '1.8.0_73'
+Driver info: driver.version: unknown
+
+2016-04-22 03:03:46 INFO  HttpHelper:43 - Test environment - post request not sent
+2016-04-22 03:03:46 INFO  ApplicationManager:37 - Delete all cookies..
+
+
+2016-04-22 03:03:46 INFO  ApplicationManager:44 - Stop browser..
+2016-04-22 03:03:47 INFO  ApplicationManager:22 - Start browser 'chrome'
+2016-04-22 03:03:47 INFO  ApplicationManager:74 - Detected OS is 'WINDOWS'
+2016-04-22 03:03:47 INFO  ApplicationManager:75 - Chrome driver path is './src/test/resources/drivers/win/chromedriver.exe'
+2016-04-22 03:03:47 INFO  ApplicationManager:76 - IE driver path is './src/test/resources/drivers/win/IEDriverServer.exe'
+2016-04-22 03:03:48 INFO  SelectCarPage:29 - Open page 'SelectCarPage'
+2016-04-22 03:03:48 INFO  CustomListener:31 - [TestClass name=class com.auto1.cfe.tests.autohero.UnSubscribeTest]
+2016-04-22 03:03:48 INFO  CustomListener:33 - << newFlowUnsubscribeEmailTest >>
+2016-04-22 03:03:48 INFO  CustomListener:34 - Test parameters [car: trim: 101352262; modelVariant: Basis:220.00; type: 017100280010001; brand: Porsche; model: Cayenne; year: 2011; shape: 1035; country: belgium; kilometer: 20000; ownerEmail: it-test+selenium-newcarflow-priced@wkda.de; seller: firstName: Test Auto Hero; lastName: Selenium Tester; mobilePrefix: +49; mobileNumber: 8444935872; country: name: belgium; code: com; url: https://www.autohero.com/nl-be]
+2016-04-22 03:03:48 INFO  Page:53 - Open url 'https://www.autohero.com/nl-be'
+2016-04-22 03:03:50 INFO  Page:109 - Select 'Make/brand' by text 'Porsche'
+]]></system-out>
+    <system-err><![CDATA[Starting ChromeDriver 2.21.371459 (36d3d07f660ff2bc1bf28a75d1cdabed0983e7c4) on port 26987
+Only local connections are allowed.
+]]></system-err>
+  </testcase>
+  <testcase name="newFlowUnsubscribeEmailTest" classname="com.auto1.cfe.tests.autohero.UnSubscribeTest" time="21.988">
+    <failure message="Timed out after 5 seconds. Unable to locate the element&#10;For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html&#10;Build info: version: &apos;2.52.0&apos;, revision: &apos;4c2593cfc3689a7fcd7be52549167e5ccc93ad28&apos;, time: &apos;2016-02-11 11:22:43&apos;&#10;System info: host: &apos;WIN-GNT33N1A3IK&apos;, ip: &apos;172.30.2.72&apos;, os.name: &apos;Windows Server 2012 R2&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.3&apos;, java.version: &apos;1.8.0_73&apos;&#10;Driver info: driver.version: unknown" type="org.openqa.selenium.NoSuchElementException"><![CDATA[org.openqa.selenium.NoSuchElementException: Timed out after 5 seconds. Unable to locate the element
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.52.0', revision: '4c2593cfc3689a7fcd7be52549167e5ccc93ad28', time: '2016-02-11 11:22:43'
+System info: host: 'WIN-GNT33N1A3IK', ip: '172.30.2.72', os.name: 'Windows Server 2012 R2', os.arch: 'amd64', os.version: '6.3', java.version: '1.8.0_73'
+Driver info: driver.version: unknown
+	at sun.reflect.GeneratedConstructorAccessor10.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:422)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:363)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:500)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:361)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.AjaxElementLocator.access$001(AjaxElementLocator.java:41)
+	at org.openqa.selenium.support.pagefactory.AjaxElementLocator$SlowLoadingElement.isLoaded(AjaxElementLocator.java:157)
+	at org.openqa.selenium.support.ui.SlowLoadableComponent.get(SlowLoadableComponent.java:70)
+	at org.openqa.selenium.support.pagefactory.AjaxElementLocator.findElement(AjaxElementLocator.java:87)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at ru.yandex.qatools.htmlelements.loader.decorator.proxyhandlers.WebElementNamedProxyHandler.invoke(WebElementNamedProxyHandler.java:25)
+	at com.sun.proxy.$Proxy17.getTagName(Unknown Source)
+	at org.openqa.selenium.support.ui.Select.<init>(Select.java:44)
+	at ru.yandex.qatools.htmlelements.element.Select.getSelect(Select.java:35)
+	at ru.yandex.qatools.htmlelements.element.Select.selectByVisibleText(Select.java:93)
+	at com.auto1.cfe.pages.core.Page.selectByText(Page.java:110)
+	at com.auto1.cfe.pages.SelectCarPage.selectBrand(SelectCarPage.java:92)
+	at com.auto1.cfe.pages.SelectCarPage.fillIn(SelectCarPage.java:78)
+	at com.auto1.cfe.pages.SelectCarPage.fillInNewFlow(SelectCarPage.java:71)
+	at com.auto1.cfe.tests.autohero.UnSubscribeTest.newFlowUnsubscribeEmailTest(UnSubscribeTest.java:30)
+]]></failure>
+    <system-out><![CDATA[2016-04-22 03:04:12 ERROR CustomListener:47 - newFlowUnsubscribeEmailTest --- FAILED --- 
+2016-04-22 03:04:12 ERROR CustomListener:51 - org.openqa.selenium.NoSuchElementException: Timed out after 5 seconds. Unable to locate the element
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.52.0', revision: '4c2593cfc3689a7fcd7be52549167e5ccc93ad28', time: '2016-02-11 11:22:43'
+System info: host: 'WIN-GNT33N1A3IK', ip: '172.30.2.72', os.name: 'Windows Server 2012 R2', os.arch: 'amd64', os.version: '6.3', java.version: '1.8.0_73'
+Driver info: driver.version: unknown
+
+2016-04-22 03:04:12 INFO  HttpHelper:43 - Test environment - post request not sent
+2016-04-22 03:04:12 INFO  ApplicationManager:37 - Delete all cookies..
+
+
+2016-04-22 03:04:12 INFO  SelectCarPage:29 - Open page 'SelectCarPage'
+2016-04-22 03:04:12 INFO  CustomListener:31 - [TestClass name=class com.auto1.cfe.tests.autohero.UnSubscribeTest]
+2016-04-22 03:04:12 INFO  CustomListener:33 - << newFlowUnsubscribeEmailTest >>
+2016-04-22 03:04:12 INFO  CustomListener:34 - Test parameters [car: trim: 101352262; modelVariant: Basis:220.00; type: 017100280010001; brand: Porsche; model: Cayenne; year: 2011; shape: 1035; country: belgium; kilometer: 20000; ownerEmail: it-test+selenium-newcarflow-priced@wkda.de; seller: firstName: Test Auto Hero; lastName: Selenium Tester; mobilePrefix: +49; mobileNumber: 8444935872; country: name: belgium; code: com; url: https://www.autohero.com/fr-be]
+2016-04-22 03:04:12 INFO  Page:53 - Open url 'https://www.autohero.com/fr-be'
+2016-04-22 03:04:12 INFO  Page:109 - Select 'Make/brand' by text 'Porsche'
+]]></system-out>
+  </testcase>
+</testsuite>

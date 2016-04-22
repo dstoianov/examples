@@ -106,6 +106,17 @@
                             <generatePackage>com.revimedia.testing.beans.home</generatePackage>
                         </configuration>
                     </execution>
+
+                    <execution>
+                        <id>schema5-generate-test</id>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                        <configuration>
+                            <schemaDirectory>${basedir}/src/main/resources/xsds/test</schemaDirectory>
+                            <generatePackage>com.revimedia.testing.beans.test</generatePackage>
+                        </configuration>
+                    </execution>
                 </executions>
                 <configuration>
                     <forceRegenerate>true</forceRegenerate>

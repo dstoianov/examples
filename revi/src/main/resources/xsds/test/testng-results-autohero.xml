@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="12" total="12" passed="0">
+    <reporter-output>
+    </reporter-output>
+    <suite name="CFE Scope" duration-ms="287051" started-at="2016-04-22T00:59:48Z" finished-at="2016-04-22T01:04:35Z">
+        <groups>
+            <group name="new car flow">
+                <method signature="ErrorMessagesTest.newFlowErrorMessagesTest(com.auto1.cfe.bean.SellCountryFlowData)[pri:0, instance:com.auto1.cfe.tests.autohero.ErrorMessagesTest@15ac02d5]"
+                        name="newFlowErrorMessagesTest" class="com.auto1.cfe.tests.autohero.ErrorMessagesTest"/>
+                <method signature="SellCarTest.newCarFlowBookingTest(com.auto1.cfe.bean.SellCountryFlowData)[pri:0, instance:com.auto1.cfe.tests.autohero.SellCarTest@2af9a5ef]"
+                        name="newCarFlowBookingTest" class="com.auto1.cfe.tests.autohero.SellCarTest"/>
+            </group>
+            <group name="dynamic step">
+                <method signature="ErrorMessagesTest.newFlowErrorMessagesTest(com.auto1.cfe.bean.SellCountryFlowData)[pri:0, instance:com.auto1.cfe.tests.autohero.ErrorMessagesTest@15ac02d5]"
+                        name="newFlowErrorMessagesTest" class="com.auto1.cfe.tests.autohero.ErrorMessagesTest"/>
+            </group>
+        </groups>
+        <test name="Auto Hero suite" duration-ms="287051" started-at="2016-04-22T00:59:48Z"
+              finished-at="2016-04-22T01:04:35Z">
+            <class name="com.auto1.cfe.tests.autohero.ErrorMessagesTest">
+                <test-method status="PASS"
+                             signature="initPages([Ljava.lang.Object;)[pri:0, instance:com.auto1.cfe.tests.autohero.ErrorMessagesTest@15ac02d5]"
+                             name="initPages" is-config="true" duration-ms="198" started-at="2016-04-22T02:59:50Z"
+                             finished-at="2016-04-22T02:59:50Z">
+                    <params>
+                        <param index="0">
+                            <value>value</value>
+                        </param>
+                    </params>
+                    <reporter-output>
+                    </reporter-output>
+                </test-method>
+                <test-method status="FAIL"
+                             signature="newFlowErrorMessagesTest(com.auto1.cfe.bean.SellCountryFlowData)[pri:0, instance:com.auto1.cfe.tests.autohero.ErrorMessagesTest@15ac02d5]"
+                             name="newFlowErrorMessagesTest" duration-ms="23261" started-at="2016-04-22T02:59:50Z"
+                             data-provider="flowCountryProviderAH" finished-at="2016-04-22T03:00:14Z">
+                    <params>
+                        <param index="0">
+                            <value>value</value>
+                        </param>
+                    </params>
+                    <exception class="org.openqa.selenium.TimeoutException">
+                        <message>message</message>
+                        <full-stacktrace>message</full-stacktrace>
+                    </exception>
+                    <reporter-output>
+                    </reporter-output>
+                </test-method>
+            </class>
+            <class name="com.auto1.cfe.tests.autohero.TrackingCidTest">
+                <test-method status="PASS"
+                             signature="initPages([Ljava.lang.Object;)[pri:0, instance:com.auto1.cfe.tests.autohero.TrackingCidTest@34f23816]"
+                             name="initPages" is-config="true" duration-ms="2" started-at="2016-04-22T03:01:27Z"
+                             finished-at="2016-04-22T03:01:27Z">
+                    <params>
+                        <param index="0">
+                            <value>value</value>
+                        </param>
+                    </params>
+                    <reporter-output>
+                    </reporter-output>
+                </test-method>
+                <test-method status="FAIL"
+                             signature="newFlowCidTrackingTest(com.auto1.cfe.bean.SellCountryFlowData)[pri:0, instance:com.auto1.cfe.tests.autohero.TrackingCidTest@34f23816]"
+                             name="newFlowCidTrackingTest" duration-ms="23397" started-at="2016-04-22T03:01:27Z"
+                             data-provider="flowCountryProviderAH" finished-at="2016-04-22T03:01:50Z">
+                    <params>
+                        <param index="0">
+                            <value>value</value>
+                        </param>
+                    </params>
+                    <exception class="org.openqa.selenium.NoSuchElementException">
+                        <message>message</message>
+                        <full-stacktrace>message</full-stacktrace>
+                    </exception>
+                    <reporter-output>
+                    </reporter-output>
+                </test-method>
+            </class>
+        </test>
+    </suite>
+</testng-results>

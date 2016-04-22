@@ -1,0 +1,1297 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="TestSuite" time="200.431" tests="64" errors="0" skipped="0" failures="15">
+  <properties>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_73\jre\bin"/>
+    <property name="java.vm.version" value="25.73-b02"/>
+    <property name="browser.name" value="chrome"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="maven.multiModuleProjectDirectory" value="C:\Jenkins\workspace\jav-ui-tests-win-prod-chrome"/>
+    <property name="java.vendor.url" value="http://java.oracle.com/"/>
+    <property name="path.separator" value=";"/>
+    <property name="guice.disable.misplaced.annotation.check" value="true"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="user.script" value=""/>
+    <property name="user.country" value="US"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="user.dir" value="C:\Jenkins\workspace\jav-ui-tests-win-prod-chrome"/>
+    <property name="java.runtime.version" value="1.8.0_73-b02"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
+    <property name="java.endorsed.dirs" value="C:\Program Files\Java\jdk1.8.0_73\jre\lib\endorsed"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.io.tmpdir" value="C:\Users\ADMINI~1\AppData\Local\Temp\"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.variant" value=""/>
+    <property name="os.name" value="Windows Server 2012 R2"/>
+    <property name="classworlds.conf" value="/home/deploy/jenkins-maven\bin\m2.conf"/>
+    <property name="sun.jnu.encoding" value="Cp1252"/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk1.8.0_73\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;/home/deploy/jenkins-maven/bin;C:\Program Files\Java\jdk1.8.0_73/bin;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Amazon\cfn-bootstrap\;C:\Program Files\Java\jdk1.8.0_73\bin;C:\Jenkins\maven\bin;C:\Program Files\Git\cmd;."/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.class.version" value="52.0"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="os.version" value="6.3"/>
+    <property name="user.home" value="C:\Users\Administrator"/>
+    <property name="user.timezone" value="Europe/Berlin"/>
+    <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob"/>
+    <property name="java.specification.version" value="1.8"/>
+    <property name="file.encoding" value="Cp1252"/>
+    <property name="user.name" value="Administrator"/>
+    <property name="java.class.path" value="/home/deploy/jenkins-maven\boot\plexus-classworlds-2.5.2.jar"/>
+    <property name="java.vm.specification.version" value="1.8"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.home" value="C:\Program Files\Java\jdk1.8.0_73\jre"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -f pom.xml clean test -Pjav -Denvironment=PROD -Dbrowser.name=chrome"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.language" value="en"/>
+    <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.version" value="1.8.0_73"/>
+    <property name="java.ext.dirs" value="C:\Program Files\Java\jdk1.8.0_73\jre\lib\ext;C:\Windows\Sun\Java\lib\ext"/>
+    <property name="sun.boot.class.path" value="C:\Program Files\Java\jdk1.8.0_73\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_73\jre\lib\rt.jar;C:\Program Files\Java\jdk1.8.0_73\jre\lib\sunrsasign.jar;C:\Program Files\Java\jdk1.8.0_73\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_73\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_73\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_73\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_73\jre\classes"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="environment" value="PROD"/>
+    <property name="maven.home" value="C:\home\deploy\jenkins-maven"/>
+    <property name="file.separator" value="\"/>
+    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="sun.desktop" value="windows"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+  </properties>
+  <testcase name="newFlowErrorMessagesTest" classname="com.auto1.cfe.tests.jav.ErrorMessagesTest" time="17.4"/>
+  <testcase name="newFlowErrorMessagesTest" classname="com.auto1.cfe.tests.jav.ErrorMessagesTest" time="11.809">
+    <failure message="Url should contain &apos;confirm&apos; word&#10;Expected: is a string containing &quot;confirm&quot;&#10;     but: was &quot;https://www.jetztautoverkaufen.at/booking/8684f4784cf62a16831d9c463559c234/&quot;" type="java.lang.AssertionError">java.lang.AssertionError: Url should contain 'confirm' word
+Expected: is a string containing "confirm"
+     but: was "https://www.jetztautoverkaufen.at/booking/8684f4784cf62a16831d9c463559c234/"
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at com.auto1.cfe.tests.BaseTest.verifyAppointmentIsBooked(BaseTest.java:61)
+	at com.auto1.cfe.tests.jav.ErrorMessagesTest.newFlowErrorMessagesTest(ErrorMessagesTest.java:36)
+</failure>
+    <system-out><![CDATA[2016-04-22 02:00:09 INFO  CustomListener:42 - newFlowErrorMessagesTest --- SUCCESS ---
+
+
+2016-04-22 02:00:09 INFO  HttpHelper:26 - 'PROD' environment - send post request
+2016-04-22 02:00:09 INFO  HttpImpl:45 - Send 'POST' request 'https://www.wirkaufendeinauto.de/set-to-test/862daaf046adc07b6fb549673a939df2/'
+2016-04-22 02:00:10 INFO  HttpImpl:51 - Response code '200'
+2016-04-22 02:00:10 INFO  HttpImpl:53 - Response value '{"message":"successful"}'
+2016-04-22 02:00:10 INFO  ApplicationManager:37 - Delete all cookies..
+
+
+2016-04-22 02:00:10 INFO  SelectCarPage:29 - Open page 'SelectCarPage'
+2016-04-22 02:00:10 INFO  CustomListener:31 - [TestClass name=class com.auto1.cfe.tests.jav.ErrorMessagesTest]
+2016-04-22 02:00:10 INFO  CustomListener:33 - << newFlowErrorMessagesTest >>
+2016-04-22 02:00:10 INFO  CustomListener:34 - Test parameters [car: modelVariant: 6.0 W12:331.00; type: 010600480130001; brand: Audi; model: A8; year: 2006; shape: 1025; country: austria; kilometer: 20000; ownerEmail: it-test+selenium-newcarflow-priced@wkda.de; seller: firstName: Test JAV; lastName: Selenium Tester; mobilePrefix: +49; mobileNumber: 8009994440; country: name: austria; code: at; url: https://www.jetztautoverkaufen.at]
+2016-04-22 02:00:10 INFO  Page:53 - Open url 'https://www.jetztautoverkaufen.at'
+2016-04-22 02:00:10 INFO  ErrorMessagesChecker:35 - Click on button 'Submit'
+2016-04-22 02:00:11 INFO  ErrorMessagesChecker:49 - Error message for 'Make/brand' is 'Bitte wählen Sie eine Marke aus'
+2016-04-22 02:00:11 INFO  Page:109 - Select 'Make/brand' by text 'Audi'
+2016-04-22 02:00:11 INFO  ErrorMessagesChecker:35 - Click on button 'Submit'
+2016-04-22 02:00:11 INFO  ErrorMessagesChecker:49 - Error message for 'Model' is 'Bitte wählen Sie ein Modell aus'
+2016-04-22 02:00:11 INFO  Page:109 - Select 'Model' by text 'A8'
+2016-04-22 02:00:12 INFO  ErrorMessagesChecker:35 - Click on button 'Submit'
+2016-04-22 02:00:12 INFO  ErrorMessagesChecker:49 - Error message for 'Year' is 'Bitte wählen Sie ein Erstzulassungsjahr aus'
+2016-04-22 02:00:12 INFO  Page:147 - Select 'Year' by value '2006'
+2016-04-22 02:00:12 INFO  Page:149 - 	Text for this value is '2006'
+2016-04-22 02:00:12 INFO  Page:128 - Click on 'Submit'
+2016-04-22 02:00:13 INFO  CarInfoNewFlowPage:28 - Open page 'CarInfoNewFlowPage'
+2016-04-22 02:00:13 INFO  Page:147 - Select 'Shape' by value '1025'
+2016-04-22 02:00:14 INFO  Page:149 - 	Text for this value is 'Limousine'
+2016-04-22 02:00:14 INFO  ErrorMessagesChecker:35 - Click on button 'Submit'
+2016-04-22 02:00:14 INFO  ErrorMessagesChecker:49 - Error message for 'Details' is 'Bitte wählen Sie eine Modellvariante aus'
+2016-04-22 02:00:14 INFO  Page:147 - Select 'Details' by value '6.0 W12:331.00'
+2016-04-22 02:00:14 INFO  Page:149 - 	Text for this value is 'A8 - 6.0 W12 (331 kW  / 450 PS)'
+2016-04-22 02:00:14 INFO  ErrorMessagesChecker:35 - Click on button 'Submit'
+2016-04-22 02:00:14 INFO  ErrorMessagesChecker:49 - Error message for 'Type' is 'Bitte wählen Sie einen Typ aus'
+2016-04-22 02:00:14 INFO  Page:147 - Select 'Type' by value '010600480130001'
+2016-04-22 02:00:14 INFO  Page:149 - 	Text for this value is 'A8 quattro Lang Automatisches Getriebe 4 Türen'
+2016-04-22 02:00:14 INFO  ErrorMessagesChecker:35 - Click on button 'Submit'
+2016-04-22 02:00:15 INFO  ErrorMessagesChecker:49 - Error message for 'Kilometers/Miles' is 'Bitte wählen Sie die Kilometer aus'
+2016-04-22 02:00:15 INFO  Page:147 - Select 'Kilometers/Miles' by value '20000'
+2016-04-22 02:00:15 INFO  Page:149 - 	Text for this value is 'Bis 20.000'
+2016-04-22 02:00:15 INFO  ErrorMessagesChecker:35 - Click on button 'Submit'
+2016-04-22 02:00:15 INFO  ErrorMessagesChecker:49 - Error message for 'Email' is 'Bitte geben Sie eine gültige E-Mail-Adresse an'
+2016-04-22 02:00:15 INFO  Page:94 - Type to 'Email' value 'it-test+selenium-newcarflow-priced@wkda.de'
+2016-04-22 02:00:15 INFO  Page:128 - Click on 'Submit'
+2016-04-22 02:00:17 INFO  BookingPage:33 - Open page 'BookingPage'
+2016-04-22 02:00:17 INFO  ErrorMessagesChecker:35 - Click on button 'Submit'
+2016-04-22 02:00:18 INFO  ErrorMessagesChecker:49 - Error message for 'First Name' is 'Bitte geben Sie Ihren Vornamen an'
+2016-04-22 02:00:18 INFO  ErrorMessagesChecker:49 - Error message for 'Last Name' is 'Bitte geben Sie Ihren Nachnamen an'
+2016-04-22 02:00:18 INFO  ErrorMessagesChecker:49 - Error message for 'Mobile Number' is 'Dieses Feld ist ein Pflichtfeld.'
+2016-04-22 02:00:18 INFO  Page:246 - Data for element 'City'
+2016-04-22 02:00:18 INFO  Page:249 - [Feldkirch, Graz, Innsbruck, Klagenfurt, Linz, Salzburg, St. Pölten, Wels, Wien, Wiener Neustadt]
+2016-04-22 02:00:18 INFO  Page:241 - Select 'City' random by text 'St. Pölten'
+2016-04-22 02:00:20 INFO  Page:246 - Data for element 'Date'
+2016-04-22 02:00:20 INFO  Page:249 - [Freitag, 22.04, Samstag, 23.04, Montag, 25.04, Dienstag, 26.04, Mittwoch, 27.04, Donnerstag, 28.04, Freitag, 29.04]
+2016-04-22 02:00:20 INFO  Page:241 - Select 'Date' random by text 'Donnerstag, 28.04'
+2016-04-22 02:00:20 INFO  Page:246 - Data for element 'Time'
+2016-04-22 02:00:21 INFO  Page:249 - [09:00, 10:00, 11:00, 12:00, 13:00, 14:00, 15:00, 16:00, 17:00, 18:00]
+2016-04-22 02:00:21 INFO  Page:241 - Select 'Time' random by text '17:00'
+2016-04-22 02:00:21 INFO  Page:94 - Type to 'First Name' value 'Test JAV'
+2016-04-22 02:00:21 INFO  Page:94 - Type to 'Last Name' value 'Selenium Tester'
+2016-04-22 02:00:21 INFO  Page:109 - Select 'Mobile Prefix' by text '+49'
+2016-04-22 02:00:21 INFO  Page:94 - Type to 'Mobile Number' value '8009994440'
+2016-04-22 02:00:21 INFO  BookingPage:127 - Looking for a price for store it...
+2016-04-22 02:00:21 INFO  BookingPage:130 - Element 'Car Price [1]' value is '24.302 EUR'
+2016-04-22 02:00:21 INFO  BookingConfirmPage:21 - Open page 'BookingConfirmPage'
+]]></system-out>
+  </testcase>
+  <testcase name="newFlowErrorMessagesTest" classname="com.auto1.cfe.tests.jav.ErrorMessagesTest" time="11.975">
+    <failure message="Url should contain &apos;confirm&apos; word&#10;Expected: is a string containing &quot;confirm&quot;&#10;     but: was &quot;https://www.meteenautoverkopen.nl/booking/246f15a54834d10649f73c19d119fcf1/&quot;" type="java.lang.AssertionError">java.lang.AssertionError: Url should contain 'confirm' word
+Expected: is a string containing "confirm"
+     but: was "https://www.meteenautoverkopen.nl/booking/246f15a54834d10649f73c19d119fcf1/"
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at com.auto1.cfe.tests.BaseTest.verifyAppointmentIsBooked(BaseTest.java:61)
+	at com.auto1.cfe.tests.jav.ErrorMessagesTest.newFlowErrorMessagesTest(ErrorMessagesTest.java:36)
+</failure>
+    <system-out><![CDATA[2016-04-22 02:00:22 ERROR CustomListener:47 - newFlowErrorMessagesTest --- FAILED --- 
+2016-04-22 02:00:22 ERROR CustomListener:51 - java.lang.AssertionError: Url should contain 'confirm' word
+Expected: is a string containing "confirm"
+     but: was "https://www.jetztautoverkaufen.at/booking/8684f4784cf62a16831d9c463559c234/"
+
+
+2016-04-22 02:00:22 INFO  HttpHelper:26 - 'PROD' environment - send post request
+2016-04-22 02:00:22 INFO  HttpImpl:45 - Send 'POST' request 'https://www.wirkaufendeinauto.de/set-to-test/8684f4784cf62a16831d9c463559c234/'
+2016-04-22 02:00:22 INFO  HttpImpl:51 - Response code '200'
+2016-04-22 02:00:22 INFO  HttpImpl:53 - Response value '{"message":"successful"}'
+2016-04-22 02:00:22 INFO  ApplicationManager:37 - Delete all cookies..
+
+
+2016-04-22 02:00:22 INFO  SelectCarPage:29 - Open page 'SelectCarPage'
+2016-04-22 02:00:22 INFO  CustomListener:31 - [TestClass name=class com.auto1.cfe.tests.jav.ErrorMessagesTest]
+2016-04-22 02:00:22 INFO  CustomListener:33 - << newFlowErrorMessagesTest >>
+2016-04-22 02:00:22 INFO  CustomListener:34 - Test parameters [car: modelVariant: 6.0 W12:331.00; type: 010600480130001; brand: Audi; model: A8; year: 2006; shape: 1025; country: netherland; kilometer: 20000; ownerEmail: it-test+selenium-newcarflow-priced@wkda.de; seller: firstName: Test JAV; lastName: Selenium Tester; mobilePrefix: +49; mobileNumber: 8009994440; country: name: netherland; code: nl; url: https://www.meteenautoverkopen.nl]
+2016-04-22 02:00:22 INFO  Page:53 - Open url 'https://www.meteenautoverkopen.nl'
+2016-04-22 02:00:23 INFO  SelectCarPage:85 - Switch to default flow for county 'netherland'
+2016-04-22 02:00:23 INFO  Page:118 - Click on 'Switch to default flow link'
+2016-04-22 02:00:23 INFO  ErrorMessagesChecker:35 - Click on button 'Submit'
+2016-04-22 02:00:23 INFO  ErrorMessagesChecker:49 - Error message for 'Make/brand' is 'Selecteer alsjeblieft een merk'
+2016-04-22 02:00:23 INFO  Page:109 - Select 'Make/brand' by text 'Audi'
+2016-04-22 02:00:24 INFO  ErrorMessagesChecker:35 - Click on button 'Submit'
+2016-04-22 02:00:24 INFO  ErrorMessagesChecker:49 - Error message for 'Model' is 'Selecteer alsjeblieft een model'
+2016-04-22 02:00:24 INFO  Page:109 - Select 'Model' by text 'A8'
+2016-04-22 02:00:25 INFO  ErrorMessagesChecker:35 - Click on button 'Submit'
+2016-04-22 02:00:25 INFO  ErrorMessagesChecker:49 - Error message for 'Year' is 'Selecteer alsjeblieft het bouwjaar'
+2016-04-22 02:00:25 INFO  Page:147 - Select 'Year' by value '2006'
+2016-04-22 02:00:25 INFO  Page:149 - 	Text for this value is '2006'
+2016-04-22 02:00:25 INFO  Page:128 - Click on 'Submit'
+2016-04-22 02:00:26 INFO  CarInfoNewFlowPage:28 - Open page 'CarInfoNewFlowPage'
+2016-04-22 02:00:26 INFO  Page:147 - Select 'Shape' by value '1025'
+2016-04-22 02:00:27 INFO  Page:149 - 	Text for this value is 'Sedan'
+2016-04-22 02:00:27 INFO  ErrorMessagesChecker:35 - Click on button 'Submit'
+2016-04-22 02:00:27 INFO  ErrorMessagesChecker:49 - Error message for 'Details' is 'Selecteer alsjeblieft een variant'
+2016-04-22 02:00:27 INFO  Page:147 - Select 'Details' by value '6.0 W12:331.00'
+2016-04-22 02:00:27 INFO  Page:149 - 	Text for this value is 'A8 - 6.0 W12 (331 kW  / 450 PS)'
+2016-04-22 02:00:27 INFO  ErrorMessagesChecker:35 - Click on button 'Submit'
+2016-04-22 02:00:27 INFO  ErrorMessagesChecker:49 - Error message for 'Type' is 'Selecteer alsjeblieft een type'
+2016-04-22 02:00:27 INFO  Page:147 - Select 'Type' by value '010600480130001'
+2016-04-22 02:00:27 INFO  Page:149 - 	Text for this value is 'A8 quattro Lang Automatisch 4 Deuren'
+2016-04-22 02:00:27 INFO  Page:128 - Click on 'Submit'
+2016-04-22 02:00:27 INFO  CarInfoPage:25 - Open page 'CustomPage'
+2016-04-22 02:00:27 INFO  ErrorMessagesChecker:35 - Click on button 'Submit'
+2016-04-22 02:00:28 INFO  ErrorMessagesChecker:49 - Error message for 'Kilometer' is 'Selecteer alsjeblieft de kilometerstand'
+2016-04-22 02:00:28 INFO  Page:147 - Select 'Kilometer' by value '20000'
+2016-04-22 02:00:28 INFO  Page:149 - 	Text for this value is 'Tot 20.000'
+2016-04-22 02:00:28 INFO  ErrorMessagesChecker:35 - Click on button 'Submit'
+2016-04-22 02:00:28 INFO  ErrorMessagesChecker:49 - Error message for 'Email' is 'Voer alsjeblieft een geldig e-mailadres in'
+2016-04-22 02:00:28 INFO  Page:94 - Type to 'Email' value 'it-test+selenium-newcarflow-priced@wkda.de'
+2016-04-22 02:00:28 INFO  Page:128 - Click on 'Submit'
+2016-04-22 02:00:31 INFO  BookingPage:33 - Open page 'BookingPage'
+2016-04-22 02:00:31 INFO  ErrorMessagesChecker:35 - Click on button 'Submit'
+2016-04-22 02:00:31 INFO  ErrorMessagesChecker:49 - Error message for 'First Name' is 'Voer alsjeblieft je voornaam in'
+2016-04-22 02:00:31 INFO  ErrorMessagesChecker:49 - Error message for 'Last Name' is 'Voer alsjeblieft je achternaam in'
+2016-04-22 02:00:31 INFO  ErrorMessagesChecker:49 - Error message for 'Mobile Number' is 'Dieses Feld ist ein Pflichtfeld.'
+2016-04-22 02:00:31 INFO  Page:246 - Data for element 'City'
+2016-04-22 02:00:32 INFO  Page:249 - [Alkmaar, Almere, Alphen aan den Rijn, Amersfoort, Amsterdam, Apeldoorn, Arnhem, Breda, 's-Hertogenbosch, Den Haag, Dordrecht, Eindhoven, Enschede, Goes, Groningen, Haarlem, Leeuwarden, Maastricht, Roermond, Rotterdam, Tilburg, Utrecht, Zwolle]
+2016-04-22 02:00:32 INFO  Page:241 - Select 'City' random by text 'Tilburg'
+2016-04-22 02:00:32 INFO  Page:246 - Data for element 'Date'
+2016-04-22 02:00:32 INFO  Page:249 - [vrijdag, 22.04, zaterdag, 23.04, maandag, 25.04, dinsdag, 26.04, donderdag, 28.04, vrijdag, 29.04]
+2016-04-22 02:00:32 INFO  Page:241 - Select 'Date' random by text 'dinsdag, 26.04'
+2016-04-22 02:00:33 INFO  Page:246 - Data for element 'Time'
+2016-04-22 02:00:33 INFO  Page:249 - [09:00, 10:00, 11:00, 12:00, 13:00, 14:00, 15:00, 16:00, 17:00, 18:00]
+2016-04-22 02:00:33 INFO  Page:241 - Select 'Time' random by text '16:00'
+2016-04-22 02:00:33 INFO  Page:94 - Type to 'First Name' value 'Test JAV'
+2016-04-22 02:00:34 INFO  Page:94 - Type to 'Last Name' value 'Selenium Tester'
+2016-04-22 02:00:34 INFO  Page:109 - Select 'Mobile Prefix' by text '+49'
+2016-04-22 02:00:34 INFO  Page:94 - Type to 'Mobile Number' value '8009994440'
+2016-04-22 02:00:34 INFO  BookingPage:127 - Looking for a price for store it...
+2016-04-22 02:00:34 INFO  BookingPage:130 - Element 'Car Price [1]' value is '24.302 EUR'
+2016-04-22 02:00:34 INFO  BookingConfirmPage:21 - Open page 'BookingConfirmPage'
+]]></system-out>
+  </testcase>
+  <testcase name="newFlowErrorMessagesTest" classname="com.auto1.cfe.tests.jav.ErrorMessagesTest" time="11.859">
+    <failure message="Url should contain &apos;confirm&apos; word&#10;Expected: is a string containing &quot;confirm&quot;&#10;     but: was &quot;https://www.vendercoche.es/booking/a779735f00c88a85857c1a60c52bbcb6/&quot;" type="java.lang.AssertionError">java.lang.AssertionError: Url should contain 'confirm' word
+Expected: is a string containing "confirm"
+     but: was "https://www.vendercoche.es/booking/a779735f00c88a85857c1a60c52bbcb6/"
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at com.auto1.cfe.tests.BaseTest.verifyAppointmentIsBooked(BaseTest.java:61)
+	at com.auto1.cfe.tests.jav.ErrorMessagesTest.newFlowErrorMessagesTest(ErrorMessagesTest.java:36)
+</failure>
+    <system-out><![CDATA[2016-04-22 02:00:34 ERROR CustomListener:47 - newFlowErrorMessagesTest --- FAILED --- 
+2016-04-22 02:00:34 ERROR CustomListener:51 - java.lang.AssertionError: Url should contain 'confirm' word
+Expected: is a string containing "confirm"
+     but: was "https://www.meteenautoverkopen.nl/booking/246f15a54834d10649f73c19d119fcf1/"
+
+
+2016-04-22 02:00:34 INFO  HttpHelper:26 - 'PROD' environment - send post request
+2016-04-22 02:00:35 INFO  HttpImpl:45 - Send 'POST' request 'https://www.wirkaufendeinauto.de/set-to-test/246f15a54834d10649f73c19d119fcf1/'
+2016-04-22 02:00:35 INFO  HttpImpl:51 - Response code '200'
+2016-04-22 02:00:35 INFO  HttpImpl:53 - Response value '{"message":"successful"}'
+2016-04-22 02:00:35 INFO  ApplicationManager:37 - Delete all cookies..
+
+
+2016-04-22 02:00:35 INFO  SelectCarPage:29 - Open page 'SelectCarPage'
+2016-04-22 02:00:35 INFO  CustomListener:31 - [TestClass name=class com.auto1.cfe.tests.jav.ErrorMessagesTest]
+2016-04-22 02:00:35 INFO  CustomListener:33 - << newFlowErrorMessagesTest >>
+2016-04-22 02:00:35 INFO  CustomListener:34 - Test parameters [car: modelVariant: 6.0 W12:331.00; type: 010600480130001; brand: Audi; model: A8; year: 2006; shape: 1025; country: spain; kilometer: 20000; ownerEmail: it-test+selenium-newcarflow-priced@wkda.de; seller: firstName: Test JAV; lastName: Selenium Tester; mobilePrefix: +49; mobileNumber: 8009994440; country: name: spain; code: es; url: https://www.vendercoche.es]
+2016-04-22 02:00:35 INFO  Page:53 - Open url 'https://www.vendercoche.es'
+2016-04-22 02:00:35 INFO  ErrorMessagesChecker:35 - Click on button 'Submit'
+2016-04-22 02:00:36 INFO  ErrorMessagesChecker:49 - Error message for 'Make/brand' is 'Por favor, selecciona la marca'
+2016-04-22 02:00:36 INFO  Page:109 - Select 'Make/brand' by text 'Audi'
+2016-04-22 02:00:36 INFO  ErrorMessagesChecker:35 - Click on button 'Submit'
+2016-04-22 02:00:36 INFO  ErrorMessagesChecker:49 - Error message for 'Model' is 'Por favor, selecciona el modelo'
+2016-04-22 02:00:36 INFO  Page:109 - Select 'Model' by text 'A8'
+2016-04-22 02:00:37 INFO  ErrorMessagesChecker:35 - Click on button 'Submit'
+2016-04-22 02:00:37 INFO  ErrorMessagesChecker:49 - Error message for 'Year' is 'Por favor, indica el año de la primera matriculación'
+2016-04-22 02:00:37 INFO  Page:147 - Select 'Year' by value '2006'
+2016-04-22 02:00:37 INFO  Page:149 - 	Text for this value is '2006'
+2016-04-22 02:00:37 INFO  Page:128 - Click on 'Submit'
+2016-04-22 02:00:38 INFO  CarInfoNewFlowPage:28 - Open page 'CarInfoNewFlowPage'
+2016-04-22 02:00:38 INFO  Page:147 - Select 'Shape' by value '1025'
+2016-04-22 02:00:39 INFO  Page:149 - 	Text for this value is 'Berlina'
+2016-04-22 02:00:39 INFO  ErrorMessagesChecker:35 - Click on button 'Submit'
+2016-04-22 02:00:39 INFO  ErrorMessagesChecker:49 - Error message for 'Details' is 'Por favor, selecciona la variante del modelo'
+2016-04-22 02:00:39 INFO  Page:147 - Select 'Details' by value '6.0 W12:331.00'
+2016-04-22 02:00:39 INFO  Page:149 - 	Text for this value is 'A8 - 6.0 W12 (331 kW  / 450 PS)'
+2016-04-22 02:00:39 INFO  ErrorMessagesChecker:35 - Click on button 'Submit'
+2016-04-22 02:00:39 INFO  ErrorMessagesChecker:49 - Error message for 'Type' is 'Por favor, selecciona el tipo'
+2016-04-22 02:00:39 INFO  Page:147 - Select 'Type' by value '010600480130001'
+2016-04-22 02:00:39 INFO  Page:149 - 	Text for this value is 'A8 quattro Lang Transmisión automática 4 Puertas'
+2016-04-22 02:00:39 INFO  ErrorMessagesChecker:35 - Click on button 'Submit'
+2016-04-22 02:00:40 INFO  ErrorMessagesChecker:49 - Error message for 'Kilometers/Miles' is 'Por favor, introduce el número de kilómetros'
+2016-04-22 02:00:40 INFO  Page:147 - Select 'Kilometers/Miles' by value '20000'
+2016-04-22 02:00:40 INFO  Page:149 - 	Text for this value is 'Hasta 20.000'
+2016-04-22 02:00:40 INFO  ErrorMessagesChecker:35 - Click on button 'Submit'
+2016-04-22 02:00:40 INFO  ErrorMessagesChecker:49 - Error message for 'Email' is 'Por favor, introduce una dirección de correo válida'
+2016-04-22 02:00:40 INFO  Page:94 - Type to 'Email' value 'it-test+selenium-newcarflow-priced@wkda.de'
+2016-04-22 02:00:40 INFO  Page:128 - Click on 'Submit'
+2016-04-22 02:00:43 INFO  BookingPage:33 - Open page 'BookingPage'
+2016-04-22 02:00:43 INFO  ErrorMessagesChecker:35 - Click on button 'Submit'
+2016-04-22 02:00:43 INFO  ErrorMessagesChecker:49 - Error message for 'First Name' is 'Por favor, introduce tu nombre'
+2016-04-22 02:00:43 INFO  ErrorMessagesChecker:49 - Error message for 'Last Name' is 'Por favor, introduce tu apellido'
+2016-04-22 02:00:43 INFO  ErrorMessagesChecker:49 - Error message for 'Mobile Number' is 'Dieses Feld ist ein Pflichtfeld.'
+2016-04-22 02:00:43 INFO  Page:246 - Data for element 'City'
+2016-04-22 02:00:44 INFO  Page:249 - [A Coruña, Albacete, Alicante, Almería, Barcelona, Bilbao, Burgos, Cáceres, Córdoba, Valencia, León, Madrid, Málaga, Mérida, Murcia, Oviedo, Palma de Mallorca, Pamplona, Cádiz, Salamanca, San Sebastian, Santander, Sevilla, Talavera de la Reina, Tarragona, Valladolid, Vigo, Vitoria, Zaragoza]
+2016-04-22 02:00:44 INFO  Page:241 - Select 'City' random by text 'Burgos'
+2016-04-22 02:00:45 INFO  Page:246 - Data for element 'Date'
+2016-04-22 02:00:45 INFO  Page:249 - [viernes, 22.04, lunes, 25.04, martes, 26.04, miércoles, 27.04, jueves, 28.04, viernes, 29.04]
+2016-04-22 02:00:45 INFO  Page:241 - Select 'Date' random by text 'martes, 26.04'
+2016-04-22 02:00:46 INFO  Page:246 - Data for element 'Time'
+2016-04-22 02:00:46 INFO  Page:249 - [09:30, 10:00, 11:00, 12:00, 13:00, 14:00, 15:00, 16:00, 17:00, 18:00]
+2016-04-22 02:00:46 INFO  Page:241 - Select 'Time' random by text '17:00'
+2016-04-22 02:00:46 INFO  Page:94 - Type to 'First Name' value 'Test JAV'
+2016-04-22 02:00:46 INFO  Page:94 - Type to 'Last Name' value 'Selenium Tester'
+2016-04-22 02:00:46 INFO  Page:109 - Select 'Mobile Prefix' by text '+49'
+2016-04-22 02:00:46 INFO  Page:94 - Type to 'Mobile Number' value '8009994440'
+2016-04-22 02:00:46 INFO  BookingPage:127 - Looking for a price for store it...
+2016-04-22 02:00:47 INFO  BookingPage:130 - Element 'Car Price [1]' value is '24.302 EUR'
+2016-04-22 02:00:47 INFO  BookingConfirmPage:21 - Open page 'BookingConfirmPage'
+]]></system-out>
+  </testcase>
+  <testcase name="newFlowErrorMessagesTest" classname="com.auto1.cfe.tests.jav.ErrorMessagesTest" time="12.192">
+    <failure message="Url should contain &apos;confirm&apos; word&#10;Expected: is a string containing &quot;confirm&quot;&#10;     but: was &quot;https://www.vendresavoiture.fr/booking/203262c95e94ae56ef4a9333bca67d8a/&quot;" type="java.lang.AssertionError">java.lang.AssertionError: Url should contain 'confirm' word
+Expected: is a string containing "confirm"
+     but: was "https://www.vendresavoiture.fr/booking/203262c95e94ae56ef4a9333bca67d8a/"
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at com.auto1.cfe.tests.BaseTest.verifyAppointmentIsBooked(BaseTest.java:61)
+	at com.auto1.cfe.tests.jav.ErrorMessagesTest.newFlowErrorMessagesTest(ErrorMessagesTest.java:36)
+</failure>
+    <system-out><![CDATA[2016-04-22 02:00:47 ERROR CustomListener:47 - newFlowErrorMessagesTest --- FAILED --- 
+2016-04-22 02:00:47 ERROR CustomListener:51 - java.lang.AssertionError: Url should contain 'confirm' word
+Expected: is a string containing "confirm"
+     but: was "https://www.vendercoche.es/booking/a779735f00c88a85857c1a60c52bbcb6/"
+
+
+2016-04-22 02:00:47 INFO  HttpHelper:26 - 'PROD' environment - send post request
+2016-04-22 02:00:47 INFO  HttpImpl:45 - Send 'POST' request 'https://www.wirkaufendeinauto.de/set-to-test/a779735f00c88a85857c1a60c52bbcb6/'
+2016-04-22 02:00:47 INFO  HttpImpl:51 - Response code '200'
+2016-04-22 02:00:47 INFO  HttpImpl:53 - Response value '{"message":"successful"}'
+2016-04-22 02:00:47 INFO  ApplicationManager:37 - Delete all cookies..
+
+
+2016-04-22 02:00:47 INFO  SelectCarPage:29 - Open page 'SelectCarPage'
+2016-04-22 02:00:47 INFO  CustomListener:31 - [TestClass name=class com.auto1.cfe.tests.jav.ErrorMessagesTest]
+2016-04-22 02:00:47 INFO  CustomListener:33 - << newFlowErrorMessagesTest >>
+2016-04-22 02:00:47 INFO  CustomListener:34 - Test parameters [car: modelVariant: 6.0 W12:331.00; type: 010600480130001; brand: Audi; model: A8; year: 2006; shape: 1025; country: france; kilometer: 20000; ownerEmail: it-test+selenium-newcarflow-priced@wkda.de; seller: firstName: Test JAV; lastName: Selenium Tester; mobilePrefix: +49; mobileNumber: 8009994440; country: name: france; code: fr; url: https://www.vendresavoiture.fr]
+2016-04-22 02:00:47 INFO  Page:53 - Open url 'https://www.vendresavoiture.fr'
+2016-04-22 02:00:48 INFO  ErrorMessagesChecker:35 - Click on button 'Submit'
+2016-04-22 02:00:48 INFO  ErrorMessagesChecker:49 - Error message for 'Make/brand' is 'Choisissez une marque'
+2016-04-22 02:00:48 INFO  Page:109 - Select 'Make/brand' by text 'Audi'
+2016-04-22 02:00:49 INFO  ErrorMessagesChecker:35 - Click on button 'Submit'
+2016-04-22 02:00:49 INFO  ErrorMessagesChecker:49 - Error message for 'Model' is 'Choisissez un modèle'
+2016-04-22 02:00:49 INFO  Page:109 - Select 'Model' by text 'A8'
+2016-04-22 02:00:49 INFO  ErrorMessagesChecker:35 - Click on button 'Submit'
+2016-04-22 02:00:50 INFO  ErrorMessagesChecker:49 - Error message for 'Year' is 'Choisissez l'année de mise en circulation'
+2016-04-22 02:00:50 INFO  Page:147 - Select 'Year' by value '2006'
+2016-04-22 02:00:50 INFO  Page:149 - 	Text for this value is '2006'
+2016-04-22 02:00:50 INFO  Page:128 - Click on 'Submit'
+2016-04-22 02:00:51 INFO  CarInfoNewFlowPage:28 - Open page 'CarInfoNewFlowPage'
+2016-04-22 02:00:51 INFO  Page:147 - Select 'Shape' by value '1025'
+2016-04-22 02:00:51 INFO  Page:149 - 	Text for this value is 'Berline'
+2016-04-22 02:00:51 INFO  ErrorMessagesChecker:35 - Click on button 'Submit'
+2016-04-22 02:00:51 INFO  ErrorMessagesChecker:49 - Error message for 'Details' is 'Choisissez une variante de modèle'
+2016-04-22 02:00:51 INFO  Page:147 - Select 'Details' by value '6.0 W12:331.00'
+2016-04-22 02:00:51 INFO  Page:149 - 	Text for this value is 'A8 - 6.0 W12 (331 kW  / 450 PS)'
+2016-04-22 02:00:51 INFO  ErrorMessagesChecker:35 - Click on button 'Submit'
+2016-04-22 02:00:52 INFO  ErrorMessagesChecker:49 - Error message for 'Type' is 'Choisissez une catégorie'
+2016-04-22 02:00:52 INFO  Page:147 - Select 'Type' by value '010600480130001'
+2016-04-22 02:00:52 INFO  Page:149 - 	Text for this value is 'A8 quattro Lang Transmission automatique 4 Portes'
+2016-04-22 02:00:52 INFO  ErrorMessagesChecker:35 - Click on button 'Submit'
+2016-04-22 02:00:52 INFO  ErrorMessagesChecker:49 - Error message for 'Kilometers/Miles' is 'Choisissez le kilométrage'
+2016-04-22 02:00:52 INFO  Page:147 - Select 'Kilometers/Miles' by value '20000'
+2016-04-22 02:00:52 INFO  Page:149 - 	Text for this value is 'Jusqu'à 20 000 km'
+2016-04-22 02:00:52 INFO  ErrorMessagesChecker:35 - Click on button 'Submit'
+2016-04-22 02:00:52 INFO  ErrorMessagesChecker:49 - Error message for 'Email' is 'Veuillez entrer une adresse e-mail valide'
+2016-04-22 02:00:52 INFO  Page:94 - Type to 'Email' value 'it-test+selenium-newcarflow-priced@wkda.de'
+2016-04-22 02:00:52 INFO  Page:128 - Click on 'Submit'
+2016-04-22 02:00:55 INFO  BookingPage:33 - Open page 'BookingPage'
+2016-04-22 02:00:55 INFO  ErrorMessagesChecker:35 - Click on button 'Submit'
+2016-04-22 02:00:55 INFO  ErrorMessagesChecker:49 - Error message for 'First Name' is 'Entrez votre prénom'
+2016-04-22 02:00:55 INFO  ErrorMessagesChecker:49 - Error message for 'Last Name' is 'Entrez votre nom'
+2016-04-22 02:00:55 INFO  ErrorMessagesChecker:49 - Error message for 'Mobile Number' is 'Dieses Feld ist ein Pflichtfeld.'
+2016-04-22 02:00:56 INFO  Page:246 - Data for element 'City'
+2016-04-22 02:00:57 INFO  Page:249 - [Aix-en-Provence, Amiens, Angers, Annecy, Annemasse, Avignon, Biarritz-Bayonne, Bordeaux, Bourges, Brest, Caen, Paris / Ile-de-France, Chambéry, Clermont-Ferrand, Colmar, Dijon, Douai-Lens, Dunkerque, Fréjus-Saint Raphaël, Grenoble, La Rochelle, Le Havre, Le Mans, Lille, Limoges, Lorient, Lyon, Marseille, Metz, Montpellier, Nancy, Nantes, Nice, Niort, Orléans, Pau, Perpignan, Poitiers, Reims, Rennes, Rouen, Saint-Brieuc, Saint-Etienne, Strasbourg, Toulon, Toulouse, Tours, Troyes, Valence, Valenciennes]
+2016-04-22 02:00:57 INFO  Page:241 - Select 'City' random by text 'Valence'
+2016-04-22 02:00:57 INFO  Page:246 - Data for element 'Date'
+2016-04-22 02:00:58 INFO  Page:249 - [vendredi, 22.04, samedi, 23.04, lundi, 25.04, mardi, 26.04, mercredi, 27.04, jeudi, 28.04, vendredi, 29.04]
+2016-04-22 02:00:58 INFO  Page:241 - Select 'Date' random by text 'lundi, 25.04'
+2016-04-22 02:00:58 INFO  Page:246 - Data for element 'Time'
+2016-04-22 02:00:58 INFO  Page:249 - [09:00, 10:00, 11:00, 13:00, 14:00, 15:00, 16:00, 17:00, 18:00]
+2016-04-22 02:00:58 INFO  Page:241 - Select 'Time' random by text '14:00'
+2016-04-22 02:00:59 INFO  Page:94 - Type to 'First Name' value 'Test JAV'
+2016-04-22 02:00:59 INFO  Page:94 - Type to 'Last Name' value 'Selenium Tester'
+2016-04-22 02:00:59 INFO  Page:109 - Select 'Mobile Prefix' by text '+49'
+2016-04-22 02:00:59 INFO  Page:94 - Type to 'Mobile Number' value '8009994440'
+2016-04-22 02:00:59 INFO  BookingPage:127 - Looking for a price for store it...
+2016-04-22 02:00:59 INFO  BookingPage:130 - Element 'Car Price [1]' value is '24 302 EUR'
+2016-04-22 02:00:59 INFO  BookingConfirmPage:21 - Open page 'BookingConfirmPage'
+]]></system-out>
+  </testcase>
+  <testcase name="newFlowErrorMessagesTest" classname="com.auto1.cfe.tests.jav.ErrorMessagesTest" time="11.399">
+    <failure message="Url should contain &apos;confirm&apos; word&#10;Expected: is a string containing &quot;confirm&quot;&#10;     but: was &quot;https://www.nuautoverkopen.be/booking/1be01a21d2412db8fa37e9a7a65e5807/&quot;" type="java.lang.AssertionError">java.lang.AssertionError: Url should contain 'confirm' word
+Expected: is a string containing "confirm"
+     but: was "https://www.nuautoverkopen.be/booking/1be01a21d2412db8fa37e9a7a65e5807/"
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at com.auto1.cfe.tests.BaseTest.verifyAppointmentIsBooked(BaseTest.java:61)
+	at com.auto1.cfe.tests.jav.ErrorMessagesTest.newFlowErrorMessagesTest(ErrorMessagesTest.java:36)
+</failure>
+    <system-out><![CDATA[2016-04-22 02:01:00 ERROR CustomListener:47 - newFlowErrorMessagesTest --- FAILED --- 
+2016-04-22 02:01:00 ERROR CustomListener:51 - java.lang.AssertionError: Url should contain 'confirm' word
+Expected: is a string containing "confirm"
+     but: was "https://www.vendresavoiture.fr/booking/203262c95e94ae56ef4a9333bca67d8a/"
+
+
+2016-04-22 02:01:00 INFO  HttpHelper:26 - 'PROD' environment - send post request
+2016-04-22 02:01:00 INFO  HttpImpl:45 - Send 'POST' request 'https://www.wirkaufendeinauto.de/set-to-test/203262c95e94ae56ef4a9333bca67d8a/'
+2016-04-22 02:01:00 INFO  HttpImpl:51 - Response code '200'
+2016-04-22 02:01:00 INFO  HttpImpl:53 - Response value '{"message":"successful"}'
+2016-04-22 02:01:00 INFO  ApplicationManager:37 - Delete all cookies..
+
+
+2016-04-22 02:01:00 INFO  SelectCarPage:29 - Open page 'SelectCarPage'
+2016-04-22 02:01:00 INFO  CustomListener:31 - [TestClass name=class com.auto1.cfe.tests.jav.ErrorMessagesTest]
+2016-04-22 02:01:00 INFO  CustomListener:33 - << newFlowErrorMessagesTest >>
+2016-04-22 02:01:00 INFO  CustomListener:34 - Test parameters [car: modelVariant: 6.0 W12:331.00; type: 010600480130001; brand: Audi; model: A8; year: 2006; shape: 1025; country: belgium; kilometer: 20000; ownerEmail: it-test+selenium-newcarflow-priced@wkda.de; seller: firstName: Test JAV; lastName: Selenium Tester; mobilePrefix: +49; mobileNumber: 8009994440; country: name: belgium; code: be; url: https://www.nuautoverkopen.be]
+2016-04-22 02:01:00 INFO  Page:53 - Open url 'https://www.nuautoverkopen.be'
+2016-04-22 02:01:00 INFO  ErrorMessagesChecker:35 - Click on button 'Submit'
+2016-04-22 02:01:01 INFO  ErrorMessagesChecker:49 - Error message for 'Make/brand' is 'Selecteer alstublieft een merk'
+2016-04-22 02:01:01 INFO  Page:109 - Select 'Make/brand' by text 'Audi'
+2016-04-22 02:01:01 INFO  ErrorMessagesChecker:35 - Click on button 'Submit'
+2016-04-22 02:01:01 INFO  ErrorMessagesChecker:49 - Error message for 'Model' is 'Selecteer alstublieft een model'
+2016-04-22 02:01:01 INFO  Page:109 - Select 'Model' by text 'A8'
+2016-04-22 02:01:02 INFO  ErrorMessagesChecker:35 - Click on button 'Submit'
+2016-04-22 02:01:02 INFO  ErrorMessagesChecker:49 - Error message for 'Year' is 'Selecteer alstublieft het toelatingsjaar'
+2016-04-22 02:01:02 INFO  Page:147 - Select 'Year' by value '2006'
+2016-04-22 02:01:03 INFO  Page:149 - 	Text for this value is '2006'
+2016-04-22 02:01:03 INFO  Page:128 - Click on 'Submit'
+2016-04-22 02:01:04 INFO  CarInfoNewFlowPage:28 - Open page 'CarInfoNewFlowPage'
+2016-04-22 02:01:04 INFO  Page:147 - Select 'Shape' by value '1025'
+2016-04-22 02:01:04 INFO  Page:149 - 	Text for this value is 'Sedan'
+2016-04-22 02:01:04 INFO  ErrorMessagesChecker:35 - Click on button 'Submit'
+2016-04-22 02:01:04 INFO  ErrorMessagesChecker:49 - Error message for 'Details' is 'Selecteer alstublieft een variant'
+2016-04-22 02:01:04 INFO  Page:147 - Select 'Details' by value '6.0 W12:331.00'
+2016-04-22 02:01:04 INFO  Page:149 - 	Text for this value is 'A8 - 6.0 W12 (331 kW  / 450 PS)'
+2016-04-22 02:01:04 INFO  ErrorMessagesChecker:35 - Click on button 'Submit'
+2016-04-22 02:01:04 INFO  ErrorMessagesChecker:49 - Error message for 'Type' is 'Selecteer alstublieft een type'
+2016-04-22 02:01:04 INFO  Page:147 - Select 'Type' by value '010600480130001'
+2016-04-22 02:01:05 INFO  Page:149 - 	Text for this value is 'A8 quattro Lang Automatisch 4 Deuren'
+2016-04-22 02:01:05 INFO  ErrorMessagesChecker:35 - Click on button 'Submit'
+2016-04-22 02:01:05 INFO  ErrorMessagesChecker:49 - Error message for 'Kilometers/Miles' is 'Selecteer alstublieft de kilometerstand'
+2016-04-22 02:01:05 INFO  Page:147 - Select 'Kilometers/Miles' by value '20000'
+2016-04-22 02:01:05 INFO  Page:149 - 	Text for this value is 'Tot 20.000'
+2016-04-22 02:01:05 INFO  ErrorMessagesChecker:35 - Click on button 'Submit'
+2016-04-22 02:01:05 INFO  ErrorMessagesChecker:49 - Error message for 'Email' is 'Voer alstublieft een geldig e-mailadres in'
+2016-04-22 02:01:05 INFO  Page:94 - Type to 'Email' value 'it-test+selenium-newcarflow-priced@wkda.de'
+2016-04-22 02:01:05 INFO  Page:128 - Click on 'Submit'
+2016-04-22 02:01:08 INFO  BookingPage:33 - Open page 'BookingPage'
+2016-04-22 02:01:08 INFO  ErrorMessagesChecker:35 - Click on button 'Submit'
+2016-04-22 02:01:08 INFO  ErrorMessagesChecker:49 - Error message for 'First Name' is 'Voer alstublieft uw voornaam in'
+2016-04-22 02:01:08 INFO  ErrorMessagesChecker:49 - Error message for 'Last Name' is 'Voer alstublieft uw achternaam in'
+2016-04-22 02:01:08 INFO  ErrorMessagesChecker:49 - Error message for 'Mobile Number' is 'Dieses Feld ist ein Pflichtfeld.'
+2016-04-22 02:01:08 INFO  Page:246 - Data for element 'City'
+2016-04-22 02:01:09 INFO  Page:249 - [Antwerpen, Arlon, Brugge, Bruxelles-Brussel, Charleroi, Genk, Gent, Hasselt, Herentals, Kortrijk, Leuven, Liège, Mechelen, Mons, Namur, Sint Niklaas, Tournai, Turnhout]
+2016-04-22 02:01:09 INFO  Page:241 - Select 'City' random by text 'Arlon'
+2016-04-22 02:01:09 INFO  Page:246 - Data for element 'Date'
+2016-04-22 02:01:09 INFO  Page:249 - [vrijdag, 22.04, zaterdag, 23.04, maandag, 25.04, dinsdag, 26.04, woensdag, 27.04, donderdag, 28.04, vrijdag, 29.04]
+2016-04-22 02:01:09 INFO  Page:241 - Select 'Date' random by text 'maandag, 25.04'
+2016-04-22 02:01:10 INFO  Page:246 - Data for element 'Time'
+2016-04-22 02:01:10 INFO  Page:249 - [10:00, 11:00, 12:00, 13:00, 14:00, 15:00, 16:00, 17:00]
+2016-04-22 02:01:10 INFO  Page:241 - Select 'Time' random by text '17:00'
+2016-04-22 02:01:10 INFO  Page:94 - Type to 'First Name' value 'Test JAV'
+2016-04-22 02:01:11 INFO  Page:94 - Type to 'Last Name' value 'Selenium Tester'
+2016-04-22 02:01:11 INFO  Page:109 - Select 'Mobile Prefix' by text '+49'
+2016-04-22 02:01:11 INFO  Page:94 - Type to 'Mobile Number' value '8009994440'
+2016-04-22 02:01:11 INFO  BookingPage:127 - Looking for a price for store it...
+2016-04-22 02:01:11 INFO  BookingPage:130 - Element 'Car Price [1]' value is '24.302 EUR'
+2016-04-22 02:01:11 INFO  BookingConfirmPage:21 - Open page 'BookingConfirmPage'
+]]></system-out>
+  </testcase>
+  <testcase name="newFlowErrorMessagesTest" classname="com.auto1.cfe.tests.jav.ErrorMessagesTest" time="13.531">
+    <failure message="Url should contain &apos;confirm&apos; word&#10;Expected: is a string containing &quot;confirm&quot;&#10;     but: was &quot;https://www.vendo-auto.it/booking/8b98126a989667aa8faf648b2eee0af8/&quot;" type="java.lang.AssertionError">java.lang.AssertionError: Url should contain 'confirm' word
+Expected: is a string containing "confirm"
+     but: was "https://www.vendo-auto.it/booking/8b98126a989667aa8faf648b2eee0af8/"
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at com.auto1.cfe.tests.BaseTest.verifyAppointmentIsBooked(BaseTest.java:61)
+	at com.auto1.cfe.tests.jav.ErrorMessagesTest.newFlowErrorMessagesTest(ErrorMessagesTest.java:36)
+</failure>
+    <system-out><![CDATA[2016-04-22 02:01:11 ERROR CustomListener:47 - newFlowErrorMessagesTest --- FAILED --- 
+2016-04-22 02:01:11 ERROR CustomListener:51 - java.lang.AssertionError: Url should contain 'confirm' word
+Expected: is a string containing "confirm"
+     but: was "https://www.nuautoverkopen.be/booking/1be01a21d2412db8fa37e9a7a65e5807/"
+
+
+2016-04-22 02:01:11 INFO  HttpHelper:26 - 'PROD' environment - send post request
+2016-04-22 02:01:11 INFO  HttpImpl:45 - Send 'POST' request 'https://www.wirkaufendeinauto.de/set-to-test/1be01a21d2412db8fa37e9a7a65e5807/'
+2016-04-22 02:01:12 INFO  HttpImpl:51 - Response code '200'
+2016-04-22 02:01:12 INFO  HttpImpl:53 - Response value '{"message":"successful"}'
+2016-04-22 02:01:12 INFO  ApplicationManager:37 - Delete all cookies..
+
+
+2016-04-22 02:01:12 INFO  SelectCarPage:29 - Open page 'SelectCarPage'
+2016-04-22 02:01:12 INFO  CustomListener:31 - [TestClass name=class com.auto1.cfe.tests.jav.ErrorMessagesTest]
+2016-04-22 02:01:12 INFO  CustomListener:33 - << newFlowErrorMessagesTest >>
+2016-04-22 02:01:12 INFO  CustomListener:34 - Test parameters [car: modelVariant: 6.0 W12:331.00; type: 010600480130001; brand: Audi; model: A8; year: 2006; shape: 1025; country: italy; kilometer: 20000; ownerEmail: it-test+selenium-newcarflow-priced@wkda.de; seller: firstName: Test JAV; lastName: Selenium Tester; mobilePrefix: +49; mobileNumber: 8009994440; country: name: italy; code: it; url: https://www.vendo-auto.it]
+2016-04-22 02:01:12 INFO  Page:53 - Open url 'https://www.vendo-auto.it'
+2016-04-22 02:01:12 INFO  ErrorMessagesChecker:35 - Click on button 'Submit'
+2016-04-22 02:01:13 INFO  ErrorMessagesChecker:49 - Error message for 'Make/brand' is 'Seleziona la marca'
+2016-04-22 02:01:13 INFO  Page:109 - Select 'Make/brand' by text 'Audi'
+2016-04-22 02:01:13 INFO  ErrorMessagesChecker:35 - Click on button 'Submit'
+2016-04-22 02:01:13 INFO  ErrorMessagesChecker:49 - Error message for 'Model' is 'Seleziona il modello'
+2016-04-22 02:01:13 INFO  Page:109 - Select 'Model' by text 'A8'
+2016-04-22 02:01:14 INFO  ErrorMessagesChecker:35 - Click on button 'Submit'
+2016-04-22 02:01:14 INFO  ErrorMessagesChecker:49 - Error message for 'Year' is 'Seleziona l'anno di immatricolazione'
+2016-04-22 02:01:14 INFO  Page:147 - Select 'Year' by value '2006'
+2016-04-22 02:01:14 INFO  Page:149 - 	Text for this value is '2006'
+2016-04-22 02:01:14 INFO  Page:128 - Click on 'Submit'
+2016-04-22 02:01:16 INFO  CarInfoNewFlowPage:28 - Open page 'CarInfoNewFlowPage'
+2016-04-22 02:01:16 INFO  Page:147 - Select 'Shape' by value '1025'
+2016-04-22 02:01:16 INFO  Page:149 - 	Text for this value is 'Berlina'
+2016-04-22 02:01:16 INFO  ErrorMessagesChecker:35 - Click on button 'Submit'
+2016-04-22 02:01:16 INFO  ErrorMessagesChecker:49 - Error message for 'Details' is 'Seleziona il tipo di modello'
+2016-04-22 02:01:16 INFO  Page:147 - Select 'Details' by value '6.0 W12:331.00'
+2016-04-22 02:01:16 INFO  Page:149 - 	Text for this value is 'A8 - 6.0 W12 (331 kW  / 450 PS)'
+2016-04-22 02:01:16 INFO  ErrorMessagesChecker:35 - Click on button 'Submit'
+2016-04-22 02:01:16 INFO  ErrorMessagesChecker:49 - Error message for 'Type' is 'Seleziona il tipo di auto'
+2016-04-22 02:01:16 INFO  Page:147 - Select 'Type' by value '010600480130001'
+2016-04-22 02:01:17 INFO  Page:149 - 	Text for this value is 'A8 quattro Lang Cambio automatico 4 Porte'
+2016-04-22 02:01:17 INFO  ErrorMessagesChecker:35 - Click on button 'Submit'
+2016-04-22 02:01:17 INFO  ErrorMessagesChecker:49 - Error message for 'Kilometers/Miles' is 'Seleziona il chilometraggio'
+2016-04-22 02:01:17 INFO  Page:147 - Select 'Kilometers/Miles' by value '20000'
+2016-04-22 02:01:17 INFO  Page:149 - 	Text for this value is 'Fino a 20.000'
+2016-04-22 02:01:17 INFO  ErrorMessagesChecker:35 - Click on button 'Submit'
+2016-04-22 02:01:17 INFO  ErrorMessagesChecker:49 - Error message for 'Email' is 'Inserisci un indirizzo email valido'
+2016-04-22 02:01:17 INFO  Page:94 - Type to 'Email' value 'it-test+selenium-newcarflow-priced@wkda.de'
+2016-04-22 02:01:17 INFO  Page:128 - Click on 'Submit'
+2016-04-22 02:01:20 INFO  BookingPage:33 - Open page 'BookingPage'
+2016-04-22 02:01:20 INFO  ErrorMessagesChecker:35 - Click on button 'Submit'
+2016-04-22 02:01:20 INFO  ErrorMessagesChecker:49 - Error message for 'First Name' is 'Inserisci il tuo nome'
+2016-04-22 02:01:20 INFO  ErrorMessagesChecker:49 - Error message for 'Last Name' is 'Inserisci il tuo cognome'
+2016-04-22 02:01:20 INFO  ErrorMessagesChecker:49 - Error message for 'Mobile Number' is 'Dieses Feld ist ein Pflichtfeld.'
+2016-04-22 02:01:21 INFO  Page:246 - Data for element 'City'
+2016-04-22 02:01:21 INFO  Page:249 - [Ancona, Asti, Bari, Bergamo, Bologna, Brescia, Cagliari, Catania, Firenze, Foggia, Genova, Latina, Lecce, Livorno, Mantova, Milano, Modena, Monza, Napoli, Novara, Padova, Palermo, Pavia, Perugia, Pescara, Piacenza, Potenza, Reggio Emilia, Rimini, Roma, Salerno, Sassari, Torino, Treviso, Trieste, Venezia, Verona, Vicenza]
+2016-04-22 02:01:21 INFO  Page:241 - Select 'City' random by text 'Rimini'
+2016-04-22 02:01:23 INFO  Page:246 - Data for element 'Date'
+2016-04-22 02:01:23 INFO  Page:249 - [venerdì, 22/04, sabato, 23/04, martedì, 26/04, mercoledì, 27/04, giovedì, 28/04, venerdì, 29/04]
+2016-04-22 02:01:23 INFO  Page:241 - Select 'Date' random by text 'venerdì, 29/04'
+2016-04-22 02:01:24 INFO  Page:246 - Data for element 'Time'
+2016-04-22 02:01:24 INFO  Page:249 - [08:00, 09:00, 10:00, 11:00, 12:00, 13:00, 14:00, 15:00, 16:00, 17:00, 18:00, 19:00]
+2016-04-22 02:01:24 INFO  Page:241 - Select 'Time' random by text '09:00'
+2016-04-22 02:01:24 INFO  Page:94 - Type to 'First Name' value 'Test JAV'
+2016-04-22 02:01:24 INFO  Page:94 - Type to 'Last Name' value 'Selenium Tester'
+2016-04-22 02:01:25 INFO  Page:109 - Select 'Mobile Prefix' by text '+49'
+2016-04-22 02:01:25 INFO  Page:94 - Type to 'Mobile Number' value '8009994440'
+2016-04-22 02:01:25 INFO  BookingPage:127 - Looking for a price for store it...
+2016-04-22 02:01:25 INFO  BookingPage:130 - Element 'Car Price [1]' value is '24.302 EUR'
+2016-04-22 02:01:25 INFO  BookingConfirmPage:21 - Open page 'BookingConfirmPage'
+]]></system-out>
+  </testcase>
+  <testcase name="newFlowErrorMessagesTest" classname="com.auto1.cfe.tests.jav.ErrorMessagesTest" time="13.766">
+    <failure message="Url should contain &apos;confirm&apos; word&#10;Expected: is a string containing &quot;confirm&quot;&#10;     but: was &quot;https://www.saljaminbil.se/booking/e2299329ada496000105158cf2e03f52/&quot;" type="java.lang.AssertionError">java.lang.AssertionError: Url should contain 'confirm' word
+Expected: is a string containing "confirm"
+     but: was "https://www.saljaminbil.se/booking/e2299329ada496000105158cf2e03f52/"
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at com.auto1.cfe.tests.BaseTest.verifyAppointmentIsBooked(BaseTest.java:61)
+	at com.auto1.cfe.tests.jav.ErrorMessagesTest.newFlowErrorMessagesTest(ErrorMessagesTest.java:36)
+</failure>
+    <system-out><![CDATA[2016-04-22 02:01:25 ERROR CustomListener:47 - newFlowErrorMessagesTest --- FAILED --- 
+2016-04-22 02:01:25 ERROR CustomListener:51 - java.lang.AssertionError: Url should contain 'confirm' word
+Expected: is a string containing "confirm"
+     but: was "https://www.vendo-auto.it/booking/8b98126a989667aa8faf648b2eee0af8/"
+
+
+2016-04-22 02:01:25 INFO  HttpHelper:26 - 'PROD' environment - send post request
+2016-04-22 02:01:25 INFO  HttpImpl:45 - Send 'POST' request 'https://www.wirkaufendeinauto.de/set-to-test/8b98126a989667aa8faf648b2eee0af8/'
+2016-04-22 02:01:26 INFO  HttpImpl:51 - Response code '200'
+2016-04-22 02:01:26 INFO  HttpImpl:53 - Response value '{"message":"successful"}'
+2016-04-22 02:01:26 INFO  ApplicationManager:37 - Delete all cookies..
+
+
+2016-04-22 02:01:26 INFO  SelectCarPage:29 - Open page 'SelectCarPage'
+2016-04-22 02:01:26 INFO  CustomListener:31 - [TestClass name=class com.auto1.cfe.tests.jav.ErrorMessagesTest]
+2016-04-22 02:01:26 INFO  CustomListener:33 - << newFlowErrorMessagesTest >>
+2016-04-22 02:01:26 INFO  CustomListener:34 - Test parameters [car: modelVariant: 6.0 W12:331.00; type: 010600480130001; brand: Audi; model: A8; year: 2006; shape: 1025; country: sweden; kilometer: 20000; ownerEmail: it-test+selenium-newcarflow-priced@wkda.de; seller: firstName: Test JAV; lastName: Selenium Tester; mobilePrefix: +49; mobileNumber: 8009994440; country: name: sweden; code: se; url: https://www.saljaminbil.se]
+2016-04-22 02:01:26 INFO  Page:53 - Open url 'https://www.saljaminbil.se'
+2016-04-22 02:01:26 INFO  ErrorMessagesChecker:35 - Click on button 'Submit'
+2016-04-22 02:01:27 INFO  ErrorMessagesChecker:49 - Error message for 'Make/brand' is 'Välj märke'
+2016-04-22 02:01:27 INFO  Page:109 - Select 'Make/brand' by text 'Audi'
+2016-04-22 02:01:27 INFO  ErrorMessagesChecker:35 - Click on button 'Submit'
+2016-04-22 02:01:27 INFO  ErrorMessagesChecker:49 - Error message for 'Model' is 'Var vänlig ange modell'
+2016-04-22 02:01:27 INFO  Page:109 - Select 'Model' by text 'A8'
+2016-04-22 02:01:28 INFO  ErrorMessagesChecker:35 - Click on button 'Submit'
+2016-04-22 02:01:28 INFO  ErrorMessagesChecker:49 - Error message for 'Year' is 'Var vänlig ange registreringsår'
+2016-04-22 02:01:28 INFO  Page:147 - Select 'Year' by value '2006'
+2016-04-22 02:01:28 INFO  Page:149 - 	Text for this value is '2006'
+2016-04-22 02:01:28 INFO  Page:128 - Click on 'Submit'
+2016-04-22 02:01:29 INFO  CarInfoNewFlowPage:28 - Open page 'CarInfoNewFlowPage'
+2016-04-22 02:01:29 INFO  Page:147 - Select 'Shape' by value '1025'
+2016-04-22 02:01:30 INFO  Page:149 - 	Text for this value is 'Sedan'
+2016-04-22 02:01:30 INFO  ErrorMessagesChecker:35 - Click on button 'Submit'
+2016-04-22 02:01:30 INFO  ErrorMessagesChecker:49 - Error message for 'Details' is 'Var vänlig välj modell'
+2016-04-22 02:01:30 INFO  Page:147 - Select 'Details' by value '6.0 W12:331.00'
+2016-04-22 02:01:30 INFO  Page:149 - 	Text for this value is 'A8 - 6.0 W12 (331 kW  / 450 PS)'
+2016-04-22 02:01:31 INFO  ErrorMessagesChecker:35 - Click on button 'Submit'
+2016-04-22 02:01:31 INFO  ErrorMessagesChecker:49 - Error message for 'Type' is 'Var vänlig ange typ'
+2016-04-22 02:01:31 INFO  Page:147 - Select 'Type' by value '010600480130001'
+2016-04-22 02:01:31 INFO  Page:149 - 	Text for this value is 'A8 quattro Lang Automat 4 Dörrar'
+2016-04-22 02:01:31 INFO  Page:128 - Click on 'Submit'
+2016-04-22 02:01:31 INFO  CarInfoPage:25 - Open page 'CustomPage'
+2016-04-22 02:01:31 INFO  ErrorMessagesChecker:35 - Click on button 'Submit'
+2016-04-22 02:01:31 INFO  ErrorMessagesChecker:49 - Error message for 'Kilometer' is 'Välj mätarställning'
+2016-04-22 02:01:31 INFO  Page:147 - Select 'Kilometer' by value '20000'
+2016-04-22 02:01:31 INFO  Page:149 - 	Text for this value is 'Upp till 2 000 mil'
+2016-04-22 02:01:31 INFO  ErrorMessagesChecker:35 - Click on button 'Submit'
+2016-04-22 02:01:31 INFO  ErrorMessagesChecker:49 - Error message for 'Email' is 'Var vänlig skriv in en korrekt mejladress'
+2016-04-22 02:01:31 INFO  Page:94 - Type to 'Email' value 'it-test+selenium-newcarflow-priced@wkda.de'
+2016-04-22 02:01:32 INFO  Page:128 - Click on 'Submit'
+2016-04-22 02:01:36 INFO  BookingPage:33 - Open page 'BookingPage'
+2016-04-22 02:01:36 INFO  ErrorMessagesChecker:35 - Click on button 'Submit'
+2016-04-22 02:01:36 INFO  ErrorMessagesChecker:49 - Error message for 'First Name' is 'Var vänlig ange ditt namn'
+2016-04-22 02:01:36 INFO  ErrorMessagesChecker:49 - Error message for 'Last Name' is 'Var vänlig ange ditt efternamn'
+2016-04-22 02:01:36 INFO  ErrorMessagesChecker:49 - Error message for 'Mobile Number' is 'Dieses Feld ist ein Pflichtfeld.'
+2016-04-22 02:01:37 INFO  Page:246 - Data for element 'City'
+2016-04-22 02:01:37 INFO  Page:249 - [Göteborg, Helsingborg, Jönköping, Malmö, Norrköping, Örebro, Stockholm, Uppsala, Västerås]
+2016-04-22 02:01:37 INFO  Page:241 - Select 'City' random by text 'Örebro'
+2016-04-22 02:01:38 INFO  Page:246 - Data for element 'Date'
+2016-04-22 02:01:38 INFO  Page:249 - [fredag, 22.04, lördag, 23.04, måndag, 25.04, tisdag, 26.04, onsdag, 27.04, torsdag, 28.04, fredag, 29.04]
+2016-04-22 02:01:38 INFO  Page:241 - Select 'Date' random by text 'måndag, 25.04'
+2016-04-22 02:01:38 INFO  Page:246 - Data for element 'Time'
+2016-04-22 02:01:39 INFO  Page:249 - [10:00, 11:00, 12:00, 13:00, 14:00, 15:00, 16:00, 17:00, 18:00]
+2016-04-22 02:01:39 INFO  Page:241 - Select 'Time' random by text '13:00'
+2016-04-22 02:01:39 INFO  Page:94 - Type to 'First Name' value 'Test JAV'
+2016-04-22 02:01:39 INFO  Page:94 - Type to 'Last Name' value 'Selenium Tester'
+2016-04-22 02:01:39 INFO  Page:109 - Select 'Mobile Prefix' by text '+49'
+2016-04-22 02:01:39 INFO  Page:94 - Type to 'Mobile Number' value '8009994440'
+2016-04-22 02:01:39 INFO  BookingPage:127 - Looking for a price for store it...
+2016-04-22 02:01:39 INFO  BookingPage:130 - Element 'Car Price [1]' value is '205 677 SEK'
+2016-04-22 02:01:39 INFO  BookingConfirmPage:21 - Open page 'BookingConfirmPage'
+]]></system-out>
+  </testcase>
+  <testcase name="oldFlowErrorMessagesTest" classname="com.auto1.cfe.tests.jav.ErrorMessagesTest" time="37.039"/>
+  <testcase name="oldFlowErrorMessagesTest" classname="com.auto1.cfe.tests.jav.ErrorMessagesTest" time="37.046"/>
+  <testcase name="oldFlowErrorMessagesTest" classname="com.auto1.cfe.tests.jav.ErrorMessagesTest" time="38.244"/>
+  <testcase name="oldFlowErrorMessagesTest" classname="com.auto1.cfe.tests.jav.ErrorMessagesTest" time="37.139"/>
+  <testcase name="oldFlowErrorMessagesTest" classname="com.auto1.cfe.tests.jav.ErrorMessagesTest" time="37.291"/>
+  <testcase name="oldFlowErrorMessagesTest" classname="com.auto1.cfe.tests.jav.ErrorMessagesTest" time="36.984"/>
+  <testcase name="oldFlowErrorMessagesTest" classname="com.auto1.cfe.tests.jav.ErrorMessagesTest" time="37.994"/>
+  <testcase name="oldFlowErrorMessagesTest" classname="com.auto1.cfe.tests.jav.ErrorMessagesTest" time="37.036"/>
+  <testcase name="newCarFlowBookingTest" classname="com.auto1.cfe.tests.jav.SellCarTest" time="13.311"/>
+  <testcase name="newCarFlowBookingTest" classname="com.auto1.cfe.tests.jav.SellCarTest" time="13.131"/>
+  <testcase name="newCarFlowBookingTest" classname="com.auto1.cfe.tests.jav.SellCarTest" time="12.476"/>
+  <testcase name="newCarFlowBookingTest" classname="com.auto1.cfe.tests.jav.SellCarTest" time="13.139"/>
+  <testcase name="newCarFlowBookingTest" classname="com.auto1.cfe.tests.jav.SellCarTest" time="11.884"/>
+  <testcase name="newCarFlowBookingTest" classname="com.auto1.cfe.tests.jav.SellCarTest" time="12.619"/>
+  <testcase name="newCarFlowBookingTest" classname="com.auto1.cfe.tests.jav.SellCarTest" time="12.372"/>
+  <testcase name="newCarFlowBookingTest" classname="com.auto1.cfe.tests.jav.SellCarTest" time="12.026"/>
+  <testcase name="oldCarFlowBookingTest" classname="com.auto1.cfe.tests.jav.SellCarTest" time="38.074"/>
+  <testcase name="oldCarFlowBookingTest" classname="com.auto1.cfe.tests.jav.SellCarTest" time="34.944"/>
+  <testcase name="oldCarFlowBookingTest" classname="com.auto1.cfe.tests.jav.SellCarTest" time="36.04"/>
+  <testcase name="oldCarFlowBookingTest" classname="com.auto1.cfe.tests.jav.SellCarTest" time="35.399"/>
+  <testcase name="oldCarFlowBookingTest" classname="com.auto1.cfe.tests.jav.SellCarTest" time="35.794"/>
+  <testcase name="oldCarFlowBookingTest" classname="com.auto1.cfe.tests.jav.SellCarTest" time="35.366"/>
+  <testcase name="oldCarFlowBookingTest" classname="com.auto1.cfe.tests.jav.SellCarTest" time="35.573"/>
+  <testcase name="oldCarFlowBookingTest" classname="com.auto1.cfe.tests.jav.SellCarTest" time="37.543"/>
+  <testcase name="newCidTrackingTest" classname="com.auto1.cfe.tests.jav.TrackingCidTest" time="21.39"/>
+  <testcase name="newCidTrackingTest" classname="com.auto1.cfe.tests.jav.TrackingCidTest" time="16.241"/>
+  <testcase name="newCidTrackingTest" classname="com.auto1.cfe.tests.jav.TrackingCidTest" time="17.01"/>
+  <testcase name="newCidTrackingTest" classname="com.auto1.cfe.tests.jav.TrackingCidTest" time="18.39"/>
+  <testcase name="newCidTrackingTest" classname="com.auto1.cfe.tests.jav.TrackingCidTest" time="19.262"/>
+  <testcase name="newCidTrackingTest" classname="com.auto1.cfe.tests.jav.TrackingCidTest" time="15.424"/>
+  <testcase name="newCidTrackingTest" classname="com.auto1.cfe.tests.jav.TrackingCidTest" time="16.498"/>
+  <testcase name="newCidTrackingTest" classname="com.auto1.cfe.tests.jav.TrackingCidTest" time="17.287"/>
+  <testcase name="newCidTrackingWithCrmTest" classname="com.auto1.cfe.tests.jav.TrackingCidTest" time="20.102"/>
+  <testcase name="newCidTrackingWithCrmTest" classname="com.auto1.cfe.tests.jav.TrackingCidTest" time="17.308"/>
+  <testcase name="newCidTrackingWithCrmTest" classname="com.auto1.cfe.tests.jav.TrackingCidTest" time="16.746"/>
+  <testcase name="newCidTrackingWithCrmTest" classname="com.auto1.cfe.tests.jav.TrackingCidTest" time="17.487"/>
+  <testcase name="newCidTrackingWithCrmTest" classname="com.auto1.cfe.tests.jav.TrackingCidTest" time="15.482"/>
+  <testcase name="newCidTrackingWithCrmTest" classname="com.auto1.cfe.tests.jav.TrackingCidTest" time="16.527"/>
+  <testcase name="newCidTrackingWithCrmTest" classname="com.auto1.cfe.tests.jav.TrackingCidTest" time="17.885"/>
+  <testcase name="newCidTrackingWithCrmTest" classname="com.auto1.cfe.tests.jav.TrackingCidTest" time="17.595"/>
+  <testcase name="newFlowTransactionEmailsTest" classname="com.auto1.cfe.tests.jav.TransactionalEmailsTest" time="39.734">
+    <failure message="There is an issue with the pricing or booking e-mail template" type="java.lang.AssertionError">java.lang.AssertionError: There is an issue with the pricing or booking e-mail template
+	at com.auto1.cfe.common.mail.MailHelper.checkWhetherEmailHasProperLink(MailHelper.java:159)
+	at com.auto1.cfe.common.mail.MailHelper.checkWhetherEmailHasProperLink(MailHelper.java:91)
+	at com.auto1.cfe.common.mail.MailHelper.checkEmail(MailHelper.java:67)
+	at com.auto1.cfe.tests.jav.TransactionalEmailsTest.newFlowTransactionEmailsTest(TransactionalEmailsTest.java:37)
+</failure>
+    <system-out><![CDATA[2016-04-22 02:18:02 INFO  CustomListener:42 - newCidTrackingWithCrmTest --- SUCCESS ---
+
+2016-04-22 02:18:02 INFO  ApplicationManager:37 - Delete all cookies..
+
+
+2016-04-22 02:18:02 INFO  ApplicationManager:44 - Stop browser..
+2016-04-22 02:18:02 INFO  ApplicationManager:22 - Start browser 'chrome'
+2016-04-22 02:18:02 INFO  ApplicationManager:74 - Detected OS is 'WINDOWS'
+2016-04-22 02:18:02 INFO  ApplicationManager:75 - Chrome driver path is './src/test/resources/drivers/win/chromedriver.exe'
+2016-04-22 02:18:02 INFO  ApplicationManager:76 - IE driver path is './src/test/resources/drivers/win/IEDriverServer.exe'
+2016-04-22 02:18:03 INFO  SelectCarPage:29 - Open page 'SelectCarPage'
+2016-04-22 02:18:03 INFO  CustomListener:31 - [TestClass name=class com.auto1.cfe.tests.jav.TransactionalEmailsTest]
+2016-04-22 02:18:03 INFO  CustomListener:33 - << newFlowTransactionEmailsTest >>
+2016-04-22 02:18:03 INFO  CustomListener:34 - Test parameters [car: modelVariant: 6.0 W12:331.00; type: 010600480130001; brand: Audi; model: A8; year: 2006; shape: 1025; country: germany; kilometer: 20000; ownerEmail: it-test+selenium-newcarflow-priced@wkda.de; seller: firstName: Test JAV; lastName: Selenium Tester; mobilePrefix: +49; mobileNumber: 8009994440; country: name: germany; code: de; url: https://www.jetztautoverkaufen.de]
+2016-04-22 02:18:03 INFO  MailHelper:245 - Email 'it-test+selenium-newcarflow-priced-2016-04-22.02-18-03-de@wkda.de'
+2016-04-22 02:18:03 INFO  Page:53 - Open url 'https://www.jetztautoverkaufen.de'
+2016-04-22 02:18:04 INFO  Page:109 - Select 'Make/brand' by text 'Audi'
+2016-04-22 02:18:05 INFO  Page:109 - Select 'Model' by text 'A8'
+2016-04-22 02:18:06 INFO  Page:147 - Select 'Year' by value '2006'
+2016-04-22 02:18:06 INFO  Page:149 - 	Text for this value is '2006'
+2016-04-22 02:18:06 INFO  Page:128 - Click on 'Submit'
+2016-04-22 02:18:07 INFO  CarInfoNewFlowPage:28 - Open page 'CarInfoNewFlowPage'
+2016-04-22 02:18:07 INFO  Page:147 - Select 'Shape' by value '1025'
+2016-04-22 02:18:07 INFO  Page:149 - 	Text for this value is 'Limousine'
+2016-04-22 02:18:07 INFO  Page:147 - Select 'Details' by value '6.0 W12:331.00'
+2016-04-22 02:18:08 INFO  Page:149 - 	Text for this value is 'A8 - 6.0 W12 (331 kW  / 450 PS)'
+2016-04-22 02:18:08 INFO  Page:147 - Select 'Type' by value '010600480130001'
+2016-04-22 02:18:08 INFO  Page:149 - 	Text for this value is 'A8 quattro Lang Automatisches Getriebe 4 Türen'
+2016-04-22 02:18:08 INFO  Page:147 - Select 'Kilometers/Miles' by value '20000'
+2016-04-22 02:18:08 INFO  Page:149 - 	Text for this value is 'Bis 20.000'
+2016-04-22 02:18:08 INFO  Page:94 - Type to 'Email' value 'it-test+selenium-newcarflow-priced-2016-04-22.02-18-03-de@wkda.de'
+2016-04-22 02:18:08 INFO  Page:128 - Click on 'Submit'
+2016-04-22 02:18:11 INFO  BookingPage:33 - Open page 'BookingPage'
+2016-04-22 02:18:11 INFO  Page:246 - Data for element 'City'
+2016-04-22 02:18:12 INFO  Page:249 - [Aachen, Arnsberg, Augsburg, Baden-Baden, Bautzen, Bayreuth, Berlin, Bielefeld, Bochum, Bonn, Braunschweig, Bremen, Bremerhaven, Chemnitz, Cottbus, Darmstadt, Deggendorf, Dessau-Roßlau, Donaueschingen, Dortmund, Dresden, Duisburg, Düsseldorf, Elmshorn, Erfurt, Essen, Flensburg, Frankfurt, Fulda, Gera, Gießen, Göttingen, Halle, Hamburg, Hanau, Hannover, Heidenheim an der Brenz, Heilbronn, Herrenberg, Hof, Ingolstadt, Kaiserslautern, Kamen, Karlsruhe, Kassel, Kempten (Allgäu), Kiel, Köln, Leipzig, Lübeck, Ludwigsburg, Magdeburg, Mainz, Mannheim, Mönchengladbach, Mülheim-Kärlich, München, Münster, Neubrandenburg, Nürnberg, Oberhausen, Oldenburg, Osnabrück, Paderborn, Potsdam, Regensburg, Rostock, Saarbrücken, Schweinfurt, Schwerin, Siegen, Solingen, Stuttgart, Trier, Ulm-Senden, Weiden, Wilhelmshaven, Worms, Wuppertal]
+2016-04-22 02:18:13 INFO  Page:241 - Select 'City' random by text 'Dortmund'
+2016-04-22 02:18:13 INFO  Page:246 - Data for element 'Branch'
+2016-04-22 02:18:13 INFO  Page:249 - [Dortmund-Oberdorstfeld, Dortmund-Wambel]
+2016-04-22 02:18:13 INFO  Page:241 - Select 'Branch' random by text 'Dortmund-Oberdorstfeld'
+2016-04-22 02:18:15 INFO  Page:246 - Data for element 'Date'
+2016-04-22 02:18:15 INFO  Page:249 - [Freitag, 22.04, Samstag, 23.04, Montag, 25.04, Dienstag, 26.04, Mittwoch, 27.04, Donnerstag, 28.04, Freitag, 29.04]
+2016-04-22 02:18:15 INFO  Page:241 - Select 'Date' random by text 'Freitag, 22.04'
+2016-04-22 02:18:15 INFO  Page:246 - Data for element 'Time'
+2016-04-22 02:18:15 INFO  Page:249 - [08:00, 11:00, 12:00, 13:00, 14:00, 15:00, 16:00, 17:00, 18:00, 19:00]
+2016-04-22 02:18:15 INFO  Page:241 - Select 'Time' random by text '14:00'
+2016-04-22 02:18:15 INFO  Page:94 - Type to 'First Name' value 'Test JAV'
+2016-04-22 02:18:15 INFO  Page:94 - Type to 'Last Name' value 'Selenium Tester'
+2016-04-22 02:18:15 INFO  Page:109 - Select 'Mobile Prefix' by text '+49'
+2016-04-22 02:18:16 INFO  Page:94 - Type to 'Mobile Number' value '8009994440'
+2016-04-22 02:18:16 INFO  BookingPage:127 - Looking for a price for store it...
+2016-04-22 02:18:16 INFO  BookingPage:130 - Element 'Car Price [1]' value is '24.302 EUR'
+2016-04-22 02:18:17 INFO  BookingConfirmPage:21 - Open page 'BookingConfirmPage'
+2016-04-22 02:18:18 INFO  MailReader:120 - Searching mail for... 'it-test+selenium-newcarflow-priced-2016-04-22.02-18-03-de@wkda.de'
+2016-04-22 02:18:18 INFO  MailReader:121 - in box '4602' messages..
+2016-04-22 02:18:32 INFO  MailReader:147 - Reading messages in the box '4602', it took '14 sec'
+2016-04-22 02:18:32 INFO  MailReader:149 - wait a bit..
+2016-04-22 02:18:42 INFO  MailReader:147 - Reading messages in the box '4603', it took '24 sec'
+2016-04-22 02:18:42 INFO  MailReader:178 - -------------------------
+2016-04-22 02:18:42 INFO  MailReader:180 - From   : "Jetztautoverkaufen.de" <mail@newsletter.jetztautoverkaufen.de>
+2016-04-22 02:18:42 INFO  MailReader:181 - Subject: Ihr persönlicher Preis für Ihren Audi
+
+2016-04-22 02:18:42 INFO  MailReader:180 - From   : "Jetztautoverkaufen.de" <mail@newsletter.jetztautoverkaufen.de>
+2016-04-22 02:18:42 INFO  MailReader:181 - Subject: Termin erfolgreich gebucht für: (22. April, Fr., 14:00 Uhr)
+
+2016-04-22 02:18:42 INFO  MailHelper:84 - Message sent from: '"Jetztautoverkaufen.de" <mail@newsletter.jetztautoverkaufen.de>'
+2016-04-22 02:18:42 INFO  MailHelper:84 - Message sent from: '"Jetztautoverkaufen.de" <mail@newsletter.jetztautoverkaufen.de>'
+2016-04-22 02:18:43 INFO  MailHelper:127 - strPRICINGMainLink1: 
+2016-04-22 02:18:43 INFO  MailHelper:128 - strPRICINGMainLink2: 
+2016-04-22 02:18:43 INFO  MailHelper:129 - strBOOKINGMainLink1: 
+2016-04-22 02:18:43 INFO  MailHelper:130 - strBOOKINGMainLink2: 
+]]></system-out>
+    <system-err><![CDATA[Starting ChromeDriver 2.21.371459 (36d3d07f660ff2bc1bf28a75d1cdabed0983e7c4) on port 18266
+Only local connections are allowed.
+]]></system-err>
+  </testcase>
+  <testcase name="newFlowTransactionEmailsTest" classname="com.auto1.cfe.tests.jav.TransactionalEmailsTest" time="25.201">
+    <failure message="There is an issue with the pricing or booking e-mail template" type="java.lang.AssertionError">java.lang.AssertionError: There is an issue with the pricing or booking e-mail template
+	at com.auto1.cfe.common.mail.MailHelper.checkWhetherEmailHasProperLink(MailHelper.java:159)
+	at com.auto1.cfe.common.mail.MailHelper.checkWhetherEmailHasProperLink(MailHelper.java:91)
+	at com.auto1.cfe.common.mail.MailHelper.checkEmail(MailHelper.java:67)
+	at com.auto1.cfe.tests.jav.TransactionalEmailsTest.newFlowTransactionEmailsTest(TransactionalEmailsTest.java:37)
+</failure>
+    <system-out><![CDATA[2016-04-22 02:18:43 ERROR CustomListener:47 - newFlowTransactionEmailsTest --- FAILED --- 
+2016-04-22 02:18:43 ERROR CustomListener:51 - java.lang.AssertionError: There is an issue with the pricing or booking e-mail template
+
+
+2016-04-22 02:18:43 INFO  HttpHelper:26 - 'PROD' environment - send post request
+2016-04-22 02:18:43 INFO  HttpImpl:45 - Send 'POST' request 'https://www.wirkaufendeinauto.de/set-to-test/9c03719a45c3e57ef6540aae81eda054/'
+2016-04-22 02:18:43 INFO  HttpImpl:51 - Response code '200'
+2016-04-22 02:18:43 INFO  HttpImpl:53 - Response value '{"message":"successful"}'
+2016-04-22 02:18:43 INFO  ApplicationManager:37 - Delete all cookies..
+
+
+2016-04-22 02:18:44 INFO  SelectCarPage:29 - Open page 'SelectCarPage'
+2016-04-22 02:18:44 INFO  CustomListener:31 - [TestClass name=class com.auto1.cfe.tests.jav.TransactionalEmailsTest]
+2016-04-22 02:18:44 INFO  CustomListener:33 - << newFlowTransactionEmailsTest >>
+2016-04-22 02:18:44 INFO  CustomListener:34 - Test parameters [car: modelVariant: 6.0 W12:331.00; type: 010600480130001; brand: Audi; model: A8; year: 2006; shape: 1025; country: austria; kilometer: 20000; ownerEmail: it-test+selenium-newcarflow-priced@wkda.de; seller: firstName: Test JAV; lastName: Selenium Tester; mobilePrefix: +49; mobileNumber: 8009994440; country: name: austria; code: at; url: https://www.jetztautoverkaufen.at]
+2016-04-22 02:18:44 INFO  MailHelper:245 - Email 'it-test+selenium-newcarflow-priced-2016-04-22.02-18-44-at@wkda.de'
+2016-04-22 02:18:44 INFO  Page:53 - Open url 'https://www.jetztautoverkaufen.at'
+2016-04-22 02:18:44 INFO  Page:109 - Select 'Make/brand' by text 'Audi'
+2016-04-22 02:18:45 INFO  Page:109 - Select 'Model' by text 'A8'
+2016-04-22 02:18:45 INFO  Page:147 - Select 'Year' by value '2006'
+2016-04-22 02:18:46 INFO  Page:149 - 	Text for this value is '2006'
+2016-04-22 02:18:46 INFO  Page:128 - Click on 'Submit'
+2016-04-22 02:18:47 INFO  CarInfoNewFlowPage:28 - Open page 'CarInfoNewFlowPage'
+2016-04-22 02:18:47 INFO  Page:147 - Select 'Shape' by value '1025'
+2016-04-22 02:18:47 INFO  Page:149 - 	Text for this value is 'Limousine'
+2016-04-22 02:18:47 INFO  Page:147 - Select 'Details' by value '6.0 W12:331.00'
+2016-04-22 02:18:47 INFO  Page:149 - 	Text for this value is 'A8 - 6.0 W12 (331 kW  / 450 PS)'
+2016-04-22 02:18:47 INFO  Page:147 - Select 'Type' by value '010600480130001'
+2016-04-22 02:18:47 INFO  Page:149 - 	Text for this value is 'A8 quattro Lang Automatisches Getriebe 4 Türen'
+2016-04-22 02:18:47 INFO  Page:147 - Select 'Kilometers/Miles' by value '20000'
+2016-04-22 02:18:48 INFO  Page:149 - 	Text for this value is 'Bis 20.000'
+2016-04-22 02:18:48 INFO  Page:94 - Type to 'Email' value 'it-test+selenium-newcarflow-priced-2016-04-22.02-18-44-at@wkda.de'
+2016-04-22 02:18:48 INFO  Page:128 - Click on 'Submit'
+2016-04-22 02:18:50 INFO  BookingPage:33 - Open page 'BookingPage'
+2016-04-22 02:18:50 INFO  Page:246 - Data for element 'City'
+2016-04-22 02:18:50 INFO  Page:249 - [Feldkirch, Graz, Innsbruck, Klagenfurt, Linz, Salzburg, St. Pölten, Wels, Wien, Wiener Neustadt]
+2016-04-22 02:18:50 INFO  Page:241 - Select 'City' random by text 'St. Pölten'
+2016-04-22 02:18:51 INFO  Page:246 - Data for element 'Date'
+2016-04-22 02:18:52 INFO  Page:249 - [Freitag, 22.04, Samstag, 23.04, Montag, 25.04, Dienstag, 26.04, Mittwoch, 27.04, Donnerstag, 28.04, Freitag, 29.04]
+2016-04-22 02:18:52 INFO  Page:241 - Select 'Date' random by text 'Freitag, 29.04'
+2016-04-22 02:18:52 INFO  Page:246 - Data for element 'Time'
+2016-04-22 02:18:53 INFO  Page:249 - [09:00, 10:00, 11:00, 12:00, 13:00, 14:00, 15:00, 16:00, 17:00, 18:00]
+2016-04-22 02:18:53 INFO  Page:241 - Select 'Time' random by text '09:00'
+2016-04-22 02:18:53 INFO  Page:94 - Type to 'First Name' value 'Test JAV'
+2016-04-22 02:18:53 INFO  Page:94 - Type to 'Last Name' value 'Selenium Tester'
+2016-04-22 02:18:53 INFO  Page:109 - Select 'Mobile Prefix' by text '+49'
+2016-04-22 02:18:53 INFO  Page:94 - Type to 'Mobile Number' value '8009994440'
+2016-04-22 02:18:53 INFO  BookingPage:127 - Looking for a price for store it...
+2016-04-22 02:18:53 INFO  BookingPage:130 - Element 'Car Price [1]' value is '24.302 EUR'
+2016-04-22 02:18:54 INFO  BookingConfirmPage:21 - Open page 'BookingConfirmPage'
+2016-04-22 02:18:55 INFO  MailReader:120 - Searching mail for... 'it-test+selenium-newcarflow-priced-2016-04-22.02-18-44-at@wkda.de'
+2016-04-22 02:18:55 INFO  MailReader:121 - in box '4605' messages..
+2016-04-22 02:19:08 INFO  MailReader:147 - Reading messages in the box '4605', it took '13 sec'
+2016-04-22 02:19:08 INFO  MailReader:178 - -------------------------
+2016-04-22 02:19:08 INFO  MailReader:180 - From   : "Jetztautoverkaufen.at" <mail@newsletter.jetztautoverkaufen.at>
+2016-04-22 02:19:08 INFO  MailReader:181 - Subject: Ihr persönlicher Preis für Ihren Audi
+
+2016-04-22 02:19:08 INFO  MailReader:180 - From   : "Jetztautoverkaufen.at" <mail@newsletter.jetztautoverkaufen.at>
+2016-04-22 02:19:08 INFO  MailReader:181 - Subject: Termin erfolgreich gebucht für: (29. April, Fr., 09:00 Uhr)
+
+2016-04-22 02:19:08 INFO  MailHelper:84 - Message sent from: '"Jetztautoverkaufen.at" <mail@newsletter.jetztautoverkaufen.at>'
+2016-04-22 02:19:08 INFO  MailHelper:84 - Message sent from: '"Jetztautoverkaufen.at" <mail@newsletter.jetztautoverkaufen.at>'
+2016-04-22 02:19:09 INFO  MailHelper:127 - strPRICINGMainLink1: 
+2016-04-22 02:19:09 INFO  MailHelper:128 - strPRICINGMainLink2: 
+2016-04-22 02:19:09 INFO  MailHelper:129 - strBOOKINGMainLink1: 
+2016-04-22 02:19:09 INFO  MailHelper:130 - strBOOKINGMainLink2: 
+]]></system-out>
+  </testcase>
+  <testcase name="newFlowTransactionEmailsTest" classname="com.auto1.cfe.tests.jav.TransactionalEmailsTest" time="38.193">
+    <failure message="There is an issue with the pricing or booking e-mail template" type="java.lang.AssertionError">java.lang.AssertionError: There is an issue with the pricing or booking e-mail template
+	at com.auto1.cfe.common.mail.MailHelper.checkWhetherEmailHasProperLink(MailHelper.java:159)
+	at com.auto1.cfe.common.mail.MailHelper.checkWhetherEmailHasProperLink(MailHelper.java:91)
+	at com.auto1.cfe.common.mail.MailHelper.checkEmail(MailHelper.java:67)
+	at com.auto1.cfe.tests.jav.TransactionalEmailsTest.newFlowTransactionEmailsTest(TransactionalEmailsTest.java:37)
+</failure>
+    <system-out><![CDATA[2016-04-22 02:19:09 ERROR CustomListener:47 - newFlowTransactionEmailsTest --- FAILED --- 
+2016-04-22 02:19:09 ERROR CustomListener:51 - java.lang.AssertionError: There is an issue with the pricing or booking e-mail template
+
+
+2016-04-22 02:19:09 INFO  HttpHelper:26 - 'PROD' environment - send post request
+2016-04-22 02:19:09 INFO  HttpImpl:45 - Send 'POST' request 'https://www.wirkaufendeinauto.de/set-to-test/593a78e0c9e0be02401761257a7e848d/'
+2016-04-22 02:19:09 INFO  HttpImpl:51 - Response code '200'
+2016-04-22 02:19:09 INFO  HttpImpl:53 - Response value '{"message":"successful"}'
+2016-04-22 02:19:09 INFO  ApplicationManager:37 - Delete all cookies..
+
+
+2016-04-22 02:19:09 INFO  SelectCarPage:29 - Open page 'SelectCarPage'
+2016-04-22 02:19:09 INFO  CustomListener:31 - [TestClass name=class com.auto1.cfe.tests.jav.TransactionalEmailsTest]
+2016-04-22 02:19:09 INFO  CustomListener:33 - << newFlowTransactionEmailsTest >>
+2016-04-22 02:19:09 INFO  CustomListener:34 - Test parameters [car: modelVariant: 6.0 W12:331.00; type: 010600480130001; brand: Audi; model: A8; year: 2006; shape: 1025; country: netherland; kilometer: 20000; ownerEmail: it-test+selenium-newcarflow-priced@wkda.de; seller: firstName: Test JAV; lastName: Selenium Tester; mobilePrefix: +49; mobileNumber: 8009994440; country: name: netherland; code: nl; url: https://www.meteenautoverkopen.nl]
+2016-04-22 02:19:09 INFO  MailHelper:245 - Email 'it-test+selenium-newcarflow-priced-2016-04-22.02-19-09-nl@wkda.de'
+2016-04-22 02:19:09 INFO  Page:53 - Open url 'https://www.meteenautoverkopen.nl'
+2016-04-22 02:19:10 INFO  SelectCarPage:85 - Switch to default flow for county 'netherland'
+2016-04-22 02:19:10 INFO  Page:118 - Click on 'Switch to default flow link'
+2016-04-22 02:19:10 INFO  Page:109 - Select 'Make/brand' by text 'Audi'
+2016-04-22 02:19:11 INFO  Page:109 - Select 'Model' by text 'A8'
+2016-04-22 02:19:11 INFO  Page:147 - Select 'Year' by value '2006'
+2016-04-22 02:19:12 INFO  Page:149 - 	Text for this value is '2006'
+2016-04-22 02:19:12 INFO  Page:128 - Click on 'Submit'
+2016-04-22 02:19:13 INFO  CarInfoNewFlowPage:28 - Open page 'CarInfoNewFlowPage'
+2016-04-22 02:19:13 INFO  Page:147 - Select 'Shape' by value '1025'
+2016-04-22 02:19:13 INFO  Page:149 - 	Text for this value is 'Sedan'
+2016-04-22 02:19:13 INFO  Page:147 - Select 'Details' by value '6.0 W12:331.00'
+2016-04-22 02:19:13 INFO  Page:149 - 	Text for this value is 'A8 - 6.0 W12 (331 kW  / 450 PS)'
+2016-04-22 02:19:13 INFO  Page:147 - Select 'Type' by value '010600480130001'
+2016-04-22 02:19:13 INFO  Page:149 - 	Text for this value is 'A8 quattro Lang Automatisch 4 Deuren'
+2016-04-22 02:19:13 INFO  Page:128 - Click on 'Submit'
+2016-04-22 02:19:13 INFO  CarInfoPage:25 - Open page 'CustomPage'
+2016-04-22 02:19:13 INFO  Page:147 - Select 'Kilometer' by value '20000'
+2016-04-22 02:19:14 INFO  Page:149 - 	Text for this value is 'Tot 20.000'
+2016-04-22 02:19:14 INFO  Page:94 - Type to 'Email' value 'it-test+selenium-newcarflow-priced-2016-04-22.02-19-09-nl@wkda.de'
+2016-04-22 02:19:14 INFO  Page:128 - Click on 'Submit'
+2016-04-22 02:19:16 INFO  BookingPage:33 - Open page 'BookingPage'
+2016-04-22 02:19:16 INFO  Page:246 - Data for element 'City'
+2016-04-22 02:19:17 INFO  Page:249 - [Alkmaar, Almere, Alphen aan den Rijn, Amersfoort, Amsterdam, Apeldoorn, Arnhem, Breda, 's-Hertogenbosch, Den Haag, Dordrecht, Eindhoven, Enschede, Goes, Groningen, Haarlem, Leeuwarden, Maastricht, Roermond, Rotterdam, Tilburg, Utrecht, Zwolle]
+2016-04-22 02:19:17 INFO  Page:241 - Select 'City' random by text 'Maastricht'
+2016-04-22 02:19:18 INFO  Page:246 - Data for element 'Date'
+2016-04-22 02:19:18 INFO  Page:249 - [vrijdag, 22.04, zaterdag, 23.04, maandag, 25.04, dinsdag, 26.04, donderdag, 28.04, vrijdag, 29.04]
+2016-04-22 02:19:18 INFO  Page:241 - Select 'Date' random by text 'dinsdag, 26.04'
+2016-04-22 02:19:19 INFO  Page:246 - Data for element 'Time'
+2016-04-22 02:19:19 INFO  Page:249 - [09:00, 10:00, 11:00, 12:00, 13:00, 14:00, 15:00, 16:00, 17:00, 18:00]
+2016-04-22 02:19:19 INFO  Page:241 - Select 'Time' random by text '16:00'
+2016-04-22 02:19:19 INFO  Page:94 - Type to 'First Name' value 'Test JAV'
+2016-04-22 02:19:19 INFO  Page:94 - Type to 'Last Name' value 'Selenium Tester'
+2016-04-22 02:19:20 INFO  Page:109 - Select 'Mobile Prefix' by text '+49'
+2016-04-22 02:19:20 INFO  Page:94 - Type to 'Mobile Number' value '8009994440'
+2016-04-22 02:19:20 INFO  BookingPage:127 - Looking for a price for store it...
+2016-04-22 02:19:20 INFO  BookingPage:130 - Element 'Car Price [1]' value is '24.302 EUR'
+2016-04-22 02:19:21 INFO  BookingConfirmPage:21 - Open page 'BookingConfirmPage'
+2016-04-22 02:19:22 INFO  MailReader:120 - Searching mail for... 'it-test+selenium-newcarflow-priced-2016-04-22.02-19-09-nl@wkda.de'
+2016-04-22 02:19:22 INFO  MailReader:121 - in box '4606' messages..
+2016-04-22 02:19:37 INFO  MailReader:147 - Reading messages in the box '4606', it took '14 sec'
+2016-04-22 02:19:37 INFO  MailReader:149 - wait a bit..
+2016-04-22 02:19:47 INFO  MailReader:147 - Reading messages in the box '4607', it took '24 sec'
+2016-04-22 02:19:47 INFO  MailReader:178 - -------------------------
+2016-04-22 02:19:47 INFO  MailReader:180 - From   : "Meteenautoverkopen.nl" <mail@newsletter.meteenautoverkopen.nl>
+2016-04-22 02:19:47 INFO  MailReader:181 - Subject: Onze persoonlijke offerte voor je Audi
+
+2016-04-22 02:19:47 INFO  MailReader:180 - From   : "Meteenautoverkopen.nl" <mail@newsletter.meteenautoverkopen.nl>
+2016-04-22 02:19:47 INFO  MailReader:181 - Subject: Afspraak succesvol geboekt voor: 26 april, di, 16:00 uur
+
+2016-04-22 02:19:47 INFO  MailHelper:84 - Message sent from: '"Meteenautoverkopen.nl" <mail@newsletter.meteenautoverkopen.nl>'
+2016-04-22 02:19:47 INFO  MailHelper:84 - Message sent from: '"Meteenautoverkopen.nl" <mail@newsletter.meteenautoverkopen.nl>'
+2016-04-22 02:19:48 INFO  MailHelper:127 - strPRICINGMainLink1: 
+2016-04-22 02:19:48 INFO  MailHelper:128 - strPRICINGMainLink2: 
+2016-04-22 02:19:48 INFO  MailHelper:129 - strBOOKINGMainLink1: 
+2016-04-22 02:19:48 INFO  MailHelper:130 - strBOOKINGMainLink2: http://newsletter.meteenautoverkopen.nl/c/r?ACTION=ri&amp;EMID=09006JR02DERS005POVUO&amp;UID=6VDCAKTVZSLAZ7NSZVPQ&amp;booking_url=ac37527a321510624adfa76b602e7f72
+]]></system-out>
+  </testcase>
+  <testcase name="newFlowTransactionEmailsTest" classname="com.auto1.cfe.tests.jav.TransactionalEmailsTest" time="35.502">
+    <failure message="There is an issue with the pricing or booking e-mail template" type="java.lang.AssertionError">java.lang.AssertionError: There is an issue with the pricing or booking e-mail template
+	at com.auto1.cfe.common.mail.MailHelper.checkWhetherEmailHasProperLink(MailHelper.java:159)
+	at com.auto1.cfe.common.mail.MailHelper.checkWhetherEmailHasProperLink(MailHelper.java:91)
+	at com.auto1.cfe.common.mail.MailHelper.checkEmail(MailHelper.java:67)
+	at com.auto1.cfe.tests.jav.TransactionalEmailsTest.newFlowTransactionEmailsTest(TransactionalEmailsTest.java:37)
+</failure>
+    <system-out><![CDATA[2016-04-22 02:19:48 ERROR CustomListener:47 - newFlowTransactionEmailsTest --- FAILED --- 
+2016-04-22 02:19:48 ERROR CustomListener:51 - java.lang.AssertionError: There is an issue with the pricing or booking e-mail template
+
+
+2016-04-22 02:19:48 INFO  HttpHelper:26 - 'PROD' environment - send post request
+2016-04-22 02:19:48 INFO  HttpImpl:45 - Send 'POST' request 'https://www.wirkaufendeinauto.de/set-to-test/ac37527a321510624adfa76b602e7f72/'
+2016-04-22 02:19:48 INFO  HttpImpl:51 - Response code '200'
+2016-04-22 02:19:48 INFO  HttpImpl:53 - Response value '{"message":"successful"}'
+2016-04-22 02:19:48 INFO  ApplicationManager:37 - Delete all cookies..
+
+
+2016-04-22 02:19:48 INFO  SelectCarPage:29 - Open page 'SelectCarPage'
+2016-04-22 02:19:48 INFO  CustomListener:31 - [TestClass name=class com.auto1.cfe.tests.jav.TransactionalEmailsTest]
+2016-04-22 02:19:48 INFO  CustomListener:33 - << newFlowTransactionEmailsTest >>
+2016-04-22 02:19:48 INFO  CustomListener:34 - Test parameters [car: modelVariant: 6.0 W12:331.00; type: 010600480130001; brand: Audi; model: A8; year: 2006; shape: 1025; country: spain; kilometer: 20000; ownerEmail: it-test+selenium-newcarflow-priced@wkda.de; seller: firstName: Test JAV; lastName: Selenium Tester; mobilePrefix: +49; mobileNumber: 8009994440; country: name: spain; code: es; url: https://www.vendercoche.es]
+2016-04-22 02:19:48 INFO  MailHelper:245 - Email 'it-test+selenium-newcarflow-priced-2016-04-22.02-19-48-es@wkda.de'
+2016-04-22 02:19:48 INFO  Page:53 - Open url 'https://www.vendercoche.es'
+2016-04-22 02:19:49 INFO  Page:109 - Select 'Make/brand' by text 'Audi'
+2016-04-22 02:19:49 INFO  Page:109 - Select 'Model' by text 'A8'
+2016-04-22 02:19:50 INFO  Page:147 - Select 'Year' by value '2006'
+2016-04-22 02:19:50 INFO  Page:149 - 	Text for this value is '2006'
+2016-04-22 02:19:50 INFO  Page:128 - Click on 'Submit'
+2016-04-22 02:19:51 INFO  CarInfoNewFlowPage:28 - Open page 'CarInfoNewFlowPage'
+2016-04-22 02:19:51 INFO  Page:147 - Select 'Shape' by value '1025'
+2016-04-22 02:19:51 INFO  Page:149 - 	Text for this value is 'Berlina'
+2016-04-22 02:19:51 INFO  Page:147 - Select 'Details' by value '6.0 W12:331.00'
+2016-04-22 02:19:52 INFO  Page:149 - 	Text for this value is 'A8 - 6.0 W12 (331 kW  / 450 PS)'
+2016-04-22 02:19:52 INFO  Page:147 - Select 'Type' by value '010600480130001'
+2016-04-22 02:19:52 INFO  Page:149 - 	Text for this value is 'A8 quattro Lang Transmisión automática 4 Puertas'
+2016-04-22 02:19:52 INFO  Page:147 - Select 'Kilometers/Miles' by value '20000'
+2016-04-22 02:19:52 INFO  Page:149 - 	Text for this value is 'Hasta 20.000'
+2016-04-22 02:19:52 INFO  Page:94 - Type to 'Email' value 'it-test+selenium-newcarflow-priced-2016-04-22.02-19-48-es@wkda.de'
+2016-04-22 02:19:52 INFO  Page:128 - Click on 'Submit'
+2016-04-22 02:19:55 INFO  BookingPage:33 - Open page 'BookingPage'
+2016-04-22 02:19:55 INFO  Page:246 - Data for element 'City'
+2016-04-22 02:19:55 INFO  Page:249 - [A Coruña, Albacete, Alicante, Almería, Barcelona, Bilbao, Burgos, Cáceres, Córdoba, Valencia, León, Madrid, Málaga, Mérida, Murcia, Oviedo, Palma de Mallorca, Pamplona, Cádiz, Salamanca, San Sebastian, Santander, Sevilla, Talavera de la Reina, Tarragona, Valladolid, Vigo, Vitoria, Zaragoza]
+2016-04-22 02:19:55 INFO  Page:241 - Select 'City' random by text 'Cáceres'
+2016-04-22 02:19:56 INFO  Page:246 - Data for element 'Date'
+2016-04-22 02:19:56 INFO  Page:249 - [lunes, 25.04, martes, 26.04, miércoles, 27.04, jueves, 28.04, viernes, 29.04]
+2016-04-22 02:19:56 INFO  Page:241 - Select 'Date' random by text 'lunes, 25.04'
+2016-04-22 02:19:56 INFO  Page:246 - Data for element 'Time'
+2016-04-22 02:19:56 INFO  Page:249 - [16:00, 17:00, 18:00]
+2016-04-22 02:19:56 INFO  Page:241 - Select 'Time' random by text '18:00'
+2016-04-22 02:19:56 INFO  Page:94 - Type to 'First Name' value 'Test JAV'
+2016-04-22 02:19:57 INFO  Page:94 - Type to 'Last Name' value 'Selenium Tester'
+2016-04-22 02:19:57 INFO  Page:109 - Select 'Mobile Prefix' by text '+49'
+2016-04-22 02:19:57 INFO  Page:94 - Type to 'Mobile Number' value '8009994440'
+2016-04-22 02:19:57 INFO  BookingPage:127 - Looking for a price for store it...
+2016-04-22 02:19:57 INFO  BookingPage:130 - Element 'Car Price [1]' value is '24.302 EUR'
+2016-04-22 02:19:58 INFO  BookingConfirmPage:21 - Open page 'BookingConfirmPage'
+2016-04-22 02:19:59 INFO  MailReader:120 - Searching mail for... 'it-test+selenium-newcarflow-priced-2016-04-22.02-19-48-es@wkda.de'
+2016-04-22 02:19:59 INFO  MailReader:121 - in box '4608' messages..
+2016-04-22 02:20:13 INFO  MailReader:147 - Reading messages in the box '4608', it took '13 sec'
+2016-04-22 02:20:13 INFO  MailReader:149 - wait a bit..
+2016-04-22 02:20:23 INFO  MailReader:147 - Reading messages in the box '4609', it took '24 sec'
+2016-04-22 02:20:23 INFO  MailReader:178 - -------------------------
+2016-04-22 02:20:23 INFO  MailReader:180 - From   : "Vendercoche.es" <mail@newsletter.vendercoche.es>
+2016-04-22 02:20:23 INFO  MailReader:181 - Subject: La evaluación personalizada de tu coche
+
+2016-04-22 02:20:23 INFO  MailReader:180 - From   : "Vendercoche.es" <mail@newsletter.vendercoche.es>
+2016-04-22 02:20:23 INFO  MailReader:181 - Subject: Tu cita (25 abril, lun, 18:00 h.)
+
+2016-04-22 02:20:23 INFO  MailHelper:84 - Message sent from: '"Vendercoche.es" <mail@newsletter.vendercoche.es>'
+2016-04-22 02:20:23 INFO  MailHelper:84 - Message sent from: '"Vendercoche.es" <mail@newsletter.vendercoche.es>'
+2016-04-22 02:20:23 INFO  MailHelper:127 - strPRICINGMainLink1: 
+2016-04-22 02:20:23 INFO  MailHelper:128 - strPRICINGMainLink2: 
+2016-04-22 02:20:23 INFO  MailHelper:129 - strBOOKINGMainLink1: 
+2016-04-22 02:20:23 INFO  MailHelper:130 - strBOOKINGMainLink2: http://newsletter.vendercoche.es/c/r?ACTION=ri&amp;EMID=09006M702F4K100LOLGVI&amp;UID=GKZSALCHB6LFAK653SZQ&amp;booking_url=c8b847641ebb9e0046514ba6ab35a226
+]]></system-out>
+  </testcase>
+  <testcase name="newFlowTransactionEmailsTest" classname="com.auto1.cfe.tests.jav.TransactionalEmailsTest" time="36.979">
+    <failure message="There is an issue with the pricing or booking e-mail template" type="java.lang.AssertionError">java.lang.AssertionError: There is an issue with the pricing or booking e-mail template
+	at com.auto1.cfe.common.mail.MailHelper.checkWhetherEmailHasProperLink(MailHelper.java:159)
+	at com.auto1.cfe.common.mail.MailHelper.checkWhetherEmailHasProperLink(MailHelper.java:91)
+	at com.auto1.cfe.common.mail.MailHelper.checkEmail(MailHelper.java:67)
+	at com.auto1.cfe.tests.jav.TransactionalEmailsTest.newFlowTransactionEmailsTest(TransactionalEmailsTest.java:37)
+</failure>
+    <system-out><![CDATA[2016-04-22 02:20:24 ERROR CustomListener:47 - newFlowTransactionEmailsTest --- FAILED --- 
+2016-04-22 02:20:24 ERROR CustomListener:51 - java.lang.AssertionError: There is an issue with the pricing or booking e-mail template
+
+
+2016-04-22 02:20:24 INFO  HttpHelper:26 - 'PROD' environment - send post request
+2016-04-22 02:20:24 INFO  HttpImpl:45 - Send 'POST' request 'https://www.wirkaufendeinauto.de/set-to-test/c8b847641ebb9e0046514ba6ab35a226/'
+2016-04-22 02:20:24 INFO  HttpImpl:51 - Response code '200'
+2016-04-22 02:20:24 INFO  HttpImpl:53 - Response value '{"message":"successful"}'
+2016-04-22 02:20:24 INFO  ApplicationManager:37 - Delete all cookies..
+
+
+2016-04-22 02:20:24 INFO  SelectCarPage:29 - Open page 'SelectCarPage'
+2016-04-22 02:20:24 INFO  CustomListener:31 - [TestClass name=class com.auto1.cfe.tests.jav.TransactionalEmailsTest]
+2016-04-22 02:20:24 INFO  CustomListener:33 - << newFlowTransactionEmailsTest >>
+2016-04-22 02:20:24 INFO  CustomListener:34 - Test parameters [car: modelVariant: 6.0 W12:331.00; type: 010600480130001; brand: Audi; model: A8; year: 2006; shape: 1025; country: france; kilometer: 20000; ownerEmail: it-test+selenium-newcarflow-priced@wkda.de; seller: firstName: Test JAV; lastName: Selenium Tester; mobilePrefix: +49; mobileNumber: 8009994440; country: name: france; code: fr; url: https://www.vendresavoiture.fr]
+2016-04-22 02:20:24 INFO  MailHelper:245 - Email 'it-test+selenium-newcarflow-priced-2016-04-22.02-20-24-fr@wkda.de'
+2016-04-22 02:20:24 INFO  Page:53 - Open url 'https://www.vendresavoiture.fr'
+2016-04-22 02:20:24 INFO  Page:109 - Select 'Make/brand' by text 'Audi'
+2016-04-22 02:20:25 INFO  Page:109 - Select 'Model' by text 'A8'
+2016-04-22 02:20:26 INFO  Page:147 - Select 'Year' by value '2006'
+2016-04-22 02:20:26 INFO  Page:149 - 	Text for this value is '2006'
+2016-04-22 02:20:26 INFO  Page:128 - Click on 'Submit'
+2016-04-22 02:20:27 INFO  CarInfoNewFlowPage:28 - Open page 'CarInfoNewFlowPage'
+2016-04-22 02:20:27 INFO  Page:147 - Select 'Shape' by value '1025'
+2016-04-22 02:20:27 INFO  Page:149 - 	Text for this value is 'Berline'
+2016-04-22 02:20:27 INFO  Page:147 - Select 'Details' by value '6.0 W12:331.00'
+2016-04-22 02:20:28 INFO  Page:149 - 	Text for this value is 'A8 - 6.0 W12 (331 kW  / 450 PS)'
+2016-04-22 02:20:28 INFO  Page:147 - Select 'Type' by value '010600480130001'
+2016-04-22 02:20:28 INFO  Page:149 - 	Text for this value is 'A8 quattro Lang Transmission automatique 4 Portes'
+2016-04-22 02:20:28 INFO  Page:147 - Select 'Kilometers/Miles' by value '20000'
+2016-04-22 02:20:28 INFO  Page:149 - 	Text for this value is 'Jusqu'à 20 000 km'
+2016-04-22 02:20:28 INFO  Page:94 - Type to 'Email' value 'it-test+selenium-newcarflow-priced-2016-04-22.02-20-24-fr@wkda.de'
+2016-04-22 02:20:28 INFO  Page:128 - Click on 'Submit'
+2016-04-22 02:20:31 INFO  BookingPage:33 - Open page 'BookingPage'
+2016-04-22 02:20:31 INFO  Page:246 - Data for element 'City'
+2016-04-22 02:20:32 INFO  Page:249 - [Aix-en-Provence, Amiens, Angers, Annecy, Annemasse, Avignon, Biarritz-Bayonne, Bordeaux, Bourges, Brest, Caen, Paris / Ile-de-France, Chambéry, Clermont-Ferrand, Colmar, Dijon, Douai-Lens, Dunkerque, Fréjus-Saint Raphaël, Grenoble, La Rochelle, Le Havre, Le Mans, Lille, Limoges, Lorient, Lyon, Marseille, Metz, Montpellier, Nancy, Nantes, Nice, Niort, Orléans, Pau, Perpignan, Poitiers, Reims, Rennes, Rouen, Saint-Brieuc, Saint-Etienne, Strasbourg, Toulon, Toulouse, Tours, Troyes, Valence, Valenciennes]
+2016-04-22 02:20:32 INFO  Page:241 - Select 'City' random by text 'Nice'
+2016-04-22 02:20:33 INFO  Page:246 - Data for element 'Date'
+2016-04-22 02:20:33 INFO  Page:249 - [vendredi, 22.04, samedi, 23.04, lundi, 25.04, mardi, 26.04, mercredi, 27.04, jeudi, 28.04, vendredi, 29.04]
+2016-04-22 02:20:33 INFO  Page:241 - Select 'Date' random by text 'lundi, 25.04'
+2016-04-22 02:20:34 INFO  Page:246 - Data for element 'Time'
+2016-04-22 02:20:34 INFO  Page:249 - [09:00, 10:00, 11:00, 13:00, 14:00, 15:00, 16:00, 17:00, 18:00]
+2016-04-22 02:20:34 INFO  Page:241 - Select 'Time' random by text '10:00'
+2016-04-22 02:20:34 INFO  Page:94 - Type to 'First Name' value 'Test JAV'
+2016-04-22 02:20:34 INFO  Page:94 - Type to 'Last Name' value 'Selenium Tester'
+2016-04-22 02:20:34 INFO  Page:109 - Select 'Mobile Prefix' by text '+49'
+2016-04-22 02:20:35 INFO  Page:94 - Type to 'Mobile Number' value '8009994440'
+2016-04-22 02:20:35 INFO  BookingPage:127 - Looking for a price for store it...
+2016-04-22 02:20:35 INFO  BookingPage:130 - Element 'Car Price [1]' value is '24 302 EUR'
+2016-04-22 02:20:36 INFO  BookingConfirmPage:21 - Open page 'BookingConfirmPage'
+2016-04-22 02:20:37 INFO  MailReader:120 - Searching mail for... 'it-test+selenium-newcarflow-priced-2016-04-22.02-20-24-fr@wkda.de'
+2016-04-22 02:20:37 INFO  MailReader:121 - in box '4610' messages..
+2016-04-22 02:20:50 INFO  MailReader:147 - Reading messages in the box '4610', it took '13 sec'
+2016-04-22 02:20:50 INFO  MailReader:149 - wait a bit..
+2016-04-22 02:21:00 INFO  MailReader:147 - Reading messages in the box '4611', it took '23 sec'
+2016-04-22 02:21:00 INFO  MailReader:178 - -------------------------
+2016-04-22 02:21:00 INFO  MailReader:180 - From   : "Vendresavoiture.fr" <mail@newsletter.vendresavoiture.fr>
+2016-04-22 02:21:00 INFO  MailReader:181 - Subject: Notre prix pour votre Audi
+
+2016-04-22 02:21:00 INFO  MailReader:180 - From   : "Vendresavoiture.fr" <mail@newsletter.vendresavoiture.fr>
+2016-04-22 02:21:00 INFO  MailReader:181 - Subject: Votre rendez-vous avec vendresavoiture.fr (25 avril, lun., 10h00)
+
+2016-04-22 02:21:00 INFO  MailHelper:84 - Message sent from: '"Vendresavoiture.fr" <mail@newsletter.vendresavoiture.fr>'
+2016-04-22 02:21:00 INFO  MailHelper:84 - Message sent from: '"Vendresavoiture.fr" <mail@newsletter.vendresavoiture.fr>'
+2016-04-22 02:21:01 INFO  MailHelper:127 - strPRICINGMainLink1: 
+2016-04-22 02:21:01 INFO  MailHelper:128 - strPRICINGMainLink2: 
+2016-04-22 02:21:01 INFO  MailHelper:129 - strBOOKINGMainLink1: 
+2016-04-22 02:21:01 INFO  MailHelper:130 - strBOOKINGMainLink2: http://newsletter.vendresavoiture.fr/c/r?ACTION=ri&amp;EMID=09006JP02DFQ800E2TMJ9&amp;UID=CU7SBDQSLCLFL7TRLQBQ&amp;booking_url=92ea903c7440492bc3a67f4c3851dfe7
+]]></system-out>
+  </testcase>
+  <testcase name="newFlowTransactionEmailsTest" classname="com.auto1.cfe.tests.jav.TransactionalEmailsTest" time="35.976">
+    <failure message="There is an issue with the pricing or booking e-mail template" type="java.lang.AssertionError">java.lang.AssertionError: There is an issue with the pricing or booking e-mail template
+	at com.auto1.cfe.common.mail.MailHelper.checkWhetherEmailHasProperLink(MailHelper.java:159)
+	at com.auto1.cfe.common.mail.MailHelper.checkWhetherEmailHasProperLink(MailHelper.java:91)
+	at com.auto1.cfe.common.mail.MailHelper.checkEmail(MailHelper.java:67)
+	at com.auto1.cfe.tests.jav.TransactionalEmailsTest.newFlowTransactionEmailsTest(TransactionalEmailsTest.java:37)
+</failure>
+    <system-out><![CDATA[2016-04-22 02:21:01 ERROR CustomListener:47 - newFlowTransactionEmailsTest --- FAILED --- 
+2016-04-22 02:21:01 ERROR CustomListener:51 - java.lang.AssertionError: There is an issue with the pricing or booking e-mail template
+
+
+2016-04-22 02:21:01 INFO  HttpHelper:26 - 'PROD' environment - send post request
+2016-04-22 02:21:01 INFO  HttpImpl:45 - Send 'POST' request 'https://www.wirkaufendeinauto.de/set-to-test/92ea903c7440492bc3a67f4c3851dfe7/'
+2016-04-22 02:21:01 INFO  HttpImpl:51 - Response code '200'
+2016-04-22 02:21:01 INFO  HttpImpl:53 - Response value '{"message":"successful"}'
+2016-04-22 02:21:01 INFO  ApplicationManager:37 - Delete all cookies..
+
+
+2016-04-22 02:21:01 INFO  SelectCarPage:29 - Open page 'SelectCarPage'
+2016-04-22 02:21:01 INFO  CustomListener:31 - [TestClass name=class com.auto1.cfe.tests.jav.TransactionalEmailsTest]
+2016-04-22 02:21:01 INFO  CustomListener:33 - << newFlowTransactionEmailsTest >>
+2016-04-22 02:21:01 INFO  CustomListener:34 - Test parameters [car: modelVariant: 6.0 W12:331.00; type: 010600480130001; brand: Audi; model: A8; year: 2006; shape: 1025; country: belgium; kilometer: 20000; ownerEmail: it-test+selenium-newcarflow-priced@wkda.de; seller: firstName: Test JAV; lastName: Selenium Tester; mobilePrefix: +49; mobileNumber: 8009994440; country: name: belgium; code: be; url: https://www.nuautoverkopen.be]
+2016-04-22 02:21:01 INFO  MailHelper:245 - Email 'it-test+selenium-newcarflow-priced-2016-04-22.02-21-01-be@wkda.de'
+2016-04-22 02:21:01 INFO  Page:53 - Open url 'https://www.nuautoverkopen.be'
+2016-04-22 02:21:02 INFO  Page:109 - Select 'Make/brand' by text 'Audi'
+2016-04-22 02:21:03 INFO  Page:109 - Select 'Model' by text 'A8'
+2016-04-22 02:21:03 INFO  Page:147 - Select 'Year' by value '2006'
+2016-04-22 02:21:04 INFO  Page:149 - 	Text for this value is '2006'
+2016-04-22 02:21:04 INFO  Page:128 - Click on 'Submit'
+2016-04-22 02:21:05 INFO  CarInfoNewFlowPage:28 - Open page 'CarInfoNewFlowPage'
+2016-04-22 02:21:05 INFO  Page:147 - Select 'Shape' by value '1025'
+2016-04-22 02:21:05 INFO  Page:149 - 	Text for this value is 'Sedan'
+2016-04-22 02:21:05 INFO  Page:147 - Select 'Details' by value '6.0 W12:331.00'
+2016-04-22 02:21:05 INFO  Page:149 - 	Text for this value is 'A8 - 6.0 W12 (331 kW  / 450 PS)'
+2016-04-22 02:21:05 INFO  Page:147 - Select 'Type' by value '010600480130001'
+2016-04-22 02:21:05 INFO  Page:149 - 	Text for this value is 'A8 quattro Lang Automatisch 4 Deuren'
+2016-04-22 02:21:05 INFO  Page:128 - Click on 'Submit'
+2016-04-22 02:21:05 INFO  CarInfoPage:25 - Open page 'CustomPage'
+2016-04-22 02:21:05 INFO  Page:147 - Select 'Kilometer' by value '20000'
+2016-04-22 02:21:06 INFO  Page:149 - 	Text for this value is 'Tot 20.000'
+2016-04-22 02:21:06 INFO  Page:94 - Type to 'Email' value 'it-test+selenium-newcarflow-priced-2016-04-22.02-21-01-be@wkda.de'
+2016-04-22 02:21:06 INFO  Page:128 - Click on 'Submit'
+2016-04-22 02:21:09 INFO  BookingPage:33 - Open page 'BookingPage'
+2016-04-22 02:21:09 INFO  Page:246 - Data for element 'City'
+2016-04-22 02:21:09 INFO  Page:249 - [Antwerpen, Arlon, Brugge, Bruxelles-Brussel, Charleroi, Genk, Gent, Hasselt, Herentals, Kortrijk, Leuven, Liège, Mechelen, Mons, Namur, Sint Niklaas, Tournai, Turnhout]
+2016-04-22 02:21:09 INFO  Page:241 - Select 'City' random by text 'Mechelen'
+2016-04-22 02:21:10 INFO  Page:246 - Data for element 'Date'
+2016-04-22 02:21:10 INFO  Page:249 - [vrijdag, 22.04, zaterdag, 23.04, maandag, 25.04, dinsdag, 26.04, woensdag, 27.04, donderdag, 28.04, vrijdag, 29.04]
+2016-04-22 02:21:10 INFO  Page:241 - Select 'Date' random by text 'woensdag, 27.04'
+2016-04-22 02:21:11 INFO  Page:246 - Data for element 'Time'
+2016-04-22 02:21:11 INFO  Page:249 - [10:00, 11:00, 12:00, 13:00, 14:00, 15:00, 16:00, 17:00]
+2016-04-22 02:21:11 INFO  Page:241 - Select 'Time' random by text '13:00'
+2016-04-22 02:21:11 INFO  Page:94 - Type to 'First Name' value 'Test JAV'
+2016-04-22 02:21:11 INFO  Page:94 - Type to 'Last Name' value 'Selenium Tester'
+2016-04-22 02:21:11 INFO  Page:109 - Select 'Mobile Prefix' by text '+49'
+2016-04-22 02:21:11 INFO  Page:94 - Type to 'Mobile Number' value '8009994440'
+2016-04-22 02:21:11 INFO  BookingPage:127 - Looking for a price for store it...
+2016-04-22 02:21:12 INFO  BookingPage:130 - Element 'Car Price [1]' value is '24.302 EUR'
+2016-04-22 02:21:13 INFO  BookingConfirmPage:21 - Open page 'BookingConfirmPage'
+2016-04-22 02:21:13 INFO  MailReader:120 - Searching mail for... 'it-test+selenium-newcarflow-priced-2016-04-22.02-21-01-be@wkda.de'
+2016-04-22 02:21:13 INFO  MailReader:121 - in box '4612' messages..
+2016-04-22 02:21:27 INFO  MailReader:147 - Reading messages in the box '4612', it took '13 sec'
+2016-04-22 02:21:27 INFO  MailReader:149 - wait a bit..
+2016-04-22 02:21:37 INFO  MailReader:147 - Reading messages in the box '4613', it took '23 sec'
+2016-04-22 02:21:37 INFO  MailReader:178 - -------------------------
+2016-04-22 02:21:37 INFO  MailReader:180 - From   : "nuautoverkopen.be" <mail@newsletter.nuautoverkopen.be>
+2016-04-22 02:21:37 INFO  MailReader:181 - Subject: Onze persoonlijke offerte voor uw Audi
+
+2016-04-22 02:21:37 INFO  MailReader:180 - From   : "nuautoverkopen.be" <mail@newsletter.nuautoverkopen.be>
+2016-04-22 02:21:37 INFO  MailReader:181 - Subject: Afspraak succesvol geboekt voor: (27 april, wo, 13:00 uur)
+
+2016-04-22 02:21:37 INFO  MailHelper:84 - Message sent from: '"nuautoverkopen.be" <mail@newsletter.nuautoverkopen.be>'
+2016-04-22 02:21:37 INFO  MailHelper:84 - Message sent from: '"nuautoverkopen.be" <mail@newsletter.nuautoverkopen.be>'
+2016-04-22 02:21:37 INFO  MailHelper:127 - strPRICINGMainLink1: 
+2016-04-22 02:21:37 INFO  MailHelper:128 - strPRICINGMainLink2: 
+2016-04-22 02:21:37 INFO  MailHelper:129 - strBOOKINGMainLink1: 
+2016-04-22 02:21:37 INFO  MailHelper:130 - strBOOKINGMainLink2: http://newsletter.nuautoverkopen.be/c/r?ACTION=ri&amp;EMID=09006NC02IJG1016H5FPM&amp;UID=UBLSAVQ3Y2LNAPC3IX4A&amp;booking_url=c6c20ee245ec57564180a8a4dde49e86
+]]></system-out>
+  </testcase>
+  <testcase name="newFlowTransactionEmailsTest" classname="com.auto1.cfe.tests.jav.TransactionalEmailsTest" time="36.342">
+    <failure message="There is an issue with the pricing or booking e-mail template" type="java.lang.AssertionError">java.lang.AssertionError: There is an issue with the pricing or booking e-mail template
+	at com.auto1.cfe.common.mail.MailHelper.checkWhetherEmailHasProperLink(MailHelper.java:159)
+	at com.auto1.cfe.common.mail.MailHelper.checkWhetherEmailHasProperLink(MailHelper.java:91)
+	at com.auto1.cfe.common.mail.MailHelper.checkEmail(MailHelper.java:67)
+	at com.auto1.cfe.tests.jav.TransactionalEmailsTest.newFlowTransactionEmailsTest(TransactionalEmailsTest.java:37)
+</failure>
+    <system-out><![CDATA[2016-04-22 02:21:38 ERROR CustomListener:47 - newFlowTransactionEmailsTest --- FAILED --- 
+2016-04-22 02:21:38 ERROR CustomListener:51 - java.lang.AssertionError: There is an issue with the pricing or booking e-mail template
+
+
+2016-04-22 02:21:38 INFO  HttpHelper:26 - 'PROD' environment - send post request
+2016-04-22 02:21:38 INFO  HttpImpl:45 - Send 'POST' request 'https://www.wirkaufendeinauto.de/set-to-test/c6c20ee245ec57564180a8a4dde49e86/'
+2016-04-22 02:21:38 INFO  HttpImpl:51 - Response code '200'
+2016-04-22 02:21:38 INFO  HttpImpl:53 - Response value '{"message":"successful"}'
+2016-04-22 02:21:38 INFO  ApplicationManager:37 - Delete all cookies..
+
+
+2016-04-22 02:21:38 INFO  SelectCarPage:29 - Open page 'SelectCarPage'
+2016-04-22 02:21:38 INFO  CustomListener:31 - [TestClass name=class com.auto1.cfe.tests.jav.TransactionalEmailsTest]
+2016-04-22 02:21:38 INFO  CustomListener:33 - << newFlowTransactionEmailsTest >>
+2016-04-22 02:21:38 INFO  CustomListener:34 - Test parameters [car: modelVariant: 6.0 W12:331.00; type: 010600480130001; brand: Audi; model: A8; year: 2006; shape: 1025; country: italy; kilometer: 20000; ownerEmail: it-test+selenium-newcarflow-priced@wkda.de; seller: firstName: Test JAV; lastName: Selenium Tester; mobilePrefix: +49; mobileNumber: 8009994440; country: name: italy; code: it; url: https://www.vendo-auto.it]
+2016-04-22 02:21:38 INFO  MailHelper:245 - Email 'it-test+selenium-newcarflow-priced-2016-04-22.02-21-38-it@wkda.de'
+2016-04-22 02:21:38 INFO  Page:53 - Open url 'https://www.vendo-auto.it'
+2016-04-22 02:21:39 INFO  Page:109 - Select 'Make/brand' by text 'Audi'
+2016-04-22 02:21:39 INFO  Page:109 - Select 'Model' by text 'A8'
+2016-04-22 02:21:40 INFO  Page:147 - Select 'Year' by value '2006'
+2016-04-22 02:21:40 INFO  Page:149 - 	Text for this value is '2006'
+2016-04-22 02:21:40 INFO  Page:128 - Click on 'Submit'
+2016-04-22 02:21:41 INFO  CarInfoNewFlowPage:28 - Open page 'CarInfoNewFlowPage'
+2016-04-22 02:21:41 INFO  Page:147 - Select 'Shape' by value '1025'
+2016-04-22 02:21:41 INFO  Page:149 - 	Text for this value is 'Berlina'
+2016-04-22 02:21:41 INFO  Page:147 - Select 'Details' by value '6.0 W12:331.00'
+2016-04-22 02:21:42 INFO  Page:149 - 	Text for this value is 'A8 - 6.0 W12 (331 kW  / 450 PS)'
+2016-04-22 02:21:42 INFO  Page:147 - Select 'Type' by value '010600480130001'
+2016-04-22 02:21:42 INFO  Page:149 - 	Text for this value is 'A8 quattro Lang Cambio automatico 4 Porte'
+2016-04-22 02:21:42 INFO  Page:147 - Select 'Kilometers/Miles' by value '20000'
+2016-04-22 02:21:42 INFO  Page:149 - 	Text for this value is 'Fino a 20.000'
+2016-04-22 02:21:42 INFO  Page:94 - Type to 'Email' value 'it-test+selenium-newcarflow-priced-2016-04-22.02-21-38-it@wkda.de'
+2016-04-22 02:21:42 INFO  Page:128 - Click on 'Submit'
+2016-04-22 02:21:44 INFO  BookingPage:33 - Open page 'BookingPage'
+2016-04-22 02:21:45 INFO  Page:246 - Data for element 'City'
+2016-04-22 02:21:45 INFO  Page:249 - [Ancona, Asti, Bari, Bergamo, Bologna, Brescia, Cagliari, Catania, Firenze, Foggia, Genova, Latina, Lecce, Livorno, Mantova, Milano, Modena, Monza, Napoli, Novara, Padova, Palermo, Pavia, Perugia, Pescara, Piacenza, Potenza, Reggio Emilia, Rimini, Roma, Salerno, Sassari, Torino, Treviso, Trieste, Venezia, Verona, Vicenza]
+2016-04-22 02:21:45 INFO  Page:241 - Select 'City' random by text 'Cagliari'
+2016-04-22 02:21:47 INFO  Page:246 - Data for element 'Date'
+2016-04-22 02:21:47 INFO  Page:249 - [venerdì, 22/04, sabato, 23/04, martedì, 26/04, mercoledì, 27/04, giovedì, 28/04, venerdì, 29/04]
+2016-04-22 02:21:47 INFO  Page:241 - Select 'Date' random by text 'venerdì, 22/04'
+2016-04-22 02:21:47 INFO  Page:246 - Data for element 'Time'
+2016-04-22 02:21:47 INFO  Page:249 - [08:00, 09:30, 10:00, 11:00, 12:00, 13:00, 14:00, 15:00, 16:30, 17:00, 18:30, 19:00]
+2016-04-22 02:21:47 INFO  Page:241 - Select 'Time' random by text '09:30'
+2016-04-22 02:21:47 INFO  Page:94 - Type to 'First Name' value 'Test JAV'
+2016-04-22 02:21:47 INFO  Page:94 - Type to 'Last Name' value 'Selenium Tester'
+2016-04-22 02:21:48 INFO  Page:109 - Select 'Mobile Prefix' by text '+49'
+2016-04-22 02:21:48 INFO  Page:94 - Type to 'Mobile Number' value '8009994440'
+2016-04-22 02:21:48 INFO  BookingPage:127 - Looking for a price for store it...
+2016-04-22 02:21:48 INFO  BookingPage:130 - Element 'Car Price [1]' value is '24.302 EUR'
+2016-04-22 02:21:49 INFO  BookingConfirmPage:21 - Open page 'BookingConfirmPage'
+2016-04-22 02:21:50 INFO  MailReader:120 - Searching mail for... 'it-test+selenium-newcarflow-priced-2016-04-22.02-21-38-it@wkda.de'
+2016-04-22 02:21:50 INFO  MailReader:121 - in box '4614' messages..
+2016-04-22 02:22:04 INFO  MailReader:147 - Reading messages in the box '4614', it took '13 sec'
+2016-04-22 02:22:04 INFO  MailReader:149 - wait a bit..
+2016-04-22 02:22:14 INFO  MailReader:147 - Reading messages in the box '4615', it took '24 sec'
+2016-04-22 02:22:14 INFO  MailReader:178 - -------------------------
+2016-04-22 02:22:14 INFO  MailReader:180 - From   : "Vendo-auto.it" <mail@newsletter.vendo-auto.it>
+2016-04-22 02:22:14 INFO  MailReader:181 - Subject: La tua valutazione personalizzata
+
+2016-04-22 02:22:14 INFO  MailReader:180 - From   : "Vendo-auto.it" <mail@newsletter.vendo-auto.it>
+2016-04-22 02:22:14 INFO  MailReader:181 - Subject: Il tuo appuntamento (22-aprile, h ven, ore 09:30)
+
+2016-04-22 02:22:14 INFO  MailHelper:84 - Message sent from: '"Vendo-auto.it" <mail@newsletter.vendo-auto.it>'
+2016-04-22 02:22:14 INFO  MailHelper:84 - Message sent from: '"Vendo-auto.it" <mail@newsletter.vendo-auto.it>'
+2016-04-22 02:22:14 INFO  MailHelper:127 - strPRICINGMainLink1: 
+2016-04-22 02:22:14 INFO  MailHelper:128 - strPRICINGMainLink2: 
+2016-04-22 02:22:14 INFO  MailHelper:129 - strBOOKINGMainLink1: 
+2016-04-22 02:22:14 INFO  MailHelper:130 - strBOOKINGMainLink2: http://newsletter.vendo-auto.it/c/r?ACTION=ri&amp;EMID=09006JQ02F90E00SL52Q1&amp;UID=HSSCB7CF36LHYHYTRDYQ&amp;booking_url=0fd1185c38b4383e4d457ae7a5bbc89c
+]]></system-out>
+  </testcase>
+  <testcase name="newFlowTransactionEmailsTest" classname="com.auto1.cfe.tests.jav.TransactionalEmailsTest" time="36.624">
+    <failure message="There is an issue with the pricing or booking e-mail template" type="java.lang.AssertionError">java.lang.AssertionError: There is an issue with the pricing or booking e-mail template
+	at com.auto1.cfe.common.mail.MailHelper.checkWhetherEmailHasProperLink(MailHelper.java:159)
+	at com.auto1.cfe.common.mail.MailHelper.checkWhetherEmailHasProperLink(MailHelper.java:91)
+	at com.auto1.cfe.common.mail.MailHelper.checkEmail(MailHelper.java:67)
+	at com.auto1.cfe.tests.jav.TransactionalEmailsTest.newFlowTransactionEmailsTest(TransactionalEmailsTest.java:37)
+</failure>
+    <system-out><![CDATA[2016-04-22 02:22:14 ERROR CustomListener:47 - newFlowTransactionEmailsTest --- FAILED --- 
+2016-04-22 02:22:14 ERROR CustomListener:51 - java.lang.AssertionError: There is an issue with the pricing or booking e-mail template
+
+
+2016-04-22 02:22:14 INFO  HttpHelper:26 - 'PROD' environment - send post request
+2016-04-22 02:22:14 INFO  HttpImpl:45 - Send 'POST' request 'https://www.wirkaufendeinauto.de/set-to-test/0fd1185c38b4383e4d457ae7a5bbc89c/'
+2016-04-22 02:22:15 INFO  HttpImpl:51 - Response code '200'
+2016-04-22 02:22:15 INFO  HttpImpl:53 - Response value '{"message":"successful"}'
+2016-04-22 02:22:15 INFO  ApplicationManager:37 - Delete all cookies..
+
+
+2016-04-22 02:22:15 INFO  SelectCarPage:29 - Open page 'SelectCarPage'
+2016-04-22 02:22:15 INFO  CustomListener:31 - [TestClass name=class com.auto1.cfe.tests.jav.TransactionalEmailsTest]
+2016-04-22 02:22:15 INFO  CustomListener:33 - << newFlowTransactionEmailsTest >>
+2016-04-22 02:22:15 INFO  CustomListener:34 - Test parameters [car: modelVariant: 6.0 W12:331.00; type: 010600480130001; brand: Audi; model: A8; year: 2006; shape: 1025; country: sweden; kilometer: 20000; ownerEmail: it-test+selenium-newcarflow-priced@wkda.de; seller: firstName: Test JAV; lastName: Selenium Tester; mobilePrefix: +49; mobileNumber: 8009994440; country: name: sweden; code: se; url: https://www.saljaminbil.se]
+2016-04-22 02:22:15 INFO  MailHelper:245 - Email 'it-test+selenium-newcarflow-priced-2016-04-22.02-22-15-se@wkda.de'
+2016-04-22 02:22:15 INFO  Page:53 - Open url 'https://www.saljaminbil.se'
+2016-04-22 02:22:15 INFO  Page:109 - Select 'Make/brand' by text 'Audi'
+2016-04-22 02:22:16 INFO  Page:109 - Select 'Model' by text 'A8'
+2016-04-22 02:22:17 INFO  Page:147 - Select 'Year' by value '2006'
+2016-04-22 02:22:17 INFO  Page:149 - 	Text for this value is '2006'
+2016-04-22 02:22:17 INFO  Page:128 - Click on 'Submit'
+2016-04-22 02:22:18 INFO  CarInfoNewFlowPage:28 - Open page 'CarInfoNewFlowPage'
+2016-04-22 02:22:18 INFO  Page:147 - Select 'Shape' by value '1025'
+2016-04-22 02:22:18 INFO  Page:149 - 	Text for this value is 'Sedan'
+2016-04-22 02:22:18 INFO  Page:147 - Select 'Details' by value '6.0 W12:331.00'
+2016-04-22 02:22:18 INFO  Page:149 - 	Text for this value is 'A8 - 6.0 W12 (331 kW  / 450 PS)'
+2016-04-22 02:22:18 INFO  Page:147 - Select 'Type' by value '010600480130001'
+2016-04-22 02:22:19 INFO  Page:149 - 	Text for this value is 'A8 quattro Lang Automat 4 Dörrar'
+2016-04-22 02:22:19 INFO  Page:128 - Click on 'Submit'
+2016-04-22 02:22:19 INFO  CarInfoPage:25 - Open page 'CustomPage'
+2016-04-22 02:22:19 INFO  Page:147 - Select 'Kilometer' by value '20000'
+2016-04-22 02:22:19 INFO  Page:149 - 	Text for this value is 'Upp till 2 000 mil'
+2016-04-22 02:22:19 INFO  Page:94 - Type to 'Email' value 'it-test+selenium-newcarflow-priced-2016-04-22.02-22-15-se@wkda.de'
+2016-04-22 02:22:19 INFO  Page:128 - Click on 'Submit'
+2016-04-22 02:22:23 INFO  BookingPage:33 - Open page 'BookingPage'
+2016-04-22 02:22:23 INFO  Page:246 - Data for element 'City'
+2016-04-22 02:22:23 INFO  Page:249 - [Göteborg, Helsingborg, Jönköping, Malmö, Norrköping, Örebro, Stockholm, Uppsala, Västerås]
+2016-04-22 02:22:23 INFO  Page:241 - Select 'City' random by text 'Helsingborg'
+2016-04-22 02:22:24 INFO  Page:246 - Data for element 'Date'
+2016-04-22 02:22:24 INFO  Page:249 - [fredag, 22.04, måndag, 25.04, tisdag, 26.04, onsdag, 27.04, torsdag, 28.04, fredag, 29.04]
+2016-04-22 02:22:24 INFO  Page:241 - Select 'Date' random by text 'torsdag, 28.04'
+2016-04-22 02:22:25 INFO  Page:246 - Data for element 'Time'
+2016-04-22 02:22:25 INFO  Page:249 - [10:00, 11:00, 12:00, 13:00, 14:00, 15:00, 16:00, 17:00, 18:00]
+2016-04-22 02:22:25 INFO  Page:241 - Select 'Time' random by text '18:00'
+2016-04-22 02:22:25 INFO  Page:94 - Type to 'First Name' value 'Test JAV'
+2016-04-22 02:22:25 INFO  Page:94 - Type to 'Last Name' value 'Selenium Tester'
+2016-04-22 02:22:25 INFO  Page:109 - Select 'Mobile Prefix' by text '+49'
+2016-04-22 02:22:25 INFO  Page:94 - Type to 'Mobile Number' value '8009994440'
+2016-04-22 02:22:25 INFO  BookingPage:127 - Looking for a price for store it...
+2016-04-22 02:22:26 INFO  BookingPage:130 - Element 'Car Price [1]' value is '205 677 SEK'
+2016-04-22 02:22:26 INFO  BookingConfirmPage:21 - Open page 'BookingConfirmPage'
+2016-04-22 02:22:27 INFO  MailReader:120 - Searching mail for... 'it-test+selenium-newcarflow-priced-2016-04-22.02-22-15-se@wkda.de'
+2016-04-22 02:22:27 INFO  MailReader:121 - in box '4616' messages..
+2016-04-22 02:22:41 INFO  MailReader:147 - Reading messages in the box '4616', it took '13 sec'
+2016-04-22 02:22:41 INFO  MailReader:149 - wait a bit..
+2016-04-22 02:22:51 INFO  MailReader:147 - Reading messages in the box '4617', it took '23 sec'
+2016-04-22 02:22:51 INFO  MailReader:178 - -------------------------
+2016-04-22 02:22:51 INFO  MailReader:180 - From   : "=?ISO-8859-1?Q?S=E4ljaminbil.se?=" <mail@newsletter.saljaminbil.se>
+2016-04-22 02:22:51 INFO  MailReader:181 - Subject: Vårt pris för din Audi
+
+2016-04-22 02:22:51 INFO  MailReader:180 - From   : "=?ISO-8859-1?Q?S=E4ljaminbil.se?=" <mail@newsletter.saljaminbil.se>
+2016-04-22 02:22:51 INFO  MailReader:181 - Subject: Din bokning: 28 april, tors   18:00
+
+2016-04-22 02:22:51 INFO  MailHelper:84 - Message sent from: '"=?ISO-8859-1?Q?S=E4ljaminbil.se?=" <mail@newsletter.saljaminbil.se>'
+2016-04-22 02:22:51 INFO  MailHelper:84 - Message sent from: '"=?ISO-8859-1?Q?S=E4ljaminbil.se?=" <mail@newsletter.saljaminbil.se>'
+2016-04-22 02:22:51 INFO  MailHelper:127 - strPRICINGMainLink1: 
+2016-04-22 02:22:51 INFO  MailHelper:128 - strPRICINGMainLink2: 
+2016-04-22 02:22:51 INFO  MailHelper:129 - strBOOKINGMainLink1: 
+2016-04-22 02:22:51 INFO  MailHelper:130 - strBOOKINGMainLink2: http://newsletter.saljaminbil.se/c/r?ACTION=ri&amp;EMID=09006M902F72T016PFFSB&amp;UID=F2CCBRVFGOLC334EQDWA&amp;booking_url=99bd258fe5d92be47435c0b503d93abc
+]]></system-out>
+  </testcase>
+  <testcase name="newUnsubscribeEmailTest" classname="com.auto1.cfe.tests.jav.UnSubscribeTest" time="13.381"/>
+  <testcase name="newUnsubscribeEmailTest" classname="com.auto1.cfe.tests.jav.UnSubscribeTest" time="11.696"/>
+  <testcase name="newUnsubscribeEmailTest" classname="com.auto1.cfe.tests.jav.UnSubscribeTest" time="12.965"/>
+  <testcase name="newUnsubscribeEmailTest" classname="com.auto1.cfe.tests.jav.UnSubscribeTest" time="13.338"/>
+  <testcase name="newUnsubscribeEmailTest" classname="com.auto1.cfe.tests.jav.UnSubscribeTest" time="15.329"/>
+  <testcase name="newUnsubscribeEmailTest" classname="com.auto1.cfe.tests.jav.UnSubscribeTest" time="11.633"/>
+  <testcase name="newUnsubscribeEmailTest" classname="com.auto1.cfe.tests.jav.UnSubscribeTest" time="12.458"/>
+  <testcase name="newUnsubscribeEmailTest" classname="com.auto1.cfe.tests.jav.UnSubscribeTest" time="12.968"/>
+</testsuite>
