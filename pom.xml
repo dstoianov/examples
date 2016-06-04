@@ -15,7 +15,7 @@
 
     <properties>
         <!--<selenium-java.version>2.43.1</selenium-java.version>-->
-        <selenium-java.version>2.48.2</selenium-java.version>
+        <selenium-java.version>2.53.0</selenium-java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <driver.path>${basedir}/src/test/resources/drivers</driver.path>
         <!--<maven.compiler.source>1.8</maven.compiler.source>-->

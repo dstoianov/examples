@@ -89,6 +89,11 @@ public class ElementImpl implements Element {
     }
 
     @Override
+    public Rectangle getRect() {
+        return null;
+    }
+
+    @Override
     public String getCssValue(String propertyName) {
         return element.getCssValue(propertyName);
     }
