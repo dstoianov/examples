@@ -5,6 +5,7 @@ package com.tipsandtricks.mesure.find.elements;
  */
 
 import org.junit.After;
+import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -15,6 +16,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -25,14 +27,15 @@ import java.util.concurrent.TimeUnit;
 @RunWith(Parameterized.class)
 public class WebDriverTest {
 
-    private static final String[] BROWSERS = {"firefox", "chrome"};
+    private static final String[] BROWSERS = {"firefox", "chrome", "ie11"};
     //    private static final String[] BROWSERS = {"firefox", "chrome", "edge"};
     private static final int TEST_COUNT = 100;
 
-    WebDriver driver;
-    By by;
-    String locator;
-    String browser;
+    private WebDriver driver;
+    private By by;
+    private String locator;
+    private String browser;
+    private static List<String> results = new ArrayList<>();
 
     @Parameters(name = "{index}: browser:{0}, locator:{1}")
     public static Collection locators() {
@@ -66,6 +69,9 @@ public class WebDriverTest {
             case "edge":
                 driver = new EdgeDriver();
                 break;
+            case "ie11":
+                driver = new InternetExplorerDriver();
+                break;
             default:
                 break;
         }
@@ -77,12 +83,21 @@ public class WebDriverTest {
         driver.quit();
     }
 
+    @AfterClass
+    public static void printResult() {
+        System.out.println("=====================REPORT======================");
+        for (String message : results) {
+            System.out.println(message);
+        }
+        System.out.println("=================================================");
+    }
+
     @Test
     public void locatorPerformance() throws InterruptedException {
         // load page
         driver.manage().timeouts().implicitlyWait(6, TimeUnit.SECONDS);
         driver.manage().window().maximize();
-        driver.get("http://twitter.com");
+        driver.get("https://twitter.com/?lang=en");
 
         // dry-run and let browser settle a bit
         driver.findElement(by);
@@ -94,6 +109,9 @@ public class WebDriverTest {
             driver.findElement(by);
         }
         long stop = System.currentTimeMillis();
-        System.out.println(browser + ": Locator '" + locator + "' execution time: " + (stop - start));
+
+        String message = browser + ": Locator '" + locator + "' execution time: " + (stop - start);
+        results.add(message);
+        System.out.println(message);
     }
 }
