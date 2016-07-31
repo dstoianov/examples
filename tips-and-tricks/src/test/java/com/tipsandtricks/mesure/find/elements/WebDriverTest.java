@@ -81,6 +81,7 @@ public class WebDriverTest {
     public void locatorPerformance() throws InterruptedException {
         // load page
         driver.manage().timeouts().implicitlyWait(6, TimeUnit.SECONDS);
+        driver.manage().window().maximize();
         driver.get("http://twitter.com");
 
         // dry-run and let browser settle a bit
