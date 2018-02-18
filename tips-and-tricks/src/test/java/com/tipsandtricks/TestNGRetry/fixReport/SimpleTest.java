@@ -22,19 +22,19 @@ public class SimpleTest {
     }
 
     @Test(retryAnalyzer = CustomRetryAnalyzer2.class, dataProvider = "dataprovider")
-    public void teste(String testName) {
+    public void test1(String testName) {
         count++;
         System.out.println("---------------------------------------");
         System.out.println(testName + " " + count);
         if (count % 3 != 0) {
-            Assert.fail();
+            Assert.fail("make it fail");
         }
 
         count = 0;
     }
 
     @Test(retryAnalyzer = CustomRetryAnalyzer2.class)
-    public void testMethod4() {
+    public void test2() {
         int i = new Random().nextInt(3);
         System.out.println("New Run, test said: Random int is: " + i);
         Assert.assertEquals(i, 1);
