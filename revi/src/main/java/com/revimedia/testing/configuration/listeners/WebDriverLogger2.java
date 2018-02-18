@@ -43,6 +43,16 @@ public class WebDriverLogger2 implements WebDriverEventListener {
     }
 
     @Override
+    public void beforeNavigateRefresh(WebDriver driver) {
+
+    }
+
+    @Override
+    public void afterNavigateRefresh(WebDriver driver) {
+
+    }
+
+    @Override
     public void beforeFindBy(By by, WebElement element, WebDriver driver) {
 
     }

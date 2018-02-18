@@ -13,7 +13,7 @@ import java.util.List;
 public class SearchResults extends HtmlElement {
 
     @SuppressWarnings("unused")
-    @FindBy(xpath = ".//li[contains(@class, 'b-serp-item_js_inited')]")
+    @FindBy(css = ".serp-item")
     private List<WebElement> searchItems;
 
     public List<WebElement> getSearchItems() {

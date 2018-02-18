@@ -1,7 +1,7 @@
 package com.tipsandtricks.webelement.custom.elementV2.decorator;
 
 import com.tipsandtricks.webelement.custom.elementV2.impl.Name;
-import org.apache.commons.lang.WordUtils;
+import org.apache.commons.lang3.text.WordUtils;
 
 import java.lang.reflect.Field;
 import java.util.List;

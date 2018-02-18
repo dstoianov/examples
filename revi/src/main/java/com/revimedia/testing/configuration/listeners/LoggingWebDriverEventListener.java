@@ -69,6 +69,16 @@ public class LoggingWebDriverEventListener implements WebDriverEventListener {
     public void afterNavigateForward(WebDriver driver) {
     }
 
+    @Override
+    public void beforeNavigateRefresh(WebDriver driver) {
+
+    }
+
+    @Override
+    public void afterNavigateRefresh(WebDriver driver) {
+
+    }
+
     public void afterNavigateTo(String url, WebDriver driver) {
     }
 
@@ -79,7 +89,8 @@ public class LoggingWebDriverEventListener implements WebDriverEventListener {
         String description = "tag:";//+ element.getTagName();
         if (element.getTagName().equalsIgnoreCase("option")) {
             description += "select ";
-        } else if (element.getTagName().equalsIgnoreCase("input") && element.getAttribute("type").equalsIgnoreCase("radio")) {
+        } else if (element.getTagName().equalsIgnoreCase("input") &&
+                element.getAttribute("type").equalsIgnoreCase("radio")) {
             description += "radio button ";
             return description;
         } else if (element.getTagName().equalsIgnoreCase("button")) {
@@ -87,9 +98,9 @@ public class LoggingWebDriverEventListener implements WebDriverEventListener {
             return description;
         }
 
-        if (!(element.getAttribute("id") != null && element.getAttribute("id") != "")) {
+        if (!(element.getAttribute("id") != null && element.getAttribute("id").isEmpty())) {
             description += " id: " + element.getAttribute("id");
-        } else if (!(element.getAttribute("name") != null || element.getAttribute("name") != "")) {
+        } else if (!(element.getAttribute("name") != null || element.getAttribute("name").isEmpty())) {
             description += " name: " + element.getAttribute("name");
         }
 

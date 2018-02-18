@@ -3,8 +3,8 @@ package com.tipsandtricks.html.elements.example.pages;
 import com.tipsandtricks.html.elements.example.elems.SearchArrow;
 import com.tipsandtricks.html.elements.example.elems.SearchResults;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.PageFactory;
-import ru.yandex.qatools.htmlelements.loader.decorator.HtmlElementDecorator;
+import org.openqa.selenium.support.FindBy;
+import ru.yandex.qatools.htmlelements.loader.HtmlElementLoader;
 
 
 /**
@@ -15,14 +15,14 @@ public class SearchPage {
 
     private WebDriver driver;
 
-    //    @FindBy(className = "b-serp-list")
+    @FindBy(className = "content__left")
     private SearchResults searchResults;
 
     private SearchArrow searchArrow;
 
 
     public SearchPage(WebDriver driver) {
-        PageFactory.initElements(new HtmlElementDecorator(driver), this);
+        HtmlElementLoader.populatePageObject(this, driver);
         this.driver = driver;
     }
 

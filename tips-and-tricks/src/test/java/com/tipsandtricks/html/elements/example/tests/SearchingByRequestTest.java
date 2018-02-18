@@ -6,13 +6,12 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 
 import static org.hamcrest.Matchers.notNullValue;
 import static org.hamcrest.collection.IsCollectionWithSize.hasSize;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
-//import static ru.yandex.qatools.htmlelements.matchers.WebElementMatchers.exists;
 
 /**
  * @author Artem Eroshenko eroshenkoam
@@ -21,7 +20,7 @@ import static org.junit.Assert.assertThat;
 public class SearchingByRequestTest {
 
     private final int DEFAULT_RESULTS_COUNT;
-    public WebDriver driver = new FirefoxDriver();
+    public WebDriver driver = new ChromeDriver();
 
     public SearchingByRequestTest() {
         DEFAULT_RESULTS_COUNT = 10;

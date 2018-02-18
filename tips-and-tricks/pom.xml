@@ -38,7 +38,7 @@
                     </suiteXmlFiles>
                     <junitArtifactName>none:none</junitArtifactName>
                     <systemPropertyVariables>
-                        <webdriver.chrome.driver>${driver.path}/chromedriver.exe</webdriver.chrome.driver>
+                        <webdriver.chrome.driver>${driver.path}/chromedriver</webdriver.chrome.driver>
                         <webdriver.ie.driver>${driver.path}/IEDriverServer.exe</webdriver.ie.driver>
                         <phantomjs.binary.path>${driver.path}/phantomjs.exe</phantomjs.binary.path>
                     </systemPropertyVariables>

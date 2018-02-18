@@ -2,8 +2,8 @@ package com.tipsandtricks.html.elements.example.pages;
 
 import com.tipsandtricks.html.elements.example.elems.SearchArrow;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.PageFactory;
-import ru.yandex.qatools.htmlelements.loader.decorator.HtmlElementDecorator;
+import org.openqa.selenium.support.FindBy;
+import ru.yandex.qatools.htmlelements.loader.HtmlElementLoader;
 
 /**
  * @author Artem Eroshenko eroshenkoam
@@ -13,11 +13,11 @@ public class MainPage {
 
     private WebDriver driver;
 
-    //    @FindBy(className = "b-morda-search-form")
+    @FindBy(css = ".search2")
     private SearchArrow searchArrow;
 
     public MainPage(final WebDriver driver) {
-        PageFactory.initElements(new HtmlElementDecorator(driver), this);
+        HtmlElementLoader.populatePageObject(this, driver);
         this.driver = driver;
     }
 

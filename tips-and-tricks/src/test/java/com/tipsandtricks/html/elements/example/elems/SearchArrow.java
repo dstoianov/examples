@@ -11,10 +11,10 @@ import ru.yandex.qatools.htmlelements.element.TextInput;
  */
 public class SearchArrow extends HtmlElement {
 
-    @FindBy(xpath = ".//input[@class='b-form-input__input']")
+    @FindBy(css = ".input__input")
     public TextInput requestInput;
 
-    @FindBy(xpath = ".//input[@class='b-form-button__input']")
+    @FindBy(css = "button")
     public Button searchButton;
 
     public void searchFor(String request) {
